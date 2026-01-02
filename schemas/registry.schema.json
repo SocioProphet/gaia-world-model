@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "attribution": {
+      "properties": {
+        "authors": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "notices": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "authors"
+      ],
+      "type": "object"
+    },
+    "content_hash": {
+      "type": "string"
+    },
+    "id": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "interfaces": {
+      "properties": {
+        "inputs": {
+          "items": {
+            "properties": {
+              "constraints": {
+                "type": "object"
+              },
+              "crs": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "schema_ref": {
+                "type": "string"
+              },
+              "units": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "schema_ref"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "properties": {
+              "constraints": {
+                "type": "object"
+              },
+              "crs": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "schema_ref": {
+                "type": "string"
+              },
+              "units": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "schema_ref"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "protocols": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "runtime": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "inputs",
+        "outputs"
+      ],
+      "type": "object"
+    },
+    "kind": {
+      "enum": [
+        "dataset",
+        "ontology",
+        "tool",
+        "model",
+        "agent",
+        "workflow"
+      ],
+      "type": "string"
+    },
+    "license": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "policy": {
+      "properties": {
+        "consent_class": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "object"
+        },
+        "redactions": {
+          "type": "object"
+        },
+        "risk_tier": {
+          "enum": [
+            "low",
+            "med",
+            "high"
+          ],
+          "type": "string"
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "restricted",
+            "private"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "provenance": {
+      "properties": {
+        "lineage": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "origin": {
+          "properties": {
+            "pinned_ref": {
+              "type": "string"
+            },
+            "retrieved_at": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "pinned_ref",
+            "retrieved_at"
+          ],
+          "type": "object"
+        },
+        "prov_bundle": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "origin"
+      ],
+      "type": "object"
+    },
+    "trust": {
+      "properties": {
+        "attestations": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "reputation": {
+          "type": "object"
+        },
+        "signatures": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "version": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "kind",
+    "license",
+    "attribution",
+    "interfaces",
+    "provenance"
+  ],
+  "title": "GAIA Registry Manifest",
+  "type": "object"
+}

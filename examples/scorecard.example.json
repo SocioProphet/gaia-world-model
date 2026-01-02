@@ -1,0 +1,24 @@
+{
+  "artifact_ref": "gaia.ontology.canonical.entrypoint@0.1.0",
+  "results": [
+    {
+      "axis": "interop",
+      "check": "schema_ref_present",
+      "evidence": [
+        "interfaces.outputs[0].schema_ref exists"
+      ],
+      "status": "pass"
+    },
+    {
+      "axis": "policy",
+      "check": "visibility_defined",
+      "evidence": [
+        "policy.visibility=public"
+      ],
+      "status": "pass"
+    }
+  ],
+  "run_id": "example-run-001",
+  "signature": "",
+  "timestamp": "2026-01-02T00:00:00Z"
+}

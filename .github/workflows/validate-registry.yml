@@ -1,0 +1,17 @@
+name: Validate registry examples
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: JSON syntax check
+        run: python -m json.tool examples/registry_manifest.example.json > /dev/null && python -m json.tool examples/scorecard.example.json > /dev/null
+      - name: Minimal manifest structural validation
+        run: python scripts/validate_registry.py examples/registry_manifest.example.json
+

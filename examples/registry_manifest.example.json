@@ -1,0 +1,50 @@
+{
+  "attribution": {
+    "authors": [
+      "Upstream Project"
+    ],
+    "notices": [
+      "Example only; replace with real attribution."
+    ],
+    "source": "https://example.org/upstream"
+  },
+  "id": "gaia.ontology.canonical.entrypoint",
+  "interfaces": {
+    "inputs": [],
+    "outputs": [
+      {
+        "constraints": {
+          "media_type": "text/turtle"
+        },
+        "name": "ontology_turtle",
+        "schema_ref": "https://example.org/schemas/owl.ttl"
+      }
+    ],
+    "protocols": [
+      "file"
+    ],
+    "runtime": {}
+  },
+  "kind": "ontology",
+  "license": [
+    "CC-BY-4.0"
+  ],
+  "policy": {
+    "risk_tier": "low",
+    "visibility": "public"
+  },
+  "provenance": {
+    "lineage": [],
+    "origin": {
+      "pinned_ref": "deadbeefcafebabe",
+      "retrieved_at": "2026-01-02",
+      "url": "https://example.org/repo"
+    },
+    "prov_bundle": ""
+  },
+  "trust": {
+    "attestations": [],
+    "signatures": []
+  },
+  "version": "0.1.0"
+}
