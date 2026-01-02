@@ -212,6 +212,126 @@
     "version": {
       "minLength": 1,
       "type": "string"
+    },
+    "schema_bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "salad_ref": {
+          "type": "string"
+        },
+        "hash_alg": {
+          "type": "string",
+          "enum": [
+            "sha3-256"
+          ]
+        },
+        "schema_id": {
+          "type": "string",
+          "pattern": "^sha3-256:[0-9a-f]{64}$"
+        },
+        "context_id": {
+          "type": "string",
+          "pattern": "^sha3-256:[0-9a-f]{64}$"
+        },
+        "canonicalization": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "json_c14n": {
+              "type": "string"
+            },
+            "avro_map_order": {
+              "type": "string",
+              "enum": [
+                "lexicographic"
+              ]
+            }
+          },
+          "required": [
+            "avro_map_order"
+          ]
+        }
+      },
+      "required": [
+        "salad_ref",
+        "hash_alg",
+        "schema_id",
+        "context_id",
+        "canonicalization"
+      ]
+    },
+    "wires": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "tritrpc",
+              "grpc",
+              "http",
+              "kafka",
+              "file"
+            ]
+          },
+          "profile": {
+            "type": "string",
+            "enum": [
+              "path-a"
+            ]
+          },
+          "payload_encoding": {
+            "type": "string",
+            "enum": [
+              "avro-binary"
+            ]
+          },
+          "service": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "schema_id": {
+            "type": "string",
+            "pattern": "^sha3-256:[0-9a-f]{64}$"
+          },
+          "context_id": {
+            "type": "string",
+            "pattern": "^sha3-256:[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "tritrpc"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "required": [
+                "profile",
+                "payload_encoding",
+                "service",
+                "method",
+                "schema_id",
+                "context_id"
+              ]
+            }
+          }
+        ]
+      }
     }
   },
   "required": [

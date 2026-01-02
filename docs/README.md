@@ -17,3 +17,4 @@ If you’re new: read **ABOUT → GETTING_STARTED → ARCHITECTURE**.
 - **Registry Contract** - `contracts/REGISTRY_CONTRACT.md`
 - **Workflow IR** - `workflows/WORKFLOW_IR.md`
 - **Assessment Scorecards** - `assessment/SCORECARDS.md`
+\n\n- **TritRPC Integration** — `contracts/TRITRPC_INTEGRATION.md`\n
