@@ -1,0 +1,193 @@
+@prefix : <http://sweetontology.net/stateSpectralLine/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix somael: <http://sweetontology.net/matrElement/> .
+@prefix sostsl: <http://sweetontology.net/stateSpectralLine/> .
+@prefix sopropo: <http://sweetontology.net/propOrdinal/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@prefix sopropsdis: <http://sweetontology.net/propSpaceDistance/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@base <http://sweetontology.net/stateSpectralLine> .
+
+<http://sweetontology.net/stateSpectralLine> rdf:type owl:Ontology ;
+                                              owl:imports <http://sweetontology.net/matrElement> ,
+                                                          <http://sweetontology.net/propOrdinal> ,
+                                                          <http://sweetontology.net/propSpaceDistance> ,
+                                                          <http://sweetontology.net/relaChemical> ,
+                                                          <http://sweetontology.net/relaSci> ,
+                                                          <http://sweetontology.net/relaSpace> ;
+                                              rdfs:label "SWEET Ontology State Spectral Line" ;
+                                              dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                              owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object properties
+#################################################################
+
+###  http://sweetontology.net/relaChemical/hasSubstance
+sorelch:hasSubstance rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/hasWavelength
+sorelsp:hasWavelength rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://sweetontology.net/relaSci/hasNumericValue
+sorelsc:hasNumericValue rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/propOrdinal/SpectralLine
+sopropo:SpectralLine rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceDistance/Wavelength_cm
+sopropsdis:Wavelength_cm rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceDistance/Wavelength_nm
+sopropsdis:Wavelength_nm rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateSpectralLine/CaK
+sostsl:CaK rdf:type owl:NamedIndividual ,
+                  sopropo:SpectralLine ;
+         sorelch:hasSubstance somael:Ca ;
+         sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                               sorelsc:hasNumericValue "393.5"^^xsd:decimal
+                             ] ;
+         rdfs:label "cak"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/H1
+sostsl:H1 rdf:type owl:NamedIndividual ,
+                 sopropo:SpectralLine ;
+        sorelch:hasSubstance somael:H ;
+        sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_cm ;
+                              sorelsc:hasNumericValue "21.2061"^^xsd:decimal
+                            ] ;
+        rdfs:label "h1"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/Halpha
+sostsl:Halpha rdf:type owl:NamedIndividual ,
+                     sopropo:SpectralLine ;
+            sorelch:hasSubstance somael:H ;
+            sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                  sorelsc:hasNumericValue "656.28"^^xsd:decimal
+                                ] ;
+            rdfs:label "halpha"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/Hbeta
+sostsl:Hbeta rdf:type owl:NamedIndividual ,
+                    sopropo:SpectralLine ;
+           sorelch:hasSubstance somael:H ;
+           sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                 sorelsc:hasNumericValue "486.1"^^xsd:decimal
+                               ] ;
+           rdfs:label "hbeta"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/He1083
+sostsl:He1083 rdf:type owl:NamedIndividual ,
+                     sopropo:SpectralLine ;
+            sorelch:hasSubstance somael:He ;
+            sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                  sorelsc:hasNumericValue "1083.0"^^xsd:decimal
+                                ] ;
+            rdfs:label "he1083"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/He304
+sostsl:He304 rdf:type owl:NamedIndividual ,
+                    sopropo:SpectralLine ;
+           sorelch:hasSubstance somael:He ;
+           sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                 sorelsc:hasNumericValue "304.0"^^xsd:decimal
+                               ] ;
+           rdfs:label "he304"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/K7699
+sostsl:K7699 rdf:type owl:NamedIndividual ,
+                    sopropo:SpectralLine ;
+           sorelch:hasSubstance somael:K ;
+           sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                 sorelsc:hasNumericValue "769.9"^^xsd:decimal
+                               ] ;
+           rdfs:label "k7699"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/LymanAlpha
+sostsl:LymanAlpha rdf:type owl:NamedIndividual ,
+                         sopropo:SpectralLine ;
+                sorelch:hasSubstance somael:H ;
+                sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                      sorelsc:hasNumericValue "12.15668"^^xsd:decimal
+                                    ] ;
+                rdfs:label "lyman alpha"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/NI6768
+sostsl:NI6768 rdf:type owl:NamedIndividual ,
+                     sopropo:SpectralLine ;
+            sorelch:hasSubstance somael:N ;
+            sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                  sorelsc:hasNumericValue "676.8"^^xsd:decimal
+                                ] ;
+            rdfs:label "ni6768"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/NaD1
+sostsl:NaD1 rdf:type owl:NamedIndividual ,
+                   sopropo:SpectralLine ;
+          sorelch:hasSubstance somael:Na ;
+          sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                sorelsc:hasNumericValue "589.592"^^xsd:decimal
+                              ] ;
+          rdfs:label "nad1"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/NaD2
+sostsl:NaD2 rdf:type owl:NamedIndividual ,
+                   sopropo:SpectralLine ;
+          sorelch:hasSubstance somael:Na ;
+          sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_nm ;
+                                sorelsc:hasNumericValue "589.995"^^xsd:decimal
+                              ] ;
+          rdfs:label "nad2"@en .
+
+
+###  http://sweetontology.net/stateSpectralLine/point7
+sostsl:point7 rdf:type owl:NamedIndividual ,
+                     sopropo:SpectralLine ;
+            sorelsp:hasWavelength [ rdf:type sopropsdis:Wavelength_cm ;
+                                  sorelsc:hasNumericValue "10.7"^^xsd:decimal
+                                ] .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://sweetontology.net/stateSpectralLine/10point7> rdfs:label "10point7"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

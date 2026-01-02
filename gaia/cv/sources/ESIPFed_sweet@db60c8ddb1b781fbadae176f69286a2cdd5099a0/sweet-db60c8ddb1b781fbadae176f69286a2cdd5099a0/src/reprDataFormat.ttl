@@ -1,0 +1,194 @@
+@prefix : <http://sweetontology.net/reprDataFormat/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorepdf: <http://sweetontology.net/reprDataFormat/> .
+@base <http://sweetontology.net/reprDataFormat> .
+
+<http://sweetontology.net/reprDataFormat> rdf:type owl:Ontology ;
+                                           owl:imports <http://sweetontology.net/relaMath> ,
+                                                       <http://sweetontology.net/repr> ;
+                                           rdfs:label "SWEET Ontology Representation Data Format" ;
+                                           dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                           owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object properties
+#################################################################
+
+###  http://sweetontology.net/relaMath/basedOn
+sorelm:basedOn rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/reprDataFormat/ByteOrder
+sorepdf:ByteOrder rdf:type owl:Class ;
+                 rdfs:subClassOf sorep:Representation ;
+                 rdfs:label "byte order"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/File
+sorepdf:File rdf:type owl:Class ;
+            rdfs:subClassOf sorep:Representation ;
+            rdfs:label "file"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/Format
+sorepdf:Format rdf:type owl:Class ;
+              rdfs:subClassOf sorep:Representation ;
+              rdfs:label "format"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/Header
+sorepdf:Header rdf:type owl:Class ;
+              rdfs:subClassOf sorep:Representation ;
+              rdfs:label "header"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/SelfDescribingFormat
+sorepdf:SelfDescribingFormat rdf:type owl:Class ;
+                            rdfs:subClassOf sorepdf:Format ;
+                            rdfs:label "self describing format"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/reprDataFormat/ARFF
+sorepdf:ARFF rdf:type owl:NamedIndividual ,
+                     sorepdf:Format ;
+            rdfs:label "arff"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/ASCII
+sorepdf:ASCII rdf:type owl:NamedIndividual ,
+                      sorepdf:Format ;
+             rdfs:label "ascii"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/BigEndian
+sorepdf:BigEndian rdf:type owl:NamedIndividual ,
+                          sorepdf:ByteOrder ;
+                 rdfs:label "big endian"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/Binary
+sorepdf:Binary rdf:type owl:NamedIndividual ,
+                       sorepdf:Format ;
+              rdfs:label "binary"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/FITS
+sorepdf:FITS rdf:type owl:NamedIndividual ,
+                     sorepdf:SelfDescribingFormat ;
+            rdfs:label "fits"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/GRIB
+sorepdf:GRIB rdf:type owl:NamedIndividual ,
+                     sorepdf:Format ;
+            rdfs:label "grib"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/GRIB1
+sorepdf:GRIB1 rdf:type owl:NamedIndividual ,
+                      sorepdf:Format ;
+             rdfs:label "grib1"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/GRIB2
+sorepdf:GRIB2 rdf:type owl:NamedIndividual ,
+                      sorepdf:Format ;
+             rdfs:label "grib2"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/GeoTIFF
+sorepdf:GeoTIFF rdf:type owl:NamedIndividual ,
+                        sorepdf:Format ;
+               rdfs:label "geotiff"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/HDF
+sorepdf:HDF rdf:type owl:NamedIndividual ,
+                    sorepdf:SelfDescribingFormat ;
+           rdfs:label "hdf"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/HDF4
+sorepdf:HDF4 rdf:type owl:NamedIndividual ,
+                     sorepdf:SelfDescribingFormat ;
+            rdfs:label "hdf4"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/HDF5
+sorepdf:HDF5 rdf:type owl:NamedIndividual ,
+                     sorepdf:SelfDescribingFormat ;
+            rdfs:label "hdf5"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/HDFEOS
+sorepdf:HDFEOS rdf:type owl:NamedIndividual ,
+                       sorepdf:SelfDescribingFormat ;
+              sorelm:basedOn sorepdf:HDF4 ;
+              rdfs:label "hdfeos"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/HDFEOS2
+sorepdf:HDFEOS2 rdf:type owl:NamedIndividual ,
+                        sorepdf:SelfDescribingFormat ;
+               sorelm:basedOn sorepdf:HDF5 ;
+               rdfs:label "hdfeos2"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/LittleEndian
+sorepdf:LittleEndian rdf:type owl:NamedIndividual ,
+                             sorepdf:ByteOrder ;
+                    rdfs:label "little endian"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/MiddleEndian
+sorepdf:MiddleEndian rdf:type owl:NamedIndividual ,
+                             sorepdf:ByteOrder ;
+                    rdfs:label "middle endian"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/NetCDF
+sorepdf:NetCDF rdf:type owl:NamedIndividual ,
+                       sorepdf:SelfDescribingFormat ;
+              rdfs:label "netcdf"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/NetCDF3
+sorepdf:NetCDF3 rdf:type owl:NamedIndividual ,
+                        sorepdf:SelfDescribingFormat ;
+               rdfs:label "netcdf3"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/NetCDF4
+sorepdf:NetCDF4 rdf:type owl:NamedIndividual ,
+                        sorepdf:SelfDescribingFormat ;
+               rdfs:label "netcdf4"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/NetworkEndian
+sorepdf:NetworkEndian rdf:type owl:NamedIndividual ,
+                              sorepdf:ByteOrder ;
+                     rdfs:label "network endian"@en .
+
+
+###  http://sweetontology.net/reprDataFormat/Xls
+sorepdf:Xls rdf:type owl:NamedIndividual ,
+                    sorepdf:Format ;
+           rdfs:label "xls"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

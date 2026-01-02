@@ -1,0 +1,160 @@
+@prefix : <http://sweetontology.net/reprSciMethodology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sohur: <http://sweetontology.net/humanResearch/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorepsme: <http://sweetontology.net/reprSciMethodology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sweetontology.net/reprSciMethodology> .
+
+<http://sweetontology.net/reprSciMethodology> rdf:type owl:Ontology ;
+                                               owl:imports <http://sweetontology.net/humanResearch> ;
+                                               rdfs:label "SWEET Ontology Representation Representation Scientific Methodology" ;
+                                               dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                               owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/humanResearch/ExperimentActivity
+sohur:ExperimentActivity rdf:type owl:Class .
+
+
+###  http://sweetontology.net/humanResearch/Research
+sohur:Research rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSciMethodology/AerialPhotography
+sorepsme:AerialPhotography rdf:type owl:Class ;
+                       rdfs:subClassOf sorepsme:Photography ;
+                       rdfs:label "aerial photography"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Altimetry
+sorepsme:Altimetry rdf:type owl:Class ;
+               rdfs:subClassOf sorepsme:Methodology ;
+               rdfs:label "altimetry"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/CarbonDating
+sorepsme:CarbonDating rdf:type owl:Class ;
+                  rdfs:subClassOf sorepsme:Methodology ;
+                  rdfs:label "carbon dating"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Engineering
+sorepsme:Engineering rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsme:ResearchExploration ;
+                 rdfs:label "engineering"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Imaging
+sorepsme:Imaging rdf:type owl:Class ;
+             rdfs:subClassOf sorepsme:ResearchExploration ;
+             rdfs:label "imaging"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Interferometry
+sorepsme:Interferometry rdf:type owl:Class ;
+                    rdfs:subClassOf sorepsme:Methodology ;
+                    rdfs:label "interferometry"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/IsotopeAnalysis
+sorepsme:IsotopeAnalysis rdf:type owl:Class ;
+                     rdfs:subClassOf sorepsme:Methodology ;
+                     rdfs:label "isotope analysis"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Methodology
+sorepsme:Methodology rdf:type owl:Class ;
+                 rdfs:subClassOf sohur:ExperimentActivity ;
+                 rdfs:label "methodology"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Optics
+sorepsme:Optics rdf:type owl:Class ;
+            rdfs:subClassOf sorepsme:ResearchExploration ;
+            rdfs:label "optics"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Photography
+sorepsme:Photography rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsme:ResearchExploration ;
+                 rdfs:label "photography"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Photometry
+sorepsme:Photometry rdf:type owl:Class ;
+                rdfs:subClassOf sorepsme:Methodology ;
+                rdfs:label "photometry"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Polarimetry
+sorepsme:Polarimetry rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsme:Methodology ;
+                 rdfs:label "polarimetry"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/RadioactiveDating
+sorepsme:RadioactiveDating rdf:type owl:Class ;
+                       rdfs:subClassOf sorepsme:Methodology ;
+                       rdfs:label "radioactive dating"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/RemoteSensing
+sorepsme:RemoteSensing rdf:type owl:Class ;
+                   rdfs:subClassOf sorepsme:ResearchExploration ;
+                   rdfs:label "remote sensing"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/ResearchExploration
+sorepsme:ResearchExploration rdf:type owl:Class ;
+                         rdfs:subClassOf sohur:Research ;
+                         rdfs:label "research exploration"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/RetrievalApproach
+sorepsme:RetrievalApproach rdf:type owl:Class ;
+                       rdfs:subClassOf sorepsme:ResearchExploration ;
+                       rdfs:label "retrieval approach"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Spectroscopy
+sorepsme:Spectroscopy rdf:type owl:Class ;
+                  rdfs:subClassOf sorepsme:Methodology ;
+                  rdfs:label "spectroscopy"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Tomography
+sorepsme:Tomography rdf:type owl:Class ;
+                rdfs:subClassOf sorepsme:ResearchExploration ;
+                rdfs:label "tomography"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/XRayDiffraction
+sorepsme:XRayDiffraction rdf:type owl:Class ;
+                     rdfs:subClassOf sorepsme:ResearchExploration ;
+                     rdfs:label "x ray diffraction"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/reprSciMethodology/Active
+sorepsme:Active rdf:type owl:NamedIndividual ,
+                     sorepsme:RetrievalApproach ;
+            rdfs:label "active"@en .
+
+
+###  http://sweetontology.net/reprSciMethodology/Passive
+sorepsme:Passive rdf:type owl:NamedIndividual ,
+                      sorepsme:RetrievalApproach ;
+             rdfs:label "passive"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

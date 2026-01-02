@@ -1,0 +1,240 @@
+@prefix : <http://sweetontology.net/humanDecision/> .
+@prefix sohud: <http://sweetontology.net/humanDecision/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorepmo: <http://sweetontology.net/reprMathOperation/> .
+@prefix soprop: <http://sweetontology.net/prop/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorepmg: <http://sweetontology.net/reprMathGraph/> .
+@prefix sorelh: <http://sweetontology.net/relaHuman/> .
+@prefix sohu: <http://sweetontology.net/human/> .
+@base <http://sweetontology.net/humanDecision> .
+
+<http://sweetontology.net/humanDecision> rdf:type owl:Ontology ;
+                                          owl:imports <http://sweetontology.net/human> ,
+                                                      <http://sweetontology.net/prop> ,
+                                                      <http://sweetontology.net/relaHuman> ,
+                                                      <http://sweetontology.net/reprMathGraph> ,
+                                                      <http://sweetontology.net/reprMathOperation> ;
+                                          rdfs:label "SWEET Ontology Human Decision" ;
+                                          dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                          owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/human/HumanActivity
+sohu:HumanActivity rdf:type owl:Class .
+
+
+###  http://sweetontology.net/human/SocialBehavior
+sohu:SocialBehavior rdf:type owl:Class .
+
+
+###  http://sweetontology.net/humanDecision/Allocation
+sohud:Allocation rdf:type owl:Class ;
+               rdfs:subClassOf sohud:DecisionActivity ;
+               rdfs:label "allocation"@en .
+
+
+###  http://sweetontology.net/humanDecision/Attribute
+sohud:Attribute rdf:type owl:Class ;
+              rdfs:subClassOf sohud:DecisionActivity ;
+              rdfs:label "attribute"@en .
+
+
+###  http://sweetontology.net/humanDecision/BeliefNetwork
+sohud:BeliefNetwork rdf:type owl:Class ;
+                  rdfs:subClassOf sohud:DecisionActivity ;
+                  rdfs:label "belief network"@en .
+
+
+###  http://sweetontology.net/humanDecision/Choice
+sohud:Choice rdf:type owl:Class ;
+           rdfs:subClassOf sohud:DecisionActivity ;
+           rdfs:label "choice"@en .
+
+
+###  http://sweetontology.net/humanDecision/ConsumerBehavior
+sohud:ConsumerBehavior rdf:type owl:Class ;
+                     rdfs:subClassOf sohu:SocialBehavior ;
+                     rdfs:label "consumer behavior"@en .
+
+
+###  http://sweetontology.net/humanDecision/ControlStrategy
+sohud:ControlStrategy rdf:type owl:Class ;
+                    rdfs:subClassOf sohud:DecisionActivity ;
+                    rdfs:label "control strategy"@en .
+
+
+###  http://sweetontology.net/humanDecision/Criteria
+sohud:Criteria rdf:type owl:Class ;
+             rdfs:subClassOf sohud:DecisionActivity ;
+             rdfs:label "criteria"@en .
+
+
+###  http://sweetontology.net/humanDecision/DSS
+sohud:DSS rdf:type owl:Class ;
+        owl:equivalentClass sohud:DecisionSupportSystem ;
+        rdfs:label "dss"@en .
+
+
+###  http://sweetontology.net/humanDecision/Decision
+sohud:Decision rdf:type owl:Class ;
+             rdfs:subClassOf sohud:DecisionActivity ;
+             rdfs:label "decision"@en .
+
+
+###  http://sweetontology.net/humanDecision/DecisionActivity
+sohud:DecisionActivity rdf:type owl:Class ;
+                     rdfs:subClassOf sohu:HumanActivity ;
+                     rdfs:label "decision activity"@en .
+
+
+###  http://sweetontology.net/humanDecision/DecisionMaker
+sohud:DecisionMaker rdf:type owl:Class ;
+                  rdfs:subClassOf sohud:DecisionActivity ,
+                                  soprop:Role ;
+                  rdfs:label "decision maker"@en .
+
+
+###  http://sweetontology.net/humanDecision/DecisionSupportSystem
+sohud:DecisionSupportSystem rdf:type owl:Class ;
+                          rdfs:subClassOf sohud:DecisionActivity ;
+                          rdfs:label "decision support system"@en .
+
+
+###  http://sweetontology.net/humanDecision/DecisionTree
+sohud:DecisionTree rdf:type owl:Class ;
+                 rdfs:subClassOf sohud:DecisionActivity ,
+                                 sorepmg:Tree ;
+                 rdfs:label "decision tree"@en .
+
+
+###  http://sweetontology.net/humanDecision/EnvironmentalControlObjective
+sohud:EnvironmentalControlObjective rdf:type owl:Class ;
+                                  rdfs:subClassOf sohud:ControlStrategy ,
+                                                  sohud:Objective ;
+                                  rdfs:label "environmental control objective"@en .
+
+
+###  http://sweetontology.net/humanDecision/Evaluation
+sohud:Evaluation rdf:type owl:Class ;
+               rdfs:subClassOf sohud:DecisionActivity ;
+               rdfs:label "evaluation"@en .
+
+
+###  http://sweetontology.net/humanDecision/GroupConsensus
+sohud:GroupConsensus rdf:type owl:Class ;
+                   rdfs:subClassOf sohud:DecisionActivity ;
+                   rdfs:label "group consensus"@en .
+
+
+###  http://sweetontology.net/humanDecision/LocationAllocation
+sohud:LocationAllocation rdf:type owl:Class ;
+                       rdfs:subClassOf sohud:Allocation ;
+                       rdfs:label "location allocation"@en .
+
+
+###  http://sweetontology.net/humanDecision/Multiattribute
+sohud:Multiattribute rdf:type owl:Class ;
+                   rdfs:subClassOf sohud:DecisionActivity ;
+                   rdfs:label "multiattribute"@en .
+
+
+###  http://sweetontology.net/humanDecision/Multiobjective
+sohud:Multiobjective rdf:type owl:Class ;
+                   rdfs:subClassOf sohud:DecisionActivity ;
+                   rdfs:label "multiobjective"@en .
+
+
+###  http://sweetontology.net/humanDecision/MultipleDecisionMaker
+sohud:MultipleDecisionMaker rdf:type owl:Class ;
+                          rdfs:subClassOf sohud:DecisionActivity ;
+                          rdfs:label "multiple decision maker"@en .
+
+
+###  http://sweetontology.net/humanDecision/Objective
+sohud:Objective rdf:type owl:Class ;
+              rdfs:subClassOf sohud:DecisionActivity ;
+              rdfs:label "objective"@en .
+
+
+###  http://sweetontology.net/humanDecision/Optimization
+sohud:Optimization rdf:type owl:Class ;
+                 owl:equivalentClass sohud:Optimize ;
+                 rdfs:label "optimization"@en .
+
+
+###  http://sweetontology.net/humanDecision/Optimize
+sohud:Optimize rdf:type owl:Class ;
+             rdfs:subClassOf sohud:DecisionActivity ,
+                             sorepmo:OperationOnFunction ;
+             rdfs:label "optimize"@en .
+
+
+###  http://sweetontology.net/humanDecision/Preference
+sohud:Preference rdf:type owl:Class ;
+               rdfs:subClassOf sohud:DecisionActivity ;
+               rdfs:label "preference"@en .
+
+
+###  http://sweetontology.net/humanDecision/Ranking
+sohud:Ranking rdf:type owl:Class ;
+            rdfs:subClassOf sohud:DecisionActivity ;
+            rdfs:label "ranking"@en .
+
+
+###  http://sweetontology.net/humanDecision/ResourceAllocation
+sohud:ResourceAllocation rdf:type owl:Class ;
+                       rdfs:subClassOf sohud:Allocation ;
+                       rdfs:label "resource allocation"@en .
+
+
+###  http://sweetontology.net/humanDecision/Scenario
+sohud:Scenario rdf:type owl:Class ;
+             rdfs:subClassOf sohud:DecisionActivity ;
+             rdfs:label "scenario"@en .
+
+
+###  http://sweetontology.net/humanDecision/Screening
+sohud:Screening rdf:type owl:Class ;
+              rdfs:subClassOf sohud:DecisionActivity ;
+              rdfs:label "screening"@en .
+
+
+###  http://sweetontology.net/humanDecision/SolutionStrategy
+sohud:SolutionStrategy rdf:type owl:Class ;
+                     rdfs:subClassOf sohud:DecisionActivity ;
+                     rdfs:label "solution strategy"@en .
+
+
+###  http://sweetontology.net/humanDecision/Valuation
+sohud:Valuation rdf:type owl:Class ;
+              rdfs:subClassOf sohud:DecisionActivity ;
+              rdfs:label "valuation"@en .
+
+
+###  http://sweetontology.net/humanDecision/Weighting
+sohud:Weighting rdf:type owl:Class ;
+              rdfs:subClassOf sohud:DecisionActivity ;
+              rdfs:label "weighting"@en .
+
+
+###  http://sweetontology.net/prop/Role
+soprop:Role rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprMathGraph/Tree
+sorepmg:Tree rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprMathOperation/OperationOnFunction
+sorepmo:OperationOnFunction rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,159 @@
+@prefix : <http://sweetontology.net/propSpaceMultidimensional/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soprops: <http://sweetontology.net/propSpace/> .
+@prefix sopropsm: <http://sweetontology.net/propSpaceMultidimensional/> .
+@prefix sopropq: <http://sweetontology.net/propQuantity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorepsu: <http://sweetontology.net/reprSciUnits/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@base <http://sweetontology.net/propSpaceMultidimensional> .
+
+<http://sweetontology.net/propSpaceMultidimensional> rdf:type owl:Ontology ;
+                                                      owl:imports <http://sweetontology.net/propQuantity> ,
+                                                                  <http://sweetontology.net/propSpace> ,
+                                                                  <http://sweetontology.net/relaMath> ,
+                                                                  <http://sweetontology.net/relaSci> ,
+                                                                  <http://sweetontology.net/repr> ,
+                                                                  <http://sweetontology.net/reprSciUnits> ;
+                                                      rdfs:label "SWEET Ontology Property Space Multidimensional" ;
+                                                      dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                                      owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaSci/hasDefaultUnit
+sorelsc:hasDefaultUnit rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://sweetontology.net/relaMath/hasDimension
+sorelm:hasDimension rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/propQuantity/RadiationMediumInteractionQuantity
+sopropq:RadiationMediumInteractionQuantity rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpace/SpatialMeasure
+soprops:SpatialMeasure rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/AngularExtent
+sopropsm:AngularExtent rdf:type owl:Class ;
+                   rdfs:subClassOf soprops:SpatialMeasure ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelsc:hasDefaultUnit ;
+                                     owl:hasValue sorepsu:radian
+                                   ] ;
+                   rdfs:label "angular extent"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/Area
+sopropsm:Area rdf:type owl:Class ;
+          rdfs:subClassOf soprops:SpatialMeasure ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sorelsc:hasDefaultUnit ;
+                            owl:hasValue sorepsu:meterSquared
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sorelm:hasDimension ;
+                            owl:hasValue 2
+                          ] ;
+          rdfs:label "area"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/Capacity
+sopropsm:Capacity rdf:type owl:Class ;
+              rdfs:subClassOf sopropsm:Volume ;
+              rdfs:label "capacity"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/CarbonFootprint
+sopropsm:CarbonFootprint rdf:type owl:Class ;
+                     rdfs:subClassOf sopropsm:Footprint ;
+                     rdfs:label "carbon footprint"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/CrossSection
+sopropsm:CrossSection rdf:type owl:Class ;
+                  owl:equivalentClass sopropsm:CrossSectionalArea ;
+                  rdfs:subClassOf sopropsm:Area ;
+                  rdfs:label "cross section"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/CrossSectionalArea
+sopropsm:CrossSectionalArea rdf:type owl:Class ;
+                        rdfs:label "cross sectional area"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/FieldOfView
+sopropsm:FieldOfView rdf:type owl:Class ;
+                 rdfs:subClassOf sopropsm:AngularExtent ;
+                 rdfs:label "field of view"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/Footprint
+sopropsm:Footprint rdf:type owl:Class ;
+               rdfs:subClassOf sopropsm:Area ;
+               rdfs:label "footprint"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/RadarCrossSection
+sopropsm:RadarCrossSection rdf:type owl:Class ;
+                       rdfs:subClassOf sopropq:RadiationMediumInteractionQuantity ,
+                                       sopropsm:CrossSection ;
+                       rdfs:label "radar cross section"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/Resolution
+sopropsm:Resolution rdf:type owl:Class ;
+                rdfs:subClassOf sopropsm:AngularExtent ;
+                rdfs:label "resolution"@en .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/Volume
+sopropsm:Volume rdf:type owl:Class ;
+            rdfs:subClassOf soprops:SpatialMeasure ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelsc:hasDefaultUnit ;
+                              owl:hasValue sorepsu:meterCubed
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelm:hasDimension ;
+                              owl:hasValue 3
+                            ] ;
+            rdfs:label "volume"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/reprSciUnits/meterCubed
+sorepsu:meterCubed rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/reprSciUnits/meterSquared
+sorepsu:meterSquared rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/reprSciUnits/radian
+sorepsu:radian rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,45 @@
+id: ecto
+title: "Environmental conditions, treatments and exposures ontology"
+github_org: EnvironmentOntology
+repo: environmental-exposure-ontology
+git_main_branch: master
+use_dosdps: TRUE
+export_formats:
+  - owl
+  - obo
+  - json
+import_group:
+  products:
+    - id: chebi
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+    - id: envo
+    - id: exo
+    - id: go
+    - id: npo
+    - id: maxo
+      module_type: filter
+    - id: foodon
+    - id: nbo
+    - id: ncit
+      is_large: TRUE
+    - id: ncbitaxon
+      use_gzipped: TRUE
+      is_large: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+    - id: pato
+    - id: ro
+    - id: uberon 
+    - id: xco
+robot_java_args: '-Xmx8G'
+components:
+  products:
+    - filename: ecto-xrefs.owl
+    - filename: bridge.owl
+    - filename: obsoletes.owl
+allow_equivalents: asserted-only
+robot_report:
+  fail_on : ERROR
+  use_labels : False
+  report_on :
+    - ecto-base.owl

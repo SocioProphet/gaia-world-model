@@ -1,0 +1,14 @@
+mirror/*
+ecto-core.obo
+ecto-core.owl
+ecto.obo
+ecto.owl
+ecto-edit*sv
+*-inferred.owl
+*.tmp
+imports/seed.tsv
+*.qlf
+candidate*
+modules/*.omn
+modules/*.pro
+status/

@@ -1,0 +1,286 @@
+@prefix : <http://sweetontology.net/stateSpace/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sopropsdis: <http://sweetontology.net/propSpaceDistance/> .
+@prefix sopropsm: <http://sweetontology.net/propSpaceMultidimensional/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix soprops: <http://sweetontology.net/propSpace/> .
+@prefix sopropsh: <http://sweetontology.net/propSpaceHeight/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@prefix sostsp: <http://sweetontology.net/stateSpace/> .
+@base <http://sweetontology.net/stateSpace> .
+
+<http://sweetontology.net/stateSpace> rdf:type owl:Ontology ;
+                                       owl:imports <http://sweetontology.net/propSpace> ,
+                                                   <http://sweetontology.net/propSpaceDistance> ,
+                                                   <http://sweetontology.net/propSpaceHeight> ,
+                                                   <http://sweetontology.net/propSpaceMultidimensional> ,
+                                                   <http://sweetontology.net/relaSpace> ;
+                                       rdfs:label "SWEET Ontology State Space" ;
+                                       dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                       owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object properties
+#################################################################
+
+###  http://sweetontology.net/relaSpace/fartherThan
+sorelsp:fartherThan rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/greaterVerticalExtentThan
+sorelsp:greaterVerticalExtentThan rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/largerThan
+sorelsp:largerThan rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/propSpace/SpatialSource
+soprops:SpatialSource rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceDistance/Distance
+sopropsdis:Distance rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceDistance/Size
+sopropsdis:Size rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceHeight/VerticalExtent
+sopropsh:VerticalExtent rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceMultidimensional/AngularExtent
+sopropsm:AngularExtent rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateSpace/Big
+sostsp:Big rdf:type owl:NamedIndividual ,
+                    sopropsdis:Size ;
+           sorelsp:largerThan sostsp:Little ;
+           rdfs:label "big"@en .
+
+
+###  http://sweetontology.net/stateSpace/Close
+sostsp:Close rdf:type owl:NamedIndividual ,
+                      sopropsdis:Distance ;
+             owl:sameAs sostsp:Near ;
+             rdfs:label "close"@en .
+
+
+###  http://sweetontology.net/stateSpace/Coarse
+sostsp:Coarse rdf:type owl:NamedIndividual ,
+                       sopropsdis:Size ;
+              sorelsp:largerThan sostsp:Medium ;
+              rdfs:label "coarse"@en .
+
+
+###  http://sweetontology.net/stateSpace/Deep
+sostsp:Deep rdf:type owl:NamedIndividual ,
+                     sopropsh:VerticalExtent ;
+            sorelsp:greaterVerticalExtentThan sostsp:Shallow ;
+            rdfs:label "deep"@en .
+
+
+###  http://sweetontology.net/stateSpace/Far
+sostsp:Far rdf:type owl:NamedIndividual ,
+                    sopropsdis:Distance ;
+           sorelsp:fartherThan sostsp:Near ;
+           rdfs:label "far"@en .
+
+
+###  http://sweetontology.net/stateSpace/FarField
+sostsp:FarField rdf:type owl:NamedIndividual ,
+                         soprops:SpatialSource ;
+                rdfs:label "far field"@en .
+
+
+###  http://sweetontology.net/stateSpace/Fine
+sostsp:Fine rdf:type owl:NamedIndividual ,
+                     sopropsdis:Size ;
+            rdfs:label "fine"@en .
+
+
+###  http://sweetontology.net/stateSpace/FullDisk
+sostsp:FullDisk rdf:type owl:NamedIndividual ,
+                         sopropsm:AngularExtent ;
+                rdfs:label "full disk"@en .
+
+
+###  http://sweetontology.net/stateSpace/High
+sostsp:High rdf:type owl:NamedIndividual ,
+                     sopropsh:VerticalExtent ;
+            sorelsp:greaterVerticalExtentThan sostsp:Low ;
+            rdfs:label "high"@en .
+
+
+###  http://sweetontology.net/stateSpace/Large
+sostsp:Large rdf:type owl:NamedIndividual ,
+                      sopropsdis:Size ;
+             sorelsp:largerThan sostsp:Medium ;
+             rdfs:label "large"@en .
+
+
+###  http://sweetontology.net/stateSpace/Little
+sostsp:Little rdf:type owl:NamedIndividual ,
+                       sopropsdis:Size ;
+              rdfs:label "little"@en .
+
+
+###  http://sweetontology.net/stateSpace/Low
+sostsp:Low rdf:type owl:NamedIndividual ,
+                    sopropsh:VerticalExtent ;
+           rdfs:label "low"@en .
+
+
+###  http://sweetontology.net/stateSpace/Lower
+sostsp:Lower rdf:type owl:NamedIndividual ,
+                      sopropsh:VerticalExtent ;
+             rdfs:label "lower"@en .
+
+
+###  http://sweetontology.net/stateSpace/Macro
+sostsp:Macro rdf:type owl:NamedIndividual ,
+                      sopropsdis:Size ;
+             sorelsp:largerThan sostsp:Meso ;
+             rdfs:label "macro"@en .
+
+
+###  http://sweetontology.net/stateSpace/Medium
+sostsp:Medium rdf:type owl:NamedIndividual ,
+                       sopropsdis:Size ;
+              sorelsp:largerThan sostsp:Small ;
+              rdfs:label "medium"@en .
+
+
+###  http://sweetontology.net/stateSpace/Meso
+sostsp:Meso rdf:type owl:NamedIndividual ,
+                     sopropsdis:Size ;
+            sorelsp:largerThan sostsp:Micro ;
+            rdfs:label "meso"@en .
+
+
+###  http://sweetontology.net/stateSpace/Micro
+sostsp:Micro rdf:type owl:NamedIndividual ,
+                      sopropsdis:Size ;
+             rdfs:label "micro"@en .
+
+
+###  http://sweetontology.net/stateSpace/Microscopic
+sostsp:Microscopic rdf:type owl:NamedIndividual ,
+                            sopropsdis:Size ;
+                   rdfs:label "microscopic"@en .
+
+
+###  http://sweetontology.net/stateSpace/Mobile
+sostsp:Mobile rdf:type owl:NamedIndividual ,
+                       soprops:SpatialSource ;
+              rdfs:label "mobile"@en .
+
+
+###  http://sweetontology.net/stateSpace/Near
+sostsp:Near rdf:type owl:NamedIndividual ,
+                     sopropsdis:Distance ;
+            owl:sameAs sostsp:Nearby ;
+            rdfs:label "near"@en .
+
+
+###  http://sweetontology.net/stateSpace/Nearby
+sostsp:Nearby rdf:type owl:NamedIndividual ,
+                       sopropsdis:Distance ;
+              rdfs:label "nearby"@en .
+
+
+###  http://sweetontology.net/stateSpace/NonPoint
+sostsp:NonPoint rdf:type owl:NamedIndividual ,
+                         soprops:SpatialSource ;
+                rdfs:label "non point"@en .
+
+
+###  http://sweetontology.net/stateSpace/Point
+sostsp:Point rdf:type owl:NamedIndividual ,
+                      soprops:SpatialSource ;
+             rdfs:label "point"@en .
+
+
+###  http://sweetontology.net/stateSpace/Remote
+sostsp:Remote rdf:type owl:NamedIndividual ,
+                       sopropsdis:Distance ;
+              sorelsp:fartherThan sostsp:Near ;
+              rdfs:label "remote"@en .
+
+
+###  http://sweetontology.net/stateSpace/Resonator
+sostsp:Resonator rdf:type owl:NamedIndividual ,
+                          soprops:SpatialSource ;
+                 rdfs:label "resonator"@en .
+
+
+###  http://sweetontology.net/stateSpace/Shallow
+sostsp:Shallow rdf:type owl:NamedIndividual ,
+                        sopropsh:VerticalExtent ;
+               rdfs:label "shallow"@en .
+
+
+###  http://sweetontology.net/stateSpace/Small
+sostsp:Small rdf:type owl:NamedIndividual ,
+                      sopropsdis:Size ;
+             rdfs:label "small"@en .
+
+
+###  http://sweetontology.net/stateSpace/Stationary
+sostsp:Stationary rdf:type owl:NamedIndividual ,
+                           soprops:SpatialSource ;
+                  rdfs:label "stationary"@en .
+
+
+###  http://sweetontology.net/stateSpace/Tiny
+sostsp:Tiny rdf:type owl:NamedIndividual ,
+                     sopropsdis:Size ;
+            rdfs:label "tiny"@en .
+
+
+###  http://sweetontology.net/stateSpace/Upper
+sostsp:Upper rdf:type owl:NamedIndividual ,
+                      sopropsh:VerticalExtent ;
+             rdfs:label "upper"@en .
+
+
+###  http://sweetontology.net/stateSpace/Widespread
+sostsp:Widespread rdf:type owl:NamedIndividual ,
+                           sopropsdis:Size ;
+                  rdfs:label "widespread"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostsp:Mobile
+                        sostsp:Stationary
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostsp:NonPoint
+                        sostsp:Point
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

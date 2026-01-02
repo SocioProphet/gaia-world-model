@@ -1,0 +1,259 @@
+@prefix : <http://sweetontology.net/reprMathGraph/> .
+@prefix sorepsmo: <http://sweetontology.net/reprSciModel/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorepsg: <http://sweetontology.net/reprSpaceGeometry/> .
+@prefix sorepm: <http://sweetontology.net/reprMath/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorepmg: <http://sweetontology.net/reprMathGraph/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@base <http://sweetontology.net/reprMathGraph> .
+
+<http://sweetontology.net/reprMathGraph> rdf:type owl:Ontology ;
+                                          owl:imports <http://sweetontology.net/relaMath> ,
+                                                      <http://sweetontology.net/reprMath> ,
+                                                      <http://sweetontology.net/reprSciModel> ,
+                                                      <http://sweetontology.net/reprSpaceGeometry> ;
+                                          rdfs:label "SWEET Ontology Representation Mathematics Graph" ;
+                                          dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                          owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Property declarations added to work around cyclic dependencies
+#################################################################
+
+
+###  http://sweetontology.net/relaMath/eachElementHasType
+sorelm:eachElementHasType rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaMath/hasArc
+sorelm:hasArc rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaMath/hasEdge
+sorelm:hasEdge rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaMath/hasOrderedVertexPair
+sorelm:hasOrderedVertexPair rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaMath/hasUnorderedVertexPair
+sorelm:hasUnorderedVertexPair rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaMath/hasVertex
+sorelm:hasVertex rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaMath/hasWeight
+sorelm:hasWeight rdf:type owl:DatatypeProperty .
+
+
+###  http://sweetontology.net/relaMath/hasWeightedEdge
+sorelm:hasWeightedEdge rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/reprMathGraph/Arc
+sorepmg:Arc rdf:type owl:Class ;
+          rdfs:subClassOf sorepmg:StructuralComponent ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sorelm:hasOrderedVertexPair ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:label "arc"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Circuit
+sorepmg:Circuit rdf:type owl:Class ;
+              owl:equivalentClass sorepmg:Cycle ;
+              rdfs:label "circuit"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/ConnectedGraph
+sorepmg:ConnectedGraph rdf:type owl:Class ;
+                     rdfs:subClassOf sorepmg:Graph ;
+                     rdfs:label "connected graph"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Cycle
+sorepmg:Cycle rdf:type owl:Class ;
+            rdfs:subClassOf sorepmg:Path ,
+                            sorepsg:Path ;
+            rdfs:label "cycle"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Digraph
+sorepmg:Digraph rdf:type owl:Class ;
+              owl:equivalentClass sorepmg:DirectedGraph ;
+              rdfs:label "digraph"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/DirectedGraph
+sorepmg:DirectedGraph rdf:type owl:Class ;
+                    rdfs:subClassOf sorepmg:Graph ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelm:hasArc ;
+                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                    ] ;
+                    owl:disjointWith sorepmg:UndirectedGraph ;
+                    rdfs:label "directed graph"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Edge
+sorepmg:Edge rdf:type owl:Class ;
+           rdfs:subClassOf sorepmg:StructuralComponent ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasUnorderedVertexPair ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:label "edge"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Forest
+sorepmg:Forest rdf:type owl:Class ;
+             rdfs:subClassOf sorepmg:Graph ;
+             rdfs:label "forest"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Graph
+sorepmg:Graph rdf:type owl:Class ;
+            rdfs:subClassOf sorepmg:StructuralModel ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelm:hasEdge ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelm:hasVertex ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            rdfs:label "graph"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/IsolatedVertex
+sorepmg:IsolatedVertex rdf:type owl:Class ;
+                     rdfs:subClassOf sorepmg:Vertex ;
+                     rdfs:label "isolated vertex"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/LeafNode
+sorepmg:LeafNode rdf:type owl:Class ;
+               rdfs:subClassOf sorepmg:Node ;
+               rdfs:label "leaf node"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Loop
+sorepmg:Loop rdf:type owl:Class ;
+           rdfs:subClassOf sorepmg:Edge ;
+           rdfs:label "loop"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Network
+sorepmg:Network rdf:type owl:Class ;
+              rdfs:subClassOf sorepmg:Graph ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelm:hasWeightedEdge ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:label "network"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Node
+sorepmg:Node rdf:type owl:Class ;
+           owl:equivalentClass sorepmg:Vertex ;
+           rdfs:label "node"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/OrderedVertexPair
+sorepmg:OrderedVertexPair rdf:type owl:Class ;
+                        rdfs:subClassOf sorepm:OrderedPair ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorelm:eachElementHasType ;
+                                          owl:allValuesFrom sorepmg:Vertex
+                                        ] ;
+                        rdfs:label "ordered vertex pair"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Path
+sorepmg:Path rdf:type owl:Class ;
+           rdfs:subClassOf sorepm:Array ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:eachElementHasType ;
+                             owl:allValuesFrom sorepmg:Edge
+                           ] ;
+           rdfs:label "path"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/StructuralComponent
+sorepmg:StructuralComponent rdf:type owl:Class ;
+                          rdfs:subClassOf sorepmg:StructuralModel ;
+                          rdfs:label "structural component"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/StructuralModel
+sorepmg:StructuralModel rdf:type owl:Class ;
+                      rdfs:subClassOf sorepsmo:Model ;
+                      rdfs:label "structural model"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Tree
+sorepmg:Tree rdf:type owl:Class ;
+           rdfs:subClassOf sorepmg:Graph ;
+           rdfs:label "tree"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/UndirectedGraph
+sorepmg:UndirectedGraph rdf:type owl:Class ;
+                      rdfs:subClassOf sorepmg:Graph ;
+                      rdfs:label "undirected graph"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/UnorderedVertexPair
+sorepmg:UnorderedVertexPair rdf:type owl:Class ;
+                          rdfs:subClassOf sorepm:UnorderedPair ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty sorelm:eachElementHasType ;
+                                            owl:allValuesFrom sorepmg:Vertex
+                                          ] ;
+                          rdfs:label "unordered vertex pair"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Vertex
+sorepmg:Vertex rdf:type owl:Class ;
+             owl:equivalentClass sorepmg:Vertice ;
+             rdfs:subClassOf sorepm:Point ,
+                             sorepmg:StructuralComponent ;
+             rdfs:label "vertex"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/Vertice
+sorepmg:Vertice rdf:type owl:Class ;
+              rdfs:label "vertice"@en .
+
+
+###  http://sweetontology.net/reprMathGraph/WeightedEdge
+sorepmg:WeightedEdge rdf:type owl:Class ;
+                   rdfs:subClassOf sorepmg:Edge ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelm:hasWeight ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   rdfs:label "weighted edge"@en .
+
+
+###  http://sweetontology.net/reprSciModel/Model
+sorepsmo:Model rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/Path
+sorepsg:Path rdf:type owl:Class .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

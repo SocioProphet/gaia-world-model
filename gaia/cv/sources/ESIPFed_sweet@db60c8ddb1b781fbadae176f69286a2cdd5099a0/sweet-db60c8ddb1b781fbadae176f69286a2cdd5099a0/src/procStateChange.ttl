@@ -1,0 +1,246 @@
+@prefix : <http://sweetontology.net/procStateChange/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soprocp: <http://sweetontology.net/procPhysical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorelph: <http://sweetontology.net/relaPhysical/> .
+@prefix sostp: <http://sweetontology.net/statePhysical/> .
+@prefix sostsy: <http://sweetontology.net/stateSystem/> .
+@prefix soprocsc: <http://sweetontology.net/procStateChange/> .
+@base <http://sweetontology.net/procStateChange> .
+
+<http://sweetontology.net/procStateChange> rdf:type owl:Ontology ;
+                                            owl:imports <http://sweetontology.net/procPhysical> ,
+                                                        <http://sweetontology.net/relaPhysical> ,
+                                                        <http://sweetontology.net/statePhysical> ,
+                                                        <http://sweetontology.net/stateSystem> ;
+                                            rdfs:label "SWEET Ontology Process State Change" ;
+                                            dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                            owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaPhysical/from
+sorelph:from rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaPhysical/to
+sorelph:to rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/procStateChange/Boiling
+soprocsc:Boiling rdf:type owl:Class ;
+               rdfs:subClassOf soprocsc:Vaporization ;
+               rdfs:label "boiling"@en .
+
+
+###  http://sweetontology.net/procStateChange/Condensation
+soprocsc:Condensation rdf:type owl:Class ;
+                    rdfs:subClassOf soprocsc:StateChange ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelph:from ;
+                                      owl:hasValue sostp:Gas
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelph:to ;
+                                      owl:hasValue sostp:Liquid
+                                    ] ;
+                    rdfs:label "condensation"@en .
+
+
+###  http://sweetontology.net/procStateChange/Deionization
+soprocsc:Deionization rdf:type owl:Class ;
+                    rdfs:subClassOf soprocsc:StateChange ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelph:from ;
+                                      owl:hasValue sostp:IonizedState
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelph:to ;
+                                      owl:hasValue sostp:NeutralState
+                                    ] ;
+                    rdfs:label "deionization"@en .
+
+
+###  http://sweetontology.net/procStateChange/Deposition
+soprocsc:Deposition rdf:type owl:Class ;
+                  rdfs:subClassOf soprocsc:StateChange ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelph:from ;
+                                    owl:hasValue sostp:Gas
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelph:to ;
+                                    owl:hasValue sostp:Solid
+                                  ] ;
+                  rdfs:label "deposition"@en .
+
+
+###  http://sweetontology.net/procStateChange/Evaporation
+soprocsc:Evaporation rdf:type owl:Class ;
+                   rdfs:subClassOf soprocsc:Vaporization ;
+                   rdfs:label "evaporation"@en .
+
+
+###  http://sweetontology.net/procStateChange/Freezing
+soprocsc:Freezing rdf:type owl:Class ;
+                rdfs:subClassOf soprocsc:StateChange ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelph:from ;
+                                  owl:hasValue sostp:Liquid
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelph:to ;
+                                  owl:hasValue sostp:Solid
+                                ] ;
+                rdfs:label "freezing"@en .
+
+
+###  http://sweetontology.net/procStateChange/Gasification
+soprocsc:Gasification rdf:type owl:Class ;
+                    rdfs:subClassOf soprocsc:StateChange ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelph:to ;
+                                      owl:hasValue sostp:Gas
+                                    ] ;
+                    rdfs:label "gasification"@en .
+
+
+###  http://sweetontology.net/procStateChange/Ionization
+soprocsc:Ionization rdf:type owl:Class ;
+                  rdfs:subClassOf soprocsc:StateChange ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelph:to ;
+                                    owl:hasValue sostp:IonizedState
+                                  ] ;
+                  rdfs:label "ionization"@en .
+
+
+###  http://sweetontology.net/procStateChange/Liquiefaction
+soprocsc:Liquiefaction rdf:type owl:Class ;
+                     rdfs:subClassOf soprocsc:StateChange ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorelph:to ;
+                                       owl:hasValue sostp:Liquid
+                                     ] ;
+                     rdfs:label "liquiefaction"@en .
+
+
+###  http://sweetontology.net/procStateChange/Melting
+soprocsc:Melting rdf:type owl:Class ;
+               rdfs:subClassOf soprocsc:StateChange ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelph:from ;
+                                 owl:hasValue sostp:Solid
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelph:to ;
+                                 owl:hasValue sostp:Liquid
+                               ] ;
+               rdfs:label "melting"@en .
+
+
+###  http://sweetontology.net/procStateChange/PhaseTransition
+soprocsc:PhaseTransition rdf:type owl:Class ;
+                       owl:equivalentClass soprocsc:StateChange ;
+                       rdfs:label "phase transition"@en .
+
+
+###  http://sweetontology.net/procStateChange/Photoionization
+soprocsc:Photoionization rdf:type owl:Class ;
+                       rdfs:subClassOf soprocsc:Ionization ;
+                       rdfs:label "photoionization"@en .
+
+
+###  http://sweetontology.net/procStateChange/Refreezing
+soprocsc:Refreezing rdf:type owl:Class ;
+                  rdfs:subClassOf soprocsc:Freezing ;
+                  rdfs:label "refreezing"@en .
+
+
+###  http://sweetontology.net/procStateChange/StateChange
+soprocsc:StateChange rdf:type owl:Class ;
+                   rdfs:subClassOf soprocp:PhysicalProcess ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelph:from ;
+                                     owl:allValuesFrom sostp:StateOfMatter
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelph:to ;
+                                     owl:allValuesFrom sostp:StateOfMatter
+                                   ] ;
+                   rdfs:label "state change"@en .
+
+
+###  http://sweetontology.net/procStateChange/Sublimation
+soprocsc:Sublimation rdf:type owl:Class ;
+                   rdfs:subClassOf soprocsc:StateChange ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelph:from ;
+                                     owl:hasValue sostp:Solid
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelph:to ;
+                                     owl:hasValue sostp:Gas
+                                   ] ;
+                   rdfs:label "sublimation"@en .
+
+
+###  http://sweetontology.net/procStateChange/Thawing
+soprocsc:Thawing rdf:type owl:Class ;
+               rdfs:subClassOf soprocsc:Melting ;
+               rdfs:label "thawing"@en .
+
+
+###  http://sweetontology.net/procStateChange/Vaporization
+soprocsc:Vaporization rdf:type owl:Class ;
+                    rdfs:subClassOf soprocsc:StateChange ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelph:from ;
+                                      owl:hasValue sostp:Liquid
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelph:to ;
+                                      owl:hasValue sostp:Gas
+                                    ] ;
+                    rdfs:label "vaporization"@en .
+
+
+###  http://sweetontology.net/statePhysical/StateOfMatter
+sostp:StateOfMatter rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/statePhysical/Gas
+sostp:Gas rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/IonizedState
+sostp:IonizedState rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Liquid
+sostp:Liquid rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/NeutralState
+sostp:NeutralState rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Solid
+sostp:Solid rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,134 @@
+@prefix : <http://sweetontology.net/relaClimate/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sophpc: <http://sweetontology.net/phenPlanetClimate/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorepts: <http://sweetontology.net/reprTimeSeason/> .
+@prefix sopropt: <http://sweetontology.net/propTemperature/> .
+@prefix sopropst: <http://sweetontology.net/propSpaceThickness/> .
+@prefix sopropti: <http://sweetontology.net/propTime/> .
+@prefix soreacz: <http://sweetontology.net/realmClimateZone/> .
+@prefix sorelcl: <http://sweetontology.net/relaClimate/> .
+@base <http://sweetontology.net/relaClimate> .
+
+<http://sweetontology.net/relaClimate> rdf:type owl:Ontology ;
+                                        owl:imports <http://sweetontology.net/phenPlanetClimate> ,
+                                                    <http://sweetontology.net/propSpaceThickness> ,
+                                                    <http://sweetontology.net/propTemperature> ,
+                                                    <http://sweetontology.net/propTime> ,
+                                                    <http://sweetontology.net/realmClimateZone> ,
+                                                    <http://sweetontology.net/reprTimeSeason> ;
+                                        rdfs:label "SWEET Ontology Relationships Climate" ;
+                                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                        owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaClimate/hasAverageAnnualPrecipitation
+sorelcl:hasAverageAnnualPrecipitation rdf:type owl:ObjectProperty ;
+                                    rdfs:range sopropst:AverageAnnualPrecipitation ;
+                                    rdfs:label "has average annual precipitation"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageAnnualTemperature
+sorelcl:hasAverageAnnualTemperature rdf:type owl:ObjectProperty ;
+                                  rdfs:range sopropt:MeanAnnualTemperature ;
+                                  rdfs:label "has average annual temperature"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageColdestMonthTemperature
+sorelcl:hasAverageColdestMonthTemperature rdf:type owl:ObjectProperty ;
+                                        rdfs:range sopropt:ColdestMonthTemperature ;
+                                        rdfs:label "has average coldest month temperature"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageDrySeasonPrecipitation
+sorelcl:hasAverageDrySeasonPrecipitation rdf:type owl:ObjectProperty ;
+                                       rdfs:range sopropst:AverageDrySeasonPrecipitation ;
+                                       rdfs:label "has average dry season precipitation"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageITCZDominanceDuration
+sorelcl:hasAverageITCZDominanceDuration rdf:type owl:ObjectProperty ;
+                                      rdfs:range sopropti:AverageITCZDominanceDuration ;
+                                      rdfs:label "has average i t c z dominance duration"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageMonthlyPrecipitation
+sorelcl:hasAverageMonthlyPrecipitation rdf:type owl:ObjectProperty ;
+                                     rdfs:range sopropst:AverageMonthlyPrecipitation ;
+                                     rdfs:label "has average monthly precipitation"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageMonthlyTemperature
+sorelcl:hasAverageMonthlyTemperature rdf:type owl:ObjectProperty ;
+                                   rdfs:range sopropt:MeanMonthlyTemperature ;
+                                   rdfs:label "has average monthly temperature"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageSnowCoverDuration
+sorelcl:hasAverageSnowCoverDuration rdf:type owl:ObjectProperty ;
+                                  rdfs:range sopropti:AverageSnowCoverDuration ;
+                                  rdfs:label "has average snow cover duration"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageWarmestMonthTemperature
+sorelcl:hasAverageWarmestMonthTemperature rdf:type owl:ObjectProperty ;
+                                        rdfs:range sopropt:WarmestMonthTemperature ;
+                                        rdfs:label "has average warmest month temperature"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasAverageWinterDuration
+sorelcl:hasAverageWinterDuration rdf:type owl:ObjectProperty ;
+                               rdfs:range sopropti:AverageWinterDuration ;
+                               rdfs:label "has average winter duration"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasClimateZone
+sorelcl:hasClimateZone rdf:type owl:ObjectProperty ;
+                     owl:equivalentProperty sorelcl:hasClimateZoneType ;
+                     rdfs:label "has climate zone"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasClimateZoneType
+sorelcl:hasClimateZoneType rdf:type owl:ObjectProperty ;
+                         rdfs:range soreacz:ClimateZoneType ;
+                         rdfs:label "has climate zone type"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasDrySeason
+sorelcl:hasDrySeason rdf:type owl:ObjectProperty ;
+                   rdfs:range sorepts:Season ;
+                   rdfs:label "has dry season"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasWarmestMonthTemperature
+sorelcl:hasWarmestMonthTemperature rdf:type owl:ObjectProperty ;
+                                 rdfs:range sopropt:WarmestMonthTemperature ;
+                                 rdfs:label "has warmest month temperature"@en .
+
+
+###  http://sweetontology.net/relaClimate/hasWetSeason
+sorelcl:hasWetSeason rdf:type owl:ObjectProperty ;
+                   rdfs:range sorepts:WetSeason ;
+                   rdfs:label "has wet season"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/reprTimeSeason/Season
+sorepts:Season rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprTimeSeason/WetSeason
+sorepts:WetSeason rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,3785 @@
+ECTO:0000009 ! exposure to far-infrared radiation
+ECTO:0000010 ! exposure to mid-infrared radiation
+ECTO:0000011 ! exposure to near-infrared radiation
+ECTO:0000012 ! exposure to microwave radiation
+ECTO:0000015 ! exposure to environmental material
+ECTO:0000016 ! exposure to dust
+ECTO:0000017 ! exposure to clay
+ECTO:0000018 ! exposure to oil
+ECTO:0000019 ! exposure to particulate matter
+ECTO:0000020 ! exposure to organic material
+ECTO:0000022 ! exposure to snow
+ECTO:0000023 ! exposure to atmospheric carbon dioxide
+ECTO:0000025 ! exposure to volcanic ash
+ECTO:0000026 ! exposure to mineral material
+ECTO:0000027 ! exposure to mine tailing
+ECTO:0000028 ! exposure to permafrost
+ECTO:0000029 ! exposure to waste water
+ECTO:0000030 ! exposure to feces
+ECTO:0000031 ! exposure to sewage
+ECTO:0000032 ! exposure to raw primary sludge
+ECTO:0000033 ! exposure to secondary sludge
+ECTO:0000034 ! exposure to biosolids
+ECTO:0000035 ! exposure to oil sludge
+ECTO:0000036 ! exposure to contaminated sediment
+ECTO:0000037 ! exposure to petroleum contaminated sediment
+ECTO:0000038 ! exposure to contaminated soil
+ECTO:0000039 ! exposure to creosote contaminated soil
+ECTO:0000040 ! exposure to arsenic-rich mud
+ECTO:0000041 ! exposure to borax leachate
+ECTO:0000042 ! exposure to chromate contaminated soil
+ECTO:0000043 ! exposure to xylene contaminated soil
+ECTO:0000045 ! exposure to agricultural soil
+ECTO:0000046 ! exposure to waste material
+ECTO:0000047 ! exposure to chicken breeding waste material
+ECTO:0000048 ! exposure to industrial waste material
+ECTO:0000049 ! exposure to fluvisol
+ECTO:0000050 ! exposure to stagnosol
+ECTO:0000051 ! exposure to technosol
+ECTO:0000052 ! exposure to animal waste material
+ECTO:0000053 ! exposure to hay
+ECTO:0000054 ! exposure to adobe
+ECTO:0000055 ! exposure to bagasse
+ECTO:0000056 ! exposure to organic waste material
+ECTO:0000057 ! exposure to oil contaminated soil
+ECTO:0000058 ! exposure to fuel oil
+ECTO:0000059 ! exposure to petroleum
+ECTO:0000060 ! exposure to silage
+ECTO:0000061 ! exposure to animal manure
+ECTO:0000062 ! exposure to fresh animal manure
+ECTO:0000065 ! exposure to bodily fluid
+ECTO:0000067 ! exposure to amniotic fluid
+ECTO:0000068 ! exposure to excreta
+ECTO:0000069 ! exposure to bile
+ECTO:0000070 ! exposure to environmental system process
+ECTO:0000072 ! exposure to acidification of an aquatic environment
+ECTO:0000075 ! exposure to tsunami
+ECTO:0000076 ! exposure to soil degradation
+ECTO:0000077 ! exposure to material extraction process
+ECTO:0000078 ! exposure to desertification
+ECTO:0000080 ! exposure to atmospheric process
+ECTO:0000081 ! exposure to deforestation
+ECTO:0000084 ! exposure to ocean acidification
+ECTO:0000085 ! exposure to tectonic earthquake
+ECTO:0000086 ! exposure to landslide process
+ECTO:0000088 ! exposure to coastal flooding
+ECTO:0000089 ! exposure to riverine flooding
+ECTO:0000090 ! exposure to flash flooding
+ECTO:0000091 ! exposure to metotsunami
+ECTO:0000092 ! exposure to storm surge process
+ECTO:0000093 ! exposure to areal flooding
+ECTO:0000094 ! exposure to urban flooding
+ECTO:0000095 ! exposure to carbon dioxide emission process
+ECTO:0000096 ! exposure to greenhouse effect
+ECTO:0000097 ! exposure to accumulation of toxins from algal bloom process
+ECTO:0000099 ! exposure to degradation of toxins from algal bloom process
+ECTO:0000101 ! exposure to anthropogenic modulatory intervention process
+ECTO:0000103 ! exposure to air pollution
+ECTO:0000104 ! exposure to soil pollution
+ECTO:0000106 ! exposure to plastic pollution
+ECTO:0000107 ! exposure to urban pollution
+ECTO:0000110 ! exposure to aerosol
+ECTO:0000111 ! exposure to waterborne particulate matter
+ECTO:0000112 ! exposure to respirable suspended particulate matter
+ECTO:0000113 ! exposure to fine respirable suspended particulate matter
+ECTO:0000114 ! exposure to ultrafine respirable suspended particulate matter
+ECTO:0000117 ! exposure to singlet dioxygen
+ECTO:0000167 ! exposure to purines
+ECTO:0000210 ! exposure to prostaglandins E
+ECTO:0000211 ! exposure to prostaglandins F
+ECTO:0000212 ! exposure to prostaglandins I
+ECTO:0000249 ! exposure to cyclodiene organochlorine insecticide
+ECTO:0000283 ! exposure to prostaglandins D
+ECTO:0000310 ! exposure to alpha,alpha-trehalose 6-phosphate(2-)
+ECTO:0000312 ! exposure to L-thyroxine
+ECTO:0000481 ! exposure to transition element
+ECTO:0000482 ! exposure to gold
+ECTO:0000485 ! exposure to chemical with biological effect
+ECTO:0000486 ! exposure to chemical with application
+ECTO:0000487 ! exposure to chemical with chemical role
+ECTO:0000489 ! exposure to EC 2.7.7.7 (DNA-directed DNA polymerase) inhibitor
+ECTO:0000490 ! exposure to electron donor
+ECTO:0000491 ! exposure to electron acceptor
+ECTO:0000492 ! exposure to EC 2.5.1.19 (3-phosphoshikimate 1-carboxyvinyltransferase) inhibitor
+ECTO:0000494 ! exposure to acaricide
+ECTO:0000495 ! exposure to EC 2.2.1.6 (acetolactate synthase) inhibitor
+ECTO:0000496 ! exposure to alkylating agent
+ECTO:0000498 ! exposure to antiviral agent
+ECTO:0000500 ! exposure to phytogenic insecticide
+ECTO:0000501 ! exposure to calcium ionophore
+ECTO:0000502 ! exposure to EC 4.2.1.1 (carbonic anhydrase) inhibitor
+ECTO:0000503 ! exposure to chromophore
+ECTO:0000504 ! exposure to coenzyme
+ECTO:0000505 ! exposure to cofactor
+ECTO:0000506 ! exposure to compatible osmolytes
+ECTO:0000508 ! exposure to defoliant
+ECTO:0000510 ! exposure to ethylene releasers
+ECTO:0000511 ! exposure to fat-soluble vitamin
+ECTO:0000512 ! exposure to iron(3+) chelator
+ECTO:0000514 ! exposure to EC 6.3.1.2 (glutamate--ammonia ligase) inhibitor
+ECTO:0000518 ! exposure to intercalator
+ECTO:0000519 ! exposure to ionophore
+ECTO:0000520 ! exposure to jasmonates
+ECTO:0000522 ! exposure to mitochondrial respiratory-chain inhibitor
+ECTO:0000527 ! exposure to neonicotinoid insectide
+ECTO:0000528 ! exposure to nucleoside antibiotic
+ECTO:0000529 ! exposure to osmolyte
+ECTO:0000532 ! exposure to phytoalexin
+ECTO:0000533 ! exposure to biological pigment
+ECTO:0000534 ! exposure to prosthetic group
+ECTO:0000535 ! exposure to siderophore
+ECTO:0000536 ! exposure to synthetic auxin
+ECTO:0000539 ! exposure to volatile oil component
+ECTO:0000540 ! exposure to water-soluble vitamin
+ECTO:0000541 ! exposure to detergent
+ECTO:0000543 ! exposure to molecular messenger
+ECTO:0000547 ! exposure to agrochemical
+ECTO:0000548 ! exposure to rodenticide
+ECTO:0000549 ! exposure to avicide
+ECTO:0000550 ! exposure to fuel
+ECTO:0000552 ! exposure to reagent
+ECTO:0000553 ! exposure to macronutrient
+ECTO:0000554 ! exposure to tracer
+ECTO:0000555 ! exposure to plant growth retardant
+ECTO:0000558 ! exposure to catalyst
+ECTO:0000559 ! exposure to effector
+ECTO:0000560 ! exposure to fossil fuel
+ECTO:0000561 ! exposure to central nervous system stimulant
+ECTO:0000562 ! exposure to antiinfective agent
+ECTO:0000563 ! exposure to antiparasitic agent
+ECTO:0000564 ! exposure to anthelminthic drug
+ECTO:0000565 ! exposure to antinematodal drug
+ECTO:0000568 ! exposure to psychotropic drug
+ECTO:0000569 ! exposure to anti-inflammatory drug
+ECTO:0000570 ! exposure to anxiolytic drug
+ECTO:0000571 ! exposure to non-steroidal anti-inflammatory drug
+ECTO:0000573 ! exposure to analgesic
+ECTO:0000574 ! exposure to non-narcotic analgesic
+ECTO:0000575 ! exposure to opioid analgesic
+ECTO:0000576 ! exposure to EC 1.2.1.3 [aldehyde dehydrogenase (NAD(+))] inhibitor
+ECTO:0000577 ! exposure to central nervous system depressant
+ECTO:0000578 ! exposure to antipyretic
+ECTO:0000580 ! exposure to hallucinogen
+ECTO:0000581 ! exposure to beta-adrenergic agonist
+ECTO:0000583 ! exposure to sympathomimetic agent
+ECTO:0000585 ! exposure to beta-adrenergic antagonist
+ECTO:0000586 ! exposure to EC 1.14.99.1 (prostaglandin-endoperoxide synthase) inhibitor
+ECTO:0000587 ! exposure to EC 3.1.3.48 (protein-tyrosine-phosphatase) inhibitor
+ECTO:0000589 ! exposure to flavouring agent
+ECTO:0000592 ! exposure to EC 3.5.2.6 (beta-lactamase) inhibitor
+ECTO:0000593 ! exposure to adrenergic uptake inhibitor
+ECTO:0000595 ! exposure to antihypertensive agent
+ECTO:0000596 ! exposure to antilipemic drug
+ECTO:0000598 ! exposure to immunosuppressive agent
+ECTO:0000599 ! exposure to sedative
+ECTO:0000600 ! exposure to antifungal agent
+ECTO:0000601 ! exposure to coccidiostat
+ECTO:0000602 ! exposure to antiprotozoal drug
+ECTO:0000603 ! exposure to anticholesteremic drug
+ECTO:0000604 ! exposure to antirheumatic drug
+ECTO:0000605 ! exposure to lipoxygenase inhibitor
+ECTO:0000606 ! exposure to antimicrobial drug
+ECTO:0000607 ! exposure to antiviral drug
+ECTO:0000608 ! exposure to antibacterial drug
+ECTO:0000609 ! exposure to oxytocic
+ECTO:0000610 ! exposure to local anaesthetic
+ECTO:0000611 ! exposure to trypanocidal drug
+ECTO:0000612 ! exposure to EC 3.1.3.16 (phosphoprotein phosphatase) inhibitor
+ECTO:0000613 ! exposure to MRI contrast agent
+ECTO:0000614 ! exposure to protein kinase inhibitor
+ECTO:0000615 ! exposure to EC 2.7.11.13 (protein kinase C) inhibitor
+ECTO:0000616 ! exposure to EC 3.1.1.8 (cholinesterase) inhibitor
+ECTO:0000617 ! exposure to plant hormone
+ECTO:0000619 ! exposure to alpha-adrenergic antagonist
+ECTO:0000620 ! exposure to phenothiazine antipsychotic drug
+ECTO:0000621 ! exposure to H1-receptor antagonist
+ECTO:0000622 ! exposure to histamine antagonist
+ECTO:0000623 ! exposure to dye
+ECTO:0000624 ! exposure to adrenergic agent
+ECTO:0000625 ! exposure to triazine insecticide
+ECTO:0000626 ! exposure to antimalarial
+ECTO:0000627 ! exposure to anti-arrhythmia drug
+ECTO:0000628 ! exposure to cardiotonic drug
+ECTO:0000629 ! exposure to phytosiderophore
+ECTO:0000630 ! exposure to iron chelator
+ECTO:0000631 ! exposure to chelator
+ECTO:0000633 ! exposure to phytotoxin
+ECTO:0000634 ! exposure to muscarinic agonist
+ECTO:0000635 ! exposure to EC 3.1.1.7 (acetylcholinesterase) inhibitor
+ECTO:0000636 ! exposure to mitochondrial NADH:ubiquinone reductase inhibitor
+ECTO:0000637 ! exposure to EC 1.9.3.1 (cytochrome c oxidase) inhibitor
+ECTO:0000638 ! exposure to sodium channel blocker
+ECTO:0000639 ! exposure to tyrosine kinase inhibitor
+ECTO:0000640 ! exposure to pediculicide
+ECTO:0000641 ! exposure to calcium channel agonist
+ECTO:0000642 ! exposure to calcium channel modulator
+ECTO:0000643 ! exposure to ryanodine receptor modulator
+ECTO:0000645 ! exposure to general anaesthetic
+ECTO:0000646 ! exposure to inhalation anaesthetic
+ECTO:0000647 ! exposure to intravenous anaesthetic
+ECTO:0000648 ! exposure to schistosomicide drug
+ECTO:0000649 ! exposure to GABA-gated chloride channel antagonist
+ECTO:0000650 ! exposure to Bronsted acid
+ECTO:0000651 ! exposure to bridged diphenyl acaricide
+ECTO:0000652 ! exposure to solvent
+ECTO:0000653 ! exposure to photosensitizing agent
+ECTO:0000654 ! exposure to nicotinic acetylcholine receptor agonist
+ECTO:0000655 ! exposure to protein synthesis inhibitor
+ECTO:0000656 ! exposure to antiseptic drug
+ECTO:0000657 ! exposure to disinfectant
+ECTO:0000658 ! exposure to serotonergic antagonist
+ECTO:0000659 ! exposure to fragrance
+ECTO:0000660 ! exposure to polar solvent
+ECTO:0000661 ! exposure to non-polar solvent
+ECTO:0000662 ! exposure to protic solvent
+ECTO:0000663 ! exposure to polar aprotic solvent
+ECTO:0000664 ! exposure to amphiprotic solvent
+ECTO:0000665 ! exposure to antiparkinson drug
+ECTO:0000666 ! exposure to angiogenesis inhibitor
+ECTO:0000667 ! exposure to EC 1.1.1.21 (aldehyde reductase) inhibitor
+ECTO:0000668 ! exposure to dopaminergic agent
+ECTO:0000669 ! exposure to dopaminergic antagonist
+ECTO:0000670 ! exposure to radical scavenger
+ECTO:0000671 ! exposure to fibrin modulating drug
+ECTO:0000672 ! exposure to agonist
+ECTO:0000673 ! exposure to antagonist
+ECTO:0000674 ! exposure to cholinergic antagonist
+ECTO:0000675 ! exposure to muscarinic antagonist
+ECTO:0000676 ! exposure to nicotinic antagonist
+ECTO:0000677 ! exposure to prostaglandin antagonist
+ECTO:0000678 ! exposure to drug metabolite
+ECTO:0000679 ! exposure to peripheral nervous system drug
+ECTO:0000680 ! exposure to anti-asthmatic drug
+ECTO:0000681 ! exposure to anti-ulcer drug
+ECTO:0000682 ! exposure to contraceptive drug
+ECTO:0000683 ! exposure to excitatory amino acid agonist
+ECTO:0000684 ! exposure to androgen
+ECTO:0000686 ! exposure to bronchoconstrictor agent
+ECTO:0000687 ! exposure to keratolytic drug
+ECTO:0000688 ! exposure to dermatologic drug
+ECTO:0000689 ! exposure to P450 inhibitor
+ECTO:0000690 ! exposure to EC 3.1.4.* (phosphoric diester hydrolase) inhibitor
+ECTO:0000691 ! exposure to antidote
+ECTO:0000692 ! exposure to hematologic agent
+ECTO:0000694 ! exposure to prodrug
+ECTO:0000695 ! exposure to GABA modulator
+ECTO:0000696 ! exposure to EC 5.99.1.2 (DNA topoisomerase) inhibitor
+ECTO:0000697 ! exposure to parasympatholytic
+ECTO:0000698 ! exposure to EC 1.6.5.2 [NAD(P)H dehydrogenase (quinone)] inhibitor
+ECTO:0000699 ! exposure to probe
+ECTO:0000701 ! exposure to EC 2.5.1.15 (dihydropteroate synthase) inhibitor
+ECTO:0000702 ! exposure to laxative
+ECTO:0000703 ! exposure to sweetening agent
+ECTO:0000704 ! exposure to potassium channel blocker
+ECTO:0000705 ! exposure to mydriatic agent
+ECTO:0000706 ! exposure to vasoconstrictor agent
+ECTO:0000707 ! exposure to protein denaturant
+ECTO:0000708 ! exposure to nitric oxide donor
+ECTO:0000709 ! exposure to cyclooxygenase 2 inhibitor
+ECTO:0000710 ! exposure to cyclooxygenase 1 inhibitor
+ECTO:0000711 ! exposure to bone density conservation agent
+ECTO:0000712 ! exposure to antithyroid drug
+ECTO:0000713 ! exposure to EC 1.5.1.3 (dihydrofolate reductase) inhibitor
+ECTO:0000714 ! exposure to cross-linking reagent
+ECTO:0000715 ! exposure to abortifacient
+ECTO:0000716 ! exposure to nutraceutical
+ECTO:0000717 ! exposure to antipsoriatic
+ECTO:0000718 ! exposure to EC 5.99.1.3 [DNA topoisomerase (ATP-hydrolysing)] inhibitor
+ECTO:0000719 ! exposure to appetite enhancer
+ECTO:0000720 ! exposure to immunomodulator
+ECTO:0000721 ! exposure to immunological adjuvant
+ECTO:0000722 ! exposure to antiatherogenic agent
+ECTO:0000723 ! exposure to anti-allergic agent
+ECTO:0000724 ! exposure to genotoxin
+ECTO:0000726 ! exposure to allergen
+ECTO:0000727 ! exposure to teratogenic agent
+ECTO:0000728 ! exposure to hepatotoxic agent
+ECTO:0000729 ! exposure to nephrotoxic agent
+ECTO:0000731 ! exposure to EC 2.7.1.137 (phosphatidylinositol 3-kinase) inhibitor
+ECTO:0000732 ! exposure to antiemetic
+ECTO:0000733 ! exposure to EC 2.7.11.1 (non-specific serine/threonine protein kinase) inhibitor
+ECTO:0000734 ! exposure to serotonin uptake inhibitor
+ECTO:0000735 ! exposure to dopamine uptake inhibitor
+ECTO:0000736 ! exposure to antitussive
+ECTO:0000737 ! exposure to muscle relaxant
+ECTO:0000738 ! exposure to ligand
+ECTO:0000739 ! exposure to mitogen
+ECTO:0000740 ! exposure to EC 3.2.1.18 (exo-alpha-sialidase) inhibitor
+ECTO:0000741 ! exposure to proteasome inhibitor
+ECTO:0000742 ! exposure to epitope
+ECTO:0000743 ! exposure to adenosine A2A receptor antagonist
+ECTO:0000744 ! exposure to GHB receptor agonist
+ECTO:0000745 ! exposure to EC 1.1.1.205 (IMP dehydrogenase) inhibitor
+ECTO:0000746 ! exposure to antispasmodic drug
+ECTO:0000747 ! exposure to mu-opioid receptor agonist
+ECTO:0000748 ! exposure to antidiarrhoeal drug
+ECTO:0000751 ! exposure to hapten
+ECTO:0000752 ! exposure to DNA synthesis inhibitor
+ECTO:0000753 ! exposure to phosphoantigen
+ECTO:0000754 ! exposure to antipruritic drug
+ECTO:0000755 ! exposure to electrophilic reagent
+ECTO:0000756 ! exposure to nucleophilic reagent
+ECTO:0000757 ! exposure to progestin
+ECTO:0000759 ! exposure to EC 1.14.18.1 (tyrosinase) inhibitor
+ECTO:0000760 ! exposure to EC 3.6.3.8 (Ca(2+)-transporting ATPase) inhibitor
+ECTO:0000762 ! exposure to opioid receptor agonist
+ECTO:0000763 ! exposure to NMDA receptor antagonist
+ECTO:0000764 ! exposure to anaesthesia adjuvant
+ECTO:0000765 ! exposure to adjuvant
+ECTO:0000766 ! exposure to tubulin modulator
+ECTO:0000767 ! exposure to nephrotoxin
+ECTO:0000768 ! exposure to angiotensin receptor antagonist
+ECTO:0000769 ! exposure to EC 3.5.1.98 (histone deacetylase) inhibitor
+ECTO:0000770 ! exposure to EC 1.14.13.39 (nitric oxide synthase) inhibitor
+ECTO:0000771 ! exposure to microtubule-stabilising agent
+ECTO:0000772 ! exposure to microtubule-destabilising agent
+ECTO:0000773 ! exposure to metabotropic glutamate receptor agonist
+ECTO:0000774 ! exposure to acyl donor
+ECTO:0000775 ! exposure to allelochemical
+ECTO:0000776 ! exposure to signalling molecule
+ECTO:0000777 ! exposure to fuel additive
+ECTO:0000778 ! exposure to hepatoprotective agent
+ECTO:0000779 ! exposure to EC 1.2.3.1 (aldehyde oxidase) inhibitor
+ECTO:0000780 ! exposure to EC 2.4.2.30 (NAD(+) ADP-ribosyltransferase) inhibitor
+ECTO:0000781 ! exposure to food emulsifier
+ECTO:0000782 ! exposure to sphingosine-1-phosphate receptor agonist
+ECTO:0000783 ! exposure to EC 2.3.1.21 (carnitine O-palmitoyltransferase) inhibitor
+ECTO:0000784 ! exposure to T-cell proliferation inhibitor
+ECTO:0000785 ! exposure to reducing agent
+ECTO:0000786 ! exposure to oxidising agent
+ECTO:0000787 ! exposure to EC 3.1.3.1 (alkaline phosphatase) inhibitor
+ECTO:0000788 ! exposure to explosive
+ECTO:0000789 ! exposure to neuroprotective agent
+ECTO:0000790 ! exposure to retinoid X receptor agonist
+ECTO:0000791 ! exposure to Hsp90 inhibitor
+ECTO:0000792 ! exposure to protein kinase C agonist
+ECTO:0000793 ! exposure to food additive
+ECTO:0000794 ! exposure to food acidity regulator
+ECTO:0000795 ! exposure to EC 2.5.1.58 (protein farnesyltransferase) inhibitor
+ECTO:0000796 ! exposure to EC 2.7.8.15 (UDP-N-acetylglucosamine--dolichyl-phosphate N-acetylglucosaminephosphotransferase) inhibitor
+ECTO:0000797 ! exposure to MALDI matrix material
+ECTO:0000798 ! exposure to EC 3.4.22.38 (cathepsin K) inhibitor
+ECTO:0000799 ! exposure to EC 2.5.1.29 (geranylgeranyl diphosphate synthase) inhibitor
+ECTO:0000800 ! exposure to EC 1.3.1.43 (arogenate dehydrogenase) inhibitor
+ECTO:0000801 ! exposure to monolignol
+ECTO:0000802 ! exposure to EC 2.1.2.1 (glycine hydroxymethyltransferase) inhibitor
+ECTO:0000803 ! exposure to NMDA receptor agonist
+ECTO:0000804 ! exposure to flour treatment agent
+ECTO:0000805 ! exposure to uremic toxin
+ECTO:0000806 ! exposure to glycine transporter 1 inhibitor
+ECTO:0000807 ! exposure to glycine receptor agonist
+ECTO:0000808 ! exposure to EC 1.8.1.9 (thioredoxin reductase) inhibitor
+ECTO:0000809 ! exposure to EC 3.1.4.11 (phosphoinositide phospholipase C) inhibitor
+ECTO:0000810 ! exposure to antimitotic
+ECTO:0000811 ! exposure to antimycobacterial drug
+ECTO:0000812 ! exposure to serine protease inhibitor
+ECTO:0000813 ! exposure to anti-HIV agent
+ECTO:0000814 ! exposure to anti-HSV-1 agent
+ECTO:0000815 ! exposure to EC 1.13.11.34 (arachidonate 5-lipoxygenase) inhibitor
+ECTO:0000816 ! exposure to EC 1.13.11.33 (arachidonate 15-lipoxygenase) inhibitor
+ECTO:0000817 ! exposure to EC 3.1.1.3 (triacylglycerol lipase) inhibitor
+ECTO:0000818 ! exposure to EC 4.1.1.19 (arginine decarboxylase) inhibitor
+ECTO:0000819 ! exposure to EC 3.1.3.11 (fructose-bisphosphatase) inhibitor
+ECTO:0000820 ! exposure to adenosine A1 receptor agonist
+ECTO:0000821 ! exposure to EC 2.1.1.79 (cyclopropane-fatty-acyl-phospholipid synthase) inhibitor
+ECTO:0000822 ! exposure to EC 2.1.1.72 [site-specific DNA-methyltransferase (adenine-specific)] inhibitor
+ECTO:0000823 ! exposure to first generation antipsychotic
+ECTO:0000824 ! exposure to second generation antipsychotic
+ECTO:0000825 ! exposure to EC 3.4.21.5 (thrombin) inhibitor
+ECTO:0000826 ! exposure to antimicrobial food preservative
+ECTO:0000827 ! exposure to GABA antagonist
+ECTO:0000828 ! exposure to antidyskinesia agent
+ECTO:0000829 ! exposure to nootropic agent
+ECTO:0000830 ! exposure to radiation protective agent
+ECTO:0000831 ! exposure to tocolytic agent
+ECTO:0000832 ! exposure to cannabinoid receptor agonist
+ECTO:0000833 ! exposure to anti-inflammatory agent
+ECTO:0000834 ! exposure to ryanodine receptor agonist
+ECTO:0000835 ! exposure to EC 3.4.24.3 (microbial collagenase) inhibitor
+ECTO:0000836 ! exposure to gap junctional intercellular communication inhibitor
+ECTO:0000837 ! exposure to retinoic acid receptor agonist
+ECTO:0000838 ! exposure to AP-1 antagonist
+ECTO:0000839 ! exposure to provitamin A
+ECTO:0000840 ! exposure to mTOR inhibitor
+ECTO:0000841 ! exposure to apoptosis inhibitor
+ECTO:0000842 ! exposure to apoptosis inducer
+ECTO:0000843 ! exposure to glutathione depleting agent
+ECTO:0000844 ! exposure to P2Y12 receptor antagonist
+ECTO:0000845 ! exposure to progesterone receptor agonist
+ECTO:0000846 ! exposure to cell dedifferentiation agent
+ECTO:0000847 ! exposure to adenosine A3 receptor antagonist
+ECTO:0000848 ! exposure to actin polymerisation inhibitor
+ECTO:0000849 ! exposure to Aurora kinase inhibitor
+ECTO:0000850 ! exposure to capsaicin receptor antagonist
+ECTO:0000851 ! exposure to PPARalpha agonist
+ECTO:0000852 ! exposure to EC 1.2.1.12 [glyceraldehyde-3-phosphate dehydrogenase (phosphorylating)] inhibitor
+ECTO:0000853 ! exposure to antileishmanial agent
+ECTO:0000854 ! exposure to G-protein-coupled receptor agonist
+ECTO:0000855 ! exposure to Sir2 inhibitor
+ECTO:0000856 ! exposure to prohormone
+ECTO:0000857 ! exposure to adenosine receptor antagonist
+ECTO:0000858 ! exposure to EC 2.3.1.85 (fatty acid synthase) inhibitor
+ECTO:0000859 ! exposure to virulence factor
+ECTO:0000860 ! exposure to aryl hydrocarbon receptor agonist
+ECTO:0000861 ! exposure to EC 1.11.1.11 (L-ascorbate peroxidase) inhibitors
+ECTO:0000862 ! exposure to plant activator
+ECTO:0000863 ! exposure to abscisic acid receptor agonist
+ECTO:0000864 ! exposure to NF-kappaB inhibitor
+ECTO:0000865 ! exposure to cyclooxygenase 3 inhibitor
+ECTO:0000866 ! exposure to ultraviolet filter
+ECTO:0000867 ! exposure to vulnerary
+ECTO:0000868 ! exposure to methionine aminopeptidase 2 inhibitor
+ECTO:0000869 ! exposure to EC 1.17.4.1 (ribonucleoside-diphosphate reductase) inhibitor
+ECTO:0000870 ! exposure to antidote to paracetamol poisoning
+ECTO:0000871 ! exposure to antidote to curare poisoning
+ECTO:0000872 ! exposure to astringent
+ECTO:0000873 ! exposure to chromogenic compound
+ECTO:0000874 ! exposure to EC 5.4.3.2 (lysine 2,3-aminomutase) inhibitor
+ECTO:0000875 ! exposure to ergosterol biosynthesis inhibitor
+ECTO:0000876 ! exposure to EC 1.11.1.6 (catalase) inhibitor
+ECTO:0000880 ! exposure to B vitamin
+ECTO:0000883 ! exposure to xenobiotic metabolite
+ECTO:0000884 ! exposure to greenhouse gas
+ECTO:0000886 ! exposure to nephroprotective agent
+ECTO:0000887 ! exposure to EC 2.7.10.2 (non-specific protein-tyrosine kinase) inhibitor
+ECTO:0000888 ! exposure to EC 3.4.21.26 (prolyl oligopeptidase) inhibitor
+ECTO:0000889 ! exposure to EC 2.5.1.18 (glutathione transferase) inhibitor
+ECTO:0000890 ! exposure to EC 3.1.4.12 (sphingomyelin phosphodiesterase) inhibitor
+ECTO:0000891 ! exposure to EC 3.4.11.14 (cytosol alanyl aminopeptidase) inhibitor
+ECTO:0000892 ! exposure to EC 3.4.14.2 (dipeptidyl-peptidase II) inhibitor
+ECTO:0000902 ! exposure to xenoestrogen
+ECTO:0000904 ! exposure to EC 1.10.99.2 [ribosyldihydronicotinamide dehydrogenase (quinone)] inhibitor
+ECTO:0000905 ! exposure to EC 3.1.3.41 (4-nitrophenylphosphatase) inhibitor
+ECTO:0000906 ! exposure to expectorant
+ECTO:0000907 ! exposure to EC 2.1.1.116 [3'-hydroxy-N-methyl-(S)-coclaurine 4'-O-methyltransferase] inhibitor
+ECTO:0000908 ! exposure to EC 1.1.1.189 (prostaglandin-E2 9-reductase) inhibitor
+ECTO:0000909 ! exposure to histological dye
+ECTO:0000910 ! exposure to food colouring
+ECTO:0000911 ! exposure to EC 3.4.24.83 (anthrax lethal factor endopeptidase) inhibitor
+ECTO:0000912 ! exposure to cardioprotective agent
+ECTO:0000913 ! exposure to EC 1.1.1.188 (prostaglandin-F synthase) inhibitor
+ECTO:0000914 ! exposure to EC 1.1.1.25 (shikimate dehydrogenase) inhibitor
+ECTO:0000915 ! exposure to Maillard reaction product
+ECTO:0000916 ! exposure to EC 1.1.1.267 (1-deoxy-D-xylulose-5-phosphate reductoisomerase) inhibitor
+ECTO:0000917 ! exposure to EC 4.3.1.3 (histidine ammonia-lyase) inhibitor
+ECTO:0000918 ! exposure to EC 3.4.19.3 (pyroglutamyl-peptidase I) inhibitor
+ECTO:0000920 ! exposure to persistent organic pollutant
+ECTO:0000921 ! exposure to EC 4.3.1.15 (diaminopropionate ammonia-lyase) inhibitor
+ECTO:0000922 ! exposure to EC 3.5.1.4 (amidase) inhibitor
+ECTO:0000923 ! exposure to food antioxidant
+ECTO:0000924 ! exposure to food stabiliser
+ECTO:0000925 ! exposure to food thickening agent
+ECTO:0000926 ! exposure to food packaging gas
+ECTO:0000927 ! exposure to food bleaching agent
+ECTO:0000928 ! exposure to food gelling agent
+ECTO:0000929 ! exposure to food propellant
+ECTO:0000930 ! exposure to food component
+ECTO:0000931 ! exposure to environmental contaminant
+ECTO:0000933 ! exposure to EC 2.7.1.1 (hexokinase) inhibitor
+ECTO:0000934 ! exposure to refrigerant
+ECTO:0000935 ! exposure to EC 3.1.1.1 (carboxylesterase) inhibitor
+ECTO:0000936 ! exposure to protein kinase A agonist
+ECTO:0000937 ! exposure to adenylate cyclase agonist
+ECTO:0000938 ! exposure to fundamental metabolite
+ECTO:0000941 ! exposure to plasticiser
+ECTO:0000942 ! exposure to phytochrome chromophore
+ECTO:0000949 ! exposure to EC 3.5.1.19 (nicotinamidase) inhibitor
+ECTO:0000951 ! exposure to skin lightening agent
+ECTO:0000952 ! exposure to EC 1.10.3.1 (catechol oxidase) inhibitor
+ECTO:0000953 ! exposure to EC 1.10.3.2 (laccase) inhibitor
+ECTO:0000954 ! exposure to EC 1.13.11.24 (quercetin 2,3-dioxygenase) inhibitor
+ECTO:0000955 ! exposure to EC 1.4.3.3 (D-amino-acid oxidase) inhibitor
+ECTO:0000956 ! exposure to human blood serum metabolite
+ECTO:0000958 ! exposure to antifungal drug
+ECTO:0000959 ! exposure to antifungal agrochemical
+ECTO:0000960 ! exposure to drug allergen
+ECTO:0000961 ! exposure to autophagy inhibitor
+ECTO:0000962 ! exposure to EC 6.4.1.1 (pyruvate carboxylase) inhibitor
+ECTO:0000963 ! exposure to erythropoietin inhibitor
+ECTO:0000964 ! exposure to elastin-laminin receptor agonist
+ECTO:0000965 ! exposure to paraquat in air
+ECTO:0000966 ! exposure to paraquat in soil
+ECTO:0000967 ! exposure to paraquat in water
+ECTO:0000968 ! exposure to DDT in air
+ECTO:0000969 ! exposure to DDT in soil
+ECTO:0000970 ! exposure to DDT in water
+ECTO:0000971 ! exposure to chemical entity via ingestion
+ECTO:0000972 ! exposure to environmental material via ingestion
+ECTO:0000973 ! exposure to cadmium cation via ingestion
+ECTO:0000974 ! exposure to mercury cation via ingestion
+ECTO:0000975 ! exposure to chemical entity via inhalation
+ECTO:0000976 ! exposure to environmental material via inhalation
+ECTO:0000977 ! exposure to ultrafine respirable suspended particulate matter via inhalation
+ECTO:0000978 ! exposure to aerosol via inhalation
+ECTO:0000979 ! exposure to temperature of surroundings
+ECTO:0000982 ! exposure to pressure of water in surroundings
+ECTO:0000983 ! exposure to increased amount of salt in soil
+ECTO:0000984 ! exposure to increased amount of salt in water
+ECTO:0000985 ! exposure to increased amount of methane in air
+ECTO:0000986 ! exposure to decreased amount of salt in soil
+ECTO:0000987 ! exposure to decreased amount of salt in water
+ECTO:0000988 ! exposure to decreased amount of methane in air
+ECTO:0000989 ! exposure to increased amount of chemical entity in environmental material
+ECTO:0000990 ! exposure to decreased amount of chemical entity in environmental material
+ECTO:0000991 ! exposure to amount of chemical entity in environmental material
+ECTO:0000992 ! exposure to amount of chemical entity in food product
+ECTO:0000993 ! exposure to amount of glucose in food product
+ECTO:0000994 ! exposure to amount of sucrose in food product
+ECTO:0000995 ! exposure to amount of fructose in food product
+ECTO:0000996 ! exposure to amount of protein in food product
+ECTO:0000997 ! exposure to increased amount of chemical entity in food product
+ECTO:0000998 ! exposure to increased amount of glucose in food product
+ECTO:0000999 ! exposure to increased amount of sucrose in food product
+ECTO:0001000 ! exposure to increased amount of fructose in food product
+ECTO:0001001 ! exposure to increased amount of protein in food product
+ECTO:0001002 ! exposure to decreased amount of chemical entity in food product
+ECTO:0001003 ! exposure to decreased amount of glucose in food product
+ECTO:0001004 ! exposure to decreased amount of sucrose in food product
+ECTO:0001005 ! exposure to decreased amount of fructose in food product
+ECTO:0001006 ! exposure to decreased amount of protein in food product
+ECTO:0001008 ! exposure to pulp-bleaching waste water
+ECTO:0001009 ! exposure to chemical entity via mucosa
+ECTO:0001010 ! exposure to chemical entity via integument
+ECTO:0001011 ! exposure to decreased amount of monosaccharide in food product
+ECTO:0001012 ! exposure to increased amount of monosaccharide in food product
+ECTO:0001013 ! exposure to antifeedant
+ECTO:0001014 ! exposure to chemosterilant
+ECTO:0001015 ! exposure to chitin synthesis inhibitor
+ECTO:0001016 ! exposure to cytochrome-b6f complex inhibitor
+ECTO:0001017 ! exposure to ecdysone antagonists
+ECTO:0001018 ! exposure to insect attractant
+ECTO:0001019 ! exposure to insect growth regulator
+ECTO:0001020 ! exposure to juvenile hormone antagonists
+ECTO:0001021 ! exposure to juvenile hormone mimic
+ECTO:0001022 ! exposure to pesticide synergist
+ECTO:0001023 ! exposure to photosynthetic electron-transport chain inhibitor
+ECTO:0001024 ! exposure to photosystem-I inhibitor
+ECTO:0001025 ! exposure to photosystem-II inhibitor
+ECTO:0001026 ! exposure to precocenes
+ECTO:0001027 ! exposure to pyrethroid insecticide
+ECTO:0001028 ! exposure to molluscicide
+ECTO:0001029 ! exposure to acaricide drug
+ECTO:0001030 ! exposure to ecdysone agonist
+ECTO:0001031 ! exposure to carbamate insecticide
+ECTO:0001032 ! exposure to pyrethroid ester insecticide
+ECTO:0001033 ! exposure to antibiotic insecticide
+ECTO:0001034 ! exposure to antibiotic pesticide
+ECTO:0001035 ! exposure to antibiotic acaricide
+ECTO:0001036 ! exposure to antibiotic nematicide
+ECTO:0001037 ! exposure to pyrethroid ester acaricide
+ECTO:0001038 ! exposure to fumigant
+ECTO:0001039 ! exposure to fumigant insecticide
+ECTO:0001040 ! exposure to sulfite ester acaricide
+ECTO:0001041 ! exposure to mite growth regulator
+ECTO:0001042 ! exposure to tetrazine acaricide
+ECTO:0001043 ! exposure to pyrethroid ether insecticide
+ECTO:0001044 ! exposure to pyrethroid ether acaricide
+ECTO:0001045 ! exposure to homopteran inhibitor of chitin biosynthesis
+ECTO:0001046 ! exposure to lepidopteran inhibitor of chitin biosynthesis
+ECTO:0001047 ! exposure to dinitrophenol insecticide
+ECTO:0001048 ! exposure to antifouling biocide
+ECTO:0001049 ! exposure to insect sterilant
+ECTO:0001050 ! exposure to insect repellent
+ECTO:0001051 ! exposure to scabicide
+ECTO:0001052 ! exposure to increased temperature of air in surroundings
+ECTO:0001053 ! exposure to increased temperature of water in surroundings
+ECTO:0001054 ! exposure to increased temperature of environmental material in surroundings
+ECTO:0001055 ! exposure to decreased temperature of air in surroundings
+ECTO:0001056 ! exposure to decreased temperature of water in surroundings
+ECTO:0001057 ! exposure to decreased temperature of environmental material in surroundings
+ECTO:0001058 ! exposure to decreased pressure of water in surroundings
+ECTO:0001059 ! exposure to increased pressure of water in surroundings
+ECTO:0001060 ! exposure to freezing of air in surroundings
+ECTO:0001061 ! exposure to freezing of water in surroundings
+ECTO:0001062 ! exposure to freezing of environmental material in surroundings
+ECTO:0001064 ! exposure to amount of monosaccharide in food product
+ECTO:0001065 ! exposure to amount of cholesterol in food product
+ECTO:0001066 ! exposure to amount of triglyceride in food product
+ECTO:0001067 ! exposure to amount of low-density lipoprotein in food product
+ECTO:0001068 ! exposure to amount of high-density lipoprotein in food product
+ECTO:0001069 ! exposure to increased amount of cholesterol in food product
+ECTO:0001070 ! exposure to increased amount of triglyceride in food product
+ECTO:0001071 ! exposure to increased amount of high-density lipoprotein in food product
+ECTO:0001072 ! exposure to increased amount of low-density lipoprotein in food product
+ECTO:0001073 ! exposure to decreased amount of cholesterol in food product
+ECTO:0001074 ! exposure to decreased amount of triglyceride in food product
+ECTO:0001075 ! exposure to decreased amount of high-density lipoprotein in food product
+ECTO:0001076 ! exposure to decreased amount of low-density lipoprotein in food product
+ECTO:0001077 ! exposure to amount of lipid in food product
+ECTO:0001078 ! lifestyle related exposure
+ECTO:0001079 ! sedentary lifestyle related exposure
+ECTO:0001080 ! coping skills related exposure
+ECTO:0001081 ! personal behavior related exposure
+ECTO:0001082 ! alcohol consumption related exposure
+ECTO:0001087 ! sex behavior related exposure
+ECTO:0001094 ! drug abuse related exposure
+ECTO:0001095 ! alcohol abuse related exposure
+ECTO:0001096 ! social networking related exposure
+ECTO:0001097 ! risk reduction related exposure
+ECTO:0001098 ! dietary practices related exposure
+ECTO:0001099 ! red meat consumption related exposure
+ECTO:0001100 ! high vegetable diet related exposure
+ECTO:0001101 ! feeding regimen related exposure
+ECTO:0001102 ! food consumption related exposure
+ECTO:0001103 ! water consumption related exposure
+ECTO:0001104 ! cooking practices related exposure
+ECTO:0001105 ! flame-broiling related exposure
+ECTO:0001106 ! smoking behavior related exposure
+ECTO:0001107 ! smoking cessation related exposure
+ECTO:0001108 ! exposure to aflatoxin
+ECTO:0001109 ! clinical or research activity related exposure
+ECTO:0001110 ! diagnostic imaging related exposure
+ECTO:0001111 ! ultrasound tomography  related exposure
+ECTO:0001112 ! positron emission tomography  related exposure
+ECTO:0001113 ! radiography  related exposure
+ECTO:0001115 ! xeroradiography  related exposure
+ECTO:0001117 ! myelography  related exposure
+ECTO:0001118 ! bronchography  related exposure
+ECTO:0001119 ! cystography  related exposure
+ECTO:0001120 ! vaginography  related exposure
+ECTO:0001121 ! abdominal radiography  related exposure
+ECTO:0001122 ! chest radiography  related exposure
+ECTO:0001123 ! cholangiography  related exposure
+ECTO:0001124 ! total body radiography  related exposure
+ECTO:0001125 ! violence related exposure
+ECTO:0001126 ! unemployment related exposure
+ECTO:0001128 ! prenatal exposure to cocaine
+ECTO:0001132 ! prenatal exposure to mercury cation
+ECTO:0001133 ! prenatal exposure to methylmercury(1+)
+ECTO:0001134 ! prenatal exposure to tobacco smoking
+ECTO:0001135 ! prenatal exposure to methamphetamine hydrochloride
+ECTO:0001150 ! prenatal exposure to chemical entity
+ECTO:0001153 ! welding occupations related exposure
+ECTO:0001154 ! asbestos mining related exposure
+ECTO:0001155 ! exposure to ciprofloxacin
+ECTO:0001156 ! exposure to norfloxacin
+ECTO:0001157 ! exposure to thiopental
+ECTO:0001158 ! exposure to sulfamethazine
+ECTO:0001159 ! exposure to 1-(3-chlorophenyl)piperazine
+ECTO:0001160 ! exposure to metoclopramide
+ECTO:0001161 ! exposure to 2-hydroxybenzothiazole
+ECTO:0001163 ! exposure to atomoxetine
+ECTO:0001164 ! exposure to sulfapyridine
+ECTO:0001165 ! exposure to 3,3',4,4'-tetrachlorobiphenyl
+ECTO:0001166 ! exposure to (-)-ephedrine
+ECTO:0001167 ! exposure to cyclohexylsulfamic acid
+ECTO:0001168 ! exposure to aminophenazone
+ECTO:0001172 ! exposure to DDE
+ECTO:0001173 ! exposure to benzo[d]isothiazol-3-one
+ECTO:0001174 ! exposure to codeine
+ECTO:0001176 ! exposure to biphenyl-2-ol
+ECTO:0001177 ! exposure to 3,5-dibromo-4-hydroxybenzonitrile
+ECTO:0001178 ! exposure to tylosin
+ECTO:0001179 ! exposure to propachlor
+ECTO:0001180 ! exposure to ametryn
+ECTO:0001181 ! exposure to acetochlor
+ECTO:0001182 ! exposure to alachlor
+ECTO:0001183 ! exposure to albuterol
+ECTO:0001185 ! exposure to prometryn
+ECTO:0001186 ! exposure to amitraz
+ECTO:0001187 ! exposure to amitriptyline
+ECTO:0001188 ! exposure to 1-chloro-2,2-bis(4'-chlorophenyl)ethylene
+ECTO:0001189 ! exposure to simazine
+ECTO:0001190 ! exposure to 4-aminobenzenesulfonic acid
+ECTO:0001191 ! exposure to erythromycin B
+ECTO:0001192 ! exposure to erythromycin E
+ECTO:0001193 ! exposure to erythromycin D
+ECTO:0001194 ! exposure to beta-hexachlorocyclohexane
+ECTO:0001195 ! exposure to reserpine
+ECTO:0001196 ! exposure to aspartame
+ECTO:0001197 ! exposure to phenanthrene
+ECTO:0001199 ! exposure to atenolol
+ECTO:0001200 ! exposure to atorvastatin calcium trihydrate
+ECTO:0001201 ! exposure to azithromycin
+ECTO:0001202 ! exposure to kresoxim-methyl
+ECTO:0001203 ! exposure to bentazone
+ECTO:0001204 ! exposure to terbutylazine
+ECTO:0001205 ! exposure to simeton
+ECTO:0001206 ! exposure to naphthalene-2,7-disulfonic acid
+ECTO:0001207 ! exposure to bicalutamide
+ECTO:0001208 ! exposure to antipyrine
+ECTO:0001209 ! exposure to esatenolol
+ECTO:0001210 ! exposure to iobitridol
+ECTO:0001211 ! exposure to iohexol
+ECTO:0001212 ! exposure to iomeprol
+ECTO:0001213 ! exposure to iopamidol
+ECTO:0001215 ! exposure to saccharin
+ECTO:0001216 ! exposure to sucralose
+ECTO:0001217 ! exposure to sulfadimethoxine
+ECTO:0001218 ! exposure to bupropion
+ECTO:0001221 ! exposure to carbamazepine
+ECTO:0001222 ! exposure to carbetamide
+ECTO:0001223 ! exposure to 1-nitronaphthalene
+ECTO:0001224 ! exposure to 2,2',3,3',5,5'-hexachlorobiphenyl
+ECTO:0001225 ! exposure to 2,2',3,3',6,6'-hexachlorobiphenyl
+ECTO:0001226 ! exposure to 2,2',4,4',5,5'-hexachlorobiphenyl
+ECTO:0001227 ! exposure to 2,2',4,4',6,6'-hexachlorobiphenyl
+ECTO:0001228 ! exposure to 2,2',4,4'-tetrachlorobiphenyl
+ECTO:0001229 ! exposure to 2,2',4,5-tetrachlorobiphenyl
+ECTO:0001230 ! exposure to 2,2',5,5'-tetrachlorobiphenyl
+ECTO:0001231 ! exposure to 2,3',5-trichlorobiphenyl
+ECTO:0001232 ! exposure to 2,3,3',4,5-pentachlorobiphenyl
+ECTO:0001233 ! exposure to 2,3,4,4'-tetrachlorobiphenyl
+ECTO:0001234 ! exposure to 2,3,4,5,6-pentachlorobiphenyl
+ECTO:0001235 ! exposure to 2,3,4,5-tetrachlorobiphenyl
+ECTO:0001236 ! exposure to 2,3,4-trichlorobiphenyl
+ECTO:0001237 ! exposure to 2,3,5,6-tetrachlorobiphenyl
+ECTO:0001238 ! exposure to 2,3,6-trichlorobiphenyl
+ECTO:0001239 ! exposure to 2,4'-dichlorobiphenyl
+ECTO:0001240 ! exposure to 2,4,4',6-tetrachlorobiphenyl
+ECTO:0001241 ! exposure to 2,5-dichlorobiphenyl
+ECTO:0001242 ! exposure to 2,6-dichlorobiphenyl
+ECTO:0001243 ! exposure to 2,6-dimethylnaphthalene
+ECTO:0001244 ! exposure to oxybenzone
+ECTO:0001245 ! exposure to fenobucarb
+ECTO:0001246 ! exposure to 3,5-dichlorobiphenyl
+ECTO:0001247 ! exposure to 4,4'-dichlorobiphenyl
+ECTO:0001248 ! exposure to 4-nonylphenol
+ECTO:0001249 ! exposure to bromodichloromethane
+ECTO:0001252 ! exposure to chlorpyrifos-methyl
+ECTO:0001253 ! exposure to decachlorobiphenyl
+ECTO:0001256 ! exposure to dimethoate
+ECTO:0001257 ! exposure to dinoseb
+ECTO:0001261 ! exposure to prometon
+ECTO:0001262 ! exposure to trifluralin
+ECTO:0001263 ! exposure to tris(2-butoxyethyl) phosphate
+ECTO:0001264 ! exposure to 3,3',5,5'-tetrachlorobiphenyl
+ECTO:0001268 ! exposure to cetirizine
+ECTO:0001269 ! exposure to dichlorobiphenyl
+ECTO:0001270 ! exposure to trichlorobiphenyl
+ECTO:0001271 ! exposure to tetrachlorobiphenyl
+ECTO:0001272 ! exposure to pentachlorobiphenyl
+ECTO:0001273 ! exposure to hexachlorobiphenyl
+ECTO:0001274 ! exposure to (S)-bupropion
+ECTO:0001275 ! exposure to (R)-bupropion
+ECTO:0001276 ! exposure to (trifluoromethyl)benzene
+ECTO:0001277 ! exposure to cilastatin
+ECTO:0001278 ! exposure to citalopram
+ECTO:0001279 ! exposure to clarithromycin
+ECTO:0001280 ! exposure to clindamycin
+ECTO:0001281 ! exposure to clomazone
+ECTO:0001282 ! exposure to clotrimazole
+ECTO:0001283 ! exposure to propazine
+ECTO:0001284 ! exposure to cyanazine
+ECTO:0001285 ! exposure to monuron
+ECTO:0001286 ! exposure to mesotrione
+ECTO:0001287 ! exposure to perfluorononanoic acid
+ECTO:0001288 ! exposure to methoxyfenozide
+ECTO:0001289 ! exposure to tebufenozide
+ECTO:0001290 ! exposure to methiocarb
+ECTO:0001291 ! exposure to rosuvastatin
+ECTO:0001294 ! exposure to pirimiphos-methyl
+ECTO:0001295 ! exposure to cis-chlordane
+ECTO:0001296 ! exposure to trans-chlordane
+ECTO:0001297 ! exposure to alpha-hexachlorocyclohexane
+ECTO:0001298 ! exposure to acetamiprid
+ECTO:0001299 ! exposure to (E)-acetamiprid
+ECTO:0001300 ! exposure to (Z)-acetamiprid
+ECTO:0001301 ! exposure to (E)-imidacloprid
+ECTO:0001302 ! exposure to (Z)-imidacloprid
+ECTO:0001303 ! exposure to thiacloprid
+ECTO:0001304 ! exposure to (Z)-thiacloprid
+ECTO:0001305 ! exposure to (E)-clothianidin
+ECTO:0001306 ! exposure to clothianidin
+ECTO:0001307 ! exposure to thiamethoxam
+ECTO:0001308 ! exposure to (E)-thiamethoxam
+ECTO:0001309 ! exposure to flonicamid
+ECTO:0001310 ! exposure to pymetrozine
+ECTO:0001311 ! exposure to teflubenzuron
+ECTO:0001313 ! exposure to perfluorobutyric acid
+ECTO:0001314 ! exposure to atorvastatin
+ECTO:0001315 ! exposure to metsulfuron methyl
+ECTO:0001316 ! exposure to sitagliptin
+ECTO:0001317 ! exposure to cyprodinil
+ECTO:0001318 ! exposure to azoxystrobin
+ECTO:0001319 ! exposure to decylamine-N,N-dimethyl-N-oxide
+ECTO:0001321 ! exposure to (R)-amphetamine
+ECTO:0001322 ! exposure to gabapentin
+ECTO:0001323 ! exposure to dexibuprofen
+ECTO:0001324 ! exposure to terbutryn
+ECTO:0001325 ! exposure to naphthalene-2-sulfonic acid
+ECTO:0001326 ! exposure to (S)-amphetamine
+ECTO:0001327 ! exposure to ritonavir
+ECTO:0001328 ! exposure to trimethoprim
+ECTO:0001329 ! exposure to benzothiazole
+ECTO:0001330 ! exposure to fluconazole
+ECTO:0001331 ! exposure to diglyme
+ECTO:0001332 ! exposure to pentachlorobenzene
+ECTO:0001333 ! exposure to diclofenac
+ECTO:0001335 ! exposure to bezafibrate
+ECTO:0001336 ! exposure to 2,4,6-tribromophenol
+ECTO:0001337 ! exposure to levibuprofen
+ECTO:0001339 ! exposure to epoxiconazole
+ECTO:0001340 ! exposure to eprosartan
+ECTO:0001342 ! exposure to triclocarban
+ECTO:0001343 ! exposure to ethambutol
+ECTO:0001344 ! exposure to (E)-roxithromycin
+ECTO:0001345 ! exposure to exemestane
+ECTO:0001346 ! exposure to diazepam
+ECTO:0001347 ! exposure to indometacin
+ECTO:0001348 ! exposure to fenoxycarb
+ECTO:0001349 ! exposure to (4-chloro-2-methylphenoxy)acetic acid
+ECTO:0001350 ! exposure to fenpropimorph
+ECTO:0001351 ! exposure to fipronil
+ECTO:0001352 ! exposure to dronedarone
+ECTO:0001353 ! exposure to acamprosate
+ECTO:0001354 ! exposure to (RS)-amphetamine
+ECTO:0001355 ! exposure to chloromethylisothiazolinone
+ECTO:0001357 ! exposure to (R)-atenolol
+ECTO:0001359 ! exposure to hydrochlorothiazide
+ECTO:0001360 ! exposure to (R)-ketamine
+ECTO:0001361 ! exposure to ibuprofen
+ECTO:0001362 ! exposure to ifosfamide
+ECTO:0001363 ! exposure to mephedrone
+ECTO:0001364 ! exposure to irbesartan
+ECTO:0001365 ! exposure to irgarol 1051
+ECTO:0001366 ! exposure to isoprothiolane
+ECTO:0001367 ! exposure to isoproturon
+ECTO:0001368 ! exposure to esketamine
+ECTO:0001369 ! exposure to ketoprofen
+ECTO:0001370 ! exposure to iopromide
+ECTO:0001371 ! exposure to pravastatin
+ECTO:0001372 ! exposure to sotalol
+ECTO:0001373 ! exposure to lamotrigine
+ECTO:0001374 ! exposure to amisulpride
+ECTO:0001375 ! exposure to lenacil
+ECTO:0001376 ! exposure to erythromycin C
+ECTO:0001377 ! exposure to levamisole
+ECTO:0001378 ! exposure to levetiracetam
+ECTO:0001379 ! exposure to lidocaine
+ECTO:0001380 ! exposure to linuron
+ECTO:0001381 ! exposure to mefenamic acid
+ECTO:0001382 ! exposure to metalaxyl
+ECTO:0001383 ! exposure to metamitron
+ECTO:0001384 ! exposure to metazachlor
+ECTO:0001386 ! exposure to methadone
+ECTO:0001387 ! exposure to methamphetamine
+ECTO:0001389 ! exposure to 6alpha-methylprednisolone
+ECTO:0001390 ! exposure to metolachlor
+ECTO:0001391 ! exposure to metoprolol
+ECTO:0001392 ! exposure to metronidazole
+ECTO:0001393 ! exposure to microcystin-LR
+ECTO:0001394 ! exposure to N,N-diethyl-m-toluamide
+ECTO:0001395 ! exposure to malachite green
+ECTO:0001396 ! exposure to naltrexone
+ECTO:0001397 ! exposure to naproxen
+ECTO:0001398 ! exposure to myclobutanil
+ECTO:0001399 ! exposure to benzotriazole
+ECTO:0001400 ! exposure to dichlorprop
+ECTO:0001401 ! exposure to nicosulfuron
+ECTO:0001402 ! exposure to mecoprop
+ECTO:0001403 ! exposure to triphenylmethane
+ECTO:0001404 ! exposure to N-nitrosopiperidine
+ECTO:0001405 ! exposure to 6-phenyl-2,3,5,6-tetrahydroimidazo[2,1-b][1,3]thiazole
+ECTO:0001406 ! exposure to dexamisole
+ECTO:0001407 ! exposure to orbencarb
+ECTO:0001410 ! exposure to oseltamivir
+ECTO:0001411 ! exposure to oxazepam
+ECTO:0001413 ! exposure to cumene hydroperoxide
+ECTO:0001414 ! exposure to pyraclostrobin
+ECTO:0001415 ! exposure to pantoprazole
+ECTO:0001416 ! exposure to 3,4,4',5-Tetrachlorobiphenyl
+ECTO:0001417 ! exposure to 3,4,5,3',4',5'-Hexachlorobiphenyl
+ECTO:0001418 ! exposure to 2,3,4,3',4'-Pentachlorobiphenyl
+ECTO:0001419 ! exposure to 2,3,4,4',5-Pentachlorobiphenyl
+ECTO:0001420 ! exposure to 2,3',4,4',5-Pentachlorobiphenyl
+ECTO:0001421 ! exposure to 2,3',4,4',5'-Pentachlorobiphenyl
+ECTO:0001422 ! exposure to 2,3,3',4,4',5-Hexachlorobiphenyl
+ECTO:0001423 ! exposure to 2,3,3',4,4',5'-Hexachlorobiphenyl
+ECTO:0001424 ! exposure to 2,3',4,4',5,5'-Hexachlorobiphenyl
+ECTO:0001425 ! exposure to 2,3,3',4,4',5,5'-Heptachlorobiphenyl
+ECTO:0001426 ! exposure to asulam
+ECTO:0001427 ! exposure to desmedipham
+ECTO:0001428 ! exposure to phenmedipham
+ECTO:0001429 ! exposure to cyproconazole
+ECTO:0001430 ! exposure to difenoconazole
+ECTO:0001431 ! exposure to tebuconazole
+ECTO:0001432 ! exposure to cymoxanil
+ECTO:0001433 ! exposure to dimethenamid
+ECTO:0001434 ! exposure to fluazifop
+ECTO:0001435 ! exposure to 2-methyl-4-chlorophenoxybutyric acid
+ECTO:0001436 ! exposure to trinexapac-ethyl
+ECTO:0001437 ! exposure to ioxynil
+ECTO:0001438 ! exposure to boscalid
+ECTO:0001439 ! exposure to diflufenican
+ECTO:0001440 ! exposure to chloridazon
+ECTO:0001441 ! exposure to fluazinam
+ECTO:0001442 ! exposure to dimethomorph
+ECTO:0001443 ! exposure to dicamba
+ECTO:0001444 ! exposure to imazamox
+ECTO:0001445 ! exposure to dimethachlor
+ECTO:0001446 ! exposure to fenpropidin
+ECTO:0001447 ! exposure to flufenacet
+ECTO:0001448 ! exposure to flusilazole
+ECTO:0001449 ! exposure to octhilinone
+ECTO:0001450 ! exposure to prosulfocarb
+ECTO:0001451 ! exposure to sulfluramid
+ECTO:0001452 ! exposure to terbumeton
+ECTO:0001453 ! exposure to chlorotoluron
+ECTO:0001454 ! exposure to ethofumesate
+ECTO:0001455 ! exposure to fluroxypyr
+ECTO:0001456 ! exposure to iprovalicarb
+ECTO:0001457 ! exposure to napropamide
+ECTO:0001458 ! exposure to propamocarb
+ECTO:0001459 ! exposure to propaquizafop
+ECTO:0001460 ! exposure to tebutam
+ECTO:0001461 ! exposure to atraton
+ECTO:0001462 ! exposure to secbumeton
+ECTO:0001463 ! exposure to pirimicarb
+ECTO:0001464 ! exposure to 3-iodoprop-2-yn-1-yl butylcarbamate
+ECTO:0001465 ! exposure to thifensulfuron-methyl
+ECTO:0001466 ! exposure to 5-methyl-1H-benzotriazole
+ECTO:0001467 ! exposure to sulcotrione
+ECTO:0001468 ! exposure to perfluoropentanoic acid
+ECTO:0001469 ! exposure to perfluorohexanoic acid
+ECTO:0001471 ! exposure to 6:2 fluorotelomer unsaturated carboxylic acid
+ECTO:0001472 ! exposure to 8:2 fluorotelomer unsaturated carboxylic acid
+ECTO:0001473 ! exposure to climbazole
+ECTO:0001474 ! exposure to tritosulfuron
+ECTO:0001475 ! exposure to acesulfame
+ECTO:0001476 ! exposure to foramsulfuron
+ECTO:0001477 ! exposure to neotame
+ECTO:0001478 ! exposure to perfluorooctane sulfonamidoacetic acid
+ECTO:0001481 ! exposure to perfluorooctyl phosphate
+ECTO:0001482 ! exposure to iooxitalamic acid
+ECTO:0001483 ! exposure to 4,5-dichloro-2-n-octyl-3(2H)-isothiazolone
+ECTO:0001484 ! exposure to sebuthylazine
+ECTO:0001485 ! exposure to pethoxamide
+ECTO:0001486 ! exposure to pinoxaden
+ECTO:0001487 ! exposure to moclobemide
+ECTO:0001488 ! exposure to neohesperidin dihydrochalcone
+ECTO:0001489 ! exposure to 1-(3-(trifluoromethyl)phenyl)piperazine
+ECTO:0001490 ! exposure to 1-benzylpiperazine
+ECTO:0001491 ! exposure to bisperfluorooctyl phosphate
+ECTO:0001492 ! exposure to bisperfluorodecyl phosphate
+ECTO:0001493 ! exposure to perfluorodecyl phosphate
+ECTO:0001494 ! exposure to pendimethalin
+ECTO:0001495 ! exposure to prednisolone
+ECTO:0001496 ! exposure to primidone
+ECTO:0001497 ! exposure to quinmerac
+ECTO:0001498 ! exposure to prochloraz
+ECTO:0001499 ! exposure to propiconazole
+ECTO:0001500 ! exposure to propranolol
+ECTO:0001501 ! exposure to flumequine
+ECTO:0001502 ! exposure to heptachlorobiphenyl
+ECTO:0001503 ! exposure to pyrimethanil
+ECTO:0001504 ! exposure to acid red 4
+ECTO:0001505 ! exposure to (R)-(+)-propranolol
+ECTO:0001506 ! exposure to (R)-salbutamol
+ECTO:0001507 ! exposure to ranitidine
+ECTO:0001508 ! exposure to brilliant green
+ECTO:0001509 ! exposure to brilliant green cation
+ECTO:0001510 ! exposure to Sirius red 4B
+ECTO:0001512 ! exposure to rimsulfuron
+ECTO:0001514 ! exposure to spironolactone
+ECTO:0001515 ! exposure to spiroxamine
+ECTO:0001516 ! exposure to sulfadiazine
+ECTO:0001517 ! exposure to sulfamethoxazole
+ECTO:0001518 ! exposure to sulfathiazole
+ECTO:0001519 ! exposure to 2,6-dichlorobenzonitrile
+ECTO:0001520 ! exposure to telmisartan
+ECTO:0001521 ! exposure to tramadol
+ECTO:0001522 ! exposure to trichlopyr
+ECTO:0001523 ! exposure to trimipramine
+ECTO:0001524 ! exposure to valsartan
+ECTO:0001525 ! exposure to venlafaxine
+ECTO:0001526 ! exposure to verapamil
+ECTO:0001527 ! exposure to phthalate ester
+ECTO:0001562 ! exposure to environmental food contaminant
+ECTO:0001583 ! exposure to antimony via ingestion
+ECTO:0001584 ! exposure to arsenic via ingestion
+ECTO:0001585 ! exposure to cadmium via ingestion
+ECTO:0001586 ! exposure to mercury via ingestion
+ECTO:0001587 ! exposure to food additive via ingestion
+ECTO:0001588 ! exposure to bisphenol A via ingestion
+ECTO:0001590 ! exposure to monosodium glutamate via ingestion
+ECTO:0001592 ! exposure to abamectin
+ECTO:0001593 ! exposure to acephate
+ECTO:0001595 ! exposure to acetamide
+ECTO:0001597 ! exposure to acetophenone
+ECTO:0001602 ! exposure to aldicarb
+ECTO:0001603 ! exposure to (+)-trans-allethrin
+ECTO:0001607 ! exposure to aluminium phosphide
+ECTO:0001610 ! exposure to 4-(phenylazo)aniline
+ECTO:0001614 ! exposure to anilazine
+ECTO:0001620 ! exposure to bendiocarb
+ECTO:0001621 ! exposure to Benzal chloride
+ECTO:0001622 ! exposure to benzamide
+ECTO:0001624 ! exposure to Benzotrichloride
+ECTO:0001625 ! exposure to Benzoyl chloride
+ECTO:0001629 ! exposure to bifenthrin
+ECTO:0001632 ! exposure to Bis(2-chloro-1-methylethyl)ether
+ECTO:0001633 ! exposure to tributylstannane
+ECTO:0001635 ! exposure to bromochlorodifluoromethane
+ECTO:0001638 ! exposure to Brucine
+ECTO:0001650 ! exposure to carbonyl sulfide
+ECTO:0001651 ! exposure to carboxin
+ECTO:0001653 ! exposure to quinomethionate
+ECTO:0001654 ! exposure to Chloramben
+ECTO:0001656 ! exposure to ethyl 2-{[(4-chloro-6-methoxypyrimidin-2-yl)carbamoyl]sulfamoyl}benzoate
+ECTO:0001659 ! exposure to chloroacetic acid
+ECTO:0001660 ! exposure to quaternium-15
+ECTO:0001661 ! exposure to 4-chloroaniline
+ECTO:0001662 ! exposure to Chlorobenzilate
+ECTO:0001670 ! exposure to chlorothalonil
+ECTO:0001672 ! exposure to Guinea Green B
+ECTO:0001673 ! exposure to Sudan II
+ECTO:0001674 ! exposure to ortho-Aminoazotoluene
+ECTO:0001675 ! exposure to Sudan I
+ECTO:0001676 ! exposure to auramine O free base
+ECTO:0001677 ! exposure to Vat Yellow 4
+ECTO:0001679 ! exposure to para-Cresidine
+ECTO:0001683 ! exposure to cresol
+ECTO:0001686 ! exposure to Cycloate
+ECTO:0001689 ! exposure to cyfluthrin
+ECTO:0001690 ! exposure to cyhalothrin
+ECTO:0001691 ! exposure to (2,4-dichlorophenoxy)acetate
+ECTO:0001692 ! exposure to dazomet
+ECTO:0001693 ! exposure to 2,4-DB
+ECTO:0001694 ! exposure to Decabromodiphenyl oxide
+ECTO:0001698 ! exposure to dibenzofuran
+ECTO:0001700 ! exposure to 2,6-dichloro-4-nitroaniline
+ECTO:0001701 ! exposure to 1,3-dichlorobenzene
+ECTO:0001703 ! exposure to dichlorobenzene
+ECTO:0001705 ! exposure to trans-1,4-Dichlorobutene
+ECTO:0001707 ! exposure to 4-chlorophenol
+ECTO:0001708 ! exposure to 2,4-dichlorophenol
+ECTO:0001709 ! exposure to (E)-1,3-dichloropropene
+ECTO:0001711 ! exposure to Diclofop methyl
+ECTO:0001712 ! exposure to dicofol
+ECTO:0001717 ! exposure to diflubenzuron
+ECTO:0001719 ! exposure to Dihydrosafrole
+ECTO:0001720 ! exposure to Dimethipin
+ECTO:0001721 ! exposure to 3,3'-Dimethoxybenzidine
+ECTO:0001726 ! exposure to 2,4-Dimethylphenol
+ECTO:0001732 ! exposure to 4,6-dinitro-o-cresol
+ECTO:0001733 ! exposure to 2,4-dinitrophenol
+ECTO:0001734 ! exposure to 2,4-dinitrotoluene
+ECTO:0001735 ! exposure to 2,6-dinitrotoluene
+ECTO:0001737 ! exposure to dinocap
+ECTO:0001739 ! exposure to Diphenamid
+ECTO:0001742 ! exposure to 1-dodecylguanidine
+ECTO:0001744 ! exposure to ethoprophos
+ECTO:0001747 ! exposure to EPTC
+ECTO:0001751 ! exposure to famphur
+ECTO:0001752 ! exposure to fenarimol
+ECTO:0001753 ! exposure to fenbutatin oxide
+ECTO:0001754 ! exposure to Fenoxaprop ethyl
+ECTO:0001755 ! exposure to fenpropathrin
+ECTO:0001757 ! exposure to fenvalerate
+ECTO:0001759 ! exposure to Fluazifop butyl
+ECTO:0001760 ! exposure to Fluometuron
+ECTO:0001762 ! exposure to fluvalinate
+ECTO:0001763 ! exposure to folpet
+ECTO:0001764 ! exposure to Fomesafen
+ECTO:0001768 ! exposure to hexachlorophene
+ECTO:0001770 ! exposure to Hexazinone
+ECTO:0001771 ! exposure to hydramethylnon
+ECTO:0001777 ! exposure to enilconazole
+ECTO:0001780 ! exposure to Isodrin
+ECTO:0001781 ! exposure to isoprene
+ECTO:0001783 ! exposure to Isosafrole
+ECTO:0001784 ! exposure to trifluoromethyl group
+ECTO:0001786 ! exposure to lithium carbonate
+ECTO:0001790 ! exposure to maneb
+ECTO:0001792 ! exposure to 1,3-benzothiazole-2-thiol
+ECTO:0001793 ! exposure to Methazole
+ECTO:0001799 ! exposure to O-methyleugenol
+ECTO:0001803 ! exposure to methyl isothiocyanate
+ECTO:0001806 ! exposure to N-Methylolacrylamide
+ECTO:0001807 ! exposure to 2-methylpyridine
+ECTO:0001808 ! exposure to metiram
+ECTO:0001810 ! exposure to Molinate
+ECTO:0001811 ! exposure to molybdenum trioxide
+ECTO:0001813 ! exposure to nabam
+ECTO:0001823 ! exposure to 2-methoxy-5-nitroaniline
+ECTO:0001826 ! exposure to 2-chloroethyl group
+ECTO:0001828 ! exposure to 2-nitrophenol
+ECTO:0001829 ! exposure to 4-nitrophenol
+ECTO:0001831 ! exposure to N-Nitrosodi-n-butylamine
+ECTO:0001834 ! exposure to N-Nitrosodiphenylamine
+ECTO:0001835 ! exposure to N-Nitrosodi-n-propylamine
+ECTO:0001838 ! exposure to N-nitrosomorpholine
+ECTO:0001839 ! exposure to 5-nitro-o-toluidine
+ECTO:0001840 ! exposure to norflurazon
+ECTO:0001841 ! exposure to Octachlorostyrene
+ECTO:0001842 ! exposure to oryzalin
+ECTO:0001844 ! exposure to oxydemeton-methyl
+ECTO:0001845 ! exposure to Oxyfluorfen
+ECTO:0001846 ! exposure to paraldehyde
+ECTO:0001847 ! exposure to paraquat dichloride
+ECTO:0001848 ! exposure to p-nitrophenyl group
+ECTO:0001849 ! exposure to Pebulate
+ECTO:0001850 ! exposure to pentan-3-yl group
+ECTO:0001854 ! exposure to permethrin
+ECTO:0001856 ! exposure to phenolphthalein
+ECTO:0001857 ! exposure to phenothrin
+ECTO:0001858 ! exposure to 1,2-phenylenediamine
+ECTO:0001859 ! exposure to 1,3-phenylenediamine
+ECTO:0001861 ! exposure to phenytoin
+ECTO:0001864 ! exposure to phosphorus molecular entity
+ECTO:0001868 ! exposure to piperonyl butoxide
+ECTO:0001869 ! exposure to potassium bromate
+ECTO:0001870 ! exposure to profenofos
+ECTO:0001871 ! exposure to isopropyl group
+ECTO:0001872 ! exposure to Pronamide
+ECTO:0001874 ! exposure to propargite
+ECTO:0001876 ! exposure to propetamphos
+ECTO:0001880 ! exposure to propene
+ECTO:0001883 ! exposure to quinoline
+ECTO:0001885 ! exposure to pentachloronitrobenzene
+ECTO:0001886 ! exposure to Quizalofop-ethyl
+ECTO:0001887 ! exposure to resmethrin
+ECTO:0001889 ! exposure to Sethoxydim
+ECTO:0001893 ! exposure to sodium nitrite
+ECTO:0001894 ! exposure to styrene oxide
+ECTO:0001898 ! exposure to tert-butyl group
+ECTO:0001900 ! exposure to Terbacil
+ECTO:0001901 ! exposure to 3,3',5,5'-tetrabromobisphenol A
+ECTO:0001903 ! exposure to tetrachlorvinphos
+ECTO:0001904 ! exposure to Tetracycline hydrochloride
+ECTO:0001907 ! exposure to tetramethrin
+ECTO:0001909 ! exposure to Thiobencarb
+ECTO:0001910 ! exposure to 4,4'-Thiodianiline
+ECTO:0001911 ! exposure to thiodicarb
+ECTO:0001914 ! exposure to thorium dioxide
+ECTO:0001917 ! exposure to triadimefon
+ECTO:0001918 ! exposure to Tri-allate
+ECTO:0001920 ! exposure to tribenuron methyl
+ECTO:0001921 ! exposure to tribufos
+ECTO:0001922 ! exposure to trichlorfon
+ECTO:0001924 ! exposure to 2,4,5-trichlorophenol
+ECTO:0001928 ! exposure to triforine
+ECTO:0001930 ! exposure to 2,3,5-trimethylphenyl methylcarbamate
+ECTO:0001931 ! exposure to fentin chloride
+ECTO:0001932 ! exposure to fentin hydroxide
+ECTO:0001934 ! exposure to trypan blue
+ECTO:0001936 ! exposure to vanadium molecular entity
+ECTO:0001937 ! exposure to vinclozolin
+ECTO:0001943 ! exposure to 2,6-dimethylaniline
+ECTO:0001945 ! exposure to zineb
+ECTO:0001946 ! exposure to chlorophenol
+ECTO:0001947 ! exposure to diisocyanate
+ECTO:0001952 ! exposure to hydrogen acceptor
+ECTO:0001955 ! exposure to L-lysine
+ECTO:0001957 ! exposure to benzo[a]pyrene
+ECTO:0001961 ! exposure to 5-Methylchrysene
+ECTO:0001965 ! exposure to 3,3'-Dimethoxybenzidine-4,4'-diisocyanate
+ECTO:0001968 ! exposure to 1,5-Naphthalene diisocyanate
+ECTO:0001969 ! exposure to 1,2,3,4,7,8-Hexachlorodibenzodioxin
+ECTO:0001970 ! exposure to 1,2,3,6,7,8-Hexachlorodibenzodioxin
+ECTO:0001971 ! exposure to 1,2,3,4,6,7,8-Heptachlorodibenzodioxin
+ECTO:0001972 ! exposure to 2,3,7,8-Tetrachlorodibenzofuran
+ECTO:0001973 ! exposure to 1,2,3,4,6,7,8-Heptachlorodibenzofuran
+ECTO:0001975 ! exposure to sex hormone
+ECTO:0001994 ! exposure to potassium chloride
+ECTO:0001995 ! exposure to technetium-99
+ECTO:0001999 ! exposure to 4-octylphenol
+ECTO:0002011 ! exposure to lithium chloride
+ECTO:0002014 ! exposure to titanium dioxide nanoparticle
+ECTO:0002017 ! exposure to pentolinium tartrate
+ECTO:0002033 ! social circumstances related exposure
+ECTO:0002034 ! socioeconomic factors related exposure
+ECTO:0002035 ! surgical manipulation of nerve
+ECTO:0002036 ! surgical manipulation of kidney
+ECTO:0002037 ! surgical manipulation of appendage
+ECTO:0002038 ! surgical manipulation of gland
+ECTO:0002039 ! surgical manipulation of organ
+ECTO:0002040 ! surgical implantation of organ
+ECTO:0002046 ! surgical removal of organ
+ECTO:0002047 ! surgical removal of kidney
+ECTO:0002051 ! exposure to heroin
+ECTO:0002052 ! exposure to mu-opioid receptor antagonist
+ECTO:0002053 ! exposure to neurotransmitter agent
+ECTO:0002058 ! exposure to food preservative
+ECTO:0002059 ! exposure to triclosan
+ECTO:0002060 ! exposure to organotin compound
+ECTO:0002061 ! exposure to organotin acaricide
+ECTO:0002121 ! exposure to 1,3,5-trinitro-1,3,5-triazinane
+ECTO:0002160 ! exposure to formimidic acid
+ECTO:0002162 ! exposure to germane
+ECTO:0002163 ! exposure to alditol
+ECTO:0002274 ! exposure to 4-hydroxy-3-(3-oxo-1-phenylbutyl)-1-benzopyran-2-one
+ECTO:0002276 ! exposure to zinc dichloride
+ECTO:0002279 ! exposure to fentanyl
+ECTO:0002283 ! exposure to flame retardant
+ECTO:0002284 ! exposure via injection
+ECTO:0002285 ! exposure to heroin via injection
+ECTO:0002286 ! exposure to heroin via inhalation
+ECTO:0002287 ! exposure to methamphetamine via injection
+ECTO:0002288 ! exposure to methamphetamine via inhalation
+ECTO:0002296 ! exposure to copper(2+)
+ECTO:0002300 ! exposure to Enterovirus infection
+ECTO:0002302 ! exposure to Papillomaviridae infection
+ECTO:0002303 ! exposure to organochlorine insecticide
+ECTO:0002306 ! exposure to polychlorinated dibenzodioxines and related compounds
+ECTO:0002308 ! exposure to polychlorinated dibenzofuran
+ECTO:0002309 ! exposure to disodium 5'-guanylate
+ECTO:0002310 ! exposure to phenylureas
+ECTO:0002311 ! exposure to chlorofluorocarbon
+ECTO:0002328 ! exposure to Bis(2-chloroethyl)ether
+ECTO:0002329 ! exposure to Dalapon
+ECTO:0002333 ! exposure to 2-Methyl-4-heptanone
+ECTO:0002336 ! exposure to Dioxation
+ECTO:0002360 ! exposure to 4-Chloronitrobenzene
+ECTO:0002365 ! exposure to N-Phenyl-2-naphthylamine
+ECTO:0002367 ! exposure to isophthalonitrile
+ECTO:0002380 ! exposure to N-methyl-N-picrylnitramine
+ECTO:0002386 ! exposure to Vinylidene fluoride
+ECTO:0002390 ! dietary sweetening agent exposure
+ECTO:0002391 ! dietary food preservative exposure
+ECTO:0002392 ! dietary food colouring exposure
+ECTO:0002393 ! dietary flavouring agent exposure
+ECTO:0002394 ! dietary food emulsifier exposure
+ECTO:0002395 ! dietary chemical entity exposure
+EO:0001001 ! plant treatment
+EO:0001003 ! organic chemical treatment
+EO:0001004 ! inorganic chemical treatment
+EO:0001007 ! mineral salt treatment
+EO:0001008 ! sulfate treatment
+EO:0001009 ! inorganic anion treatment
+EO:0001019 ! organic gas treatment
+EO:0001023 ! agar growth medium
+EO:0001024 ! vertical agar growth medium
+EO:0001025 ! urea nitrogen regimen
+EO:0001026 ! MTA nitrogen regimen
+EO:0001027 ! alanine nitrogen regimen
+EO:0001028 ! glutamate nitrogen regimen
+EO:0001029 ! arginine nitrogen regimen
+EO:0001030 ! ornithine nitrogen regimen
+EO:0001031 ! glutamine nitrogen regimen
+EO:0001032 ! Hymenoptera insect plant treatment
+EO:0001033 ! parasitic wasp insect plant treatment
+EO:0001034 ! Pseudomonas syringae plant treatment
+EO:0001035 ! stratification treatment
+EO:0001036 ! chemical stress treatment
+EO:0001040 ! light-induced photooxidative stress treatment
+EO:0001041 ! limited zinc treatment
+EO:0001042 ! limited boron treatment
+EO:0001043 ! limited glucose treatment
+EO:0001044 ! limited carbon regimen
+EO:0001045 ! limited sulfate treatment
+EO:0001046 ! limited phosphate treatment
+EO:0001047 ! limited iron regimen
+EO:0001048 ! limited molybdenum regimen
+EO:0001049 ! limited magnesium regimen
+EO:0001050 ! limited nitrogen regimen
+EO:0001051 ! limited potassium regimen
+EO:0001052 ! limited sulfur regimen
+EO:0001053 ! limited manganese regimen
+EO:0001054 ! limited nitrate regimen
+EO:0001055 ! inorganic gas treatment
+EO:0001056 ! elevated carbon dioxide treatment
+EO:0001057 ! abnormal stratification treatment
+EO:0001058 ! Glomeromycota treatment
+EO:0001059 ! arbuscular mycorrhizal fungal treatment
+EO:0001061 ! polyethylene glycol treatment
+EO:0007003 ! temperate region
+EO:0007004 ! loam content
+EO:0007005 ! Viridiplantae plant treatment
+EO:0007008 ! Monochoria vaginalis
+EO:0007009 ! Eudicotyledon
+EO:0007010 ! Sagittaria montevidensis
+EO:0007011 ! Sagittaria longiloba
+EO:0007012 ! Heteranthera limosa
+EO:0007013 ! Echinodorus berteroi
+EO:0007014 ! Echinodorus cordifolius
+EO:0007015 ! Ammannia spp.
+EO:0007016 ! Bacopa spp.
+EO:0007017 ! Cyperus difformis
+EO:0007018 ! Scirpus fluviatilis
+EO:0007019 ! Cyperus iria
+EO:0007020 ! Scirpus mucronatus
+EO:0007021 ! Alisma plantago-aquatica
+EO:0007022 ! Liliopsida
+EO:0007023 ! gaseous treatment
+EO:0007024 ! aerobic environment
+EO:0007026 ! Echinochloa glabrescens
+EO:0007027 ! seasonal environment
+EO:0007028 ! Echinochloa crus-galli
+EO:0007029 ! Typha spp.
+EO:0007030 ! Leptochloa fascicularis
+EO:0007031 ! Mammalia
+EO:0007033 ! rabi season
+EO:0007034 ! kharif season
+EO:0007035 ! winter season
+EO:0007036 ! summer season
+EO:0007037 ! spring season
+EO:0007038 ! autumn season
+EO:0007043 ! non-mineral nutrient regimen
+EO:0007044 ! mineral treatment
+EO:0007045 ! primary plant macronutrient regimen
+EO:0007046 ! secondary macronutrient
+EO:0007047 ! other nutrient regimen
+EO:0007049 ! soil environment
+EO:0007050 ! soil texture
+EO:0007051 ! sand content
+EO:0007052 ! organic matter content
+EO:0007053 ! silt content
+EO:0007054 ! clay content
+EO:0007055 ! Cochliobolus spp.
+EO:0007058 ! soil pH environment
+EO:0007059 ! acidic pH soil environment
+EO:0007060 ! Sphaerulina oryzina treatment
+EO:0007061 ! tropical region
+EO:0007062 ! basic pH soil environment
+EO:0007064 ! ecological environment
+EO:0007065 ! Entyloma oryzae
+EO:0007067 ! hydroponic plant culture media
+EO:0007070 ! indole acetic acid treatment
+EO:0007071 ! suspension cell culture medium
+EO:0007072 ! Microdochium oryzae
+EO:0007073 ! Basidiomycota treatment
+EO:0007076 ! moderate light intensity regimen
+EO:0007077 ! Tilletia barclayana
+EO:0007078 ! light quantity regimen
+EO:0007079 ! sulfate fertilizer regimen
+EO:0007081 ! river bank region
+EO:0007082 ! sea coast region
+EO:0007083 ! Phoma sorghina
+EO:0007084 ! other animals
+EO:0007085 ! fertilizer regimen
+EO:0007086 ! chemical fertilizer regimen
+EO:0007087 ! natural fertilizer regimen
+EO:0007088 ! Ceratobasidium oryzae-sativae
+EO:0007089 ! bone meal regimen
+EO:0007090 ! ammonium nitrate regimen
+EO:0007091 ! seaweed extract regimen
+EO:0007092 ! wood ash regimen
+EO:0007093 ! fish meal regimen
+EO:0007094 ! sodium nitrate regimen
+EO:0007095 ! calcium nitrate regimen
+EO:0007096 ! potassium nitrate regimen
+EO:0007097 ! ammonium sulfate regimen
+EO:0007099 ! potassium sulfate regimen
+EO:0007100 ! superphosphate regimen
+EO:0007101 ! urea regimen
+EO:0007102 ! nitrogen fertilizer regimen
+EO:0007103 ! phosphate fertilizer regimen
+EO:0007104 ! NPK fertilizer regimen
+EO:0007106 ! Stramenopiles
+EO:0007107 ! Ascomycota treatment
+EO:0007109 ! ssRNA positive-strand virus with no DNA stage
+EO:0007110 ! dsRNA virus
+EO:0007111 ! ssRNA negative-strand virus
+EO:0007112 ! retroid virus
+EO:0007113 ! rice necrosis mosaic virus
+EO:0007114 ! Lepidoptera
+EO:0007115 ! Spodoptera spp.
+EO:0007116 ! Hemiptera insect plant treatment
+EO:0007117 ! Pseudaletia spp.
+EO:0007118 ! Gibberella spp.
+EO:0007119 ! Dipteran insect plant treatment
+EO:0007120 ! Coleoptera
+EO:0007121 ! Thysanoptera
+EO:0007122 ! Chilo
+EO:0007123 ! Eysarcoris trimaculatus
+EO:0007126 ! Hirschmaniella spp.
+EO:0007127 ! Meloidogyne spp.
+EO:0007128 ! intermittent light regimen
+EO:0007130 ! near infra-red light regimen
+EO:0007131 ! middle infra-red light regimen
+EO:0007132 ! far infra-red light regimen
+EO:0007133 ! basic pH growth media environment
+EO:0007134 ! acidic pH growth media environment
+EO:0007135 ! Magnaporthe spp.
+EO:0007136 ! Achlya spp.
+EO:0007137 ! Echinochloa spp.
+EO:0007138 ! Echinodorus spp.
+EO:0007139 ! Sagittaria spp.
+EO:0007140 ! Scirpus spp.
+EO:0007141 ! Cyperus spp.
+EO:0007142 ! Scirpophaga spp.
+EO:0007143 ! Erwinia plant treatment
+EO:0007144 ! Pseudomonas plant treatment
+EO:0007145 ! Xanthomonas plant treatment
+EO:0007147 ! plant growth medium
+EO:0007148 ! Xanthomonas oryzae
+EO:0007149 ! chemical mutagen treatment
+EO:0007153 ! radiation quantity regimen
+EO:0007154 ! radiation quality treatment
+EO:0007155 ! soil type
+EO:0007156 ! clay soil
+EO:0007157 ! loam soil
+EO:0007158 ! sandy soil
+EO:0007159 ! sandy loam soil
+EO:0007162 ! continuous light regimen
+EO:0007163 ! day light regimen
+EO:0007164 ! standing deep water
+EO:0007166 ! Pythium spinosum
+EO:0007168 ! hygromycin treatment
+EO:0007172 ! flood water
+EO:0007173 ! warm/hot temperature regimen
+EO:0007174 ! cold temperature regimen
+EO:0007175 ! temperature environment
+EO:0007176 ! altitute
+EO:0007177 ! Pythium myriotylum
+EO:0007178 ! atmospheric pressure
+EO:0007179 ! Pythium irregulare
+EO:0007181 ! rainfall
+EO:0007182 ! Pythium graminicola
+EO:0007184 ! Pythium dissotocum
+EO:0007186 ! Pythium catenulatum
+EO:0007188 ! Pythium arrhenomanes
+EO:0007190 ! Ustilaginoidea virens
+EO:0007191 ! abiotic plant treatment
+EO:0007192 ! Drechslera gigantea
+EO:0007193 ! day light intensity
+EO:0007194 ! Sclerospora macrospora
+EO:0007195 ! rice ragged stunt virus
+EO:0007198 ! water environment
+EO:0007199 ! long day length regimen
+EO:0007200 ! short day length regimen
+EO:0007202 ! IR light regimen
+EO:0007204 ! 1-naphthaleneacetic acid treatment
+EO:0007205 ! rice grassy stunt 2 virus
+EO:0007206 ! Gaeumannomyces graminis
+EO:0007208 ! rice grassy stunt 1 virus
+EO:0007209 ! Phomopsis oryzae-sativae
+EO:0007210 ! virus plant treatment
+EO:0007211 ! Cochliobolus miyabeanus
+EO:0007212 ! Mycoplasma
+EO:0007214 ! Alternaria spp.
+EO:0007215 ! orange light regimen
+EO:0007216 ! yellow light regimen
+EO:0007217 ! green light regimen
+EO:0007219 ! indigo light regimen
+EO:0007220 ! violet light regimen
+EO:0007225 ! fluorine nutrient regimen
+EO:0007226 ! Magnaporthe grisea
+EO:0007227 ! Cochliobolus lunatus
+EO:0007228 ! chromium nutrient regimen
+EO:0007229 ! Gibberella fujikuroi
+EO:0007230 ! iodine nutrient regimen
+EO:0007231 ! study type
+EO:0007232 ! selenium nutrient regimen
+EO:0007233 ! fungal plant treatment
+EO:0007234 ! Pseudomonas fuscovaginae
+EO:0007235 ! silicon nutrient regimen
+EO:0007236 ! Pseudomonas plantarii
+EO:0007240 ! plant macronutrient regimen
+EO:0007241 ! plant nutrient treatment
+EO:0007242 ! iron nutrient regimen
+EO:0007243 ! Pseudomonas glumae
+EO:0007244 ! chlorine nutrient regimen
+EO:0007245 ! Erwinia chrysanthemi
+EO:0007246 ! bacterial plant treatment
+EO:0007247 ! Erwinia herbicola
+EO:0007248 ! green house study
+EO:0007249 ! Xanthomonas oryzae pv. oryzicola
+EO:0007250 ! Recilia dorsalis
+EO:0007251 ! Pseudomonas syringae pv. panici
+EO:0007252 ! Sogatella furcifera
+EO:0007253 ! molybdenum nutrient regimen
+EO:0007254 ! Pseudomonas avenae
+EO:0007255 ! laboratory study
+EO:0007256 ! field study
+EO:0007257 ! Xanthomonas oryzae pv. oryzae
+EO:0007258 ! Oebalus pugnax
+EO:0007259 ! soil water content
+EO:0007260 ! Diopsis macrophthalma
+EO:0007261 ! copper nutrient regimen
+EO:0007262 ! in vitro solid growth medium
+EO:0007263 ! Maliarpha separatella
+EO:0007264 ! Sesamia inferens
+EO:0007265 ! in vitro liquid growth medium
+EO:0007266 ! in vitro growth medium
+EO:0007267 ! benzothiadiazole treatment
+EO:0007269 ! growth chamber study
+EO:0007270 ! continuous dark (no light) regimen
+EO:0007272 ! Scirpophaga innotata
+EO:0007273 ! boron nutrient regimen
+EO:0007274 ! Scirpophaga incertulas
+EO:0007275 ! Rupela albinella
+EO:0007276 ! cobalt nutrient regimen
+EO:0007277 ! Chilo polychrysus
+EO:0007279 ! Chilo suppressalis
+EO:0007280 ! unknown study type
+EO:0007282 ! standing water
+EO:0007283 ! Stenchaetothrips biformis
+EO:0007284 ! nitrogen macronutrient regimen
+EO:0007285 ! rainy season
+EO:0007286 ! dry season
+EO:0007287 ! dibromothymoquinone treatment
+EO:0007288 ! magnesium nutrient regimen
+EO:0007289 ! Hydrellia philippina
+EO:0007290 ! kinetin treatment
+EO:0007291 ! benzyladenine treatment
+EO:0007293 ! potassium nutrient regimen
+EO:0007294 ! Pelopidas mathias
+EO:0007295 ! sulfur nutrient regimen
+EO:0007296 ! Dicladispa armigera
+EO:0007297 ! calcium nutrient regimen
+EO:0007298 ! Sogatodes oryzicola
+EO:0007300 ! Leptocorisa oratorius
+EO:0007302 ! T-DNA insert
+EO:0007303 ! carbon nutrient regimen
+EO:0007304 ! Marasmia patnalis
+EO:0007305 ! Cnaphalocrocis medinalis
+EO:0007306 ! aluminum nutrient regimen
+EO:0007307 ! transposable element insert
+EO:0007308 ! Nephotettix spp
+EO:0007309 ! zinc nutrient regimen
+EO:0007310 ! Ac/Ds transposable element
+EO:0007311 ! Orseolia oryzae
+EO:0007312 ! Tos-17 transposable element
+EO:0007313 ! Pseudaletia separata
+EO:0007314 ! Nymphula depunctalis
+EO:0007315 ! zero gravity
+EO:0007316 ! physical plant treatment
+EO:0007317 ! Nilaparvata lugens
+EO:0007318 ! rice yellow mottle virus
+EO:0007319 ! warm/hot air temperature regimen
+EO:0007320 ! Meloidogyne arenaria
+EO:0007321 ! Hirschmaniella spinicaudata
+EO:0007322 ! Hirschmaniella oryzae
+EO:0007323 ! Hirschmaniella mucronata
+EO:0007324 ! Hirschmaniella imamuri
+EO:0007325 ! Hirschmaniella caudacrena
+EO:0007326 ! mycoplasma like organism
+EO:0007327 ! Mycovellosiella oryzae
+EO:0007328 ! Pythium spp.
+EO:0007329 ! Spodoptera praefica
+EO:0007330 ! Spodoptera mauritia
+EO:0007331 ! Pseudaletia unipuncta
+EO:0007332 ! cold air temperature regimen
+EO:0007334 ! Pomacea canaliculata
+EO:0007335 ! Mollusca
+EO:0007336 ! Ditylenchus angustus
+EO:0007337 ! Nematoda
+EO:0007338 ! cold water temperature regimen
+EO:0007339 ! rice tungro spherical virus
+EO:0007340 ! Achlya conspicua
+EO:0007341 ! Fusarium
+EO:0007342 ! Achlya klebsiana
+EO:0007343 ! Bovinae
+EO:0007344 ! rice tungro bacilliform virus
+EO:0007345 ! Rodentia
+EO:0007346 ! rice yellow stunt virus
+EO:0007347 ! Aves
+EO:0007348 ! rice stripe necrosis virus
+EO:0007349 ! metazoan plant treatment
+EO:0007350 ! rice stripe virus
+EO:0007356 ! rice hoja blanca virus
+EO:0007357 ! biotic plant treatment
+EO:0007358 ! rice grassy stunt virus
+EO:0007359 ! plant experimental condition
+EO:0007360 ! barley yellow dwarf virus
+EO:0007361 ! rice gall dwarf virus
+EO:0007362 ! Balansia oryzae-sativae
+EO:0007363 ! Magnaporthe salvinii
+EO:0007364 ! Rhizoctonia oryzae
+EO:0007365 ! rice dwarf virus
+EO:0007366 ! rice black streak dwarf virus
+EO:0007367 ! Aphelenchoides besseyi
+EO:0007368 ! warm/hot water temperature regimen
+EO:0007369 ! Meloidogyne salasi
+EO:0007370 ! Meloidogyne oryzae
+EO:0007371 ! Meloidogyne javanica
+EO:0007372 ! Meloidogyne incognita
+EO:0007374 ! Cylindrocladium scoparium
+EO:0007375 ! Meloidogyne graminicola
+EO:0007376 ! Pyrenochaeta oryzae
+EO:0007377 ! Athelia rolfsii
+EO:0007378 ! Sarocladium oryzae treatment
+EO:0007379 ! Thanatephorus cucumeris
+EO:0007382 ! wind environment
+EO:0007384 ! freezing air temperature regimen
+EO:0007385 ! irrigated land region
+EO:0007386 ! Gerlachia oryzae
+EO:0007387 ! manganese nutrient regimen
+EO:0007388 ! Alternaria padwickii
+EO:0007389 ! Gibberella zeae
+EO:0007391 ! lowland region
+EO:0007392 ! upland region
+EO:0007394 ! desert like region
+EO:0007395 ! river delta region
+EO:0007397 ! phosphorus nutrient regimen
+EO:0007398 ! sub-tropical region
+EO:0007399 ! freezing water temperature regimen
+EO:0007400 ! arid region
+EO:0007401 ! semiarid region
+EO:0007402 ! fungal elicitor treatment
+EO:0007403 ! unknown treatment
+EO:0007404 ! drought environment
+EO:0007405 ! Hoagland solution
+EO:0007407 ! methyl jasmonate treatment
+EO:0007408 ! 5-methyltryptophan treatment
+EO:0007410 ! cerebroside elicitor treatment
+EO:0007411 ! Pseudomonas fluorescens
+EO:0007412 ! zinc sulphate regimen
+EO:0007413 ! manganese sulfate regimen
+EO:0007414 ! peroxide treatment
+EO:0007505 ! 1,2:5,6-dibenzanthracene
+EO:0007506 ! 1,4-dimethanesulfonoxy-1:4-dimethylbutane
+EO:0007507 ! 1,4-dimethanesulfonoxybut-2-yne
+EO:0007508 ! 1,4-dimethanesulfonoxybutane
+EO:0007509 ! 1,6-dimethylsulfonoxy D-mannitol
+EO:0007510 ! 1,6-dimethylsulfonoxy L-mannitol
+EO:0007511 ! 1-amino-2-naphthol-4-sulfonic acid
+EO:0007512 ! 1-bromo-2-chloroethane
+EO:0007513 ! 1-diethylaminoethylethylamino-4-methyl-thioxanthenone
+EO:0007514 ! 2,5,-bisethylene-imine-1,4-benzoquinone
+EO:0007515 ! 2-chloroethyl methanesulfonate
+EO:0007516 ! 2-fluoroethyl methanesulfonate
+EO:0007518 ! 5-bromouracil
+EO:0007519 ! 5-bromouridine
+EO:0007520 ! 7-bromomethyl 12 methyl benz or agr/anthracine
+EO:0007522 ! aminopterin
+EO:0007523 ! benzo (or agr)pyrene
+EO:0007526 ! colchicine
+EO:0007527 ! cupric sulfate
+EO:0007529 ! diepoxyoctane
+EO:0007534 ! ethyl methanesulfonate
+EO:0007538 ! fagaronine
+EO:0007540 ! boric acid
+EO:0007541 ! hesperidine
+EO:0007542 ! hexamethylmelamine
+EO:0007544 ! hycanthon methanesulfonate
+EO:0007545 ! ICR 100
+EO:0007546 ! ICR 170
+EO:0007548 ! Janus green B
+EO:0007549 ! methoxy diethylnitrosamine
+EO:0007551 ! mitomycin C treatment
+EO:0007555 ! natural gas
+EO:0007558 ! p-N,N-di(2-chloroethyl)aminophenylvaleric acid
+EO:0007559 ! p-N,N-di-(2-chloroethyl)amino-D-phenylalanine
+EO:0007560 ! p-N,N-di-(2-chloroethyl)amino-DL-phenylalanine
+EO:0007561 ! p-N,N-di-(2-chloroethyl)amino-L-phenylalanine
+EO:0007562 ! p-N,N-di-(2-chloroethyl)aminophenylbutyric acid
+EO:0007563 ! p-N,N-di-(2-chloroethyl)aminophenylethylamine
+EO:0007564 ! p-p'-N,N-di(2-chloroethyl)aminophenoxyphenylalanine
+EO:0007565 ! quinhydrone
+EO:0007566 ! S-2-chloroethylcysteine
+EO:0007569 ! styryl quinoline
+EO:0007572 ! triethylenemelamine
+EO:0007574 ! vinyl carbamate
+EO:0007610 ! 3-H
+EO:0007611 ! 3-H-deoxycytidine
+EO:0007612 ! 3-H-thymidine
+EO:0007613 ! 32-P
+EO:0007614 ! agr ray
+EO:0007615 ! Bevatron irradiation
+EO:0007616 ! deuteron irradiation
+EO:0007617 ! ggr ray
+EO:0007618 ! 137-Cs or ggr ray
+EO:0007619 ! 226-Ra or agr ray
+EO:0007620 ! 60-Co or ggr ray
+EO:0007623 ! 252-Cf fission neutrons
+EO:0007625 ! stratosphere exposure
+EO:0007626 ! supersonic-treatment
+EO:0007629 ! hydrogen regimen
+EO:0007630 ! Sclerospora spp.
+EO:0007631 ! Sclerospora graminicola
+EO:0007633 ! imidazolinone treatment
+EO:0007634 ! Spodoptera litura
+ExO:0000000 ! exposure stressor
+ExO:0000001 ! exposure receptor
+ExO:0000003 ! exposure outcome
+ExO:0000004 ! exposure transport path
+ExO:0000005 ! biological agent
+ExO:0000006 ! chemical agent
+ExO:0000007 ! ecological perturbation
+ExO:0000008 ! physical agent
+ExO:0000009 ! psychosocial agent
+ExO:0000010 ! air transport path
+ExO:0000011 ! biomechanical agent
+ExO:0000012 ! habitat degradation
+ExO:0000013 ! acid rain
+ExO:0000016 ! source
+ExO:0000019 ! indoor
+ExO:0000020 ! outdoor
+ExO:0000025 ! industrial process
+ExO:0000026 ! agricultural process
+ExO:0000028 ! water transport path
+ExO:0000029 ! soil transport path
+ExO:0000030 ! ecosphere
+ExO:0000031 ! biosphere
+ExO:0000033 ! human population
+ExO:0000035 ! genetic background
+ExO:0000037 ! lifestage
+ExO:0000038 ! health status
+ExO:0000039 ! social characteristic
+ExO:0000040 ! cultural background
+ExO:0000041 ! education
+ExO:0000042 ! human individual
+ExO:0000043 ! anatomy
+ExO:0000044 ! organ
+ExO:0000045 ! tissue
+ExO:0000046 ! cell
+ExO:0000047 ! biological molecules
+ExO:0000048 ! built environment
+ExO:0000051 ! frequency
+ExO:0000052 ! intermittent
+ExO:0000053 ! continuous
+ExO:0000055 ! route
+ExO:0000056 ! ingestion
+ExO:0000058 ! absorption
+ExO:0000059 ! leaching
+ExO:0000060 ! injection
+ExO:0000061 ! subcutaneous tissue
+ExO:0000062 ! muscle
+ExO:0000064 ! assay
+ExO:0000066 ! unit
+ExO:0000067 ! measurement
+ExO:0000072 ! model
+ExO:0000073 ! conceptual
+ExO:0000074 ! mathematical
+ExO:0000075 ! computational
+ExO:0000078 ! molecular response
+ExO:0000080 ! symptom
+ExO:0000082 ! public policy
+ExO:0000083 ! exposure medium
+ExO:0000085 ! commercial product
+ExO:0000087 ! exposure intervention
+ExO:0000088 ! spatial quality
+ExO:0000089 ! human attribute
+GO:0000304 ! response to singlet oxygen
+GO:0000749 ! response to pheromone involved in conjugation with cellular fusion
+GO:0000756 ! response to pheromone involved in conjugation with mutual genetic exchange
+GO:0000765 ! response to pheromone involved in pheromone-induced unidirectional conjugation
+GO:0001878 ! response to yeast
+GO:0002021 ! response to dietary excess
+GO:0002237 ! response to molecule of bacterial origin
+GO:0002238 ! response to molecule of fungal origin
+GO:0002239 ! response to oomycetes
+GO:0002240 ! response to molecule of oomycetes origin
+GO:0002241 ! response to parasitic plant
+GO:0002347 ! response to tumor cell
+GO:0002931 ! response to ischemia
+GO:0006986 ! response to unfolded protein
+GO:0006991 ! response to sterol depletion
+GO:0009269 ! response to desiccation
+GO:0009607 ! response to biotic stimulus
+GO:0009608 ! response to symbiont
+GO:0009609 ! response to symbiotic bacterium
+GO:0009610 ! response to symbiotic fungus
+GO:0009612 ! response to mechanical stimulus
+GO:0009617 ! response to bacterium
+GO:0009620 ! response to fungus
+GO:0009623 ! response to parasitic fungus
+GO:0009624 ! response to nematode
+GO:0009628 ! response to abiotic stimulus
+GO:0009639 ! response to red or far red light
+GO:0009651 ! response to salt stress
+GO:0009906 ! response to photoperiod, blue light
+GO:0009907 ! response to photoperiod, red light
+GO:0009991 ! response to extracellular stimulus
+GO:0010033 ! response to organic substance
+GO:0010035 ! response to inorganic substance
+GO:0010188 ! response to microbial phytotoxin
+GO:0010201 ! response to continuous far red light stimulus by the high-irradiance response system
+GO:0010202 ! response to low fluence red light stimulus
+GO:0010203 ! response to very low fluence red light stimulus
+GO:0010244 ! response to low fluence blue light stimulus by blue low-fluence system
+GO:0010335 ! response to non-ionic osmotic stress
+GO:0010446 ! response to alkaline pH
+GO:0010447 ! response to acidic pH
+GO:0010583 ! response to cyclopentenone
+GO:0014074 ! response to purine-containing compound
+GO:0014850 ! response to muscle activity
+GO:0014854 ! response to inactivity
+GO:0014870 ! response to muscle inactivity
+GO:0014873 ! response to muscle activity involved in regulation of muscle adaptation
+GO:0014874 ! response to stimulus involved in regulation of muscle adaptation
+GO:0014876 ! response to injury involved in regulation of muscle adaptation
+GO:0014877 ! response to muscle inactivity involved in regulation of muscle adaptation
+GO:0014878 ! response to electrical stimulus involved in regulation of muscle adaptation
+GO:0014893 ! response to rest involved in regulation of muscle adaptation
+GO:0014894 ! response to denervation involved in regulation of muscle adaptation
+GO:0031667 ! response to nutrient levels
+GO:0032094 ! response to food
+GO:0032260 ! response to jasmonic acid stimulus involved in jasmonic acid and ethylene-dependent systemic resistance
+GO:0032354 ! response to follicle-stimulating hormone
+GO:0032493 ! response to bacterial lipoprotein
+GO:0033552 ! response to vitamin B3
+GO:0034059 ! response to anoxia
+GO:0034097 ! response to cytokine
+GO:0034340 ! response to type I interferon
+GO:0034341 ! response to interferon-gamma
+GO:0034342 ! response to type III interferon
+GO:0034405 ! response to fluid shear stress
+GO:0034612 ! response to tumor necrosis factor
+GO:0034616 ! response to laminar fluid shear stress
+GO:0034695 ! response to prostaglandin E
+GO:0034696 ! response to prostaglandin F
+GO:0034697 ! response to prostaglandin I
+GO:0034698 ! response to gonadotropin
+GO:0034699 ! response to luteinizing hormone
+GO:0034976 ! response to endoplasmic reticulum stress
+GO:0035728 ! response to hepatocyte growth factor
+GO:0035900 ! response to isolation stress
+GO:0035902 ! response to immobilization stress
+GO:0035962 ! response to interleukin-13
+GO:0035966 ! response to topologically incorrect protein
+GO:0035994 ! response to muscle stretch
+GO:0036005 ! response to macrophage colony-stimulating factor
+GO:0036015 ! response to interleukin-3
+GO:0036017 ! response to erythropoietin
+GO:0036119 ! response to platelet-derived growth factor
+GO:0036176 ! response to neutral pH
+GO:0036215 ! response to stem cell factor
+GO:0036293 ! response to decreased oxygen levels
+GO:0036296 ! response to increased oxygen levels
+GO:0042594 ! response to starvation
+GO:0043207 ! response to external biotic stimulus
+GO:0043330 ! response to exogenous dsRNA
+GO:0044321 ! response to leptin
+GO:0044752 ! response to human chorionic gonadotropin
+GO:0044811 ! response to Dma1-dependent checkpoint signaling
+GO:0046682 ! response to cyclodiene
+GO:0046684 ! response to pyrethroid
+GO:0048265 ! response to pain
+GO:0048678 ! response to axon injury
+GO:0050826 ! response to freezing
+GO:0051409 ! response to nitrosative stress
+GO:0051599 ! response to hydrostatic pressure
+GO:0051707 ! response to other organism
+GO:0051775 ! response to redox state
+GO:0051788 ! response to misfolded protein
+GO:0052173 ! response to defenses of other organism involved in symbiotic interaction
+GO:0052200 ! response to host defenses
+GO:0052201 ! response to symbiont defenses
+GO:0052549 ! response to phytoalexin production by other organism involved in symbiotic interaction
+GO:0052550 ! response to defense-related reactive oxygen species production by other organism involved in symbiotic interaction
+GO:0052551 ! response to defense-related nitric oxide production by other organism involved in symbiotic interaction
+GO:0052564 ! response to immune response of other organism involved in symbiotic interaction
+GO:0052565 ! response to defense-related host nitric oxide production
+GO:0052566 ! response to host phytoalexin production
+GO:0052567 ! response to defense-related host reactive oxygen species production
+GO:0052572 ! response to host immune response
+GO:0055098 ! response to low-density lipoprotein particle
+GO:0055099 ! response to high density lipoprotein particle
+GO:0055121 ! response to high fluence blue light stimulus by blue high-fluence system
+GO:0055122 ! response to very low light intensity stimulus
+GO:0061477 ! response to aromatase inhibitor
+GO:0061480 ! response to asparaginase
+GO:0061481 ! response to TNF agonist
+GO:0061482 ! response to irinotecan
+GO:0070339 ! response to bacterial lipopeptide
+GO:0070555 ! response to interleukin-1
+GO:0070669 ! response to interleukin-2
+GO:0070670 ! response to interleukin-4
+GO:0070671 ! response to interleukin-12
+GO:0070672 ! response to interleukin-15
+GO:0070673 ! response to interleukin-18
+GO:0070741 ! response to interleukin-6
+GO:0070848 ! response to growth factor
+GO:0070849 ! response to epidermal growth factor
+GO:0071000 ! response to magnetism
+GO:0071104 ! response to interleukin-9
+GO:0071105 ! response to interleukin-11
+GO:0071107 ! response to parathyroid hormone
+GO:0071559 ! response to transforming growth factor beta
+GO:0071724 ! response to diacyl bacterial lipopeptide
+GO:0071725 ! response to triacyl bacterial lipopeptide
+GO:0071772 ! response to BMP
+GO:0071774 ! response to fibroblast growth factor
+GO:0071798 ! response to prostaglandin D
+GO:0072342 ! response to anion stress
+GO:0072396 ! response to cell cycle checkpoint signaling
+GO:0072399 ! response to cytokinesis checkpoint signaling
+GO:0072402 ! response to DNA integrity checkpoint signaling
+GO:0072410 ! response to meiotic cell cycle checkpoint signaling
+GO:0072414 ! response to mitotic cell cycle checkpoint signaling
+GO:0072417 ! response to spindle checkpoint signaling
+GO:0072423 ! response to DNA damage checkpoint signaling
+GO:0072426 ! response to G2 DNA damage checkpoint signaling
+GO:0072429 ! response to intra-S DNA damage checkpoint signaling
+GO:0072432 ! response to G1 DNA damage checkpoint signaling
+GO:0072435 ! response to mitotic G2 DNA damage checkpoint signaling
+GO:0072438 ! response to DNA replication checkpoint signaling
+GO:0072441 ! response to meiotic DNA replication checkpoint signaling
+GO:0072444 ! response to mitotic DNA replication checkpoint signaling
+GO:0072449 ! response to G1 cell size control checkpoint signaling
+GO:0072452 ! response to G2 transition size control checkpoint signaling
+GO:0072461 ! response to meiotic recombination checkpoint signaling
+GO:0072464 ! response to meiotic spindle assembly checkpoint signaling
+GO:0072470 ! response to cell size control checkpoint signaling
+GO:0072476 ! response to mitotic spindle checkpoint signaling
+GO:0072479 ! response to mitotic cell cycle spindle assembly checkpoint signaling
+GO:0072482 ! response to mitotic cell cycle spindle orientation checkpoint signaling
+GO:0072485 ! response to spindle assembly checkpoint signaling
+GO:0072714 ! response to selenite ion
+GO:0072728 ! response to Gentian violet
+GO:0072739 ! response to anisomycin
+GO:0072758 ! response to topoisomerase inhibitor
+GO:0075000 ! response to host osmotic environment
+GO:0075136 ! response to host
+GO:0075137 ! response to host redox environment
+GO:0075138 ! response to host oxygen tension environment
+GO:0075139 ! response to host iron concentration
+GO:0075140 ! response to host defense molecules
+GO:0075293 ! response to host pH environment
+GO:0080027 ! response to herbivore
+GO:0080094 ! response to trehalose-6-phosphate
+GO:0080167 ! response to karrikin
+GO:0080183 ! response to photooxidative stress
+GO:0090547 ! response to low humidity
+GO:0090548 ! response to nitrate starvation
+GO:0090549 ! response to carbon starvation
+GO:0090550 ! response to molybdenum starvation
+GO:0090551 ! response to manganese starvation
+GO:0090648 ! response to environmental enrichment
+GO:0090649 ! response to oxygen-glucose deprivation
+GO:0090664 ! response to high population density
+GO:0097012 ! response to granulocyte macrophage colony-stimulating factor
+GO:0097068 ! response to thyroxine
+GO:0097210 ! response to gonadotropin-releasing hormone
+GO:0097395 ! response to interleukin-32
+GO:0097396 ! response to interleukin-17
+GO:0097701 ! response to pulsatile fluid shear stress
+GO:0097702 ! response to oscillatory fluid shear stress
+GO:0098756 ! response to interleukin-21
+GO:0098758 ! response to interleukin-8
+GO:0098760 ! response to interleukin-7
+GO:0098780 ! response to mitochondrial depolarisation
+GO:1904391 ! response to ciliary neurotrophic factor
+GO:1990089 ! response to nerve growth factor
+GO:1990267 ! response to transition metal nanoparticle
+GO:1990268 ! response to gold nanoparticle
+GO:1990418 ! response to insulin-like growth factor stimulus
+GO:1990637 ! response to prolactin
+GO:1990638 ! response to granulocyte colony-stimulating factor
+GO:1990641 ! response to iron ion starvation
+GO:1990680 ! response to melanocyte-stimulating hormone
+GO:1990737 ! response to manganese-induced endoplasmic reticulum stress
+GO:1990781 ! response to immobilization stress combined with electrical stimulus
+GO:1990785 ! response to water-immersion restraint stress
+GO:1990790 ! response to glial cell derived neurotrophic factor
+GO:1990820 ! response to mitotic DNA integrity checkpoint signaling
+GO:1990823 ! response to leukemia inhibitory factor
+GO:1990834 ! response to odorant
+GO:1990839 ! response to endothelin
+GO:1990840 ! response to lectin
+GO:1990864 ! response to growth hormone-releasing hormone
+GO:1990867 ! response to gastrin
+GO:1990868 ! response to chemokine
+GO:1990910 ! response to hypobaric hypoxia
+GO:1990911 ! response to psychosocial stress
+GO:1990928 ! response to amino acid starvation
+MRE:0000001 ! Prenatal exposure
+MRE:0000002 ! Dietary exposure
+MRE:0000003 ! Diagnostic medical exposure
+MRE:0000004 ! Radiological exposure
+MRE:0000005 ! Diagnostic radiological examination
+MRE:0000006 ! Interventional radiological procedure
+MRE:0000007 ! Radiograph
+MRE:0000008 ! Chest radiograph
+MRE:0000009 ! Exposure to infectious agent
+MRE:0000010 ! Exposure to airborne pollution
+MRE:0000011 ! Dietary exposure to a chemical residue
+MRE:0000018 ! Dietary exposure to low-calorie sweetener
+MRE:0000019 ! Dietary exposure to preservative
+MRE:0000020 ! Dietary exposure to color additive
+MRE:0000021 ! Dietary exposure to flavor enhancer
+MRE:0000023 ! Dietary exposure to deoxynivalenol
+MRE:0000024 ! Dietary exposure to emulsifier
+MRE:0000027 ! Nuclear medicine procedure
+MRE:0000028 ! Cervical spine radiograph
+MRE:0000029 ! Pelvis radiograph
+MRE:0000030 ! Skull radiograph
+MRE:0000031 ! Intravenous pyelogram
+MRE:0000032 ! Computer tomography
+MRE:0000033 ! Positron emission tomography scan
+MRE:0000038 ! Maternal cigarette use
+MRE:0000039 ! Maternal alcohol use
+MRE:0000040 ! Maternal marijuana use
+MRE:0000041 ! Maternal opiate use
+MRE:0000042 ! Maternal cocaine use
+MRE:0000043 ! Maternal methamphetamine use
+MRE:0000048 ! Tobacco pipe smoking
+MRE:0000049 ! Occupational exposure to pesticide
+MRE:0000051 ! Alcohol use
+MRE:0000052 ! Occupational exposure to herbicide
+MRE:0000053 ! Occupational exposure to insecticide
+MRE:0000054 ! Occupational exposure to fungicide
+MRE:0000055 ! Occupational exposure to rodenticide
+MRE:0000056 ! Occupational exposure to bactericide
+MRE:0000057 ! Occupational exposure to carbamate insecticide
+MRE:0000058 ! Occupational dust exposure
+MRE:0000059 ! Occupational aerosol exposure
+MRE:0000060 ! Occupational mineral dust exposure
+MRE:0000061 ! Occupational metallic dust exposure
+MRE:0000062 ! Occupational fibrous dust exposure
+MRE:0000063 ! Occupational fibrous glass dust exposure
+MRE:0000064 ! Maternal heroin use
+MRE:0000066 ! Occupational exposure to Paraquat
+MRE:0000067 ! Occupational exposure to Diquat
+MRE:0000068 ! Occupational exposure to urea-based herbicide
+MRE:0000069 ! Occupational exposure to isoproturon
+MRE:0000070 ! Occupational exposure to organophosphorus herbicide
+MRE:0000071 ! Occupational exposure to anilofos
+MRE:0000072 ! Occupational exposure to gluphosphate
+MRE:0000073 ! Occupational exposure to nitrile herbicide
+MRE:0000074 ! Occupational exposure to toxic waste
+MRE:0000075 ! Occupational exposure to anticoagulant rodenticide
+MRE:0000077 ! Angiography
+MRE:0000078 ! Exposure to ultrasonography
+MRE:0000080 ! Exposure to radioactivity
+MRE:0000081 ! Radioactive contamination
+MRE:0000085 ! Human papilloma virus infection
+MRE:0000089 ! Exposure to noise
+MRE:0000090 ! Occupational noise exposure
+MRE:0000091 ! Occupational exposure to infrasound
+MRE:0000092 ! Prenatal air pollutant exposure
+MRE:0000093 ! Prenatal polycyclic aromatic hydrocarbon exposure
+MRE:0000094 ! Prenatal medication exposure
+MRE:0000095 ! Prenatal exposure to maternal famine
+MRE:0000098 ! Exposure to gas
+MRE:0000100 ! Exposure to 2,2',4'-tribromodiphenyl ether
+MRE:0000102 ! Exposure to endocrine-disrupting chemical
+MRE:0000105 ! Exposure to chemical element
+MRE:0000107 ! Exposure to metalloid
+MRE:0000130 ! Exposure to volatile organic compound
+MRE:0000143 ! Exposure to 1,3-dichloropropane
+MRE:0000144 ! Exposure to 1,4-dichloropropane
+MRE:0000159 ! Exposure to m-/p-xylene
+MRE:0000161 ! Exposure to polybrominated diphenyl ether
+MRE:0000162 ! Exposure to 2,4,4'-tribromodiphenyl ether
+MRE:0000164 ! Exposure to 2,3',4,4'-tetrabromodiphenyl ether
+MRE:0000165 ! Exposure to 2,2',3,4,4'-pentabromodiphenyl ether
+MRE:0000167 ! Exposure to 2,2',4,4',6-pentabromodiphenyl ether
+MRE:0000171 ! Exposure to 2,2',3,3',4,4',5,5',6,6'-decabromodiphenyl ether
+MRE:0000172 ! Exposure to 2,2',4,4',5,5'-hexabromobiphenyl
+MRE:0000175 ! Exposure to butyl paraben
+MRE:0000179 ! Exposure to inorganic acid
+MRE:0000184 ! Exposure to perfluorinated compound
+MRE:0000185 ! Exposure to perfluorobutane sulfonic acid
+MRE:0000189 ! Exposure to perfluorohexane sulfonic acid
+MRE:0000192 ! Exposure to perfluorooctane sulfonamide
+MRE:0000204 ! Exposure to arsenocholine
+MRE:0000208 ! Exposure to trimethylarsine oxid
+NCIT:C101045 ! Drug Induced Methemoglobinemia
+NCIT:C101367 ! CD-expressing Bifidobacterium APS001F
+NCIT:C102573 ! Tuberculosis Contact
+NCIT:C102609 ! Contact With Exposure During Medical Procedure
+NCIT:C102610 ! Contact With Exposure In Crowd Setting
+NCIT:C102612 ! Country of Potential Disease Exposure
+NCIT:C102617 ! Device Exposure Domain
+NCIT:C102631 ! Entry Date from Country of Potential Disease Exposure
+NCIT:C102662 ! Low-priority Tuberculosis Subject
+NCIT:C102788 ! Deuterated Phenanthrene
+NCIT:C102847 ! Carmustine Sustained-Release Implant Wafer
+NCIT:C103225 ! Ischemic Necrosis
+NCIT:C103374 ! CDISC Interventions Class
+NCIT:C103819 ! Carbon C 11 Erlotinib Hydrochloride
+NCIT:C104907 ! Radio Beacon Transponder System
+NCIT:C105813 ! Ad-hCMV-Flt3L
+NCIT:C105826 ! 8-Oxoguanine
+NCIT:C107101 ! Anaphylaxis
+NCIT:C112052 ! Macrophage Inflammatory Protein
+NCIT:C112201 ! Polymorphous Light Eruption
+NCIT:C113353 ! Exposure Planned Occurrence
+NCIT:C113358 ! Exposure Reference Identifier
+NCIT:C114277 ! Anatabine
+NCIT:C114476 ! Allergic Reaction
+NCIT:C114714 ! Dialysis Membrane Reaction
+NCIT:C115158 ! Nephrogenic Systemic Fibrosis
+NCIT:C115339 ! Radiation Retinopathy
+NCIT:C116005 ! Radioresistance
+NCIT:C116120 ! Scintillation Crystal Type
+NCIT:C116241 ! Millijoules per Square Centimeter
+NCIT:C116316 ! Intestinal Type Sinonasal Adenocarcinoma
+NCIT:C116717 ! Topical Keratin
+NCIT:C116800 ! Congenital Varicella Syndrome
+NCIT:C116815 ! Ophthalmia Neonatorum
+NCIT:C117111 ! Subacute Cutaneous Lupus Erythematosus
+NCIT:C117311 ! Drug Exposure via Breast Milk
+NCIT:C117466 ! Exposure as Collected Domain
+NCIT:C117467 ! Exposure as Collected Sequence Number
+NCIT:C117468 ! Exposure as Collected Group Identifier
+NCIT:C117469 ! Exposure as Collected Reference Identifier
+NCIT:C117470 ! Exposure as Collected Sponsor Defined Identifier
+NCIT:C117471 ! Exposure as Collected Link Identifier
+NCIT:C117472 ! Exposure as Collected Link Group
+NCIT:C117473 ! Exposure as Collected Name of Treatment
+NCIT:C117474 ! Exposure as Collected Mood
+NCIT:C117475 ! Exposure as Collected Category
+NCIT:C117476 ! Exposure as Collected Subcategory
+NCIT:C117477 ! Exposure as Collected Pre-specified
+NCIT:C117478 ! Exposure as Collected Occurrence
+NCIT:C117479 ! Exposure as Collected Dose
+NCIT:C117480 ! Exposure as Collected Dose Description
+NCIT:C117481 ! Exposure as Collected Dose Units
+NCIT:C117482 ! Exposure as Collected Dose Form
+NCIT:C117483 ! Exposure as Collected Dosing Frequency per Interval
+NCIT:C117484 ! Exposure as Collected Total Daily Dose
+NCIT:C117485 ! Exposure as Collected Intended Dose Regimen
+NCIT:C117486 ! Exposure as Collected Route of Administration
+NCIT:C117487 ! Exposure as Collected Lot Number
+NCIT:C117488 ! Exposure as Collected Location
+NCIT:C117489 ! Exposure as Collected Laterality
+NCIT:C117490 ! Exposure as Collected Directionality
+NCIT:C117491 ! Exposure as Collected Portion or Totality
+NCIT:C117492 ! Exposure as Collected Fasting Status
+NCIT:C117493 ! Exposure as Collected Pharmaceutical Strength
+NCIT:C117494 ! Exposure as Collected Pharmaceutical Strength Units
+NCIT:C117495 ! Exposure as Collected Reason for Dose Adjustment
+NCIT:C117496 ! Exposure as Collected Start Date and Time of Treatment
+NCIT:C117497 ! Exposure as Collected End Date and Time of Treatment
+NCIT:C117498 ! Exposure as Collected Start Day
+NCIT:C117499 ! Exposure as Collected End Day
+NCIT:C117500 ! Exposure as Collected Duration of Treatment
+NCIT:C117501 ! Exposure as Collected Planned Time Point Name
+NCIT:C117502 ! Exposure as Collected Planned Time Point Number
+NCIT:C117503 ! Exposure as Collected Elapsed Time
+NCIT:C117504 ! Exposure as Collected Time Point Reference
+NCIT:C117505 ! Exposure as Collected Date Time of Reference Timepoint
+NCIT:C118138 ! Reactive Amniocyte
+NCIT:C119043 ! NALP12-Associated Hereditary Periodic Fever Syndrome
+NCIT:C119053 ! Familial Cold Autoinflammatory Syndrome
+NCIT:C120002 ! 2-Hydroxybutyrate
+NCIT:C120064 ! Marrow Toxic Injury
+NCIT:C120480 ! Adenovirus Type 5 Antibody
+NCIT:C120496 ! Anti-Yeast Antibody
+NCIT:C120560 ! Calcium Phosphate
+NCIT:C120579 ! Radiological Exposure Device
+NCIT:C120584 ! Lymphocyte Depletion Kinetics
+NCIT:C121167 ! Anti-CD20 B9E9 scFv-Streptavidin Fusion Protein
+NCIT:C121539 ! Docetaxel-loaded Nanopharmaceutical CRLX301
+NCIT:C1255 ! Tin Ethyl Etiopurpurin
+NCIT:C13123 ! Memory B-Lymphocyte
+NCIT:C14314 ! SENCAR Mouse
+NCIT:C15301 ! Phototherapy
+NCIT:C15367 ! Risk Assessment
+NCIT:C15470 ! Isotope Therapy
+NCIT:C15669 ! Cancer Prevention
+NCIT:C15771 ! Behavior Research, Indirect
+NCIT:C15812 ! Maternal and Child Health Study
+NCIT:C15855 ! State Cancer Legislative Database
+NCIT:C16105 ! Nurses' Health Study
+NCIT:C16127 ! Long Island Breast Cancer Study
+NCIT:C16219 ! Seed Implantation
+NCIT:C16667 ! Health Physics
+NCIT:C16671 ! Heat Shock 27 kD Protein 1
+NCIT:C16930 ! Occupational Health Nursing
+NCIT:C16931 ! Occupational Medicine
+NCIT:C16936 ! Oncogene
+NCIT:C17067 ! Cell Surface Receptor
+NCIT:C17103 ! Risk Factor
+NCIT:C17137 ! Skin Test
+NCIT:C17385 ! Privacy
+NCIT:C1743 ! Chemical Carcinogen
+NCIT:C17725 ! Sun Exposure
+NCIT:C17745 ! Multidrug Resistance Process
+NCIT:C18057 ! Environmental Carcinogenesis
+NCIT:C18077 ! Cancer Risk
+NCIT:C18129 ! Tumor Initiation
+NCIT:C1828 ! PC-SPES
+NCIT:C18471 ! Genetic Epidemiology
+NCIT:C1849 ! Aminolevulinic Acid Hydrochloride
+NCIT:C18587 ! Tumor Promoter Induced Gene
+NCIT:C18748 ! Division of Cancer Biology
+NCIT:C18749 ! Division of Cancer Epidemiology and Genetics
+NCIT:C18769 ! Environmental Epidemiology
+NCIT:C18905 ! Occupational Carcinogenesis
+NCIT:C18906 ! Occupational Epidemiology
+NCIT:C19086 ! Transplacental Carcinogenesis
+NCIT:C19257 ! Molecular Epidemiology of Prostate Cancer
+NCIT:C19419 ! Genotoxic Stress
+NCIT:C19447 ! Environmental and Occupational Exposure
+NCIT:C19596 ! Occupational and Environmental Epidemiology
+NCIT:C19941 ! Perinatal Carcinogenesis
+NCIT:C19942 ! Perinatal Exposure
+NCIT:C20116 ! Breast Cancer Risk Factor
+NCIT:C20122 ! Experimental Tobacco Carcinogenesis
+NCIT:C20230 ! HL-60/MX1
+NCIT:C22493 ! Radiation-Induced Change
+NCIT:C2408 ! T4N5 Liposomal Lotion
+NCIT:C26684 ! Radiation-Induced Disorder
+NCIT:C26736 ! Cryoglobulinemia
+NCIT:C26869 ! Pulmonary Fibrosis
+NCIT:C26881 ! Solar Lentigo
+NCIT:C27026 ! Talc Pneumoconiosis
+NCIT:C27197 ! Acute Pneumonia
+NCIT:C27686 ! Hepatitis Virus-Related Hepatocellular Carcinoma
+NCIT:C27687 ! Hepatitis B Virus-Related Hepatocellular Carcinoma
+NCIT:C27688 ! Hepatitis C Virus-Related Hepatocellular Carcinoma
+NCIT:C27922 ! Aflatoxins-Related Hepatocellular Carcinoma
+NCIT:C27925 ! Asbestos-Related Lung Carcinoma
+NCIT:C27961 ! Neurotoxicity Syndrome
+NCIT:C28210 ! Photophobia
+NCIT:C28365 ! Irradiation
+NCIT:C28502 ! Bismuth Bi213 Monoclonal Antibody M195
+NCIT:C28950 ! Cytochlor
+NCIT:C29247 ! Diatrizoate Meglumine
+NCIT:C29250 ! Psyllium Husk
+NCIT:C29264 ! Mineral Oil
+NCIT:C29693 ! Skin Test Vaccine
+NCIT:C29774 ! Plutonium-239
+NCIT:C29817 ! Croton Oil
+NCIT:C29829 ! N-nitroso-N-methylurethane
+NCIT:C29841 ! Nickel Subsulfide
+NCIT:C3114 ! Hypersensitivity
+NCIT:C3115 ! Type IV Hypersensitivity
+NCIT:C3116 ! Type I Hypersensitivity
+NCIT:C3159 ! Lentigo
+NCIT:C3234 ! Mesothelioma
+NCIT:C3247 ! Myelodysplastic Syndrome
+NCIT:C3265 ! Radiation-Related Neoplasm
+NCIT:C3333 ! Pneumonia
+NCIT:C3349 ! Radiation-Induced Dermatitis
+NCIT:C34369 ! Extrinsic Allergic Alveolitis
+NCIT:C34409 ! Bagassosis
+NCIT:C34410 ! Baritosis
+NCIT:C34425 ! Bird Fancier's Lung
+NCIT:C34441 ! Burn
+NCIT:C34442 ! Chemical Burn
+NCIT:C34530 ! Dental Pulp Disorder
+NCIT:C34605 ! Farmer's Lung
+NCIT:C34664 ! Noise Induced Hearing Loss
+NCIT:C34769 ! American Cutaneous Leishmaniasis
+NCIT:C34834 ! Myxedema
+NCIT:C34927 ! Social Anxiety Disorder
+NCIT:C3493 ! Squamous Cell Lung Carcinoma
+NCIT:C35134 ! Xeroderma
+NCIT:C35284 ! Specific Phobia
+NCIT:C35309 ! Dermatitis due to Acids
+NCIT:C35310 ! Dermatitis due to Alkalis
+NCIT:C35311 ! Dermatitis due to Dichromate
+NCIT:C35312 ! Sun Exposure Dermatitis
+NCIT:C35397 ! Slate Pneumoconiosis
+NCIT:C36187 ! Thorotrast Exposure
+NCIT:C3665 ! Late Radiation Injury
+NCIT:C3668 ! Contact Hypersensitivity
+NCIT:C38004 ! Skin Photosensitivity
+NCIT:C38222 ! Intraarterial Route of Administration
+NCIT:C38248 ! Intrahepatic Route of Administration
+NCIT:C3836 ! Infertility
+NCIT:C38701 ! Lutetium Lu 177 Monoclonal Antibody J591
+NCIT:C3905 ! Radiation Enteritis
+NCIT:C39365 ! Community Trial
+NCIT:C39536 ! Therapeutic Clinical Trial
+NCIT:C4035 ! Thyroid Gland Papillary Carcinoma
+NCIT:C4042 ! Lip Squamous Cell Carcinoma
+NCIT:C40661 ! DNA Repair Inhibition
+NCIT:C40953 ! Free Radical Binding
+NCIT:C41257 ! Aversive Stimulus
+NCIT:C41366 ! Atopy
+NCIT:C44303 ! 2,3-Dibromopropanol
+NCIT:C44305 ! 2,4-Diaminoanisole Sulfate
+NCIT:C44314 ! 3,3-Dichlorobenzidine
+NCIT:C44317 ! 3-Chloro-2-methylpropene
+NCIT:C44319 ! 4,4-Methylenebis,2-Chloroaniline
+NCIT:C44320 ! 4,4-Methylenedianiline
+NCIT:C44321 ! 4,4-Oxydianiline
+NCIT:C44322 ! 4,4-Thiodianiline
+NCIT:C44323 ! 4-Chloro-ortho-phenylenediamine
+NCIT:C44330 ! a-Hexachlorocyclohexane
+NCIT:C44332 ! Basic Fuchsin
+NCIT:C44340 ! b-Hexachlorocyclohexane
+NCIT:C44357 ! Chromium Hexavalent Compound
+NCIT:C44358 ! Coal Tar
+NCIT:C44359 ! Coal Tar Pitch
+NCIT:C44360 ! Cobaltous Sulfate
+NCIT:C44361 ! Coke Oven Emission
+NCIT:C44362 ! Cupferron
+NCIT:C44364 ! Chlorophenothane
+NCIT:C44365 ! Dianisidine
+NCIT:C44372 ! Dibromochloropropane
+NCIT:C44374 ! Diesel Exhaust Particulate
+NCIT:C44380 ! CI Disperse Blue 1
+NCIT:C44382 ! Erionite
+NCIT:C44402 ! Michler's Base
+NCIT:C44403 ! Michler's Ketone
+NCIT:C44414 ! Nitrosonornicotine
+NCIT:C44415 ! N-Methyl-N-nitro-N-Nitrosoguanidine
+NCIT:C44416 ! N-Nitrosodiethanolamine
+NCIT:C44424 ! N-Nitrosopyrrolidine
+NCIT:C44425 ! N-Nitrososarcosine
+NCIT:C44426 ! o-Anisidine Hydrochloride
+NCIT:C44439 ! Propylenimine
+NCIT:C44441 ! Respirable Crystalline Silica
+NCIT:C44444 ! Selenium Sulfide
+NCIT:C44446 ! Soot
+NCIT:C44448 ! Sulfallate
+NCIT:C44449 ! Sulfuric Acid-Containing Mist
+NCIT:C44450 ! Sunlamp Exposure
+NCIT:C44456 ! Tobacco Related Exposure
+NCIT:C4456 ! Malignant Mesothelioma
+NCIT:C45179 ! Nitro-compound Carcinogen
+NCIT:C45186 ! Halogenated Ring Carcinogen
+NCIT:C45187 ! Cyclic Ether Carcinogen
+NCIT:C45190 ! Organo-sulfur Carcinogen
+NCIT:C4549 ! Conjunctival Squamous Cell Carcinoma
+NCIT:C45531 ! CI Direct Black 38
+NCIT:C45532 ! Direct Blue 6
+NCIT:C45534 ! Direct Brown 95
+NCIT:C45537 ! Respirable Quartz
+NCIT:C45538 ! Respirable Cristobalite
+NCIT:C45539 ! Respirable Tridymite
+NCIT:C45593 ! UV Mutation Abnormality
+NCIT:C45863 ! Nickel Hydroxide
+NCIT:C45864 ! Nickel Monoxide
+NCIT:C45866 ! Nickel Sulfide
+NCIT:C45867 ! Nickel Acetate
+NCIT:C45868 ! Nickel Chloride
+NCIT:C45869 ! Nickel Sulfate
+NCIT:C45870 ! Nickel Carbonate
+NCIT:C45872 ! Nickelocene
+NCIT:C45876 ! Beryllium Chloride
+NCIT:C45877 ! Beryllium Fluoride
+NCIT:C45878 ! Beryllium Hydroxide
+NCIT:C45879 ! Beryllium Oxide
+NCIT:C45880 ! Beryllium Metaphosphate
+NCIT:C45881 ! Beryllium Sulfate
+NCIT:C45882 ! Beryl Ore
+NCIT:C45883 ! Beryllium-Copper Alloy
+NCIT:C45884 ! Beryllium-Aluminum Alloy
+NCIT:C45895 ! Cadmium Sulfate
+NCIT:C45896 ! Cadmium Nitrate
+NCIT:C45898 ! Cadmium Sulfide
+NCIT:C4643 ! Scrotal Squamous Cell Carcinoma
+NCIT:C47434 ! Cefditoren Pivoxil
+NCIT:C47683 ! Praziquantel
+NCIT:C47982 ! Diatrizoate Meglumine
+NCIT:C4816 ! Photosensitive Dermatitis
+NCIT:C48395 ! Human Papillomavirus 16/18 L1 Virus-Like Particle/AS04 Vaccine
+NCIT:C49082 ! Retrovector Encoding Mutant Anti-Cyclin G1
+NCIT:C49275 ! HPV 18 L1-VLP
+NCIT:C49587 ! Exposure Domain
+NCIT:C4992 ! Environment-Related Malignant Neoplasm
+NCIT:C4993 ! Occupational Malignant Neoplasm
+NCIT:C49955 ! Film Device Component
+NCIT:C50175 ! Shutter Device Component
+NCIT:C50505 ! Contamination From Blood Or Body Fluids
+NCIT:C50527 ! Dehiscence
+NCIT:C50576 ! Hearing Impairment
+NCIT:C50589 ! Hyperthermia
+NCIT:C50665 ! Needlestick Puncture
+NCIT:C50722 ! Radiation Burn
+NCIT:C50723 ! Radiation Sickness Syndrome
+NCIT:C512 ! Free Radical
+NCIT:C52060 ! BRCA1 wt Allele
+NCIT:C5291 ! Radiation-Induced Intracranial Meningioma
+NCIT:C53417 ! Emergency Medical Technician
+NCIT:C53420 ! Paramedic
+NCIT:C60713 ! Air-Drying
+NCIT:C61399 ! Radiation Underexposure
+NCIT:C61400 ! Radiation Overexposure
+NCIT:C61401 ! Unintended Radiation Exposure
+NCIT:C61827 ! Mefloquine
+NCIT:C62375 ! Nanoshell
+NCIT:C62485 ! Ferumoxsil Oral Suspension
+NCIT:C62600 ! Cyclodextrin-Based Polymer-Camptothecin CRLX101
+NCIT:C62728 ! Radioisotope Therapy
+NCIT:C62789 ! Pegylated Liposomal Irinotecan
+NCIT:C6344 ! Cervical Clear Cell Adenocarcinoma
+NCIT:C63707 ! Osteoradionecrosis
+NCIT:C64772 ! Tenifatecan
+NCIT:C64784 ! DACH Polymer Platinate AP5346
+NCIT:C67356 ! Unit of Radiant Exposure
+NCIT:C67357 ! Joule per Square Centimeter
+NCIT:C67360 ! Attributable Risk
+NCIT:C68775 ! Irradiation
+NCIT:C70574 ! Unit of Exposure to Ionizing Radiation
+NCIT:C70576 ! Coulomb per Kilogram
+NCIT:C70587 ! Hydrated Sodium Calcium Aluminosilicate
+NCIT:C70613 ! Drug/Toxin-Induced Aplastic Anemia
+NCIT:C70651 ! Polyethyleneglycol-7-ethyl-10-hydroxycamptothecin
+NCIT:C71079 ! Herpes Zoster
+NCIT:C71520 ! Human Papillomavirus Vaccine V503
+NCIT:C71526 ! Human Papilloma Virus L1 Virus-Like Particle V504 Vaccine
+NCIT:C71692 ! PGLA/PEG Copolymer-Based Paclitaxel
+NCIT:C72892 ! Radiation Overexposure Medical Device Problem
+NCIT:C72893 ! Radiation Underexposure Medical Device Problem
+NCIT:C73490 ! Immune Cell Function Assay
+NCIT:C7376 ! Pleural Malignant Mesothelioma
+NCIT:C73993 ! Pack Year
+NCIT:C74524 ! Livedo Reticularis
+NCIT:C74563 ! Fitzpatrick Classification Scale
+NCIT:C76130 ! First-Degree Burn
+NCIT:C76131 ! Second-Degree Burn
+NCIT:C76132 ! Third-Degree Burn
+NCIT:C77676 ! Application Site
+NCIT:C77685 ! Exteriorization Site
+NCIT:C77859 ! TGF-beta-Resistant LMP-Specific Cytotoxic T-Lymphocytes
+NCIT:C77892 ! Epothilone KOS-1584
+NCIT:C78296 ! Acquired Fanconi Syndrome
+NCIT:C78423 ! CDISC CDASH Units for Exposure Terminology
+NCIT:C78424 ! CDISC CDASH Exposure Dosing Frequency per Interval Terminology
+NCIT:C78425 ! CDISC CDASH Exposure Route of Administration Terminology
+NCIT:C78426 ! CDISC CDASH Exposure Dose Form Terminology
+NCIT:C78430 ! CDISC CDASH Units for Planned Exposure Terminology
+NCIT:C78745 ! CDISC CDASH Exposure Dosing Frequency per Interval Terminology
+NCIT:C78869 ! Energy Dispersive Spectroscopy
+NCIT:C78875 ! Gas Sorption
+NCIT:C8054 ! Thyroid Gland Follicular Carcinoma
+NCIT:C80683 ! Therapy-Related Leukemia
+NCIT:C82068 ! Gingival Recession
+NCIT:C82364 ! Acellular Cadaveric Dermal Matrix
+NCIT:C82581 ! Planned Dose Unit
+NCIT:C82655 ! Afamelanotide
+NCIT:C83035 ! Exposure Dose Unit
+NCIT:C83036 ! Exposure Planned Dose Units
+NCIT:C83037 ! Exposure Total Volume Administration Unit
+NCIT:C83040 ! Exposure Dose Adjustment Reason
+NCIT:C83043 ! Exposure Dose Frequency
+NCIT:C83045 ! Exposure Interruption Duration
+NCIT:C83049 ! Exposure End Time
+NCIT:C83061 ! Exposure Dose Adjustment
+NCIT:C83071 ! Exposure Flow Rate
+NCIT:C83072 ! Exposure Flow Rate Unit of Measure
+NCIT:C83086 ! Exposure Interruption Duration Unit
+NCIT:C83091 ! Exposure Reported Name of Treatment
+NCIT:C83099 ! Exposure Lot Number
+NCIT:C83111 ! Exposure Dose Form
+NCIT:C83112 ! Exposure Planned Dose
+NCIT:C83121 ! Exposure Route of Administration
+NCIT:C83127 ! Exposure Start Date
+NCIT:C83133 ! Exposure Start Time
+NCIT:C83138 ! Exposure End Date
+NCIT:C83157 ! Exposure Time Point
+NCIT:C83163 ! Exposure Total Volume Administration
+NCIT:C83276 ! Exposure Category
+NCIT:C83277 ! Exposure Intended Dose Regimen
+NCIT:C83278 ! Exposure Daily Dose
+NCIT:C83279 ! Exposure Dose Description
+NCIT:C83281 ! Exposure Elapsed Time
+NCIT:C83282 ! Exposure End Date Time
+NCIT:C83283 ! Exposure End Day
+NCIT:C83284 ! Exposure Group Identifier
+NCIT:C83285 ! Exposure Subcategory
+NCIT:C83286 ! Exposure Sequence Number
+NCIT:C83287 ! Exposure Sponsor Defined Identifier
+NCIT:C83288 ! Exposure Start Date Time
+NCIT:C83289 ! Exposure Start Day
+NCIT:C83290 ! Exposure Planned Time Point Number
+NCIT:C83291 ! Exposure Time Point Reference
+NCIT:C83292 ! Exposure Treatment Vehicle
+NCIT:C84472 ! Asbestos-Related Lung Disorder
+NCIT:C84605 ! Byssinosis
+NCIT:C84657 ! Cryopyrin-Associated Periodic Syndrome
+NCIT:C84725 ! Gastroschisis
+NCIT:C85516 ! Immersion Route of Exposure
+NCIT:C86643 ! Peptococcus niger
+NCIT:C86883 ! Escherichia coli strain O157:H7
+NCIT:C87882 ! Exposure Kit Number
+NCIT:C87883 ! Exposure Treatment Vehicle Amount
+NCIT:C87884 ! Exposure Treatment Vehicle Amount Unit
+NCIT:C87885 ! Exposure Yes No Indicator
+NCIT:C88067 ! Health Assessment Prior to Exposure
+NCIT:C88073 ! Adverse Event Exposure Code
+NCIT:C88080 ! Previous Exposure Indicator
+NCIT:C88317 ! HER2Bi-Armed Activated T Cells
+NCIT:C90452 ! Safety Pharmacology
+NCIT:C9152 ! Superficial Spreading Melanoma
+NCIT:C92489 ! Length of Time between Product Exposure and Onset of Adverse Event Symptom
+NCIT:C92585 ! E. coli CD-expressing Genetically Modified Neural Stem Cells
+NCIT:C92623 ! Substance-Induced Anxiety Disorder
+NCIT:C92728 ! Alcohol Related Neurodevelopmental Disorder
+NCIT:C92780 ! Fetal Alcohol Spectrum Disorder
+NCIT:C92873 ! Rubella Screening
+NCIT:C93125 ! Radiation-Related Sarcoma
+NCIT:C93407 ! Study Outcome Measurement
+NCIT:C9351 ! Pleural Mesothelioma
+NCIT:C94352 ! Exhibitionism
+NCIT:C94479 ! Radiation Necrosis
+NCIT:C94492 ! Peak Exposure
+NCIT:C94596 ! Cumulative Exposure
+NCIT:C95079 ! Substance-Induced Sleep Disorder
+NCIT:C95209 ! Guadecitabine
+NCIT:C95532 ! Cryoguard Thermal Exposure Indicator
+NCIT:C95751 ! Anti-CD3 x Anti-CD20 Bispecific Antibody-Armed Activated T Cells
+NCIT:C95904 ! Protective Clothing
+NCIT:C95979 ! Androstenediol
+NCIT:C96406 ! Measles
+NCIT:C96428 ! Topical Piperidine Nitroxide MTS-01
+NCIT:C97132 ! Chicken Pox
+NCIT:C97731 ! POU2AF1 wt Allele
+NCIT:C98280 ! Hafnium Oxide-containing Nanoparticles NBTXR3
+NCIT:C98772 ! Primary Outcome Measure
+NCIT:C98805 ! Acquired Methemoglobinemia
+NCIT:C98933 ! Glucose-6-Phosphate Dehydrogenase Deficiency
+NCIT:C98954 ! In Utero Drug Exposure
+NCIT:C99763 ! Oral Aminolevulinic Acid Hydrochloride
+NCIT:R108 ! Disease_Has_Finding
+NCIT:R122 ! Chemical_Or_Drug_Is_Metabolized_By_Enzyme
+NCIT:R124 ! Chemical_Or_Drug_Has_Mechanism_Of_Action
+NCIT:R125 ! Chemical_Or_Drug_Has_Physiologic_Effect
+NCIT:R146 ! Chemical_Or_Drug_Affects_Gene_Product
+NCIT:R30 ! Biological_Process_Has_Associated_Location
+NCIT:R32 ! Biological_Process_Has_Initiator_Chemical_Or_Drug
+NCIT:R34 ! Biological_Process_Has_Result_Biological_Process
+NCIT:R35 ! Biological_Process_Is_Part_Of_Process
+NCIT:R37 ! Gene_Plays_Role_In_Process
+NCIT:R40 ! Gene_In_Chromosomal_Location
+NCIT:R41 ! Gene_Found_In_Organism
+NCIT:R46 ! Gene_Product_Has_Associated_Anatomy
+NCIT:R52 ! Gene_Product_Has_Biochemical_Function
+OBO_REL:has_part ! has_part
+PECO:0000001 ! phenotype condition
+PECO:0000002 ! temperature
+PECO:0000003 ! expression level
+PECO:0000004 ! high temperature
+PECO:0000005 ! standard temperature
+PECO:0000007 ! overexpression
+PECO:0000008 ! knockdown
+PECO:0000009 ! grouping growth medium
+PECO:0000010 ! absence of chemical
+PECO:0000011 ! grouping limited
+PECO:0000013 ! grouping - defined medium
+PECO:0000015 ! sporulation medium
+PECO:0000016 ! high glucose MM
+PECO:0000021 ! + limited adenine
+PECO:0000022 ! absence of P-factor
+PECO:0000023 ! presence of 3',5'-cyclic AMP
+PECO:0000024 ! + sugar
+PECO:0000025 ! + sorbitol
+PECO:0000026 ! + vanadate
+PECO:0000027 ! presence of mating pheromone
+PECO:0000028 ! + TBC
+PECO:0000030 ! + ions
+PECO:0000032 ! + Cl ions
+PECO:0000033 ! + Cd ions
+PECO:0000034 ! + Ca ions
+PECO:0000035 ! + Cu ions
+PECO:0000036 ! + Pb ions
+PECO:0000037 ! + Bi ions
+PECO:0000038 ! + Mg ions
+PECO:0000039 ! + P-factor
+PECO:0000040 ! + M-factor
+PECO:0000041 ! sugar alcohol added
+PECO:0000042 ! + fatty acid
+PECO:0000043 ! + palmitic acid
+PECO:0000044 ! + myristic acid
+PECO:0000045 ! + pentadecanoic acid
+PECO:0000046 ! + margaric acid
+PECO:0000047 ! + stearic acid
+PECO:0000048 ! + petroselinic acid
+PECO:0000049 ! + oleic acid
+PECO:0000050 ! + linoleic acid
+PECO:0000051 ! + linolenic acid
+PECO:0000052 ! + arachidic acid
+PECO:0000053 ! + melissic acid
+PECO:0000054 ! glycerol MM
+PECO:0000055 ! M and P factor produced
+PECO:0000056 ! + 3,5-cyclic AMP
+PECO:0000057 ! 3'5'-cyclic AMP produced
+PECO:0000058 ! + mating pheromone
+PECO:0000060 ! chemical produced
+PECO:0000061 ! + xenobiotic substrate
+PECO:0000062 ! absence of nitrogen
+PECO:0000063 ! absence of 3'5'-cyclic AMP
+PECO:0000064 ! + inositol
+PECO:0000065 ! absence of adenine
+PECO:0000066 ! absence of inositol
+PECO:0000067 ! + lauric acid
+PECO:0000068 ! + vaccenic acid
+PECO:0000069 ! + caffeine
+PECO:0000070 ! absence of uracil
+PECO:0000071 ! + 1-Na-PP1
+PECO:0000072 ! glycerol MM with trace glucose
+PECO:0000073 ! DHA minimal medium
+PECO:0000074 ! + NAD+
+PECO:0000075 ! + NADP+
+PECO:0000076 ! + dihydroxyacetone
+PECO:0000078 ! + H2O2
+PECO:0000079 ! + thiabendazole
+PECO:0000080 ! grouping rich medium
+PECO:0000081 ! low glucose YES
+PECO:0000082 ! + arginine
+PECO:0000084 ! + glutamate
+PECO:0000085 ! + glutamine
+PECO:0000086 ! + ornithine
+PECO:0000087 ! + pro
+PECO:0000088 ! + 2-OG
+PECO:0000089 ! + Na oleate
+PECO:0000090 ! + limited nitrogen
+PECO:0000091 ! + cisplatin
+PECO:0000094 ! grouping sequential growth conditions
+PECO:0000095 ! 24-48h nitrogen starvation followed by 4-7 day recovery in rich medium
+PECO:0000096 ! 24-48h nitrogen starvation followed by 5-12h recovery in rich medium
+PECO:0000097 ! 24-48h nitrogen starvation followed by 12-24h recovery in rich medium
+PECO:0000098 ! 72h-7days nitrogen starvation followed by 12-24h recovery in rich medium
+PECO:0000099 ! 72h-7days nitrogen starvation followed by 4-7 days recovery in rich medium
+PECO:0000100 ! water medium
+PECO:0000101 ! medium texture
+PECO:0000102 ! agar plates
+PECO:0000103 ! liquid culture
+PECO:0000104 ! low glucose MM
+PECO:0000105 ! + limited thiamine
+PECO:0000106 ! + thiamine
+PECO:0000107 ! + aminopyrimidine
+PECO:0000108 ! + thiazole
+PECO:0000109 ! grouping excess
+PECO:0000110 ! nitrogen starvation and recovery
+PECO:0000111 ! + limited myo-inositol
+PECO:0000112 ! + limited phosphate
+PECO:0000113 ! + calcofluor white
+PECO:0000114 ! + cyclosporin A
+PECO:0000115 ! + GTP
+PECO:0000116 ! grouping heat shock
+PECO:0000117 ! heat shock and recovery at normal temperature
+PECO:0000118 ! + glutathione
+PECO:0000119 ! + N-acetyl-L-cysteine
+PECO:0000120 ! grouping absent
+PECO:0000121 ! + methylamine
+PECO:0000122 ! grouping growth timing
+PECO:0000123 ! growth to stationary phase
+PECO:0000124 ! growth to late exponential phase
+PECO:0000125 ! growth to exponential phase
+PECO:0000126 ! glucose MM
+PECO:0000127 ! nitrogen absent
+PECO:0000128 ! pH
+PECO:0000129 ! high pH
+PECO:0000131 ! + ubiquinone Q6
+PECO:0000132 ! grouping experimental environment
+PECO:0000133 ! oxygen level
+PECO:0000136 ! raffinose YE
+PECO:0000137 ! YES
+PECO:0000138 ! glycerol YE
+PECO:0000139 ! glycerol and ethanol rich medium
+PECO:0000140 ! in vitro
+PECO:0000141 ! in vivo
+PECO:0000142 ! + ade
+PECO:0000143 ! + antimycin A
+PECO:0000144 ! sucrose YE
+PECO:0000145 ! maltose MM
+PECO:0000146 ! trehalose MM
+PECO:0000147 ! sucrose MM
+PECO:0000148 ! galactose rich medium with trace glucose
+PECO:0000149 ! + 1-DNJ
+PECO:0000150 ! calcium absent
+PECO:0000151 ! + Mn ions
+PECO:0000152 ! + mannose
+PECO:0000153 ! + diethyl maleate
+PECO:0000154 ! + ethanolamine
+PECO:0000155 ! + choline
+PECO:0000156 ! rhodamine-phalloidin added
+PECO:0000157 ! growth to stationary phase in rich medium followed by transfer to H2O
+PECO:0000158 ! grouping growth to stationary phase
+PECO:0000159 ! growth to stationary phase in rich medium followed by transfer to minimal medium
+PECO:0000160 ! + tacrolimus
+PECO:0000161 ! Hoechst stain added
+PECO:0000162 ! high glucose YES
+PECO:0000163 ! FITC-conjugated lectin added
+PECO:0000164 ! anti-tubulin antibodies added
+PECO:0000165 ! + Na2S
+PECO:0000166 ! + NaCl
+PECO:0000167 ! + SDS
+PECO:0000168 ! heat shock and recovery at high temperature
+PECO:0000169 ! + limited ethanolamine
+PECO:0000170 ! + HU
+PECO:0000171 ! sorbitol absent
+PECO:0000172 ! + Zn ions
+PECO:0000173 ! + ZnCl2
+PECO:0000174 ! + FeCl2
+PECO:0000175 ! + CdCl2
+PECO:0000176 ! + ethylenediaminetetraacetic acid
+PECO:0000177 ! + limited zinc
+PECO:0000178 ! + met
+PECO:0000179 ! + cysteine
+PECO:0000180 ! + limited sulphur
+PECO:0000181 ! + glucose
+PECO:0000182 ! + asparagine
+PECO:0000183 ! + alpha-tocopherol
+PECO:0000184 ! + CuCl2
+PECO:0000185 ! + limited sodium
+PECO:0000186 ! + FeSO4
+PECO:0000187 ! pantothenate absent
+PECO:0000188 ! + pantothenate
+PECO:0000189 ! + limited pantothenate
+PECO:0000190 ! DAPI added
+PECO:0000191 ! + biotin
+PECO:0000192 ! biotin absent
+PECO:0000193 ! + dethiobiotin
+PECO:0000194 ! + limited biotin
+PECO:0000195 ! + limited dethiobiotin
+PECO:0000196 ! glucose MM, urea nitrogen source
+PECO:0000197 ! + limited nickel
+PECO:0000198 ! + Ni ions
+PECO:0000199 ! + lys
+PECO:0000200 ! + peptone
+PECO:0000201 ! YPD
+PECO:0000203 ! diploid cells
+PECO:0000205 ! + Na2SO4
+PECO:0000206 ! + CsCl
+PECO:0000207 ! + KCl
+PECO:0000208 ! + NH4Cl
+PECO:0000209 ! + biochanin A
+PECO:0000210 ! + limited glucose
+PECO:0000211 ! + MMS
+PECO:0000212 ! + ethanol
+PECO:0000213 ! non-fermentable carbon sources medium
+PECO:0000214 ! + MgCl2
+PECO:0000215 ! low pH
+PECO:0000216 ! growth <24 hrs
+PECO:0000217 ! growth >24 hrs
+PECO:0000218 ! + beta-estradiol
+PECO:0000219 ! nitrogen source shift, proline to glutamate
+PECO:0000220 ! nitrogen source shift, glutamate to proline
+PECO:0000221 ! nitrogen source shift
+PECO:0000222 ! + nocodazole
+PECO:0000223 ! + 1-NM-PP1
+PECO:0000224 ! + his
+PECO:0000225 ! + ura
+PECO:0000226 ! + leu
+PECO:0000227 ! permissive temperature
+PECO:0000228 ! semi-permissive temperature
+PECO:0000229 ! nonpermissive temperature
+PECO:0000230 ! low nitrogen glucose MM
+PECO:0000231 ! + Na2SO3
+PECO:0000232 ! temperature shift, low to standard
+PECO:0000233 ! uracil absent
+PECO:0000234 ! + sulfite
+PECO:0000235 ! + microtubule depolymerizing drugs
+PECO:0000236 ! maltose YE
+PECO:0000237 ! growth >48 hrs
+PECO:0000238 ! grouping condition combinations
+PECO:0000239 ! grouping starvation and timing
+PECO:0000240 ! >7 days nitrogen starvation
+PECO:0000241 ! 28 days nitrogen starvation followed by 10-50 hours recovery in minimal medium
+PECO:0000242 ! + rapamycin
+PECO:0000243 ! + LMB
+PECO:0000244 ! + 3MB-PP1
+PECO:0000245 ! + phosphate
+PECO:0000246 ! glucose MM, proline nitrogen source
+PECO:0000247 ! + CdSO4
+PECO:0000248 ! + latA
+PECO:0000249 ! + CuSO4
+PECO:0000250 ! + AgNO3
+PECO:0000251 ! + amitrole
+PECO:0000252 ! + glycerol
+PECO:0000253 ! + limited ammonium
+PECO:0000254 ! glucose MM, ammonium nitrogen source
+PECO:0000255 ! arginine absent
+PECO:0000256 ! glycerol MM with trace ethanol
+PECO:0000257 ! + cycloheximide
+PECO:0000258 ! + arsenate
+PECO:0000259 ! + arsenic
+PECO:0000260 ! HU block and release
+PECO:0000261 ! + CaCl2
+PECO:0000262 ! glucose minimal medium, excluding nitrogen
+PECO:0000263 ! glucose MM, glutamate nitrogen source
+PECO:0000264 ! glucose MM, organic nitrogen source, no inorganic nitrogen
+PECO:0000265 ! >6 hrs in nitrogen starvation
+PECO:0000266 ! glucose MM, xanthine nitrogen source
+PECO:0000267 ! + naphthaleneacetic acid
+PECO:0000268 ! + trichostatin A
+PECO:0000269 ! + mevalonate
+PECO:0000270 ! + TEV protease
+PECO:0000271 ! + SNP
+PECO:0000272 ! glucose MM, no nitrogen
+PECO:0000273 ! glucose MM, no glucose
+PECO:0000274 ! glucose MM, adenine nitrogen source
+PECO:0000275 ! competitive culture
+PECO:0000276 ! glucose MM, uracil nitrogen source
+PECO:0000277 ! + bleomycin
+PECO:0000278 ! glucose MM, isoleucine nitrogen source
+PECO:0000279 ! + MnCl2
+PECO:0000280 ! + limited leucine
+PECO:0000281 ! + FeCl3
+PECO:0000282 ! + aminolevulinic acid
+PECO:0000283 ! + hemin
+PECO:0000284 ! + thiosulfate
+PECO:0000285 ! cold shock and recovery at normal temperature
+PECO:0000286 ! glucose MM, no adenine
+PECO:0000287 ! + nigericin
+PECO:0000288 ! temperature shift, high to standard
+PECO:0000289 ! galactose MM
+PECO:0000290 ! + carbendazim
+PECO:0000291 ! temperature block and release
+PECO:0000292 ! nitrogen starvation at normal temperature and shift to high temperature in rich medium
+PECO:0000293 ! temperature shift, low to high
+PECO:0000294 ! temperature shift, high to low
+PECO:0000295 ! two-step shift, low to standard, standard to high
+PECO:0000296 ! glucose MM, phenylalanine nitrogen source
+PECO:0000298 ! + zymolyase
+PECO:0000299 ! + queuosine
+PECO:0000300 ! temperature shift, standard to high
+PECO:0000301 ! + queuine
+PECO:0000302 ! + ammonium iron(2+) sulfate
+PECO:0000303 ! + menadione
+Wikidata:Q1022922 ! Waterspout
+Wikidata:Q1033074 ! dam failure
+Wikidata:Q104493 ! risk
+Wikidata:Q105807 ! nuclear meltdown
+Wikidata:Q1060842 ! surtseyan eruption
+Wikidata:Q1064904 ! injury
+Wikidata:Q1066689 ! human communication
+Wikidata:Q1067217 ! phreatic eruption
+Wikidata:Q1071740 ! loss-of-coolant accident
+Wikidata:Q1078765 ! train wreck
+Wikidata:Q11023058 ! interpersonal communication
+Wikidata:Q11024 ! communication
+Wikidata:Q1121708 ! failure
+Wikidata:Q1132455 ! hazard
+Wikidata:Q11387245 ! lateral eruption
+Wikidata:Q1141458 ! Cape Verde-type hurricane
+Wikidata:Q1144521 ! Cordonazo wind
+Wikidata:Q1149305 ! disposition
+Wikidata:Q1151067 ! human-made rule
+Wikidata:Q11663 ! weather
+Wikidata:Q11753325 ! Q11753325
+Wikidata:Q1192097 ! whirlwind
+Wikidata:Q1199175 ! hawaiian eruption
+Wikidata:Q121742 ! storm surge
+Wikidata:Q12184 ! pandemic
+Wikidata:Q1227249 ! international incident
+Wikidata:Q12311704 ! Q12311704
+Wikidata:Q1262272 ! Zud
+Wikidata:Q1272626 ! representation
+Wikidata:Q1296340 ! effusive eruption
+Wikidata:Q1321523 ! criticality accident
+Wikidata:Q1321886 ! explosive eruption
+Wikidata:Q1322005 ! natural phenomenon
+Wikidata:Q1339582 ! Multiple-vehicle collision
+Wikidata:Q13418630 ! landspout
+Wikidata:Q1349983 ! leak
+Wikidata:Q1362483 ! gas explosion
+Wikidata:Q140588 ! typhoon
+Wikidata:Q1423039 ! tailstrike
+Wikidata:Q1434550 ! asian flu 1957b1958
+Wikidata:Q1456832 ! offense
+Wikidata:Q1464990 ! Q1464990
+Wikidata:Q149086 ! homicide
+Wikidata:Q14920473 ! ship grounding
+Wikidata:Q1512291 ! Q1512291
+Wikidata:Q151885 ! concept
+Wikidata:Q1522772 ! capsizing
+Wikidata:Q1527693 ! hard landing
+Wikidata:Q15292 ! evil
+Wikidata:Q154278 ! ethnic cleansing
+Wikidata:Q1550225 ! mining accident
+Wikidata:Q15725976 ! nuclear disaster
+Wikidata:Q15733640 ! aviation occurrence
+Wikidata:Q15831484 ! crash landing
+Wikidata:Q15931405 ! hull loss
+Wikidata:Q15977935 ! subaerial eruption
+Wikidata:Q16172167 ! Q16172167
+Wikidata:Q1620824 ! nuclear and radiation accident
+Wikidata:Q1639789 ! phreatomagmatic eruption
+Wikidata:Q16686448 ! artificial entity
+Wikidata:Q16702447 ! structural integrity and failure
+Wikidata:Q16708069 ! magnet quench
+Wikidata:Q16722960 ! phenomenon
+Wikidata:Q16738832 ! criminal case
+Wikidata:Q167903 ! landslide
+Wikidata:Q168247 ! famine
+Wikidata:Q16889133 ! class
+Wikidata:Q17005145 ! Runaway train
+Wikidata:Q17008256 ! collection
+Wikidata:Q17154378 ! Opioid overdose
+Wikidata:Q171558 ! accident
+Wikidata:Q17355126 ! air show accidents and incidents
+Wikidata:Q17363717 ! runway excursion
+Wikidata:Q1774397 ! Q1774397
+Wikidata:Q1778555 ! coal dust explosion
+Wikidata:Q178844 ! felony
+Wikidata:Q179057 ! explosion
+Wikidata:Q18009934 ! in-flight explosion
+Wikidata:Q18011108 ! death of a human by animal attack
+Wikidata:Q18011109 ! death of a human by bull attack
+Wikidata:Q18012374 ! hunting accident
+Wikidata:Q180684 ! conflict
+Wikidata:Q185148 ! interval
+Wikidata:Q186081 ! time interval
+Wikidata:Q18630519 ! firedamp explosion
+Wikidata:Q1863435 ! mid-air collision
+Wikidata:Q18642366 ! intoxication
+Wikidata:Q19354904 ! airliner bombing
+Wikidata:Q19403959 ! railway accident
+Wikidata:Q19804654 ! seaplane wreck
+Wikidata:Q19914541 ! undershoot
+Wikidata:Q19960719 ! nuclear incident
+Wikidata:Q2001676 ! military offensive
+Wikidata:Q205665 ! social norm
+Wikidata:Q2057971 ! health problem
+Wikidata:Q20899861 ! psychosocial hazard
+Wikidata:Q209190 ! low pressure area
+Wikidata:Q211364 ! principle
+Wikidata:Q21167512 ! chemical hazard
+Wikidata:Q21167589 ! acetylene tetrabromide exposure
+Wikidata:Q21167655 ! adiponitrile exposure
+Wikidata:Q21167694 ! allyl glycidyl ether exposure
+Wikidata:Q21167696 ! allyl propyl disulfide exposure
+Wikidata:Q21167715 ! aluminum welding fume exposure
+Wikidata:Q21167723 ! aluminium salt exposure
+Wikidata:Q21167762 ! 2-aminopyridine exposure
+Wikidata:Q21167797 ! 1-methylbutyl acetate exposure
+Wikidata:Q21167813 ! p-Anisidine exposure
+Wikidata:Q21167830 ! inorganic arsenic compound exposure
+Wikidata:Q21167837 ! organic arsenic compound exposure
+Wikidata:Q21167913 ! barium nitrate exposure
+Wikidata:Q21167922 ! barium sulfate exposure
+Wikidata:Q21167961 ! exposure to bismuth telluride doped with selenium sulfide
+Wikidata:Q21167962 ! bismuth telluride exposure
+Wikidata:Q21167963 ! borax exposure
+Wikidata:Q21167964 ! sodium tetraborate decahydrate exposure
+Wikidata:Q21168166 ! sodium tetraborate pentahydrate exposure
+Wikidata:Q21173097 ! boron tribromide exposure
+Wikidata:Q21173316 ! bromine exposure
+Wikidata:Q21173317 ! bromine pentafluoride exposure
+Wikidata:Q21173323 ! 2-butoxyethyl acetate exposure
+Wikidata:Q21173325 ! sec-Butyl acetate exposure
+Wikidata:Q21173327 ! tert-butyl acetate exposure
+Wikidata:Q21173334 ! Tert-Butyl chromate exposure
+Wikidata:Q21173335 ! N-Butyl glycidyl ether exposure
+Wikidata:Q21173336 ! butyl lactate exposure
+Wikidata:Q21173337 ! Butanethiol exposure
+Wikidata:Q21173338 ! O-sec-Butylphenol exposure
+Wikidata:Q21173339 ! p-tert-Butyltoluene exposure
+Wikidata:Q21173341 ! cadmium dust exposure
+Wikidata:Q21173344 ! Calcium arsenate exposure
+Wikidata:Q21173353 ! Calcium silicate exposure
+Wikidata:Q21173361 ! carbon black exposure
+Wikidata:Q21173542 ! carbonyl fluoride exposure
+Wikidata:Q21173544 ! cellulose exposure
+Wikidata:Q21173550 ! chlorinated diphenyl oxide exposure
+Wikidata:Q21173555 ! Phenacyl chloride exposure
+Wikidata:Q21173558 ! CS gas exposure
+Wikidata:Q21173563 ! exposure to polychlorinated biphenyl with 42% chlorine
+Wikidata:Q21173564 ! exposure to polychlorinated biphenyl with 54% chlorine
+Wikidata:Q21173568 ! 1-Chloro-1-nitropropane exposure
+Wikidata:Q21173569 ! chloropentafluoroethane exposure
+Wikidata:Q21173572 ! 2-Chlorostyrene exposure
+Wikidata:Q21173573 ! 2-chlorotoluene exposure
+Wikidata:Q21173577 ! Chromium(II) oxide exposure
+Wikidata:Q21173581 ! Clopidol exposure
+Wikidata:Q21173582 ! Coal dust exposure
+Wikidata:Q21173583 ! exposure to coal tar pitch volatiles
+Wikidata:Q21174091 ! Dicobalt octacarbonyl exposure
+Wikidata:Q21174093 ! cobalt tetracarbonyl hydride exposure
+Wikidata:Q21174094 ! exposure to coke oven emissions
+Wikidata:Q21174098 ! 2-(2,4-Dichlorophenoxy)ethyl sodium sulfate exposure
+Wikidata:Q21174113 ! cyanogen chloride exposure
+Wikidata:Q21174116 ! cyclohexanethiol exposure
+Wikidata:Q21174124 ! RDX exposure
+Wikidata:Q21174129 ! Cyhexatin exposure
+Wikidata:Q21174132 ! decaborane exposure
+Wikidata:Q21174133 ! 1-decanethiol exposure
+Wikidata:Q21174134 ! Demeton exposure
+Wikidata:Q21174139 ! o-dianisidine exposure
+Wikidata:Q21174148 ! 2-N-Dibutylaminoethanol exposure
+Wikidata:Q21174149 ! Dibutyl phosphate exposure
+Wikidata:Q21174157 ! Dichlorodifluoromethane exposure
+Wikidata:Q21174159 ! 1,3-Dichloro-5,5-dimethylhydantoin exposure
+Wikidata:Q21174164 ! Bis(chloroethyl) ether exposure
+Wikidata:Q21174165 ! Dichlorofluoromethane exposure
+Wikidata:Q21174166 ! 1,1-Dichloro-1-nitroethane exposure
+Wikidata:Q21174169 ! dalaphon exposure
+Wikidata:Q21174171 ! 1,2-dichlorotetrafluoroethane exposure
+Wikidata:Q21174178 ! diesel exhaust exposure
+Wikidata:Q21174188 ! Dibromodifluoromethane exposure
+Wikidata:Q21174189 ! Diglycidyl ether exposure
+Wikidata:Q21174190 ! Diisobutyl ketone exposure
+Wikidata:Q21174191 ! Diisopropylamine exposure
+Wikidata:Q21174195 ! bis(2-(Dimethylamino)ethyl)ether exposure
+Wikidata:Q21174196 ! Dimethylaminopropionitrile exposure
+Wikidata:Q21174210 ! Zoalene exposure
+Wikidata:Q21174218 ! Dinitro-ortho-cresol exposure
+Wikidata:Q21174223 ! Dioxathion exposure
+Wikidata:Q21174229 ! Dipropylene glycol methyl ether exposure
+Wikidata:Q21174243 ! DCMU exposure
+Wikidata:Q21174245 ! Divinylbenzene exposure
+Wikidata:Q21174246 ! 1-Dodecanethiol exposure
+Wikidata:Q21174247 ! emery exposure
+Wikidata:Q21174249 ! Endrin exposure
+Wikidata:Q21174265 ! 2-Ethoxyethyl acetate exposure
+Wikidata:Q21174276 ! Bromoethane exposure
+Wikidata:Q21174294 ! Ethylene glycol dinitrate exposure
+Wikidata:Q21174305 ! Ethylidene norbornene exposure
+Wikidata:Q21174306 ! Ethanethiol exposure
+Wikidata:Q21174308 ! N-ethylmorpholine exposure
+Wikidata:Q21174310 ! Tetraethyl orthosilicate exposure
+Wikidata:Q21174319 ! Ferrovanadium exposure
+Wikidata:Q21174325 ! Fluoroxene exposure
+Wikidata:Q21174340 ! gasoline exposure
+Wikidata:Q21174342 ! monogermane exposure
+Wikidata:Q21174352 ! Grain dust exposure
+Wikidata:Q21174353 ! graphite exposure
+Wikidata:Q21174355 ! exposure to synthetic graphite
+Wikidata:Q21174357 ! gypsum exposure
+Wikidata:Q21174639 ! 1-Heptanethiol exposure
+Wikidata:Q21174643 ! Hexachlorocyclopentadiene exposure
+Wikidata:Q21174645 ! Hexachloronaphthalene exposure
+Wikidata:Q21174719 ! 1-Hexadecanethiol exposure
+Wikidata:Q21174740 ! 2,2-Dimethylbutane exposure
+Wikidata:Q21174741 ! n-Hexanethiol exposure
+Wikidata:Q21174742 ! hexan-2-one exposure
+Wikidata:Q21174744 ! sec-Hexyl acetate exposure
+Wikidata:Q21174750 ! exposure to hydrogenated terphenyls
+Wikidata:Q21174763 ! 2-Hydroxypropyl acrylate exposure
+Wikidata:Q21174782 ! Isobutyronitrile exposure
+Wikidata:Q21174784 ! Isooctyl alcohol exposure
+Wikidata:Q21174788 ! 2-isopropoxyethanol exposure
+Wikidata:Q21174789 ! isopropyl acetate exposure
+Wikidata:Q21174792 ! N-Isopropylaniline exposure
+Wikidata:Q21174793 ! Diisopropyl ether exposure
+Wikidata:Q21174794 ! Isopropyl glycidyl ether exposure
+Wikidata:Q21174795 ! kaolin exposure
+Wikidata:Q21174797 ! kerosene exposure
+Wikidata:Q21174798 ! Ketene exposure
+Wikidata:Q21174820 ! lithium hydride exposure
+Wikidata:Q21174821 ! magnesite exposure
+Wikidata:Q21174828 ! cymantrene exposure
+Wikidata:Q21174829 ! manganese(II,III) oxide exposure
+Wikidata:Q21174830 ! marble exposure
+Wikidata:Q21174881 ! exposure to mercury alkyl compounds
+Wikidata:Q21174892 ! methylacetylene exposure
+Wikidata:Q21174893 ! MAPP gas exposure
+Wikidata:Q21174895 ! Methacrylonitrile exposure
+Wikidata:Q21174902 ! Methyl Cellosolve acetate exposure
+Wikidata:Q21174905 ! methyl cyanoacrylate exposure
+Wikidata:Q21174906 ! methylcyclohexane exposure
+Wikidata:Q21174907 ! Methylcyclohexanol exposure
+Wikidata:Q21174908 ! o-Methylcyclohexanone exposure
+Wikidata:Q21174909 ! methylcyclopentadienyl manganese tricarbonyl exposure
+Wikidata:Q21174910 ! Methyl demeton exposure
+Wikidata:Q21174916 ! methyl ethyl ketone peroxide exposure
+Wikidata:Q21174918 ! 5-Methyl-3-heptanone exposure
+Wikidata:Q21174919 ! Monomethylhydrazine exposure
+Wikidata:Q21174922 ! 4-methyl-2-pentanol exposure
+Wikidata:Q21174924 ! Methyl isopropyl ketone exposure
+Wikidata:Q21174928 ! Tetramethyl orthosilicate exposure
+Wikidata:Q21174932 ! exposure to mica minerals
+Wikidata:Q21174935 ! exposure to soluble molybdenum compounds
+Wikidata:Q21174939 ! Naphtha exposure
+Wikidata:Q21174941 ! 1,b5-bdiisocyanatonaphthalene exposure
+Wikidata:Q21174944 ! Niax Catalyst ESN exposure
+Wikidata:Q21174999 ! 4-nitrochlorobenzene exposure
+Wikidata:Q21175015 ! 1-nonanethiol exposure
+Wikidata:Q21175016 ! octachloronaphthalene exposure
+Wikidata:Q21175017 ! 1-octadecanethiol exposure
+Wikidata:Q21175019 ! 1-octanethiol exposure
+Wikidata:Q21175020 ! exposure to oil mist
+Wikidata:Q21175025 ! exposure to paraffin wax fume
+Wikidata:Q21175028 ! exposure to particulates not otherwise regulated
+Wikidata:Q21175029 ! pentaborane exposure
+Wikidata:Q21175031 ! pentachloronaphthalene exposure
+Wikidata:Q21175033 ! pentaerythritol exposure
+Wikidata:Q21175035 ! 1-pentanethiol exposure
+Wikidata:Q21175037 ! perchloromethyl mercaptan exposure
+Wikidata:Q21175038 ! perchloryl fluoride exposure
+Wikidata:Q21175039 ! Perlite exposure
+Wikidata:Q21175040 ! Petroleum naphtha exposure
+Wikidata:Q21175047 ! N-phenyl-beta-naphthylamine exposure
+Wikidata:Q21175048 ! phenylphosphine exposure
+Wikidata:Q21175054 ! white phosphorus exposure
+Wikidata:Q21175057 ! phosphorus pentasulfide exposure
+Wikidata:Q21175060 ! m-phthalodinitrile exposure
+Wikidata:Q21175064 ! piperazine dihydrochloride exposure
+Wikidata:Q21175065 ! plaster exposure
+Wikidata:Q21175067 ! exposure to soluble platinum salts
+Wikidata:Q21175068 ! Portland cement exposure
+Wikidata:Q21175069 ! potassium cyanide exposure
+Wikidata:Q21175083 ! propylene glycol dinitrate exposure
+Wikidata:Q21175084 ! propylene glycol methyl ether exposure
+Wikidata:Q21175087 ! n-propyl nitrate exposure
+Wikidata:Q21175092 ! exposure to soluble rhodium salts
+Wikidata:Q21175094 ! exposure to rosin core solder
+Wikidata:Q21175299 ! silica gel exposure
+Wikidata:Q21175300 ! silicon exposure
+Wikidata:Q21175304 ! steatite exposure
+Wikidata:Q21175308 ! sodium cyanide exposure
+Wikidata:Q21175312 ! sodium metabisulfite exposure
+Wikidata:Q21175313 ! starch exposure
+Wikidata:Q21175315 ! exposure to White spirit
+Wikidata:Q21175319 ! Subtilisin exposure
+Wikidata:Q21175320 ! succinonitrile exposure
+Wikidata:Q21175326 ! disulfur dichloride exposure
+Wikidata:Q21175327 ! disulfur decafluoride exposure
+Wikidata:Q21175332 ! talc exposure
+Wikidata:Q21175339 ! o-terphenyl exposure
+Wikidata:Q21175340 ! m-terphenyl exposure
+Wikidata:Q21175343 ! 1,1,1,2-tetrachloro-2,2-difluoroethane exposure
+Wikidata:Q21175344 ! 1,2-difluoro-1,1,2,2-tetrachloroethane exposure
+Wikidata:Q21175348 ! tetrachloronaphthalene exposure
+Wikidata:Q21175352 ! tetramethylsuccinonitrile exposure
+Wikidata:Q21175355 ! tetryl exposure
+Wikidata:Q21175356 ! exposure to soluble thallium compounds
+Wikidata:Q21175357 ! 4,4'-thiobis(6-tert-butyl-m-cresol) exposure
+Wikidata:Q21175369 ! exposure to organic tin compounds
+Wikidata:Q21175370 ! tin(II) oxide exposure
+Wikidata:Q21175373 ! tolidine exposure
+Wikidata:Q21175375 ! Diaminotoluene exposure
+Wikidata:Q21175378 ! m-toluidine exposure
+Wikidata:Q21175385 ! trichloronaphthalene exposure
+Wikidata:Q21175387 ! 1,1,2-trichloro-1,2,2-trifluoroethane exposure
+Wikidata:Q21175389 ! Bromotrifluoromethane exposure
+Wikidata:Q21175390 ! Mellitic anhydride exposure
+Wikidata:Q21175395 ! trimethyl phosphite exposure
+Wikidata:Q21175397 ! triorthocresyl phosphate exposure
+Wikidata:Q21175398 ! Triphenylamine exposure
+Wikidata:Q21175401 ! exposure to soluble tungsten compounds
+Wikidata:Q21175402 ! tungsten carbide exposure
+Wikidata:Q21175403 ! turpentine exposure
+Wikidata:Q21175404 ! 1-undecanethiol exposure
+Wikidata:Q21175405 ! exposure to insoluble uranium compounds
+Wikidata:Q21175406 ! exposure to soluble uranium compounds
+Wikidata:Q21175409 ! exposure to vanadium fume
+Wikidata:Q21175410 ! exposure to vegetable oil mist
+Wikidata:Q21175417 ! 1,1-difluoroethylene exposure
+Wikidata:Q21175418 ! vinyl toluene exposure
+Wikidata:Q21175419 ! Petroleum ether exposure
+Wikidata:Q21175420 ! Warfarin exposure
+Wikidata:Q21175421 ! exposure to welding fumes
+Wikidata:Q21175426 ! m-xylene-N1,N1'-diamine exposure
+Wikidata:Q21175427 ! Xylidine exposure
+Wikidata:Q21175428 ! yttrium exposure
+Wikidata:Q21175429 ! exposure to zinc chloride fume
+Wikidata:Q21175431 ! Zinc stearate exposure
+Wikidata:Q21175433 ! exposure to liquefied petroleum gas
+Wikidata:Q21175435 ! exposure to cotton dust
+Wikidata:Q21175436 ! exposure to phenyl etherbbiphenyl mixture
+Wikidata:Q21175437 ! exposure to silica dust
+Wikidata:Q21175438 ! Pyrethrum exposure
+Wikidata:Q21281859 ! adamsite exposure
+Wikidata:Q21396183 ! arsenic pentoxide exposure
+Wikidata:Q2145290 ! mental representation
+Wikidata:Q21504884 ! fentanyl toxicity
+Wikidata:Q21504975 ! lewisite exposure
+Wikidata:Q21505396 ! exposure to mustardblewisite mixture
+Wikidata:Q21506740 ! HN1 exposure
+Wikidata:Q21514015 ! HN3 exposure
+Wikidata:Q21515200 ! phosgene oxime exposure
+Wikidata:Q21515284 ! 3-quinuclidinyl benzilate exposure
+Wikidata:Q216200 ! precept
+Wikidata:Q2165983 ! stampede
+Wikidata:Q217594 ! class
+Wikidata:Q2192508 ! ship collision
+Wikidata:Q220187 ! oil spill
+Wikidata:Q22269530 ! single-organism process
+Wikidata:Q22269697 ! multi-organism process
+Wikidata:Q22272508 ! multi-organism behavior
+Wikidata:Q22294683 ! intraspecies interaction between organisms
+Wikidata:Q2235325 ! ship accident
+Wikidata:Q22920377 ! level crossing collision
+Wikidata:Q2296331 ! dust explosion
+Wikidata:Q22988191 ! 2016 Sumatra earthquake
+Wikidata:Q23007305 ! mine explosion
+Wikidata:Q23009459 ! connect
+Wikidata:Q23009538 ! addition
+Wikidata:Q23009552 ! exchange
+Wikidata:Q23009675 ! transfer
+Wikidata:Q23303934 ! natural event
+Wikidata:Q2334719 ! legal case
+Wikidata:Q23681150 ! mount Velino aircraft crash
+Wikidata:Q238053 ! collision
+Wikidata:Q23906019 ! mental state
+Wikidata:Q23956024 ! spacetime volume
+Wikidata:Q23956356 ! end of existence
+Wikidata:Q24034552 ! mathematical concept
+Wikidata:Q2447186 ! China Syndrome
+Wikidata:Q246672 ! mathematical object
+Wikidata:Q2485083 ! suicide method
+Wikidata:Q2535935 ! terrestrial locomotion
+Wikidata:Q2546109 ! submarine eruption
+Wikidata:Q2547976 ! Atlantic hurricane
+Wikidata:Q2574811 ! cause
+Wikidata:Q25999041 ! regional wind
+Wikidata:Q2620513 ! maritime incident
+Wikidata:Q26257759 ! 2014 polio outbreaks
+Wikidata:Q26269000 ! Q26269000
+Wikidata:Q2703194 ! pelC)an eruption
+Wikidata:Q2723958 ! influenza pandemic
+Wikidata:Q2920615 ! Anthropogenic hazard
+Wikidata:Q2964234 ! food crisis
+Wikidata:Q2967712 ! horse fall
+Wikidata:Q3002150 ! plane crash
+Wikidata:Q3032301 ! impact winter
+Wikidata:Q3066282 ! Famines in Ethiopia
+Wikidata:Q3193890 ! environmental disaster
+Wikidata:Q3199915 ! massacre
+Wikidata:Q3241045 ! outbreak
+Wikidata:Q327197 ! legal transaction
+Wikidata:Q3305019 ! head-on collision
+Wikidata:Q3306242 ! Pacific hurricane
+Wikidata:Q333495 ! falling
+Wikidata:Q336797 ! 100-year flood
+Wikidata:Q3433185 ! occupational hazard
+Wikidata:Q349 ! sport
+Wikidata:Q3505252 ! drug overdose
+Wikidata:Q3505845 ! state
+Wikidata:Q3567666 ! Natural hazard
+Wikidata:Q358275 ! sturzstrom
+Wikidata:Q36161 ! set
+Wikidata:Q363948 ! contradiction
+Wikidata:Q3658557 ! famine in India
+Wikidata:Q375102 ! rear-end collision
+Wikidata:Q3769299 ! human behaviour
+Wikidata:Q381072 ! crisis
+Wikidata:Q3839081 ! disaster
+Wikidata:Q386724 ! work
+Wikidata:Q386899 ! hit and run
+Wikidata:Q4 ! death
+Wikidata:Q4026292 ! action
+Wikidata:Q4055822 ! Q4055822
+Wikidata:Q4055831 ! Q4055831
+Wikidata:Q4202290 ! railway incident
+Wikidata:Q4393498 ! representation
+Wikidata:Q44512 ! epidemic
+Wikidata:Q4574554 ! Q4574554
+Wikidata:Q4688297 ! AerolC-neas Argentinas safety incident
+Wikidata:Q481609 ! damage
+Wikidata:Q483247 ! phenomenon
+Wikidata:Q488383 ! object
+Wikidata:Q493814 ! 1879 Irish Famine
+Wikidata:Q505748 ! volcanism
+Wikidata:Q5127848 ! class
+Wikidata:Q5138350 ! coastal flood
+Wikidata:Q52948 ! interaction
+Wikidata:Q5377742 ! engine failure on take-off
+Wikidata:Q5422269 ! extratropical storm surge
+Wikidata:Q5460118 ! Floods in Afghanistan
+Wikidata:Q5460127 ! Floods in Thailand
+Wikidata:Q5526351 ! gas leak
+Wikidata:Q5533440 ! Genocidal massacre
+Wikidata:Q5647138 ! Hand arm vibrations
+Wikidata:Q5710433 ! terrorist attack
+Wikidata:Q58778 ! system
+Wikidata:Q5943937 ! vulcanian eruption
+Wikidata:Q5963817 ! earthquakes in Tabriz
+Wikidata:Q6031064 ! Information exchange
+Wikidata:Q610781 ! subglacial eruption
+Wikidata:Q611880 ! strombolian eruption
+Wikidata:Q621184 ! problem
+Wikidata:Q629257 ! work accident
+Wikidata:Q637816 ! occupational disease
+Wikidata:Q6428674 ! era
+Wikidata:Q645883 ! military operation
+Wikidata:Q6539177 ! shootdown
+Wikidata:Q657433 ! Moving violation
+Wikidata:Q6765918 ! wrongdoing
+Wikidata:Q6934978 ! Multiple vortex tornado
+Wikidata:Q7068184 ! nuclear reactor accidents in the United States
+Wikidata:Q714737 ! category of being
+Wikidata:Q7184903 ! abstract object
+Wikidata:Q7189713 ! physiological condition
+Wikidata:Q727990 ! megathrust earthquake
+Wikidata:Q7283 ! terrorism
+Wikidata:Q732722 ! vortex
+Wikidata:Q734611 ! anti-social behaviour
+Wikidata:Q744913 ! aviation accident summer 1965 I was there when the accident occurred and knew people on the flight
+Wikidata:Q747501 ! plinian eruption
+Wikidata:Q7508321 ! side collision
+Wikidata:Q7826028 ! tornadoes of 1988
+Wikidata:Q7833114 ! tram accident
+Wikidata:Q7918620 ! vehicular homicide
+Wikidata:Q7935 ! avalanche
+Wikidata:Q79602 ! cyclone
+Wikidata:Q8016240 ! trial
+Wikidata:Q8065 ! natural disaster
+Wikidata:Q8081 ! tornado
+Wikidata:Q8092 ! tropical cyclone
+Wikidata:Q8094 ! wind
+Wikidata:Q81054 ! storm
+Wikidata:Q815298 ! Occupational stress
+Wikidata:Q820355 ! Q820355
+Wikidata:Q83267 ! crime
+Wikidata:Q834390 ! influenza A virus
+Wikidata:Q844482 ! killing
+Wikidata:Q844947 ! landing
+Wikidata:Q855919 ! unnatural death
+Wikidata:Q860333 ! flash flood
+Wikidata:Q906512 ! shipwrecking
+Wikidata:Q921513 ! social behavior
+Wikidata:Q925246 ! limnic eruption
+Wikidata:Q925958 ! animal locomotion
+Wikidata:Q937178 ! jackknifing
+Wikidata:Q937228 ! property
+Wikidata:Q9637047 ! Q9637047
+Wikidata:Q9687 ! traffic accident
+Wikidata:Q977367 ! chemical accident
+XCO:0000002 ! resting
+XCO:0000003 ! resting on treadmill
+XCO:0000004 ! walking on treadmill
+XCO:0000005 ! running on treadmill
+XCO:0000006 ! swimming
+XCO:0000007 ! walking
+XCO:0000009 ! controlled atmosphere composition
+XCO:0000010 ! air oxygen content
+XCO:0000012 ! air carbon dioxide content
+XCO:0000014 ! controlled content diet
+XCO:0000015 ! controlled calorie content diet
+XCO:0000016 ! standard rat chow
+XCO:0000017 ! nephrectomy
+XCO:0000018 ! bilateral nephrectomy
+XCO:0000019 ! solid diet
+XCO:0000020 ! drink
+XCO:0000022 ! controlled sodium content diet
+XCO:0000023 ! controlled ethanol content drinking water
+XCO:0000024 ! controlled iron content diet
+XCO:0000025 ! controlled fat content diet
+XCO:0000026 ! surgical removal
+XCO:0000027 ! surgical implantation
+XCO:0000028 ! caffeinated drink
+XCO:0000029 ! controlled carbohydrate content diet
+XCO:0000030 ! controlled protein content diet
+XCO:0000031 ! controlled calcium content diet
+XCO:0000032 ! controlled potassium content diet
+XCO:0000034 ! individual housing
+XCO:0000035 ! housing in pairs
+XCO:0000036 ! housing with socially dominant partner
+XCO:0000037 ! housing with socially subordinate partner
+XCO:0000041 ! radon exposure
+XCO:0000044 ! non-ionizing radiation exposure
+XCO:0000047 ! sensory stimulus
+XCO:0000049 ! visual stimulus
+XCO:0000050 ! olfactory stimulus
+XCO:0000051 ! taste stimulus
+XCO:0000052 ! tactile stimulus
+XCO:0000053 ! targeted heat exposure
+XCO:0000054 ! targeted cold exposure
+XCO:0000055 ! electric shock exposure
+XCO:0000057 ! rebreathed air
+XCO:0000058 ! room temperature ambient air
+XCO:0000059 ! physical activity
+XCO:0000060 ! mental activity
+XCO:0000061 ! serial subtraction exercise
+XCO:0000062 ! cycling
+XCO:0000063 ! cycling, stationary
+XCO:0000064 ! cycling, non-stationary
+XCO:0000065 ! hand dynamometer activity
+XCO:0000066 ! body position change
+XCO:0000067 ! body position change, seated to standing
+XCO:0000068 ! body position change, supine to standing
+XCO:0000069 ! standard diet
+XCO:0000071 ! beer
+XCO:0000072 ! wine
+XCO:0000073 ! liquor
+XCO:0000074 ! controlled caffeine content drinking water
+XCO:0000075 ! tea
+XCO:0000076 ! coffee
+XCO:0000080 ! tobacco chewing
+XCO:0000081 ! body position
+XCO:0000082 ! sitting position
+XCO:0000083 ! standing position
+XCO:0000084 ! supine position
+XCO:0000085 ! stationary bicycle dynamometer
+XCO:0000086 ! exercise training program
+XCO:0000087 ! specific pathogen-free conditions
+XCO:0000095 ! bilateral ovariectomy
+XCO:0000096 ! unilateral ovariectomy
+XCO:0000097 ! right ovariectomy
+XCO:0000098 ! left ovariectomy
+XCO:0000100 ! sham surgical control condition
+XCO:0000101 ! vehicle control condition
+XCO:0000103 ! glucose solution
+XCO:0000104 ! glucose solution, 2.8M
+XCO:0000106 ! anesthetic/analgesic
+XCO:0000107 ! pentobarbital
+XCO:0000109 ! isoflurane
+XCO:0000110 ! prone position
+XCO:0000112 ! unilateral nephrectomy
+XCO:0000113 ! right nephrectomy
+XCO:0000114 ! left nephrectomy
+XCO:0000115 ! perfusate
+XCO:0000116 ! Kreb's solution perfusate
+XCO:0000117 ! saline solution perfusate
+XCO:0000118 ! perfusate suspended
+XCO:0000121 ! NG-nitroarginine methyl ester
+XCO:0000131 ! xylazine
+XCO:0000135 ! receptor agonist
+XCO:0000136 ! enzyme substrate
+XCO:0000137 ! FAPGG
+XCO:0000139 ! vasoactive chemical
+XCO:0000141 ! vasoconstrictor
+XCO:0000146 ! controlled oxygen content Kreb's solution perfusate
+XCO:0000147 ! physiological salt solution perfusate
+XCO:0000148 ! controlled oxygen content physiological salt solution perfusate
+XCO:0000151 ! chemical time series
+XCO:0000152 ! drug dose time series
+XCO:0000153 ! sample resting period
+XCO:0000154 ! ion/salt solution
+XCO:0000155 ! sodium chloride solution
+XCO:0000156 ! 0.9% sodium chloride solution
+XCO:0000157 ! physical restraint
+XCO:0000158 ! physical restraint in mechanical restrainer
+XCO:0000159 ! physical restraint in tube type rodent restrainer
+XCO:0000160 ! receptor antagonist
+XCO:0000163 ! controlled content drinking water
+XCO:0000164 ! controlled sodium content drinking water
+XCO:0000166 ! controlled in situ organ condition
+XCO:0000167 ! controlled in situ kidney condition
+XCO:0000168 ! controlled in situ renal perfusion pressure
+XCO:0000169 ! labeled chemical
+XCO:0000170 ! fluorescently labeled chemical
+XCO:0000171 ! radioactively labeled chemical
+XCO:0000175 ! tritiated inulin
+XCO:0000176 ! enzyme
+XCO:0000177 ! thrombin
+XCO:0000179 ! ionizing ultraviolet radiation exposure
+XCO:0000180 ! non-ionizing ultraviolet radiation exposure
+XCO:0000181 ! controlled visible light condition
+XCO:0000182 ! controlled exposure to ambient light
+XCO:0000185 ! calcium ion solution
+XCO:0000186 ! cytisine
+XCO:0000188 ! darodipine
+XCO:0000189 ! physical restraint on immobilization board
+XCO:0000190 ! angiotensin I
+XCO:0000192 ! deoxycorticosterone acetate
+XCO:0000193 ! peptide/protein
+XCO:0000194 ! antibody
+XCO:0000195 ! myelin oligodendrocyte glycoprotein
+XCO:0000197 ! indicator
+XCO:0000198 ! pH indicator
+XCO:0000199 ! oxidation-reduction indicator
+XCO:0000201 ! orchiectomy
+XCO:0000202 ! unilateral orchiectomy
+XCO:0000203 ! bilateral orchiectomy
+XCO:0000210 ! partial hepatectomy
+XCO:0000211 ! controlled sucrose content diet
+XCO:0000212 ! controlled copper content diet
+XCO:0000215 ! controlled calcium ion content physiological salt solution perfusate
+XCO:0000216 ! ion channel activator
+XCO:0000217 ! cation channel activator
+XCO:0000218 ! 4-alpha-phorbol 12,13-didecanoate
+XCO:0000220 ! anion channel agonist
+XCO:0000221 ! ion channel inhibitor
+XCO:0000222 ! cation channel inhibitor
+XCO:0000223 ! anion channel inhibitor
+XCO:0000225 ! potassium channel inhibitor
+XCO:0000226 ! apamin
+XCO:0000227 ! charybdotoxin
+XCO:0000230 ! monoamine hormone
+XCO:0000231 ! anti-RT6.1 antibody
+XCO:0000232 ! nucleic acid
+XCO:0000233 ! ribonucleic acid
+XCO:0000235 ! Poly I:C
+XCO:0000236 ! pathogen
+XCO:0000238 ! Kilham rat virus
+XCO:0000242 ! alloxan
+XCO:0000243 ! partial pancreatectomy
+XCO:0000244 ! controlled fructose content diet
+XCO:0000246 ! controlled cholesterol content diet
+XCO:0000247 ! controlled olive oil content diet
+XCO:0000251 ! secretagogue
+XCO:0000252 ! tolbutamide
+XCO:0000254 ! sodium ion solution
+XCO:0000255 ! anti-glomerular basement membrane antibody
+XCO:0000257 ! controlled hydrogen ion content drinking water
+XCO:0000258 ! disease inducing agent
+XCO:0000259 ! disease inducing chemical
+XCO:0000260 ! peptide/protein antigen
+XCO:0000261 ! arthritis inducing chemical
+XCO:0000262 ! collagen
+XCO:0000264 ! Freund's adjuvant
+XCO:0000265 ! Freund's incomplete adjuvant
+XCO:0000266 ! Freund's complete adjuvant
+XCO:0000267 ! peptidoglycan-polysaccharide
+XCO:0000268 ! balloon angioplasty
+XCO:0000272 ! tempol
+XCO:0000276 ! hydrocarbon
+XCO:0000277 ! cyclic hydrocarbon
+XCO:0000278 ! polycyclic hydrocarbon
+XCO:0000279 ! terpene
+XCO:0000281 ! type II collagen
+XCO:0000282 ! anti-Thy1 antibody
+XCO:0000285 ! controlled NG-nitroarginine methyl ester content drinking water
+XCO:0000287 ! interphotoreceptor retinoid-binding protein
+XCO:0000288 ! R16 peptide of interphotoreceptor retinoid-binding protein
+XCO:0000289 ! R14 peptide of interphotoreceptor retinoid-binding protein
+XCO:0000290 ! peripheral myelin protein 2
+XCO:0000291 ! peripheral myelin protein 2 peptide 58-81
+XCO:0000292 ! peripheral nerve myelin
+XCO:0000293 ! 99mTc-sestamibi
+XCO:0000294 ! estrogen/estrogen analog
+XCO:0000296 ! running on inclined treadmill
+XCO:0000298 ! controlled saccharin content drinking water
+XCO:0000299 ! controlled ethanol content drinking water with no other optional drink source
+XCO:0000300 ! controlled ethanol content drinking water with water as an optional drink source
+XCO:0000301 ! lithium ion solution
+XCO:0000302 ! lithium chloride solution
+XCO:0000303 ! adrenalectomy
+XCO:0000304 ! bilateral adrenalectomy
+XCO:0000305 ! unilateral adrenalectomy
+XCO:0000307 ! cold ambient air exposure
+XCO:0000309 ! heated ambient air exposure
+XCO:0000311 ! potassium ion solution
+XCO:0000312 ! potassium chloride solution
+XCO:0000314 ! buffer
+XCO:0000315 ! buffer solution
+XCO:0000316 ! calcium-free buffer solution
+XCO:0000317 ! buffered calcium ion solution
+XCO:0000318 ! surgical construction
+XCO:0000319 ! artificial aortocaval fistula
+XCO:0000320 ! hexamethonium
+XCO:0000321 ! hexamethonium bromide
+XCO:0000322 ! hexamethonium chloride
+XCO:0000326 ! controlled ethanol content saline
+XCO:0000327 ! controlled quinine content drinking water
+XCO:0000328 ! controlled deoxycorticosterone content drinking water
+XCO:0000329 ! controlled deoxycorticosterone content saline drink
+XCO:0000331 ! RU28362
+XCO:0000332 ! controlled RU28362 content drinking water
+XCO:0000333 ! controlled RU28362 content saline drink
+XCO:0000334 ! left adrenalectomy
+XCO:0000335 ! right adrenalectomy
+XCO:0000337 ! air-jet exposure
+XCO:0000338 ! chemical nanoparticle
+XCO:0000339 ! titanium dioxide nanoparticles
+XCO:0000340 ! solution
+XCO:0000341 ! chemical with specified function
+XCO:0000342 ! chemical with specified structure
+XCO:0000343 ! nitrosourea
+XCO:0000344 ! N-propyl-N-nitrosourea
+XCO:0000347 ! blood vessel occlusion
+XCO:0000348 ! middle cerebral artery occlusion
+XCO:0000349 ! arthritis-inducing agent
+XCO:0000350 ! streptococcal cell wall
+XCO:0000352 ! myelin
+XCO:0000353 ! central nervous system myelin
+XCO:0000355 ! controlled N-methyl-N'-nitro-N-nitrosoguanidine content drinking water
+XCO:0000356 ! spinal cord homogenate
+XCO:0000357 ! walking on inclined treadmill
+XCO:0000359 ! sodium p-aminohippurate
+XCO:0000360 ! arterial catheter implantation
+XCO:0000361 ! left L3-L5 ventral root avulsion
+XCO:0000362 ! physical restraint in plastic bag
+XCO:0000363 ! eukaryotic pathogen
+XCO:0000364 ! Toxoplasma gondii
+XCO:0000365 ! Toxoplasma gondii cysts
+XCO:0000367 ! sham surgical device implantation
+XCO:0000368 ! autoimmune disease-inducing chemical
+XCO:0000369 ! aurothiopropanol sulfonate
+XCO:0000370 ! Trichinella spiralis
+XCO:0000371 ! Trichinella spiralis larvae
+XCO:0000373 ! surgical denervation
+XCO:0000374 ! axotomy
+XCO:0000380 ! phytyl side chain of alpha-tocopherol
+XCO:0000382 ! controlled captopril content drinking water
+XCO:0000383 ! controlled losartan content drinking water
+XCO:0000384 ! controlled tempol content drinking water
+XCO:0000385 ! glomerulonephritis-inducing agent
+XCO:0000386 ! collagenase-solubilized glomerular basement membrane
+XCO:0000387 ! collagenase-solubilized rat glomerular basement membrane
+XCO:0000389 ! controlled cigarette smoke content
+XCO:0000392 ! nucleoside/nucleotide
+XCO:0000394 ! controlled bile acid content diet
+XCO:0000395 ! controlled 4-nitroquinoline N-oxide content drinking water
+XCO:0000396 ! phenolic/phenol derivative
+XCO:0000399 ! complex ion
+XCO:0000400 ! surgical avulsion
+XCO:0000401 ! nerve root avulsion
+XCO:0000402 ! habituation to experimental apparatus
+XCO:0000403 ! controlled cisplatin content diet
+XCO:0000404 ! controlled bisphenol A content diet
+XCO:0000405 ! controlled cisplatin content drinking water
+XCO:0000406 ! controlled bisphenol A content drinking water
+XCO:0000409 ! controlled metformin content drinking water
+XCO:0000410 ! controlled metformin content diet
+XCO:0000411 ! reproduction condition
+XCO:0000412 ! gestation
+XCO:0000413 ! birth
+XCO:0000414 ! lactation
+XCO:0000415 ! maternal milk
+XCO:0000416 ! milk
+XCO:0000417 ! controlled phytoestrogen content diet
+XCO:0000418 ! phytoestrogen-free diet
+XCO:0000419 ! soy-free diet
+XCO:0000420 ! controlled in utero environment
+XCO:0000421 ! in utero condition
+XCO:0000423 ! thymoquinone
+XCO:0000425 ! lactotransferrin
+XCO:0000429 ! controlled fructose content drinking water
+XCO:0000430 ! silymarin
+XCO:0000433 ! controlled sucrose content drinking water
+XCO:0000434 ! octylphenol
+XCO:0000436 ! controlled N-propyl-N-nitrosourea content diet
+XCO:0000437 ! controlled N-propyl-N-nitrosourea content drinking water
+XCO:0000439 ! controlled 3-methyl-4'-dimethylaminoazobenzene content drinking water
+XCO:0000440 ! controlled 3-methyl-4'-dimethylaminoazobenzene content diet
+XCO:0000441 ! controlled 2-acetamidofluorene content drinking water
+XCO:0000442 ! controlled 2-acetamidofluorene content diet
+XCO:0000443 ! controlled dexamethasone content diet
+XCO:0000444 ! controlled dexamethasone content drinking water
+XCO:0000445 ! phosphate buffered saline
+XCO:0000446 ! estrus cycle
+XCO:0000448 ! metestrus
+XCO:0000449 ! diestrus
+XCO:0000450 ! proestrus
+XCO:0000451 ! Herpes simplex virus type 1
+XCO:0000452 ! controlled casein content diet
+XCO:0000453 ! controlled butter content diet
+XCO:0000454 ! controlled oil content diet
+XCO:0000455 ! controlled corn oil content diet
+XCO:0000456 ! retinyl palmitate
+XCO:0000457 ! controlled retinoid content diet
+XCO:0000458 ! controlled retinyl palmitate content diet
+XCO:0000459 ! controlled light/dark cycle
+XCO:0000460 ! subcutaneous interscapular air pouch
+XCO:0000461 ! restricted feeding
+XCO:0000462 ! light phase of controlled light/dark cycle
+XCO:0000463 ! dark phase of controlled light/dark cycle
+XCO:0000464 ! controlled ex vivo organ condition
+XCO:0000465 ! controlled ex vivo artery condition
+XCO:0000466 ! controlled ex vivo artery perfusion pressure
+XCO:0000470 ! flavonoid
+XCO:0000475 ! bacterial pathogen
+XCO:0000476 ! Streptococcus pneumoniae
+XCO:0000477 ! Streptococcus pneumoniae D39
+XCO:0000478 ! Streptococcus pneumoniae TIGR4
+XCO:0000479 ! Haemophilus influenzae
+XCO:0000480 ! nontypeable Haemophilus influenzae
+XCO:0000481 ! Haemophilus influenzae 86-028NP
+XCO:0000485 ! Haemophilus influenzae 86-028NP H2 mutant
+XCO:0000486 ! Haemophilus influenzae 86-028NP C5 mutant
+XCO:0000487 ! Streptococcus pneumoniae TIGR4 LuxS mutant
+XCO:0000488 ! social environment condition
+XCO:0000489 ! temporary social environment condition
+XCO:0000490 ! ongoing social environment condition
+XCO:0000491 ! controlled exposure to an organism of the same species
+XCO:0000492 ! controlled exposure to a juvenile of the same species
+XCO:0000493 ! controlled exposure to an adult of the same species
+XCO:0000494 ! postmenopause
+XCO:0000497 ! Parkinson disease inducing chemical
+ZECO:0000102 ! generic control
+ZECO:0000106 ! bacterial treatment
+ZECO:0000107 ! fungal treatment
+ZECO:0000108 ! germ free
+ZECO:0000110 ! viral treatment
+ZECO:0000113 ! food availability
+ZECO:0000115 ! limited availability
+ZECO:0000116 ! unlimited availability
+ZECO:0000117 ! food content
+ZECO:0000118 ! cholesterol content
+ZECO:0000119 ! high cholesterol
+ZECO:0000120 ! low cholesterol
+ZECO:0000121 ! fat content
+ZECO:0000122 ! high fat
+ZECO:0000123 ! high saturated fat
+ZECO:0000124 ! high monounsaturated fat
+ZECO:0000125 ! low fat
+ZECO:0000126 ! low trans fat
+ZECO:0000127 ! low polyunsaturated fat
+ZECO:0000128 ! protein content
+ZECO:0000129 ! high protein
+ZECO:0000130 ! low protein
+ZECO:0000132 ! high sugar
+ZECO:0000133 ! high fructose
+ZECO:0000134 ! high glucose
+ZECO:0000135 ! high sucrose
+ZECO:0000136 ! low sugar
+ZECO:0000137 ! low sucrose
+ZECO:0000138 ! low fructose
+ZECO:0000139 ! low glucose
+ZECO:0000141 ! open roofed
+ZECO:0000142 ! overcrowding
+ZECO:0000143 ! in vitro culture
+ZECO:0000144 ! organ culture
+ZECO:0000145 ! primary cell culture
+ZECO:0000146 ! lighting conditions
+ZECO:0000147 ! light duration
+ZECO:0000148 ! altered light dark cycle
+ZECO:0000149 ! constant dark
+ZECO:0000150 ! constant light
+ZECO:0000155 ! mechanical stress
+ZECO:0000156 ! vibration
+ZECO:0000157 ! water flow
+ZECO:0000158 ! circular flow
+ZECO:0000159 ! through flow
+ZECO:0000161 ! stable temperature exposure
+ZECO:0000164 ! temperature shock
+ZECO:0000165 ! cold shock
+ZECO:0000168 ! ablation
+ZECO:0000169 ! chemical ablation
+ZECO:0000170 ! light ablation
+ZECO:0000171 ! resection
+ZECO:0000172 ! amputation
+ZECO:0000173 ! vaccine treatment
+ZECO:0000174 ! laceration
+ZECO:0000177 ! xenotransplantation
+ZECO:0000178 ! perforation
+ZECO:0000179 ! abrasion
+ZECO:0000180 ! contusion
+ZECO:0000181 ! transection
+ZECO:0000183 ! gas composition
+ZECO:0000184 ! carbon dioxide content
+ZECO:0000185 ! hypercapnia
+ZECO:0000186 ! hypocapnia
+ZECO:0000190 ! ion composition
+ZECO:0000191 ! modified calcium composition
+ZECO:0000192 ! high calcium
+ZECO:0000193 ! low calcium
+ZECO:0000194 ! modified potassium composition
+ZECO:0000195 ! high potassium
+ZECO:0000196 ! low potassium
+ZECO:0000197 ! modified sodium composition
+ZECO:0000198 ! high sodium
+ZECO:0000199 ! low sodium
+ZECO:0000201 ! acidic
+ZECO:0000202 ! basic
+ZECO:0000203 ! water salinity
+ZECO:0000204 ! hypertonic
+ZECO:0000205 ! hypotonic
+ZECO:0000206 ! isotonic
+ZECO:0000207 ! stable
+ZECO:0000211 ! microwaves
+ZECO:0000212 ! infared
+ZECO:0000216 ! gama ray
+ZECO:0000217 ! particle radiation
+ZECO:0000218 ! proton
+ZECO:0000220 ! acoustic radiation
+ZECO:0000221 ! alpha particle
+ZECO:0000222 ! electromagnetic field
+ZECO:0000223 ! electric field
+ZECO:0000225 ! high polysunsaturated fat
+ZECO:0000226 ! high trans fat
+ZECO:0000227 ! low saturated fat
+ZECO:0000228 ! low monounsaturated fat
+ZECO:0000229 ! physical alteration
+ZECO:0000230 ! bacterial treatment by injection
+ZECO:0000231 ! bacterial treatment by exposure to environment
+ZECO:0000232 ! fungal treatment by injection
+ZECO:0000233 ! fungal treatment by exposure to environment
+ZECO:0000234 ! viral treatment by exposure to environment
+ZECO:0000235 ! viral treatment by injection
+ZECO:0000236 ! cancer xenotransplantation
+ZECO:0000237 ! chemical treatment by injection
+ZECO:0000238 ! chemical treatment by environment
+ZECO:0000239 ! chemical treatment by diet
+ZECO:0000240 ! carbohydrate content
+ZECO:0000241 ! high carbohydrate
+ZECO:0000242 ! low carbohydrate
+ZECO:0000243 ! stress by handling
+ZECO:0000245 ! light damage
+characterizes
+has_component
+http://id.nlm.nih.gov/mesh/D001273 ! Atmosphere Exposure Chambers
+http://id.nlm.nih.gov/mesh/D001521 ! Behavior Therapy
+http://id.nlm.nih.gov/mesh/D003788 ! Dental Pulp Diseases
+http://id.nlm.nih.gov/mesh/D003789 ! Dental Pulp Exposure
+http://id.nlm.nih.gov/mesh/D003887 ! Desensitization, Psychologic
+http://id.nlm.nih.gov/mesh/D004191 ! Behavioral Disciplines and Activities
+http://id.nlm.nih.gov/mesh/D004778 ! Environment and Public Health
+http://id.nlm.nih.gov/mesh/D004864 ! Equipment and Supplies
+http://id.nlm.nih.gov/mesh/D005159 ! Health Care Facilities, Manpower, and Services
+http://id.nlm.nih.gov/mesh/D005261 ! Female Urogenital Diseases and Pregnancy Complications
+http://id.nlm.nih.gov/mesh/D006262 ! Health
+http://id.nlm.nih.gov/mesh/D006281 ! Health Occupations
+http://id.nlm.nih.gov/mesh/D006296 ! Health Services
+http://id.nlm.nih.gov/mesh/D009057 ! Stomatognathic Diseases
+http://id.nlm.nih.gov/mesh/D011154 ! Population Characteristics
+http://id.nlm.nih.gov/mesh/D011248 ! Pregnancy Complications
+http://id.nlm.nih.gov/mesh/D011297 ! Prenatal Exposure Delayed Effects
+http://id.nlm.nih.gov/mesh/D011314 ! Preventive Health Services
+http://id.nlm.nih.gov/mesh/D011322 ! Primary Prevention
+http://id.nlm.nih.gov/mesh/D011613 ! Psychotherapy
+http://id.nlm.nih.gov/mesh/D011634 ! Public Health
+http://id.nlm.nih.gov/mesh/D014076 ! Tooth Diseases
+http://id.nlm.nih.gov/mesh/D015980 ! Public Health Practice
+http://id.nlm.nih.gov/mesh/D018811 ! Maternal Exposure
+http://id.nlm.nih.gov/mesh/D018812 ! Paternal Exposure
+http://id.nlm.nih.gov/mesh/D049188 ! Prenatal Injuries
+http://id.nlm.nih.gov/mesh/D056990 ! Post-Exposure Prophylaxis
+http://id.nlm.nih.gov/mesh/D063367 ! Virtual Reality Exposure Therapy
+http://id.nlm.nih.gov/mesh/D065129 ! Pre-Exposure Prophylaxis
+http://id.nlm.nih.gov/mesh/M0001916 ! Atmosphere Exposure Chambers
+http://id.nlm.nih.gov/mesh/M0005931 ! Dental Pulp Exposure
+http://id.nlm.nih.gov/mesh/M0017541 ! Prenatal Exposure Delayed Effects
+http://id.nlm.nih.gov/mesh/M0027826 ! Exposure Notification
+http://id.nlm.nih.gov/mesh/M0028164 ! Maternal Exposure
+http://id.nlm.nih.gov/mesh/M0028165 ! Paternal Exposure
+http://id.nlm.nih.gov/mesh/M0332625 ! Short-Term Exposure Limit
+http://id.nlm.nih.gov/mesh/M0533762 ! Post-Exposure Prophylaxis
+http://id.nlm.nih.gov/mesh/M0542818 ! Pulmonary Fibrosis - from Asbestos Exposure
+http://id.nlm.nih.gov/mesh/M0573025 ! Virtual Reality Exposure Therapy
+http://id.nlm.nih.gov/mesh/M0587497 ! Pre-Exposure Prophylaxis
+interacts_with
+interacts_with_an_exposure_receptor_via
+interacts_with_an_exposure_stressor_via ! interacts_with_an_exposure stressor_via
+is_associated_with
+targeted_to

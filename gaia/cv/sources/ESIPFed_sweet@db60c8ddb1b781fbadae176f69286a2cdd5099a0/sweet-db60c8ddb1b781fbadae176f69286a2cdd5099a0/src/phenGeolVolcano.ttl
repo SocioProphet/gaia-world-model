@@ -1,0 +1,217 @@
+@prefix : <http://sweetontology.net/phenGeolVolcano/> .
+@prefix somarocki: <http://sweetontology.net/matrRockIgneous/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sophgv: <http://sweetontology.net/phenGeolVolcano/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix somas: <http://sweetontology.net/matrSediment/> .
+@prefix soprope: <http://sweetontology.net/propEnergy/> .
+@prefix sophg: <http://sweetontology.net/phenGeol/> .
+@prefix sopropm: <http://sweetontology.net/propMass/> .
+@prefix owlt: <http://www.w3.org/2006/time#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sophr: <http://sweetontology.net/phenReaction/> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix soreag: <http://sweetontology.net/realmGeol/> .
+@prefix sorelph: <http://sweetontology.net/relaPhysical/> .
+@prefix sophft: <http://sweetontology.net/phenFluidTransport/> .
+@base <http://sweetontology.net/phenGeolVolcano> .
+
+<http://sweetontology.net/phenGeolVolcano> rdf:type owl:Ontology ;
+                                            owl:imports <http://sweetontology.net/matrRockIgneous> ,
+                                                        <http://sweetontology.net/matrSediment> ,
+                                                        <http://sweetontology.net/phenFluidTransport> ,
+                                                        <http://sweetontology.net/phenGeol> ,
+                                                        <http://sweetontology.net/phenReaction> ,
+                                                        <http://sweetontology.net/propEnergy> ,
+                                                        <http://sweetontology.net/propMass> ,
+                                                        <http://sweetontology.net/realmGeol> ,
+                                                        <http://sweetontology.net/rela> ,
+                                                        <http://sweetontology.net/relaPhysical> ;
+                                            rdfs:label "SWEET Ontology Phenomena Geologic Volcano" ;
+                                            dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                            owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaPhysical/hasTransport
+sorelph:hasTransport rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/phenGeolVolcano/EruptionCloud
+sophgv:EruptionCloud rdf:type owl:Class ;
+                  rdfs:subClassOf somas:Ejecta ,
+                                  sophgv:VolcanicPhenomena ;
+                  rdfs:label "eruption cloud"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/FlankEruption
+sophgv:FlankEruption rdf:type owl:Class ;
+                  rdfs:subClassOf sophgv:VolcanicEruption ;
+                  rdfs:label "flank eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/LavaOfTephra
+sophgv:LavaOfTephra rdf:type owl:Class ;
+                 rdfs:subClassOf somarocki:Lava ;
+                 rdfs:label "lava of tephra"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/MagmaMotion
+sophgv:MagmaMotion rdf:type owl:Class ;
+                rdfs:subClassOf sophgv:VolcanicActivity ;
+                rdfs:label "magma motion"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/Magmatic
+sophgv:Magmatic rdf:type owl:Class ;
+             rdfs:subClassOf sophgv:VolcanicEruption ;
+             rdfs:label "magmatic"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/MantlePlume
+sophgv:MantlePlume rdf:type owl:Class ;
+                owl:equivalentClass sophgv:MantleThermalPlume ;
+                rdfs:subClassOf sophgv:VolcanicPlume ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorel:hasRealm ;
+                                  owl:allValuesFrom soreag:Mantle
+                                ] ;
+                rdfs:label "mantle plume"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/MantleThermalPlume
+sophgv:MantleThermalPlume rdf:type owl:Class ;
+                       rdfs:label "mantle thermal plume"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/NueeArdenteEruption
+sophgv:NueeArdenteEruption rdf:type owl:Class ;
+                        owl:equivalentClass sophgv:PeleeanEruption ;
+                        rdfs:label "nuee ardente eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/PeleeanEruption
+sophgv:PeleeanEruption rdf:type owl:Class ;
+                    rdfs:subClassOf sophgv:VolcanicEruption ;
+                    rdfs:label "peleean eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/PhreaticEruption
+sophgv:PhreaticEruption rdf:type owl:Class ;
+                     owl:equivalentClass sophgv:SteamBlastEruption ;
+                     rdfs:subClassOf sophgv:VolcanicEruption ;
+                     rdfs:label "phreatic eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/PhreatomagmaticEruption
+sophgv:PhreatomagmaticEruption rdf:type owl:Class ;
+                            rdfs:subClassOf sophgv:VolcanicEruption ;
+                            rdfs:label "phreatomagmatic eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/PlinianEruption
+sophgv:PlinianEruption rdf:type owl:Class ;
+                    rdfs:subClassOf sophgv:VolcanicEruption ;
+                    rdfs:label "plinian eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/SteamBlastEruption
+sophgv:SteamBlastEruption rdf:type owl:Class ;
+                       rdfs:label "steam blast eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/StrombolianEruption
+sophgv:StrombolianEruption rdf:type owl:Class ;
+                        rdfs:subClassOf sophgv:VolcanicEruption ;
+                        rdfs:label "strombolian eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/SummitEruption
+sophgv:SummitEruption rdf:type owl:Class ;
+                   rdfs:subClassOf sophgv:VolcanicEruption ;
+                   rdfs:label "summit eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/Surge
+sophgv:Surge rdf:type owl:Class ;
+          rdfs:subClassOf sophgv:VolcanicPlume ;
+          rdfs:label "surge"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/VolcanicActivity
+sophgv:VolcanicActivity rdf:type owl:Class ;
+                     owl:equivalentClass sophgv:VolcanicPhenomena ;
+                     rdfs:subClassOf sophg:GeospherePhenomena ,
+                                     sophgv:VolcanicActivity ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorel:hasPhenomena ;
+                                       owl:someValuesFrom sophgv:Volcanism
+                                     ] ;
+                     rdfs:label "volcanic activity"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/VolcanicEruption
+sophgv:VolcanicEruption rdf:type owl:Class ;
+                     rdfs:subClassOf sophgv:VolcanicActivity ,
+                                     sophr:Eruption ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorelph:hasTransport ;
+                                       owl:someValuesFrom soprope:Heat
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorelph:hasTransport ;
+                                       owl:someValuesFrom sopropm:Mass
+                                     ] ;
+                     rdfs:label "volcanic eruption"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/VolcanicPhenomena
+sophgv:VolcanicPhenomena rdf:type owl:Class ;
+                      rdfs:label "volcanic phenomena"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/VolcanicPlume
+sophgv:VolcanicPlume rdf:type owl:Class ;
+                  rdfs:subClassOf sophft:Plume ,
+                                  sophgv:VolcanicPhenomena ;
+                  rdfs:label "volcanic plume"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/Volcanism
+sophgv:Volcanism rdf:type owl:Class ;
+              owl:equivalentClass sophgv:Vulcanism ;
+              rdfs:subClassOf sophg:GeologicalPhenomena ;
+              rdfs:label "volcanism"@en .
+
+
+###  http://sweetontology.net/phenGeolVolcano/Vulcanism
+sophgv:Vulcanism rdf:type owl:Class ;
+              rdfs:label "vulcanism"@en .
+
+
+###  http://sweetontology.net/phenReaction/Eruption
+sophr:Eruption rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propEnergy/Heat
+soprope:Heat rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propMass/Mass
+sopropm:Mass rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realmGeol/Mantle
+soreag:Mantle rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

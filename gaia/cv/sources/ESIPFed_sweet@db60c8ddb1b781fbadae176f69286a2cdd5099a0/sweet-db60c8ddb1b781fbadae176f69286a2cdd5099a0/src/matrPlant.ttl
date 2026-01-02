@@ -1,0 +1,337 @@
+@prefix : <http://sweetontology.net/matrPlant/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix somab: <http://sweetontology.net/matrBiomass/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix somapl: <http://sweetontology.net/matrPlant/> .
+@base <http://sweetontology.net/matrPlant> .
+
+<http://sweetontology.net/matrPlant> rdf:type owl:Ontology ;
+                                      owl:imports <http://sweetontology.net/matrBiomass> ,
+                                                  <http://sweetontology.net/relaSci> ;
+                                      rdfs:label "SWEET Ontology Material Plant" ;
+                                      dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                      owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaSci/componentOf
+sorelsc:componentOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/matrBiomass/LivingEntity
+somab:LivingEntity rdf:type owl:Class .
+
+
+###  http://sweetontology.net/matrBiomass/Organism
+somab:Organism rdf:type owl:Class .
+
+
+###  http://sweetontology.net/matrPlant/Branch
+somapl:Branch rdf:type owl:Class ;
+             rdfs:subClassOf somapl:PlantPart ;
+             rdfs:label "branch"@en .
+
+
+###  http://sweetontology.net/matrPlant/Broadleaf
+somapl:Broadleaf rdf:type owl:Class ;
+                rdfs:subClassOf somapl:Vegetation ;
+                rdfs:label "broadleaf"@en .
+
+
+###  http://sweetontology.net/matrPlant/Canopy
+somapl:Canopy rdf:type owl:Class ;
+             rdfs:subClassOf somapl:Vegetation ;
+             rdfs:label "canopy"@en .
+
+
+###  http://sweetontology.net/matrPlant/Conifer
+somapl:Conifer rdf:type owl:Class ;
+              rdfs:subClassOf somapl:Plant ;
+              rdfs:label "conifer"@en .
+
+
+###  http://sweetontology.net/matrPlant/Crop
+somapl:Crop rdf:type owl:Class ;
+           rdfs:subClassOf somapl:Plant ;
+           rdfs:label "crop"@en .
+
+
+###  http://sweetontology.net/matrPlant/Crown
+somapl:Crown rdf:type owl:Class ;
+            rdfs:subClassOf somapl:Vegetation ;
+            rdfs:label "crown"@en .
+
+
+###  http://sweetontology.net/matrPlant/DominantSpecies
+somapl:DominantSpecies rdf:type owl:Class ;
+                      rdfs:subClassOf somapl:Vegetation ;
+                      rdfs:label "dominant species"@en .
+
+
+###  http://sweetontology.net/matrPlant/DouglasFir
+somapl:DouglasFir rdf:type owl:Class ;
+                 rdfs:subClassOf somapl:Tree ;
+                 rdfs:label "douglas fir"@en .
+
+
+###  http://sweetontology.net/matrPlant/Evergreen
+somapl:Evergreen rdf:type owl:Class ;
+                rdfs:subClassOf somapl:Vegetation ;
+                rdfs:label "evergreen"@en .
+
+
+###  http://sweetontology.net/matrPlant/Exotic
+somapl:Exotic rdf:type owl:Class ;
+             rdfs:subClassOf somapl:Vegetation ;
+             rdfs:label "exotic"@en .
+
+
+###  http://sweetontology.net/matrPlant/Fern
+somapl:Fern rdf:type owl:Class ;
+           rdfs:subClassOf somapl:Plant ;
+           rdfs:label "fern"@en .
+
+
+###  http://sweetontology.net/matrPlant/Flora
+somapl:Flora rdf:type owl:Class ;
+            rdfs:subClassOf somapl:Plant ;
+            rdfs:label "flora"@en .
+
+
+###  http://sweetontology.net/matrPlant/FloweringPlant
+somapl:FloweringPlant rdf:type owl:Class ;
+                     rdfs:subClassOf somapl:Plant ;
+                     rdfs:label "flowering plant"@en .
+
+
+###  http://sweetontology.net/matrPlant/Fruit
+somapl:Fruit rdf:type owl:Class ;
+            rdfs:subClassOf somapl:Plant ;
+            rdfs:label "fruit"@en .
+
+
+###  http://sweetontology.net/matrPlant/Fungi
+somapl:Fungi rdf:type owl:Class ;
+            rdfs:subClassOf somapl:Plant ;
+            rdfs:label "fungi"@en .
+
+
+###  http://sweetontology.net/matrPlant/FungiTaxonomy
+somapl:FungiTaxonomy rdf:type owl:Class ;
+                    rdfs:subClassOf somapl:Fungi ;
+                    rdfs:label "fungi taxonomy"@en .
+
+
+###  http://sweetontology.net/matrPlant/Grass
+somapl:Grass rdf:type owl:Class ;
+            rdfs:subClassOf somapl:Vegetation ;
+            rdfs:label "grass"@en .
+
+
+###  http://sweetontology.net/matrPlant/Indigenous
+somapl:Indigenous rdf:type owl:Class ;
+                 rdfs:subClassOf somapl:Vegetation ;
+                 rdfs:label "indigenous"@en .
+
+
+###  http://sweetontology.net/matrPlant/Leaf
+somapl:Leaf rdf:type owl:Class ;
+           rdfs:subClassOf somapl:PlantPart ;
+           rdfs:label "leaf"@en .
+
+
+###  http://sweetontology.net/matrPlant/Lichen
+somapl:Lichen rdf:type owl:Class ;
+             rdfs:subClassOf somapl:Plant ;
+             rdfs:label "lichen"@en .
+
+
+###  http://sweetontology.net/matrPlant/Liverwort
+somapl:Liverwort rdf:type owl:Class ;
+                rdfs:subClassOf somapl:Plant ;
+                rdfs:label "liverwort"@en .
+
+
+###  http://sweetontology.net/matrPlant/Macroalgae
+somapl:Macroalgae rdf:type owl:Class ;
+                 rdfs:subClassOf somapl:Plant ;
+                 rdfs:label "macroalgae"@en .
+
+
+###  http://sweetontology.net/matrPlant/Macrophyte
+somapl:Macrophyte rdf:type owl:Class ;
+                 rdfs:subClassOf somapl:Vegetation ;
+                 rdfs:label "macrophyte"@en .
+
+
+###  http://sweetontology.net/matrPlant/Mangrove
+somapl:Mangrove rdf:type owl:Class ;
+               rdfs:subClassOf somapl:Tree ;
+               rdfs:label "mangrove"@en .
+
+
+###  http://sweetontology.net/matrPlant/MarinePlant
+somapl:MarinePlant rdf:type owl:Class ;
+                  rdfs:subClassOf somapl:Plant ;
+                  rdfs:label "marine plant"@en .
+
+
+###  http://sweetontology.net/matrPlant/Moss
+somapl:Moss rdf:type owl:Class ;
+           rdfs:subClassOf somapl:Plant ;
+           rdfs:label "moss"@en .
+
+
+###  http://sweetontology.net/matrPlant/Mushroom
+somapl:Mushroom rdf:type owl:Class ;
+               rdfs:subClassOf somapl:FungiTaxonomy ;
+               rdfs:label "mushroom"@en .
+
+
+###  http://sweetontology.net/matrPlant/Native
+somapl:Native rdf:type owl:Class ;
+             rdfs:subClassOf somapl:Vegetation ;
+             rdfs:label "native"@en .
+
+
+###  http://sweetontology.net/matrPlant/Needleleaf
+somapl:Needleleaf rdf:type owl:Class ;
+                 rdfs:subClassOf somapl:Vegetation ;
+                 rdfs:label "needleleaf"@en .
+
+
+###  http://sweetontology.net/matrPlant/OldGrowth
+somapl:OldGrowth rdf:type owl:Class ;
+                rdfs:subClassOf somapl:Vegetation ;
+                owl:disjointWith somapl:SecondGrowth ;
+                rdfs:label "old growth"@en .
+
+
+###  http://sweetontology.net/matrPlant/Paleovegetation
+somapl:Paleovegetation rdf:type owl:Class ;
+                      rdfs:subClassOf somapl:Vegetation ;
+                      rdfs:label "paleovegetation"@en .
+
+
+###  http://sweetontology.net/matrPlant/Plant
+somapl:Plant rdf:type owl:Class ;
+            rdfs:subClassOf somab:Organism ;
+            rdfs:label "plant"@en .
+
+
+###  http://sweetontology.net/matrPlant/PlantPart
+somapl:PlantPart rdf:type owl:Class ;
+                rdfs:subClassOf somab:LivingEntity ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelsc:componentOf ;
+                                  owl:allValuesFrom somapl:Plant
+                                ] ;
+                rdfs:label "plant part"@en .
+
+
+###  http://sweetontology.net/matrPlant/Pollen
+somapl:Pollen rdf:type owl:Class ;
+             rdfs:subClassOf somapl:Vegetation ;
+             rdfs:label "pollen"@en .
+
+
+###  http://sweetontology.net/matrPlant/PonderosaPine
+somapl:PonderosaPine rdf:type owl:Class ;
+                    rdfs:subClassOf somapl:Tree ;
+                    rdfs:label "ponderosa pine"@en .
+
+
+###  http://sweetontology.net/matrPlant/Root
+somapl:Root rdf:type owl:Class ;
+           rdfs:subClassOf somapl:PlantPart ;
+           rdfs:label "root"@en .
+
+
+###  http://sweetontology.net/matrPlant/Sclerophyll
+somapl:Sclerophyll rdf:type owl:Class ;
+                  rdfs:subClassOf somapl:Vegetation ;
+                  rdfs:label "sclerophyll"@en .
+
+
+###  http://sweetontology.net/matrPlant/Scrub
+somapl:Scrub rdf:type owl:Class ;
+            rdfs:subClassOf somapl:Vegetation ;
+            rdfs:label "scrub"@en .
+
+
+###  http://sweetontology.net/matrPlant/SecondGrowth
+somapl:SecondGrowth rdf:type owl:Class ;
+                   rdfs:subClassOf somapl:Vegetation ;
+                   rdfs:label "second growth"@en .
+
+
+###  http://sweetontology.net/matrPlant/Thorn
+somapl:Thorn rdf:type owl:Class ;
+            rdfs:subClassOf somapl:Vegetation ;
+            rdfs:label "thorn"@en .
+
+
+###  http://sweetontology.net/matrPlant/Tree
+somapl:Tree rdf:type owl:Class ;
+           rdfs:subClassOf somapl:Vegetation ;
+           rdfs:label "tree"@en .
+
+
+###  http://sweetontology.net/matrPlant/TreeRing
+somapl:TreeRing rdf:type owl:Class ;
+               rdfs:subClassOf somapl:PlantPart ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelsc:componentOf ;
+                                 owl:allValuesFrom somapl:Tree
+                               ] ;
+               rdfs:label "tree ring"@en .
+
+
+###  http://sweetontology.net/matrPlant/Trunk
+somapl:Trunk rdf:type owl:Class ;
+            rdfs:subClassOf somapl:PlantPart ;
+            rdfs:label "trunk"@en .
+
+
+###  http://sweetontology.net/matrPlant/Twig
+somapl:Twig rdf:type owl:Class ;
+           rdfs:subClassOf somapl:PlantPart ;
+           rdfs:label "twig"@en .
+
+
+###  http://sweetontology.net/matrPlant/Vegetable
+somapl:Vegetable rdf:type owl:Class ;
+                rdfs:subClassOf somapl:Plant ;
+                rdfs:label "vegetable"@en .
+
+
+###  http://sweetontology.net/matrPlant/Vegetation
+somapl:Vegetation rdf:type owl:Class ;
+                 rdfs:subClassOf somapl:Plant ;
+                 rdfs:label "vegetation"@en .
+
+
+###  http://sweetontology.net/matrPlant/VegetationCover
+somapl:VegetationCover rdf:type owl:Class ;
+                      rdfs:subClassOf somapl:Vegetation ;
+                      rdfs:label "vegetation cover"@en .
+
+
+###  http://sweetontology.net/matrPlant/VegetationSpecies
+somapl:VegetationSpecies rdf:type owl:Class ;
+                        rdfs:subClassOf somapl:Vegetation ;
+                        rdfs:label "vegetation species"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,325 @@
+@prefix : <http://sweetontology.net/stateSolid/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sostp: <http://sweetontology.net/statePhysical/> .
+@prefix sostso: <http://sweetontology.net/stateSolid/> .
+@base <http://sweetontology.net/stateSolid> .
+
+<http://sweetontology.net/stateSolid> rdf:type owl:Ontology ;
+                                       owl:imports <http://sweetontology.net/rela> ,
+                                                   <http://sweetontology.net/statePhysical> ;
+                                       rdfs:label "SWEET Ontology State Solid" ;
+                                       dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                       owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasState
+sorel:hasState rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/stateSolid/SolidState
+sostso:SolidState rdf:type owl:Class ;
+                  rdfs:subClassOf sostp:PhysicalState ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorel:hasState ;
+                                    owl:hasValue sostp:Solid
+                                  ] ;
+                  rdfs:label "solid state"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/statePhysical/Solid
+sostp:Solid rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/stateSolid/Amorphous
+sostso:Amorphous rdf:type owl:NamedIndividual ,
+                          sostso:SolidState ;
+                 rdfs:label "amorphous"@en .
+
+
+###  http://sweetontology.net/stateSolid/Brittle
+sostso:Brittle rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               rdfs:label "brittle"@en .
+
+
+###  http://sweetontology.net/stateSolid/Clastic
+sostso:Clastic rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               rdfs:label "clastic"@en .
+
+
+###  http://sweetontology.net/stateSolid/Compressed
+sostso:Compressed rdf:type owl:NamedIndividual ,
+                           sostso:SolidState ;
+                  rdfs:label "compressed"@en .
+
+
+###  http://sweetontology.net/stateSolid/Consolidated
+sostso:Consolidated rdf:type owl:NamedIndividual ,
+                             sostso:SolidState ;
+                    rdfs:label "consolidated"@en .
+
+
+###  http://sweetontology.net/stateSolid/Crushed
+sostso:Crushed rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               rdfs:label "crushed"@en .
+
+
+###  http://sweetontology.net/stateSolid/Crystal
+sostso:Crystal rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               owl:sameAs sostso:CrystalStructure ,
+                          sostso:Crystalline ;
+               rdfs:label "crystal"@en .
+
+
+###  http://sweetontology.net/stateSolid/CrystalStructure
+sostso:CrystalStructure rdf:type owl:NamedIndividual ,
+                                 sostso:SolidState ;
+                        rdfs:label "crystal structure"@en .
+
+
+###  http://sweetontology.net/stateSolid/Crystalline
+sostso:Crystalline rdf:type owl:NamedIndividual ,
+                            sostso:SolidState ;
+                   rdfs:label "crystalline"@en .
+
+
+###  http://sweetontology.net/stateSolid/Crystallized
+sostso:Crystallized rdf:type owl:NamedIndividual ,
+                             sostso:SolidState ;
+                    rdfs:label "crystallized"@en .
+
+
+###  http://sweetontology.net/stateSolid/Deformed
+sostso:Deformed rdf:type owl:NamedIndividual ,
+                         sostso:SolidState ;
+                rdfs:label "deformed"@en .
+
+
+###  http://sweetontology.net/stateSolid/Detritic
+sostso:Detritic rdf:type owl:NamedIndividual ,
+                         sostso:SolidState ;
+                rdfs:label "detritic"@en .
+
+
+###  http://sweetontology.net/stateSolid/Ductile
+sostso:Ductile rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               rdfs:label "ductile"@en .
+
+
+###  http://sweetontology.net/stateSolid/Elastic
+sostso:Elastic rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               rdfs:label "elastic"@en .
+
+
+###  http://sweetontology.net/stateSolid/Fibrous
+sostso:Fibrous rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               rdfs:label "fibrous"@en .
+
+
+###  http://sweetontology.net/stateSolid/FineStructure
+sostso:FineStructure rdf:type owl:NamedIndividual ,
+                              sostso:SolidState ;
+                     rdfs:label "fine structure"@en .
+
+
+###  http://sweetontology.net/stateSolid/Flake
+sostso:Flake rdf:type owl:NamedIndividual ,
+                      sostso:SolidState ;
+             rdfs:label "flake"@en .
+
+
+###  http://sweetontology.net/stateSolid/Fragmented
+sostso:Fragmented rdf:type owl:NamedIndividual ,
+                           sostso:SolidState ;
+                  rdfs:label "fragmented"@en .
+
+
+###  http://sweetontology.net/stateSolid/Granular
+sostso:Granular rdf:type owl:NamedIndividual ,
+                         sostso:SolidState ;
+                rdfs:label "granular"@en .
+
+
+###  http://sweetontology.net/stateSolid/Hard
+sostso:Hard rdf:type owl:NamedIndividual ,
+                     sostso:SolidState ;
+            owl:sameAs sostso:Hardened ;
+            rdfs:label "hard"@en .
+
+
+###  http://sweetontology.net/stateSolid/Hardened
+sostso:Hardened rdf:type owl:NamedIndividual ,
+                         sostso:SolidState ;
+                rdfs:label "hardened"@en .
+
+
+###  http://sweetontology.net/stateSolid/Indurated
+sostso:Indurated rdf:type owl:NamedIndividual ,
+                          sostso:SolidState ;
+                 rdfs:label "indurated"@en .
+
+
+###  http://sweetontology.net/stateSolid/Metamorphosed
+sostso:Metamorphosed rdf:type owl:NamedIndividual ,
+                              sostso:SolidState ;
+                     rdfs:label "metamorphosed"@en .
+
+
+###  http://sweetontology.net/stateSolid/Microstructure
+sostso:Microstructure rdf:type owl:NamedIndividual ,
+                               sostso:SolidState ;
+                      rdfs:label "microstructure"@en .
+
+
+###  http://sweetontology.net/stateSolid/Molten
+sostso:Molten rdf:type owl:NamedIndividual ,
+                       sostso:SolidState ;
+              rdfs:label "molten"@en .
+
+
+###  http://sweetontology.net/stateSolid/Muddy
+sostso:Muddy rdf:type owl:NamedIndividual ,
+                      sostso:SolidState ;
+             rdfs:label "muddy"@en .
+
+
+###  http://sweetontology.net/stateSolid/Pitted
+sostso:Pitted rdf:type owl:NamedIndividual ,
+                       sostso:SolidState ;
+              rdfs:label "pitted"@en .
+
+
+###  http://sweetontology.net/stateSolid/Plastic
+sostso:Plastic rdf:type owl:NamedIndividual ,
+                        sostso:SolidState ;
+               rdfs:label "plastic"@en .
+
+
+###  http://sweetontology.net/stateSolid/Polycrystalline
+sostso:Polycrystalline rdf:type owl:NamedIndividual ,
+                                sostso:SolidState ;
+                       rdfs:label "polycrystalline"@en .
+
+
+###  http://sweetontology.net/stateSolid/Powder
+sostso:Powder rdf:type owl:NamedIndividual ,
+                       sostso:SolidState ;
+              rdfs:label "powder"@en .
+
+
+###  http://sweetontology.net/stateSolid/Refractory
+sostso:Refractory rdf:type owl:NamedIndividual ,
+                           sostso:SolidState ;
+                  rdfs:label "refractory"@en .
+
+
+###  http://sweetontology.net/stateSolid/Rigid
+sostso:Rigid rdf:type owl:NamedIndividual ,
+                      sostso:SolidState ;
+             rdfs:label "rigid"@en .
+
+
+###  http://sweetontology.net/stateSolid/Rough
+sostso:Rough rdf:type owl:NamedIndividual ,
+                      sostso:SolidState ;
+             rdfs:label "rough"@en .
+
+
+###  http://sweetontology.net/stateSolid/Shattered
+sostso:Shattered rdf:type owl:NamedIndividual ,
+                          sostso:SolidState ;
+                 rdfs:label "shattered"@en .
+
+
+###  http://sweetontology.net/stateSolid/Soft
+sostso:Soft rdf:type owl:NamedIndividual ,
+                     sostso:SolidState ;
+            owl:sameAs sostso:Softened ;
+            rdfs:label "soft"@en .
+
+
+###  http://sweetontology.net/stateSolid/Softened
+sostso:Softened rdf:type owl:NamedIndividual ,
+                         sostso:SolidState ;
+                rdfs:label "softened"@en .
+
+
+###  http://sweetontology.net/stateSolid/Solidified
+sostso:Solidified rdf:type owl:NamedIndividual ,
+                           sostso:SolidState ;
+                  rdfs:label "solidified"@en .
+
+
+###  http://sweetontology.net/stateSolid/Stiff
+sostso:Stiff rdf:type owl:NamedIndividual ,
+                      sostso:SolidState ;
+             rdfs:label "stiff"@en .
+
+
+###  http://sweetontology.net/stateSolid/Superhard
+sostso:Superhard rdf:type owl:NamedIndividual ,
+                          sostso:SolidState ;
+                 rdfs:label "superhard"@en .
+
+
+###  http://sweetontology.net/stateSolid/Unconsolidated
+sostso:Unconsolidated rdf:type owl:NamedIndividual ,
+                               sostso:SolidState ;
+                      rdfs:label "unconsolidated"@en .
+
+
+###  http://sweetontology.net/stateSolid/Viscoelastic
+sostso:Viscoelastic rdf:type owl:NamedIndividual ,
+                             sostso:SolidState ;
+                    rdfs:label "viscoelastic"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostso:Brittle
+                        sostso:Ductile
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostso:Consolidated
+                        sostso:Unconsolidated
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostso:Elastic
+                        sostso:Plastic
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

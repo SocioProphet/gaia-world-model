@@ -1,0 +1,174 @@
+@prefix : <http://sweetontology.net/stateRoleGeographic/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sohuc: <http://sweetontology.net/humanCommerce/> .
+@prefix sostrg: <http://sweetontology.net/stateRoleGeographic/> .
+@prefix soprop: <http://sweetontology.net/prop/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://sweetontology.net/stateRoleGeographic> .
+
+<http://sweetontology.net/stateRoleGeographic> rdf:type owl:Ontology ;
+                                                owl:imports <http://sweetontology.net/humanCommerce> ,
+                                                            <http://sweetontology.net/prop> ;
+                                                rdfs:label "SWEET Ontology State Role Geographic" ;
+                                                dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                                owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/humanCommerce/LandUse
+sohuc:LandUse rdf:type owl:Class .
+
+
+###  http://sweetontology.net/prop/Role
+soprop:Role rdf:type owl:Class .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Barrier
+sostrg:Barrier rdf:type owl:Class ;
+             rdfs:subClassOf sostrg:GeographicRole ;
+             rdfs:label "barrier"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Boundary
+sostrg:Boundary rdf:type owl:Class ;
+              owl:equivalentClass sostrg:Edge ,
+                                  sostrg:Face ;
+              rdfs:subClassOf sostrg:Barrier ;
+              rdfs:label "boundary"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Collector
+sostrg:Collector rdf:type owl:Class ;
+               rdfs:subClassOf sostrg:GeographicRole ;
+               rdfs:label "collector"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Edge
+sostrg:Edge rdf:type owl:Class ;
+          rdfs:label "edge"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Face
+sostrg:Face rdf:type owl:Class ;
+          rdfs:label "face"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Fringe
+sostrg:Fringe rdf:type owl:Class ;
+            owl:equivalentClass sostrg:Periphery ;
+            rdfs:label "fringe"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/GeographicRole
+sostrg:GeographicRole rdf:type owl:Class ;
+                    rdfs:subClassOf soprop:Role ;
+                    rdfs:label "geographic role"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Highway
+sostrg:Highway rdf:type owl:Class ;
+             rdfs:subClassOf sostrg:GeographicRole ;
+             rdfs:label "highway"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Margin
+sostrg:Margin rdf:type owl:Class ;
+            rdfs:subClassOf sostrg:Boundary ;
+            rdfs:label "margin"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Obstruction
+sostrg:Obstruction rdf:type owl:Class ;
+                 rdfs:subClassOf sostrg:Barrier ;
+                 rdfs:label "obstruction"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Periphery
+sostrg:Periphery rdf:type owl:Class ;
+               rdfs:subClassOf sostrg:Margin ;
+               rdfs:label "periphery"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Separation
+sostrg:Separation rdf:type owl:Class ;
+                rdfs:subClassOf sostrg:Barrier ;
+                rdfs:label "separation"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Tributary
+sostrg:Tributary rdf:type owl:Class ;
+               rdfs:subClassOf sostrg:Collector ;
+               rdfs:label "tributary"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateRoleGeographic/Commercial
+sostrg:Commercial rdf:type owl:NamedIndividual ,
+                         sohuc:LandUse ;
+                rdfs:label "commercial"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Cropped
+sostrg:Cropped rdf:type owl:NamedIndividual ,
+                      sohuc:LandUse ;
+             rdfs:label "cropped"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Industrial
+sostrg:Industrial rdf:type owl:NamedIndividual ,
+                         sohuc:LandUse ;
+                rdfs:label "industrial"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Irrigated
+sostrg:Irrigated rdf:type owl:NamedIndividual ,
+                        sohuc:LandUse ;
+               rdfs:label "irrigated"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Pastoral
+sostrg:Pastoral rdf:type owl:NamedIndividual ,
+                       sohuc:LandUse ;
+              rdfs:label "pastoral"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Populated
+sostrg:Populated rdf:type owl:NamedIndividual ,
+                        sohuc:LandUse ;
+               rdfs:label "populated"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Rainfed
+sostrg:Rainfed rdf:type owl:NamedIndividual ,
+                      sohuc:LandUse ;
+             rdfs:label "rainfed"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Remote
+sostrg:Remote rdf:type owl:NamedIndividual ,
+                     sohuc:LandUse ;
+            rdfs:label "remote"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Residential
+sostrg:Residential rdf:type owl:NamedIndividual ,
+                          sohuc:LandUse ;
+                 rdfs:label "residential"@en .
+
+
+###  http://sweetontology.net/stateRoleGeographic/Wild
+sostrg:Wild rdf:type owl:NamedIndividual ,
+                   sohuc:LandUse ;
+          rdfs:label "wild"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,196 @@
+@prefix : <http://sweetontology.net/reprSciComponent/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorepsc: <http://sweetontology.net/reprSciComponent/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@base <http://sweetontology.net/reprSciComponent> .
+
+<http://sweetontology.net/reprSciComponent> rdf:type owl:Ontology ;
+                                             owl:imports <http://sweetontology.net/repr> ;
+                                             rdfs:label "SWEET Ontology Representation Scientific Component" ;
+                                             dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                             owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/reprSciComponent/Component
+sorepsc:Component rdf:type owl:Class ;
+               owl:equivalentClass sorepsc:SystemComponent ;
+               rdfs:subClassOf sorep:Dimension ;
+               rdfs:label "component"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Environment
+sorepsc:Environment rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsc:SystemComponent ;
+                 rdfs:label "environment"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Externality
+sorepsc:Externality rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsc:SystemComponent ;
+                 rdfs:label "externality"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Input
+sorepsc:Input rdf:type owl:Class ;
+           rdfs:subClassOf sorepsc:SystemComponent ;
+           rdfs:label "input"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Output
+sorepsc:Output rdf:type owl:Class ;
+            rdfs:subClassOf sorepsc:SystemComponent ;
+            rdfs:label "output"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Reservoir
+sorepsc:Reservoir rdf:type owl:Class ;
+               owl:equivalentClass sorepsc:Storage ;
+               rdfs:subClassOf sorepsc:SystemComponent ;
+               rdfs:label "reservoir"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Resource
+sorepsc:Resource rdf:type owl:Class ;
+              rdfs:subClassOf sorepsc:SystemComponent ;
+              rdfs:label "resource"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Sink
+sorepsc:Sink rdf:type owl:Class ;
+          rdfs:subClassOf sorepsc:Reservoir ;
+          rdfs:label "sink"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Source
+sorepsc:Source rdf:type owl:Class ;
+            rdfs:subClassOf sorepsc:SystemComponent ;
+            rdfs:label "source"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Storage
+sorepsc:Storage rdf:type owl:Class ;
+             rdfs:label "storage"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/SystemComponent
+sorepsc:SystemComponent rdf:type owl:Class ;
+                     rdfs:label "system component"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/reprSciComponent/Ambient
+sorepsc:Ambient rdf:type owl:NamedIndividual ,
+                      sorepsc:Component ;
+             owl:sameAs sorepsc:Background ;
+             rdfs:label "ambient"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Background
+sorepsc:Background rdf:type owl:NamedIndividual ,
+                         sorepsc:Component ;
+                rdfs:label "background"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Connate
+sorepsc:Connate rdf:type owl:NamedIndividual ,
+                      sorepsc:Component ;
+             rdfs:label "connate"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Direct
+sorepsc:Direct rdf:type owl:NamedIndividual ,
+                     sorepsc:Component ;
+            rdfs:label "direct"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Explicit
+sorepsc:Explicit rdf:type owl:NamedIndividual ,
+                       sorepsc:Component ;
+              rdfs:label "explicit"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/External
+sorepsc:External rdf:type owl:NamedIndividual ,
+                       sorepsc:Component ;
+              rdfs:label "external"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Gross
+sorepsc:Gross rdf:type owl:NamedIndividual ,
+                    sorepsc:Component ;
+           rdfs:label "gross"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Implicit
+sorepsc:Implicit rdf:type owl:NamedIndividual ,
+                       sorepsc:Component ;
+              rdfs:label "implicit"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Indirect
+sorepsc:Indirect rdf:type owl:NamedIndividual ,
+                       sorepsc:Component ;
+              rdfs:label "indirect"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Internal
+sorepsc:Internal rdf:type owl:NamedIndividual ,
+                       sorepsc:Component ;
+              rdfs:label "internal"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Net
+sorepsc:Net rdf:type owl:NamedIndividual ,
+                  sorepsc:Component ;
+         rdfs:label "net"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Segment
+sorepsc:Segment rdf:type owl:NamedIndividual ,
+                      sorepsc:Component ;
+             rdfs:label "segment"@en .
+
+
+###  http://sweetontology.net/reprSciComponent/Sensible
+sorepsc:Sensible rdf:type owl:NamedIndividual ,
+                       sorepsc:Component ;
+              rdfs:label "sensible"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sorepsc:Direct
+                        sorepsc:Indirect
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sorepsc:Explicit
+                        sorepsc:Implicit
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sorepsc:External
+                        sorepsc:Internal
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

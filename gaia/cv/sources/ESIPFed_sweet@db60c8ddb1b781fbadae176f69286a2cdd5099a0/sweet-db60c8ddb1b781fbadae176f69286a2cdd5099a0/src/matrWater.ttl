@@ -1,0 +1,403 @@
+@prefix : <http://sweetontology.net/matrWater/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soma: <http://sweetontology.net/matr/> .
+@prefix somac: <http://sweetontology.net/matrCompound/> .
+@prefix sophatmopc: <http://sweetontology.net/phenAtmoPrecipitation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sopropsdis: <http://sweetontology.net/propSpaceDistance/> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix sohu: <http://sweetontology.net/human/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorea: <http://sweetontology.net/realm/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@prefix sost: <http://sweetontology.net/state/> .
+@prefix somaw: <http://sweetontology.net/matrWater/> .
+@prefix sostc: <http://sweetontology.net/stateChemical/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorelpr: <http://sweetontology.net/relaProvenance/> .
+@prefix sostp: <http://sweetontology.net/statePhysical/> .
+@prefix sostso: <http://sweetontology.net/stateSolid/> .
+@base <http://sweetontology.net/matrWater> .
+
+<http://sweetontology.net/matrWater> rdf:type owl:Ontology ;
+                                      owl:imports <http://sweetontology.net/human> ,
+                                                  <http://sweetontology.net/matr> ,
+                                                  <http://sweetontology.net/matrCompound> ,
+                                                  <http://sweetontology.net/phenAtmoPrecipitation> ,
+                                                  <http://sweetontology.net/propSpaceDistance> ,
+                                                  <http://sweetontology.net/realm> ,
+                                                  <http://sweetontology.net/rela> ,
+                                                  <http://sweetontology.net/relaChemical> ,
+                                                  <http://sweetontology.net/relaMath> ,
+                                                  <http://sweetontology.net/relaProvenance> ,
+                                                  <http://sweetontology.net/relaSpace> ,
+                                                  <http://sweetontology.net/state> ,
+                                                  <http://sweetontology.net/stateChemical> ,
+                                                  <http://sweetontology.net/statePhysical> ,
+                                                  <http://sweetontology.net/stateSolid> ;
+                                      rdfs:label "SWEET Ontology Material Water" ;
+                                      dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                      owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaChemical/hasChemical
+sorelch:hasChemical rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaChemical/hasChemical_1
+sorelch:hasChemical_1 rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaProvenance/hasSource
+sorelpr:hasSource rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/below
+sorelsp:below rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/diameter
+sorelsp:diameter rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/human/HumanNeed
+sohu:HumanNeed rdf:type owl:Class .
+
+
+###  http://sweetontology.net/matrWater/BlackWater
+somaw:BlackWater rdf:type owl:Class ;
+                 rdfs:subClassOf somaw:WaterMixture ;
+                 rdfs:label "black water"@en .
+
+
+###  http://sweetontology.net/matrWater/BrackishWater
+somaw:BrackishWater rdf:type owl:Class ;
+                    rdfs:subClassOf somaw:SaltWater ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorel:hasState ;
+                                      owl:hasValue sostc:Brackish
+                                    ] ;
+                    rdfs:label "brackish water"@en .
+
+
+###  http://sweetontology.net/matrWater/Brine
+somaw:Brine rdf:type owl:Class ;
+            rdfs:subClassOf somaw:SaltWater ;
+            owl:disjointWith somaw:SalineWater ;
+            rdfs:label "brine"@en .
+
+
+###  http://sweetontology.net/matrWater/CloudDrop
+somaw:CloudDrop rdf:type owl:Class ;
+                rdfs:subClassOf somaw:Drop ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelsp:diameter ;
+                                  owl:hasValue [ rdf:type sopropsdis:SizeRange_micron
+                                               ]
+                                ] ;
+                rdfs:label "cloud drop"@en .
+
+
+###  http://sweetontology.net/matrWater/DepthHoar
+somaw:DepthHoar rdf:type owl:Class ;
+                rdfs:subClassOf somaw:IceCrystal ;
+                rdfs:label "depth hoar"@en .
+
+
+###  http://sweetontology.net/matrWater/Dew
+somaw:Dew rdf:type owl:Class ;
+          rdfs:subClassOf somaw:LiquidWater ;
+          rdfs:label "dew"@en .
+
+
+###  http://sweetontology.net/matrWater/DrinkingWater
+somaw:DrinkingWater rdf:type owl:Class ;
+                    rdfs:subClassOf sohu:HumanNeed ,
+                                    somaw:WaterMixture ;
+                    rdfs:label "drinking water"@en .
+
+
+###  http://sweetontology.net/matrWater/DrizzleDrop
+somaw:DrizzleDrop rdf:type owl:Class ;
+                  rdfs:subClassOf somaw:Drop ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelsp:diameter ;
+                                    owl:hasValue [ rdf:type sopropsdis:SizeRange_micron
+                                                 ]
+                                  ] ;
+                  rdfs:label "drizzle drop"@en .
+
+
+###  http://sweetontology.net/matrWater/Drop
+somaw:Drop rdf:type owl:Class ;
+           rdfs:subClassOf somaw:LiquidWater ;
+           rdfs:label "drop"@en .
+
+
+###  http://sweetontology.net/matrWater/Effluent
+somaw:Effluent rdf:type owl:Class ;
+               rdfs:subClassOf somaw:WaterMixture ;
+               rdfs:label "effluent"@en .
+
+
+###  http://sweetontology.net/matrWater/Firn
+somaw:Firn rdf:type owl:Class ;
+           rdfs:subClassOf somaw:IceCrystal ;
+           rdfs:label "firn"@en .
+
+
+###  http://sweetontology.net/matrWater/FreshWater
+somaw:FreshWater rdf:type owl:Class ;
+                 rdfs:subClassOf somaw:WaterSubstance ;
+                 owl:disjointWith somaw:SaltWater ;
+                 rdfs:label "fresh water"@en .
+
+
+###  http://sweetontology.net/matrWater/Frost
+somaw:Frost rdf:type owl:Class ;
+            rdfs:subClassOf somaw:WaterSubstance ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorel:hasState ;
+                              owl:hasValue sostp:Frozen
+                            ] ;
+            rdfs:label "frost"@en .
+
+
+###  http://sweetontology.net/matrWater/GranularIce
+somaw:GranularIce rdf:type owl:Class ;
+                  rdfs:subClassOf somaw:Ice ;
+                  rdfs:label "granular ice"@en .
+
+
+###  http://sweetontology.net/matrWater/GrayWater
+somaw:GrayWater rdf:type owl:Class ;
+                rdfs:subClassOf somaw:WaterMixture ;
+                rdfs:label "gray water"@en .
+
+
+###  http://sweetontology.net/matrWater/Groundwater
+somaw:Groundwater rdf:type owl:Class ;
+                  rdfs:subClassOf somaw:LiquidWater ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelsp:below ;
+                                    owl:allValuesFrom sorea:PlanetarySurface
+                                  ] ;
+                  rdfs:label "groundwater"@en .
+
+
+###  http://sweetontology.net/matrWater/HoarCrystal
+somaw:HoarCrystal rdf:type owl:Class ;
+                  rdfs:subClassOf somaw:IceCrystal ;
+                  rdfs:label "hoar crystal"@en .
+
+
+###  http://sweetontology.net/matrWater/Hydrate
+somaw:Hydrate rdf:type owl:Class ;
+              rdfs:subClassOf somaw:WaterSubstance ;
+              rdfs:label "hydrate"@en .
+
+
+###  http://sweetontology.net/matrWater/Ice
+somaw:Ice rdf:type owl:Class ;
+          rdfs:subClassOf somaw:WaterSubstance ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sorel:hasState ;
+                            owl:hasValue sostp:Solid
+                          ] ;
+          rdfs:label "ice"@en .
+
+
+###  http://sweetontology.net/matrWater/IceCrystal
+somaw:IceCrystal rdf:type owl:Class ;
+                 owl:equivalentClass somaw:IceParticle ;
+                 rdfs:subClassOf somaw:Ice ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorel:hasState ;
+                                   owl:hasValue sostso:Crystal
+                                 ] ;
+                 rdfs:label "ice crystal"@en .
+
+
+###  http://sweetontology.net/matrWater/IceParticle
+somaw:IceParticle rdf:type owl:Class ;
+                  rdfs:label "ice particle"@en .
+
+
+###  http://sweetontology.net/matrWater/LiquidWater
+somaw:LiquidWater rdf:type owl:Class ;
+                  rdfs:subClassOf somaw:WaterSubstance ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorel:hasState ;
+                                    owl:hasValue sostp:Liquid
+                                  ] ;
+                  rdfs:label "liquid water"@en .
+
+
+###  http://sweetontology.net/matrWater/RainDrop
+somaw:RainDrop rdf:type owl:Class ;
+               rdfs:subClassOf somaw:Drop ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelsp:diameter ;
+                                 owl:hasValue [ rdf:type sopropsdis:SizeRange_micron
+                                              ]
+                               ] ;
+               rdfs:label "rain drop"@en .
+
+
+###  http://sweetontology.net/matrWater/Rainwater
+somaw:Rainwater rdf:type owl:Class ;
+                rdfs:subClassOf somaw:LiquidWater ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelpr:hasSource ;
+                                  owl:allValuesFrom sophatmopc:Rainfall
+                                ] ;
+                rdfs:label "rainwater"@en .
+
+
+###  http://sweetontology.net/matrWater/Rime
+somaw:Rime rdf:type owl:Class ;
+           rdfs:subClassOf somaw:Ice ;
+           rdfs:label "rime"@en .
+
+
+###  http://sweetontology.net/matrWater/SalineWater
+somaw:SalineWater rdf:type owl:Class ;
+                  rdfs:subClassOf somaw:SaltWater ;
+                  rdfs:label "saline water"@en .
+
+
+###  http://sweetontology.net/matrWater/SaltWater
+somaw:SaltWater rdf:type owl:Class ;
+                rdfs:subClassOf somaw:WaterSubstance ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorel:hasState ;
+                                  owl:hasValue sostc:Saline
+                                ] ;
+                rdfs:label "salt water"@en .
+
+
+###  http://sweetontology.net/matrWater/SeaWater
+somaw:SeaWater rdf:type owl:Class ;
+               rdfs:subClassOf somaw:SaltWater ;
+               rdfs:label "sea water"@en .
+
+
+###  http://sweetontology.net/matrWater/Sewage
+somaw:Sewage rdf:type owl:Class ;
+             rdfs:subClassOf somaw:Effluent ;
+             rdfs:label "sewage"@en .
+
+
+###  http://sweetontology.net/matrWater/Snow
+somaw:Snow rdf:type owl:Class ;
+           rdfs:subClassOf somaw:WaterSubstance ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorel:hasState ;
+                             owl:hasValue sostp:Solid
+                           ] ;
+           rdfs:label "snow"@en .
+
+
+###  http://sweetontology.net/matrWater/SnowFacies
+somaw:SnowFacies rdf:type owl:Class ;
+                 rdfs:subClassOf somaw:IceCrystal ;
+                 rdfs:label "snow facies"@en .
+
+
+###  http://sweetontology.net/matrWater/SnowGrain
+somaw:SnowGrain rdf:type owl:Class ;
+                rdfs:subClassOf somaw:Snow ;
+                rdfs:label "snow grain"@en .
+
+
+###  http://sweetontology.net/matrWater/Steam
+somaw:Steam rdf:type owl:Class ;
+            owl:equivalentClass somaw:WaterVapor ;
+            rdfs:label "steam"@en .
+
+
+###  http://sweetontology.net/matrWater/Wastewater
+somaw:Wastewater rdf:type owl:Class ;
+                 rdfs:subClassOf somaw:Effluent ;
+                 rdfs:label "wastewater"@en .
+
+
+###  http://sweetontology.net/matrWater/WaterMixture
+somaw:WaterMixture rdf:type owl:Class ;
+                   rdfs:subClassOf soma:Mixture ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelch:hasChemical_1 ;
+                                     owl:hasValue somac:H2O
+                                   ] ;
+                   rdfs:label "water mixture"@en .
+
+
+###  http://sweetontology.net/matrWater/WaterSubstance
+somaw:WaterSubstance rdf:type owl:Class ;
+                     rdfs:subClassOf soma:Substance ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorelch:hasChemical ;
+                                       owl:hasValue somac:Water
+                                     ] ;
+                     rdfs:label "water substance"@en .
+
+
+###  http://sweetontology.net/matrWater/WaterVapor
+somaw:WaterVapor rdf:type owl:Class ;
+                 rdfs:subClassOf somaw:WaterSubstance ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorel:hasState ;
+                                   owl:hasValue sostp:Gas
+                                 ] ;
+                 rdfs:label "water vapor"@en .
+
+
+###  http://sweetontology.net/phenAtmoPrecipitation/Rainfall
+sophatmopc:Rainfall rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceDistance/SizeRange_micron
+sopropsdis:SizeRange_micron rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realm/PlanetarySurface
+sorea:PlanetarySurface rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateChemical/Brackish
+sostc:Brackish rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/stateChemical/Saline
+sostc:Saline rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Frozen
+sostp:Frozen rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Liquid
+sostp:Liquid rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/stateSolid/Crystal
+sostso:Crystal rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,288 @@
+@prefix : <http://sweetontology.net/propFunction/> .
+@prefix sorepsmo: <http://sweetontology.net/reprSciModel/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sopropdife: <http://sweetontology.net/propDifference/> .
+@prefix sorepm: <http://sweetontology.net/reprMath/> .
+@prefix soprop: <http://sweetontology.net/prop/> .
+@prefix sopropq: <http://sweetontology.net/propQuantity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sopropfu: <http://sweetontology.net/propFunction/> .
+@prefix sorept: <http://sweetontology.net/reprTime/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorepsu: <http://sweetontology.net/reprSciUnits/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@base <http://sweetontology.net/propFunction> .
+
+<http://sweetontology.net/propFunction> rdf:type owl:Ontology ;
+                                         owl:imports <http://sweetontology.net/prop> ,
+                                                     <http://sweetontology.net/propDifference> ,
+                                                     <http://sweetontology.net/propQuantity> ,
+                                                     <http://sweetontology.net/relaMath> ,
+                                                     <http://sweetontology.net/relaSci> ,
+                                                     <http://sweetontology.net/reprMath> ,
+                                                     <http://sweetontology.net/reprSciModel> ,
+                                                     <http://sweetontology.net/reprSciUnits> ,
+                                                     <http://sweetontology.net/reprTime> ;
+                                         rdfs:label "SWEET Ontology Property Function" ;
+                                         dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                         owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaMath/averageOver
+sorelm:averageOver rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaMath/estimateOf
+sorelm:estimateOf rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSci/rangeOf
+sorelsc:rangeOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/propFunction/AnnualAverage
+sopropfu:AnnualAverage rdf:type owl:Class ;
+                   rdfs:subClassOf sopropfu:TimeMean ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelm:averageOver ;
+                                     owl:hasValue sorepsu:year
+                                   ] ;
+                   rdfs:label "annual average"@en .
+
+
+###  http://sweetontology.net/propFunction/Average
+sopropfu:Average rdf:type owl:Class ;
+             owl:equivalentClass sopropfu:Mean ;
+             rdfs:label "average"@en .
+
+
+###  http://sweetontology.net/propFunction/CriticalLevel
+sopropfu:CriticalLevel rdf:type owl:Class ;
+                   owl:equivalentClass sopropfu:CriticalPoint ;
+                   rdfs:label "critical level"@en .
+
+
+###  http://sweetontology.net/propFunction/CriticalPoint
+sopropfu:CriticalPoint rdf:type owl:Class ;
+                   rdfs:subClassOf sopropfu:Threshold ;
+                   rdfs:label "critical point"@en .
+
+
+###  http://sweetontology.net/propFunction/Decile
+sopropfu:Decile rdf:type owl:Class ;
+            rdfs:subClassOf sopropfu:Percentile ;
+            rdfs:label "decile"@en .
+
+
+###  http://sweetontology.net/propFunction/Disturbance
+sopropfu:Disturbance rdf:type owl:Class ;
+                 rdfs:subClassOf soprop:Error ;
+                 rdfs:label "disturbance"@en .
+
+
+###  http://sweetontology.net/propFunction/ErrorBar
+sopropfu:ErrorBar rdf:type owl:Class ;
+              rdfs:subClassOf sopropq:IntervalQuantity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelsc:rangeOf ;
+                                owl:allValuesFrom soprop:Error
+                              ] ;
+              rdfs:label "error bar"@en .
+
+
+###  http://sweetontology.net/propFunction/FlippingPoint
+sopropfu:FlippingPoint rdf:type owl:Class ;
+                   owl:equivalentClass sopropfu:TippingPoint ;
+                   rdfs:label "flipping point"@en .
+
+
+###  http://sweetontology.net/propFunction/Kurtosis
+sopropfu:Kurtosis rdf:type owl:Class ;
+              rdfs:subClassOf soprop:StatisticalSummary ;
+              rdfs:label "kurtosis"@en .
+
+
+###  http://sweetontology.net/propFunction/Maximum
+sopropfu:Maximum rdf:type owl:Class ;
+             rdfs:subClassOf soprop:StatisticalSummary ;
+             rdfs:label "maximum"@en .
+
+
+###  http://sweetontology.net/propFunction/Mean
+sopropfu:Mean rdf:type owl:Class ;
+          rdfs:subClassOf sopropfu:Moment ;
+          rdfs:label "mean"@en .
+
+
+###  http://sweetontology.net/propFunction/Median
+sopropfu:Median rdf:type owl:Class ;
+            rdfs:subClassOf soprop:StatisticalSummary ;
+            rdfs:label "median"@en .
+
+
+###  http://sweetontology.net/propFunction/MidRange
+sopropfu:MidRange rdf:type owl:Class ;
+              rdfs:subClassOf soprop:StatisticalSummary ;
+              rdfs:label "mid range"@en .
+
+
+###  http://sweetontology.net/propFunction/Minimum
+sopropfu:Minimum rdf:type owl:Class ;
+             rdfs:subClassOf soprop:StatisticalSummary ;
+             rdfs:label "minimum"@en .
+
+
+###  http://sweetontology.net/propFunction/Mode
+sopropfu:Mode rdf:type owl:Class ;
+          rdfs:subClassOf soprop:StatisticalSummary ;
+          rdfs:label "mode"@en .
+
+
+###  http://sweetontology.net/propFunction/Moment
+sopropfu:Moment rdf:type owl:Class ;
+            rdfs:subClassOf soprop:StatisticalSummary ;
+            rdfs:label "moment"@en .
+
+
+###  http://sweetontology.net/propFunction/MonthlyAverage
+sopropfu:MonthlyAverage rdf:type owl:Class ;
+                    rdfs:subClassOf sopropfu:TimeMean ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelm:averageOver ;
+                                      owl:hasValue sorepsu:month
+                                    ] ;
+                    rdfs:label "monthly average"@en .
+
+
+###  http://sweetontology.net/propFunction/Peak
+sopropfu:Peak rdf:type owl:Class ;
+          rdfs:subClassOf sopropfu:Maximum ;
+          rdfs:label "peak"@en .
+
+
+###  http://sweetontology.net/propFunction/Percentile
+sopropfu:Percentile rdf:type owl:Class ;
+                rdfs:subClassOf soprop:StatisticalSummary ;
+                rdfs:label "percentile"@en .
+
+
+###  http://sweetontology.net/propFunction/Quartile
+sopropfu:Quartile rdf:type owl:Class ;
+              rdfs:subClassOf sopropfu:Percentile ;
+              rdfs:label "quartile"@en .
+
+
+###  http://sweetontology.net/propFunction/Quintile
+sopropfu:Quintile rdf:type owl:Class ;
+              rdfs:subClassOf sopropfu:Percentile ;
+              rdfs:label "quintile"@en .
+
+
+###  http://sweetontology.net/propFunction/Skewness
+sopropfu:Skewness rdf:type owl:Class ;
+              rdfs:subClassOf soprop:StatisticalSummary ;
+              rdfs:label "skewness"@en .
+
+
+###  http://sweetontology.net/propFunction/Spread
+sopropfu:Spread rdf:type owl:Class ;
+            rdfs:subClassOf sopropdife:Deviation ;
+            rdfs:label "spread"@en .
+
+
+###  http://sweetontology.net/propFunction/StandardDeviation
+sopropfu:StandardDeviation rdf:type owl:Class ;
+                       rdfs:subClassOf soprop:StatisticalSummary ,
+                                       sopropfu:Spread ;
+                       rdfs:label "standard deviation"@en .
+
+
+###  http://sweetontology.net/propFunction/StandardError
+sopropfu:StandardError rdf:type owl:Class ;
+                   rdfs:subClassOf sorepsmo:Estimate ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorelm:estimateOf ;
+                                     owl:allValuesFrom sopropfu:StandardDeviation
+                                   ] ;
+                   rdfs:label "standard error"@en .
+
+
+###  http://sweetontology.net/propFunction/TemporalAverage
+sopropfu:TemporalAverage rdf:type owl:Class ;
+                     owl:equivalentClass sopropfu:TimeMean ;
+                     rdfs:label "temporal average"@en .
+
+
+###  http://sweetontology.net/propFunction/TemporalMean
+sopropfu:TemporalMean rdf:type owl:Class ;
+                  owl:equivalentClass sopropfu:TimeMean ;
+                  rdfs:label "temporal mean"@en .
+
+
+###  http://sweetontology.net/propFunction/Threshold
+sopropfu:Threshold rdf:type owl:Class ;
+               rdfs:subClassOf soprop:StatisticalSummary ;
+               rdfs:label "threshold"@en .
+
+
+###  http://sweetontology.net/propFunction/TimeAverage
+sopropfu:TimeAverage rdf:type owl:Class ;
+                 owl:equivalentClass sopropfu:TimeMean ;
+                 rdfs:label "time average"@en .
+
+
+###  http://sweetontology.net/propFunction/TimeMean
+sopropfu:TimeMean rdf:type owl:Class ;
+              rdfs:subClassOf sopropfu:Average ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelm:averageOver ;
+                                owl:someValuesFrom sorept:Time
+                              ] ;
+              rdfs:label "time mean"@en .
+
+
+###  http://sweetontology.net/propFunction/TippingPoint
+sopropfu:TippingPoint rdf:type owl:Class ;
+                  rdfs:subClassOf sopropfu:CriticalPoint ;
+                  rdfs:label "tipping point"@en .
+
+
+###  http://sweetontology.net/propFunction/Variance
+sopropfu:Variance rdf:type owl:Class ;
+              rdfs:subClassOf soprop:StatisticalSummary ,
+                              sopropfu:Spread ;
+              rdfs:label "variance"@en .
+
+
+###  http://sweetontology.net/propQuantity/IntervalQuantity
+sopropq:IntervalQuantity rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSciModel/Estimate
+sorepsmo:Estimate rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/reprSciUnits/month
+sorepsu:month rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/reprSciUnits/year
+sorepsu:year rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

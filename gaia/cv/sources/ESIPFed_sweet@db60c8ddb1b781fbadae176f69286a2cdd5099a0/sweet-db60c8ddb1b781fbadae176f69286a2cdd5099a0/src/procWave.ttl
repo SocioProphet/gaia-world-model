@@ -1,0 +1,225 @@
+@prefix : <http://sweetontology.net/procWave/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soma: <http://sweetontology.net/matr/> .
+@prefix soprocp: <http://sweetontology.net/procPhysical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix soprocw: <http://sweetontology.net/procWave/> .
+@prefix sophw: <http://sweetontology.net/phenWave/> .
+@base <http://sweetontology.net/procWave> .
+
+<http://sweetontology.net/procWave> rdf:type owl:Ontology ;
+                                     owl:imports <http://sweetontology.net/matr> ,
+                                                 <http://sweetontology.net/phenWave> ,
+                                                 <http://sweetontology.net/procPhysical> ;
+                                     rdfs:label "SWEET Ontology Process Wave" ;
+                                     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                     owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/procWave/Absorption
+soprocw:Absorption rdf:type owl:Class ;
+                rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                rdfs:label "absorption"@en .
+
+
+###  http://sweetontology.net/procWave/AcousticBackScattering
+soprocw:AcousticBackScattering rdf:type owl:Class ;
+                            rdfs:subClassOf soprocw:Backscattering ;
+                            rdfs:label "acoustic back scattering"@en .
+
+
+###  http://sweetontology.net/procWave/Attenuation
+soprocw:Attenuation rdf:type owl:Class ;
+                 owl:equivalentClass soprocw:Extinction ;
+                 rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                 rdfs:label "attenuation"@en .
+
+
+###  http://sweetontology.net/procWave/Backscattering
+soprocw:Backscattering rdf:type owl:Class ;
+                    rdfs:subClassOf soprocw:Scattering ;
+                    rdfs:label "backscattering"@en .
+
+
+###  http://sweetontology.net/procWave/BraggDiffraction
+soprocw:BraggDiffraction rdf:type owl:Class ;
+                      rdfs:subClassOf soprocw:Diffraction ;
+                      rdfs:label "bragg diffraction"@en .
+
+
+###  http://sweetontology.net/procWave/Damping
+soprocw:Damping rdf:type owl:Class ;
+             rdfs:subClassOf soprocw:WaveProcess ;
+             rdfs:label "damping"@en .
+
+
+###  http://sweetontology.net/procWave/Diffraction
+soprocw:Diffraction rdf:type owl:Class ;
+                 rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                 rdfs:label "diffraction"@en .
+
+
+###  http://sweetontology.net/procWave/Dispersion
+soprocw:Dispersion rdf:type owl:Class ;
+                rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                rdfs:label "dispersion"@en .
+
+
+###  http://sweetontology.net/procWave/Dissipation
+soprocw:Dissipation rdf:type owl:Class ;
+                 rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                 rdfs:label "dissipation"@en .
+
+
+###  http://sweetontology.net/procWave/Echo
+soprocw:Echo rdf:type owl:Class ;
+          rdfs:subClassOf soprocw:Reflection ;
+          rdfs:label "echo"@en .
+
+
+###  http://sweetontology.net/procWave/ElectromagneticRadiation
+soprocw:ElectromagneticRadiation rdf:type owl:Class ;
+                              owl:equivalentClass soprocw:ElectromagneticWave ;
+                              rdfs:subClassOf sophw:Wave ,
+                                              soprocp:PhysicalProcess ;
+                              rdfs:label "electromagnetic radiation"@en .
+
+
+###  http://sweetontology.net/procWave/ElectromagneticWave
+soprocw:ElectromagneticWave rdf:type owl:Class ;
+                         rdfs:label "electromagnetic wave"@en .
+
+
+###  http://sweetontology.net/procWave/Emission
+soprocw:Emission rdf:type owl:Class ;
+              rdfs:subClassOf soprocw:WaveProcess ;
+              rdfs:label "emission"@en .
+
+
+###  http://sweetontology.net/procWave/Excitation
+soprocw:Excitation rdf:type owl:Class ;
+                rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                rdfs:label "excitation"@en .
+
+
+###  http://sweetontology.net/procWave/Extinction
+soprocw:Extinction rdf:type owl:Class ;
+                rdfs:label "extinction"@en .
+
+
+###  http://sweetontology.net/procWave/FraunhoferDiffraction
+soprocw:FraunhoferDiffraction rdf:type owl:Class ;
+                           rdfs:subClassOf soprocw:Diffraction ;
+                           rdfs:label "fraunhofer diffraction"@en .
+
+
+###  http://sweetontology.net/procWave/FresnelDiffraction
+soprocw:FresnelDiffraction rdf:type owl:Class ;
+                        rdfs:subClassOf soprocw:Diffraction ;
+                        rdfs:label "fresnel diffraction"@en .
+
+
+###  http://sweetontology.net/procWave/Interference
+soprocw:Interference rdf:type owl:Class ;
+                  rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                  rdfs:label "interference"@en .
+
+
+###  http://sweetontology.net/procWave/LineEmission
+soprocw:LineEmission rdf:type owl:Class ;
+                  rdfs:subClassOf soprocw:Emission ;
+                  rdfs:label "line emission"@en .
+
+
+###  http://sweetontology.net/procWave/LineOfSightPropagation
+soprocw:LineOfSightPropagation rdf:type owl:Class ;
+                            rdfs:subClassOf soprocw:WavePropagation ;
+                            rdfs:label "line of sight propagation"@en .
+
+
+###  http://sweetontology.net/procWave/MediumWaveInteractionProcess
+soprocw:MediumWaveInteractionProcess rdf:type owl:Class ;
+                                  rdfs:subClassOf soprocw:WaveProcess ;
+                                  rdfs:label "medium wave interaction process"@en .
+
+
+###  http://sweetontology.net/procWave/MieScattering
+soprocw:MieScattering rdf:type owl:Class ;
+                   rdfs:subClassOf soprocw:Scattering ;
+                   rdfs:label "mie scattering"@en .
+
+
+###  http://sweetontology.net/procWave/Polarization
+soprocw:Polarization rdf:type owl:Class ;
+                  rdfs:subClassOf soprocw:WaveProcess ;
+                  rdfs:label "polarization"@en .
+
+
+###  http://sweetontology.net/procWave/Propagation
+soprocw:Propagation rdf:type owl:Class ;
+                 owl:equivalentClass soprocw:WavePropagation ;
+                 rdfs:subClassOf soprocw:WaveProcess ;
+                 rdfs:label "propagation"@en .
+
+
+###  http://sweetontology.net/procWave/RayleighScattering
+soprocw:RayleighScattering rdf:type owl:Class ;
+                        rdfs:subClassOf soprocw:Scattering ;
+                        rdfs:label "rayleigh scattering"@en .
+
+
+###  http://sweetontology.net/procWave/Reflection
+soprocw:Reflection rdf:type owl:Class ;
+                rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                rdfs:label "reflection"@en .
+
+
+###  http://sweetontology.net/procWave/Refraction
+soprocw:Refraction rdf:type owl:Class ;
+                rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                rdfs:label "refraction"@en .
+
+
+###  http://sweetontology.net/procWave/Scattering
+soprocw:Scattering rdf:type owl:Class ;
+                rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                rdfs:label "scattering"@en .
+
+
+###  http://sweetontology.net/procWave/SchaeferBergmannDiffraction
+soprocw:SchaeferBergmannDiffraction rdf:type owl:Class ;
+                                 rdfs:subClassOf soprocw:Diffraction ;
+                                 rdfs:label "schaefer bergmann diffraction"@en .
+
+
+###  http://sweetontology.net/procWave/Transmission
+soprocw:Transmission rdf:type owl:Class ;
+                  rdfs:subClassOf soprocw:MediumWaveInteractionProcess ;
+                  rdfs:label "transmission"@en .
+
+
+###  http://sweetontology.net/procWave/WaveDrag
+soprocw:WaveDrag rdf:type owl:Class ;
+              rdfs:subClassOf soprocw:WaveProcess ;
+              rdfs:label "wave drag"@en .
+
+
+###  http://sweetontology.net/procWave/WaveProcess
+soprocw:WaveProcess rdf:type owl:Class ;
+                 rdfs:subClassOf soprocp:PhysicalProcess ;
+                 rdfs:label "wave process"@en .
+
+
+###  http://sweetontology.net/procWave/WavePropagation
+soprocw:WavePropagation rdf:type owl:Class ;
+                     rdfs:label "wave propagation"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

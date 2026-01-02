@@ -1,0 +1,255 @@
+@prefix : <http://sweetontology.net/reprDataModel/> .
+@prefix sorepsmo: <http://sweetontology.net/reprSciModel/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sorepsg: <http://sweetontology.net/reprSpaceGeometry/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorepdp: <http://sweetontology.net/reprDataProduct/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix sorept: <http://sweetontology.net/reprTime/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorepsg3: <http://sweetontology.net/reprSpaceGeometry3D/> .
+@prefix soreps: <http://sweetontology.net/reprSpace/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@prefix sorepdm: <http://sweetontology.net/reprDataModel/> .
+@base <http://sweetontology.net/reprDataModel> .
+
+<http://sweetontology.net/reprDataModel> rdf:type owl:Ontology ;
+                                          owl:imports <http://sweetontology.net/relaMath> ,
+                                                      <http://sweetontology.net/relaSpace> ,
+                                                      <http://sweetontology.net/repr> ,
+                                                      <http://sweetontology.net/reprDataProduct> ,
+                                                      <http://sweetontology.net/reprSciModel> ,
+                                                      <http://sweetontology.net/reprSpace> ,
+                                                      <http://sweetontology.net/reprSpaceGeometry> ,
+                                                      <http://sweetontology.net/reprSpaceGeometry3D> ,
+                                                      <http://sweetontology.net/reprTime> ;
+                                          rdfs:label "SWEET Ontology Representation Data Model" ;
+                                          dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                          owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaMath/representationOf
+sorelm:representationOf rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/hasGeometricalObject
+sorelsp:hasGeometricalObject rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/reprDataModel/Array
+sorepdm:Array rdf:type owl:Class ;
+             rdfs:subClassOf sorepdm:DataStructure ;
+             rdfs:label "array"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Cell
+sorepdm:Cell rdf:type owl:Class ;
+            rdfs:subClassOf sorepdm:DataModel ;
+            rdfs:label "cell"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Character
+sorepdm:Character rdf:type owl:Class ;
+                 rdfs:subClassOf sorep:Representation ;
+                 rdfs:label "character"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Column
+sorepdm:Column rdf:type owl:Class ;
+              rdfs:subClassOf sorep:Dimension ;
+              rdfs:label "column"@en .
+
+
+###  http://sweetontology.net/reprDataModel/DataModel
+sorepdm:DataModel rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsmo:Model ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorelm:representationOf ;
+                                   owl:allValuesFrom sorepdp:Data
+                                 ] ;
+                 rdfs:label "data model"@en .
+
+
+###  http://sweetontology.net/reprDataModel/DataStructure
+sorepdm:DataStructure rdf:type owl:Class ;
+                     rdfs:subClassOf sorep:Representation ;
+                     rdfs:label "data structure"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Delimiter
+sorepdm:Delimiter rdf:type owl:Class ;
+                 rdfs:subClassOf sorepdm:Character ;
+                 rdfs:label "delimiter"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Field
+sorepdm:Field rdf:type owl:Class ;
+             rdfs:subClassOf sorepdm:DataModel ;
+             rdfs:label "field"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Grid
+sorepdm:Grid rdf:type owl:Class ;
+            rdfs:subClassOf sorepdm:DataModel ,
+                            sorepdm:Raster ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelsp:hasGeometricalObject ;
+                              owl:someValuesFrom sorepsg:Rectangle
+                            ] ;
+            rdfs:label "grid"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Increment
+sorepdm:Increment rdf:type owl:Class ;
+                 rdfs:subClassOf sorep:Scale ;
+                 rdfs:label "increment"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Parameter
+sorepdm:Parameter rdf:type owl:Class ;
+                 rdfs:subClassOf sorep:Dimension ;
+                 rdfs:label "parameter"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Point
+sorepdm:Point rdf:type owl:Class ;
+             rdfs:subClassOf sorepdm:DataModel ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty sorelsp:hasGeometricalObject ;
+                               owl:allValuesFrom sorepsg:Point
+                             ] ;
+             rdfs:label "point"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Raster
+sorepdm:Raster rdf:type owl:Class ;
+              rdfs:subClassOf sorepdm:DataModel ;
+              rdfs:label "raster"@en .
+
+
+###  http://sweetontology.net/reprDataModel/ReducedGrid
+sorepdm:ReducedGrid rdf:type owl:Class ;
+                   rdfs:subClassOf sorepdm:Grid ;
+                   rdfs:label "reduced grid"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Resolution
+sorepdm:Resolution rdf:type owl:Class ;
+                  rdfs:subClassOf sorepdm:Increment ;
+                  rdfs:label "resolution"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Row
+sorepdm:Row rdf:type owl:Class ;
+           rdfs:subClassOf sorep:Dimension ;
+           rdfs:label "row"@en .
+
+
+###  http://sweetontology.net/reprDataModel/SpatialRepresentation
+sorepdm:SpatialRepresentation rdf:type owl:Class ;
+                             rdfs:subClassOf sorep:Representation ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty sorelm:representationOf ;
+                                               owl:allValuesFrom soreps:Space
+                                             ] ;
+                             rdfs:label "spatial representation"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Structure
+sorepdm:Structure rdf:type owl:Class ;
+                 rdfs:subClassOf sorepdm:DataStructure ;
+                 rdfs:label "structure"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Swath
+sorepdm:Swath rdf:type owl:Class ;
+             rdfs:subClassOf sorepdm:DataModel ;
+             rdfs:label "swath"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Swath_2D
+sorepdm:Swath_2D rdf:type owl:Class ;
+                rdfs:subClassOf sorepdm:Swath ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelsp:hasGeometricalObject ;
+                                  owl:allValuesFrom sorepsg:GeometricalObject_2D
+                                ] ;
+                rdfs:label "swath 2d"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Swath_3D
+sorepdm:Swath_3D rdf:type owl:Class ;
+                rdfs:subClassOf sorepdm:Swath ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelsp:hasGeometricalObject ;
+                                  owl:allValuesFrom sorepsg3:GeometricalObject_3D
+                                ] ;
+                rdfs:label "swath 3d"@en .
+
+
+###  http://sweetontology.net/reprDataModel/TemporalRepresentation
+sorepdm:TemporalRepresentation rdf:type owl:Class ;
+                              rdfs:subClassOf sorep:Representation ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty sorelm:representationOf ;
+                                                owl:allValuesFrom sorept:Time
+                                              ] ;
+                              rdfs:label "temporal representation"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Trajectory
+sorepdm:Trajectory rdf:type owl:Class ;
+                  rdfs:subClassOf sorepdm:DataModel ;
+                  rdfs:label "trajectory"@en .
+
+
+###  http://sweetontology.net/reprDataModel/Vector
+sorepdm:Vector rdf:type owl:Class ;
+              rdfs:subClassOf sorepdm:DataModel ;
+              rdfs:label "vector"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Data
+sorepdp:Data rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSciModel/Model
+sorepsmo:Model rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpace/Space
+soreps:Space rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/GeometricalObject_2D
+sorepsg:GeometricalObject_2D rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/Point
+sorepsg:Point rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/Rectangle
+sorepsg:Rectangle rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/GeometricalObject_3D
+sorepsg3:GeometricalObject_3D rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprTime/Time
+sorept:Time rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

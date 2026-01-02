@@ -1,0 +1,36 @@
+pattern_name: exo/patterns/activity
+classes:
+  exposure event: ExO:0000002
+  activity: NCIT:C43431
+
+relations:
+  has exposure stimulus: RO:0002309
+  causally upstream of or within: RO:0002418
+    
+vars: 
+  activity: "'activity'"
+
+name:
+  text: "%s related exposure"
+  vars:
+    - activity
+
+annotations: 
+  - property: oio:hasExactSynonym
+    text: "%s exposure"
+    vars:
+      - activity
+  - property: oio:hasNarrowSynonym
+    text: "%s"
+    vars:
+      - activity
+
+def: 
+  text: "A exposure event arising as a result of %s."
+  vars:
+    - activity
+    
+equivalentTo: 
+  text: "'exposure event' and 'causally upstream of or within' some %s"
+  vars:
+    - activity

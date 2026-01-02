@@ -1,0 +1,131 @@
+@prefix : <http://sweetontology.net/realmAstroStar/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix soreaas: <http://sweetontology.net/realmAstroStar/> .
+@prefix soprocc: <http://sweetontology.net/procChemical/> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix sorea: <http://sweetontology.net/realm/> .
+@prefix sostp: <http://sweetontology.net/statePhysical/> .
+@base <http://sweetontology.net/realmAstroStar> .
+
+<http://sweetontology.net/realmAstroStar> rdf:type owl:Ontology ;
+                                           owl:imports <http://sweetontology.net/procChemical> ,
+                                                       <http://sweetontology.net/realm> ,
+                                                       <http://sweetontology.net/realmAstroBody> ,
+                                                       <http://sweetontology.net/rela> ,
+                                                       <http://sweetontology.net/relaChemical> ,
+                                                       <http://sweetontology.net/state> ,
+                                                       <http://sweetontology.net/statePhysical> ;
+                                           rdfs:label "SWEET Ontology Realm Astrophysical" ;
+                                           dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                           owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasState
+sorel:hasState rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaChemical/hasChemicalReaction
+sorelch:hasChemicalReaction rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/realmAstroStar/ActiveRegion
+soreaas:ActiveRegion rdf:type owl:Class ;
+                  rdfs:subClassOf soreaas:StellarRealm ;
+                  rdfs:label "active region"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/Chromosphere
+soreaas:Chromosphere rdf:type owl:Class ;
+                  rdfs:subClassOf soreaas:StellarAtmosphere ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorel:hasState ;
+                                    owl:hasValue sostp:Plasma
+                                  ] ;
+                  rdfs:label "chromosphere"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/ConvectionZone
+soreaas:ConvectionZone rdf:type owl:Class ;
+                    rdfs:subClassOf soreaas:StellarInterior ;
+                    owl:disjointWith soreaas:StellarCore ;
+                    rdfs:label "convection zone"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/Corona
+soreaas:Corona rdf:type owl:Class ;
+            rdfs:subClassOf soreaas:StellarAtmosphere ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorel:hasState ;
+                              owl:hasValue sostp:Plasma
+                            ] ;
+            rdfs:label "corona"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/Photosphere
+soreaas:Photosphere rdf:type owl:Class ;
+                 rdfs:subClassOf soreaas:StellarAtmosphere ;
+                 rdfs:label "photosphere"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/RadiativeZone
+soreaas:RadiativeZone rdf:type owl:Class ;
+                   rdfs:subClassOf soreaas:StellarInterior ;
+                   rdfs:label "radiative zone"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/StellarAtmosphere
+soreaas:StellarAtmosphere rdf:type owl:Class ;
+                       rdfs:subClassOf soreaas:StellarRealm ;
+                       rdfs:label "stellar atmosphere"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/StellarCore
+soreaas:StellarCore rdf:type owl:Class ;
+                 rdfs:subClassOf soreaas:StellarInterior ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorelch:hasChemicalReaction ;
+                                   owl:someValuesFrom soprocc:NuclearFusion
+                                 ] ;
+                 rdfs:label "stellar core"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/StellarInterior
+soreaas:StellarInterior rdf:type owl:Class ;
+                     rdfs:subClassOf soreaas:StellarRealm ;
+                     rdfs:label "stellar interior"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/StellarRealm
+soreaas:StellarRealm rdf:type owl:Class ;
+                  rdfs:subClassOf sorea:Realm ;
+                  rdfs:label "stellar realm"@en .
+
+
+###  http://sweetontology.net/realmAstroStar/Tacocline
+soreaas:Tacocline rdf:type owl:Class ;
+               rdfs:subClassOf soreaas:StellarInterior ;
+               rdfs:label "tacocline"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/statePhysical/Plasma
+sostp:Plasma rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

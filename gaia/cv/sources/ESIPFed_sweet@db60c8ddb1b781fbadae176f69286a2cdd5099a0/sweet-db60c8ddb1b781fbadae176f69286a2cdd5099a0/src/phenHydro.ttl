@@ -1,0 +1,261 @@
+@prefix : <http://sweetontology.net/phenHydro/> .
+@prefix sorepsc: <http://sweetontology.net/reprSciComponent/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sophsy: <http://sweetontology.net/phenSystem/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix somac: <http://sweetontology.net/matrCompound/> .
+@prefix sophgg: <http://sweetontology.net/phenGeolGeomorphology/> .
+@prefix sostri: <http://sweetontology.net/stateRoleImpact/> .
+@prefix soph: <http://sweetontology.net/phen/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sophhy: <http://sweetontology.net/phenHydro/> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix sophfd: <http://sweetontology.net/phenFluidDynamics/> .
+@prefix soreah: <http://sweetontology.net/realmHydro/> .
+@prefix sophft: <http://sweetontology.net/phenFluidTransport/> .
+@prefix sorea: <http://sweetontology.net/realm/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@base <http://sweetontology.net/phenHydro> .
+
+<http://sweetontology.net/phenHydro> rdf:type owl:Ontology ;
+                                      owl:imports <http://sweetontology.net/matrCompound> ,
+                                                  <http://sweetontology.net/phen> ,
+                                                  <http://sweetontology.net/phenFluidDynamics> ,
+                                                  <http://sweetontology.net/phenFluidTransport> ,
+                                                  <http://sweetontology.net/phenGeolGeomorphology> ,
+                                                  <http://sweetontology.net/phenSystem> ,
+                                                  <http://sweetontology.net/realm> ,
+                                                  <http://sweetontology.net/realmHydro> ,
+                                                  <http://sweetontology.net/rela> ,
+                                                  <http://sweetontology.net/relaChemical> ,
+                                                  <http://sweetontology.net/relaSci> ,
+                                                  <http://sweetontology.net/reprSciComponent> ,
+                                                  <http://sweetontology.net/stateRoleImpact> ;
+                                      rdfs:label "SWEET Ontology Phenomena Hydrosphere" ;
+                                      dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                      owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/phenHydro/BaseFlow
+sophhy:BaseFlow rdf:type owl:Class ;
+              rdfs:subClassOf sophhy:Streamflow ;
+              rdfs:label "base flow"@en .
+
+
+###  http://sweetontology.net/phenHydro/Debouche
+sophhy:Debouche rdf:type owl:Class ;
+              rdfs:subClassOf sophhy:StreamDischarge ;
+              rdfs:label "debouche"@en .
+
+
+###  http://sweetontology.net/phenHydro/DeepPercolation
+sophhy:DeepPercolation rdf:type owl:Class ;
+                     rdfs:subClassOf sophhy:Percolation ;
+                     rdfs:label "deep percolation"@en .
+
+
+###  http://sweetontology.net/phenHydro/Discharge
+sophhy:Discharge rdf:type owl:Class ;
+               rdfs:subClassOf sophhy:WaterFlow ;
+               rdfs:label "discharge"@en .
+
+
+###  http://sweetontology.net/phenHydro/Drain
+sophhy:Drain rdf:type owl:Class ;
+           rdfs:subClassOf sophhy:WaterFlow ;
+           rdfs:label "drain"@en .
+
+
+###  http://sweetontology.net/phenHydro/Drainage
+sophhy:Drainage rdf:type owl:Class ;
+              rdfs:subClassOf sophsy:Removal ;
+              rdfs:label "drainage"@en .
+
+
+###  http://sweetontology.net/phenHydro/FlashFlood
+sophhy:FlashFlood rdf:type owl:Class ;
+                rdfs:subClassOf soph:ExtremeEvent ,
+                                sophhy:Flood ;
+                rdfs:label "flash flood"@en .
+
+
+###  http://sweetontology.net/phenHydro/Flood
+sophhy:Flood rdf:type owl:Class ;
+           rdfs:subClassOf sophhy:HydrospherePhenomena ,
+                           sophsy:Inundation ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelsc:hasImpact ;
+                             owl:hasValue sostri:Hazard
+                           ] ;
+           rdfs:label "flood"@en .
+
+
+###  http://sweetontology.net/phenHydro/GroundwaterStorage
+sophhy:GroundwaterStorage rdf:type owl:Class ;
+                        rdfs:subClassOf sophhy:HydrospherePhenomena ,
+                                        sorepsc:Storage ;
+                        rdfs:label "groundwater storage"@en .
+
+
+###  http://sweetontology.net/phenHydro/HydrospherePhenomena
+sophhy:HydrospherePhenomena rdf:type owl:Class ;
+                          rdfs:subClassOf soph:PlanetaryPhenomena ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty sorel:hasRealm ;
+                                            owl:allValuesFrom sorea:Hydrosphere
+                                          ] ;
+                          rdfs:label "hydrosphere phenomena"@en .
+
+
+###  http://sweetontology.net/phenHydro/HydrothermalAlteration
+sophhy:HydrothermalAlteration rdf:type owl:Class ;
+                            rdfs:subClassOf sophhy:HydrospherePhenomena ;
+                            rdfs:label "hydrothermal alteration"@en .
+
+
+###  http://sweetontology.net/phenHydro/Infiltration
+sophhy:Infiltration rdf:type owl:Class ;
+                  rdfs:subClassOf sophhy:LandWaterCirculation ;
+                  rdfs:label "infiltration"@en .
+
+
+###  http://sweetontology.net/phenHydro/Intrusion
+sophhy:Intrusion rdf:type owl:Class ;
+               rdfs:subClassOf sophhy:LandWaterCirculation ;
+               rdfs:label "intrusion"@en .
+
+
+###  http://sweetontology.net/phenHydro/LandWaterCirculation
+sophhy:LandWaterCirculation rdf:type owl:Class ;
+                          rdfs:subClassOf sophhy:HydrospherePhenomena ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty sorel:hasPhenomena ;
+                                            owl:allValuesFrom sophft:Transport
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty sorel:hasRealm ;
+                                            owl:allValuesFrom soreah:UndergroundWater
+                                          ] ;
+                          rdfs:label "land water circulation"@en .
+
+
+###  http://sweetontology.net/phenHydro/OpenChannelFlow
+sophhy:OpenChannelFlow rdf:type owl:Class ;
+                     rdfs:subClassOf sophhy:WaterFlow ;
+                     rdfs:label "open channel flow"@en .
+
+
+###  http://sweetontology.net/phenHydro/Outflow
+sophhy:Outflow rdf:type owl:Class ;
+             rdfs:subClassOf sophhy:WaterFlow ;
+             rdfs:label "outflow"@en .
+
+
+###  http://sweetontology.net/phenHydro/OverlandFlow
+sophhy:OverlandFlow rdf:type owl:Class ;
+                  rdfs:subClassOf sophhy:Runoff ;
+                  rdfs:label "overland flow"@en .
+
+
+###  http://sweetontology.net/phenHydro/Percolate
+sophhy:Percolate rdf:type owl:Class ;
+               owl:equivalentClass sophhy:Percolation ;
+               rdfs:label "percolate"@en .
+
+
+###  http://sweetontology.net/phenHydro/Percolation
+sophhy:Percolation rdf:type owl:Class ;
+                 rdfs:subClassOf sophft:Transport ;
+                 rdfs:label "percolation"@en .
+
+
+###  http://sweetontology.net/phenHydro/RadionucleiRetardation
+sophhy:RadionucleiRetardation rdf:type owl:Class ;
+                            rdfs:subClassOf sophhy:HydrospherePhenomena ;
+                            rdfs:label "radionuclei retardation"@en .
+
+
+###  http://sweetontology.net/phenHydro/Recharge
+sophhy:Recharge rdf:type owl:Class ;
+              rdfs:subClassOf sophft:Transport ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorel:hasRealm ;
+                                owl:allValuesFrom soreah:Aquifer
+                              ] ;
+              rdfs:label "recharge"@en .
+
+
+###  http://sweetontology.net/phenHydro/Runoff
+sophhy:Runoff rdf:type owl:Class ;
+            rdfs:subClassOf sophhy:WaterFlow ;
+            rdfs:label "runoff"@en .
+
+
+###  http://sweetontology.net/phenHydro/SnowCover
+sophhy:SnowCover rdf:type owl:Class ;
+               rdfs:subClassOf sophhy:HydrospherePhenomena ;
+               rdfs:label "snow cover"@en .
+
+
+###  http://sweetontology.net/phenHydro/Snowslide
+sophhy:Snowslide rdf:type owl:Class ;
+               rdfs:subClassOf sophgg:Avalanche ;
+               rdfs:label "snowslide"@en .
+
+
+###  http://sweetontology.net/phenHydro/StreamDischarge
+sophhy:StreamDischarge rdf:type owl:Class ;
+                     rdfs:subClassOf sophhy:Discharge ;
+                     rdfs:label "stream discharge"@en .
+
+
+###  http://sweetontology.net/phenHydro/Streamflow
+sophhy:Streamflow rdf:type owl:Class ;
+                rdfs:subClassOf sophhy:WaterFlow ;
+                rdfs:label "streamflow"@en .
+
+
+###  http://sweetontology.net/phenHydro/Torrent
+sophhy:Torrent rdf:type owl:Class ;
+             rdfs:subClassOf sophhy:Discharge ;
+             rdfs:label "torrent"@en .
+
+
+###  http://sweetontology.net/phenHydro/WaterFlow
+sophhy:WaterFlow rdf:type owl:Class ;
+               rdfs:subClassOf sophfd:Flow ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelch:hasSubstance ;
+                                 owl:hasValue somac:Water
+                               ] ;
+               rdfs:label "water flow"@en .
+
+
+###  http://sweetontology.net/phenSystem/Inundation
+sophsy:Inundation rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenSystem/Removal
+sophsy:Removal rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realmHydro/Aquifer
+soreah:Aquifer rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realmHydro/UndergroundWater
+soreah:UndergroundWater rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSciComponent/Storage
+sorepsc:Storage rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

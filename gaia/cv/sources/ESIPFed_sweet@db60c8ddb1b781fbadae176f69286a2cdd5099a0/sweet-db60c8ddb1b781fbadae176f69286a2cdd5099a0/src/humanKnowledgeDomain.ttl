@@ -1,0 +1,439 @@
+@prefix : <http://sweetontology.net/humanKnowledgeDomain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix somab: <http://sweetontology.net/matrBiomass/> .
+@prefix sohukd: <http://sweetontology.net/humanKnowledgeDomain/> .
+@prefix soreag: <http://sweetontology.net/realmGeol/> .
+@prefix sostti: <http://sweetontology.net/stateTime/> .
+@prefix sophb: <http://sweetontology.net/phenBiol/> .
+@prefix sohu: <http://sweetontology.net/human/> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix somarock: <http://sweetontology.net/matrRock/> .
+@prefix soprope: <http://sweetontology.net/propEnergy/> .
+@prefix sorelh: <http://sweetontology.net/relaHuman/> .
+@prefix sorelt: <http://sweetontology.net/relaTime/> .
+@base <http://sweetontology.net/humanKnowledgeDomain> .
+
+<http://sweetontology.net/humanKnowledgeDomain> rdf:type owl:Ontology ;
+                                                 owl:imports <http://sweetontology.net/human> ,
+                                                             <http://sweetontology.net/matrBiomass> ,
+                                                             <http://sweetontology.net/matrRock> ,
+                                                             <http://sweetontology.net/phenBiol> ,
+                                                             <http://sweetontology.net/propEnergy> ,
+                                                             <http://sweetontology.net/realmGeol> ,
+                                                             <http://sweetontology.net/rela> ,
+                                                             <http://sweetontology.net/relaHuman> ,
+                                                             <http://sweetontology.net/relaTime> ,
+                                                             <http://sweetontology.net/repr> ,
+                                                             <http://sweetontology.net/stateTime> ;
+                                                 rdfs:label "SWEET Ontology Human Knowledge Domain" ;
+                                                 dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                                 owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasRealm
+sorel:hasRealm rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaHuman/studyOf
+sorelh:studyOf rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaTime/hasTimeReference
+sorelt:hasTimeReference rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/human/HumanActivity
+sohu:HumanActivity rdf:type owl:Class .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Anatomy
+sohukd:Anatomy rdf:type owl:Class ;
+             rdfs:subClassOf sohukd:Biology ;
+             rdfs:label "anatomy"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/AtmosphericScience
+sohukd:AtmosphericScience rdf:type owl:Class ;
+                        rdfs:subClassOf sohukd:PlanetaryScience ;
+                        rdfs:label "atmospheric science"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/BehavioralScience
+sohukd:BehavioralScience rdf:type owl:Class ;
+                       rdfs:subClassOf sohukd:KnowledgeDomain ;
+                       rdfs:label "behavioral science"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Biochemistry
+sohukd:Biochemistry rdf:type owl:Class ;
+                  rdfs:subClassOf sohukd:Biology ;
+                  rdfs:label "biochemistry"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Biogeochemistry
+sohukd:Biogeochemistry rdf:type owl:Class ;
+                     rdfs:subClassOf sohukd:Biology ,
+                                     sohukd:Geochemistry ;
+                     rdfs:label "biogeochemistry"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Biology
+sohukd:Biology rdf:type owl:Class ;
+             rdfs:subClassOf sohukd:Science ;
+             rdfs:label "biology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Chemistry
+sohukd:Chemistry rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:Science ;
+               rdfs:label "chemistry"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Climatology
+sohukd:Climatology rdf:type owl:Class ;
+                 rdfs:subClassOf sohukd:PlanetaryScience ;
+                 rdfs:label "climatology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Dynamics
+sohukd:Dynamics rdf:type owl:Class ;
+              rdfs:subClassOf sohukd:Physics ;
+              rdfs:label "dynamics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Ecology
+sohukd:Ecology rdf:type owl:Class ;
+             rdfs:subClassOf sohukd:Biology ;
+             rdfs:label "ecology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Economics
+sohukd:Economics rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:BehavioralScience ;
+               rdfs:label "economics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Epidemiology
+sohukd:Epidemiology rdf:type owl:Class ;
+                  rdfs:subClassOf sohukd:Biology ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelh:studyOf ;
+                                    owl:allValuesFrom sophb:Disease
+                                  ] ;
+                  rdfs:label "epidemiology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Genetics
+sohukd:Genetics rdf:type owl:Class ;
+              rdfs:subClassOf sohukd:Biology ;
+              rdfs:label "genetics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Geochemistry
+sohukd:Geochemistry rdf:type owl:Class ;
+                  rdfs:subClassOf sohukd:Chemistry ,
+                                  sohukd:Geology ;
+                  rdfs:label "geochemistry"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Geodesy
+sohukd:Geodesy rdf:type owl:Class ;
+             owl:equivalentClass sohukd:GeodeticScience ,
+                                 sohukd:Geodetics ;
+             rdfs:subClassOf sohukd:PlanetaryScience ;
+             rdfs:label "geodesy"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/GeodeticScience
+sohukd:GeodeticScience rdf:type owl:Class ;
+                     rdfs:label "geodetic science"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Geodetics
+sohukd:Geodetics rdf:type owl:Class ;
+               rdfs:label "geodetics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Geology
+sohukd:Geology rdf:type owl:Class ;
+             rdfs:subClassOf sohukd:Science ;
+             rdfs:label "geology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Geophysics
+sohukd:Geophysics rdf:type owl:Class ;
+                rdfs:subClassOf sohukd:Geology ,
+                                sohukd:Physics ;
+                rdfs:label "geophysics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/HumanDimension
+sohukd:HumanDimension rdf:type owl:Class ;
+                    rdfs:subClassOf sohukd:KnowledgeDomain ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelh:studyOf ;
+                                      owl:allValuesFrom sohu:HumanActivity
+                                    ] ;
+                    rdfs:label "human dimension"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Hydrology
+sohukd:Hydrology rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:PlanetaryScience ;
+               rdfs:label "hydrology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/KnowledgeDomain
+sohukd:KnowledgeDomain rdf:type owl:Class ;
+                     rdfs:subClassOf sorep:Knowledge ;
+                     rdfs:label "knowledge domain"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/LandscapeEcology
+sohukd:LandscapeEcology rdf:type owl:Class ;
+                      rdfs:subClassOf sohukd:Ecology ;
+                      rdfs:label "landscape ecology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Limnology
+sohukd:Limnology rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:Hydrology ;
+               rdfs:label "limnology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Lithology
+sohukd:Lithology rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:Petrology ;
+               rdfs:label "lithology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/MarineScience
+sohukd:MarineScience rdf:type owl:Class ;
+                   owl:equivalentClass sohukd:Oceanography ;
+                   rdfs:label "marine science"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Mechanics
+sohukd:Mechanics rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:Physics ;
+               rdfs:label "mechanics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Meteorology
+sohukd:Meteorology rdf:type owl:Class ;
+                 rdfs:subClassOf sohukd:AtmosphericScience ;
+                 rdfs:label "meteorology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Mineralogy
+sohukd:Mineralogy rdf:type owl:Class ;
+                rdfs:subClassOf sohukd:Science ;
+                rdfs:label "mineralogy"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Neotectonics
+sohukd:Neotectonics rdf:type owl:Class ;
+                  rdfs:subClassOf sohukd:Tectonics ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelt:hasTimeReference ;
+                                    owl:allValuesFrom sostti:NeotectonicPeriod
+                                  ] ;
+                  rdfs:label "neotectonics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/NutritionScience
+sohukd:NutritionScience rdf:type owl:Class ;
+                      rdfs:subClassOf sohukd:Biology ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sorelh:studyOf ;
+                                        owl:allValuesFrom somab:Food
+                                      ] ;
+                      rdfs:label "nutrition science"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Oceanography
+sohukd:Oceanography rdf:type owl:Class ;
+                  rdfs:subClassOf sohukd:PlanetaryScience ;
+                  rdfs:label "oceanography"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Oceanology
+sohukd:Oceanology rdf:type owl:Class ;
+                rdfs:subClassOf sohukd:Oceanography ;
+                rdfs:label "oceanology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Paleoclimatology
+sohukd:Paleoclimatology rdf:type owl:Class ;
+                      rdfs:subClassOf sohukd:Climatology ;
+                      rdfs:label "paleoclimatology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Paleontology
+sohukd:Paleontology rdf:type owl:Class ;
+                  rdfs:subClassOf sohukd:Biology ;
+                  rdfs:label "paleontology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Petrography
+sohukd:Petrography rdf:type owl:Class ;
+                 rdfs:subClassOf sohukd:Petrology ;
+                 rdfs:label "petrography"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Petrology
+sohukd:Petrology rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:Geology ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelh:studyOf ;
+                                 owl:allValuesFrom somarock:Rock
+                               ] ;
+               rdfs:label "petrology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Phenology
+sohukd:Phenology rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:Climatology ;
+               rdfs:label "phenology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Photochemistry
+sohukd:Photochemistry rdf:type owl:Class ;
+                    rdfs:subClassOf sohukd:Chemistry ;
+                    rdfs:label "photochemistry"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Physics
+sohukd:Physics rdf:type owl:Class ;
+             rdfs:subClassOf sohukd:Science ;
+             rdfs:label "physics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Physiology
+sohukd:Physiology rdf:type owl:Class ;
+                rdfs:subClassOf sohukd:Biology ;
+                rdfs:label "physiology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/PlanetaryScience
+sohukd:PlanetaryScience rdf:type owl:Class ;
+                      owl:equivalentClass sohukd:Planetology ;
+                      rdfs:subClassOf sohukd:Science ;
+                      rdfs:label "planetary science"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Planetology
+sohukd:Planetology rdf:type owl:Class ;
+                 rdfs:label "planetology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/PlateTectonics
+sohukd:PlateTectonics rdf:type owl:Class ;
+                    rdfs:subClassOf sohukd:Tectonics ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorel:hasRealm ;
+                                      owl:allValuesFrom soreag:Lithosphere
+                                    ] ;
+                    rdfs:label "plate tectonics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Psychology
+sohukd:Psychology rdf:type owl:Class ;
+                rdfs:subClassOf sohukd:BehavioralScience ;
+                rdfs:label "psychology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Rheology
+sohukd:Rheology rdf:type owl:Class ;
+              rdfs:subClassOf sohukd:Physics ;
+              rdfs:label "rheology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Science
+sohukd:Science rdf:type owl:Class ;
+             rdfs:subClassOf sohukd:KnowledgeDomain ;
+             rdfs:label "science"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Seismology
+sohukd:Seismology rdf:type owl:Class ;
+                rdfs:subClassOf sohukd:Geology ;
+                rdfs:label "seismology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Sociology
+sohukd:Sociology rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:BehavioralScience ;
+               rdfs:label "sociology"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Stratigraphy
+sohukd:Stratigraphy rdf:type owl:Class ;
+                  rdfs:subClassOf sohukd:Petrology ;
+                  rdfs:label "stratigraphy"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Tectonics
+sohukd:Tectonics rdf:type owl:Class ;
+               rdfs:subClassOf sohukd:Geology ;
+               rdfs:label "tectonics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Thermodynamics
+sohukd:Thermodynamics rdf:type owl:Class ;
+                    rdfs:subClassOf sohukd:Physics ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelh:studyOf ;
+                                      owl:allValuesFrom soprope:Heat
+                                    ] ;
+                    rdfs:label "thermodynamics"@en .
+
+
+###  http://sweetontology.net/humanKnowledgeDomain/Toxicology
+sohukd:Toxicology rdf:type owl:Class ;
+                rdfs:subClassOf sohukd:Biology ;
+                rdfs:label "toxicology"@en .
+
+
+###  http://sweetontology.net/matrBiomass/Food
+somab:Food rdf:type owl:Class .
+
+
+###  http://sweetontology.net/matrRock/Rock
+somarock:Rock rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenBiol/Disease
+sophb:Disease rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propEnergy/Heat
+soprope:Heat rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realmGeol/Lithosphere
+soreag:Lithosphere rdf:type owl:Class .
+
+
+###  http://sweetontology.net/repr/Knowledge
+sorep:Knowledge rdf:type owl:Class .
+
+
+###  http://sweetontology.net/stateTime/NeotectonicPeriod
+sostti:NeotectonicPeriod rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

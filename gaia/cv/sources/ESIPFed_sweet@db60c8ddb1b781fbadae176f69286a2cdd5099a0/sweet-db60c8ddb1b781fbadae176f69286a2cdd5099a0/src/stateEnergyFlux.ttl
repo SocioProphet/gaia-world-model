@@ -1,0 +1,964 @@
+@prefix : <http://sweetontology.net/stateEnergyFlux/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sostef: <http://sweetontology.net/stateEnergyFlux/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sopropef: <http://sweetontology.net/propEnergyFlux/> .
+@prefix sopropo: <http://sweetontology.net/propOrdinal/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorelph: <http://sweetontology.net/relaPhysical/> .
+@base <http://sweetontology.net/stateEnergyFlux> .
+
+<http://sweetontology.net/stateEnergyFlux> rdf:type owl:Ontology ;
+                                            owl:imports <http://sweetontology.net/propEnergyFlux> ,
+                                                        <http://sweetontology.net/propOrdinal> ,
+                                                        <http://sweetontology.net/relaMath> ,
+                                                        <http://sweetontology.net/relaPhysical> ;
+                                            rdfs:label "SWEET Ontology State Energy Flux" ;
+                                            dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                            owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object properties
+#################################################################
+
+###  http://sweetontology.net/relaPhysical/hasEnergyFlux
+sorelph:hasEnergyFlux rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/propEnergyFlux/EnergyFlux_Wm2
+sopropef:EnergyFlux_Wm2 rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propOrdinal/FlareClass
+sopropo:FlareClass rdf:type owl:Class .
+
+
+###  http://sweetontology.net/stateEnergyFlux/AClass
+sostef:AClass rdf:type owl:Class ;
+           rdfs:subClassOf sopropo:FlareClass ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasLowerBound ;
+                             owl:hasValue "0.00000001"^^xsd:decimal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasUpperBound ;
+                             owl:hasValue "0.0000001"^^xsd:decimal
+                           ] ;
+           rdfs:label "a class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/BClass
+sostef:BClass rdf:type owl:Class ;
+           rdfs:subClassOf sopropo:FlareClass ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasLowerBound ;
+                             owl:hasValue "0.0000001"^^xsd:decimal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasUpperBound ;
+                             owl:hasValue "0.000001"^^xsd:decimal
+                           ] ;
+           rdfs:label "b class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/CClass
+sostef:CClass rdf:type owl:Class ;
+           rdfs:subClassOf sopropo:FlareClass ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasLowerBound ;
+                             owl:hasValue "0.000001"^^xsd:decimal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasUpperBound ;
+                             owl:hasValue "0.00001"^^xsd:decimal
+                           ] ;
+           rdfs:label "c class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/MClass
+sostef:MClass rdf:type owl:Class ;
+           rdfs:subClassOf sopropo:FlareClass ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasLowerBound ;
+                             owl:hasValue "0.00001"^^xsd:decimal
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasUpperBound ;
+                             owl:hasValue "0.0001"^^xsd:decimal
+                           ] ;
+           rdfs:label "m class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/XClass
+sostef:XClass rdf:type owl:Class ;
+           rdfs:subClassOf sopropo:FlareClass ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasLowerBound ;
+                             owl:hasValue "0.0001"^^xsd:decimal
+                           ] ;
+           rdfs:label "x class"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateEnergyFlux/A1Class
+sostef:A1Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000001"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000002"^^xsd:decimal
+                                ] ;
+            rdfs:label "a1 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A2Class
+sostef:A2Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000002"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000003"^^xsd:decimal
+                                ] ;
+            rdfs:label "a2 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A3Class
+sostef:A3Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000003"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000004"^^xsd:decimal
+                                ] ;
+            rdfs:label "a3 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A4Class
+sostef:A4Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000004"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000005"^^xsd:decimal
+                                ] ;
+            rdfs:label "a4 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A5Class
+sostef:A5Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000005"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000006"^^xsd:decimal
+                                ] ;
+            rdfs:label "a5 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A6Class
+sostef:A6Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000006"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000007"^^xsd:decimal
+                                ] ;
+            rdfs:label "a6 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A7Class
+sostef:A7Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000007"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000008"^^xsd:decimal
+                                ] ;
+            rdfs:label "a7 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A8Class
+sostef:A8Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000008"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00000009"^^xsd:decimal
+                                ] ;
+            rdfs:label "a8 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/A9Class
+sostef:A9Class rdf:type owl:NamedIndividual ,
+                     sostef:AClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00000009"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000001"^^xsd:decimal
+                                ] ;
+            rdfs:label "a9 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B1Class
+sostef:B1Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000001"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000002"^^xsd:decimal
+                                ] ;
+            rdfs:label "b1 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B2Class
+sostef:B2Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000002"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000003"^^xsd:decimal
+                                ] ;
+            rdfs:label "b2 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B3Class
+sostef:B3Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000003"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000004"^^xsd:decimal
+                                ] ;
+            rdfs:label "b3 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B4Class
+sostef:B4Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000004"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000005"^^xsd:decimal
+                                ] ;
+            rdfs:label "b4 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B5Class
+sostef:B5Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000005"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000006"^^xsd:decimal
+                                ] ;
+            rdfs:label "b5 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B6Class
+sostef:B6Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000006"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000007"^^xsd:decimal
+                                ] ;
+            rdfs:label "b6 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B7Class
+sostef:B7Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000007"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000008"^^xsd:decimal
+                                ] ;
+            rdfs:label "b7 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B8Class
+sostef:B8Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000008"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0000009"^^xsd:decimal
+                                ] ;
+            rdfs:label "b8 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/B9Class
+sostef:B9Class rdf:type owl:NamedIndividual ,
+                     sostef:BClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0000009"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000001"^^xsd:decimal
+                                ] ;
+            rdfs:label "b9 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C1Class
+sostef:C1Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000001"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000002"^^xsd:decimal
+                                ] ;
+            rdfs:label "c1 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C2Class
+sostef:C2Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000002"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000003"^^xsd:decimal
+                                ] ;
+            rdfs:label "c2 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C3Class
+sostef:C3Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000003"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000004"^^xsd:decimal
+                                ] ;
+            rdfs:label "c3 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C4Class
+sostef:C4Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000004"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000005"^^xsd:decimal
+                                ] ;
+            rdfs:label "c4 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C5Class
+sostef:C5Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000005"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000006"^^xsd:decimal
+                                ] ;
+            rdfs:label "c5 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C6Class
+sostef:C6Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000006"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000007"^^xsd:decimal
+                                ] ;
+            rdfs:label "c6 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C7Class
+sostef:C7Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000007"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000008"^^xsd:decimal
+                                ] ;
+            rdfs:label "c7 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C8Class
+sostef:C8Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000008"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.000009"^^xsd:decimal
+                                ] ;
+            rdfs:label "c8 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/C9Class
+sostef:C9Class rdf:type owl:NamedIndividual ,
+                     sostef:CClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.000009"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00001"^^xsd:decimal
+                                ] ;
+            rdfs:label "c9 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M1Class
+sostef:M1Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00001"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00002"^^xsd:decimal
+                                ] ;
+            rdfs:label "m1 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M2Class
+sostef:M2Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00002"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00003"^^xsd:decimal
+                                ] ;
+            rdfs:label "m2 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M3Class
+sostef:M3Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00003"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00004"^^xsd:decimal
+                                ] ;
+            rdfs:label "m3 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M4Class
+sostef:M4Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00004"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00005"^^xsd:decimal
+                                ] ;
+            rdfs:label "m4 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M5Class
+sostef:M5Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00005"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00006"^^xsd:decimal
+                                ] ;
+            rdfs:label "m5 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M6Class
+sostef:M6Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00006"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00007"^^xsd:decimal
+                                ] ;
+            rdfs:label "m6 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M7Class
+sostef:M7Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00007"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00008"^^xsd:decimal
+                                ] ;
+            rdfs:label "m7 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M8Class
+sostef:M8Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00008"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.00009"^^xsd:decimal
+                                ] ;
+            rdfs:label "m8 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/M9Class
+sostef:M9Class rdf:type owl:NamedIndividual ,
+                     sostef:MClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.00009"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0001"^^xsd:decimal
+                                ] ;
+            rdfs:label "m9 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X10Class
+sostef:X10Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.001"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0011"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x10 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X11Class
+sostef:X11Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0011"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0012"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x11 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X12Class
+sostef:X12Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0012"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0013"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x12 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X13Class
+sostef:X13Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0013"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0014"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x13 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X14Class
+sostef:X14Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0014"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0015"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x14 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X15Class
+sostef:X15Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0015"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0016"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x15 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X16Class
+sostef:X16Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0016"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0017"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x16 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X17Class
+sostef:X17Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0017"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0018"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x17 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X18Class
+sostef:X18Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0018"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0019"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x18 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X19Class
+sostef:X19Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0019"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.002"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x19 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X1Class
+sostef:X1Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0001"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0002"^^xsd:decimal
+                                ] ;
+            rdfs:label "x1 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X20Class
+sostef:X20Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.002"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0021"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x20 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X21Class
+sostef:X21Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0021"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0022"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x21 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X22Class
+sostef:X22Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0022"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0023"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x22 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X23Class
+sostef:X23Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0023"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0024"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x23 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X24Class
+sostef:X24Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0024"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0025"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x24 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X25Class
+sostef:X25Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0025"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0026"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x25 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X26Class
+sostef:X26Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0026"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0027"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x26 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X27Class
+sostef:X27Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0027"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0028"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x27 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X28Class
+sostef:X28Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0028"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0029"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x28 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X29Class
+sostef:X29Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0029"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.003"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x29 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X2Class
+sostef:X2Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0002"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0003"^^xsd:decimal
+                                ] ;
+            rdfs:label "x2 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X30Class
+sostef:X30Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.003"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0031"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x30 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X31Class
+sostef:X31Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0031"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0032"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x31 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X32Class
+sostef:X32Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0032"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0033"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x32 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X33Class
+sostef:X33Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0033"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0034"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x33 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X34Class
+sostef:X34Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0034"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0035"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x34 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X35Class
+sostef:X35Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0035"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0036"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x35 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X36Class
+sostef:X36Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0036"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0037"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x36 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X37Class
+sostef:X37Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0037"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0038"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x37 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X38Class
+sostef:X38Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0038"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0039"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x38 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X39Class
+sostef:X39Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0039"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.003"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x39 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X3Class
+sostef:X3Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0003"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0004"^^xsd:decimal
+                                ] ;
+            rdfs:label "x3 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X40Class
+sostef:X40Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.004"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0041"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x40 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X41Class
+sostef:X41Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0041"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0042"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x41 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X42Class
+sostef:X42Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0042"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0043"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x42 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X44.lass
+sostef:X44.lass rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0043"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0044"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x44 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X44Class
+sostef:X44Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0044"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0045"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x44 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X45Class
+sostef:X45Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0045"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0046"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x45 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X46Class
+sostef:X46Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0046"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0047"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x46 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X47Class
+sostef:X47Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0047"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0048"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x47 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X48Class
+sostef:X48Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0048"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.0049"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x48 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X49Class
+sostef:X49Class rdf:type owl:NamedIndividual ,
+                      sostef:XClass ;
+             sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                   sorelm:hasLowerBound "0.0049"^^xsd:decimal ;
+                                   sorelm:hasUpperBound "0.005"^^xsd:decimal
+                                 ] ;
+             rdfs:label "x49 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X4Class
+sostef:X4Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0004"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0005"^^xsd:decimal
+                                ] ;
+            rdfs:label "x4 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X5Class
+sostef:X5Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0005"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0006"^^xsd:decimal
+                                ] ;
+            rdfs:label "x5 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X6Class
+sostef:X6Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0006"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0007"^^xsd:decimal
+                                ] ;
+            rdfs:label "x6 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X7Class
+sostef:X7Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0007"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0008"^^xsd:decimal
+                                ] ;
+            rdfs:label "x7 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X8Class
+sostef:X8Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0008"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.0009"^^xsd:decimal
+                                ] ;
+            rdfs:label "x8 class"@en .
+
+
+###  http://sweetontology.net/stateEnergyFlux/X9Class
+sostef:X9Class rdf:type owl:NamedIndividual ,
+                     sostef:XClass ;
+            sorelph:hasEnergyFlux [ rdf:type sopropef:EnergyFlux_Wm2 ;
+                                  sorelm:hasLowerBound "0.0009"^^xsd:decimal ;
+                                  sorelm:hasUpperBound "0.001"^^xsd:decimal
+                                ] ;
+            rdfs:label "x9 class"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

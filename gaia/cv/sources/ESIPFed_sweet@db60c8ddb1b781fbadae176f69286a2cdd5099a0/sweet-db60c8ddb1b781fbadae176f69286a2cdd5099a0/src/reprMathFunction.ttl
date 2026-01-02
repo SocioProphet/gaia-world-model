@@ -1,0 +1,459 @@
+@prefix : <http://sweetontology.net/reprMathFunction/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorepmf: <http://sweetontology.net/reprMathFunction/> .
+@prefix sorepm: <http://sweetontology.net/reprMath/> .
+@prefix sorepmo: <http://sweetontology.net/reprMathOperation/> .
+@prefix sopropq: <http://sweetontology.net/propQuantity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@base <http://sweetontology.net/reprMathFunction> .
+
+<http://sweetontology.net/reprMathFunction> rdf:type owl:Ontology ;
+                                             owl:imports <http://sweetontology.net/propQuantity> ,
+                                                         <http://sweetontology.net/relaMath> ,
+                                                         <http://sweetontology.net/relaSpace> ,
+                                                         <http://sweetontology.net/repr> ,
+                                                         <http://sweetontology.net/reprMath> ,
+                                                         <http://sweetontology.net/reprMathOperation> ;
+                                             rdfs:label "SWEET Ontology Representation Mathematics Function" ;
+                                             dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                             owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/reprMathFunction/Affine
+sorepmf:Affine rdf:type owl:Class ;
+            owl:equivalentClass sorepmf:Linear ;
+            rdfs:label "affine"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/AlgebraicFunction
+sorepmf:AlgebraicFunction rdf:type owl:Class ;
+                       rdfs:subClassOf sorepmf:Function ;
+                       owl:disjointWith sorepmf:TranscendentalFunction ;
+                       rdfs:label "algebraic function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/BSpline
+sorepmf:BSpline rdf:type owl:Class ;
+             rdfs:subClassOf sorepmf:CubicSpline ;
+             rdfs:label "b spline"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/BasisFunction
+sorepmf:BasisFunction rdf:type owl:Class ;
+                   rdfs:subClassOf sorepmf:Function ;
+                   rdfs:label "basis function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/BinaryFunction
+sorepmf:BinaryFunction rdf:type owl:Class ;
+                    rdfs:subClassOf sorepmf:DiscreteFunction ;
+                    rdfs:label "binary function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Bivariate
+sorepmf:Bivariate rdf:type owl:Class ;
+               rdfs:subClassOf sorepmf:Function ;
+               rdfs:label "bivariate"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/BoxCar
+sorepmf:BoxCar rdf:type owl:Class ;
+            owl:equivalentClass sorepmf:SquareWave ;
+            rdfs:subClassOf sorepmf:AlgebraicFunction ;
+            rdfs:label "box car"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ChiSquare
+sorepmf:ChiSquare rdf:type owl:Class ;
+               owl:equivalentClass sorepmf:ChiSquareDistribution ;
+               rdfs:subClassOf sorepmf:DistributionFunction ;
+               rdfs:label "chi square"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ChiSquareDistribution
+sorepmf:ChiSquareDistribution rdf:type owl:Class ;
+                           rdfs:label "chi square distribution"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Continuity
+sorepmf:Continuity rdf:type owl:Class ;
+                owl:equivalentClass sorepmf:Continuous ;
+                rdfs:label "continuity"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Continuous
+sorepmf:Continuous rdf:type owl:Class ;
+                rdfs:subClassOf sorepmf:Function ;
+                owl:disjointWith sorepmf:Discontinuous ,
+                                 sorepmf:Discrete ;
+                rdfs:label "continuous"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Cosine
+sorepmf:Cosine rdf:type owl:Class ;
+            rdfs:subClassOf sorepmf:TrigonometricFunction ;
+            rdfs:label "cosine"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Cubic
+sorepmf:Cubic rdf:type owl:Class ;
+           rdfs:subClassOf sorepmf:Polynomial ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelm:hasDegree ;
+                             owl:hasValue 3
+                           ] ;
+           rdfs:label "cubic"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/CubicSpline
+sorepmf:CubicSpline rdf:type owl:Class ;
+                 rdfs:subClassOf sorepmf:Cubic ;
+                 rdfs:label "cubic spline"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Dirac
+sorepmf:Dirac rdf:type owl:Class ;
+           rdfs:subClassOf sorepmf:Function ;
+           rdfs:label "dirac"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Discontinuity
+sorepmf:Discontinuity rdf:type owl:Class ;
+                   owl:equivalentClass sorepmf:Discontinuous ;
+                   rdfs:label "discontinuity"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Discontinuous
+sorepmf:Discontinuous rdf:type owl:Class ;
+                   rdfs:subClassOf sorepmf:Function ;
+                   rdfs:label "discontinuous"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Discrete
+sorepmf:Discrete rdf:type owl:Class ;
+              owl:equivalentClass sorepmf:DiscreteFunction ;
+              rdfs:subClassOf sorepmf:Function ;
+              rdfs:label "discrete"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/DiscreteFunction
+sorepmf:DiscreteFunction rdf:type owl:Class ;
+                      rdfs:label "discrete function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/DistributionFunction
+sorepmf:DistributionFunction rdf:type owl:Class ;
+                          rdfs:subClassOf sorepmf:NormalizedFunction ;
+                          rdfs:label "distribution function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ExponentialDecay
+sorepmf:ExponentialDecay rdf:type owl:Class ;
+                      rdfs:subClassOf sorepmf:ExponentialFunction ;
+                      rdfs:label "exponential decay"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ExponentialFunction
+sorepmf:ExponentialFunction rdf:type owl:Class ;
+                         rdfs:subClassOf sorepmf:TranscendentalFunction ;
+                         rdfs:label "exponential function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ExponentialGrowth
+sorepmf:ExponentialGrowth rdf:type owl:Class ;
+                       rdfs:subClassOf sorepmf:ExponentialFunction ;
+                       rdfs:label "exponential growth"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Field
+sorepmf:Field rdf:type owl:Class ;
+           rdfs:subClassOf sorepmf:Function ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelsp:hasSpatialDistribution ;
+                             owl:allValuesFrom sopropq:Quantity
+                           ] ;
+           rdfs:label "field"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Filter
+sorepmf:Filter rdf:type owl:Class ;
+            rdfs:subClassOf sorepmf:Function ;
+            rdfs:label "filter"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Function
+sorepmf:Function rdf:type owl:Class ;
+              rdfs:subClassOf sorepmo:Operation ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelm:hasInput ;
+                                owl:allValuesFrom sorep:IndependentVariable
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelm:hasOutput ;
+                                owl:allValuesFrom sorep:DependentVariable
+                              ] ;
+              rdfs:label "function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Horizon
+sorepmf:Horizon rdf:type owl:Class ;
+             owl:equivalentClass sorepmf:Profile ;
+             rdfs:label "horizon"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Kernel
+sorepmf:Kernel rdf:type owl:Class ;
+            rdfs:subClassOf sorepmf:Filter ;
+            rdfs:label "kernel"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Linear
+sorepmf:Linear rdf:type owl:Class ;
+            rdfs:subClassOf sorepmf:Polynomial ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelm:hasDegree ;
+                              owl:hasValue 1
+                            ] ;
+            owl:disjointWith sorepmf:Nonlinear ;
+            rdfs:label "linear"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Logarithmic
+sorepmf:Logarithmic rdf:type owl:Class ;
+                 rdfs:subClassOf sorepmf:TranscendentalFunction ;
+                 rdfs:label "logarithmic"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Logistic
+sorepmf:Logistic rdf:type owl:Class ;
+              rdfs:subClassOf sorepmf:TranscendentalFunction ;
+              rdfs:label "logistic"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/MaxwellBoltzmannDistribution
+sorepmf:MaxwellBoltzmannDistribution rdf:type owl:Class ;
+                                  rdfs:subClassOf sorepmf:Function ;
+                                  rdfs:label "maxwell boltzmann distribution"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Nonlinear
+sorepmf:Nonlinear rdf:type owl:Class ;
+               rdfs:subClassOf sorepmf:Function ;
+               rdfs:label "nonlinear"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Normal
+sorepmf:Normal rdf:type owl:Class ;
+            owl:equivalentClass sorepmf:NormalDistribution ;
+            rdfs:subClassOf sorepmf:DistributionFunction ;
+            rdfs:label "normal"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/NormalDistribution
+sorepmf:NormalDistribution rdf:type owl:Class ;
+                        rdfs:label "normal distribution"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/NormalizedFunction
+sorepmf:NormalizedFunction rdf:type owl:Class ;
+                        rdfs:subClassOf sorepmf:Function ;
+                        rdfs:label "normalized function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/OptimizationFunction
+sorepmf:OptimizationFunction rdf:type owl:Class ;
+                          rdfs:subClassOf sorepmf:Function ;
+                          rdfs:label "optimization function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Polynomial
+sorepmf:Polynomial rdf:type owl:Class ;
+                rdfs:subClassOf sorepmf:AlgebraicFunction ;
+                rdfs:label "polynomial"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/PowerFunction
+sorepmf:PowerFunction rdf:type owl:Class ;
+                   rdfs:subClassOf sorepmf:Function ;
+                   rdfs:label "power function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/PowerLaw
+sorepmf:PowerLaw rdf:type owl:Class ;
+              rdfs:subClassOf sorepmf:PowerFunction ;
+              rdfs:label "power law"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ProbabilityDensityFunction
+sorepmf:ProbabilityDensityFunction rdf:type owl:Class ;
+                                owl:equivalentClass sorepmf:pdf ;
+                                rdfs:subClassOf sorepmf:NormalizedFunction ;
+                                rdfs:label "probability density function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ProbabilityDistributionFunction
+sorepmf:ProbabilityDistributionFunction rdf:type owl:Class ;
+                                     owl:equivalentClass sorepmf:cdf ;
+                                     rdfs:subClassOf sorepmf:NormalizedFunction ;
+                                     rdfs:label "probability distribution function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Profile
+sorepmf:Profile rdf:type owl:Class ;
+             owl:equivalentClass sorepmf:VerticalProfile ;
+             rdfs:subClassOf sorepmf:Function ;
+             rdfs:label "profile"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Quadratic
+sorepmf:Quadratic rdf:type owl:Class ;
+               rdfs:subClassOf sorepmf:Polynomial ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelm:hasDegree ;
+                                 owl:hasValue 2
+                               ] ;
+               rdfs:label "quadratic"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Quartic
+sorepmf:Quartic rdf:type owl:Class ;
+             rdfs:subClassOf sorepmf:Polynomial ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty sorelm:hasDegree ;
+                               owl:hasValue 4
+                             ] ;
+             rdfs:label "quartic"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/RadialBasisFunction
+sorepmf:RadialBasisFunction rdf:type owl:Class ;
+                         rdfs:subClassOf sorepmf:BasisFunction ;
+                         rdfs:label "radial basis function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ScalarField
+sorepmf:ScalarField rdf:type owl:Class ;
+                 rdfs:subClassOf sorepmf:ScalarFunction ;
+                 rdfs:label "scalar field"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/ScalarFunction
+sorepmf:ScalarFunction rdf:type owl:Class ;
+                    rdfs:subClassOf sorepmf:Function ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelm:hasOutput ;
+                                      owl:allValuesFrom sorepm:Scalar
+                                    ] ;
+                    rdfs:label "scalar function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Sin
+sorepmf:Sin rdf:type owl:Class ;
+         rdfs:subClassOf sorepmf:TrigonometricFunction ;
+         rdfs:label "sin"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/SquareWave
+sorepmf:SquareWave rdf:type owl:Class ;
+                rdfs:label "square wave"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Step
+sorepmf:Step rdf:type owl:Class ;
+          rdfs:subClassOf sorepmf:Function ;
+          rdfs:label "step"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/TensorField
+sorepmf:TensorField rdf:type owl:Class ;
+                 rdfs:subClassOf sorepmf:Field ,
+                                 sorepmf:TensorFunction ;
+                 rdfs:label "tensor field"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/TensorFunction
+sorepmf:TensorFunction rdf:type owl:Class ;
+                    rdfs:subClassOf sorepmf:Function ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelm:hasInput ;
+                                      owl:allValuesFrom sorepm:Tensor
+                                    ] ;
+                    rdfs:label "tensor function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/TranscendentalFunction
+sorepmf:TranscendentalFunction rdf:type owl:Class ;
+                            rdfs:subClassOf sorepmf:Function ;
+                            rdfs:label "transcendental function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/TrigonometricFunction
+sorepmf:TrigonometricFunction rdf:type owl:Class ;
+                           rdfs:subClassOf sorepmf:TranscendentalFunction ;
+                           rdfs:label "trigonometric function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/UtilityFunction
+sorepmf:UtilityFunction rdf:type owl:Class ;
+                     rdfs:subClassOf sorepmf:OptimizationFunction ;
+                     rdfs:label "utility function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/VectorField
+sorepmf:VectorField rdf:type owl:Class ;
+                 rdfs:subClassOf sorepmf:Field ,
+                                 sorepmf:VectorFunction ;
+                 rdfs:label "vector field"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/VectorFunction
+sorepmf:VectorFunction rdf:type owl:Class ;
+                    rdfs:subClassOf sorepmf:Function ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelm:hasInput ;
+                                      owl:allValuesFrom sorepm:Vector
+                                    ] ;
+                    rdfs:label "vector function"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/VectorQuantity
+sorepmf:VectorQuantity rdf:type owl:Class ;
+                    rdfs:subClassOf sorepmf:Function ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelm:hasOutput ;
+                                      owl:allValuesFrom sorepm:Vector
+                                    ] ;
+                    rdfs:label "vector quantity"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/VerticalProfile
+sorepmf:VerticalProfile rdf:type owl:Class ;
+                     rdfs:label "vertical profile"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Well
+sorepmf:Well rdf:type owl:Class ;
+          rdfs:subClassOf sorepmf:Function ;
+          rdfs:label "well"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/cdf
+sorepmf:cdf rdf:type owl:Class ;
+         rdfs:label "cdf"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/pdf
+sorepmf:pdf rdf:type owl:Class ;
+         rdfs:label "pdf"@en .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

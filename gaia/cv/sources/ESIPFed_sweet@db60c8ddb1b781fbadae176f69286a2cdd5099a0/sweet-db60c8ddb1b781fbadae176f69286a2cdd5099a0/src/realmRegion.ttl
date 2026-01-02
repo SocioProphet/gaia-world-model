@@ -1,0 +1,293 @@
+@prefix : <http://sweetontology.net/realmRegion/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sopropq: <http://sweetontology.net/propQuantity/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorepsg: <http://sweetontology.net/reprSpaceGeometry/> .
+@prefix sorear: <http://sweetontology.net/realmRegion/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorea: <http://sweetontology.net/realm/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@prefix sorepsu: <http://sweetontology.net/reprSciUnits/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@base <http://sweetontology.net/realmRegion> .
+
+<http://sweetontology.net/realmRegion> rdf:type owl:Ontology ;
+                                        owl:imports <http://sweetontology.net/propQuantity> ,
+                                                    <http://sweetontology.net/realm> ,
+                                                    <http://sweetontology.net/relaMath> ,
+                                                    <http://sweetontology.net/relaSci> ,
+                                                    <http://sweetontology.net/relaSpace> ,
+                                                    <http://sweetontology.net/reprSciUnits> ,
+                                                    <http://sweetontology.net/reprSpaceGeometry> ;
+                                        rdfs:label "SWEET Ontology Realm Region" ;
+                                        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                        owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaSci/hasUnit
+sorelsc:hasUnit rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://sweetontology.net/relaMath/hasLowerBound
+sorelm:hasLowerBound rdf:type owl:DatatypeProperty .
+
+
+###  http://sweetontology.net/relaMath/hasUpperBound
+sorelm:hasUpperBound rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/realmRegion/Austral
+sorear:Austral rdf:type owl:Class ;
+             rdfs:subClassOf sorear:SouthLatitudeBand ;
+             rdfs:label "austral"@en .
+
+
+###  http://sweetontology.net/realmRegion/Borealis
+sorear:Borealis rdf:type owl:Class ;
+              rdfs:subClassOf sorear:NorthLatitudeBand ;
+              rdfs:label "borealis"@en .
+
+
+###  http://sweetontology.net/realmRegion/LatitudeBand
+sorear:LatitudeBand rdf:type owl:Class ;
+                  rdfs:subClassOf sopropq:PhysicalQuantity ,
+                                  sorepsg:Region ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelsc:hasUnit ;
+                                    owl:hasValue sorepsu:degrees
+                                  ] ;
+                  rdfs:label "latitude band"@en .
+
+
+###  http://sweetontology.net/realmRegion/LatitudeLine
+sorear:LatitudeLine rdf:type owl:Class ;
+                  rdfs:subClassOf sopropq:PhysicalQuantity ,
+                                  sorepsg:Region ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelsc:hasUnit ;
+                                    owl:hasValue sorepsu:degrees
+                                  ] ;
+                  rdfs:label "latitude line"@en .
+
+
+###  http://sweetontology.net/realmRegion/NorthLatitudeBand
+sorear:NorthLatitudeBand rdf:type owl:Class ;
+                       rdfs:subClassOf sorear:LatitudeBand ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty sorelm:hasLowerBound ;
+                                         owl:hasValue 0
+                                       ] ;
+                       rdfs:label "north latitude band"@en .
+
+
+###  http://sweetontology.net/realmRegion/NorthLatitudeLine
+sorear:NorthLatitudeLine rdf:type owl:Class ;
+                       rdfs:subClassOf sorear:LatitudeLine ;
+                       rdfs:label "north latitude line"@en .
+
+
+###  http://sweetontology.net/realmRegion/NorthernHemisphere
+sorear:NorthernHemisphere rdf:type owl:Class ;
+                        rdfs:subClassOf sorear:NorthLatitudeBand ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorelm:hasUpperBound ;
+                                          owl:hasValue 90
+                                        ] ;
+                        rdfs:label "northern hemisphere"@en .
+
+
+###  http://sweetontology.net/realmRegion/SouthLatitudeBand
+sorear:SouthLatitudeBand rdf:type owl:Class ;
+                       rdfs:subClassOf sorear:LatitudeBand ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty sorelm:hasUpperBound ;
+                                         owl:hasValue 0
+                                       ] ;
+                       rdfs:label "south latitude band"@en .
+
+
+###  http://sweetontology.net/realmRegion/SouthLatitudeLine
+sorear:SouthLatitudeLine rdf:type owl:Class ;
+                       rdfs:subClassOf sorear:LatitudeLine ;
+                       rdfs:label "south latitude line"@en .
+
+
+###  http://sweetontology.net/realmRegion/SouthernHemisphere
+sorear:SouthernHemisphere rdf:type owl:Class ;
+                        rdfs:subClassOf sorear:SouthLatitudeBand ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorelm:hasLowerBound ;
+                                          owl:hasValue -90
+                                        ] ;
+                        rdfs:label "southern hemisphere"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/Region
+sorepsg:Region rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/realmRegion/Equator
+sorear:Equator rdf:type owl:NamedIndividual ,
+                      sorear:LatitudeLine ;
+             rdfs:label "equator"@en .
+
+
+###  http://sweetontology.net/realmRegion/Equatorial
+sorear:Equatorial rdf:type owl:NamedIndividual ,
+                         sorear:LatitudeBand ;
+                rdfs:label "equatorial"@en .
+
+
+###  http://sweetontology.net/realmRegion/Extratropics
+sorear:Extratropics rdf:type owl:NamedIndividual ,
+                           sorear:LatitudeBand ;
+                  rdfs:label "extratropics"@en .
+
+
+###  http://sweetontology.net/realmRegion/Global
+sorear:Global rdf:type owl:NamedIndividual ,
+                     sorear:LatitudeBand ;
+            rdfs:label "global"@en .
+
+
+###  http://sweetontology.net/realmRegion/HighLatitude
+sorear:HighLatitude rdf:type owl:NamedIndividual ,
+                           sorear:LatitudeBand ;
+                  rdfs:label "high latitude"@en .
+
+
+###  http://sweetontology.net/realmRegion/LowLatitude
+sorear:LowLatitude rdf:type owl:NamedIndividual ,
+                          sorear:LatitudeBand ;
+                 owl:sameAs sorear:Tropical ,
+                            sorear:Tropics ;
+                 rdfs:label "low latitude"@en .
+
+
+###  http://sweetontology.net/realmRegion/MidLatitude
+sorear:MidLatitude rdf:type owl:NamedIndividual ,
+                          sorear:LatitudeBand ;
+                 rdfs:label "mid latitude"@en .
+
+
+###  http://sweetontology.net/realmRegion/Polar
+sorear:Polar rdf:type owl:NamedIndividual ,
+                    sorear:LatitudeBand ;
+           rdfs:label "polar"@en .
+
+
+###  http://sweetontology.net/realmRegion/Pole
+sorear:Pole rdf:type owl:NamedIndividual ,
+                   sorear:LatitudeLine ;
+          rdfs:label "pole"@en .
+
+
+###  http://sweetontology.net/realmRegion/Subtropical
+sorear:Subtropical rdf:type owl:NamedIndividual ,
+                          sorear:LatitudeBand ;
+                 owl:sameAs sorear:Subtropics ;
+                 rdfs:label "subtropical"@en .
+
+
+###  http://sweetontology.net/realmRegion/Subtropics
+sorear:Subtropics rdf:type owl:NamedIndividual ,
+                         sorear:LatitudeBand ;
+                rdfs:label "subtropics"@en .
+
+
+###  http://sweetontology.net/realmRegion/Tropical
+sorear:Tropical rdf:type owl:NamedIndividual ,
+                       sorear:LatitudeBand ;
+              rdfs:label "tropical"@en .
+
+
+###  http://sweetontology.net/realmRegion/Tropics
+sorear:Tropics rdf:type owl:NamedIndividual ,
+                      sorear:LatitudeBand ;
+             rdfs:label "tropics"@en .
+
+
+###  http://sweetontology.net/reprSciUnits/degrees
+sorepsu:degrees rdf:type owl:NamedIndividual .
+
+
+[ rdf:type sorear:LatitudeLine
+] .
+
+[ rdf:type sorear:LatitudeBand
+ ] .
+
+[ rdf:type sorear:SouthLatitudeBand
+ ] .
+
+[ rdf:type sorear:NorthLatitudeBand
+ ] .
+
+[ rdf:type sorear:SouthLatitudeLine
+ ] .
+
+[ rdf:type sorear:NorthLatitudeLine
+ ] .
+
+[ rdf:type sorear:SouthLatitudeBand
+ ] .
+
+[ rdf:type sorear:NorthLatitudeBand
+ ] .
+
+[ rdf:type sorear:SouthLatitudeBand
+ ] .
+
+[ rdf:type sorear:NorthLatitudeBand
+ ] .
+
+[ rdf:type sorear:SouthLatitudeBand
+ ] .
+
+[ rdf:type sorear:SouthLatitudeBand
+ ] .
+
+[ rdf:type sorear:SouthLatitudeBand
+ ] .
+
+[ rdf:type sorear:NorthLatitudeBand
+ ] .
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+   owl:distinctMembers ( sorear:Extratropics
+                         sorear:Subtropics
+                       )
+ ] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sorear:Extratropics
+                        sorear:Tropics
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

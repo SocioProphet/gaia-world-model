@@ -1,0 +1,127 @@
+@prefix : <http://sweetontology.net/propSpaceLocation/> .
+@prefix sorepsg: <http://sweetontology.net/reprSpaceGeometry/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sopropsl: <http://sweetontology.net/propSpaceLocation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix soprops: <http://sweetontology.net/propSpace/> .
+@prefix sostsy: <http://sweetontology.net/stateSystem/> .
+@base <http://sweetontology.net/propSpaceLocation> .
+
+<http://sweetontology.net/propSpaceLocation> rdf:type owl:Ontology ;
+                                              owl:imports <http://sweetontology.net/propSpace> ,
+                                                          <http://sweetontology.net/rela> ,
+                                                          <http://sweetontology.net/relaMath> ,
+                                                          <http://sweetontology.net/reprSpaceGeometry> ,
+                                                          <http://sweetontology.net/stateSystem> ;
+                                              rdfs:label "SWEET Ontology Property Space Location" ;
+                                              dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                              owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasState
+sorel:hasState rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/propSpaceLocation/Center
+sopropsl:Center rdf:type owl:Class ;
+            rdfs:subClassOf sopropsl:Location ;
+            rdfs:label "center"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/CenterOfMass
+sopropsl:CenterOfMass rdf:type owl:Class ;
+                  rdfs:subClassOf sopropsl:Center ;
+                  rdfs:label "center of mass"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/ControlPoint
+sopropsl:ControlPoint rdf:type owl:Class ;
+                  rdfs:subClassOf sopropsl:Location ;
+                  rdfs:label "control point"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/Epicenter
+sopropsl:Epicenter rdf:type owl:Class ;
+               rdfs:subClassOf sopropsl:Center ;
+               rdfs:label "epicenter"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/Focii
+sopropsl:Focii rdf:type owl:Class ;
+           owl:equivalentClass sopropsl:Focus ;
+           rdfs:label "focii"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/Focus
+sopropsl:Focus rdf:type owl:Class ;
+           rdfs:subClassOf sopropsl:Location ;
+           rdfs:label "focus"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/LagrangianPoint
+sopropsl:LagrangianPoint rdf:type owl:Class ;
+                     rdfs:subClassOf sopropsl:Location ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorel:hasState ;
+                                       owl:hasValue sostsy:Equilibrium
+                                     ] ;
+                     rdfs:label "lagrangian point"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/Location
+sopropsl:Location rdf:type owl:Class ;
+              owl:equivalentClass sopropsl:Position ;
+              rdfs:subClassOf soprops:SpatialProperty ,
+                              sorepsg:Point ;
+              rdfs:label "location"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/MirrorPoint
+sopropsl:MirrorPoint rdf:type owl:Class ;
+                 rdfs:subClassOf sopropsl:Location ;
+                 rdfs:label "mirror point"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/Nadir
+sopropsl:Nadir rdf:type owl:Class ;
+           rdfs:subClassOf sopropsl:Location ;
+           rdfs:label "nadir"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/Position
+sopropsl:Position rdf:type owl:Class ;
+              rdfs:label "position"@en .
+
+
+###  http://sweetontology.net/propSpaceLocation/SubsolarPoint
+sopropsl:SubsolarPoint rdf:type owl:Class ;
+                   rdfs:subClassOf sopropsl:Location ;
+                   rdfs:label "subsolar point"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/Point
+sorepsg:Point rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateSystem/Equilibrium
+sostsy:Equilibrium rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

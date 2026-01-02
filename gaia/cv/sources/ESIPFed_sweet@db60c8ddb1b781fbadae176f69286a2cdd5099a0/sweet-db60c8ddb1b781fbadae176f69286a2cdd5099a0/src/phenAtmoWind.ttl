@@ -1,0 +1,357 @@
+@prefix : <http://sweetontology.net/phenAtmoWind/> .
+@prefix sopropsdir: <http://sweetontology.net/propSpaceDirection/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix somaae: <http://sweetontology.net/matrAerosol/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix somas: <http://sweetontology.net/matrSediment/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sopropp: <http://sweetontology.net/propPressure/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sophatmow: <http://sweetontology.net/phenAtmoWind/> .
+@prefix sophatmo: <http://sweetontology.net/phenAtmo/> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix sophfd: <http://sweetontology.net/phenFluidDynamics/> .
+@prefix soprocp: <http://sweetontology.net/procPhysical/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@base <http://sweetontology.net/phenAtmoWind> .
+
+<http://sweetontology.net/phenAtmoWind> rdf:type owl:Ontology ;
+                                         owl:imports <http://sweetontology.net/matrAerosol> ,
+                                                     <http://sweetontology.net/matrSediment> ,
+                                                     <http://sweetontology.net/phenAtmo> ,
+                                                     <http://sweetontology.net/phenFluidDynamics> ,
+                                                     <http://sweetontology.net/procPhysical> ,
+                                                     <http://sweetontology.net/propPressure> ,
+                                                     <http://sweetontology.net/propSpaceDirection> ,
+                                                     <http://sweetontology.net/rela> ,
+                                                     <http://sweetontology.net/relaChemical> ,
+                                                     <http://sweetontology.net/relaSci> ;
+                                         rdfs:label "SWEET Ontology Phenomena Atmosphere Wind" ;
+                                         dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                         owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasPhenomena
+sorel:hasPhenomena rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaChemical/hasSubstance
+sorelch:hasSubstance rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSci/hasCause
+sorelsc:hasCause rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/phenAtmoWind/AgeostrophicWind
+sophatmow:AgeostrophicWind rdf:type owl:Class ;
+                      rdfs:subClassOf sophatmow:Wind ;
+                      rdfs:label "ageostrophic wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/AtmosphericCirculation
+sophatmow:AtmosphericCirculation rdf:type owl:Class ;
+                            rdfs:subClassOf sophatmo:MeteorologicalPhenomena ,
+                                            sophfd:Circulation ;
+                            rdfs:label "atmospheric circulation"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/AtmosphericPumping
+sophatmow:AtmosphericPumping rdf:type owl:Class ;
+                        rdfs:subClassOf sophatmow:GlobalWindCirculation ;
+                        rdfs:label "atmospheric pumping"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Blowing
+sophatmow:Blowing rdf:type owl:Class ;
+             rdfs:subClassOf sophatmow:Wind ;
+             rdfs:label "blowing"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/CrossWind
+sophatmow:CrossWind rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:Wind ;
+               rdfs:label "cross wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Derecho
+sophatmow:Derecho rdf:type owl:Class ;
+             rdfs:subClassOf sophatmow:WindStorm ;
+             rdfs:label "derecho"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Downdraft
+sophatmow:Downdraft rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:Wind ;
+               rdfs:label "downdraft"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/DrainageWind
+sophatmow:DrainageWind rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmow:Wind ;
+                  rdfs:label "drainage wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/DustDevil
+sophatmow:DustDevil rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:DustStorm ;
+               rdfs:label "dust devil"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/DustStorm
+sophatmow:DustStorm rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:LocalWind ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelch:hasSubstance ;
+                                 owl:allValuesFrom somaae:Dust
+                               ] ;
+               rdfs:label "dust storm"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/EasterlyWind
+sophatmow:EasterlyWind rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmow:GlobalWindCirculation ;
+                  rdfs:label "easterly wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/EulerianWind
+sophatmow:EulerianWind rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmow:Wind ;
+                  rdfs:label "eulerian wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/GeostrophicWind
+sophatmow:GeostrophicWind rdf:type owl:Class ;
+                     rdfs:subClassOf sophatmow:GlobalWindCirculation ;
+                     rdfs:label "geostrophic wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/GlobalWindCirculation
+sophatmow:GlobalWindCirculation rdf:type owl:Class ;
+                           rdfs:subClassOf sophatmow:AtmosphericCirculation ;
+                           rdfs:label "global wind circulation"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Gust
+sophatmow:Gust rdf:type owl:Class ;
+          owl:equivalentClass sophatmow:WindGust ;
+          rdfs:subClassOf sophatmow:Wind ;
+          rdfs:label "gust"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/HadleyCirculation
+sophatmow:HadleyCirculation rdf:type owl:Class ;
+                       rdfs:subClassOf sophatmow:GlobalWindCirculation ;
+                       rdfs:label "hadley circulation"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/HeadWind
+sophatmow:HeadWind rdf:type owl:Class ;
+              rdfs:subClassOf sophatmow:Wind ;
+              rdfs:label "head wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/HotWind
+sophatmow:HotWind rdf:type owl:Class ;
+             rdfs:subClassOf sophatmow:Wind ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty sorel:hasPhenomena ;
+                               owl:allValuesFrom soprocp:Heating
+                             ] ;
+             rdfs:label "hot wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/JetEffectWind
+sophatmow:JetEffectWind rdf:type owl:Class ;
+                   rdfs:subClassOf sophatmow:Wind ;
+                   rdfs:label "jet effect wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/JetStreak
+sophatmow:JetStreak rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:JetStream ;
+               rdfs:label "jet streak"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/JetStream
+sophatmow:JetStream rdf:type owl:Class ;
+               owl:equivalentClass sophatmow:JetStreamWind ;
+               rdfs:subClassOf sophatmo:AtmosphericWave ,
+                               sophatmow:GlobalWindCirculation ;
+               rdfs:label "jet stream"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/JetStreamAxis
+sophatmow:JetStreamAxis rdf:type owl:Class ;
+                   rdfs:subClassOf sopropsdir:Axis ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorel:hasPhenomena ;
+                                     owl:allValuesFrom sophatmow:JetStream
+                                   ] ;
+                   rdfs:label "jet stream axis"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/JetStreamWind
+sophatmow:JetStreamWind rdf:type owl:Class ;
+                   rdfs:label "jet stream wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/LocalWind
+sophatmow:LocalWind rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:Wind ;
+               rdfs:label "local wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/MeridionalWind
+sophatmow:MeridionalWind rdf:type owl:Class ;
+                    rdfs:subClassOf sophatmow:Wind ;
+                    rdfs:label "meridional wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Microburst
+sophatmow:Microburst rdf:type owl:Class ;
+                rdfs:subClassOf sophatmow:Wind ;
+                rdfs:label "microburst"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/SandStorm
+sophatmow:SandStorm rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:Wind ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelch:hasSubstance ;
+                                 owl:allValuesFrom somas:Sand
+                               ] ;
+               rdfs:label "sand storm"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Tailwind
+sophatmow:Tailwind rdf:type owl:Class ;
+              rdfs:subClassOf sophatmow:Wind ;
+              rdfs:label "tailwind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/TertiaryCirculation
+sophatmow:TertiaryCirculation rdf:type owl:Class ;
+                         rdfs:subClassOf sophatmow:AtmosphericCirculation ;
+                         rdfs:label "tertiary circulation"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/ThermalWind
+sophatmow:ThermalWind rdf:type owl:Class ;
+                 rdfs:subClassOf sophatmow:Wind ;
+                 rdfs:label "thermal wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/TradeWind
+sophatmow:TradeWind rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:GlobalWindCirculation ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorel:hasPhenomena ;
+                                 owl:allValuesFrom sophatmow:AtmosphericCirculation
+                               ] ;
+               rdfs:label "trade wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/VeeringWind
+sophatmow:VeeringWind rdf:type owl:Class ;
+                 rdfs:subClassOf sophatmow:Wind ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorel:hasPhenomena ;
+                                   owl:allValuesFrom soprocp:Rotation
+                                 ] ;
+                 rdfs:label "veering wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/WalkerCell
+sophatmow:WalkerCell rdf:type owl:Class ;
+                owl:equivalentClass sophatmow:WalkerCirculation ;
+                rdfs:label "walker cell"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/WalkerCirculation
+sophatmow:WalkerCirculation rdf:type owl:Class ;
+                       rdfs:subClassOf sophatmow:GlobalWindCirculation ;
+                       rdfs:label "walker circulation"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/WarmConveyorBelt
+sophatmow:WarmConveyorBelt rdf:type owl:Class ;
+                      rdfs:subClassOf sophatmow:GlobalWindCirculation ;
+                      rdfs:label "warm conveyor belt"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Wind
+sophatmow:Wind rdf:type owl:Class ;
+          rdfs:subClassOf sophatmo:MeteorologicalPhenomena ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sorelsc:hasCause ;
+                            owl:allValuesFrom sopropp:PressureGradient
+                          ] ;
+          rdfs:label "wind"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/WindGust
+sophatmow:WindGust rdf:type owl:Class ;
+              rdfs:subClassOf sophatmow:Wind ;
+              rdfs:label "wind gust"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/WindStorm
+sophatmow:WindStorm rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:Wind ;
+               rdfs:label "wind storm"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/Windborne
+sophatmow:Windborne rdf:type owl:Class ;
+               rdfs:subClassOf sophatmo:MeteorologicalPhenomena ;
+               rdfs:label "windborne"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/ZonalFlow
+sophatmow:ZonalFlow rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:GlobalWindCirculation ;
+               rdfs:label "zonal flow"@en .
+
+
+###  http://sweetontology.net/phenAtmoWind/ZonalWind
+sophatmow:ZonalWind rdf:type owl:Class ;
+               rdfs:subClassOf sophatmow:GlobalWindCirculation ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorel:hasPhenomena ;
+                                 owl:allValuesFrom sophatmow:ZonalFlow
+                               ] ;
+               rdfs:label "zonal wind"@en .
+
+
+###  http://sweetontology.net/phenFluidDynamics/Circulation
+sophfd:Circulation rdf:type owl:Class .
+
+
+###  http://sweetontology.net/procPhysical/Heating
+soprocp:Heating rdf:type owl:Class .
+
+
+###  http://sweetontology.net/procPhysical/Rotation
+soprocp:Rotation rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propPressure/PressureGradient
+sopropp:PressureGradient rdf:type owl:Class .
+
+
+###  http://sweetontology.net/propSpaceDirection/Axis
+sopropsdir:Axis rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

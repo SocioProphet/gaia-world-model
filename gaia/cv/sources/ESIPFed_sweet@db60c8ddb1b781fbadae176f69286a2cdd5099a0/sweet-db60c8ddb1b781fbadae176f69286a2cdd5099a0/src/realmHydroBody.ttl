@@ -1,0 +1,380 @@
+@prefix : <http://sweetontology.net/realmHydroBody/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix somas: <http://sweetontology.net/matrSediment/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soreahb: <http://sweetontology.net/realmHydroBody/> .
+@prefix somaf: <http://sweetontology.net/matrFacility/> .
+@prefix soreac: <http://sweetontology.net/realmCryo/> .
+@prefix sorealf: <http://sweetontology.net/realmLandFluvial/> .
+@prefix soreah: <http://sweetontology.net/realmHydro/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix somapl: <http://sweetontology.net/matrPlant/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix somaw: <http://sweetontology.net/matrWater/> .
+@prefix sostc: <http://sweetontology.net/stateChemical/> .
+@prefix sorea: <http://sweetontology.net/realm/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@base <http://sweetontology.net/realmHydroBody> .
+
+<http://sweetontology.net/realmHydroBody> rdf:type owl:Ontology ;
+                                           owl:imports <http://sweetontology.net/matr> ,
+                                                       <http://sweetontology.net/matrPlant> ,
+                                                       <http://sweetontology.net/matrSediment> ,
+                                                       <http://sweetontology.net/matrWater> ,
+                                                       <http://sweetontology.net/realm> ,
+                                                       <http://sweetontology.net/realmCryo> ,
+                                                       <http://sweetontology.net/realmHydro> ,
+                                                       <http://sweetontology.net/realmLandFluvial> ,
+                                                       <http://sweetontology.net/rela> ,
+                                                       <http://sweetontology.net/relaChemical> ,
+                                                       <http://sweetontology.net/relaSci> ,
+                                                       <http://sweetontology.net/state> ,
+                                                       <http://sweetontology.net/stateChemical> ;
+                                           rdfs:label "SWEET Ontology Realm Hydrosphere Body" ;
+                                           dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                           owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasRealm
+sorel:hasRealm rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/rela/hasState
+sorel:hasState rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaChemical/hasSubstance
+sorelch:hasSubstance rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSci/hasSpecies
+sorelsc:hasSpecies rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/realmHydro/HydrosphereFeature
+soreah:HydrosphereFeature rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realmHydroBody/Aqueduct
+soreahb:Aqueduct rdf:type owl:Class ;
+               rdfs:subClassOf soreahb:Channel ;
+               rdfs:label "aqueduct"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Arroyo
+soreahb:Arroyo rdf:type owl:Class ;
+             rdfs:subClassOf soreahb:BodyOfWater ;
+             rdfs:label "arroyo"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/BarrierLagoon
+soreahb:BarrierLagoon rdf:type owl:Class ;
+                    rdfs:subClassOf soreahb:Lagoon ;
+                    rdfs:label "barrier lagoon"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Basin
+soreahb:Basin rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:BodyOfWater ;
+            rdfs:label "basin"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Bay
+soreahb:Bay rdf:type owl:Class ;
+          rdfs:subClassOf soreahb:BodyOfWater ;
+          rdfs:label "bay"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/BlanketBog
+soreahb:BlanketBog rdf:type owl:Class ;
+                 rdfs:subClassOf soreahb:Bog ;
+                 rdfs:label "blanket bog"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/BodyOfWater
+soreahb:BodyOfWater rdf:type owl:Class ;
+                  rdfs:subClassOf soreah:HydrosphereFeature ;
+                  rdfs:label "body of water"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Bog
+soreahb:Bog rdf:type owl:Class ;
+          rdfs:subClassOf soreahb:Wetland ;
+          rdfs:label "bog"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Bolson
+soreahb:Bolson rdf:type owl:Class ;
+             rdfs:subClassOf soreahb:Basin ;
+             rdfs:label "bolson"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Canal
+soreahb:Canal rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:BodyOfWater ;
+            rdfs:label "canal"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/CarbonateCompensationLevel
+soreahb:CarbonateCompensationLevel rdf:type owl:Class ;
+                                 owl:equivalentClass soreahb:WaterBodyBoundary ;
+                                 rdfs:label "carbonate compensation level"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Channel
+soreahb:Channel rdf:type owl:Class ;
+              rdfs:subClassOf soreahb:BodyOfWater ;
+              rdfs:label "channel"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/CheckDam
+soreahb:CheckDam rdf:type owl:Class ;
+               rdfs:subClassOf soreahb:Dam ;
+               rdfs:label "check dam"@en ;
+               dcterms:contributor <http://orcid.org/0000-0003-2185-928X> ;
+               skos:definition  [ 
+                   rdfs:comment  "A check dam is a small, sometimes temporary, dam constructed across a swale, drainage ditch, or waterway to counteract erosion by reducing water flow velocity. Check dams themselves are not a type of new technology; rather, they are an ancient technique dating all the way back to the second century A.D. Check dams are typically, though not always, implemented as a system of several check dams situated at regular intervals across the area of interest."@en ;
+                   dcterms:source <http://dbpedia.org/resource/Check_dam> ;
+                   dcterms:created "2019-08-18"^^xsd:date ;
+               ] .
+
+
+###  http://sweetontology.net/realmHydroBody/Creek
+soreahb:Creek rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:Stream ;
+            rdfs:label "creek"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Dam
+soreahb:Dam rdf:type owl:Class ;
+          rdfs:subClassOf somaf:Structure ;
+          rdfs:label "dam"@en ;
+          dcterms:contributor <http://orcid.org/0000-0003-2185-928X> ;
+          skos:definition  [ 
+              rdfs:comment  "A dam is a barrier that impounds water or underground streams. Reservoirs created by dams not only suppress floods but also provide water for activities such as irrigation, human consumption, industrial use, aquaculture, and navigability. Hydropower is often used in conjunction with dams to generate electricity. A dam can also be used to collect water or for storage of water which can be evenly distributed between locations. Dams generally serve the primary purpose of retaining water, while other structures such as floodgates or levees (also known as dikes) are used to manage or prevent water flow into specific land regions."@en ;
+              dcterms:source <http://dbpedia.org/resource/Dam> ;
+              dcterms:created "2019-08-18"^^xsd:date ;
+          ] .
+
+
+###  http://sweetontology.net/realmHydroBody/Estuary
+soreahb:Estuary rdf:type owl:Class ;
+              rdfs:subClassOf soreahb:BodyOfWater ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelch:hasSubstance ;
+                                owl:someValuesFrom somaw:BrackishWater
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelch:hasSubstance ;
+                                owl:allValuesFrom somas:Sediment
+                              ] ;
+              rdfs:label "estuary"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Fiord
+soreahb:Fiord rdf:type owl:Class ;
+            owl:equivalentClass soreahb:Fjord ;
+            rdfs:label "fiord"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Fjord
+soreahb:Fjord rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:Estuary ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorel:hasRealm ;
+                              owl:allValuesFrom soreac:Glacier
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorel:hasRealm ;
+                              owl:allValuesFrom sorealf:Valley
+                            ] ;
+            rdfs:label "fjord"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/FreshwaterLake
+soreahb:FreshwaterLake rdf:type owl:Class ;
+                     rdfs:subClassOf soreahb:Lake ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorelch:hasSubstance ;
+                                       owl:allValuesFrom somaw:FreshWater
+                                     ] ;
+                     rdfs:label "freshwater lake"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/HotSpring
+soreahb:HotSpring
+    a owl:Class ;
+    rdfs:subClassOf soreahb:Spring ;
+    skos:prefLabel "hot spring"@en ;
+    skos:altLabel "geothermal spring"@en ;
+    skos:definition  "A hot spring is a spring produced by the emergence of geothermally heated groundwater that rises from the Earth's crust. While some of these springs contain water that is a safe temperature for bathing, others are so hot that immersion can result in injury or death."@en ;
+    dcterms:source <https://en.wikipedia.org/wiki/Hot_spring> ;
+    dcterms:created "2019-07-19"^^xsd:date ;
+    dcterms:creator <http://orcid.org/0000-0001-6238-3498> ;
+.
+
+
+###  http://sweetontology.net/realmHydroBody/Inlet
+soreahb:Inlet rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:Estuary ;
+            rdfs:label "inlet"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Lagoon
+soreahb:Lagoon rdf:type owl:Class ;
+             rdfs:subClassOf soreahb:BodyOfWater ;
+             rdfs:label "lagoon"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Lake
+soreahb:Lake rdf:type owl:Class ;
+           rdfs:subClassOf soreahb:BodyOfWater ;
+           rdfs:label "lake"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Marsh
+soreahb:Marsh rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:Wetland ;
+            rdfs:label "marsh"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Mouth
+soreahb:Mouth rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:BodyOfWater ;
+            rdfs:label "mouth"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Peatland
+soreahb:Peatland rdf:type owl:Class ;
+               rdfs:subClassOf soreahb:Wetland ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelch:hasSubstance ;
+                                 owl:allValuesFrom somas:Peat
+                               ] ;
+               rdfs:label "peatland"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Pond
+soreahb:Pond rdf:type owl:Class ;
+           rdfs:subClassOf soreahb:BodyOfWater ,
+                           soreahb:Channel ;
+           rdfs:label "pond"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/RaisedBog
+soreahb:RaisedBog rdf:type owl:Class ;
+                rdfs:subClassOf soreahb:Bog ;
+                rdfs:label "raised bog"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Reservoir
+soreahb:Reservoir rdf:type owl:Class ;
+                rdfs:subClassOf soreahb:BodyOfWater ;
+                rdfs:label "reservoir"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/River
+soreahb:River rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:BodyOfWater ;
+            rdfs:label "river"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/SeaSurface
+soreahb:SeaSurface rdf:type owl:Class ;
+                 rdfs:subClassOf sorea:PlanetarySurface ,
+                                 soreahb:WaterBodyBoundary ;
+                 rdfs:label "sea surface"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Sound
+soreahb:Sound rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:BodyOfWater ;
+            rdfs:label "sound"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Spring
+soreahb:Spring rdf:type owl:Class ;
+             rdfs:subClassOf soreahb:BodyOfWater ;
+             rdfs:label "spring"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Strait
+soreahb:Strait rdf:type owl:Class ;
+             rdfs:subClassOf soreahb:Channel ;
+             rdfs:label "strait"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Stream
+soreahb:Stream rdf:type owl:Class ;
+             rdfs:subClassOf soreahb:BodyOfWater ;
+             rdfs:label "stream"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Swamp
+soreahb:Swamp rdf:type owl:Class ;
+            rdfs:subClassOf soreahb:Wetland ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelsc:hasSpecies ;
+                              owl:allValuesFrom somapl:Vegetation
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorel:hasState ;
+                              owl:hasValue sostc:Saturation
+                            ] ;
+            rdfs:label "swamp"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/ValleyBog
+soreahb:ValleyBog rdf:type owl:Class ;
+                rdfs:subClassOf soreahb:Bog ;
+                rdfs:label "valley bog"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/WaterBodyBoundary
+soreahb:WaterBodyBoundary rdf:type owl:Class ;
+                        rdfs:subClassOf sorea:PlanetaryBoundary ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorel:hasRealm ;
+                                          owl:allValuesFrom sorea:Ocean
+                                        ] ;
+                        rdfs:label "water body boundary"@en .
+
+
+###  http://sweetontology.net/realmHydroBody/Wetland
+soreahb:Wetland rdf:type owl:Class ;
+              rdfs:subClassOf soreahb:BodyOfWater ;
+              rdfs:label "wetland"@en .
+
+
+###  http://sweetontology.net/realmLandFluvial/Valley
+sorealf:Valley rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/realmHydroBody/FramStrait
+soreahb:FramStrait rdf:type owl:NamedIndividual ,
+                          soreahb:Strait ;
+                 rdfs:label "fram strait"@en .
+
+
+###  http://sweetontology.net/stateChemical/Saturation
+sostc:Saturation rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

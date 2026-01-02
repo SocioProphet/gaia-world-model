@@ -1,0 +1,198 @@
+@prefix : <http://sweetontology.net/humanTransportation/> .
+@prefix sohu: <http://sweetontology.net/human/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sohuj: <http://sweetontology.net/humanJurisdiction/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sohuc: <http://sweetontology.net/humanCommerce/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorelh: <http://sweetontology.net/relaHuman/> .
+@prefix sohut: <http://sweetontology.net/humanTransportation/> .
+@prefix sorelt: <http://sweetontology.net/relaTime/> .
+@base <http://sweetontology.net/humanTransportation> .
+
+<http://sweetontology.net/humanTransportation> rdf:type owl:Ontology ;
+                                                owl:imports <http://sweetontology.net/human> ,
+                                                            <http://sweetontology.net/humanCommerce> ,
+                                                            <http://sweetontology.net/humanJurisdiction> ,
+                                                            <http://sweetontology.net/matrEquipment> ,
+                                                            <http://sweetontology.net/relaHuman> ,
+                                                            <http://sweetontology.net/relaTime> ;
+                                                rdfs:label "SWEET Ontology Human Transportation" ;
+                                                dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                                owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaHuman/hasHumanActivity
+sorelh:hasHumanActivity rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/humanCommerce/Management
+sohuc:Management rdf:type owl:Class .
+
+
+###  http://sweetontology.net/humanTransportation/AirTraffic
+sohut:AirTraffic rdf:type owl:Class ;
+                 rdfs:subClassOf sohu:HumanActivity ;
+                 rdfs:label "air traffic"@en .
+
+
+###  http://sweetontology.net/humanTransportation/AirTrafficControl
+sohut:AirTrafficControl rdf:type owl:Class ;
+                        rdfs:subClassOf sohuc:Management ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorelh:hasHumanActivity ;
+                                          owl:allValuesFrom sohut:AirTraffic
+                                        ] ;
+                        rdfs:label "air traffic control"@en .
+
+
+###  http://sweetontology.net/humanTransportation/AirTransportation
+sohut:AirTransportation rdf:type owl:Class ;
+                        rdfs:subClassOf sohut:Transportation ;
+                        rdfs:label "air transportation"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Arrival
+sohut:Arrival rdf:type owl:Class ;
+              rdfs:subClassOf sohu:HumanActivity ;
+              rdfs:label "arrival"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Ascent
+sohut:Ascent rdf:type owl:Class ;
+             rdfs:subClassOf sohut:Departure ;
+             rdfs:label "ascent"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Aviation
+sohut:Aviation rdf:type owl:Class ;
+               rdfs:subClassOf sohu:HumanActivity ;
+               rdfs:label "aviation"@en .
+
+
+###  http://sweetontology.net/humanTransportation/CivilAviation
+sohut:CivilAviation rdf:type owl:Class ;
+                    rdfs:subClassOf sohut:Aviation ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelh:hasJurisdiction ;
+                                      owl:allValuesFrom sohuj:Civil
+                                    ] ;
+                    rdfs:label "civil aviation"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Departure
+sohut:Departure rdf:type owl:Class ;
+                rdfs:subClassOf sohu:HumanActivity ;
+                rdfs:label "departure"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Descent
+sohut:Descent rdf:type owl:Class ;
+              rdfs:subClassOf sohut:Arrival ;
+              rdfs:label "descent"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Evacuation
+sohut:Evacuation rdf:type owl:Class ;
+                 rdfs:subClassOf sohu:HumanActivity ;
+                 rdfs:label "evacuation"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Flight
+sohut:Flight rdf:type owl:Class ;
+             rdfs:subClassOf sohut:AirTransportation ;
+             rdfs:label "flight"@en .
+
+
+###  http://sweetontology.net/humanTransportation/GroundTransportation
+sohut:GroundTransportation rdf:type owl:Class ;
+                           rdfs:subClassOf sohut:Transportation ;
+                           rdfs:label "ground transportation"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Landing
+sohut:Landing rdf:type owl:Class ;
+              rdfs:subClassOf sohut:Arrival ;
+              rdfs:label "landing"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Liftoff
+sohut:Liftoff rdf:type owl:Class ;
+              rdfs:subClassOf sohut:Departure ;
+              rdfs:label "liftoff"@en .
+
+
+###  http://sweetontology.net/humanTransportation/MilitaryAviation
+sohut:MilitaryAviation rdf:type owl:Class ;
+                       rdfs:subClassOf sohut:Aviation ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty sorelh:hasJurisdiction ;
+                                         owl:allValuesFrom sohuj:Military
+                                       ] ;
+                       rdfs:label "military aviation"@en .
+
+
+###  http://sweetontology.net/humanTransportation/SpaceProgram
+sohut:SpaceProgram rdf:type owl:Class ;
+                   rdfs:subClassOf sohu:HumanActivity ;
+                   rdfs:label "space program"@en .
+
+
+###  http://sweetontology.net/humanTransportation/SpaceTravel
+sohut:SpaceTravel rdf:type owl:Class ;
+                  rdfs:subClassOf sohut:SpaceProgram ;
+                  rdfs:label "space travel"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Takeoff
+sohut:Takeoff rdf:type owl:Class ;
+              rdfs:subClassOf sohut:Departure ;
+              rdfs:label "takeoff"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Transit
+sohut:Transit rdf:type owl:Class ;
+              rdfs:subClassOf sohut:Transportation ;
+              rdfs:label "transit"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Transport
+sohut:Transport rdf:type owl:Class ;
+                rdfs:subClassOf sohu:HumanActivity ;
+                rdfs:label "transport"@en .
+
+
+###  http://sweetontology.net/humanTransportation/Transportation
+sohut:Transportation rdf:type owl:Class ;
+                     rdfs:subClassOf sohu:HumanActivity ;
+                     rdfs:label "transportation"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/humanTransportation/FAA
+sohut:FAA rdf:type owl:NamedIndividual ,
+                   sohuj:FederalGoverningBody ;
+          owl:sameAs sohut:FederalAviationAdministration ;
+          rdfs:label "faa"@en .
+
+
+###  http://sweetontology.net/humanTransportation/FederalAviationAdministration
+sohut:FederalAviationAdministration rdf:type owl:NamedIndividual ,
+                                             sohuj:FederalGoverningBody ;
+                                    rdfs:label "federal aviation administration"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

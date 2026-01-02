@@ -1,0 +1,409 @@
+@prefix : <http://sweetontology.net/stateStorm/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sostri: <http://sweetontology.net/stateRoleImpact/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix sopropsp: <http://sweetontology.net/propSpeed/> .
+@prefix sophatmow: <http://sweetontology.net/phenAtmoWind/> .
+@prefix sorelm: <http://sweetontology.net/relaMath/> .
+@prefix sorelph: <http://sweetontology.net/relaPhysical/> .
+@prefix sostst: <http://sweetontology.net/stateStorm/> .
+@prefix sophatmopc: <http://sweetontology.net/phenAtmoPrecipitation/> .
+@prefix sostp: <http://sweetontology.net/statePhysical/> .
+@prefix sorelsc: <http://sweetontology.net/relaSci/> .
+@base <http://sweetontology.net/stateStorm> .
+
+<http://sweetontology.net/stateStorm> rdf:type owl:Ontology ;
+                                       owl:imports <http://sweetontology.net/phenAtmoPrecipitation> ,
+                                                   <http://sweetontology.net/phenAtmoWind> ,
+                                                   <http://sweetontology.net/propCount> ,
+                                                   <http://sweetontology.net/propSpeed> ,
+                                                   <http://sweetontology.net/rela> ,
+                                                   <http://sweetontology.net/relaMath> ,
+                                                   <http://sweetontology.net/relaPhysical> ,
+                                                   <http://sweetontology.net/relaSci> ,
+                                                   <http://sweetontology.net/repr> ,
+                                                   <http://sweetontology.net/statePhysical> ,
+                                                   <http://sweetontology.net/stateRoleImpact> ;
+                                       rdfs:label "SWEET Ontology State Storm" ;
+                                       dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                       owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaSci/hasImpact
+sorelsc:hasImpact rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/rela/hasPhenomena
+sorel:hasPhenomena rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaPhysical/hasSpeed
+sorelph:hasSpeed rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSci/measureOf
+sorelsc:measureOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://sweetontology.net/relaMath/hasIntegerValue
+sorelm:hasIntegerValue rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/phenAtmoPrecipitation/Hurricane
+sophatmopc:Hurricane rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenAtmoPrecipitation/Tornado
+sophatmopc:Tornado rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenAtmoWind/Wind
+sophatmow:Wind rdf:type owl:Class .
+
+
+###  http://sweetontology.net/stateStorm/BeaufortScale
+sostst:BeaufortScale rdf:type owl:Class ;
+                    rdfs:subClassOf sostst:WindScale ;
+                    rdfs:label "beaufort scale"@en .
+
+
+###  http://sweetontology.net/stateStorm/EnhancedFujitaScale
+sostst:EnhancedFujitaScale rdf:type owl:Class ;
+                          rdfs:subClassOf sostst:TornadoScale ;
+                          rdfs:label "enhanced fujita scale"@en .
+
+
+###  http://sweetontology.net/stateStorm/FujitaPearsonScale
+sostst:FujitaPearsonScale rdf:type owl:Class ;
+                         rdfs:subClassOf sostst:TornadoScale ;
+                         rdfs:label "fujita pearson scale"@en .
+
+
+###  http://sweetontology.net/stateStorm/HurricaneScale
+sostst:HurricaneScale rdf:type owl:Class ;
+                     rdfs:subClassOf sostst:WindScale ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorel:hasPhenomena ;
+                                       owl:allValuesFrom sophatmopc:Hurricane
+                                     ] ;
+                     rdfs:label "hurricane scale"@en .
+
+
+###  http://sweetontology.net/stateStorm/SaffirSimpsonScale
+sostst:SaffirSimpsonScale rdf:type owl:Class ;
+                         rdfs:subClassOf sostst:HurricaneScale ;
+                         rdfs:label "saffir simpson scale"@en .
+
+
+###  http://sweetontology.net/stateStorm/TornadoScale
+sostst:TornadoScale rdf:type owl:Class ;
+                   rdfs:subClassOf sostst:WindScale ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorel:hasPhenomena ;
+                                     owl:allValuesFrom sophatmopc:Tornado
+                                   ] ;
+                   rdfs:label "tornado scale"@en .
+
+
+###  http://sweetontology.net/stateStorm/WindScale
+sostst:WindScale rdf:type owl:Class ;
+                rdfs:subClassOf sorep:OrdinalScale ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelsc:measureOf ;
+                                  owl:allValuesFrom sophatmow:Wind
+                                ] ;
+                rdfs:label "wind scale"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateStorm/Beaufort0
+sostst:Beaufort0 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 0 ;
+                sorelm:hasLowerBound "0.0"^^xsd:decimal ;
+                sorelm:hasUpperBound "0.3"^^xsd:decimal ;
+                sorelph:hasSpeed sostp:Calm ;
+                rdfs:label "beaufort0"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort1
+sostst:Beaufort1 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 1 ;
+                sorelm:hasLowerBound "0.3"^^xsd:decimal ;
+                sorelm:hasUpperBound "1.5"^^xsd:decimal ;
+                rdfs:label "beaufort1"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort10
+sostst:Beaufort10 rdf:type owl:NamedIndividual ,
+                          sostst:BeaufortScale ;
+                 sorelm:hasIntegerValue 10 ;
+                 sorelm:hasLowerBound "24.5"^^xsd:decimal ;
+                 sorelm:hasUpperBound "28.4"^^xsd:decimal ;
+                 rdfs:label "beaufort10"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort11
+sostst:Beaufort11 rdf:type owl:NamedIndividual ,
+                          sostst:BeaufortScale ;
+                 sorelm:hasIntegerValue 11 ;
+                 sorelm:hasLowerBound "28.5"^^xsd:decimal ;
+                 sorelm:hasUpperBound "32.6"^^xsd:decimal ;
+                 rdfs:label "beaufort11"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort12
+sostst:Beaufort12 rdf:type owl:NamedIndividual ,
+                          sostst:BeaufortScale ;
+                 sorelm:hasIntegerValue 12 ;
+                 sorelm:hasLowerBound "32.7"^^xsd:decimal ;
+                 rdfs:label "beaufort12"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort2
+sostst:Beaufort2 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 2 ;
+                sorelm:hasLowerBound "1.6"^^xsd:decimal ;
+                sorelm:hasUpperBound "3.4"^^xsd:decimal ;
+                rdfs:label "beaufort2"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort3
+sostst:Beaufort3 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 3 ;
+                sorelm:hasLowerBound "3.5"^^xsd:decimal ;
+                sorelm:hasUpperBound "5.4"^^xsd:decimal ;
+                sorelph:hasSpeed sostp:Gentle ;
+                rdfs:label "beaufort3"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort4
+sostst:Beaufort4 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 4 ;
+                sorelm:hasLowerBound "5.5"^^xsd:decimal ;
+                sorelm:hasUpperBound "7.9"^^xsd:decimal ;
+                rdfs:label "beaufort4"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort5
+sostst:Beaufort5 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 5 ;
+                sorelm:hasLowerBound "8.0"^^xsd:decimal ;
+                sorelm:hasUpperBound "10.7"^^xsd:decimal ;
+                rdfs:label "beaufort5"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort6
+sostst:Beaufort6 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 6 ;
+                sorelm:hasLowerBound "10.8"^^xsd:decimal ;
+                sorelm:hasUpperBound "13.8"^^xsd:decimal ;
+                rdfs:label "beaufort6"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort7
+sostst:Beaufort7 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 7 ;
+                sorelm:hasLowerBound "13.9"^^xsd:decimal ;
+                sorelm:hasUpperBound "17.1"^^xsd:decimal ;
+                rdfs:label "beaufort7"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort8
+sostst:Beaufort8 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 8 ;
+                sorelm:hasLowerBound "17.2"^^xsd:decimal ;
+                sorelm:hasUpperBound "20.7"^^xsd:decimal ;
+                sorelph:hasSpeed sostp:Gale ;
+                rdfs:label "beaufort8"@en .
+
+
+###  http://sweetontology.net/stateStorm/Beaufort9
+sostst:Beaufort9 rdf:type owl:NamedIndividual ,
+                         sostst:BeaufortScale ;
+                sorelm:hasIntegerValue 9 ;
+                sorelm:hasLowerBound "20.8"^^xsd:decimal ;
+                sorelm:hasUpperBound "24.4"^^xsd:decimal ;
+                rdfs:label "beaufort9"@en .
+
+
+###  http://sweetontology.net/stateStorm/Category1
+sostst:Category1 rdf:type owl:NamedIndividual ,
+                         sostst:SaffirSimpsonScale ;
+                sorelm:hasIntegerValue 1 ;
+                sorelm:hasLowerBound "33.0"^^xsd:decimal ;
+                sorelm:hasUpperBound "42.0"^^xsd:decimal ;
+                sorelsc:hasImpact sostri:Minimal ;
+                rdfs:label "category1"@en .
+
+
+###  http://sweetontology.net/stateStorm/Category2
+sostst:Category2 rdf:type owl:NamedIndividual ,
+                         sostst:SaffirSimpsonScale ;
+                sorelm:hasIntegerValue 2 ;
+                sorelm:hasLowerBound "43.0"^^xsd:decimal ;
+                sorelm:hasUpperBound "49.0"^^xsd:decimal ;
+                sorelsc:hasImpact sostri:Moderate ;
+                rdfs:label "category2"@en .
+
+
+###  http://sweetontology.net/stateStorm/Category3
+sostst:Category3 rdf:type owl:NamedIndividual ,
+                         sostst:SaffirSimpsonScale ;
+                sorelm:hasIntegerValue 3 ;
+                sorelm:hasLowerBound "50.0"^^xsd:decimal ;
+                sorelm:hasUpperBound "58.0"^^xsd:decimal ;
+                sorelsc:hasImpact sostri:Extensive ;
+                rdfs:label "category3"@en .
+
+
+###  http://sweetontology.net/stateStorm/Category4
+sostst:Category4 rdf:type owl:NamedIndividual ,
+                         sostst:SaffirSimpsonScale ;
+                sorelm:hasIntegerValue 4 ;
+                sorelm:hasLowerBound "59.0"^^xsd:decimal ;
+                sorelm:hasUpperBound "69.0"^^xsd:decimal ;
+                sorelsc:hasImpact sostri:Extreme ;
+                rdfs:label "category4"@en .
+
+
+###  http://sweetontology.net/stateStorm/Category5
+sostst:Category5 rdf:type owl:NamedIndividual ,
+                         sostst:SaffirSimpsonScale ;
+                sorelm:hasIntegerValue 5 ;
+                sorelm:hasLowerBound "70.0"^^xsd:decimal ;
+                sorelsc:hasImpact sostri:Catastrophic ;
+                rdfs:label "category5"@en .
+
+
+###  http://sweetontology.net/stateStorm/EF0
+sostst:EF0 rdf:type owl:NamedIndividual ,
+                   sostst:EnhancedFujitaScale ;
+          sorelm:hasIntegerValue 0 ;
+          rdfs:label "ef0"@en .
+
+
+###  http://sweetontology.net/stateStorm/EF1
+sostst:EF1 rdf:type owl:NamedIndividual ,
+                   sostst:EnhancedFujitaScale ;
+          sorelm:hasIntegerValue 1 ;
+          rdfs:label "ef1"@en .
+
+
+###  http://sweetontology.net/stateStorm/EF2
+sostst:EF2 rdf:type owl:NamedIndividual ,
+                   sostst:EnhancedFujitaScale ;
+          sorelm:hasIntegerValue 2 ;
+          rdfs:label "ef2"@en .
+
+
+###  http://sweetontology.net/stateStorm/EF3
+sostst:EF3 rdf:type owl:NamedIndividual ,
+                   sostst:EnhancedFujitaScale ;
+          sorelm:hasIntegerValue 3 ;
+          rdfs:label "ef3"@en .
+
+
+###  http://sweetontology.net/stateStorm/EF4
+sostst:EF4 rdf:type owl:NamedIndividual ,
+                   sostst:EnhancedFujitaScale ;
+          sorelm:hasIntegerValue 4 ;
+          rdfs:label "ef4"@en .
+
+
+###  http://sweetontology.net/stateStorm/EF5
+sostst:EF5 rdf:type owl:NamedIndividual ,
+                   sostst:EnhancedFujitaScale ;
+          sorelm:hasIntegerValue 5 ;
+          rdfs:label "ef5"@en .
+
+
+###  http://sweetontology.net/stateStorm/F0
+sostst:F0 rdf:type owl:NamedIndividual ,
+                  sostst:FujitaPearsonScale ;
+         sorelm:hasIntegerValue 0 ;
+         sorelm:hasLowerBound "18.0"^^xsd:decimal ;
+         sorelm:hasUpperBound "32.0"^^xsd:decimal ;
+         sorelsc:hasImpact sostri:Light ;
+         rdfs:label "f0"@en .
+
+
+###  http://sweetontology.net/stateStorm/F1
+sostst:F1 rdf:type owl:NamedIndividual ,
+                  sostst:FujitaPearsonScale ;
+         sorelm:hasIntegerValue 1 ;
+         sorelm:hasLowerBound "32.0"^^xsd:decimal ;
+         sorelm:hasUpperBound "50.0"^^xsd:decimal ;
+         sorelsc:hasImpact sostri:Moderate ;
+         rdfs:label "f1"@en .
+
+
+###  http://sweetontology.net/stateStorm/F2
+sostst:F2 rdf:type owl:NamedIndividual ,
+                  sostst:FujitaPearsonScale ;
+         sorelm:hasIntegerValue 2 ;
+         sorelm:hasLowerBound "50.0"^^xsd:decimal ;
+         sorelm:hasUpperBound "70.0"^^xsd:decimal ;
+         sorelsc:hasImpact sostri:Significant ;
+         rdfs:label "f2"@en .
+
+
+###  http://sweetontology.net/stateStorm/F3
+sostst:F3 rdf:type owl:NamedIndividual ,
+                  sostst:FujitaPearsonScale ;
+         sorelm:hasIntegerValue 0 ;
+         sorelm:hasLowerBound "70.0"^^xsd:decimal ;
+         sorelm:hasUpperBound "92.0"^^xsd:decimal ;
+         sorelsc:hasImpact sostri:Severe ;
+         rdfs:label "f3"@en .
+
+
+###  http://sweetontology.net/stateStorm/F4
+sostst:F4 rdf:type owl:NamedIndividual ,
+                  sostst:FujitaPearsonScale ;
+         sorelm:hasIntegerValue 4 ;
+         sorelm:hasLowerBound "92.0"^^xsd:decimal ;
+         sorelm:hasUpperBound "116.0"^^xsd:decimal ;
+         sorelsc:hasImpact sostri:Devastating ;
+         rdfs:label "f4"@en .
+
+
+###  http://sweetontology.net/stateStorm/F5
+sostst:F5 rdf:type owl:NamedIndividual ,
+                  sostst:FujitaPearsonScale ;
+         sorelm:hasIntegerValue 5 ;
+         sorelm:hasLowerBound "116.0"^^xsd:decimal ;
+         sorelm:hasUpperBound "142.0"^^xsd:decimal ;
+         sorelsc:hasImpact sostri:Incredible ;
+         rdfs:label "f5"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

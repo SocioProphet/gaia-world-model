@@ -1,0 +1,5372 @@
+format-version: 1.2
+ontology: wikidata/exposure-symptom-assocs
+
+[Term]
+id: Wikidata:Q101991
+name: inflammation
+
+[Term]
+id: Wikidata:Q10334930
+name: 1-hexanethiol
+
+[Term]
+id: Wikidata:Q1054718
+name: kidney disease
+
+[Term]
+id: Wikidata:Q1064904
+name: major trauma
+
+[Term]
+id: Wikidata:Q107231
+name: paralysis
+
+[Term]
+id: Wikidata:Q1077823
+name: somnolence
+
+[Term]
+id: Wikidata:Q10874
+name: blindness
+
+[Term]
+id: Wikidata:Q10916362
+name: dizziness
+
+[Term]
+id: Wikidata:Q1094
+name: indium
+
+[Term]
+id: Wikidata:Q1103
+name: iodine
+
+[Term]
+id: Wikidata:Q110315
+name: lead poisoning
+
+[Term]
+id: Wikidata:Q1115038
+name: runny nose
+
+[Term]
+id: Wikidata:Q1123260
+name: palpitation
+
+[Term]
+id: Wikidata:Q1128283
+name: mydriasis
+
+[Term]
+id: Wikidata:Q1136648
+name: emery
+
+[Term]
+id: Wikidata:Q1139684
+name: chronic bronchitis
+
+[Term]
+id: Wikidata:Q114085
+name: rhinitis
+
+[Term]
+id: Wikidata:Q1162276
+name: xerostomia
+
+[Term]
+id: Wikidata:Q116275
+name: Myoclonus
+
+[Term]
+id: Wikidata:Q1166142
+name: erythema
+
+[Term]
+id: Wikidata:Q11938384
+name: narcosis
+
+[Term]
+id: Wikidata:Q1194557
+name: laryngitis
+
+[Term]
+id: Wikidata:Q125367
+name: carbon monoxide poisoning
+
+[Term]
+id: Wikidata:Q1269399
+name: Dysuria
+
+[Term]
+id: Wikidata:Q127076
+name: vomiting
+
+[Term]
+id: Wikidata:Q1284347
+name: pneumonitis
+
+[Term]
+id: Wikidata:Q1287838
+name: 3-heptanone
+
+[Term]
+id: Wikidata:Q1287920
+name: 4-heptanone
+
+[Term]
+id: Wikidata:Q1292082
+name: sore throat
+
+[Term]
+id: Wikidata:Q130741
+name: hallucination
+
+[Term]
+id: Wikidata:Q131130
+name: anesthesia
+
+[Term]
+id: Wikidata:Q1324592
+name: laryngospasm
+
+[Term]
+id: Wikidata:Q133145
+name: acetylene
+
+[Term]
+id: Wikidata:Q133244
+name: jaundice
+
+[Term]
+id: Wikidata:Q1349821
+name: hepatotoxicity
+
+[Term]
+id: Wikidata:Q1350326
+name: frostbite
+
+[Term]
+id: Wikidata:Q13522706
+name: colic
+
+[Term]
+id: Wikidata:Q1362864
+name: hepatomegaly
+
+[Term]
+id: Wikidata:Q1397878
+name: fasciculation
+
+[Term]
+id: Wikidata:Q1502312
+name: polyneuropathy
+
+[Term]
+id: Wikidata:Q150440
+name: hexane
+
+[Term]
+id: Wikidata:Q152234
+name: oedema
+
+[Term]
+id: Wikidata:Q1525170
+name: Stridor
+
+[Term]
+id: Wikidata:Q1527888
+name: pancreatitis
+
+[Term]
+id: Wikidata:Q153
+name: ethanol
+
+[Term]
+id: Wikidata:Q154430
+name: anxiety
+
+[Term]
+id: Wikidata:Q15806031
+name: dinitrotoluene
+
+[Term]
+id: Wikidata:Q158539
+name: chloromethyl methyl ether
+
+[Term]
+id: Wikidata:Q159557
+name: coma
+
+[Term]
+id: Wikidata:Q1598200
+name: metabolic acidosis
+
+[Term]
+id: Wikidata:Q16056098
+name: Teratogenesis
+
+[Term]
+id: Wikidata:Q160796
+name: Delirium
+
+[Term]
+id: Wikidata:Q161271
+name: 1,1,2,2-tetrabromoethane
+
+[Term]
+id: Wikidata:Q161296
+name: 1,1-dimethylhydrazine
+
+[Term]
+id: Wikidata:Q161532
+name: dioxane
+
+[Term]
+id: Wikidata:Q161619
+name: dodecyl mercaptan
+
+[Term]
+id: Wikidata:Q16242752
+name: allergic contact dermatitis
+
+[Term]
+id: Wikidata:Q1628473
+name: corneal ulcer
+
+[Term]
+id: Wikidata:Q1641075
+name: Hyperpnea
+
+[Term]
+id: Wikidata:Q1641494
+name: hypoventilation
+
+[Term]
+id: Wikidata:Q1641556
+name: hypoesthesia
+
+[Term]
+id: Wikidata:Q167844
+name: conjunctivitis
+
+[Term]
+id: Wikidata:Q170518
+name: burn
+
+[Term]
+id: Wikidata:Q170591
+name: hydrogen sulfide
+
+[Term]
+id: Wikidata:Q171877
+name: hydrogen peroxide
+
+[Term]
+id: Wikidata:Q172275
+name: chloroform
+
+[Term]
+id: Wikidata:Q17276347
+name: O-chlorotoluene
+
+[Term]
+id: Wikidata:Q173022
+name: bronchitis
+
+[Term]
+id: Wikidata:Q17320222
+name: lacrimation
+
+[Term]
+id: Wikidata:Q1756015
+name: Opisthotonus
+
+[Term]
+id: Wikidata:Q178061
+name: circulatory shock
+
+[Term]
+id: Wikidata:Q178069
+name: necrosis
+
+[Term]
+id: Wikidata:Q1799146
+name: irritant dermatitis
+
+[Term]
+id: Wikidata:Q180007
+name: syncope
+
+[Term]
+id: Wikidata:Q18054140
+name: collapse
+
+[Term]
+id: Wikidata:Q18216
+name: aspirin
+
+[Term]
+id: Wikidata:Q183130
+name: gastritis
+
+[Term]
+id: Wikidata:Q183425
+name: abdominal pain
+
+[Term]
+id: Wikidata:Q18356391
+name: unconsciousness
+
+[Term]
+id: Wikidata:Q18386197
+name: sulfuric acid poisoning
+
+[Term]
+id: Wikidata:Q186889
+name: nausea
+
+[Term]
+id: Wikidata:Q1869874
+name: insomnia
+
+[Term]
+id: Wikidata:Q188008
+name: dyspnea
+
+[Term]
+id: Wikidata:Q189331
+name: cardiac dysrhythmia
+
+[Term]
+id: Wikidata:Q189643
+name: delusion
+
+[Term]
+id: Wikidata:Q18967474
+name: Q18967474
+
+[Term]
+id: Wikidata:Q19000619
+name: urination disorder
+
+[Term]
+id: Wikidata:Q191797
+name: aggression
+
+[Term]
+id: Wikidata:Q192120
+name: cyanosis
+
+[Term]
+id: Wikidata:Q192309
+name: tinnitus
+
+[Term]
+id: Wikidata:Q19275831
+name: choking
+
+[Term]
+id: Wikidata:Q193840
+name: asphyxia
+
+[Term]
+id: Wikidata:Q1950418
+name: chloroacetaldehyde
+
+[Term]
+id: Wikidata:Q2007270
+name: ethyl p-nitrophenyl benzenethiophosphonate
+
+[Term]
+id: Wikidata:Q202013
+name: epistaxis
+
+[Term]
+id: Wikidata:Q202837
+name: cardiac arrest
+
+[Term]
+id: Wikidata:Q203601
+name: pneumothorax
+
+[Term]
+id: Wikidata:Q2044949
+name: corneal dystrophy
+
+[Term]
+id: Wikidata:Q205972
+name: drunkenness
+
+[Term]
+id: Wikidata:Q208450
+name: panic
+
+[Term]
+id: Wikidata:Q209136
+name: 2,2-dimethylbutane
+
+[Term]
+id: Wikidata:Q209354
+name: ethylene chlorohydrin
+
+[Term]
+id: Wikidata:Q209357
+name: O-chlorobenzylidenemalononitrile
+
+[Term]
+id: Wikidata:Q209376
+name: 2-ethoxyethyl acetate
+
+[Term]
+id: Wikidata:Q209404
+name: hexan-2-one
+
+[Term]
+id: Wikidata:Q209437
+name: dnoc
+
+[Term]
+id: Wikidata:Q209583
+name: tachycardia
+
+[Term]
+id: Wikidata:Q20965408
+name: bis(2-(dimethylamino)ethyl)ether
+
+[Term]
+id: Wikidata:Q20966918
+name: 1-heptanethiol
+
+[Term]
+id: Wikidata:Q20966919
+name: Hexachloronaphthalene
+
+[Term]
+id: Wikidata:Q20966927
+name: 4-methyl-2-pentyl acetate
+
+[Term]
+id: Wikidata:Q209789
+name: burping
+
+[Term]
+id: Wikidata:Q21057311
+name: chlorinated diphenyl oxide
+
+[Term]
+id: Wikidata:Q21057324
+name: hydrogenated terphenyls
+
+[Term]
+id: Wikidata:Q21057847
+name: polychlorinated biphenyl with 42% chlorine
+
+[Term]
+id: Wikidata:Q21058099
+name: polychlorinated biphenyl with 54% chlorine
+
+[Term]
+id: Wikidata:Q21077145
+name: absent deep tendon reflex
+
+[Term]
+id: Wikidata:Q2108794
+name: bis(2,3-epoxypropyl) ether
+
+[Term]
+id: Wikidata:Q211086
+name: hydrogen chloride
+
+[Term]
+id: Wikidata:Q21109286
+name: blood changes
+
+[Term]
+id: Wikidata:Q21109742
+name: bronchial secretions
+
+[Term]
+id: Wikidata:Q21109805
+name: central nervous system excitement
+
+[Term]
+id: Wikidata:Q21109840
+name: chest tightness
+
+[Term]
+id: Wikidata:Q21110016
+name: corneal damage
+
+[Term]
+id: Wikidata:Q21110038
+name: corneal opacity
+
+[Term]
+id: Wikidata:Q21110112
+name: decreased nerve conduction in lower legs
+
+[Term]
+id: Wikidata:Q21110117
+name: decreased pulmonary function
+
+[Term]
+id: Wikidata:Q21110145
+name: temporary blindness
+
+[Term]
+id: Wikidata:Q21110165
+name: delayed healing of wounds
+
+[Term]
+id: Wikidata:Q21110289
+name: dry cracked skin
+
+[Term]
+id: Wikidata:Q21111953
+name: eye burn
+
+[Term]
+id: Wikidata:Q21111972
+name: eye irritation
+
+[Term]
+id: Wikidata:Q21112011
+name: gastrointestinal disturbance
+
+[Term]
+id: Wikidata:Q21112057
+name: hand sweating
+
+[Term]
+id: Wikidata:Q21112198
+name: increased blood clotting time
+
+[Term]
+id: Wikidata:Q21112279
+name: mucous membrane irritation
+
+[Term]
+id: Wikidata:Q21112283
+name: respiratory irritation
+
+[Term]
+id: Wikidata:Q21112293
+name: upper respiratory irritation
+
+[Term]
+id: Wikidata:Q21112298
+name: kidney changes
+
+[Term]
+id: Wikidata:Q21112692
+name: reproductive effects
+
+[Term]
+id: Wikidata:Q21112701
+name: respiratory sensitization
+
+[Term]
+id: Wikidata:Q21116594
+name: profuse sweating
+
+[Term]
+id: Wikidata:Q21116779
+name: scaling dermatitis
+
+[Term]
+id: Wikidata:Q21116801
+name: sense of well being
+
+[Term]
+id: Wikidata:Q21116849
+name: skin blisters
+
+[Term]
+id: Wikidata:Q21117198
+name: convulsions
+
+[Term]
+id: Wikidata:Q21117302
+name: twitching
+
+[Term]
+id: Wikidata:Q21117395
+name: thyroid changes
+
+[Term]
+id: Wikidata:Q21117411
+name: liver changes
+
+[Term]
+id: Wikidata:Q21117872
+name: deep pain
+
+[Term]
+id: Wikidata:Q21118175
+name: restlessness
+
+[Term]
+id: Wikidata:Q21118286
+name: reduced bladder function
+
+[Term]
+id: Wikidata:Q21118296
+name: reduced pancreatic function
+
+[Term]
+id: Wikidata:Q21118368
+name: vestibular dysfunction
+
+[Term]
+id: Wikidata:Q21118425
+name: numb extremities
+
+[Term]
+id: Wikidata:Q21118859
+name: nasal irritation
+
+[Term]
+id: Wikidata:Q21119119
+name: hematopoietic damage
+
+[Term]
+id: Wikidata:Q21119312
+name: larynx irritation
+
+[Term]
+id: Wikidata:Q21119839
+name: eye pain
+
+[Term]
+id: Wikidata:Q21119990
+name: mental dullness
+
+[Term]
+id: Wikidata:Q21120190
+name: numb limbs
+
+[Term]
+id: Wikidata:Q21120212
+name: corneal vesiculation
+
+[Term]
+id: Wikidata:Q21120214
+name: burning mouth
+
+[Term]
+id: Wikidata:Q21120220
+name: dry throat
+
+[Term]
+id: Wikidata:Q21120235
+name: urine discoloration
+
+[Term]
+id: Wikidata:Q21120278
+name: blue lips and skin
+
+[Term]
+id: Wikidata:Q21167507
+name: acetaldehyde exposure
+
+[Term]
+id: Wikidata:Q21167527
+name: acetic acid exposure
+
+[Term]
+id: Wikidata:Q21167543
+name: acetic anhydride exposure
+
+[Term]
+id: Wikidata:Q21167550
+name: acetone exposure
+
+[Term]
+id: Wikidata:Q21167557
+name: acetone cyanohydrin exposure
+
+[Term]
+id: Wikidata:Q21167567
+name: acetonitrile exposure
+
+[Term]
+id: Wikidata:Q21167575
+name: 2-acetylaminofluorene exposure
+relationship: RO:0002304 Wikidata:Q21118286 ! reduced bladder function
+relationship: RO:0002304 Wikidata:Q21118296 ! reduced pancreatic function
+relationship: RO:0002304 Wikidata:Q476921 ! kidney failure
+relationship: RO:0002304 Wikidata:Q970208 ! liver failure
+relationship: RO:0002309 Wikidata:Q4382200 ! 2-acetylaminofluorene
+
+[Term]
+id: Wikidata:Q21167580
+name: acetylene exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q193840 ! asphyxia
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q133145 ! acetylene
+
+[Term]
+id: Wikidata:Q21167589
+name: acetylene tetrabromide exposure
+relationship: RO:0002304 Wikidata:Q133244 ! jaundice
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q254327 ! anorexia
+relationship: RO:0002304 Wikidata:Q5062120 ! central nervous system depression
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q974869 ! Leukocytosis
+relationship: RO:0002309 Wikidata:Q161271 ! 1,1,2,2-tetrabromoethane
+
+[Term]
+id: Wikidata:Q21167614
+name: acetylsalicylic acid exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112198 ! increased blood clotting time
+relationship: RO:0002304 Wikidata:Q21112293 ! upper respiratory irritation
+relationship: RO:0002309 Wikidata:Q18216 ! aspirin
+
+[Term]
+id: Wikidata:Q21167626
+name: Acrolein exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21110117 ! decreased pulmonary function
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002309 Wikidata:Q342790 ! acrolein
+
+[Term]
+id: Wikidata:Q21167634
+name: acrylamide exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q1166142 ! erythema
+relationship: RO:0002304 Wikidata:Q1292082 ! sore throat
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21077145 ! absent deep tendon reflex
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112057 ! hand sweating
+relationship: RO:0002304 Wikidata:Q21112692 ! reproductive effects
+relationship: RO:0002304 Wikidata:Q21120190 ! numb limbs
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q2610154 ! red eye
+relationship: RO:0002304 Wikidata:Q270421 ! muscle weakness
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q769220 ! paresthesia
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q342939 ! acrylamide
+
+[Term]
+id: Wikidata:Q21167640
+name: acrylic acid exposure
+relationship: RO:0002304 Wikidata:Q1166142 ! erythema
+relationship: RO:0002304 Wikidata:Q1292082 ! sore throat
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q178061 ! circulatory shock
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q18356391 ! unconsciousness
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q2141836 ! chemical burn
+relationship: RO:0002304 Wikidata:Q2610154 ! red eye
+relationship: RO:0002304 Wikidata:Q270421 ! muscle weakness
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002304 Wikidata:Q3529328 ! Labored breathing
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q657619 ! Sensitization
+relationship: RO:0002304 Wikidata:Q737460 ! visual impairment
+relationship: RO:0002309 Wikidata:Q324628 ! acrylic acid
+
+[Term]
+id: Wikidata:Q21167650
+name: acrylonitrile exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q193840 ! asphyxia
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21116779 ! scaling dermatitis
+relationship: RO:0002304 Wikidata:Q270421 ! muscle weakness
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q35830 ! sneeze
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q342968 ! acrylonitrile
+
+[Term]
+id: Wikidata:Q21167655
+name: adiponitrile exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q3529328 ! Labored breathing
+relationship: RO:0002304 Wikidata:Q4930803 ! blurred vision
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q84062 ! adiponitrile
+
+[Term]
+id: Wikidata:Q21167666
+name: Aldrin exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q116275 ! Myoclonus
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21117198 ! convulsions
+relationship: RO:0002304 Wikidata:Q2673323 ! malaise
+relationship: RO:0002304 Wikidata:Q373597 ! hematuria
+relationship: RO:0002304 Wikidata:Q794072 ! Azotemia
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q409054 ! Aldrin
+
+[Term]
+id: Wikidata:Q21167678
+name: allyl alcohol exposure
+
+[Term]
+id: Wikidata:Q21167687
+name: allyl chloride exposure
+
+[Term]
+id: Wikidata:Q21167694
+name: allyl glycidyl ether exposure
+
+[Term]
+id: Wikidata:Q21167696
+name: allyl propyl disulfide exposure
+
+[Term]
+id: Wikidata:Q21167702
+name: aluminium oxide exposure
+
+[Term]
+id: Wikidata:Q21167711
+name: aluminium exposure
+
+[Term]
+id: Wikidata:Q21167715
+name: aluminum welding fume exposure
+
+[Term]
+id: Wikidata:Q21167723
+name: aluminium salt exposure
+
+[Term]
+id: Wikidata:Q21167758
+name: 4-aminodiphenyl exposure
+
+[Term]
+id: Wikidata:Q21167762
+name: 2-aminopyridine exposure
+
+[Term]
+id: Wikidata:Q21167768
+name: amitrole exposure
+
+[Term]
+id: Wikidata:Q21167772
+name: ammonia exposure
+
+[Term]
+id: Wikidata:Q21167776
+name: ammonium chloride exposure
+
+[Term]
+id: Wikidata:Q21167787
+name: ammonium sulfamate exposure
+
+[Term]
+id: Wikidata:Q21167792
+name: amyl acetate exposure
+
+[Term]
+id: Wikidata:Q21167797
+name: 1-methylbutyl acetate exposure
+
+[Term]
+id: Wikidata:Q21167800
+name: aniline exposure
+
+[Term]
+id: Wikidata:Q21167808
+name: O-Anisidine exposure
+
+[Term]
+id: Wikidata:Q21167813
+name: p-Anisidine exposure
+
+[Term]
+id: Wikidata:Q21167816
+name: antimony exposure
+
+[Term]
+id: Wikidata:Q21167823
+name: ANTU exposure
+
+[Term]
+id: Wikidata:Q21167830
+name: inorganic arsenic compound exposure
+
+[Term]
+id: Wikidata:Q21167853
+name: arsine exposure
+
+[Term]
+id: Wikidata:Q21167862
+name: asbestos exposure
+
+[Term]
+id: Wikidata:Q21167876
+name: asphalt exposure
+
+[Term]
+id: Wikidata:Q21167894
+name: atrazine exposure
+
+[Term]
+id: Wikidata:Q21167908
+name: barium chloride exposure
+
+[Term]
+id: Wikidata:Q21167913
+name: barium nitrate exposure
+
+[Term]
+id: Wikidata:Q21167922
+name: barium sulfate exposure
+
+[Term]
+id: Wikidata:Q21167929
+name: benomyl exposure
+
+[Term]
+id: Wikidata:Q21167939
+name: benzene exposure
+
+[Term]
+id: Wikidata:Q21167947
+name: benzenethiol exposure
+
+[Term]
+id: Wikidata:Q21167955
+name: benzidine exposure
+
+[Term]
+id: Wikidata:Q21167959
+name: benzoyl peroxide exposure
+
+[Term]
+id: Wikidata:Q21167960
+name: benzyl chloride exposure
+
+[Term]
+id: Wikidata:Q21167961
+name: exposure to bismuth telluride doped with selenium sulfide
+
+[Term]
+id: Wikidata:Q21167962
+name: bismuth telluride exposure
+
+[Term]
+id: Wikidata:Q21167963
+name: borax exposure
+
+[Term]
+id: Wikidata:Q21167964
+name: sodium tetraborate decahydrate exposure
+
+[Term]
+id: Wikidata:Q21168166
+name: sodium tetraborate pentahydrate exposure
+
+[Term]
+id: Wikidata:Q21172903
+name: boron trioxide exposure
+
+[Term]
+id: Wikidata:Q21173097
+name: boron tribromide exposure
+
+[Term]
+id: Wikidata:Q21173314
+name: boron trifluoride exposure
+
+[Term]
+id: Wikidata:Q21173315
+name: Bromacil exposure
+
+[Term]
+id: Wikidata:Q21173316
+name: bromine exposure
+
+[Term]
+id: Wikidata:Q21173317
+name: bromine pentafluoride exposure
+
+[Term]
+id: Wikidata:Q21173318
+name: bromoform exposure
+
+[Term]
+id: Wikidata:Q21173319
+name: 1,3-butadiene exposure
+
+[Term]
+id: Wikidata:Q21173320
+name: butane exposure
+
+[Term]
+id: Wikidata:Q21173321
+name: butanone exposure
+
+[Term]
+id: Wikidata:Q21173322
+name: 2-Butoxyethanol exposure
+
+[Term]
+id: Wikidata:Q21173323
+name: 2-butoxyethyl acetate exposure
+
+[Term]
+id: Wikidata:Q21173324
+name: butyl acetate exposure
+
+[Term]
+id: Wikidata:Q21173325
+name: sec-Butyl acetate exposure
+
+[Term]
+id: Wikidata:Q21173327
+name: tert-butyl acetate exposure
+
+[Term]
+id: Wikidata:Q21173328
+name: Butyl acrylate exposure
+
+[Term]
+id: Wikidata:Q21173329
+name: 1-butanol exposure
+
+[Term]
+id: Wikidata:Q21173330
+name: 2-butanol exposure
+
+[Term]
+id: Wikidata:Q21173331
+name: tert-butyl alcohol exposure
+
+[Term]
+id: Wikidata:Q21173332
+name: N-Butylamine exposure
+
+[Term]
+id: Wikidata:Q21173334
+name: Tert-Butyl chromate exposure
+
+[Term]
+id: Wikidata:Q21173335
+name: N-Butyl glycidyl ether exposure
+
+[Term]
+id: Wikidata:Q21173336
+name: butyl lactate exposure
+
+[Term]
+id: Wikidata:Q21173337
+name: Butanethiol exposure
+
+[Term]
+id: Wikidata:Q21173338
+name: O-sec-Butylphenol exposure
+
+[Term]
+id: Wikidata:Q21173339
+name: p-tert-Butyltoluene exposure
+
+[Term]
+id: Wikidata:Q21173340
+name: Butyronitrile exposure
+
+[Term]
+id: Wikidata:Q21173341
+name: cadmium dust exposure
+
+[Term]
+id: Wikidata:Q21173343
+name: cadmium oxide exposure
+
+[Term]
+id: Wikidata:Q21173344
+name: Calcium arsenate exposure
+
+[Term]
+id: Wikidata:Q21173346
+name: calcium carbonate exposure
+
+[Term]
+id: Wikidata:Q21173347
+name: calcium cyanamide exposure
+
+[Term]
+id: Wikidata:Q21173349
+name: calcium hydroxide exposure
+
+[Term]
+id: Wikidata:Q21173351
+name: calcium oxide exposure
+
+[Term]
+id: Wikidata:Q21173353
+name: Calcium silicate exposure
+
+[Term]
+id: Wikidata:Q21173354
+name: Calcium sulfate exposure
+
+[Term]
+id: Wikidata:Q21173355
+name: camphor exposure
+
+[Term]
+id: Wikidata:Q21173356
+name: caprolactam exposure
+
+[Term]
+id: Wikidata:Q21173357
+name: Captafol exposure
+
+[Term]
+id: Wikidata:Q21173358
+name: Captan exposure
+
+[Term]
+id: Wikidata:Q21173359
+name: Carbaryl exposure
+
+[Term]
+id: Wikidata:Q21173360
+name: Carbofuran exposure
+
+[Term]
+id: Wikidata:Q21173361
+name: carbon black exposure
+
+[Term]
+id: Wikidata:Q21173362
+name: carbon dioxide exposure
+
+[Term]
+id: Wikidata:Q21173363
+name: carbon disulfide exposure
+
+[Term]
+id: Wikidata:Q21173540
+name: Tetrabromomethane exposure
+
+[Term]
+id: Wikidata:Q21173541
+name: Carbon tetrachloride exposure
+
+[Term]
+id: Wikidata:Q21173542
+name: carbonyl fluoride exposure
+
+[Term]
+id: Wikidata:Q21173543
+name: Catechol exposure
+
+[Term]
+id: Wikidata:Q21173544
+name: cellulose exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002309 Wikidata:Q80294 ! cellulose
+
+[Term]
+id: Wikidata:Q21173546
+name: caesium hydroxide exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112293 ! upper respiratory irritation
+relationship: RO:0002309 Wikidata:Q296363 ! cesium hydroxide
+
+[Term]
+id: Wikidata:Q21173547
+name: Chlordane exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q160796 ! Delirium
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q223907 ! tremor
+relationship: RO:0002304 Wikidata:Q29299 ! irritability
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4930803 ! blurred vision
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q612681 ! anuria
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002309 Wikidata:Q417134 ! chlordane
+
+[Term]
+id: Wikidata:Q21173549
+name: Toxaphene exposure
+relationship: RO:0002304 Wikidata:Q18356391 ! unconsciousness
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21110289 ! dry cracked skin
+relationship: RO:0002304 Wikidata:Q223907 ! tremor
+relationship: RO:0002304 Wikidata:Q394129 ! psychomotor agitation
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002309 Wikidata:Q417157 ! toxaphene
+
+[Term]
+id: Wikidata:Q21173550
+name: chlorinated diphenyl oxide exposure
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q2365426 ! Acneiform eruption
+relationship: RO:0002309 Wikidata:Q21057311 ! chlorinated diphenyl oxide
+
+[Term]
+id: Wikidata:Q21173551
+name: chlorine exposure
+relationship: RO:0002304 Wikidata:Q101991 ! inflammation
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1292082 ! sore throat
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q1525170 ! Stridor
+relationship: RO:0002304 Wikidata:Q1628473 ! corneal ulcer
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q178069 ! necrosis
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q19275831 ! choking
+relationship: RO:0002304 Wikidata:Q193840 ! asphyxia
+relationship: RO:0002304 Wikidata:Q203601 ! pneumothorax
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q2141836 ! chemical burn
+relationship: RO:0002304 Wikidata:Q2610154 ! red eye
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q4116448 ! tracheal stenosis
+relationship: RO:0002304 Wikidata:Q5090456 ! Chemical eye injury
+relationship: RO:0002304 Wikidata:Q514686 ! Aphonia
+relationship: RO:0002304 Wikidata:Q6452285 ! ulcer
+relationship: RO:0002304 Wikidata:Q693058 ! chest pain
+relationship: RO:0002304 Wikidata:Q7259546 ! Pulmonary toxicity
+relationship: RO:0002304 Wikidata:Q7316656 ! retching
+relationship: RO:0002304 Wikidata:Q77776 ! irritation
+relationship: RO:0002304 Wikidata:Q81938 ! pain
+relationship: RO:0002304 Wikidata:Q836379 ! dysphonia
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002304 Wikidata:Q883863 ! blepharospasm
+relationship: RO:0002309 Wikidata:Q688 ! chlorine
+
+[Term]
+id: Wikidata:Q21173552
+name: chlorine dioxide exposure
+relationship: RO:0002304 Wikidata:Q1139684 ! chronic bronchitis
+relationship: RO:0002304 Wikidata:Q173022 ! bronchitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q422080 ! chlorine dioxide
+
+[Term]
+id: Wikidata:Q21173553
+name: chlorine trifluoride exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002309 Wikidata:Q411305 ! chlorine trifluoride
+
+[Term]
+id: Wikidata:Q21173554
+name: Chloroacetaldehyde exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q21112701 ! respiratory sensitization
+relationship: RO:0002304 Wikidata:Q2681162 ! eye injury
+relationship: RO:0002304 Wikidata:Q657619 ! Sensitization
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q1950418 ! chloroacetaldehyde
+
+[Term]
+id: Wikidata:Q21173555
+name: Phenacyl chloride exposure
+relationship: RO:0002304 Wikidata:Q1115038 ! runny nose
+relationship: RO:0002304 Wikidata:Q1166142 ! erythema
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1324592 ! laryngospasm
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q180007 ! syncope
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q19275831 ! choking
+relationship: RO:0002304 Wikidata:Q2044949 ! corneal dystrophy
+relationship: RO:0002304 Wikidata:Q208450 ! panic
+relationship: RO:0002304 Wikidata:Q209583 ! tachycardia
+relationship: RO:0002304 Wikidata:Q209789 ! burping
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21119839 ! eye pain
+relationship: RO:0002304 Wikidata:Q2141836 ! chemical burn
+relationship: RO:0002304 Wikidata:Q21505006 ! eye perforation
+relationship: RO:0002304 Wikidata:Q2610154 ! red eye
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q279330 ! bronchospasm
+relationship: RO:0002304 Wikidata:Q281289 ! photophobia
+relationship: RO:0002304 Wikidata:Q3513968 ! corneal opacification and other ocular anomalies
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q35830 ! sneeze
+relationship: RO:0002304 Wikidata:Q394129 ! psychomotor agitation
+relationship: RO:0002304 Wikidata:Q41861 ! hypertension
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q4930803 ! blurred vision
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q6402731 ! dysgeusia
+relationship: RO:0002304 Wikidata:Q693058 ! chest pain
+relationship: RO:0002304 Wikidata:Q7168709 ! Peripheral edema
+relationship: RO:0002304 Wikidata:Q734512 ! bronchopneumonia
+relationship: RO:0002304 Wikidata:Q745430 ! Denudation
+relationship: RO:0002304 Wikidata:Q757838 ! keratitis
+relationship: RO:0002304 Wikidata:Q77776 ! irritation
+relationship: RO:0002304 Wikidata:Q81938 ! pain
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002304 Wikidata:Q883863 ! blepharospasm
+relationship: RO:0002309 Wikidata:Q284209 ! chloroacetophenone
+
+[Term]
+id: Wikidata:Q21173556
+name: Chloroacetyl chloride exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002309 Wikidata:Q411258 ! chloroacetyl chloride
+
+[Term]
+id: Wikidata:Q21173557
+name: chlorobenzene exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q5062120 ! central nervous system depression
+relationship: RO:0002309 Wikidata:Q407768 ! chlorobenzene
+
+[Term]
+id: Wikidata:Q21173558
+name: CS gas exposure
+relationship: RO:0002304 Wikidata:Q1166142 ! erythema
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q21109840 ! chest tightness
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q81938 ! pain
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q883863 ! blepharospasm
+relationship: RO:0002309 Wikidata:Q209357 ! O-chlorobenzylidenemalononitrile
+
+[Term]
+id: Wikidata:Q21173560
+name: Bromochloromethane exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q5062120 ! central nervous system depression
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q421751 ! bromochloromethane
+
+[Term]
+id: Wikidata:Q21173562
+name: chlorodifluoromethane exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q1123260 ! palpitation
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q192309 ! tinnitus
+relationship: RO:0002304 Wikidata:Q193840 ! asphyxia
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q4930784 ! Blunt splenic trauma
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q6658207 ! Liver injury
+relationship: RO:0002309 Wikidata:Q422994 ! hydrochlorofluorocarbon 22
+
+[Term]
+id: Wikidata:Q21173563
+name: exposure to polychlorinated biphenyl with 42% chlorine
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112692 ! reproductive effects
+relationship: RO:0002304 Wikidata:Q426955 ! Chloracne
+relationship: RO:0002309 Wikidata:Q21057847 ! polychlorinated biphenyl with 42% chlorine
+
+[Term]
+id: Wikidata:Q21173564
+name: exposure to polychlorinated biphenyl with 54% chlorine
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112692 ! reproductive effects
+relationship: RO:0002304 Wikidata:Q426955 ! Chloracne
+relationship: RO:0002309 Wikidata:Q21058099 ! polychlorinated biphenyl with 54% chlorine
+
+[Term]
+id: Wikidata:Q21173565
+name: chloroform exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q131130 ! anesthesia
+relationship: RO:0002304 Wikidata:Q1362864 ! hepatomegaly
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21119990 ! mental dullness
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q172275 ! chloroform
+relationship: RO:0002309 Wikidata:Q688 ! chlorine
+
+[Term]
+id: Wikidata:Q21173566
+name: Bis(chloromethyl) ether exposure
+relationship: RO:0002304 Wikidata:Q152234 ! oedema
+relationship: RO:0002304 Wikidata:Q178069 ! necrosis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q18967474 ! Q18967474
+relationship: RO:0002304 Wikidata:Q21109742 ! bronchial secretions
+relationship: RO:0002304 Wikidata:Q21110016 ! corneal damage
+relationship: RO:0002304 Wikidata:Q21110117 ! decreased pulmonary function
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q647099 ! hemoptysis
+relationship: RO:0002309 Wikidata:Q2283186 ! bis(chloromethyl)ether
+
+[Term]
+id: Wikidata:Q21173567
+name: Chloromethyl methyl ether exposure
+relationship: RO:0002304 Wikidata:Q1284347 ! pneumonitis
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q178069 ! necrosis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q18967474 ! Q18967474
+relationship: RO:0002304 Wikidata:Q21109742 ! bronchial secretions
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q647099 ! hemoptysis
+relationship: RO:0002304 Wikidata:Q718113 ! weight loss
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q158539 ! chloromethyl methyl ether
+
+[Term]
+id: Wikidata:Q21173569
+name: chloropentafluoroethane exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1123260 ! palpitation
+relationship: RO:0002304 Wikidata:Q11938384 ! narcosis
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q193840 ! asphyxia
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002309 Wikidata:Q419702 ! chloropentafluoroethane
+
+[Term]
+id: Wikidata:Q21173570
+name: chloropicrin exposure
+relationship: RO:0002304 Wikidata:Q101991 ! inflammation
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1292082 ! sore throat
+relationship: RO:0002304 Wikidata:Q154430 ! anxiety
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q19275831 ! choking
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q2141836 ! chemical burn
+relationship: RO:0002304 Wikidata:Q2681162 ! eye injury
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q693058 ! chest pain
+relationship: RO:0002304 Wikidata:Q7104966 ! orthostatic hypotension
+relationship: RO:0002304 Wikidata:Q77776 ! irritation
+relationship: RO:0002304 Wikidata:Q81938 ! pain
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q423065 ! chloropicrin
+
+[Term]
+id: Wikidata:Q21173571
+name: chloroprene exposure
+relationship: RO:0002304 Wikidata:Q154430 ! anxiety
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21112692 ! reproductive effects
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q2697787 ! alopecia
+relationship: RO:0002304 Wikidata:Q29299 ! irritability
+relationship: RO:0002309 Wikidata:Q410871 ! chloroprene
+
+[Term]
+id: Wikidata:Q21173573
+name: 2-chlorotoluene exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q131130 ! anesthesia
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002309 Wikidata:Q17276347 ! O-chlorotoluene
+
+[Term]
+id: Wikidata:Q21173575
+name: Chlorpyrifos exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1324592 ! laryngospasm
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21120278 ! blue lips and skin
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q4930803 ! blurred vision
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q596899 ! miosis
+relationship: RO:0002309 Wikidata:Q414915 ! chlorpyrifos
+
+[Term]
+id: Wikidata:Q21173576
+name: chromic acid exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q16242752 ! allergic contact dermatitis
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q2681162 ! eye injury
+relationship: RO:0002304 Wikidata:Q3899830 ! Nasal septal perforation
+relationship: RO:0002304 Wikidata:Q496812 ! leukopenia
+relationship: RO:0002304 Wikidata:Q505142 ! eosinophilia
+relationship: RO:0002304 Wikidata:Q6452285 ! ulcer
+relationship: RO:0002304 Wikidata:Q974869 ! Leukocytosis
+relationship: RO:0002309 Wikidata:Q422642 ! chromic acid
+
+[Term]
+id: Wikidata:Q21173577
+name: Chromium(II) oxide exposure
+relationship: RO:0002304 Wikidata:Q16242752 ! allergic contact dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002309 Wikidata:Q414303 ! Chromium(II) oxide
+
+[Term]
+id: Wikidata:Q21173578
+name: Chromium(III) oxide exposure
+relationship: RO:0002304 Wikidata:Q16242752 ! allergic contact dermatitis
+relationship: RO:0002309 Wikidata:Q407905 ! dichromium trioxide
+
+[Term]
+id: Wikidata:Q21173579
+name: chromium exposure
+
+[Term]
+id: Wikidata:Q21173580
+name: Chromyl chloride exposure
+
+[Term]
+id: Wikidata:Q21173581
+name: Clopidol exposure
+
+[Term]
+id: Wikidata:Q21173582
+name: Coal dust exposure
+
+[Term]
+id: Wikidata:Q21173583
+name: exposure to coal tar pitch volatiles
+
+[Term]
+id: Wikidata:Q21174091
+name: Dicobalt octacarbonyl exposure
+
+[Term]
+id: Wikidata:Q21174094
+name: exposure to coke oven emissions
+
+[Term]
+id: Wikidata:Q21174096
+name: copper exposure
+
+[Term]
+id: Wikidata:Q21174097
+name: copper(II) oxide exposure
+
+[Term]
+id: Wikidata:Q21174098
+name: 2-(2,4-Dichlorophenoxy)ethyl sodium sulfate exposure
+
+[Term]
+id: Wikidata:Q21174100
+name: O-Cresol exposure
+
+[Term]
+id: Wikidata:Q21174101
+name: M-Cresol exposure
+
+[Term]
+id: Wikidata:Q21174102
+name: P-Cresol exposure
+
+[Term]
+id: Wikidata:Q21174104
+name: crotonaldehyde exposure
+
+[Term]
+id: Wikidata:Q21174106
+name: Crufomate exposure
+
+[Term]
+id: Wikidata:Q21174107
+name: Cumene exposure
+
+[Term]
+id: Wikidata:Q21174109
+name: Cyanamide exposure
+
+[Term]
+id: Wikidata:Q21174110
+name: cyanogen exposure
+
+[Term]
+id: Wikidata:Q21174113
+name: cyanogen chloride exposure
+
+[Term]
+id: Wikidata:Q21174115
+name: cyclohexane exposure
+
+[Term]
+id: Wikidata:Q21174116
+name: cyclohexanethiol exposure
+
+[Term]
+id: Wikidata:Q21174118
+name: Cyclohexanol exposure
+
+[Term]
+id: Wikidata:Q21174120
+name: cyclohexanone exposure
+
+[Term]
+id: Wikidata:Q21174121
+name: Cyclohexene exposure
+
+[Term]
+id: Wikidata:Q21174123
+name: cyclohexanamine exposure
+
+[Term]
+id: Wikidata:Q21174124
+name: RDX exposure
+
+[Term]
+id: Wikidata:Q21174127
+name: Cyclopentadiene exposure
+
+[Term]
+id: Wikidata:Q21174128
+name: cyclopentane exposure
+
+[Term]
+id: Wikidata:Q21174129
+name: Cyhexatin exposure
+
+[Term]
+id: Wikidata:Q21174130
+name: 2-(2,4-dichlorophenoxy)acetic acid exposure
+
+[Term]
+id: Wikidata:Q21174131
+name: DDT exposure
+
+[Term]
+id: Wikidata:Q21174132
+name: decaborane exposure
+
+[Term]
+id: Wikidata:Q21174133
+name: 1-decanethiol exposure
+
+[Term]
+id: Wikidata:Q21174134
+name: Demeton exposure
+
+[Term]
+id: Wikidata:Q21174136
+name: Diacetone alcohol exposure
+
+[Term]
+id: Wikidata:Q21174139
+name: o-dianisidine exposure
+
+[Term]
+id: Wikidata:Q21174140
+name: Diazinon exposure
+
+[Term]
+id: Wikidata:Q21174142
+name: Diazomethane exposure
+
+[Term]
+id: Wikidata:Q21174145
+name: Diborane exposure
+
+[Term]
+id: Wikidata:Q21174147
+name: 1,2-Dibromo-3-chloropropane exposure
+
+[Term]
+id: Wikidata:Q21174149
+name: Dibutyl phosphate exposure
+
+[Term]
+id: Wikidata:Q21174150
+name: Dibutyl phthalate exposure
+
+[Term]
+id: Wikidata:Q21174152
+name: Dichloroacetylene exposure
+
+[Term]
+id: Wikidata:Q21174153
+name: 1,2-Dichlorobenzene exposure
+
+[Term]
+id: Wikidata:Q21174155
+name: 1,4-Dichlorobenzene exposure
+
+[Term]
+id: Wikidata:Q21174156
+name: 3,3'-Dichlorobenzidine exposure
+
+[Term]
+id: Wikidata:Q21174157
+name: Dichlorodifluoromethane exposure
+
+[Term]
+id: Wikidata:Q21174159
+name: 1,3-Dichloro-5,5-dimethylhydantoin exposure
+
+[Term]
+id: Wikidata:Q21174161
+name: 1,1-Dichloroethane exposure
+
+[Term]
+id: Wikidata:Q21174162
+name: 1,2-dichloroethene exposure
+
+[Term]
+id: Wikidata:Q21174164
+name: Bis(chloroethyl) ether exposure
+
+[Term]
+id: Wikidata:Q21174165
+name: Dichlorofluoromethane exposure
+
+[Term]
+id: Wikidata:Q21174168
+name: 1,3-Dichloropropene exposure
+
+[Term]
+id: Wikidata:Q21174169
+name: dalaphon exposure
+
+[Term]
+id: Wikidata:Q21174171
+name: 1,2-dichlorotetrafluoroethane exposure
+
+[Term]
+id: Wikidata:Q21174172
+name: Dichlorvos exposure
+
+[Term]
+id: Wikidata:Q21174173
+name: Dicrotophos exposure
+
+[Term]
+id: Wikidata:Q21174175
+name: Dicyclopentadiene exposure
+
+[Term]
+id: Wikidata:Q21174176
+name: Ferrocene exposure
+
+[Term]
+id: Wikidata:Q21174177
+name: Dieldrin exposure
+
+[Term]
+id: Wikidata:Q21174178
+name: diesel exhaust exposure
+
+[Term]
+id: Wikidata:Q21174180
+name: Diethanolamine exposure
+
+[Term]
+id: Wikidata:Q21174181
+name: Diethylamine exposure
+
+[Term]
+id: Wikidata:Q21174182
+name: Diethylethanolamine exposure
+
+[Term]
+id: Wikidata:Q21174183
+name: Diethylenetriamine exposure
+
+[Term]
+id: Wikidata:Q21174184
+name: pentan-3-one exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q35830 ! sneeze
+relationship: RO:0002309 Wikidata:Q223112 ! diethyl ketone
+
+[Term]
+id: Wikidata:Q21174186
+name: diethyl phthalate exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1502312 ! polyneuropathy
+relationship: RO:0002304 Wikidata:Q1641556 ! hypoesthesia
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118368 ! vestibular dysfunction
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q574360 ! spasm
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q81938 ! pain
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q419811 ! diethyl phthalate
+
+[Term]
+id: Wikidata:Q21174189
+name: Diglycidyl ether exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002309 Wikidata:Q2108794 ! bis(2,3-epoxypropyl) ether
+
+[Term]
+id: Wikidata:Q21174190
+name: Diisobutyl ketone exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q2416556 ! diisobutyl ketone
+
+[Term]
+id: Wikidata:Q21174191
+name: Diisopropylamine exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q2266426 ! visual disturbance
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q420331 ! diisopropylamine
+
+[Term]
+id: Wikidata:Q21174192
+name: dimethylacetamide exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q130741 ! hallucination
+relationship: RO:0002304 Wikidata:Q133244 ! jaundice
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q189643 ! delusion
+relationship: RO:0002304 Wikidata:Q4340209 ! mental depression
+relationship: RO:0002309 Wikidata:Q411452 ! N,N-dimethylacetamide
+
+[Term]
+id: Wikidata:Q21174193
+name: Dimethylamine exposure
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q35830 ! sneeze
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q408022 ! dimethylamine
+
+[Term]
+id: Wikidata:Q21174194
+name: Methyl yellow exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1269399 ! Dysuria
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1362864 ! hepatomegaly
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21109742 ! bronchial secretions
+relationship: RO:0002304 Wikidata:Q352585 ! frequent urination
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q373597 ! hematuria
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q647099 ! hemoptysis
+relationship: RO:0002304 Wikidata:Q783903 ! contact dermatitis
+relationship: RO:0002309 Wikidata:Q416956 ! p-dimethylaminoazobenzene
+
+[Term]
+id: Wikidata:Q21174195
+name: bis(2-(Dimethylamino)ethyl)ether exposure
+relationship: RO:0002304 Wikidata:Q19000619 ! urination disorder
+relationship: RO:0002304 Wikidata:Q3339235 ! nervous system disease
+relationship: RO:0002309 Wikidata:Q20965408 ! bis(2-(dimethylamino)ethyl)ether
+
+[Term]
+id: Wikidata:Q21174196
+name: Dimethylaminopropionitrile exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q19000619 ! urination disorder
+relationship: RO:0002304 Wikidata:Q21110112 ! decreased nerve conduction in lower legs
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q270421 ! muscle weakness
+relationship: RO:0002304 Wikidata:Q3339235 ! nervous system disease
+relationship: RO:0002304 Wikidata:Q769220 ! paresthesia
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q223036 ! dimethylaminopropionitrile
+
+[Term]
+id: Wikidata:Q21174197
+name: Dimethylaniline exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q568321 ! anoxia
+relationship: RO:0002304 Wikidata:Q748442 ! methemoglobinemia
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q310473 ! N,N-dimethylaniline
+
+[Term]
+id: Wikidata:Q21174199
+name: Dimethyl carbamoyl chloride exposure
+relationship: RO:0002304 Wikidata:Q1194557 ! laryngitis
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q6658207 ! Liver injury
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q2563907 ! dimethylcarbamoyl chloride
+
+[Term]
+id: Wikidata:Q21174201
+name: Naled exposure
+relationship: RO:0002304 Wikidata:Q107231 ! paralysis
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1324592 ! laryngospasm
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21109840 ! chest tightness
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21117302 ! twitching
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q254327 ! anorexia
+relationship: RO:0002304 Wikidata:Q275419 ! hypotension
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q596899 ! miosis
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q424822 ! naled
+
+[Term]
+id: Wikidata:Q21174202
+name: Dimethylformamide exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q13522706 ! colic
+relationship: RO:0002304 Wikidata:Q1362864 ! hepatomegaly
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q3443277 ! flushing
+relationship: RO:0002304 Wikidata:Q41861 ! hypertension
+relationship: RO:0002309 Wikidata:Q409298 ! N,N-dimethylformamide
+
+[Term]
+id: Wikidata:Q21174204
+name: 1,1-Dimethylhydrazine exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q19275831 ! choking
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q568321 ! anoxia
+relationship: RO:0002304 Wikidata:Q6658207 ! Liver injury
+relationship: RO:0002304 Wikidata:Q693058 ! chest pain
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002309 Wikidata:Q161296 ! 1,1-dimethylhydrazine
+
+[Term]
+id: Wikidata:Q21174206
+name: dimethyl phthalate exposure
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112293 ! upper respiratory irritation
+relationship: RO:0002309 Wikidata:Q423551 ! dimethyl phthalate
+
+[Term]
+id: Wikidata:Q21174208
+name: Dimethyl sulfate exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1269399 ! Dysuria
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q160796 ! Delirium
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q281289 ! photophobia
+relationship: RO:0002304 Wikidata:Q2868696 ! pain agnosia
+relationship: RO:0002304 Wikidata:Q3381914 ! Periorbital puffiness
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q373597 ! hematuria
+relationship: RO:0002304 Wikidata:Q38933 ! fever
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q514686 ! Aphonia
+relationship: RO:0002304 Wikidata:Q570197 ! proteinuria
+relationship: RO:0002304 Wikidata:Q623289 ! dysphagia
+relationship: RO:0002304 Wikidata:Q693058 ! chest pain
+relationship: RO:0002304 Wikidata:Q836379 ! dysphonia
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q413421 ! dimethyl sulfate
+
+[Term]
+id: Wikidata:Q21174210
+name: Zoalene exposure
+relationship: RO:0002304 Wikidata:Q783903 ! contact dermatitis
+relationship: RO:0002309 Wikidata:Q4024614 ! dinitolmide
+
+[Term]
+id: Wikidata:Q21174214
+name: 1,2-dinitrobenzene exposure
+relationship: RO:0002304 Wikidata:Q133244 ! jaundice
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21120214 ! burning mouth
+relationship: RO:0002304 Wikidata:Q21120220 ! dry throat
+relationship: RO:0002304 Wikidata:Q2266426 ! visual disturbance
+relationship: RO:0002304 Wikidata:Q474187 ! thirst
+relationship: RO:0002304 Wikidata:Q5445 ! anemia
+relationship: RO:0002304 Wikidata:Q568321 ! anoxia
+relationship: RO:0002304 Wikidata:Q6402731 ! dysgeusia
+relationship: RO:0002304 Wikidata:Q950591 ! scotoma
+relationship: RO:0002309 Wikidata:Q2238767 ! O-dinitrobenzene
+
+[Term]
+id: Wikidata:Q21174216
+name: 1,3-Dinitrobenzene exposure
+relationship: RO:0002304 Wikidata:Q133244 ! jaundice
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21120214 ! burning mouth
+relationship: RO:0002304 Wikidata:Q21120220 ! dry throat
+relationship: RO:0002304 Wikidata:Q2266426 ! visual disturbance
+relationship: RO:0002304 Wikidata:Q474187 ! thirst
+relationship: RO:0002304 Wikidata:Q5445 ! anemia
+relationship: RO:0002304 Wikidata:Q568321 ! anoxia
+relationship: RO:0002304 Wikidata:Q6402731 ! dysgeusia
+relationship: RO:0002304 Wikidata:Q950591 ! scotoma
+relationship: RO:0002309 Wikidata:Q2653558 ! m-dinitrobenzene
+
+[Term]
+id: Wikidata:Q21174217
+name: 1,4-dinitrobenzene exposure
+relationship: RO:0002304 Wikidata:Q133244 ! jaundice
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21120214 ! burning mouth
+relationship: RO:0002304 Wikidata:Q21120220 ! dry throat
+relationship: RO:0002304 Wikidata:Q2266426 ! visual disturbance
+relationship: RO:0002304 Wikidata:Q474187 ! thirst
+relationship: RO:0002304 Wikidata:Q5445 ! anemia
+relationship: RO:0002304 Wikidata:Q568321 ! anoxia
+relationship: RO:0002304 Wikidata:Q6402731 ! dysgeusia
+relationship: RO:0002304 Wikidata:Q950591 ! scotoma
+relationship: RO:0002309 Wikidata:Q2403718 ! p-dinitrobenzene
+
+[Term]
+id: Wikidata:Q21174218
+name: Dinitro-ortho-cresol exposure
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q1641075 ! Hyperpnea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q209583 ! tachycardia
+relationship: RO:0002304 Wikidata:Q21116594 ! profuse sweating
+relationship: RO:0002304 Wikidata:Q21116801 ! sense of well being
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q38933 ! fever
+relationship: RO:0002304 Wikidata:Q635195 ! polydipsia
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q209437 ! dnoc
+
+[Term]
+id: Wikidata:Q21174219
+name: dinitrotoluene exposure
+relationship: RO:0002304 Wikidata:Q133244 ! jaundice
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21112692 ! reproductive effects
+relationship: RO:0002304 Wikidata:Q5445 ! anemia
+relationship: RO:0002304 Wikidata:Q568321 ! anoxia
+relationship: RO:0002309 Wikidata:Q15806031 ! dinitrotoluene
+
+[Term]
+id: Wikidata:Q21174220
+name: Bis(2-ethylhexyl) phthalate exposure
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002309 Wikidata:Q418492 ! diethylhexyl phthalate
+
+[Term]
+id: Wikidata:Q21174222
+name: 1,4-Dioxane exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q476921 ! kidney failure
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q161532 ! dioxane
+
+[Term]
+id: Wikidata:Q21174223
+name: Dioxathion exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1115038 ! runny nose
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1397878 ! fasciculation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21109840 ! chest tightness
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q596899 ! miosis
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q2779034 ! dioxation
+
+[Term]
+id: Wikidata:Q21174225
+name: Biphenyl exposure
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1641556 ! hypoesthesia
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q410915 ! biphenyl
+
+[Term]
+id: Wikidata:Q21174226
+name: Diphenylamine exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q209583 ! tachycardia
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q35830 ! sneeze
+relationship: RO:0002304 Wikidata:Q373597 ! hematuria
+relationship: RO:0002304 Wikidata:Q41861 ! hypertension
+relationship: RO:0002304 Wikidata:Q570197 ! proteinuria
+relationship: RO:0002304 Wikidata:Q6152019 ! bladder injury
+relationship: RO:0002304 Wikidata:Q748442 ! methemoglobinemia
+relationship: RO:0002304 Wikidata:Q988594 ! eczema
+relationship: RO:0002309 Wikidata:Q412265 ! diphenylamine
+
+[Term]
+id: Wikidata:Q21174229
+name: Dipropylene glycol methyl ether exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q2954819 ! Dipropylene glycol methyl ether
+
+[Term]
+id: Wikidata:Q21174232
+name: 4-Heptanone exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q5062120 ! central nervous system depression
+relationship: RO:0002304 Wikidata:Q957217 ! Hypopnea
+relationship: RO:0002309 Wikidata:Q1287920 ! 4-heptanone
+
+[Term]
+id: Wikidata:Q21174233
+name: Diquat exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1115038 ! runny nose
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q202013 ! epistaxis
+relationship: RO:0002304 Wikidata:Q21110165 ! delayed healing of wounds
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21117198 ! convulsions
+relationship: RO:0002304 Wikidata:Q223907 ! tremor
+relationship: RO:0002304 Wikidata:Q2673323 ! malaise
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q6658207 ! Liver injury
+relationship: RO:0002304 Wikidata:Q693058 ! chest pain
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q2285491 ! diquat
+
+[Term]
+id: Wikidata:Q21174236
+name: Disulfiram exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q16242752 ! allergic contact dermatitis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21118175 ! restlessness
+relationship: RO:0002304 Wikidata:Q223907 ! tremor
+relationship: RO:0002304 Wikidata:Q6402731 ! dysgeusia
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q945238 ! peripheral neuropathy
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q409665 ! disulfiram
+
+[Term]
+id: Wikidata:Q21174237
+name: Disulfoton  exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1115038 ! runny nose
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1397878 ! fasciculation
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q21109840 ! chest tightness
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q4930803 ! blurred vision
+relationship: RO:0002304 Wikidata:Q596899 ! miosis
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q413904 ! disulfoton
+
+[Term]
+id: Wikidata:Q21174241
+name: Butylated hydroxytoluene exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002309 Wikidata:Q221945 ! butylated hydroxytoluene
+
+[Term]
+id: Wikidata:Q21174243
+name: DCMU exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002309 Wikidata:Q425389 ! diuron
+
+[Term]
+id: Wikidata:Q21174245
+name: Divinylbenzene exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002309 Wikidata:Q413085 ! Divinylbenzene
+
+[Term]
+id: Wikidata:Q21174246
+name: 1-Dodecanethiol exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q657619 ! Sensitization
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q161619 ! dodecyl mercaptan
+
+[Term]
+id: Wikidata:Q21174247
+name: emery exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002309 Wikidata:Q1136648 ! emery
+
+[Term]
+id: Wikidata:Q21174248
+name: Endosulfan exposure
+relationship: RO:0002304 Wikidata:Q1162276 ! xerostomia
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q223907 ! tremor
+relationship: RO:0002304 Wikidata:Q3443277 ! flushing
+relationship: RO:0002304 Wikidata:Q394129 ! psychomotor agitation
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q424208 ! endosulfan
+
+[Term]
+id: Wikidata:Q21174249
+name: Endrin exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q1869874 ! insomnia
+relationship: RO:0002304 Wikidata:Q191797 ! aggression
+relationship: RO:0002304 Wikidata:Q254327 ! anorexia
+relationship: RO:0002304 Wikidata:Q268594 ! stupor
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q7048905 ! Non-epileptic seizure
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q423354 ! endrin
+
+[Term]
+id: Wikidata:Q21174250
+name: Enflurane exposure
+relationship: RO:0002304 Wikidata:Q131130 ! anesthesia
+relationship: RO:0002304 Wikidata:Q1641494 ! hypoventilation
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q2868696 ! pain agnosia
+relationship: RO:0002304 Wikidata:Q5062120 ! central nervous system depression
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002309 Wikidata:Q416740 ! enflurane
+
+[Term]
+id: Wikidata:Q21174252
+name: Epichlorohydrin exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112692 ! reproductive effects
+relationship: RO:0002304 Wikidata:Q21117872 ! deep pain
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q7315912 ! respiratory distress
+relationship: RO:0002309 Wikidata:Q423083 ! epichlorohydrin
+
+[Term]
+id: Wikidata:Q21174255
+name: EPN exposure
+relationship: RO:0002304 Wikidata:Q107231 ! paralysis
+relationship: RO:0002304 Wikidata:Q1115038 ! runny nose
+relationship: RO:0002304 Wikidata:Q1324592 ! laryngospasm
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21109840 ! chest tightness
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q254327 ! anorexia
+relationship: RO:0002304 Wikidata:Q275419 ! hypotension
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q596899 ! miosis
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q2007270 ! ethyl p-nitrophenyl benzenethiophosphonate
+
+[Term]
+id: Wikidata:Q21174258
+name: ethanolamine exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002309 Wikidata:Q410387 ! monoethanolamine
+
+[Term]
+id: Wikidata:Q21174259
+name: Ethion exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21109840 ! chest tightness
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q414724 ! ethion
+
+[Term]
+id: Wikidata:Q21174265
+name: 2-Ethoxyethyl acetate exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q107231 ! paralysis
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002309 Wikidata:Q209376 ! 2-ethoxyethyl acetate
+
+[Term]
+id: Wikidata:Q21174267
+name: ethyl acetate exposure
+relationship: RO:0002304 Wikidata:Q11938384 ! narcosis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002309 Wikidata:Q407153 ! ethyl acetate
+
+[Term]
+id: Wikidata:Q21174269
+name: ethyl acrylate exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002309 Wikidata:Q343014 ! ethyl acrylate
+
+[Term]
+id: Wikidata:Q21174271
+name: ethanol exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q11938384 ! narcosis
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q16056098 ! Teratogenesis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q5445 ! anemia
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q153 ! ethanol
+
+[Term]
+id: Wikidata:Q21174273
+name: ethanamine exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002309 Wikidata:Q411119 ! ethylamine
+
+[Term]
+id: Wikidata:Q21174275
+name: Ethylbenzene exposure
+relationship: RO:0002304 Wikidata:Q11938384 ! narcosis
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q409184 ! ethylbenzene
+
+[Term]
+id: Wikidata:Q21174276
+name: Bromoethane exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q202837 ! cardiac arrest
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q5062120 ! central nervous system depression
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q412245 ! bromoethane
+
+[Term]
+id: Wikidata:Q21174278
+name: heptan-3-one exposure
+relationship: RO:0002304 Wikidata:Q11938384 ! narcosis
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q1287838 ! 3-heptanone
+
+[Term]
+id: Wikidata:Q21174280
+name: Chloroethane exposure
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q202837 ! cardiac arrest
+relationship: RO:0002304 Wikidata:Q205972 ! drunkenness
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q3002092 ! abdominal cramps
+relationship: RO:0002309 Wikidata:Q409133 ! ethyl chloride
+
+[Term]
+id: Wikidata:Q21174282
+name: 2-Chloroethanol exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q160796 ! Delirium
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q209354 ! ethylene chlorohydrin
+
+[Term]
+id: Wikidata:Q21174287
+name: Ethylenediamine exposure
+
+[Term]
+id: Wikidata:Q21174289
+name: 1,2-Dibromoethane exposure
+
+[Term]
+id: Wikidata:Q21174291
+name: 1,2-Dichloroethane exposure
+
+[Term]
+id: Wikidata:Q21174292
+name: ethylene glycol exposure
+
+[Term]
+id: Wikidata:Q21174294
+name: Ethylene glycol dinitrate exposure
+
+[Term]
+id: Wikidata:Q21174296
+name: Aziridine exposure
+
+[Term]
+id: Wikidata:Q21174298
+name: Ethylene oxide exposure
+
+[Term]
+id: Wikidata:Q21174300
+name: Ethylene thiourea exposure
+
+[Term]
+id: Wikidata:Q21174301
+name: diethyl ether exposure
+
+[Term]
+id: Wikidata:Q21174303
+name: ethyl formate exposure
+
+[Term]
+id: Wikidata:Q21174305
+name: Ethylidene norbornene exposure
+
+[Term]
+id: Wikidata:Q21174306
+name: Ethanethiol exposure
+
+[Term]
+id: Wikidata:Q21174308
+name: N-ethylmorpholine exposure
+
+[Term]
+id: Wikidata:Q21174310
+name: Tetraethyl orthosilicate exposure
+
+[Term]
+id: Wikidata:Q21174312
+name: Fenamiphos exposure
+
+[Term]
+id: Wikidata:Q21174313
+name: Fensulfothion exposure
+
+[Term]
+id: Wikidata:Q21174315
+name: Fenthion exposure
+
+[Term]
+id: Wikidata:Q21174317
+name: Ferbam exposure
+
+[Term]
+id: Wikidata:Q21174319
+name: Ferrovanadium exposure
+
+[Term]
+id: Wikidata:Q21174320
+name: fiberglass exposure
+
+[Term]
+id: Wikidata:Q21174321
+name: fluorine exposure
+
+[Term]
+id: Wikidata:Q21174323
+name: Trichlorofluoromethane exposure
+
+[Term]
+id: Wikidata:Q21174325
+name: Fluoroxene exposure
+
+[Term]
+id: Wikidata:Q21174326
+name: Fonofos exposure
+
+[Term]
+id: Wikidata:Q21174328
+name: formaldehyde exposure
+
+[Term]
+id: Wikidata:Q21174329
+name: formalin exposure
+
+[Term]
+id: Wikidata:Q21174331
+name: Formamide exposure
+
+[Term]
+id: Wikidata:Q21174333
+name: formic acid exposure
+
+[Term]
+id: Wikidata:Q21174336
+name: furfural exposure
+
+[Term]
+id: Wikidata:Q21174338
+name: furfuryl alcohol exposure
+
+[Term]
+id: Wikidata:Q21174340
+name: gasoline exposure
+
+[Term]
+id: Wikidata:Q21174342
+name: monogermane exposure
+
+[Term]
+id: Wikidata:Q21174343
+name: Glutaraldehyde exposure
+
+[Term]
+id: Wikidata:Q21174345
+name: glycerol exposure
+
+[Term]
+id: Wikidata:Q21174347
+name: Glycidol exposure
+
+[Term]
+id: Wikidata:Q21174350
+name: glycolonitrile exposure
+
+[Term]
+id: Wikidata:Q21174352
+name: Grain dust exposure
+
+[Term]
+id: Wikidata:Q21174353
+name: graphite exposure
+
+[Term]
+id: Wikidata:Q21174355
+name: exposure to synthetic graphite
+
+[Term]
+id: Wikidata:Q21174357
+name: gypsum exposure
+
+[Term]
+id: Wikidata:Q21174630
+name: Halothane exposure
+
+[Term]
+id: Wikidata:Q21174633
+name: n-heptane exposure
+
+[Term]
+id: Wikidata:Q21174639
+name: 1-Heptanethiol exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q575168 ! Hyperventilation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q20966918 ! 1-heptanethiol
+
+[Term]
+id: Wikidata:Q21174643
+name: Hexachlorocyclopentadiene exposure
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q35830 ! sneeze
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q4424146 ! salivation
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q408998 ! hexachlorocyclopentadiene
+
+[Term]
+id: Wikidata:Q21174644
+name: Hexachloroethane exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002309 Wikidata:Q415988 ! hexachloroethane
+
+[Term]
+id: Wikidata:Q21174645
+name: Hexachloronaphthalene exposure
+relationship: RO:0002304 Wikidata:Q133244 ! jaundice
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q2365426 ! Acneiform eruption
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002309 Wikidata:Q20966919 ! Hexachloronaphthalene
+
+[Term]
+id: Wikidata:Q21174719
+name: 1-Hexadecanethiol exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q424840 ! cetyl mercaptan
+
+[Term]
+id: Wikidata:Q21174731
+name: Hexafluoroacetone exposure
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q416322 ! hexafluoroacetone
+
+[Term]
+id: Wikidata:Q21174732
+name: Hexamethylene diisocyanate exposure
+relationship: RO:0002304 Wikidata:Q173022 ! bronchitis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21110016 ! corneal damage
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21116849 ! skin blisters
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q35869 ! asthma
+relationship: RO:0002304 Wikidata:Q517104 ! wheeze
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q418197 ! hexamethylene diisocyanate
+
+[Term]
+id: Wikidata:Q21174735
+name: Hexamethylphosphoramide exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002309 Wikidata:Q416086 ! hexamethylphosphoramide triamide
+
+[Term]
+id: Wikidata:Q21174738
+name: n-hexane exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118425 ! numb extremities
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q270421 ! muscle weakness
+relationship: RO:0002304 Wikidata:Q5090486 ! toxic pneumonitis
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q945238 ! peripheral neuropathy
+relationship: RO:0002309 Wikidata:Q150440 ! hexane
+
+[Term]
+id: Wikidata:Q21174740
+name: 2,2-Dimethylbutane exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q5090486 ! toxic pneumonitis
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q209136 ! 2,2-dimethylbutane
+
+[Term]
+id: Wikidata:Q21174741
+name: n-Hexanethiol exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q575168 ! Hyperventilation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q10334930 ! 1-hexanethiol
+
+[Term]
+id: Wikidata:Q21174742
+name: hexan-2-one exposure
+relationship: RO:0002304 Wikidata:Q1077823 ! somnolence
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q769220 ! paresthesia
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q945238 ! peripheral neuropathy
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q209404 ! hexan-2-one
+
+[Term]
+id: Wikidata:Q21174743
+name: methyl isobutyl ketone exposure
+relationship: RO:0002304 Wikidata:Q11938384 ! narcosis
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112279 ! mucous membrane irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q418104 ! methyl isobutyl ketone
+
+[Term]
+id: Wikidata:Q21174744
+name: sec-Hexyl acetate exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q20966927 ! 4-methyl-2-pentyl acetate
+
+[Term]
+id: Wikidata:Q21174746
+name: 2-Methyl-2,4-pentanediol exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q213373 ! ataxia
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q5062120 ! central nervous system depression
+relationship: RO:0002304 Wikidata:Q657619 ! Sensitization
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q2792203 ! hexylene glycol
+
+[Term]
+id: Wikidata:Q21174748
+name: hydrazine exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21110145 ! temporary blindness
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002309 Wikidata:Q58447 ! hydrazine
+
+[Term]
+id: Wikidata:Q21174750
+name: exposure to hydrogenated terphenyls
+relationship: RO:0002304 Wikidata:Q1054718 ! kidney disease
+relationship: RO:0002304 Wikidata:Q1349821 ! hepatotoxicity
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21119119 ! hematopoietic damage
+relationship: RO:0002309 Wikidata:Q21057324 ! hydrogenated terphenyls
+
+[Term]
+id: Wikidata:Q21174752
+name: hydrogen bromide exposure
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002309 Wikidata:Q2447 ! hydrogen bromide
+
+[Term]
+id: Wikidata:Q21174753
+name: hydrogen chloride exposure
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q19275831 ! choking
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q21119312 ! larynx irritation
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002309 Wikidata:Q211086 ! hydrogen chloride
+
+[Term]
+id: Wikidata:Q21174754
+name: hydrogen cyanide exposure
+relationship: RO:0002304 Wikidata:Q10874 ! blindness
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1123260 ! palpitation
+relationship: RO:0002304 Wikidata:Q1128283 ! mydriasis
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q154430 ! anxiety
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q1641075 ! Hyperpnea
+relationship: RO:0002304 Wikidata:Q1641494 ! hypoventilation
+relationship: RO:0002304 Wikidata:Q1756015 ! Opisthotonus
+relationship: RO:0002304 Wikidata:Q178061 ! circulatory shock
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q18356391 ! unconsciousness
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q192120 ! cyanosis
+relationship: RO:0002304 Wikidata:Q193840 ! asphyxia
+relationship: RO:0002304 Wikidata:Q202837 ! cardiac arrest
+relationship: RO:0002304 Wikidata:Q21109286 ! blood changes
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21117395 ! thyroid changes
+relationship: RO:0002304 Wikidata:Q21118175 ! restlessness
+relationship: RO:0002304 Wikidata:Q21402620 ! giddiness
+relationship: RO:0002304 Wikidata:Q2141836 ! chemical burn
+relationship: RO:0002304 Wikidata:Q22314624 ! clammy skin
+relationship: RO:0002304 Wikidata:Q2673323 ! malaise
+relationship: RO:0002304 Wikidata:Q268594 ! stupor
+relationship: RO:0002304 Wikidata:Q275419 ! hypotension
+relationship: RO:0002304 Wikidata:Q3026331 ! diaphoresis
+relationship: RO:0002304 Wikidata:Q3774744 ! respiratory arrest
+relationship: RO:0002304 Wikidata:Q4780043 ! Apneustic respirations
+relationship: RO:0002304 Wikidata:Q557945 ! mental confusion
+relationship: RO:0002304 Wikidata:Q570920 ! tachypnea
+relationship: RO:0002304 Wikidata:Q633403 ! weakness
+relationship: RO:0002304 Wikidata:Q754424 ! apnea
+relationship: RO:0002304 Wikidata:Q77776 ! irritation
+relationship: RO:0002304 Wikidata:Q818092 ! Lightheadedness
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q26075 ! hydrogen cyanide
+
+[Term]
+id: Wikidata:Q21174755
+name: hydrogen fluoride exposure
+relationship: RO:0002304 Wikidata:Q1064904 ! major trauma
+relationship: RO:0002304 Wikidata:Q114085 ! rhinitis
+relationship: RO:0002304 Wikidata:Q1166142 ! erythema
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q152234 ! oedema
+relationship: RO:0002304 Wikidata:Q1527888 ! pancreatitis
+relationship: RO:0002304 Wikidata:Q1598200 ! metabolic acidosis
+relationship: RO:0002304 Wikidata:Q173022 ! bronchitis
+relationship: RO:0002304 Wikidata:Q178069 ! necrosis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q183130 ! gastritis
+relationship: RO:0002304 Wikidata:Q183425 ! abdominal pain
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q189331 ! cardiac dysrhythmia
+relationship: RO:0002304 Wikidata:Q203601 ! pneumothorax
+relationship: RO:0002304 Wikidata:Q21110038 ! corneal opacity
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q2141836 ! chemical burn
+relationship: RO:0002304 Wikidata:Q2610154 ! red eye
+relationship: RO:0002304 Wikidata:Q275419 ! hypotension
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002304 Wikidata:Q3589142 ! epigastric pain
+relationship: RO:0002304 Wikidata:Q3771629 ! Hypomagnesemia
+relationship: RO:0002304 Wikidata:Q4330029 ! airway obstruction
+relationship: RO:0002304 Wikidata:Q4375 ! Bronchoconstriction
+relationship: RO:0002304 Wikidata:Q605259 ! hyperkalemia
+relationship: RO:0002304 Wikidata:Q77776 ! irritation
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q81938 ! pain
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002304 Wikidata:Q936382 ! Hypocalcaemia
+relationship: RO:0002309 Wikidata:Q2468 ! hydrogen fluoride
+
+[Term]
+id: Wikidata:Q21174757
+name: hydrogen peroxide exposure
+relationship: RO:0002304 Wikidata:Q1166142 ! erythema
+relationship: RO:0002304 Wikidata:Q1628473 ! corneal ulcer
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q276469 ! blister
+relationship: RO:0002304 Wikidata:Q3991639 ! hair coloring
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002309 Wikidata:Q171877 ! hydrogen peroxide
+
+[Term]
+id: Wikidata:Q21174758
+name: hydrogen selenide exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q127076 ! vomiting
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21118859 ! nasal irritation
+relationship: RO:0002304 Wikidata:Q40878 ! diarrhea
+relationship: RO:0002304 Wikidata:Q5523465 ! Garlic breath
+relationship: RO:0002304 Wikidata:Q6402731 ! dysgeusia
+relationship: RO:0002304 Wikidata:Q7798315 ! throat irritation
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q409314 ! hydrogen selenide
+
+[Term]
+id: Wikidata:Q21174760
+name: Hydrogen sulfide exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1350326 ! frostbite
+relationship: RO:0002304 Wikidata:Q159557 ! coma
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q17320222 ! lacrimation
+relationship: RO:0002304 Wikidata:Q1869874 ! insomnia
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112011 ! gastrointestinal disturbance
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21119839 ! eye pain
+relationship: RO:0002304 Wikidata:Q21120212 ! corneal vesiculation
+relationship: RO:0002304 Wikidata:Q281289 ! photophobia
+relationship: RO:0002304 Wikidata:Q29299 ! irritability
+relationship: RO:0002304 Wikidata:Q754424 ! apnea
+relationship: RO:0002304 Wikidata:Q852376 ! seizure
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002304 Wikidata:Q9690 ! fatigue
+relationship: RO:0002309 Wikidata:Q170591 ! hydrogen sulfide
+
+[Term]
+id: Wikidata:Q21174762
+name: Hydroquinone exposure
+relationship: RO:0002304 Wikidata:Q10916362 ! dizziness
+relationship: RO:0002304 Wikidata:Q1397878 ! fasciculation
+relationship: RO:0002304 Wikidata:Q160796 ! Delirium
+relationship: RO:0002304 Wikidata:Q167844 ! conjunctivitis
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q18054140 ! collapse
+relationship: RO:0002304 Wikidata:Q186889 ! nausea
+relationship: RO:0002304 Wikidata:Q193840 ! asphyxia
+relationship: RO:0002304 Wikidata:Q21109805 ! central nervous system excitement
+relationship: RO:0002304 Wikidata:Q21120235 ! urine discoloration
+relationship: RO:0002304 Wikidata:Q229256 ! dermatitis
+relationship: RO:0002304 Wikidata:Q570920 ! tachypnea
+relationship: RO:0002304 Wikidata:Q657619 ! Sensitization
+relationship: RO:0002304 Wikidata:Q757838 ! keratitis
+relationship: RO:0002309 Wikidata:Q419164 ! hydroquinone
+
+[Term]
+id: Wikidata:Q21174763
+name: 2-Hydroxypropyl acrylate exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q188008 ! dyspnea
+relationship: RO:0002304 Wikidata:Q21111953 ! eye burn
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q35805 ! cough
+relationship: RO:0002309 Wikidata:Q2238032 ! propylene glycol monoacrylate
+
+[Term]
+id: Wikidata:Q21174765
+name: indium exposure
+relationship: RO:0002304 Wikidata:Q1799146 ! irritant dermatitis
+relationship: RO:0002304 Wikidata:Q21109286 ! blood changes
+relationship: RO:0002304 Wikidata:Q21111972 ! eye irritation
+relationship: RO:0002304 Wikidata:Q21112283 ! respiratory irritation
+relationship: RO:0002304 Wikidata:Q21112298 ! kidney changes
+relationship: RO:0002304 Wikidata:Q21117411 ! liver changes
+relationship: RO:0002304 Wikidata:Q857667 ! pulmonary edema
+relationship: RO:0002309 Wikidata:Q1094 ! indium
+
+[Term]
+id: Wikidata:Q21174767
+name: iodine exposure
+relationship: RO:0002304 Wikidata:Q170518 ! burn
+relationship: RO:0002304 Wikidata:Q653197 ! rash
+relationship: RO:0002304 Wikidata:Q86 ! headache
+relationship: RO:0002309 Wikidata:Q1103 ! iodine
+
+[Term]
+id: Wikidata:Q21174768
+name: Iodoform exposure
+
+[Term]
+id: Wikidata:Q21174769
+name: iron(III) oxide exposure
+
+[Term]
+id: Wikidata:Q21174770
+name: Iron pentacarbonyl exposure
+
+[Term]
+id: Wikidata:Q21174773
+name: Iron(II) sulfate exposure
+
+[Term]
+id: Wikidata:Q21174774
+name: isoamyl acetate exposure
+
+[Term]
+id: Wikidata:Q21174775
+name: Isoamyl alcohol exposure
+
+[Term]
+id: Wikidata:Q21174777
+name: 3-Methyl-2-butanol exposure
+
+[Term]
+id: Wikidata:Q21174778
+name: Isobutane exposure
+
+[Term]
+id: Wikidata:Q21174779
+name: Isobutyl acetate exposure
+
+[Term]
+id: Wikidata:Q21174781
+name: Isobutanol exposure
+
+[Term]
+id: Wikidata:Q21174782
+name: Isobutyronitrile exposure
+
+[Term]
+id: Wikidata:Q21174784
+name: Isooctyl alcohol exposure
+
+[Term]
+id: Wikidata:Q21174786
+name: Isophorone exposure
+
+[Term]
+id: Wikidata:Q21174787
+name: Isophorone diisocyanate exposure
+
+[Term]
+id: Wikidata:Q21174789
+name: isopropyl acetate exposure
+
+[Term]
+id: Wikidata:Q21174790
+name: Isopropyl alcohol exposure
+
+[Term]
+id: Wikidata:Q21174791
+name: isopropylamine exposure
+
+[Term]
+id: Wikidata:Q21174792
+name: N-Isopropylaniline exposure
+
+[Term]
+id: Wikidata:Q21174793
+name: Diisopropyl ether exposure
+
+[Term]
+id: Wikidata:Q21174794
+name: Isopropyl glycidyl ether exposure
+
+[Term]
+id: Wikidata:Q21174795
+name: kaolin exposure
+
+[Term]
+id: Wikidata:Q21174796
+name: kepone exposure
+
+[Term]
+id: Wikidata:Q21174797
+name: kerosene exposure
+
+[Term]
+id: Wikidata:Q21174798
+name: Ketene exposure
+
+[Term]
+id: Wikidata:Q21174818
+name: limestone exposure
+
+[Term]
+id: Wikidata:Q21174819
+name: Lindane exposure
+
+[Term]
+id: Wikidata:Q21174820
+name: lithium hydride exposure
+
+[Term]
+id: Wikidata:Q21174821
+name: magnesite exposure
+
+[Term]
+id: Wikidata:Q21174822
+name: Magnesium oxide exposure
+
+[Term]
+id: Wikidata:Q21174823
+name: Malathion exposure
+
+[Term]
+id: Wikidata:Q21174824
+name: maleic anhydride exposure
+
+[Term]
+id: Wikidata:Q21174825
+name: Malondialdehyde exposure
+
+[Term]
+id: Wikidata:Q21174826
+name: Malononitrile exposure
+
+[Term]
+id: Wikidata:Q21174827
+name: manganese exposure
+
+[Term]
+id: Wikidata:Q21174829
+name: manganese(II,III) oxide exposure
+
+[Term]
+id: Wikidata:Q21174830
+name: marble exposure
+
+[Term]
+id: Wikidata:Q21174881
+name: exposure to mercury alkyl compounds
+
+[Term]
+id: Wikidata:Q21174884
+name: Mesityl oxide exposure
+
+[Term]
+id: Wikidata:Q21174886
+name: methacrylic acid exposure
+
+[Term]
+id: Wikidata:Q21174887
+name: Methomyl exposure
+
+[Term]
+id: Wikidata:Q21174889
+name: Methoxyflurane exposure
+
+[Term]
+id: Wikidata:Q21174890
+name: Mequinol exposure
+
+[Term]
+id: Wikidata:Q21174891
+name: methyl acetate exposure
+
+[Term]
+id: Wikidata:Q21174892
+name: methylacetylene exposure
+
+[Term]
+id: Wikidata:Q21174893
+name: MAPP gas exposure
+
+[Term]
+id: Wikidata:Q21174894
+name: Methyl acrylate exposure
+
+[Term]
+id: Wikidata:Q21174895
+name: Methacrylonitrile exposure
+
+[Term]
+id: Wikidata:Q21174896
+name: Dimethoxymethane exposure
+
+[Term]
+id: Wikidata:Q21174897
+name: methanol exposure
+
+[Term]
+id: Wikidata:Q21174898
+name: Methylamine exposure
+
+[Term]
+id: Wikidata:Q21174899
+name: 2-heptanone exposure
+
+[Term]
+id: Wikidata:Q21174900
+name: Bromomethane exposure
+
+[Term]
+id: Wikidata:Q21174901
+name: 2-Methoxyethanol exposure
+
+[Term]
+id: Wikidata:Q21174902
+name: Methyl Cellosolve acetate exposure
+
+[Term]
+id: Wikidata:Q21174903
+name: Chloromethane exposure
+
+[Term]
+id: Wikidata:Q21174904
+name: 1,1,1-Trichloroethane exposure
+
+[Term]
+id: Wikidata:Q21174905
+name: methyl cyanoacrylate exposure
+
+[Term]
+id: Wikidata:Q21174906
+name: methylcyclohexane exposure
+
+[Term]
+id: Wikidata:Q21174907
+name: Methylcyclohexanol exposure
+
+[Term]
+id: Wikidata:Q21174909
+name: methylcyclopentadienyl manganese tricarbonyl exposure
+
+[Term]
+id: Wikidata:Q21174910
+name: Methyl demeton exposure
+
+[Term]
+id: Wikidata:Q21174911
+name: 4,4'-Methylenebis(2-chloroaniline) exposure
+
+[Term]
+id: Wikidata:Q21174912
+name: Methylene bis(4-cyclohexylisocyanate) exposure
+
+[Term]
+id: Wikidata:Q21174913
+name: Methylene diphenyl diisocyanate exposure
+
+[Term]
+id: Wikidata:Q21174914
+name: Dichloromethane exposure
+
+[Term]
+id: Wikidata:Q21174915
+name: 4,4'-Methylenedianiline exposure
+
+[Term]
+id: Wikidata:Q21174916
+name: methyl ethyl ketone peroxide exposure
+
+[Term]
+id: Wikidata:Q21174917
+name: methyl formate exposure
+
+[Term]
+id: Wikidata:Q21174918
+name: 5-Methyl-3-heptanone exposure
+
+[Term]
+id: Wikidata:Q21174919
+name: Monomethylhydrazine exposure
+
+[Term]
+id: Wikidata:Q21174920
+name: Methyl iodide exposure
+
+[Term]
+id: Wikidata:Q21174921
+name: Methyl isoamyl ketone exposure
+
+[Term]
+id: Wikidata:Q21174922
+name: 4-methyl-2-pentanol exposure
+
+[Term]
+id: Wikidata:Q21174923
+name: methyl isocyanate exposure
+
+[Term]
+id: Wikidata:Q21174924
+name: Methyl isopropyl ketone exposure
+
+[Term]
+id: Wikidata:Q21174925
+name: methanethiol exposure
+
+[Term]
+id: Wikidata:Q21174926
+name: Methyl methacrylate exposure
+
+[Term]
+id: Wikidata:Q21174927
+name: parathion-methyl exposure
+
+[Term]
+id: Wikidata:Q21174928
+name: Tetramethyl orthosilicate exposure
+
+[Term]
+id: Wikidata:Q21174929
+name: alpha-methylstyrene exposure
+
+[Term]
+id: Wikidata:Q21174932
+name: exposure to mica minerals
+
+[Term]
+id: Wikidata:Q21174933
+name: exposure to mineral wool
+
+[Term]
+id: Wikidata:Q21174936
+name: monocrotophos exposure
+
+[Term]
+id: Wikidata:Q21174937
+name: n-methylaniline exposure
+
+[Term]
+id: Wikidata:Q21174938
+name: morpholine exposure
+
+[Term]
+id: Wikidata:Q21174939
+name: Naphtha exposure
+
+[Term]
+id: Wikidata:Q21174940
+name: naphthalene exposure
+
+[Term]
+id: Wikidata:Q21174941
+name: 1,​5-​diisocyanatonaphthalene exposure
+
+[Term]
+id: Wikidata:Q21174942
+name: 1-naphthylamine exposure
+
+[Term]
+id: Wikidata:Q21174943
+name: 2-naphthylamine exposure
+
+[Term]
+id: Wikidata:Q21174944
+name: Niax Catalyst ESN exposure
+
+[Term]
+id: Wikidata:Q21174945
+name: nickel tetracarbonyl exposure
+
+[Term]
+id: Wikidata:Q21174946
+name: nickel exposure
+
+[Term]
+id: Wikidata:Q21174994
+name: nitric acid exposure
+
+[Term]
+id: Wikidata:Q21174995
+name: Nitric Oxide exposure
+
+[Term]
+id: Wikidata:Q21174996
+name: 4-nitroaniline exposure
+
+[Term]
+id: Wikidata:Q21174997
+name: nitrobenzene exposure
+
+[Term]
+id: Wikidata:Q21174998
+name: 4-nitrobiphenyl exposure
+
+[Term]
+id: Wikidata:Q21174999
+name: 4-nitrochlorobenzene exposure
+
+[Term]
+id: Wikidata:Q21175000
+name: nitroethane exposure
+
+[Term]
+id: Wikidata:Q21175002
+name: nitrogen dioxide exposure
+
+[Term]
+id: Wikidata:Q21175004
+name: Nitroglycerin exposure
+
+[Term]
+id: Wikidata:Q21175005
+name: nitromethane exposure
+
+[Term]
+id: Wikidata:Q21175006
+name: 2-nitronaphthalene exposure
+
+[Term]
+id: Wikidata:Q21175007
+name: 1-nitropropane exposure
+
+[Term]
+id: Wikidata:Q21175008
+name: 2-nitropropane exposure
+
+[Term]
+id: Wikidata:Q21175009
+name: n-nitrosodimethylamine exposure
+
+[Term]
+id: Wikidata:Q21175010
+name: 2-nitrotoluene exposure
+
+[Term]
+id: Wikidata:Q21175011
+name: 3-nitrotoluene exposure
+
+[Term]
+id: Wikidata:Q21175012
+name: 4-nitrotoluene exposure
+
+[Term]
+id: Wikidata:Q21175013
+name: Nitrous oxide exposure
+
+[Term]
+id: Wikidata:Q21175014
+name: nonane exposure
+
+[Term]
+id: Wikidata:Q21175015
+name: 1-nonanethiol exposure
+
+[Term]
+id: Wikidata:Q21175016
+name: octachloronaphthalene exposure
+
+[Term]
+id: Wikidata:Q21175017
+name: 1-octadecanethiol exposure
+
+[Term]
+id: Wikidata:Q21175018
+name: octane exposure
+
+[Term]
+id: Wikidata:Q21175019
+name: 1-octanethiol exposure
+
+[Term]
+id: Wikidata:Q21175020
+name: exposure to oil mist
+
+[Term]
+id: Wikidata:Q21175021
+name: osmium tetroxide exposure
+
+[Term]
+id: Wikidata:Q21175022
+name: oxalic acid exposure
+
+[Term]
+id: Wikidata:Q21175023
+name: oxygen difluoride exposure
+
+[Term]
+id: Wikidata:Q21175024
+name: ozone exposure
+
+[Term]
+id: Wikidata:Q21175025
+name: exposure to paraffin wax fume
+
+[Term]
+id: Wikidata:Q21175026
+name: Paraquat exposure
+
+[Term]
+id: Wikidata:Q21175027
+name: parathion exposure
+
+[Term]
+id: Wikidata:Q21175028
+name: exposure to particulates not otherwise regulated
+
+[Term]
+id: Wikidata:Q21175029
+name: pentaborane exposure
+
+[Term]
+id: Wikidata:Q21175031
+name: pentachloronaphthalene exposure
+
+[Term]
+id: Wikidata:Q21175032
+name: pentachlorophenol exposure
+
+[Term]
+id: Wikidata:Q21175033
+name: pentaerythritol exposure
+
+[Term]
+id: Wikidata:Q21175034
+name: pentane exposure
+
+[Term]
+id: Wikidata:Q21175035
+name: 1-pentanethiol exposure
+
+[Term]
+id: Wikidata:Q21175036
+name: 2-pentanone exposure
+
+[Term]
+id: Wikidata:Q21175037
+name: perchloromethyl mercaptan exposure
+
+[Term]
+id: Wikidata:Q21175038
+name: perchloryl fluoride exposure
+
+[Term]
+id: Wikidata:Q21175039
+name: Perlite exposure
+
+[Term]
+id: Wikidata:Q21175040
+name: Petroleum naphtha exposure
+
+[Term]
+id: Wikidata:Q21175041
+name: phenol exposure
+
+[Term]
+id: Wikidata:Q21175042
+name: phenothiazine exposure
+
+[Term]
+id: Wikidata:Q21175043
+name: p-phenylenediamine exposure
+
+[Term]
+id: Wikidata:Q21175044
+name: diphenyl ether exposure
+
+[Term]
+id: Wikidata:Q21175045
+name: phenyl glycidyl ether exposure
+
+[Term]
+id: Wikidata:Q21175046
+name: phenylhydrazine exposure
+
+[Term]
+id: Wikidata:Q21175047
+name: N-phenyl-beta-naphthylamine exposure
+
+[Term]
+id: Wikidata:Q21175049
+name: Phorate exposure
+
+[Term]
+id: Wikidata:Q21175050
+name: Mevinphos exposure
+
+[Term]
+id: Wikidata:Q21175051
+name: phosgene exposure
+
+[Term]
+id: Wikidata:Q21175052
+name: phosphine exposure
+
+[Term]
+id: Wikidata:Q21175053
+name: Phosphoric acid exposure
+
+[Term]
+id: Wikidata:Q21175054
+name: white phosphorus exposure
+
+[Term]
+id: Wikidata:Q21175055
+name: phosphoryl chloride exposure
+
+[Term]
+id: Wikidata:Q21175056
+name: phosphorus pentachloride exposure
+
+[Term]
+id: Wikidata:Q21175057
+name: phosphorus pentasulfide exposure
+
+[Term]
+id: Wikidata:Q21175058
+name: phosphorous trichloride exposure
+
+[Term]
+id: Wikidata:Q21175059
+name: phthalic anhydride exposure
+
+[Term]
+id: Wikidata:Q21175060
+name: m-phthalodinitrile exposure
+
+[Term]
+id: Wikidata:Q21175061
+name: Picloram exposure
+
+[Term]
+id: Wikidata:Q21175062
+name: picric acid exposure
+
+[Term]
+id: Wikidata:Q21175063
+name: Pindone exposure
+
+[Term]
+id: Wikidata:Q21175064
+name: piperazine dihydrochloride exposure
+
+[Term]
+id: Wikidata:Q21175065
+name: plaster exposure
+
+[Term]
+id: Wikidata:Q21175066
+name: platinum exposure
+
+[Term]
+id: Wikidata:Q21175067
+name: exposure to soluble platinum salts
+
+[Term]
+id: Wikidata:Q21175068
+name: Portland cement exposure
+
+[Term]
+id: Wikidata:Q21175069
+name: potassium cyanide exposure
+
+[Term]
+id: Wikidata:Q21175070
+name: potassium hydroxide exposure
+
+[Term]
+id: Wikidata:Q21175071
+name: propane exposure
+
+[Term]
+id: Wikidata:Q21175072
+name: 1,3-propane sultone exposure
+
+[Term]
+id: Wikidata:Q21175073
+name: propane-1-thiol exposure
+
+[Term]
+id: Wikidata:Q21175074
+name: propargyl alcohol exposure
+
+[Term]
+id: Wikidata:Q21175076
+name: beta-propiolactone exposure
+
+[Term]
+id: Wikidata:Q21175077
+name: propanoic acid exposure
+
+[Term]
+id: Wikidata:Q21175078
+name: propionitrile exposure
+
+[Term]
+id: Wikidata:Q21175079
+name: Propoxur exposure
+
+[Term]
+id: Wikidata:Q21175081
+name: 1-propanol exposure
+
+[Term]
+id: Wikidata:Q21175082
+name: 1,2-dichloropropane exposure
+
+[Term]
+id: Wikidata:Q21175083
+name: propylene glycol dinitrate exposure
+
+[Term]
+id: Wikidata:Q21175084
+name: propylene glycol methyl ether exposure
+
+[Term]
+id: Wikidata:Q21175085
+name: propyleneimine exposure
+
+[Term]
+id: Wikidata:Q21175086
+name: propylene oxide exposure
+
+[Term]
+id: Wikidata:Q21175088
+name: pyridine exposure
+
+[Term]
+id: Wikidata:Q21175089
+name: quinone exposure
+
+[Term]
+id: Wikidata:Q21175090
+name: resorcin exposure
+
+[Term]
+id: Wikidata:Q21175091
+name: rhodium exposure
+
+[Term]
+id: Wikidata:Q21175094
+name: exposure to rosin core solder
+
+[Term]
+id: Wikidata:Q21175095
+name: Rotenone exposure
+
+[Term]
+id: Wikidata:Q21175297
+name: selenium exposure
+
+[Term]
+id: Wikidata:Q21175299
+name: silica gel exposure
+
+[Term]
+id: Wikidata:Q21175300
+name: silicon exposure
+
+[Term]
+id: Wikidata:Q21175301
+name: silicon carbide exposure
+
+[Term]
+id: Wikidata:Q21175302
+name: silane exposure
+
+[Term]
+id: Wikidata:Q21175303
+name: silver exposure
+
+[Term]
+id: Wikidata:Q21175304
+name: steatite exposure
+
+[Term]
+id: Wikidata:Q21175305
+name: sodium hexafluoroaluminate exposure
+
+[Term]
+id: Wikidata:Q21175306
+name: sodium azide exposure
+
+[Term]
+id: Wikidata:Q21175307
+name: sodium bisulfite exposure
+
+[Term]
+id: Wikidata:Q21175308
+name: sodium cyanide exposure
+
+[Term]
+id: Wikidata:Q21175309
+name: sodium fluoride exposure
+
+[Term]
+id: Wikidata:Q21175310
+name: sodium fluoroacetate exposure
+
+[Term]
+id: Wikidata:Q21175311
+name: sodium hydroxide exposure
+
+[Term]
+id: Wikidata:Q21175312
+name: sodium metabisulfite exposure
+
+[Term]
+id: Wikidata:Q21175313
+name: starch exposure
+
+[Term]
+id: Wikidata:Q21175314
+name: stibine exposure
+
+[Term]
+id: Wikidata:Q21175315
+name: exposure to White spirit
+
+[Term]
+id: Wikidata:Q21175318
+name: styrene exposure
+
+[Term]
+id: Wikidata:Q21175319
+name: Subtilisin exposure
+
+[Term]
+id: Wikidata:Q21175320
+name: succinonitrile exposure
+
+[Term]
+id: Wikidata:Q21175321
+name: sucrose exposure
+
+[Term]
+id: Wikidata:Q21175322
+name: sulfur dioxide exposure
+
+[Term]
+id: Wikidata:Q21175323
+name: sulfur hexafluoride exposure
+
+[Term]
+id: Wikidata:Q21175326
+name: disulfur dichloride exposure
+
+[Term]
+id: Wikidata:Q21175327
+name: disulfur decafluoride exposure
+
+[Term]
+id: Wikidata:Q21175328
+name: sulfur tetrafluoride exposure
+
+[Term]
+id: Wikidata:Q21175329
+name: sulfuryl fluoride exposure
+
+[Term]
+id: Wikidata:Q21175330
+name: Sulprofos exposure
+
+[Term]
+id: Wikidata:Q21175332
+name: talc exposure
+
+[Term]
+id: Wikidata:Q21175333
+name: tantalum exposure
+
+[Term]
+id: Wikidata:Q21175334
+name: Sulfotep exposure
+
+[Term]
+id: Wikidata:Q21175335
+name: tellurium exposure
+
+[Term]
+id: Wikidata:Q21175336
+name: tellurium(VI) fluoride exposure
+
+[Term]
+id: Wikidata:Q21175337
+name: Temefos exposure
+
+[Term]
+id: Wikidata:Q21175338
+name: tetraethyl pyrophosphate exposure
+
+[Term]
+id: Wikidata:Q21175339
+name: o-terphenyl exposure
+
+[Term]
+id: Wikidata:Q21175340
+name: m-terphenyl exposure
+
+[Term]
+id: Wikidata:Q21175341
+name: p-terphenyl exposure
+
+[Term]
+id: Wikidata:Q21175342
+name: 2,3,7,8-Tetrachlorodibenzodioxin exposure
+
+[Term]
+id: Wikidata:Q21175343
+name: 1,1,1,2-tetrachloro-2,2-difluoroethane exposure
+
+[Term]
+id: Wikidata:Q21175345
+name: 1,1,1,2-tetrachloroethane exposure
+
+[Term]
+id: Wikidata:Q21175346
+name: 1,1,2,2-tetrachloroethane exposure
+
+[Term]
+id: Wikidata:Q21175347
+name: tetrachloroethylene exposure
+
+[Term]
+id: Wikidata:Q21175348
+name: tetrachloronaphthalene exposure
+
+[Term]
+id: Wikidata:Q21175349
+name: tetraethyllead exposure
+
+[Term]
+id: Wikidata:Q21175350
+name: tetrahydrofuran exposure
+
+[Term]
+id: Wikidata:Q21175351
+name: tetramethyllead exposure
+
+[Term]
+id: Wikidata:Q21175352
+name: tetramethylsuccinonitrile exposure
+
+[Term]
+id: Wikidata:Q21175353
+name: tetranitromethane exposure
+
+[Term]
+id: Wikidata:Q21175354
+name: tetrasodium pyrophosphate exposure
+
+[Term]
+id: Wikidata:Q21175355
+name: tetryl exposure
+
+[Term]
+id: Wikidata:Q21175356
+name: exposure to soluble thallium compounds
+
+[Term]
+id: Wikidata:Q21175357
+name: 4,4'-thiobis(6-tert-butyl-m-cresol) exposure
+
+[Term]
+id: Wikidata:Q21175358
+name: thioglycolic acid exposure
+
+[Term]
+id: Wikidata:Q21175359
+name: thionyl chloride exposure
+
+[Term]
+id: Wikidata:Q21175360
+name: thiram exposure
+
+[Term]
+id: Wikidata:Q21175369
+name: exposure to organic tin compounds
+
+[Term]
+id: Wikidata:Q21175370
+name: tin(II) oxide exposure
+
+[Term]
+id: Wikidata:Q21175371
+name: tin dioxide exposure
+
+[Term]
+id: Wikidata:Q21175372
+name: titanium dioxide exposure
+
+[Term]
+id: Wikidata:Q21175373
+name: tolidine exposure
+
+[Term]
+id: Wikidata:Q21175374
+name: toluene exposure
+
+[Term]
+id: Wikidata:Q21175375
+name: Diaminotoluene exposure
+
+[Term]
+id: Wikidata:Q21175376
+name: Toluene diisocyanate exposure
+
+[Term]
+id: Wikidata:Q21175377
+name: o-toluidine exposure
+
+[Term]
+id: Wikidata:Q21175378
+name: m-toluidine exposure
+
+[Term]
+id: Wikidata:Q21175379
+name: p-toluidine exposure
+
+[Term]
+id: Wikidata:Q21175380
+name: tributyl phosphate exposure
+
+[Term]
+id: Wikidata:Q21175381
+name: trichloroacetic acid exposure
+
+[Term]
+id: Wikidata:Q21175382
+name: 1,2,4-Trichlorobenzene exposure
+
+[Term]
+id: Wikidata:Q21175383
+name: 1,1,2-Trichloroethane exposure
+
+[Term]
+id: Wikidata:Q21175384
+name: Trichloroethylene exposure
+
+[Term]
+id: Wikidata:Q21175385
+name: trichloronaphthalene exposure
+
+[Term]
+id: Wikidata:Q21175386
+name: 1,2,3-Trichloropropane exposure
+
+[Term]
+id: Wikidata:Q21175387
+name: 1,1,2-trichloro-1,2,2-trifluoroethane exposure
+
+[Term]
+id: Wikidata:Q21175388
+name: Triethylamine exposure
+
+[Term]
+id: Wikidata:Q21175389
+name: Bromotrifluoromethane exposure
+
+[Term]
+id: Wikidata:Q21175390
+name: Mellitic anhydride exposure
+
+[Term]
+id: Wikidata:Q21175391
+name: trimethylamine exposure
+
+[Term]
+id: Wikidata:Q21175392
+name: 1,2,3-Trimethylbenzene exposure
+
+[Term]
+id: Wikidata:Q21175393
+name: 1,2,4-Trimethylbenzene exposure
+
+[Term]
+id: Wikidata:Q21175394
+name: mesitylene exposure
+
+[Term]
+id: Wikidata:Q21175395
+name: trimethyl phosphite exposure
+
+[Term]
+id: Wikidata:Q21175396
+name: Trinitrotoluene exposure
+
+[Term]
+id: Wikidata:Q21175397
+name: triorthocresyl phosphate exposure
+
+[Term]
+id: Wikidata:Q21175399
+name: Triphenyl phosphate exposure
+
+[Term]
+id: Wikidata:Q21175400
+name: tungsten exposure
+
+[Term]
+id: Wikidata:Q21175401
+name: exposure to soluble tungsten compounds
+
+[Term]
+id: Wikidata:Q21175402
+name: tungsten carbide exposure
+
+[Term]
+id: Wikidata:Q21175403
+name: turpentine exposure
+
+[Term]
+id: Wikidata:Q21175404
+name: 1-undecanethiol exposure
+
+[Term]
+id: Wikidata:Q21175405
+name: exposure to insoluble uranium compounds
+
+[Term]
+id: Wikidata:Q21175406
+name: exposure to soluble uranium compounds
+
+[Term]
+id: Wikidata:Q21175407
+name: Pentanal exposure
+
+[Term]
+id: Wikidata:Q21175408
+name: vanadium(V) oxide exposure
+
+[Term]
+id: Wikidata:Q21175409
+name: exposure to vanadium fume
+
+[Term]
+id: Wikidata:Q21175410
+name: exposure to vegetable oil mist
+
+[Term]
+id: Wikidata:Q21175411
+name: vinyl acetate exposure
+
+[Term]
+id: Wikidata:Q21175412
+name: bromoethene exposure
+
+[Term]
+id: Wikidata:Q21175413
+name: vinyl chloride exposure
+
+[Term]
+id: Wikidata:Q21175415
+name: vinyl fluoride exposure
+
+[Term]
+id: Wikidata:Q21175416
+name: 1,1-Dichloroethene exposure
+
+[Term]
+id: Wikidata:Q21175417
+name: 1,1-difluoroethylene exposure
+
+[Term]
+id: Wikidata:Q21175418
+name: vinyl toluene exposure
+
+[Term]
+id: Wikidata:Q21175419
+name: Petroleum ether exposure
+
+[Term]
+id: Wikidata:Q21175420
+name: Warfarin exposure
+
+[Term]
+id: Wikidata:Q21175421
+name: exposure to welding fumes
+
+[Term]
+id: Wikidata:Q21175422
+name: exposure to wood dust
+
+[Term]
+id: Wikidata:Q21175423
+name: exposure to O-Xylene
+
+[Term]
+id: Wikidata:Q21175424
+name: M-Xylene exposure
+
+[Term]
+id: Wikidata:Q21175425
+name: P-Xylene exposure
+
+[Term]
+id: Wikidata:Q21175427
+name: Xylidine exposure
+
+[Term]
+id: Wikidata:Q21175428
+name: yttrium exposure
+
+[Term]
+id: Wikidata:Q21175429
+name: exposure to zinc chloride fume
+
+[Term]
+id: Wikidata:Q21175430
+name: zinc oxide exposure
+
+[Term]
+id: Wikidata:Q21175431
+name: Zinc stearate exposure
+
+[Term]
+id: Wikidata:Q21175432
+name: zirconium exposure
+
+[Term]
+id: Wikidata:Q21175433
+name: exposure to liquefied petroleum gas
+
+[Term]
+id: Wikidata:Q21175434
+name: Azinphos-methyl exposure
+
+[Term]
+id: Wikidata:Q21175435
+name: exposure to cotton dust
+
+[Term]
+id: Wikidata:Q21175436
+name: exposure to phenyl ether–biphenyl mixture
+
+[Term]
+id: Wikidata:Q21175437
+name: exposure to silica dust
+
+[Term]
+id: Wikidata:Q21175438
+name: Pyrethrum exposure
+
+[Term]
+id: Wikidata:Q21281859
+name: adamsite exposure
+
+[Term]
+id: Wikidata:Q213373
+name: ataxia
+
+[Term]
+id: Wikidata:Q21396183
+name: arsenic pentoxide exposure
+
+[Term]
+id: Wikidata:Q21402620
+name: giddiness
+
+[Term]
+id: Wikidata:Q2141836
+name: chemical burn
+
+[Term]
+id: Wikidata:Q21504884
+name: fentanyl toxicity
+
+[Term]
+id: Wikidata:Q21504975
+name: lewisite exposure
+
+[Term]
+id: Wikidata:Q21505006
+name: eye perforation
+
+[Term]
+id: Wikidata:Q21505396
+name: exposure to mustard–lewisite mixture
+
+[Term]
+id: Wikidata:Q21506740
+name: HN1 exposure
+
+[Term]
+id: Wikidata:Q21513721
+name: mechlorethamine exposure
+
+[Term]
+id: Wikidata:Q21514015
+name: HN3 exposure
+
+[Term]
+id: Wikidata:Q21515200
+name: phosgene oxime exposure
+
+[Term]
+id: Wikidata:Q21515284
+name: 3-quinuclidinyl benzilate exposure
+
+[Term]
+id: Wikidata:Q21515358
+name: ricin exposure
+
+[Term]
+id: Wikidata:Q21733383
+name: sarin exposure
+
+[Term]
+id: Wikidata:Q21738185
+name: soman exposure
+
+[Term]
+id: Wikidata:Q221945
+name: butylated hydroxytoluene
+
+[Term]
+id: Wikidata:Q223036
+name: dimethylaminopropionitrile
+
+[Term]
+id: Wikidata:Q223112
+name: diethyl ketone
+
+[Term]
+id: Wikidata:Q22314624
+name: clammy skin
+
+[Term]
+id: Wikidata:Q2238032
+name: propylene glycol monoacrylate
+
+[Term]
+id: Wikidata:Q2238767
+name: O-dinitrobenzene
+
+[Term]
+id: Wikidata:Q223907
+name: tremor
+
+[Term]
+id: Wikidata:Q2266426
+name: visual disturbance
+
+[Term]
+id: Wikidata:Q2283186
+name: bis(chloromethyl)ether
+
+[Term]
+id: Wikidata:Q2285491
+name: diquat
+
+[Term]
+id: Wikidata:Q229256
+name: dermatitis
+
+[Term]
+id: Wikidata:Q2365426
+name: Acneiform eruption
+
+[Term]
+id: Wikidata:Q2403718
+name: p-dinitrobenzene
+
+[Term]
+id: Wikidata:Q2416556
+name: diisobutyl ketone
+
+[Term]
+id: Wikidata:Q2447
+name: hydrogen bromide
+
+[Term]
+id: Wikidata:Q2468
+name: hydrogen fluoride
+
+[Term]
+id: Wikidata:Q254327
+name: anorexia
+
+[Term]
+id: Wikidata:Q2563907
+name: dimethylcarbamoyl chloride
+
+[Term]
+id: Wikidata:Q26075
+name: hydrogen cyanide
+
+[Term]
+id: Wikidata:Q2610154
+name: red eye
+
+[Term]
+id: Wikidata:Q2653558
+name: m-dinitrobenzene
+
+[Term]
+id: Wikidata:Q2673323
+name: malaise
+
+[Term]
+id: Wikidata:Q2681162
+name: eye injury
+
+[Term]
+id: Wikidata:Q268594
+name: stupor
+
+[Term]
+id: Wikidata:Q2697787
+name: alopecia
+
+[Term]
+id: Wikidata:Q270421
+name: muscle weakness
+
+[Term]
+id: Wikidata:Q275419
+name: hypotension
+
+[Term]
+id: Wikidata:Q276469
+name: blister
+
+[Term]
+id: Wikidata:Q2779034
+name: dioxation
+
+[Term]
+id: Wikidata:Q2792203
+name: hexylene glycol
+
+[Term]
+id: Wikidata:Q279330
+name: bronchospasm
+
+[Term]
+id: Wikidata:Q281289
+name: photophobia
+
+[Term]
+id: Wikidata:Q284209
+name: chloroacetophenone
+
+[Term]
+id: Wikidata:Q2868696
+name: pain agnosia
+
+[Term]
+id: Wikidata:Q29299
+name: irritability
+
+[Term]
+id: Wikidata:Q2954819
+name: Dipropylene glycol methyl ether
+
+[Term]
+id: Wikidata:Q296363
+name: cesium hydroxide
+
+[Term]
+id: Wikidata:Q3002092
+name: abdominal cramps
+
+[Term]
+id: Wikidata:Q3026331
+name: diaphoresis
+
+[Term]
+id: Wikidata:Q310473
+name: N,N-dimethylaniline
+
+[Term]
+id: Wikidata:Q324628
+name: acrylic acid
+
+[Term]
+id: Wikidata:Q3339235
+name: nervous system disease
+
+[Term]
+id: Wikidata:Q3381914
+name: Periorbital puffiness
+
+[Term]
+id: Wikidata:Q342790
+name: acrolein
+
+[Term]
+id: Wikidata:Q342939
+name: acrylamide
+
+[Term]
+id: Wikidata:Q342968
+name: acrylonitrile
+
+[Term]
+id: Wikidata:Q343014
+name: ethyl acrylate
+
+[Term]
+id: Wikidata:Q3443277
+name: flushing
+
+[Term]
+id: Wikidata:Q3513968
+name: corneal opacification and other ocular anomalies
+
+[Term]
+id: Wikidata:Q352585
+name: frequent urination
+
+[Term]
+id: Wikidata:Q3529328
+name: Labored breathing
+
+[Term]
+id: Wikidata:Q35805
+name: cough
+
+[Term]
+id: Wikidata:Q35830
+name: sneeze
+
+[Term]
+id: Wikidata:Q35869
+name: asthma
+
+[Term]
+id: Wikidata:Q3589142
+name: epigastric pain
+
+[Term]
+id: Wikidata:Q373597
+name: hematuria
+
+[Term]
+id: Wikidata:Q3771629
+name: Hypomagnesemia
+
+[Term]
+id: Wikidata:Q3774744
+name: respiratory arrest
+
+[Term]
+id: Wikidata:Q38933
+name: fever
+
+[Term]
+id: Wikidata:Q3899830
+name: Nasal septal perforation
+
+[Term]
+id: Wikidata:Q394129
+name: psychomotor agitation
+
+[Term]
+id: Wikidata:Q3991639
+name: hair coloring
+
+[Term]
+id: Wikidata:Q4024614
+name: dinitolmide
+
+[Term]
+id: Wikidata:Q407153
+name: ethyl acetate
+
+[Term]
+id: Wikidata:Q407768
+name: chlorobenzene
+
+[Term]
+id: Wikidata:Q407905
+name: dichromium trioxide
+
+[Term]
+id: Wikidata:Q408022
+name: dimethylamine
+
+[Term]
+id: Wikidata:Q408089
+name: mercury poisoning
+
+[Term]
+id: Wikidata:Q40878
+name: diarrhea
+
+[Term]
+id: Wikidata:Q408998
+name: hexachlorocyclopentadiene
+
+[Term]
+id: Wikidata:Q409054
+name: Aldrin
+
+[Term]
+id: Wikidata:Q409133
+name: ethyl chloride
+
+[Term]
+id: Wikidata:Q409184
+name: ethylbenzene
+
+[Term]
+id: Wikidata:Q409298
+name: N,N-dimethylformamide
+
+[Term]
+id: Wikidata:Q409314
+name: hydrogen selenide
+
+[Term]
+id: Wikidata:Q409665
+name: disulfiram
+
+[Term]
+id: Wikidata:Q410387
+name: monoethanolamine
+
+[Term]
+id: Wikidata:Q410871
+name: chloroprene
+
+[Term]
+id: Wikidata:Q410915
+name: biphenyl
+
+[Term]
+id: Wikidata:Q411119
+name: ethylamine
+
+[Term]
+id: Wikidata:Q411258
+name: chloroacetyl chloride
+
+[Term]
+id: Wikidata:Q411305
+name: chlorine trifluoride
+
+[Term]
+id: Wikidata:Q411452
+name: N,N-dimethylacetamide
+
+[Term]
+id: Wikidata:Q4116448
+name: tracheal stenosis
+
+[Term]
+id: Wikidata:Q412245
+name: bromoethane
+
+[Term]
+id: Wikidata:Q412265
+name: diphenylamine
+
+[Term]
+id: Wikidata:Q413085
+name: Divinylbenzene
+
+[Term]
+id: Wikidata:Q413421
+name: dimethyl sulfate
+
+[Term]
+id: Wikidata:Q413904
+name: disulfoton
+
+[Term]
+id: Wikidata:Q414303
+name: Chromium(II) oxide
+
+[Term]
+id: Wikidata:Q414724
+name: ethion
+
+[Term]
+id: Wikidata:Q414915
+name: chlorpyrifos
+
+[Term]
+id: Wikidata:Q415988
+name: hexachloroethane
+
+[Term]
+id: Wikidata:Q416086
+name: hexamethylphosphoramide triamide
+
+[Term]
+id: Wikidata:Q416322
+name: hexafluoroacetone
+
+[Term]
+id: Wikidata:Q416740
+name: enflurane
+
+[Term]
+id: Wikidata:Q416956
+name: p-dimethylaminoazobenzene
+
+[Term]
+id: Wikidata:Q417134
+name: chlordane
+
+[Term]
+id: Wikidata:Q417157
+name: toxaphene
+
+[Term]
+id: Wikidata:Q418104
+name: methyl isobutyl ketone
+
+[Term]
+id: Wikidata:Q418197
+name: hexamethylene diisocyanate
+
+[Term]
+id: Wikidata:Q418492
+name: diethylhexyl phthalate
+
+[Term]
+id: Wikidata:Q41861
+name: hypertension
+
+[Term]
+id: Wikidata:Q419164
+name: hydroquinone
+
+[Term]
+id: Wikidata:Q419702
+name: chloropentafluoroethane
+
+[Term]
+id: Wikidata:Q419811
+name: diethyl phthalate
+
+[Term]
+id: Wikidata:Q420331
+name: diisopropylamine
+
+[Term]
+id: Wikidata:Q421751
+name: bromochloromethane
+
+[Term]
+id: Wikidata:Q422080
+name: chlorine dioxide
+
+[Term]
+id: Wikidata:Q422642
+name: chromic acid
+
+[Term]
+id: Wikidata:Q422994
+name: hydrochlorofluorocarbon 22
+
+[Term]
+id: Wikidata:Q423065
+name: chloropicrin
+
+[Term]
+id: Wikidata:Q423083
+name: epichlorohydrin
+
+[Term]
+id: Wikidata:Q423354
+name: endrin
+
+[Term]
+id: Wikidata:Q423551
+name: dimethyl phthalate
+
+[Term]
+id: Wikidata:Q424208
+name: endosulfan
+
+[Term]
+id: Wikidata:Q424822
+name: naled
+
+[Term]
+id: Wikidata:Q424840
+name: cetyl mercaptan
+
+[Term]
+id: Wikidata:Q425389
+name: diuron
+
+[Term]
+id: Wikidata:Q426955
+name: Chloracne
+
+[Term]
+id: Wikidata:Q4330029
+name: airway obstruction
+
+[Term]
+id: Wikidata:Q4340209
+name: mental depression
+
+[Term]
+id: Wikidata:Q4375
+name: Bronchoconstriction
+
+[Term]
+id: Wikidata:Q4382200
+name: 2-acetylaminofluorene
+
+[Term]
+id: Wikidata:Q4424146
+name: salivation
+
+[Term]
+id: Wikidata:Q474187
+name: thirst
+
+[Term]
+id: Wikidata:Q476921
+name: kidney failure
+
+[Term]
+id: Wikidata:Q4780043
+name: Apneustic respirations
+
+[Term]
+id: Wikidata:Q4896104
+name: Beryllium poisoning
+
+[Term]
+id: Wikidata:Q4930784
+name: Blunt splenic trauma
+
+[Term]
+id: Wikidata:Q4930803
+name: blurred vision
+
+[Term]
+id: Wikidata:Q496812
+name: leukopenia
+
+[Term]
+id: Wikidata:Q505142
+name: eosinophilia
+
+[Term]
+id: Wikidata:Q5062120
+name: central nervous system depression
+
+[Term]
+id: Wikidata:Q5090456
+name: Chemical eye injury
+
+[Term]
+id: Wikidata:Q5090486
+name: toxic pneumonitis
+
+[Term]
+id: Wikidata:Q5138720
+name: cobalt poisoning
+
+[Term]
+id: Wikidata:Q514686
+name: Aphonia
+
+[Term]
+id: Wikidata:Q517104
+name: wheeze
+
+[Term]
+id: Wikidata:Q5445
+name: anemia
+
+[Term]
+id: Wikidata:Q5523465
+name: Garlic breath
+
+[Term]
+id: Wikidata:Q557945
+name: mental confusion
+
+[Term]
+id: Wikidata:Q568321
+name: anoxia
+
+[Term]
+id: Wikidata:Q570197
+name: proteinuria
+
+[Term]
+id: Wikidata:Q570920
+name: tachypnea
+
+[Term]
+id: Wikidata:Q574360
+name: spasm
+
+[Term]
+id: Wikidata:Q575168
+name: Hyperventilation
+
+[Term]
+id: Wikidata:Q58447
+name: hydrazine
+
+[Term]
+id: Wikidata:Q596899
+name: miosis
+
+[Term]
+id: Wikidata:Q605259
+name: hyperkalemia
+
+[Term]
+id: Wikidata:Q612681
+name: anuria
+
+[Term]
+id: Wikidata:Q6152019
+name: bladder injury
+
+[Term]
+id: Wikidata:Q623289
+name: dysphagia
+
+[Term]
+id: Wikidata:Q633403
+name: weakness
+
+[Term]
+id: Wikidata:Q635195
+name: polydipsia
+
+[Term]
+id: Wikidata:Q6402731
+name: dysgeusia
+
+[Term]
+id: Wikidata:Q6452285
+name: ulcer
+
+[Term]
+id: Wikidata:Q647099
+name: hemoptysis
+
+[Term]
+id: Wikidata:Q653197
+name: rash
+
+[Term]
+id: Wikidata:Q657619
+name: Sensitization
+
+[Term]
+id: Wikidata:Q6658207
+name: Liver injury
+
+[Term]
+id: Wikidata:Q688
+name: chlorine
+
+[Term]
+id: Wikidata:Q693058
+name: chest pain
+
+[Term]
+id: Wikidata:Q7030575
+name: nicotine poisoning
+
+[Term]
+id: Wikidata:Q7048905
+name: Non-epileptic seizure
+
+[Term]
+id: Wikidata:Q7104966
+name: orthostatic hypotension
+
+[Term]
+id: Wikidata:Q7168709
+name: Peripheral edema
+
+[Term]
+id: Wikidata:Q718113
+name: weight loss
+
+[Term]
+id: Wikidata:Q7259546
+name: Pulmonary toxicity
+
+[Term]
+id: Wikidata:Q7315912
+name: respiratory distress
+
+[Term]
+id: Wikidata:Q7316656
+name: retching
+
+[Term]
+id: Wikidata:Q734512
+name: bronchopneumonia
+
+[Term]
+id: Wikidata:Q737460
+name: visual impairment
+
+[Term]
+id: Wikidata:Q745430
+name: Denudation
+
+[Term]
+id: Wikidata:Q748442
+name: methemoglobinemia
+
+[Term]
+id: Wikidata:Q754424
+name: apnea
+
+[Term]
+id: Wikidata:Q757838
+name: keratitis
+
+[Term]
+id: Wikidata:Q7625508
+name: strychnine poisoning
+
+[Term]
+id: Wikidata:Q769220
+name: paresthesia
+
+[Term]
+id: Wikidata:Q77776
+name: irritation
+
+[Term]
+id: Wikidata:Q7798315
+name: throat irritation
+
+[Term]
+id: Wikidata:Q7807844
+name: Tin poisoning
+
+[Term]
+id: Wikidata:Q783903
+name: contact dermatitis
+
+[Term]
+id: Wikidata:Q794072
+name: Azotemia
+
+[Term]
+id: Wikidata:Q80294
+name: cellulose
+
+[Term]
+id: Wikidata:Q818092
+name: Lightheadedness
+
+[Term]
+id: Wikidata:Q81938
+name: pain
+
+[Term]
+id: Wikidata:Q836379
+name: dysphonia
+
+[Term]
+id: Wikidata:Q84062
+name: adiponitrile
+
+[Term]
+id: Wikidata:Q852376
+name: seizure
+
+[Term]
+id: Wikidata:Q857667
+name: pulmonary edema
+
+[Term]
+id: Wikidata:Q86
+name: headache
+
+[Term]
+id: Wikidata:Q883863
+name: blepharospasm
+
+[Term]
+id: Wikidata:Q936382
+name: Hypocalcaemia
+
+[Term]
+id: Wikidata:Q945238
+name: peripheral neuropathy
+
+[Term]
+id: Wikidata:Q950591
+name: scotoma
+
+[Term]
+id: Wikidata:Q957217
+name: Hypopnea
+
+[Term]
+id: Wikidata:Q9690
+name: fatigue
+
+[Term]
+id: Wikidata:Q970208
+name: liver failure
+
+[Term]
+id: Wikidata:Q974869
+name: Leukocytosis
+
+[Term]
+id: Wikidata:Q988594
+name: eczema
+

@@ -1,0 +1,277 @@
+@prefix : <http://sweetontology.net/matr/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soma: <http://sweetontology.net/matr/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sostro: <http://sweetontology.net/stateRole/> .
+@prefix sost: <http://sweetontology.net/state/> .
+@prefix sostp: <http://sweetontology.net/statePhysical/> .
+@base <http://sweetontology.net/matr> .
+
+<http://sweetontology.net/matr> rdf:type owl:Ontology ;
+                                 owl:imports <http://sweetontology.net/rela> ,
+                                             <http://sweetontology.net/state> ,
+                                             <http://sweetontology.net/statePhysical> ,
+                                             <http://sweetontology.net/stateRole> ;
+                                 rdfs:label "SWEET Ontology Materials" ;
+                                 dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                 owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasRole
+sorel:hasRole rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/rela/hasState
+sorel:hasState rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/matr/Air
+soma:Air rdf:type owl:Class ;
+         rdfs:subClassOf soma:Mixture ;
+         rdfs:label "air"@en .
+
+
+###  http://sweetontology.net/matr/BDOC
+soma:BDOC rdf:type owl:Class ;
+          owl:equivalentClass soma:BiodegradableDissolvedOrganicCarbon ;
+          rdfs:label "bdoc"@en .
+
+
+###  http://sweetontology.net/matr/BiodegradableDissolvedOrganicCarbon
+soma:BiodegradableDissolvedOrganicCarbon rdf:type owl:Class ;
+                                         rdfs:subClassOf soma:DissolvedOrganicCarbon ;
+                                         rdfs:label "biodegradable dissolved organic carbon"@en .
+
+
+###  http://sweetontology.net/matr/Chemical
+soma:Chemical rdf:type owl:Class ;
+              owl:equivalentClass soma:ChemicalSubstance ;
+              rdfs:subClassOf soma:Substance ;
+              rdfs:label "chemical"@en .
+
+
+###  http://sweetontology.net/matr/ChemicalSubstance
+soma:ChemicalSubstance rdf:type owl:Class ;
+                       rdfs:label "chemical substance"@en .
+
+
+###  http://sweetontology.net/matr/DO
+soma:DO rdf:type owl:Class ;
+        owl:equivalentClass soma:DissolvedOxygen ;
+        rdfs:label "do"@en .
+
+
+###  http://sweetontology.net/matr/DOC
+soma:DOC rdf:type owl:Class ;
+         owl:equivalentClass soma:DissolvedOrganicCarbon ;
+         rdfs:label "doc"@en .
+
+
+###  http://sweetontology.net/matr/DissolvedGas
+soma:DissolvedGas rdf:type owl:Class ;
+                  rdfs:subClassOf soma:DissolvedSubstance ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorel:hasState ;
+                                    owl:hasValue sostp:Gas
+                                  ] ;
+                  rdfs:label "dissolved gas"@en .
+
+
+###  http://sweetontology.net/matr/DissolvedOrganicCarbon
+soma:DissolvedOrganicCarbon rdf:type owl:Class ;
+                            rdfs:subClassOf soma:DissolvedSubstance ;
+                            rdfs:label "dissolved organic carbon"@en .
+
+
+###  http://sweetontology.net/matr/DissolvedOxygen
+soma:DissolvedOxygen rdf:type owl:Class ;
+                     rdfs:subClassOf soma:DissolvedSubstance ;
+                     rdfs:label "dissolved oxygen"@en .
+
+
+###  http://sweetontology.net/matr/DissolvedSolid
+soma:DissolvedSolid rdf:type owl:Class ;
+                    rdfs:subClassOf soma:DissolvedSubstance ,
+                                    soma:SolidSubstance ;
+                    rdfs:label "dissolved solid"@en .
+
+
+###  http://sweetontology.net/matr/DissolvedSubstance
+soma:DissolvedSubstance rdf:type owl:Class ;
+                        rdfs:subClassOf soma:Substance ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorel:hasState ;
+                                          owl:hasValue sostp:Dissolved
+                                        ] ;
+                        rdfs:label "dissolved substance"@en .
+
+
+###  http://sweetontology.net/matr/GreenhouseGas
+soma:GreenhouseGas rdf:type owl:Class ;
+                   rdfs:subClassOf soma:ChemicalSubstance ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorel:hasState ;
+                                     owl:hasValue sostp:Gas
+                                   ] ;
+                   rdfs:label "greenhouse gas"@en .
+
+
+###  http://sweetontology.net/matr/Inorganic
+soma:Inorganic rdf:type owl:Class ;
+               owl:equivalentClass soma:InorganicSubstance ;
+               rdfs:subClassOf soma:ChemicalSubstance ;
+               rdfs:label "inorganic"@en .
+
+
+###  http://sweetontology.net/matr/InorganicSubstance
+soma:InorganicSubstance rdf:type owl:Class ;
+                        rdfs:label "inorganic substance"@en .
+
+
+###  http://sweetontology.net/matr/Medium
+soma:Medium rdf:type owl:Class ;
+            rdfs:subClassOf soma:Substance ;
+            rdfs:label "medium"@en .
+
+
+###  http://sweetontology.net/matr/MixedChemicalSubstance
+soma:MixedChemicalSubstance rdf:type owl:Class ;
+                            owl:equivalentClass soma:Mixture ;
+                            rdfs:label "mixed chemical substance"@en .
+
+
+###  http://sweetontology.net/matr/Mixture
+soma:Mixture rdf:type owl:Class ;
+             rdfs:subClassOf soma:ChemicalSubstance ;
+             rdfs:label "mixture"@en .
+
+
+###  http://sweetontology.net/matr/NeutralGas
+soma:NeutralGas rdf:type owl:Class ;
+                rdfs:subClassOf soma:ChemicalSubstance ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorel:hasState ;
+                                  owl:hasValue sostp:Gas
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorel:hasState ;
+                                  owl:hasValue sostp:Neutral
+                                ] ;
+                rdfs:label "neutral gas"@en .
+
+
+###  http://sweetontology.net/matr/OrganicLoading
+soma:OrganicLoading rdf:type owl:Class ;
+                    rdfs:subClassOf soma:DissolvedSubstance ;
+                    rdfs:label "organic loading"@en .
+
+
+###  http://sweetontology.net/matr/SolidSubstance
+soma:SolidSubstance rdf:type owl:Class ;
+                    rdfs:subClassOf soma:Substance ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorel:hasState ;
+                                      owl:hasValue sostp:Solid
+                                    ] ;
+                    rdfs:label "solid substance"@en .
+
+
+###  http://sweetontology.net/matr/Solution
+soma:Solution rdf:type owl:Class ;
+              rdfs:subClassOf soma:Mixture ;
+              rdfs:label "solution"@en .
+
+
+###  http://sweetontology.net/matr/Substance
+soma:Substance rdf:type owl:Class ;
+               rdfs:label "substance"@en .
+
+
+###  http://sweetontology.net/matr/SuspendedGas
+soma:SuspendedGas rdf:type owl:Class ;
+                  rdfs:subClassOf soma:SuspendedSubstance ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorel:hasState ;
+                                    owl:hasValue sostp:Gas
+                                  ] ;
+                  rdfs:label "suspended gas"@en .
+
+
+###  http://sweetontology.net/matr/SuspendedSolid
+soma:SuspendedSolid rdf:type owl:Class ;
+                    rdfs:subClassOf soma:SolidSubstance ,
+                                    soma:SuspendedSubstance ;
+                    rdfs:label "suspended solid"@en .
+
+
+###  http://sweetontology.net/matr/SuspendedSubstance
+soma:SuspendedSubstance rdf:type owl:Class ;
+                        rdfs:subClassOf soma:Substance ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorel:hasState ;
+                                          owl:hasValue sostp:Suspended
+                                        ] ;
+                        rdfs:label "suspended substance"@en .
+
+
+###  http://sweetontology.net/matr/TraceGas
+soma:TraceGas rdf:type owl:Class ;
+              rdfs:subClassOf soma:TraceSubstance ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorel:hasState ;
+                                owl:hasValue sostp:Gas
+                              ] ;
+              rdfs:label "trace gas"@en .
+
+
+###  http://sweetontology.net/matr/TraceSubstance
+soma:TraceSubstance rdf:type owl:Class ;
+                    rdfs:subClassOf soma:Substance ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorel:hasRole ;
+                                      owl:hasValue sostro:Trace
+                                    ] ;
+                    rdfs:label "trace substance"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/statePhysical/Dissolved
+sostp:Dissolved rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Gas
+sostp:Gas rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Neutral
+sostp:Neutral rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Solid
+sostp:Solid rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/statePhysical/Suspended
+sostp:Suspended rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/stateRole/Trace
+sostro:Trace rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

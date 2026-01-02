@@ -1,0 +1,197 @@
+@prefix : <http://sweetontology.net/reprDataProduct/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sohur: <http://sweetontology.net/humanResearch/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorepmf: <http://sweetontology.net/reprMathFunction/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix sorepmso: <http://sweetontology.net/reprMathSolution/> .
+@prefix sorepdp: <http://sweetontology.net/reprDataProduct/> .
+@base <http://sweetontology.net/reprDataProduct> .
+
+<http://sweetontology.net/reprDataProduct> rdf:type owl:Ontology ;
+                                            owl:imports <http://sweetontology.net/humanResearch> ,
+                                                        <http://sweetontology.net/repr> ,
+                                                        <http://sweetontology.net/reprMathFunction> ,
+                                                        <http://sweetontology.net/reprMathSolution> ;
+                                            rdfs:label "SWEET Ontology Representation Data Product" ;
+                                            dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                            owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/humanResearch/Realization
+sohur:Realization rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprDataProduct/Archive
+sorepdp:Archive rdf:type owl:Class ;
+               owl:equivalentClass sorepdp:Archiving ;
+               rdfs:subClassOf sorepdp:Collection ;
+               rdfs:label "archive"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Archiving
+sorepdp:Archiving rdf:type owl:Class ;
+                 rdfs:label "archiving"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/CDR
+sorepdp:CDR rdf:type owl:Class ;
+           owl:equivalentClass sorepdp:ClimateDataRecord ;
+           rdfs:label "cdr"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/ClimateDataRecord
+sorepdp:ClimateDataRecord rdf:type owl:Class ;
+                         rdfs:subClassOf sorepdp:Collection ;
+                         rdfs:label "climate data record"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Collection
+sorepdp:Collection rdf:type owl:Class ;
+                  rdfs:subClassOf sorepdp:Data ;
+                  rdfs:label "collection"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Curate
+sorepdp:Curate rdf:type owl:Class ;
+              owl:equivalentClass sorepdp:Curation ;
+              rdfs:subClassOf sorepdp:Collection ;
+              rdfs:label "curate"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Curation
+sorepdp:Curation rdf:type owl:Class ;
+                rdfs:label "curation"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Data
+sorepdp:Data rdf:type owl:Class ;
+            rdfs:subClassOf sohur:Realization ;
+            rdfs:label "data"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/DataProduct
+sorepdp:DataProduct rdf:type owl:Class ;
+                   rdfs:subClassOf sorepdp:Collection ;
+                   rdfs:label "data product"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Dataset
+sorepdp:Dataset rdf:type owl:Class ;
+               rdfs:subClassOf sorepdp:DataProduct ;
+               rdfs:label "dataset"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/ESDR
+sorepdp:ESDR rdf:type owl:Class ;
+            owl:equivalentClass sorepdp:EarthScienceDataRecord ;
+            rdfs:label "esdr"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/EarthScienceDataRecord
+sorepdp:EarthScienceDataRecord rdf:type owl:Class ;
+                              rdfs:subClassOf sorepdp:Collection ;
+                              rdfs:label "earth science data record"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Ensemble
+sorepdp:Ensemble rdf:type owl:Class ;
+                rdfs:subClassOf sorepdp:Collection ;
+                rdfs:label "ensemble"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/FillValue
+sorepdp:FillValue rdf:type owl:Class ;
+                 rdfs:subClassOf sorepdp:Value ;
+                 rdfs:label "fill value"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Granule
+sorepdp:Granule rdf:type owl:Class ;
+               rdfs:subClassOf sorepdp:Data ;
+               rdfs:label "granule"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Image
+sorepdp:Image rdf:type owl:Class ;
+             rdfs:subClassOf sorep:Representation ;
+             rdfs:label "image"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Layer
+sorepdp:Layer rdf:type owl:Class ;
+             rdfs:subClassOf sorepdp:DataProduct ;
+             rdfs:label "layer"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/MaximumValid
+sorepdp:MaximumValid rdf:type owl:Class ;
+                    rdfs:subClassOf sorepdp:Value ;
+                    rdfs:label "maximum valid"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/MinimumValid
+sorepdp:MinimumValid rdf:type owl:Class ;
+                    rdfs:subClassOf sorepdp:Value ;
+                    rdfs:label "minimum valid"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/MissingValue
+sorepdp:MissingValue rdf:type owl:Class ;
+                    rdfs:subClassOf sorepdp:Value ;
+                    rdfs:label "missing value"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Offset
+sorepdp:Offset rdf:type owl:Class ;
+              rdfs:subClassOf sorepdp:Value ;
+              rdfs:label "offset"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Profile
+sorepdp:Profile rdf:type owl:Class ;
+               rdfs:subClassOf sorep:Representation ,
+                               sorepmf:Profile ;
+               rdfs:label "profile"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/ScaleFactor
+sorepdp:ScaleFactor rdf:type owl:Class ;
+                   owl:equivalentClass sorepdp:Scaling ;
+                   rdfs:subClassOf sorepdp:Value ;
+                   rdfs:label "scale factor"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Scaling
+sorepdp:Scaling rdf:type owl:Class ;
+               rdfs:label "scaling"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Value
+sorepdp:Value rdf:type owl:Class ;
+             rdfs:subClassOf sorepdp:Data ;
+             rdfs:label "value"@en .
+
+
+###  http://sweetontology.net/reprDataProduct/Version
+sorepdp:Version rdf:type owl:Class ;
+               rdfs:subClassOf sorepmso:Iteration ;
+               rdfs:label "version"@en .
+
+
+###  http://sweetontology.net/reprMathFunction/Profile
+sorepmf:Profile rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprMathSolution/Iteration
+sorepmso:Iteration rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

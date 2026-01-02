@@ -1,0 +1,240 @@
+@prefix : <http://sweetontology.net/realmLandform/> .
+@prefix sorepsg: <http://sweetontology.net/reprSpaceGeometry/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sostv: <http://sweetontology.net/stateVisibility/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soreal: <http://sweetontology.net/realmLandform/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorepsg3: <http://sweetontology.net/reprSpaceGeometry3D/> .
+@prefix sorelph: <http://sweetontology.net/relaPhysical/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@base <http://sweetontology.net/realmLandform> .
+
+<http://sweetontology.net/realmLandform> rdf:type owl:Ontology ;
+                                          owl:imports <http://sweetontology.net/relaPhysical> ,
+                                                      <http://sweetontology.net/relaSpace> ,
+                                                      <http://sweetontology.net/reprSpaceGeometry> ,
+                                                      <http://sweetontology.net/reprSpaceGeometry3D> ,
+                                                      <http://sweetontology.net/stateVisibility> ;
+                                          rdfs:label "SWEET Ontology Realm Landform" ;
+                                          dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                          owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/relaPhysical/hasVisibility
+sorelph:hasVisibility rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/hasSpatialConfiguration
+sorelsp:hasSpatialConfiguration rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/realmLandform/CentralCreekCrater
+soreal:CentralCreekCrater rdf:type owl:Class ;
+                        rdfs:subClassOf soreal:Crater ;
+                        rdfs:label "central creek crater"@en .
+
+
+###  http://sweetontology.net/realmLandform/ComplexCrater
+soreal:ComplexCrater rdf:type owl:Class ;
+                   rdfs:subClassOf soreal:Crater ;
+                   rdfs:label "complex crater"@en .
+
+
+###  http://sweetontology.net/realmLandform/Continent
+soreal:Continent rdf:type owl:Class ;
+               rdfs:subClassOf soreal:LandRegion ;
+               rdfs:label "continent"@en .
+
+
+###  http://sweetontology.net/realmLandform/Crater
+soreal:Crater rdf:type owl:Class ;
+            rdfs:subClassOf soreal:Landform ,
+                            sorepsg3:Cavity ;
+            rdfs:label "crater"@en .
+
+
+###  http://sweetontology.net/realmLandform/DebrisBasin
+soreal:DebrisBasin rdf:type owl:Class ;
+                 rdfs:subClassOf soreal:LandRegion ;
+                 rdfs:label "debris basin"@en .
+
+
+###  http://sweetontology.net/realmLandform/DeflationZone
+soreal:DeflationZone rdf:type owl:Class ;
+                   rdfs:subClassOf soreal:LandRegion ;
+                   rdfs:label "deflation zone"@en .
+
+
+###  http://sweetontology.net/realmLandform/Dryland
+soreal:Dryland rdf:type owl:Class ;
+             rdfs:subClassOf soreal:LandRegion ;
+             rdfs:label "dryland"@en .
+
+
+###  http://sweetontology.net/realmLandform/Field
+soreal:Field rdf:type owl:Class ;
+           rdfs:subClassOf soreal:Landform ;
+           rdfs:label "field"@en .
+
+
+###  http://sweetontology.net/realmLandform/Highland
+soreal:Highland rdf:type owl:Class ;
+              rdfs:subClassOf soreal:Landform ;
+              owl:disjointWith soreal:Lowland ;
+              rdfs:label "highland"@en .
+
+
+###  http://sweetontology.net/realmLandform/ImpactBasin
+soreal:ImpactBasin rdf:type owl:Class ;
+                 rdfs:subClassOf soreal:Landform ;
+                 rdfs:label "impact basin"@en .
+
+
+###  http://sweetontology.net/realmLandform/ImpactCrater
+soreal:ImpactCrater rdf:type owl:Class ;
+                  rdfs:subClassOf soreal:Crater ;
+                  rdfs:label "impact crater"@en .
+
+
+###  http://sweetontology.net/realmLandform/Lamination
+soreal:Lamination rdf:type owl:Class ;
+                rdfs:subClassOf soreal:Landform ;
+                rdfs:label "lamination"@en .
+
+
+###  http://sweetontology.net/realmLandform/Land
+soreal:Land rdf:type owl:Class ;
+          owl:equivalentClass soreal:LandRegion ,
+                              soreal:LandSurface ,
+                              soreal:SurfaceRegion ;
+          rdfs:subClassOf sorepsg:Region ;
+          rdfs:label "land"@en .
+
+
+###  http://sweetontology.net/realmLandform/LandCover
+soreal:LandCover rdf:type owl:Class ;
+               rdfs:subClassOf soreal:Landform ;
+               rdfs:label "land cover"@en .
+
+
+###  http://sweetontology.net/realmLandform/LandRegion
+soreal:LandRegion rdf:type owl:Class ;
+                rdfs:label "land region"@en .
+
+
+###  http://sweetontology.net/realmLandform/LandSurface
+soreal:LandSurface rdf:type owl:Class ;
+                 rdfs:label "land surface"@en .
+
+
+###  http://sweetontology.net/realmLandform/Landform
+soreal:Landform rdf:type owl:Class ;
+              rdfs:subClassOf soreal:LandRegion ;
+              rdfs:label "landform"@en .
+
+
+###  http://sweetontology.net/realmLandform/Landscape
+soreal:Landscape rdf:type owl:Class ;
+               rdfs:subClassOf soreal:Landform ;
+               rdfs:label "landscape"@en .
+
+
+###  http://sweetontology.net/realmLandform/Lowland
+soreal:Lowland rdf:type owl:Class ;
+             rdfs:subClassOf soreal:Landform ;
+             rdfs:label "lowland"@en .
+
+
+###  http://sweetontology.net/realmLandform/Mare
+soreal:Mare rdf:type owl:Class ;
+          rdfs:subClassOf soreal:Plain ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sorelph:hasVisibility ;
+                            owl:hasValue sostv:Dark
+                          ] ;
+          rdfs:label "mare"@en .
+
+
+###  http://sweetontology.net/realmLandform/PedestalCrater
+soreal:PedestalCrater rdf:type owl:Class ;
+                    rdfs:subClassOf soreal:Crater ;
+                    rdfs:label "pedestal crater"@en .
+
+
+###  http://sweetontology.net/realmLandform/PitCrater
+soreal:PitCrater rdf:type owl:Class ;
+               rdfs:subClassOf soreal:Crater ;
+               rdfs:label "pit crater"@en .
+
+
+###  http://sweetontology.net/realmLandform/Plain
+soreal:Plain rdf:type owl:Class ;
+           rdfs:subClassOf soreal:Landform ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelsp:hasSpatialConfiguration ;
+                             owl:hasValue <http://sweetontology.net/stateSpaceConfiguration/Flat>
+                           ] ;
+           rdfs:label "plain"@en .
+
+
+###  http://sweetontology.net/realmLandform/Prarie
+soreal:Prarie rdf:type owl:Class ;
+            rdfs:subClassOf soreal:Plain ;
+            rdfs:label "prarie"@en .
+
+
+###  http://sweetontology.net/realmLandform/RockyPitFloorCrater
+soreal:RockyPitFloorCrater rdf:type owl:Class ;
+                         rdfs:subClassOf soreal:PitCrater ;
+                         rdfs:label "rocky pit floor crater"@en .
+
+
+###  http://sweetontology.net/realmLandform/ShatterCone
+soreal:ShatterCone rdf:type owl:Class ;
+                 rdfs:subClassOf soreal:Landform ;
+                 rdfs:label "shatter cone"@en .
+
+
+###  http://sweetontology.net/realmLandform/Spall
+soreal:Spall rdf:type owl:Class ;
+           rdfs:subClassOf soreal:Landform ;
+           rdfs:label "spall"@en .
+
+
+###  http://sweetontology.net/realmLandform/SurfaceRegion
+soreal:SurfaceRegion rdf:type owl:Class ;
+                   rdfs:label "surface region"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/Region
+sorepsg:Region rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Cavity
+sorepsg3:Cavity rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateSpaceConfiguration/Flat
+<http://sweetontology.net/stateSpaceConfiguration/Flat> rdf:type owl:NamedIndividual .
+
+
+###  http://sweetontology.net/stateVisibility/Dark
+sostv:Dark rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

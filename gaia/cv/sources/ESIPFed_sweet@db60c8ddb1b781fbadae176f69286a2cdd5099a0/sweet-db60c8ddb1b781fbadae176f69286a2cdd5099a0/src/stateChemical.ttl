@@ -1,0 +1,384 @@
+@prefix : <http://sweetontology.net/stateChemical/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sost: <http://sweetontology.net/state/> .
+@prefix sostb: <http://sweetontology.net/stateBiological/> .
+@prefix sostc: <http://sweetontology.net/stateChemical/> .
+@base <http://sweetontology.net/stateChemical> .
+
+<http://sweetontology.net/stateChemical> rdf:type owl:Ontology ;
+                                          owl:imports <http://sweetontology.net/state> ,
+                                                      <http://sweetontology.net/stateBiological> ;
+                                          rdfs:label "SWEET Ontology State Chemical" ;
+                                          dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                          owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/stateChemical/BiochemicalState
+sostc:BiochemicalState rdf:type owl:Class ;
+                        rdfs:subClassOf sostb:BiologicalState ,
+                                        sostc:ChemicalState ;
+                        rdfs:label "biochemical state"@en .
+
+
+###  http://sweetontology.net/stateChemical/ChemicalState
+sostc:ChemicalState rdf:type owl:Class ;
+                     rdfs:subClassOf sost:State ;
+                     rdfs:label "chemical state"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://sweetontology.net/stateChemical/Acid
+sostc:Acid rdf:type owl:NamedIndividual ,
+                     sostc:ChemicalState ;
+            rdfs:label "acid"@en .
+
+
+###  http://sweetontology.net/stateChemical/Aerobic
+sostc:Aerobic rdf:type owl:NamedIndividual ,
+                        sostc:BiochemicalState ;
+               rdfs:label "aerobic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Aliphatic
+sostc:Aliphatic rdf:type owl:NamedIndividual ,
+                          sostc:ChemicalState ;
+                 rdfs:label "aliphatic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Anerobic
+sostc:Anerobic rdf:type owl:NamedIndividual ,
+                         sostc:BiochemicalState ;
+                rdfs:label "anerobic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Anoxia
+sostc:Anoxia rdf:type owl:NamedIndividual ,
+                       sostc:BiochemicalState ;
+              owl:sameAs sostc:Anoxic ;
+              rdfs:label "anoxia"@en .
+
+
+###  http://sweetontology.net/stateChemical/Anoxic
+sostc:Anoxic rdf:type owl:NamedIndividual ,
+                       sostc:BiochemicalState ;
+              rdfs:label "anoxic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Aromatic
+sostc:Aromatic rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                rdfs:label "aromatic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Base
+sostc:Base rdf:type owl:NamedIndividual ,
+                     sostc:ChemicalState ;
+            rdfs:label "base"@en .
+
+
+###  http://sweetontology.net/stateChemical/Brackish
+sostc:Brackish rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                rdfs:label "brackish"@en .
+
+
+###  http://sweetontology.net/stateChemical/Calcareous
+sostc:Calcareous rdf:type owl:NamedIndividual ,
+                           sostc:ChemicalState ;
+                  rdfs:label "calcareous"@en .
+
+
+###  http://sweetontology.net/stateChemical/Carbonaceous
+sostc:Carbonaceous rdf:type owl:NamedIndividual ,
+                             sostc:ChemicalState ;
+                    rdfs:label "carbonaceous"@en .
+
+
+###  http://sweetontology.net/stateChemical/Composite
+sostc:Composite rdf:type owl:NamedIndividual ,
+                          sostc:ChemicalState ;
+                 rdfs:label "composite"@en .
+
+
+###  http://sweetontology.net/stateChemical/Electronic
+sostc:Electronic rdf:type owl:NamedIndividual ,
+                           sostc:ChemicalState ;
+                  rdfs:label "electronic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Endothermic
+sostc:Endothermic rdf:type owl:NamedIndividual ,
+                            sostc:ChemicalState ;
+                   rdfs:label "endothermic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Euhaline
+sostc:Euhaline rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                rdfs:label "euhaline"@en .
+
+
+###  http://sweetontology.net/stateChemical/Eutrophic
+sostc:Eutrophic rdf:type owl:NamedIndividual ,
+                          sostc:BiochemicalState ;
+                 rdfs:label "eutrophic"@en .
+
+
+###  http://sweetontology.net/stateChemical/ExcitedState
+sostc:ExcitedState rdf:type owl:NamedIndividual ,
+                             sostc:ChemicalState ;
+                    rdfs:label "excited state"@en .
+
+
+###  http://sweetontology.net/stateChemical/Exothermic
+sostc:Exothermic rdf:type owl:NamedIndividual ,
+                           sostc:ChemicalState ;
+                  rdfs:label "exothermic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Fixed
+sostc:Fixed rdf:type owl:NamedIndividual ,
+                      sostc:ChemicalState ;
+             rdfs:label "fixed"@en .
+
+
+###  http://sweetontology.net/stateChemical/GroundState
+sostc:GroundState rdf:type owl:NamedIndividual ,
+                            sostc:ChemicalState ;
+                   rdfs:label "ground state"@en .
+
+
+###  http://sweetontology.net/stateChemical/Hypoxia
+sostc:Hypoxia rdf:type owl:NamedIndividual ,
+                        sostc:BiochemicalState ;
+               owl:sameAs sostc:Hypoxic ;
+               rdfs:label "hypoxia"@en .
+
+
+###  http://sweetontology.net/stateChemical/Hypoxic
+sostc:Hypoxic rdf:type owl:NamedIndividual ,
+                        sostc:BiochemicalState ;
+               rdfs:label "hypoxic"@en .
+
+
+###  http://sweetontology.net/stateChemical/Icy
+sostc:Icy rdf:type owl:NamedIndividual ,
+                    sostc:ChemicalState ;
+           rdfs:label "icy"@en .
+
+
+###  http://sweetontology.net/stateChemical/Inert
+sostc:Inert rdf:type owl:NamedIndividual ,
+                      sostc:ChemicalState ;
+             rdfs:label "inert"@en .
+
+
+###  http://sweetontology.net/stateChemical/Metallic
+sostc:Metallic rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                rdfs:label "metallic"@en .
+
+
+###  http://sweetontology.net/stateChemical/NonPolar
+sostc:NonPolar rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                rdfs:label "non polar"@en .
+
+
+###  http://sweetontology.net/stateChemical/Oxidized
+sostc:Oxidized rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                rdfs:label "oxidized"@en .
+
+
+###  http://sweetontology.net/stateChemical/Oxygenated
+sostc:Oxygenated rdf:type owl:NamedIndividual ,
+                           sostc:ChemicalState ;
+                  rdfs:label "oxygenated"@en .
+
+
+###  http://sweetontology.net/stateChemical/Polar
+sostc:Polar rdf:type owl:NamedIndividual ,
+                      sostc:ChemicalState ;
+             rdfs:label "polar"@en .
+
+
+###  http://sweetontology.net/stateChemical/Potability
+sostc:Potability rdf:type owl:NamedIndividual ,
+                           sostc:ChemicalState ;
+                  owl:sameAs sostc:Potable ;
+                  rdfs:label "potability"@en .
+
+
+###  http://sweetontology.net/stateChemical/Potable
+sostc:Potable rdf:type owl:NamedIndividual ,
+                        sostc:ChemicalState ;
+               rdfs:label "potable"@en .
+
+
+###  http://sweetontology.net/stateChemical/Radioactive
+sostc:Radioactive rdf:type owl:NamedIndividual ,
+                            sostc:ChemicalState ;
+                   owl:sameAs sostc:RadioactiveDecay ,
+                              sostc:Radioactivity ;
+                   rdfs:label "radioactive"@en .
+
+
+###  http://sweetontology.net/stateChemical/RadioactiveDecay
+sostc:RadioactiveDecay rdf:type owl:NamedIndividual ,
+                                 sostc:ChemicalState ;
+                        rdfs:label "radioactive decay"@en .
+
+
+###  http://sweetontology.net/stateChemical/Radioactivity
+sostc:Radioactivity rdf:type owl:NamedIndividual ,
+                              sostc:ChemicalState ;
+                     rdfs:label "radioactivity"@en .
+
+
+###  http://sweetontology.net/stateChemical/Rocky
+sostc:Rocky rdf:type owl:NamedIndividual ,
+                      sostc:ChemicalState ;
+             rdfs:label "rocky"@en .
+
+
+###  http://sweetontology.net/stateChemical/Rotational
+sostc:Rotational rdf:type owl:NamedIndividual ,
+                           sostc:ChemicalState ;
+                  rdfs:label "rotational"@en .
+
+
+###  http://sweetontology.net/stateChemical/Saline
+sostc:Saline rdf:type owl:NamedIndividual ,
+                       sostc:ChemicalState ;
+              rdfs:label "saline"@en .
+
+
+###  http://sweetontology.net/stateChemical/Saturate
+sostc:Saturate rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                owl:sameAs sostc:Saturated ,
+                           sostc:Saturation ;
+                rdfs:label "saturate"@en .
+
+
+###  http://sweetontology.net/stateChemical/Saturated
+sostc:Saturated rdf:type owl:NamedIndividual ,
+                          sostc:ChemicalState ;
+                 rdfs:label "saturated"@en .
+
+
+###  http://sweetontology.net/stateChemical/Saturation
+sostc:Saturation rdf:type owl:NamedIndividual ,
+                           sostc:ChemicalState ;
+                  rdfs:label "saturation"@en .
+
+
+###  http://sweetontology.net/stateChemical/Tenuous
+sostc:Tenuous rdf:type owl:NamedIndividual ,
+                        sostc:ChemicalState ;
+               rdfs:label "tenuous"@en .
+
+
+###  http://sweetontology.net/stateChemical/Translational
+sostc:Translational rdf:type owl:NamedIndividual ,
+                              sostc:ChemicalState ;
+                     rdfs:label "translational"@en .
+
+
+###  http://sweetontology.net/stateChemical/Undersaturated
+sostc:Undersaturated rdf:type owl:NamedIndividual ,
+                               sostc:ChemicalState ;
+                      rdfs:label "undersaturated"@en .
+
+
+###  http://sweetontology.net/stateChemical/Unsaturated
+sostc:Unsaturated rdf:type owl:NamedIndividual ,
+                            sostc:ChemicalState ;
+                   rdfs:label "unsaturated"@en .
+
+
+###  http://sweetontology.net/stateChemical/Vibrational
+sostc:Vibrational rdf:type owl:NamedIndividual ,
+                            sostc:ChemicalState ;
+                   rdfs:label "vibrational"@en .
+
+
+###  http://sweetontology.net/stateChemical/Volatile
+sostc:Volatile rdf:type owl:NamedIndividual ,
+                         sostc:ChemicalState ;
+                rdfs:label "volatile"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:Acid
+                        sostc:Base
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:Aerobic
+                        sostc:Anerobic
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:Endothermic
+                        sostc:Exothermic
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:ExcitedState
+                        sostc:GroundState
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:Icy
+                        sostc:Rocky
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:NonPolar
+                        sostc:Polar
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:Saturated
+                        sostc:Undersaturated
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( sostc:Saturated
+                        sostc:Unsaturated
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

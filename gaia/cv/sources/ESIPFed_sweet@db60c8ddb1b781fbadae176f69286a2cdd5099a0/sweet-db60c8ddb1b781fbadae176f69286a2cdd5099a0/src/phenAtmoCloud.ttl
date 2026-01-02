@@ -1,0 +1,393 @@
+@prefix : <http://sweetontology.net/phenAtmoCloud/> .
+@prefix sophm: <http://sweetontology.net/phenMixing/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soma: <http://sweetontology.net/matr/> .
+@prefix sophatmowm: <http://sweetontology.net/phenAtmoWindMesoscale/> .
+@prefix sophfi: <http://sweetontology.net/phenFluidInstability/> .
+@prefix sorealo: <http://sweetontology.net/realmLandOrographic/> .
+@prefix soph: <http://sweetontology.net/phen/> .
+@prefix somaae: <http://sweetontology.net/matrAerosol/> .
+@prefix soprocp: <http://sweetontology.net/procPhysical/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sophatmo: <http://sweetontology.net/phenAtmo/> .
+@prefix sophatmoc: <http://sweetontology.net/phenAtmoCloud/> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix sophatmops: <http://sweetontology.net/phenAtmoPressure/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@prefix sost: <http://sweetontology.net/state/> .
+@prefix sophft: <http://sweetontology.net/phenFluidTransport/> .
+@prefix somaw: <http://sweetontology.net/matrWater/> .
+@base <http://sweetontology.net/phenAtmoCloud> .
+
+<http://sweetontology.net/phenAtmoCloud> rdf:type owl:Ontology ;
+                                          owl:imports <http://sweetontology.net/matr> ,
+                                                      <http://sweetontology.net/matrAerosol> ,
+                                                      <http://sweetontology.net/matrWater> ,
+                                                      <http://sweetontology.net/phen> ,
+                                                      <http://sweetontology.net/phenAtmo> ,
+                                                      <http://sweetontology.net/phenAtmoPressure> ,
+                                                      <http://sweetontology.net/phenAtmoWindMesoscale> ,
+                                                      <http://sweetontology.net/phenFluidInstability> ,
+                                                      <http://sweetontology.net/phenFluidTransport> ,
+                                                      <http://sweetontology.net/phenMixing> ,
+                                                      <http://sweetontology.net/procPhysical> ,
+                                                      <http://sweetontology.net/realmLandOrographic> ,
+                                                      <http://sweetontology.net/rela> ,
+                                                      <http://sweetontology.net/relaChemical> ,
+                                                      <http://sweetontology.net/relaSpace> ,
+                                                      <http://sweetontology.net/state> ;
+                                          rdfs:label "SWEET Ontology Phenomena Atmosphere Cloud" ;
+                                          dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                          owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasProcess
+sorel:hasProcess rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaChemical/hasSubstance
+sorelch:hasSubstance rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/upperPartOf
+sorelsp:upperPartOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/phenAtmoCloud/Altostratus
+sophatmoc:Altostratus rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmoc:Stratiform ;
+                  rdfs:label "altostratus"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/AnvilCloud
+sophatmoc:AnvilCloud rdf:type owl:Class ;
+                 rdfs:subClassOf sophatmoc:Cloud ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorelsp:upperPartOf ;
+                                   owl:allValuesFrom sophatmoc:Cumulonimbus
+                                 ] ;
+                 rdfs:label "anvil cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/BannerCloud
+sophatmoc:BannerCloud rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmoc:Cloud ;
+                  rdfs:label "banner cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/BaroclinicLeaf
+sophatmoc:BaroclinicLeaf rdf:type owl:Class ;
+                     rdfs:subClassOf sophatmoc:Cloud ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sorel:hasPhenomena ;
+                                       owl:allValuesFrom sophatmops:Cyclogenesis
+                                     ] ;
+                     rdfs:label "baroclinic leaf"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/BillowCloud
+sophatmoc:BillowCloud rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmoc:Cloud ;
+                  rdfs:label "billow cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/BlackShearedAnvil
+sophatmoc:BlackShearedAnvil rdf:type owl:Class ;
+                        rdfs:subClassOf sophatmoc:Cumulonimbus ;
+                        rdfs:label "black sheared anvil"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Cirrostratus
+sophatmoc:Cirrostratus rdf:type owl:Class ;
+                   rdfs:subClassOf sophatmoc:Stratiform ;
+                   rdfs:label "cirrostratus"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Cirrus
+sophatmoc:Cirrus rdf:type owl:Class ;
+             rdfs:subClassOf sophatmoc:Cloud ;
+             rdfs:label "cirrus"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Cloud
+sophatmoc:Cloud rdf:type owl:Class ;
+            rdfs:subClassOf sophatmo:MeteorologicalPhenomena ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelch:hasSubstance ;
+                              owl:someValuesFrom somaae:CloudCondensationNuclei
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty sorelch:hasSubstance ;
+                              owl:someValuesFrom somaw:Ice
+                            ] ;
+            rdfs:label "cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Cumulonimbus
+sophatmoc:Cumulonimbus rdf:type owl:Class ;
+                   rdfs:subClassOf sophatmoc:Cloud ;
+                   rdfs:label "cumulonimbus"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Cumulus
+sophatmoc:Cumulus rdf:type owl:Class ;
+              rdfs:subClassOf sophatmoc:Cloud ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorel:hasPhenomena ;
+                                owl:allValuesFrom sophft:Convection
+                              ] ;
+              rdfs:label "cumulus"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/FlankingLine
+sophatmoc:FlankingLine rdf:type owl:Class ;
+                   rdfs:subClassOf sophatmo:MeteorologicalPhenomena ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorel:hasPhenomena ;
+                                     owl:allValuesFrom sophatmoc:Cumulonimbus
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty sorel:hasPhenomena ;
+                                     owl:allValuesFrom sophatmoc:Cumulus
+                                   ] ;
+                   rdfs:label "flanking line"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/FoehnCloud
+sophatmoc:FoehnCloud rdf:type owl:Class ;
+                 owl:equivalentClass sophatmoc:FoehnWall ,
+                                     sophatmoc:Moazagotl ;
+                 rdfs:subClassOf sophatmoc:Cloud ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorel:hasPhenomena ;
+                                   owl:allValuesFrom sophatmowm:Foehn
+                                 ] ;
+                 rdfs:label "foehn cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/FoehnWall
+sophatmoc:FoehnWall rdf:type owl:Class ;
+                rdfs:label "foehn wall"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/ForcedCloud
+sophatmoc:ForcedCloud rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmoc:Cumulus ;
+                  rdfs:label "forced cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/FunnelCloud
+sophatmoc:FunnelCloud rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmoc:Cloud ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorel:hasProcess ;
+                                    owl:allValuesFrom soprocp:Rotation
+                                  ] ;
+                  rdfs:label "funnel cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/KelvinHelmholtzBillows
+sophatmoc:KelvinHelmholtzBillows rdf:type owl:Class ;
+                             rdfs:subClassOf sophatmoc:Cloud ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty sorel:hasState ;
+                                               owl:allValuesFrom sophfi:KelvinHelmholtzInstability
+                                             ] ;
+                             rdfs:label "kelvin helmholtz billows"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/LaSerpe
+sophatmoc:LaSerpe rdf:type owl:Class ;
+              rdfs:subClassOf sophatmoc:Cloud ;
+              rdfs:label "la serpe"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/LayerCloud
+sophatmoc:LayerCloud rdf:type owl:Class ;
+                 rdfs:subClassOf sophatmoc:Cloud ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorel:hasPhenomena ;
+                                   owl:allValuesFrom sophatmo:CappingInversion
+                                 ] ;
+                 rdfs:label "layer cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/LenticularCloud
+sophatmoc:LenticularCloud rdf:type owl:Class ;
+                      rdfs:subClassOf sophatmoc:Cloud ;
+                      rdfs:label "lenticular cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Mamma
+sophatmoc:Mamma rdf:type owl:Class ;
+            rdfs:subClassOf sophatmoc:Cloud ;
+            rdfs:label "mamma"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/MaritimeCloud
+sophatmoc:MaritimeCloud rdf:type owl:Class ;
+                    rdfs:subClassOf sophatmoc:Cloud ;
+                    rdfs:label "maritime cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/MixedCloud
+sophatmoc:MixedCloud rdf:type owl:Class ;
+                 rdfs:subClassOf sophatmoc:Cloud ;
+                 rdfs:label "mixed cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/MixingCloud
+sophatmoc:MixingCloud rdf:type owl:Class ;
+                  rdfs:subClassOf sophatmoc:Cloud ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorel:hasPhenomena ;
+                                    owl:someValuesFrom sophm:Mixing
+                                  ] ;
+                  rdfs:label "mixing cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Moazagotl
+sophatmoc:Moazagotl rdf:type owl:Class ;
+                rdfs:subClassOf sophatmoc:LenticularCloud ;
+                rdfs:label "moazagotl"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/MountainWaveCloud
+sophatmoc:MountainWaveCloud rdf:type owl:Class ;
+                        rdfs:subClassOf sophatmoc:Cloud ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty sorel:hasPhenomena ;
+                                          owl:allValuesFrom sophatmo:MountainWave
+                                        ] ;
+                        rdfs:label "mountain wave cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Nacreous
+sophatmoc:Nacreous rdf:type owl:Class ;
+               rdfs:subClassOf sophatmoc:Cloud ;
+               rdfs:label "nacreous"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Nimbostratus
+sophatmoc:Nimbostratus rdf:type owl:Class ;
+                   rdfs:subClassOf sophatmoc:Cloud ;
+                   rdfs:label "nimbostratus"@en .
+
+###  http://sweetontology.net/phenAtmoCloud/NoctilucentCloud
+sophatmoc:NoctilucentCloud rdf:type owl:Class ;
+                       rdfs:subClassOf sophatmoc:Cloud ;
+                       rdfs:label "noctilucent cloud"@en ;
+                       dcterms:contributor <https://orcid.org/0000-0002-0337-8610> .
+
+###  http://sweetontology.net/phenAtmoCloud/NoctilueentCloud
+sophatmoc:NoctilueentCloud rdf:type owl:Class ;
+                       rdfs:label "noctilueent cloud"@en ;
+                       owl:deprecated "true"^^xsd:boolean ;
+                       rdfs:seeAlso sophatmoc:NoctilucentCloud ;
+                       dcterms:contributor <https://orcid.org/0000-0002-0337-8610> .
+
+###  http://sweetontology.net/phenAtmoCloud/OrographicCloud
+sophatmoc:OrographicCloud rdf:type owl:Class ;
+                      rdfs:subClassOf sophatmoc:Cloud ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sorel:hasPhenomena ;
+                                        owl:allValuesFrom sorealo:Orographic
+                                      ] ;
+                      rdfs:label "orographic cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/OvershootingTop
+sophatmoc:OvershootingTop rdf:type owl:Class ;
+                      rdfs:subClassOf sophatmoc:Cloud ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sorelsp:upperPartOf ;
+                                        owl:allValuesFrom sophatmoc:AnvilCloud
+                                      ] ;
+                      rdfs:label "overshooting top"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/PassiveCloud
+sophatmoc:PassiveCloud rdf:type owl:Class ;
+                   rdfs:subClassOf sophatmoc:Cumulus ;
+                   rdfs:label "passive cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/RollCloud
+sophatmoc:RollCloud rdf:type owl:Class ;
+                rdfs:subClassOf sophatmoc:Cloud ;
+                rdfs:label "roll cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/SelfCloud
+sophatmoc:SelfCloud rdf:type owl:Class ;
+                rdfs:subClassOf sophatmoc:Cloud ;
+                rdfs:label "self cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Stratiform
+sophatmoc:Stratiform rdf:type owl:Class ;
+                 rdfs:subClassOf sophatmoc:Cloud ;
+                 rdfs:label "stratiform"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Stratocumulus
+sophatmoc:Stratocumulus rdf:type owl:Class ;
+                    rdfs:subClassOf sophatmoc:Stratiform ;
+                    rdfs:label "stratocumulus"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Stratus
+sophatmoc:Stratus rdf:type owl:Class ;
+              rdfs:subClassOf sophatmoc:Stratiform ;
+              rdfs:label "stratus"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/Towering
+sophatmoc:Towering rdf:type owl:Class ;
+               rdfs:subClassOf sophatmo:MeteorologicalPhenomena ;
+               rdfs:label "towering"@en .
+
+
+###  http://sweetontology.net/phenAtmoCloud/WallCloud
+sophatmoc:WallCloud rdf:type owl:Class ;
+                rdfs:subClassOf sophatmoc:Cloud ;
+                rdfs:label "wall cloud"@en .
+
+
+###  http://sweetontology.net/phenAtmoPressure/Cyclogenesis
+sophatmops:Cyclogenesis rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenAtmoWindMesoscale/Foehn
+sophatmowm:Foehn rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenFluidInstability/KelvinHelmholtzInstability
+sophfi:KelvinHelmholtzInstability rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenFluidTransport/Convection
+sophft:Convection rdf:type owl:Class .
+
+
+###  http://sweetontology.net/phenMixing/Mixing
+sophm:Mixing rdf:type owl:Class .
+
+
+###  http://sweetontology.net/procPhysical/Rotation
+soprocp:Rotation rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

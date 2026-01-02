@@ -1,0 +1,189 @@
+@prefix : <http://sweetontology.net/realmGeolOrogen/> .
+@prefix sophso: <http://sweetontology.net/phenSolid/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sopropsdir: <http://sweetontology.net/propSpaceDirection/> .
+@prefix somarocki: <http://sweetontology.net/matrRockIgneous/> .
+@prefix soreagor: <http://sweetontology.net/realmGeolOrogen/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sorealt: <http://sweetontology.net/realmLandTectonic/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix soma: <http://sweetontology.net/matr/> .
+@prefix sophg: <http://sweetontology.net/phenGeol/> .
+@prefix sorepsg: <http://sweetontology.net/reprSpaceGeometry/> .
+@prefix somarock: <http://sweetontology.net/matrRock/> .
+@prefix soph: <http://sweetontology.net/phen/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorel: <http://sweetontology.net/rela/> .
+@prefix sophgt: <http://sweetontology.net/phenGeolTectonic/> .
+@prefix soreagb: <http://sweetontology.net/realmGeolBasin/> .
+@prefix sorelch: <http://sweetontology.net/relaChemical/> .
+@prefix soreag: <http://sweetontology.net/realmGeol/> .
+@prefix sorelph: <http://sweetontology.net/relaPhysical/> .
+@prefix sorelsp: <http://sweetontology.net/relaSpace/> .
+@base <http://sweetontology.net/realmGeolOrogen> .
+
+<http://sweetontology.net/realmGeolOrogen> rdf:type owl:Ontology ;
+                                            owl:imports <http://sweetontology.net/matr> ,
+                                                        <http://sweetontology.net/matrRock> ,
+                                                        <http://sweetontology.net/matrRockIgneous> ,
+                                                        <http://sweetontology.net/phen> ,
+                                                        <http://sweetontology.net/phenGeol> ,
+                                                        <http://sweetontology.net/phenGeolGeomorphology> ,
+                                                        <http://sweetontology.net/phenGeolTectonic> ,
+                                                        <http://sweetontology.net/phenSolid> ,
+                                                        <http://sweetontology.net/propSpaceDirection> ,
+                                                        <http://sweetontology.net/realmGeol> ,
+                                                        <http://sweetontology.net/realmGeolBasin> ,
+                                                        <http://sweetontology.net/realmLandTectonic> ,
+                                                        <http://sweetontology.net/rela> ,
+                                                        <http://sweetontology.net/relaChemical> ,
+                                                        <http://sweetontology.net/relaPhysical> ,
+                                                        <http://sweetontology.net/relaSpace> ,
+                                                        <http://sweetontology.net/reprSpaceGeometry> ;
+                                            rdfs:label "SWEET Ontology Realm Geologic Orogen" ;
+                                            dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                            owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://sweetontology.net/rela/hasPhenomena
+sorel:hasPhenomena rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaChemical/hasSubstance
+sorelch:hasSubstance rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaPhysical/hasPlanetaryStructure
+sorelph:hasPlanetaryStructure rdf:type owl:ObjectProperty .
+
+
+###  http://sweetontology.net/relaSpace/hasAxis
+sorelsp:hasAxis rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/realmGeolOrogen/Arc
+soreagor:Arc rdf:type owl:Class ;
+        rdfs:subClassOf soreag:GeologicFeature ,
+                        sorepsg:Arc ;
+        rdfs:label "arc"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/ArcAxis
+soreagor:ArcAxis rdf:type owl:Class ;
+            rdfs:subClassOf sopropsdir:Axis ;
+            rdfs:label "arc axis"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/BackArc
+soreagor:BackArc rdf:type owl:Class ;
+            owl:equivalentClass soreagor:RearArc ,
+                                soreagor:RetroArc ;
+            rdfs:subClassOf soreagor:Arc ;
+            rdfs:label "back arc"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/ForeArc
+soreagor:ForeArc rdf:type owl:Class ;
+            rdfs:subClassOf soreagor:Arc ,
+                            sorealt:SupraSubductionZoneComplex ;
+            rdfs:label "fore arc"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/MagmaticArc
+soreagor:MagmaticArc rdf:type owl:Class ;
+                rdfs:subClassOf soreagor:Arc ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelph:hasPlanetaryStructure ;
+                                  owl:someValuesFrom soreagor:ForeArc
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelph:hasPlanetaryStructure ;
+                                  owl:someValuesFrom soreagor:RearArc
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelsp:hasAxis ;
+                                  owl:allValuesFrom soreagor:ArcAxis
+                                ] ;
+                rdfs:label "magmatic arc"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/Orogen
+soreagor:Orogen rdf:type owl:Class ;
+           rdfs:subClassOf soreag:GeologicProvince ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorel:hasPhenomena ;
+                             owl:someValuesFrom sophg:OrogenicCollapse
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorel:hasPhenomena ;
+                             owl:someValuesFrom sophg:Orogeny
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorel:hasPhenomena ;
+                             owl:someValuesFrom sophso:Deformation
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelch:hasSubstance ;
+                             owl:someValuesFrom somarock:Melange
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelph:hasPlanetaryStructure ;
+                             owl:someValuesFrom sophgt:Terrane
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelph:hasPlanetaryStructure ;
+                             owl:someValuesFrom soreagb:ForelandBasin
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelph:hasPlanetaryStructure ;
+                             owl:someValuesFrom sorealt:Suture
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sorelph:hasPlanetaryStructure ;
+                             owl:someValuesFrom sorealt:ThrustSystem
+                           ] ;
+           rdfs:label "orogen"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/RearArc
+soreagor:RearArc rdf:type owl:Class ;
+            rdfs:label "rear arc"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/RemnantArc
+soreagor:RemnantArc rdf:type owl:Class ;
+               rdfs:subClassOf soreagor:Arc ;
+               rdfs:label "remnant arc"@en .
+
+
+###  http://sweetontology.net/realmGeolOrogen/RetroArc
+soreagor:RetroArc rdf:type owl:Class ;
+             rdfs:label "retro arc"@en .
+
+
+###  http://sweetontology.net/realmLandTectonic/SupraSubductionZoneComplex
+sorealt:SupraSubductionZoneComplex rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realmLandTectonic/Suture
+sorealt:Suture rdf:type owl:Class .
+
+
+###  http://sweetontology.net/realmLandTectonic/ThrustSystem
+sorealt:ThrustSystem rdf:type owl:Class .
+
+
+###  http://sweetontology.net/reprSpaceGeometry/Arc
+sorepsg:Arc rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

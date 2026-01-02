@@ -1,0 +1,181 @@
+@prefix : <http://sweetontology.net/reprSpaceGeometry3D/> .
+@prefix sorepsg: <http://sweetontology.net/reprSpaceGeometry/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorep: <http://sweetontology.net/repr/> .
+@prefix sorepsg3: <http://sweetontology.net/reprSpaceGeometry3D/> .
+@base <http://sweetontology.net/reprSpaceGeometry3D> .
+
+<http://sweetontology.net/reprSpaceGeometry3D> rdf:type owl:Ontology ;
+                                                owl:imports <http://sweetontology.net/repr> ,
+                                                            <http://sweetontology.net/reprSpaceGeometry> ;
+                                                rdfs:label "SWEET Ontology Representation Space Geometry 3D" ;
+                                                dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                                owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/reprSpaceGeometry3D/AirSpace
+sorepsg3:AirSpace rdf:type owl:Class ;
+               rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+               rdfs:label "air space"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Belt
+sorepsg3:Belt rdf:type owl:Class ;
+           rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+           rdfs:label "belt"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Body
+sorepsg3:Body rdf:type owl:Class ;
+           rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+           rdfs:label "body"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Bowl
+sorepsg3:Bowl rdf:type owl:Class ;
+           rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+           rdfs:label "bowl"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Cavity
+sorepsg3:Cavity rdf:type owl:Class ;
+             rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+             rdfs:label "cavity"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Cone
+sorepsg3:Cone rdf:type owl:Class ;
+           rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+           rdfs:label "cone"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Corkscrew
+sorepsg3:Corkscrew rdf:type owl:Class ;
+                rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+                rdfs:label "corkscrew"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Cylinder
+sorepsg3:Cylinder rdf:type owl:Class ;
+               rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+               rdfs:label "cylinder"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Dipole
+sorepsg3:Dipole rdf:type owl:Class ;
+             rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+             rdfs:label "dipole"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Dome
+sorepsg3:Dome rdf:type owl:Class ;
+           rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+           rdfs:label "dome"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Ellipsoid
+sorepsg3:Ellipsoid rdf:type owl:Class ;
+                rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+                rdfs:label "ellipsoid"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Envelope
+sorepsg3:Envelope rdf:type owl:Class ;
+               rdfs:subClassOf sorepsg3:Layer ;
+               rdfs:label "envelope"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/FluxTube
+sorepsg3:FluxTube rdf:type owl:Class ;
+               rdfs:subClassOf sorepsg3:Tube ;
+               rdfs:label "flux tube"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/GeometricalObject_3D
+sorepsg3:GeometricalObject_3D rdf:type owl:Class ;
+                           rdfs:subClassOf sorep:D ,
+                                           sorepsg:GeometricalObject ;
+                           rdfs:label "geometrical object 3d"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Hemisphere
+sorepsg3:Hemisphere rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+                 rdfs:label "hemisphere"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Layer
+sorepsg3:Layer rdf:type owl:Class ;
+            rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+            rdfs:label "layer"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Polyhedron
+sorepsg3:Polyhedron rdf:type owl:Class ;
+                 rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+                 rdfs:label "polyhedron"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/ReferenceEllipsoid
+sorepsg3:ReferenceEllipsoid rdf:type owl:Class ;
+                         rdfs:subClassOf sorepsg3:Ellipsoid ;
+                         rdfs:label "reference ellipsoid"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Ring
+sorepsg3:Ring rdf:type owl:Class ;
+           rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+           rdfs:label "ring"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Shell
+sorepsg3:Shell rdf:type owl:Class ;
+            rdfs:subClassOf sorepsg3:Layer ;
+            rdfs:label "shell"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Sphere
+sorepsg3:Sphere rdf:type owl:Class ;
+             rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+             rdfs:label "sphere"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Spheroid
+sorepsg3:Spheroid rdf:type owl:Class ;
+               rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+               rdfs:label "spheroid"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Strata
+sorepsg3:Strata rdf:type owl:Class ;
+             rdfs:subClassOf sorepsg3:Layer ;
+             rdfs:label "strata"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Striation
+sorepsg3:Striation rdf:type owl:Class ;
+                rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+                rdfs:label "striation"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Torus
+sorepsg3:Torus rdf:type owl:Class ;
+            rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+            rdfs:label "torus"@en .
+
+
+###  http://sweetontology.net/reprSpaceGeometry3D/Tube
+sorepsg3:Tube rdf:type owl:Class ;
+           rdfs:subClassOf sorepsg3:GeometricalObject_3D ;
+           rdfs:label "tube"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

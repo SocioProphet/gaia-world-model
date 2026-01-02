@@ -1,0 +1,140 @@
+@prefix : <http://sweetontology.net/realmLandProtected/> .
+@prefix sohuj: <http://sweetontology.net/humanJurisdiction/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix somanr: <http://sweetontology.net/matrNaturalResource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sorealp: <http://sweetontology.net/realmLandProtected/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sorelh: <http://sweetontology.net/relaHuman/> .
+@base <http://sweetontology.net/realmLandProtected> .
+
+<http://sweetontology.net/realmLandProtected> rdf:type owl:Ontology ;
+                                               owl:imports <http://sweetontology.net/humanJurisdiction> ,
+                                                           <http://sweetontology.net/matrNaturalResource> ,
+                                                           <http://sweetontology.net/relaHuman> ;
+                                               rdfs:label "SWEET Ontology Realm Land Protected" ;
+                                               dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                               owl:versionInfo "3.6.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://sweetontology.net/realmLandProtected/CityPark
+sorealp:CityPark rdf:type owl:Class ;
+              rdfs:subClassOf sorealp:Park ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty sorelh:hasJurisdiction ;
+                                owl:allValuesFrom sohuj:City
+                              ] ;
+              rdfs:label "city park"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/CountyPark
+sorealp:CountyPark rdf:type owl:Class ;
+                rdfs:subClassOf sorealp:Park ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty sorelh:hasJurisdiction ;
+                                  owl:allValuesFrom sohuj:County
+                                ] ;
+                rdfs:label "county park"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/LandReserve
+sorealp:LandReserve rdf:type owl:Class ;
+                 rdfs:subClassOf sohuj:AdministrativeRegion ,
+                                 somanr:LandResource ;
+                 rdfs:label "land reserve"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/MPA
+sorealp:MPA rdf:type owl:Class ;
+         owl:equivalentClass sorealp:MarineProtectedArea ;
+         rdfs:label "mpa"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/MarineProtectedArea
+sorealp:MarineProtectedArea rdf:type owl:Class ;
+                         rdfs:subClassOf sorealp:WaterReserve ;
+                         rdfs:label "marine protected area"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/NationalForest
+sorealp:NationalForest rdf:type owl:Class ;
+                    rdfs:subClassOf sorealp:LandReserve ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty sorelh:hasJurisdiction ;
+                                      owl:allValuesFrom sohuj:Country
+                                    ] ;
+                    rdfs:label "national forest"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/NationalMonument
+sorealp:NationalMonument rdf:type owl:Class ;
+                      rdfs:subClassOf sorealp:LandReserve ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sorelh:hasJurisdiction ;
+                                        owl:allValuesFrom sohuj:Country
+                                      ] ;
+                      rdfs:label "national monument"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/NationalPark
+sorealp:NationalPark rdf:type owl:Class ;
+                  rdfs:subClassOf sorealp:Park ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty sorelh:hasJurisdiction ;
+                                    owl:allValuesFrom sohuj:Country
+                                  ] ;
+                  rdfs:label "national park"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/Park
+sorealp:Park rdf:type owl:Class ;
+          owl:equivalentClass sorealp:Parkland ;
+          rdfs:subClassOf sorealp:LandReserve ;
+          rdfs:label "park"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/Parkland
+sorealp:Parkland rdf:type owl:Class ;
+              rdfs:label "parkland"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/StateForest
+sorealp:StateForest rdf:type owl:Class ;
+                 rdfs:subClassOf sorealp:LandReserve ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sorelh:hasJurisdiction ;
+                                   owl:allValuesFrom sohuj:State
+                                 ] ;
+                 rdfs:label "state forest"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/StatePark
+sorealp:StatePark rdf:type owl:Class ;
+               rdfs:subClassOf sorealp:Park ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sorelh:hasJurisdiction ;
+                                 owl:allValuesFrom sohuj:State
+                               ] ;
+               rdfs:label "state park"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/WaterReserve
+sorealp:WaterReserve rdf:type owl:Class ;
+                  rdfs:subClassOf sohuj:AdministrativeRegion ,
+                                  somanr:WaterResource ;
+                  rdfs:label "water reserve"@en .
+
+
+###  http://sweetontology.net/realmLandProtected/WildlifeRefuge
+sorealp:WildlifeRefuge rdf:type owl:Class ;
+                    rdfs:subClassOf sorealp:LandReserve ;
+                    rdfs:label "wildlife refuge"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
