@@ -18,3 +18,5 @@ If you’re new: read **ABOUT → GETTING_STARTED → ARCHITECTURE**.
 - **Workflow IR** - `workflows/WORKFLOW_IR.md`
 - **Assessment Scorecards** - `assessment/SCORECARDS.md`
 \n\n- **TritRPC Integration** — `contracts/TRITRPC_INTEGRATION.md`\n
+- **TritRPC Integration (Path A)** — `integrations/TRITRPC.md`
+- **TritRPC Wire Map (hyper.v1, Path A)** — `../gaia/wire/tritrpc/hyper.v1.pathA.json`

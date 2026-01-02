@@ -1,0 +1,46 @@
+{
+  "canonicalization": {
+    "attr_map": "MUST be empty in canonical GAIA payloads until all encoders enforce lexicographic key ordering.",
+    "ids": "schema_id/context_id are hex sha3-256 digests (Path A fixtures).",
+    "strings": "UTF-8"
+  },
+  "encoding": "avro-binary",
+  "protocol": "tritrpc",
+  "schema_bundle": {
+    "context_id": "e6572c0e618f18d572d4c2969db4909659f09eaef32ec66fbb804bad9d89aacd",
+    "note": "Path A uses fixture IDs (HG_AVRO_v1/HG_JSONLD_v1). Path B will derive content-addressed IDs from canonical Avro+JSON-LD outputs.",
+    "salad_ref": "vendor/tritrpc/spec/salad/tritrpc_salad.yml",
+    "schema_id": "b2ab814588f99c875d37bb7546d0df4369c28bc5f60ce38a6607dac468034352"
+  },
+  "service": "hyper.v1",
+  "stream": {
+    "chunk_type": "HGStreamChunk",
+    "close_suffix": ".CLOSE",
+    "data_pattern": ".DATA<n>",
+    "kinds": [
+      "OPEN",
+      "DATA",
+      "CLOSE"
+    ],
+    "open_suffix": ".OPEN"
+  },
+  "unary": {
+    "allowed_ops": [
+      "AddVertex",
+      "AddHyperedge",
+      "RemoveVertex",
+      "RemoveHyperedge",
+      "QueryNeighbors",
+      "GetSubgraph"
+    ],
+    "method_notes": "Method names may include extra argument suffixes for fixtures; op is authoritative inside HGRequest.op.",
+    "method_suffixes": [
+      ".REQ",
+      ".RSP",
+      ".Resp"
+    ],
+    "request_type": "HGRequest",
+    "response_type": "HGResponse"
+  },
+  "wire_path": "A"
+}

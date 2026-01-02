@@ -36,3 +36,9 @@ Smallest field set required for safe discovery, composition, validation, and gov
 ## 6) Gap reports
 On compose/validate failure, emit a Gap Analysis Report: missing metadata, missing adapter, interface mismatch, policy violation, reproducibility failure.
 See docs/assessment/SCORECARDS.md.
+
+## TritRPC (Path A) constraints
+
+- For `protocol=tritrpc` + `encoding=avro-binary`, **Schema Salad is the authoring source**; Avro + JSON-LD are derived artifacts.
+- Until encoders are uniformly canonical, GAIA canonical payloads MUST keep `attr` maps empty (or enforce lexicographic key ordering at encode time).
+- Path A IDs follow TritRPC fixture practice: `schema_id=sha3-256("HG_AVRO_v1")`, `context_id=sha3-256("HG_JSONLD_v1")` (hex).
