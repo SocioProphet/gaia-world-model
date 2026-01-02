@@ -11,3 +11,4 @@
 - **Changelog / Integration Log** — `CHANGELOG.md`, `INTEGRATION_LOG.md`
 
 If you’re new: read **ABOUT → GETTING_STARTED → ARCHITECTURE**.
+- **Commons & SocioProphet Stack** — `COMMONS_AND_STACK.md`
