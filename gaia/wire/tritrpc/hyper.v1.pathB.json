@@ -1,0 +1,12 @@
+{
+    "protocol": "tritrpc",
+    "wire_path": "B",
+    "status": "planned",
+    "encoding": "tritrpc-ternary",
+    "service": "hyper.v1",
+    "schema_bundle": {
+        "schema_id": "sha3-256:example",
+        "context_id": "sha3-256:example"
+    },
+    "notes": "Path B is ternary (aead+framing). Not enabled in GAIA yet."
+}
