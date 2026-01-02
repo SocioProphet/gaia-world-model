@@ -13,3 +13,6 @@ build/
 
 # Large derived outputs (keep raw sources in CV tracked; derived outputs can be regenerated)
 gaia/externals/**/tmp/
+
+# macOS
+.DS_Store
