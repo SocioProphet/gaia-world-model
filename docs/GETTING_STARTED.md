@@ -7,33 +7,29 @@
 
 ## Clone and fetch LFS content
 
-```bash
-git clone https://github.com/SocioProphet/gaia-world-model.git
-cd gaia-world-model
-git lfs install
-git lfs pull
-```
+    git clone https://github.com/SocioProphet/gaia-world-model.git
+    cd gaia-world-model
+    git lfs install
+    git lfs pull
 
-## Orientation
+## Where to look first
 
-Start with these:
+CV / provenance
+- gaia/cv/origins.csv
+- gaia/cv/manifests/
+- gaia/cv/checklist.csv
+- gaia/cv/inventory.json
 
-**Provenance / Curation Vault (CV)**
-- gaia/cv/origins.csv (upstream URLs + pinned commit SHAs)
-- gaia/cv/manifests/ (per-source provenance + license evidence pointers)
-- gaia/cv/checklist.csv (file-level hashes)
-- gaia/cv/inventory.json (inventory summary)
+Ontology integration
+- gaia/ontology/canonical/index.yaml
+- gaia/ontology/imports_index.yaml
 
-**Storage policy and releases**
-- docs/CV_STORAGE_POLICY.md
-- docs/RELEASES.md
-
-**Reports**
+Reports
 - gaia/reports/issue-001_entrypoints_report.md
 
 ## Typical workflow: add a new source (high level)
 1. Add URL + pinned commit SHA to gaia/cv/origins.csv
-2. Ingest snapshot under gaia/cv/source_archives/ and gaia/cv/sources/
+2. Ingest into gaia/cv/source_archives/ and gaia/cv/sources/<SOURCE_ID>/...
 3. Regenerate manifests + checklist + inventory
-4. Produce/update reports and entrypoint recommendations under gaia/reports/
-5. Tag a release when the vault state is stable
+4. Select canonical entrypoint(s) in gaia/ontology/canonical/index.yaml
+5. Add validation + import strategy iteratively (see Issues)

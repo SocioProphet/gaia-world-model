@@ -61,3 +61,7 @@ git lfs pull
 
 Issues: https://github.com/SocioProphet/gaia-world-model/issues
 - `docs/COMMONS_AND_STACK.md` — GAIA in the global AI/knowledge commons + SocioProphet stack integration
+
+## Documentation
+
+See `docs/README.md` for the full documentation index.

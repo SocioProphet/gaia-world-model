@@ -12,3 +12,8 @@
 
 If you’re new: read **ABOUT → GETTING_STARTED → ARCHITECTURE**.
 - **Commons & SocioProphet Stack** — `COMMONS_AND_STACK.md`
+- **EarthCube Alignment** - `integrations/EARTHCUBE.md`
+- **Commons & SocioProphet Stack** - `COMMONS_AND_STACK.md`
+- **Registry Contract** - `contracts/REGISTRY_CONTRACT.md`
+- **Workflow IR** - `workflows/WORKFLOW_IR.md`
+- **Assessment Scorecards** - `assessment/SCORECARDS.md`
