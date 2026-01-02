@@ -1,1 +1,43 @@
-imports: []
+schema: gaia.imports_index.v1
+generated: true
+items:
+  -
+    source_id: "BCODMO_Ocean-Data-Ontology@d2c097c8f068d86cab059093c7f25d5e78cd489c"
+    load:
+      entrypoint: "BCODMO_Ocean-Data-Ontology@d2c097c8f068d86cab059093c7f25d5e78cd489c/Ocean-Data-Ontology-d2c097c8f068d86cab059093c7f25d5e78cd489c/doc/ontology.nt"
+      strategy: single
+      imports:
+
+      notes: "Draft: treat as single ontology; refine once import closure is validated."
+  -
+    source_id: "ESIPFed_science-on-schema.org@323d1ac112eaa98a2dbcaffad34698914badf305"
+    load:
+      entrypoint: "ESIPFed_science-on-schema.org@323d1ac112eaa98a2dbcaffad34698914badf305/science-on-schema.org-323d1ac112eaa98a2dbcaffad34698914badf305/validation/shapegraphs/schema.ttl"
+      strategy: single
+      imports:
+
+      notes: "Draft: treat as single ontology; refine once import closure is validated."
+  -
+    source_id: "ESIPFed_sweet@db60c8ddb1b781fbadae176f69286a2cdd5099a0"
+    load:
+      entrypoint: "ESIPFed_sweet@db60c8ddb1b781fbadae176f69286a2cdd5099a0/sweet-db60c8ddb1b781fbadae176f69286a2cdd5099a0/src/matrMineral.ttl"
+      strategy: single
+      imports:
+
+      notes: "Draft: treat as single ontology; refine once import closure is validated."
+  -
+    source_id: "EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981"
+    load:
+      entrypoint: "EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981/environmental-exposure-ontology-c5b17dff2ee222aaf1e775e095c1b95e48395981/ecto-full.owl"
+      strategy: single
+      imports:
+
+      notes: "Draft: treat as single ontology; refine once import closure is validated."
+  -
+    source_id: "geneontology_obographs@459a44e45b56188912bf7272239c984d94b1af4a"
+    load:
+      entrypoint: "geneontology_obographs@459a44e45b56188912bf7272239c984d94b1af4a/obographs-459a44e45b56188912bf7272239c984d94b1af4a/obographs-owlapi/src/main/resources/obo_context.jsonld"
+      strategy: single
+      imports:
+
+      notes: "Draft: treat as single ontology; refine once import closure is validated."
