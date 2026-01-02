@@ -1,0 +1,34 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "required": ["id", "version", "kind", "protocols", "schema_bundle"],
+    "properties": {
+        "id": {"type": "string"},
+        "version": {"type": "string"},
+        "kind": {"type": "string", "enum": ["dataset", "ontology", "tool", "model", "agent", "workflow"]},
+        "protocols": {
+            "type": "array", 
+            "items": {
+                "type": "object", 
+                "required": ["protocol", "wire_path", "encoding", "service"], 
+                "properties": {
+                    "protocol": {"const": "tritrpc"},
+                    "wire_path": {"type": "string", "enum": ["A", "B"]},
+                    "encoding": {"type": "string"},
+                    "service": {"type": "string"}
+                }
+            }
+        },
+        "schema_bundle": {
+            "type": "object", 
+            "required": ["schema_id", "context_id", "salad_ref", "avro_ref", "jsonld_ref"], 
+            "properties": {
+                "schema_id": {"type": "string"}, 
+                "context_id": {"type": "string"}, 
+                "salad_ref": {"type": "string"}, 
+                "avro_ref": {"type": "string"}, 
+                "jsonld_ref": {"type": "string"}
+            }
+        }
+    }
+}
