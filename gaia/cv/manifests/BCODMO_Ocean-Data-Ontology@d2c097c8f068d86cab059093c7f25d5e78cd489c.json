@@ -1,0 +1,29 @@
+{
+  "id": "source:BCODMO_Ocean-Data-Ontology@d2c097c8f068d86cab059093c7f25d5e78cd489c",
+  "origin": {
+    "repo_url": "https://github.com/BCODMO/Ocean-Data-Ontology",
+    "commit_sha": "d2c097c8f068d86cab059093c7f25d5e78cd489c"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/BCODMO_Ocean-Data-Ontology@d2c097c8f068d86cab059093c7f25d5e78cd489c",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "CC (unknown variant)",
+    "files": [
+      "Ocean-Data-Ontology-d2c097c8f068d86cab059093c7f25d5e78cd489c/LICENSE",
+      "Ocean-Data-Ontology-d2c097c8f068d86cab059093c7f25d5e78cd489c/doc/webvowl/license.txt"
+    ]
+  },
+  "counts": {
+    "files": 36,
+    "by_class": {
+      "ontology": 4,
+      "code": 5,
+      "docs": 3,
+      "data": 0,
+      "media": 0,
+      "other": 24
+    }
+  },
+  "merkle_root_sha256": "5f66cbe4d9b34a3e128651f7010b87c6e90550cdfbd375533bb2cf682ab79527"
+}

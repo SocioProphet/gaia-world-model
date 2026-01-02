@@ -1,0 +1,124 @@
+{
+  "items": [
+    {
+      "id": "source:BCODMO_Ocean-Data-Ontology@d2c097c8f068d86cab059093c7f25d5e78cd489c",
+      "title": "BCODMO_Ocean-Data-Ontology@d2c097c8f068d86cab059093c7f25d5e78cd489c",
+      "repo_url": "https://github.com/BCODMO/Ocean-Data-Ontology",
+      "commit_sha": "d2c097c8f068d86cab059093c7f25d5e78cd489c",
+      "path": "gaia/cv/sources/BCODMO_Ocean-Data-Ontology@d2c097c8f068d86cab059093c7f25d5e78cd489c",
+      "license_guess": "CC (unknown variant)",
+      "file_count": 36,
+      "ontology_file_count": 4,
+      "merkle_root_sha256": "5f66cbe4d9b34a3e128651f7010b87c6e90550cdfbd375533bb2cf682ab79527",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:ESIPFed_Awesome-Earth-Artificial-Intelligence@8801f40c1c85f56d37f63a78112f0b7b91fc5a30",
+      "title": "ESIPFed_Awesome-Earth-Artificial-Intelligence@8801f40c1c85f56d37f63a78112f0b7b91fc5a30",
+      "repo_url": "https://github.com/ESIPFed/Awesome-Earth-Artificial-Intelligence",
+      "commit_sha": "8801f40c1c85f56d37f63a78112f0b7b91fc5a30",
+      "path": "gaia/cv/sources/ESIPFed_Awesome-Earth-Artificial-Intelligence@8801f40c1c85f56d37f63a78112f0b7b91fc5a30",
+      "license_guess": "CC (unknown variant)",
+      "file_count": 112,
+      "ontology_file_count": 0,
+      "merkle_root_sha256": "23b1ef90bfccc613ae07e0ae0c21022259d89cf0c0c4c16015742d966d7d2a90",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:ESIPFed_science-on-schema.org@323d1ac112eaa98a2dbcaffad34698914badf305",
+      "title": "ESIPFed_science-on-schema.org@323d1ac112eaa98a2dbcaffad34698914badf305",
+      "repo_url": "https://github.com/ESIPFed/science-on-schema.org",
+      "commit_sha": "323d1ac112eaa98a2dbcaffad34698914badf305",
+      "path": "gaia/cv/sources/ESIPFed_science-on-schema.org@323d1ac112eaa98a2dbcaffad34698914badf305",
+      "license_guess": "Apache-2.0",
+      "file_count": 148,
+      "ontology_file_count": 46,
+      "merkle_root_sha256": "8f52859a728844fc7c307ac9d6c78bab746065fafccfe56d0e020d87112cc208",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:ESIPFed_sweet@db60c8ddb1b781fbadae176f69286a2cdd5099a0",
+      "title": "ESIPFed_sweet@db60c8ddb1b781fbadae176f69286a2cdd5099a0",
+      "repo_url": "https://github.com/ESIPFed/sweet",
+      "commit_sha": "db60c8ddb1b781fbadae176f69286a2cdd5099a0",
+      "path": "gaia/cv/sources/ESIPFed_sweet@db60c8ddb1b781fbadae176f69286a2cdd5099a0",
+      "license_guess": "CC (unknown variant)",
+      "file_count": 254,
+      "ontology_file_count": 235,
+      "merkle_root_sha256": "8886b9bd3344093df76996f0fcb3479a2f95dbe6393726d8328c5449fdcc74a3",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981",
+      "title": "EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981",
+      "repo_url": "https://github.com/EnvironmentOntology/environmental-exposure-ontology",
+      "commit_sha": "c5b17dff2ee222aaf1e775e095c1b95e48395981",
+      "path": "gaia/cv/sources/EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981",
+      "license_guess": "CC (unknown variant)",
+      "file_count": 627,
+      "ontology_file_count": 136,
+      "merkle_root_sha256": "097ac5c22bfb343632d8a9715834f2cdbd47d6ca533f177e9b577ba2c6ae0a03",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:NexGenMap_dl-agriculture@3a8fa218c2d33158955e79936677449df9cbe002",
+      "title": "NexGenMap_dl-agriculture@3a8fa218c2d33158955e79936677449df9cbe002",
+      "repo_url": "https://github.com/NexGenMap/dl-agriculture",
+      "commit_sha": "3a8fa218c2d33158955e79936677449df9cbe002",
+      "path": "gaia/cv/sources/NexGenMap_dl-agriculture@3a8fa218c2d33158955e79936677449df9cbe002",
+      "license_guess": "Unknown",
+      "file_count": 8,
+      "ontology_file_count": 0,
+      "merkle_root_sha256": "338fae5bf1c48935af69bf62af63ecf9b35604d0435fbb9fc4766234e9d5a6f9",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:SebLague_Digital-Logic-Sim@7aeb66ddff44f916ff7fafb043ab4476ef4409fe",
+      "title": "SebLague_Digital-Logic-Sim@7aeb66ddff44f916ff7fafb043ab4476ef4409fe",
+      "repo_url": "https://github.com/SebLague/Digital-Logic-Sim",
+      "commit_sha": "7aeb66ddff44f916ff7fafb043ab4476ef4409fe",
+      "path": "gaia/cv/sources/SebLague_Digital-Logic-Sim@7aeb66ddff44f916ff7fafb043ab4476ef4409fe",
+      "license_guess": "Unknown",
+      "file_count": 528,
+      "ontology_file_count": 0,
+      "merkle_root_sha256": "8cb7966681751e54b7acf7c01218811995dd10319008235ca894ec06a4611939",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:geneontology_obographs@459a44e45b56188912bf7272239c984d94b1af4a",
+      "title": "geneontology_obographs@459a44e45b56188912bf7272239c984d94b1af4a",
+      "repo_url": "https://github.com/geneontology/obographs",
+      "commit_sha": "459a44e45b56188912bf7272239c984d94b1af4a",
+      "path": "gaia/cv/sources/geneontology_obographs@459a44e45b56188912bf7272239c984d94b1af4a",
+      "license_guess": "Unknown",
+      "file_count": 108,
+      "ontology_file_count": 9,
+      "merkle_root_sha256": "d6f7003bb30cf912ca3570704c4dd7208f117802e60d0033637b76609a6e8c8d",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:pangeo-data_awesome-open-climate-science@00dee8c327ad53cff5ddf5112d3e3121de43bc5a",
+      "title": "pangeo-data_awesome-open-climate-science@00dee8c327ad53cff5ddf5112d3e3121de43bc5a",
+      "repo_url": "https://github.com/pangeo-data/awesome-open-climate-science",
+      "commit_sha": "00dee8c327ad53cff5ddf5112d3e3121de43bc5a",
+      "path": "gaia/cv/sources/pangeo-data_awesome-open-climate-science@00dee8c327ad53cff5ddf5112d3e3121de43bc5a",
+      "license_guess": "CC (unknown variant)",
+      "file_count": 113,
+      "ontology_file_count": 0,
+      "merkle_root_sha256": "b8a986d7cd16156eddf17a0571b42ab8fff38143b3a8f12830eac38cc32d31c4",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    },
+    {
+      "id": "source:softwareunderground_awesome-open-geoscience@0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda",
+      "title": "softwareunderground_awesome-open-geoscience@0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda",
+      "repo_url": "https://github.com/softwareunderground/awesome-open-geoscience",
+      "commit_sha": "0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda",
+      "path": "gaia/cv/sources/softwareunderground_awesome-open-geoscience@0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda",
+      "license_guess": "CC (unknown variant)",
+      "file_count": 118,
+      "ontology_file_count": 0,
+      "merkle_root_sha256": "9e721b44b308bd844180a978d6954b02a0be846371547c8922aac809d70b9bfb",
+      "added_at": "2026-01-02T17:58:35.454889Z"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "source:NexGenMap_dl-agriculture@3a8fa218c2d33158955e79936677449df9cbe002",
+  "origin": {
+    "repo_url": "https://github.com/NexGenMap/dl-agriculture",
+    "commit_sha": "3a8fa218c2d33158955e79936677449df9cbe002"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/NexGenMap_dl-agriculture@3a8fa218c2d33158955e79936677449df9cbe002",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "Unknown",
+    "files": []
+  },
+  "counts": {
+    "files": 8,
+    "by_class": {
+      "ontology": 0,
+      "code": 5,
+      "docs": 2,
+      "data": 0,
+      "media": 0,
+      "other": 1
+    }
+  },
+  "merkle_root_sha256": "338fae5bf1c48935af69bf62af63ecf9b35604d0435fbb9fc4766234e9d5a6f9"
+}

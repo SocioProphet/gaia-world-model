@@ -1,0 +1,34 @@
+{
+  "id": "source:SebLague_Digital-Logic-Sim@7aeb66ddff44f916ff7fafb043ab4476ef4409fe",
+  "origin": {
+    "repo_url": "https://github.com/SebLague/Digital-Logic-Sim",
+    "commit_sha": "7aeb66ddff44f916ff7fafb043ab4476ef4409fe"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/SebLague_Digital-Logic-Sim@7aeb66ddff44f916ff7fafb043ab4476ef4409fe",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "Unknown",
+    "files": [
+      "Digital-Logic-Sim-7aeb66ddff44f916ff7fafb043ab4476ef4409fe/LICENSE",
+      "Digital-Logic-Sim-7aeb66ddff44f916ff7fafb043ab4476ef4409fe/Assets/Scripts/Description/Serialization/Newtonsoft/LICENSE.md",
+      "Digital-Logic-Sim-7aeb66ddff44f916ff7fafb043ab4476ef4409fe/Assets/Scripts/Description/Serialization/Newtonsoft/LICENSE.md.meta",
+      "Digital-Logic-Sim-7aeb66ddff44f916ff7fafb043ab4476ef4409fe/Assets/Scripts/Seb/SebVis/Internal/Resources/Fonts/FiraCode/LICENSE.txt.meta",
+      "Digital-Logic-Sim-7aeb66ddff44f916ff7fafb043ab4476ef4409fe/Assets/Scripts/Seb/SebVis/Internal/Resources/Fonts/FiraCode/LICENSE.txt",
+      "Digital-Logic-Sim-7aeb66ddff44f916ff7fafb043ab4476ef4409fe/Assets/Scripts/Seb/SebVis/Internal/Resources/Fonts/MapleMono/LICENSE.txt.meta",
+      "Digital-Logic-Sim-7aeb66ddff44f916ff7fafb043ab4476ef4409fe/Assets/Scripts/Seb/SebVis/Internal/Resources/Fonts/MapleMono/LICENSE.txt"
+    ]
+  },
+  "counts": {
+    "files": 528,
+    "by_class": {
+      "ontology": 0,
+      "code": 0,
+      "docs": 9,
+      "data": 0,
+      "media": 2,
+      "other": 517
+    }
+  },
+  "merkle_root_sha256": "8cb7966681751e54b7acf7c01218811995dd10319008235ca894ec06a4611939"
+}

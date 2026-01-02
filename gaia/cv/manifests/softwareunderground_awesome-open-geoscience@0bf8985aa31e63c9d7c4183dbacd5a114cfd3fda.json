@@ -1,0 +1,28 @@
+{
+  "id": "source:softwareunderground_awesome-open-geoscience@0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda",
+  "origin": {
+    "repo_url": "https://github.com/softwareunderground/awesome-open-geoscience",
+    "commit_sha": "0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/softwareunderground_awesome-open-geoscience@0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "CC (unknown variant)",
+    "files": [
+      "awesome-open-geoscience-0bf8985aa31e63c9d7c4183dbacd5a114cfd3fda/LICENSE"
+    ]
+  },
+  "counts": {
+    "files": 118,
+    "by_class": {
+      "ontology": 0,
+      "code": 0,
+      "docs": 6,
+      "data": 0,
+      "media": 107,
+      "other": 5
+    }
+  },
+  "merkle_root_sha256": "9e721b44b308bd844180a978d6954b02a0be846371547c8922aac809d70b9bfb"
+}

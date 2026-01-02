@@ -1,0 +1,26 @@
+{
+  "id": "source:geneontology_obographs@459a44e45b56188912bf7272239c984d94b1af4a",
+  "origin": {
+    "repo_url": "https://github.com/geneontology/obographs",
+    "commit_sha": "459a44e45b56188912bf7272239c984d94b1af4a"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/geneontology_obographs@459a44e45b56188912bf7272239c984d94b1af4a",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "Unknown",
+    "files": []
+  },
+  "counts": {
+    "files": 108,
+    "by_class": {
+      "ontology": 9,
+      "code": 60,
+      "docs": 3,
+      "data": 0,
+      "media": 1,
+      "other": 35
+    }
+  },
+  "merkle_root_sha256": "d6f7003bb30cf912ca3570704c4dd7208f117802e60d0033637b76609a6e8c8d"
+}

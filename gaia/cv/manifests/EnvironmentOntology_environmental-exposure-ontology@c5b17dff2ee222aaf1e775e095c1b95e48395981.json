@@ -1,0 +1,29 @@
+{
+  "id": "source:EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981",
+  "origin": {
+    "repo_url": "https://github.com/EnvironmentOntology/environmental-exposure-ontology",
+    "commit_sha": "c5b17dff2ee222aaf1e775e095c1b95e48395981"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "CC (unknown variant)",
+    "files": [
+      "environmental-exposure-ontology-c5b17dff2ee222aaf1e775e095c1b95e48395981/LICENSE.txt",
+      "environmental-exposure-ontology-c5b17dff2ee222aaf1e775e095c1b95e48395981/src/patterns/LICENSE.txt"
+    ]
+  },
+  "counts": {
+    "files": 627,
+    "by_class": {
+      "ontology": 136,
+      "code": 0,
+      "docs": 41,
+      "data": 89,
+      "media": 152,
+      "other": 209
+    }
+  },
+  "merkle_root_sha256": "097ac5c22bfb343632d8a9715834f2cdbd47d6ca533f177e9b577ba2c6ae0a03"
+}

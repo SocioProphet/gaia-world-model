@@ -1,0 +1,28 @@
+{
+  "id": "source:ESIPFed_science-on-schema.org@323d1ac112eaa98a2dbcaffad34698914badf305",
+  "origin": {
+    "repo_url": "https://github.com/ESIPFed/science-on-schema.org",
+    "commit_sha": "323d1ac112eaa98a2dbcaffad34698914badf305"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/ESIPFed_science-on-schema.org@323d1ac112eaa98a2dbcaffad34698914badf305",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "Apache-2.0",
+    "files": [
+      "science-on-schema.org-323d1ac112eaa98a2dbcaffad34698914badf305/LICENSE"
+    ]
+  },
+  "counts": {
+    "files": 148,
+    "by_class": {
+      "ontology": 46,
+      "code": 2,
+      "docs": 51,
+      "data": 1,
+      "media": 33,
+      "other": 15
+    }
+  },
+  "merkle_root_sha256": "8f52859a728844fc7c307ac9d6c78bab746065fafccfe56d0e020d87112cc208"
+}

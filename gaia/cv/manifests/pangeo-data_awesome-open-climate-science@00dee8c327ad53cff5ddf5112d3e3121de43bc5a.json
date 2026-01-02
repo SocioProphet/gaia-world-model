@@ -1,0 +1,28 @@
+{
+  "id": "source:pangeo-data_awesome-open-climate-science@00dee8c327ad53cff5ddf5112d3e3121de43bc5a",
+  "origin": {
+    "repo_url": "https://github.com/pangeo-data/awesome-open-climate-science",
+    "commit_sha": "00dee8c327ad53cff5ddf5112d3e3121de43bc5a"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/pangeo-data_awesome-open-climate-science@00dee8c327ad53cff5ddf5112d3e3121de43bc5a",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "CC (unknown variant)",
+    "files": [
+      "awesome-open-climate-science-00dee8c327ad53cff5ddf5112d3e3121de43bc5a/LICENSE"
+    ]
+  },
+  "counts": {
+    "files": 113,
+    "by_class": {
+      "ontology": 0,
+      "code": 0,
+      "docs": 5,
+      "data": 0,
+      "media": 106,
+      "other": 2
+    }
+  },
+  "merkle_root_sha256": "b8a986d7cd16156eddf17a0571b42ab8fff38143b3a8f12830eac38cc32d31c4"
+}

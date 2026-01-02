@@ -1,0 +1,28 @@
+{
+  "id": "source:ESIPFed_Awesome-Earth-Artificial-Intelligence@8801f40c1c85f56d37f63a78112f0b7b91fc5a30",
+  "origin": {
+    "repo_url": "https://github.com/ESIPFed/Awesome-Earth-Artificial-Intelligence",
+    "commit_sha": "8801f40c1c85f56d37f63a78112f0b7b91fc5a30"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/ESIPFed_Awesome-Earth-Artificial-Intelligence@8801f40c1c85f56d37f63a78112f0b7b91fc5a30",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "CC (unknown variant)",
+    "files": [
+      "Awesome-Earth-Artificial-Intelligence-8801f40c1c85f56d37f63a78112f0b7b91fc5a30/LICENSE"
+    ]
+  },
+  "counts": {
+    "files": 112,
+    "by_class": {
+      "ontology": 0,
+      "code": 0,
+      "docs": 4,
+      "data": 0,
+      "media": 107,
+      "other": 1
+    }
+  },
+  "merkle_root_sha256": "23b1ef90bfccc613ae07e0ae0c21022259d89cf0c0c4c16015742d966d7d2a90"
+}

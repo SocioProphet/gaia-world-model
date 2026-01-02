@@ -1,0 +1,28 @@
+{
+  "id": "source:ESIPFed_sweet@db60c8ddb1b781fbadae176f69286a2cdd5099a0",
+  "origin": {
+    "repo_url": "https://github.com/ESIPFed/sweet",
+    "commit_sha": "db60c8ddb1b781fbadae176f69286a2cdd5099a0"
+  },
+  "kind": "github-zipball",
+  "path": "gaia/cv/sources/ESIPFed_sweet@db60c8ddb1b781fbadae176f69286a2cdd5099a0",
+  "ingested_at": "2026-01-02T17:58:35.454889Z",
+  "license": {
+    "guess": "CC (unknown variant)",
+    "files": [
+      "sweet-db60c8ddb1b781fbadae176f69286a2cdd5099a0/LICENSE"
+    ]
+  },
+  "counts": {
+    "files": 254,
+    "by_class": {
+      "ontology": 235,
+      "code": 0,
+      "docs": 9,
+      "data": 0,
+      "media": 0,
+      "other": 10
+    }
+  },
+  "merkle_root_sha256": "8886b9bd3344093df76996f0fcb3479a2f95dbe6393726d8328c5449fdcc74a3"
+}
