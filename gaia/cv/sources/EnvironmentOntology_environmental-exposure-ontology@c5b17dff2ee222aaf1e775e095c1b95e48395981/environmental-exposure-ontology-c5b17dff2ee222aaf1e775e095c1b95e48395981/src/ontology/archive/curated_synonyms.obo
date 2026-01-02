@@ -1,7 +1,3 @@
-[Term]
-id: CHEBI:24431 ! chemical entity
-synonym: "chemical" RELATED [CURATED]
-
-[Term]
-id: CHEBI:116509 ! diuron
-synonym: "DCMU" RELATED [CURATED]
+version https://git-lfs.github.com/spec/v1
+oid sha256:6dbeed73ec0c68ecfff817273c98878c3be0ef9f1cc45f14a1a95d3761112af4
+size 147

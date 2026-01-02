@@ -1,16 +1,3 @@
-[Term]
-id: MRE:0000208 ! Exposure to trimethylarsine oxid
-synonym: "trimethylarsine oxid" EXACT []
-
-
-[Term]
-id: CHEBI:65255 ! food preservative
-synonym: "preservative" BROAD []
-
-[Term]
-id: CHEBI:32063 ! propylparaben
-synonym: "propyl paraben" BROAD []
-
-[Term]
-id: CHEBI:51061 ! hormone receptor modulator
-synonym: "endocrine-disrupting chemical" BROAD []
+version https://git-lfs.github.com/spec/v1
+oid sha256:4ea2fa1ec13b56a7734aeb91de752be13d6d75c6021feeca572dc20bf3c1119d
+size 355

@@ -1,27 +1,3 @@
-ontology: test
-remark: test manus ontology
-
-[Term]
-id: UBERON:0002398 ! manus
-name: manus
-def: "." []
-is_a: UBERON:0002470 ! autopod region
-relationship: part_of UBERON:0002102 ! forelimb
-
-[Term]
-id: UBERON:0002470 ! autopod region
-name: autopod region
-relationship: part_of UBERON:0002101 ! limb
-
-[Term]
-id: UBERON:0002102 ! forelimb
-name: forelimb
-is_a: UBERON:0002101 ! limb
-
-[Term]
-id: UBERON:0002101 ! limb
-name: limb
-
-[Typedef]
-id: part_of
-xref: BFO:0000050
+version https://git-lfs.github.com/spec/v1
+oid sha256:5e0d6ea453f97bfd129348e348d33a32112689b54eda1ab75686c9d31e261609
+size 464
