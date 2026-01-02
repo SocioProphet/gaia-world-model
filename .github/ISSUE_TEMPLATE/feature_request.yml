@@ -1,0 +1,25 @@
+name: Feature request
+description: Propose a new module, adapter, ontology, or action template
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What are we adding and why?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources / attribution
+      description: Links, licenses, and what will be ingested into CV
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What does “done” mean?
+    validations:
+      required: true

@@ -1,0 +1,21 @@
+name: Ontology work item
+description: Canonical entrypoints, alignment, or validation task
+labels: ["ontology"]
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What classes/properties/alignments are in scope?
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: SHACL/competency questions, backward compatibility
+  - type: textarea
+    id: files
+    attributes:
+      label: Relevant files
+      description: Paths under gaia/ontology and gaia/cv

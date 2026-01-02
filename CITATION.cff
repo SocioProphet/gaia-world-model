@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use GAIA World Model, please cite it as below."
+title: "GAIA World Model"
+type: software
+authors:
+  - name: "GAIA World Model Contributors"
+license: MIT
+repository-code: "https://example.com/gaia-world-model"
+abstract: "A modular, auditable world-model + ontology + action framework for responsible Earth digital twinning."
+keywords:
+  - ontology
+  - digital-twin
+  - geospatial
+  - climate
+  - governance

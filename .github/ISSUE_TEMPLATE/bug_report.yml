@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a reproducibility / validation / tooling bug
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for filing. Please keep it precise and reproducible."
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include exact steps and expected vs actual
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Commands, inputs, environment
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / artifacts
+      description: Paste minimal logs or point to file paths in the repo

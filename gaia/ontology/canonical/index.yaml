@@ -1,0 +1,8 @@
+# Canonical Ontology Index (placeholder)
+
+# This file will become authoritative once ISSUE-001 is completed.
+# Until then, see:
+# - gaia/ontology/imports_index.yaml (staging)
+# - gaia/cv/manifests/*.yaml (license evidence + ontology file samples)
+
+canonical_sources: []
