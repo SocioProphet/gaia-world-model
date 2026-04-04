@@ -1,0 +1,22 @@
+{
+  "id": "gaia.profile.local",
+  "version": "0.1.0",
+  "scope": "room-home-site",
+  "core_contracts": [
+    "entity",
+    "relation",
+    "state",
+    "observation",
+    "action",
+    "policy",
+    "evidence"
+  ],
+  "control_modes": [
+    "observe",
+    "simulate",
+    "plan",
+    "actuate",
+    "audit"
+  ],
+  "description": "Bounded nearby world state and actuation surface."
+}

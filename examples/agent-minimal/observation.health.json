@@ -1,0 +1,10 @@
+{
+  "id": "obs:agent-health-0001",
+  "subject": "agent:prophet-cli",
+  "observed_at": "2026-04-03T21:30:00Z",
+  "value": {
+    "status": "ok",
+    "latency_ms": 42
+  },
+  "provenance_ref": "evidence:bootstrap-0001"
+}

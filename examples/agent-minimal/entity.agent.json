@@ -1,0 +1,12 @@
+{
+  "id": "agent:prophet-cli",
+  "kind": "agent",
+  "labels": [
+    "cli",
+    "operator-assistant"
+  ],
+  "attrs": {
+    "runtime": "local",
+    "trust_tier": "bounded"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "act:reconcile-0001",
+  "actor": "agent:prophet-cli",
+  "verb": "reconcile",
+  "target": "repo:gaia-world-model",
+  "constraints": {
+    "mode": "bounded",
+    "requires_review": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "pol:decision-0001",
+  "decision": "review",
+  "reason": "mutation proposed on canonical public model spine",
+  "evidence_refs": [
+    "evidence:bootstrap-0001"
+  ]
+}

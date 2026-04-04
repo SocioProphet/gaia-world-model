@@ -1,0 +1,16 @@
+{
+  "id": "evidence:bootstrap-0001",
+  "items": [
+    {
+      "type": "git_commit",
+      "ref": "9469529"
+    },
+    {
+      "type": "git_commit",
+      "ref": "c7a60a6"
+    }
+  ],
+  "hashes": {
+    "transcript_sha256": "pending"
+  }
+}

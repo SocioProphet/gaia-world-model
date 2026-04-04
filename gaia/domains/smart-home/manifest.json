@@ -1,0 +1,24 @@
+{
+  "id": "gaia.domain.smart-home",
+  "version": "0.1.0",
+  "profile_affinity": [
+    "local"
+  ],
+  "primary_entities": [
+    "room",
+    "device",
+    "routine",
+    "occupant"
+  ],
+  "primary_observations": [
+    "temperature",
+    "occupancy",
+    "power_state"
+  ],
+  "primary_actions": [
+    "toggle",
+    "set",
+    "schedule"
+  ],
+  "description": "Residential sensing and bounded control domain."
+}

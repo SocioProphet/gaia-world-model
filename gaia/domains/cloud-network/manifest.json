@@ -1,0 +1,27 @@
+{
+  "id": "gaia.domain.cloud-network",
+  "version": "0.1.0",
+  "profile_affinity": [
+    "local",
+    "meso"
+  ],
+  "primary_entities": [
+    "host",
+    "service",
+    "link",
+    "policy_boundary"
+  ],
+  "primary_observations": [
+    "latency",
+    "errors",
+    "saturation",
+    "health"
+  ],
+  "primary_actions": [
+    "deploy",
+    "scale",
+    "restart",
+    "quarantine"
+  ],
+  "description": "Digital infrastructure world-model domain."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "gaia.profile.agent",
+  "version": "0.1.0",
+  "scope": "actor-centric",
+  "core_contracts": [
+    "entity",
+    "observation",
+    "action",
+    "policy",
+    "capability",
+    "provenance",
+    "evidence"
+  ],
+  "control_modes": [
+    "observe",
+    "plan",
+    "actuate",
+    "audit"
+  ],
+  "description": "Agent-local belief, task, capability, trust, and evidence surface."
+}
