@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "registry": "gaia/registry.json",
+  "schemas": {
+    "entity": "schemas/entities/entity.schema.json",
+    "observation": "schemas/events/observation.schema.json",
+    "action_intent": "schemas/actions/action-intent.schema.json",
+    "policy_decision": "schemas/policy/policy-decision.schema.json",
+    "evidence_bundle": "schemas/evidence/evidence-bundle.schema.json",
+    "world_state_snapshot": "schemas/telemetry/world-state-snapshot.schema.json",
+    "registry_resource": "schemas/registry_resource.schema.json"
+  }
+}
