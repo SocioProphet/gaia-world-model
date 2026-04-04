@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceBundle",
+  "type": "object",
+  "required": [
+    "id",
+    "items"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

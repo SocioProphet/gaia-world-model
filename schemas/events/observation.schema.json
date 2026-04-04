@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observation",
+  "type": "object",
+  "required": [
+    "id",
+    "subject",
+    "observed_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "value": {},
+    "provenance_ref": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

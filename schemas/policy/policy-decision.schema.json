@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PolicyDecision",
+  "type": "object",
+  "required": [
+    "id",
+    "decision"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "allow",
+        "deny",
+        "constrain",
+        "review"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,41 @@
+{
+  "profiles": [
+    "agent",
+    "local",
+    "meso",
+    "earth",
+    "universal"
+  ],
+  "domains": [
+    "smart-home",
+    "smart-building",
+    "smart-car",
+    "smart-fleet",
+    "smart-grid",
+    "smart-factory",
+    "smart-campus",
+    "cloud-network",
+    "robot-drone",
+    "warehouse-logistics",
+    "farm-watershed",
+    "hospital-clinic"
+  ],
+  "core_contracts": [
+    "entity",
+    "relation",
+    "state",
+    "observation",
+    "action",
+    "policy",
+    "capability",
+    "provenance",
+    "evidence"
+  ],
+  "control_modes": [
+    "observe",
+    "simulate",
+    "plan",
+    "actuate",
+    "audit"
+  ]
+}

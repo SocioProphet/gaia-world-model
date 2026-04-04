@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorldStateSnapshot",
+  "type": "object",
+  "required": [
+    "id",
+    "captured_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

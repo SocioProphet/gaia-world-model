@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity",
+  "type": "object",
+  "required": [
+    "id",
+    "kind"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "attrs": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
