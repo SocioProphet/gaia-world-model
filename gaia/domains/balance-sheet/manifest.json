@@ -1,0 +1,26 @@
+{
+  "id": "gaia.domain.balance-sheet",
+  "version": "0.1.0",
+  "profile_affinity": [
+    "banking-firm"
+  ],
+  "primary_entities": [
+    "asset",
+    "liability",
+    "cashflow",
+    "funding-source"
+  ],
+  "primary_observations": [
+    "balance",
+    "maturity",
+    "rate",
+    "currency"
+  ],
+  "primary_actions": [
+    "ingest",
+    "aggregate",
+    "project",
+    "audit"
+  ],
+  "description": "Balance-sheet and funding structure domain for banking-firm state and projection work."
+}
