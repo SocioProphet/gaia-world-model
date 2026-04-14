@@ -1,0 +1,13 @@
+{
+  "id": "entity:banking-hc-001",
+  "entity_type": "holding-company",
+  "jurisdiction": "US",
+  "name": "Synthetic Banking Holding Co",
+  "regulator_refs": [
+    "regulator://federal-reserve"
+  ],
+  "attrs": {
+    "reporting_currency": "USD",
+    "status": "active"
+  }
+}
