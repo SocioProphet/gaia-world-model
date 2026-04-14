@@ -1,0 +1,26 @@
+{
+  "id": "gaia.domain.capital-rwa",
+  "version": "0.1.0",
+  "profile_affinity": [
+    "banking-firm"
+  ],
+  "primary_entities": [
+    "capital-stack",
+    "rwa-snapshot",
+    "buffer",
+    "ratio-package"
+  ],
+  "primary_observations": [
+    "cet1",
+    "tier1",
+    "total-capital",
+    "rwa"
+  ],
+  "primary_actions": [
+    "rollforward",
+    "attribute",
+    "benchmark",
+    "audit"
+  ],
+  "description": "Capital and risk-weighted asset domain for banking-firm regulatory and internal capital views."
+}
