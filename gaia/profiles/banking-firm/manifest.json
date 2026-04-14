@@ -1,0 +1,22 @@
+{
+  "id": "gaia.profile.banking-firm",
+  "version": "0.1.0",
+  "scope": "institution-portfolio-capital-liquidity-reporting",
+  "core_contracts": [
+    "entity",
+    "relation",
+    "state",
+    "observation",
+    "action",
+    "policy",
+    "provenance",
+    "evidence"
+  ],
+  "control_modes": [
+    "observe",
+    "simulate",
+    "plan",
+    "audit"
+  ],
+  "description": "Banking firm digital twin profile for legal entities, portfolios, capital, liquidity, and regulated reporting surfaces."
+}
