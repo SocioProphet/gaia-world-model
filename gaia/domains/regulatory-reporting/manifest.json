@@ -1,0 +1,26 @@
+{
+  "id": "gaia.domain.regulatory-reporting",
+  "version": "0.1.0",
+  "profile_affinity": [
+    "banking-firm"
+  ],
+  "primary_entities": [
+    "filing-pack",
+    "line-item",
+    "correction-chain",
+    "signoff"
+  ],
+  "primary_observations": [
+    "publication-status",
+    "as-of-date",
+    "lineage-completeness",
+    "correction-status"
+  ],
+  "primary_actions": [
+    "assemble",
+    "publish",
+    "correct",
+    "audit"
+  ],
+  "description": "Regulatory and management reporting domain for filing packs, corrections, and evidence lineage."
+}
