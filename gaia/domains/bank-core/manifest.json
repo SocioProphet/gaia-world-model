@@ -1,0 +1,26 @@
+{
+  "id": "gaia.domain.bank-core",
+  "version": "0.1.0",
+  "profile_affinity": [
+    "banking-firm"
+  ],
+  "primary_entities": [
+    "legal-entity",
+    "business-unit",
+    "portfolio",
+    "counterparty"
+  ],
+  "primary_observations": [
+    "status",
+    "ownership",
+    "jurisdiction",
+    "lineage"
+  ],
+  "primary_actions": [
+    "reconcile",
+    "classify",
+    "link",
+    "audit"
+  ],
+  "description": "Institutional structure and core identity domain for a banking-firm digital twin."
+}
