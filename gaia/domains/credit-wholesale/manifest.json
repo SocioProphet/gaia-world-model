@@ -1,0 +1,26 @@
+{
+  "id": "gaia.domain.credit-wholesale",
+  "version": "0.1.0",
+  "profile_affinity": [
+    "banking-firm"
+  ],
+  "primary_entities": [
+    "facility",
+    "obligor",
+    "collateral",
+    "rating"
+  ],
+  "primary_observations": [
+    "pd",
+    "lgd",
+    "ead",
+    "delinquency-status"
+  ],
+  "primary_actions": [
+    "score",
+    "segment",
+    "stress",
+    "audit"
+  ],
+  "description": "Wholesale and institutional credit-risk domain for banking-firm portfolios."
+}
