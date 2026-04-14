@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BankingTwinLegalEntity",
+  "type": "object",
+  "required": [
+    "id",
+    "entity_type",
+    "jurisdiction",
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "holding-company",
+        "bank",
+        "broker-dealer",
+        "branch",
+        "subsidiary"
+      ]
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "regulator_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "attrs": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
