@@ -1,0 +1,19 @@
+{
+  "subject_ref": "subject://human/0001",
+  "twin_ref": "twin://human/0001",
+  "consent_envelope_ref": "consent://human/0001",
+  "projection_bounds": {
+    "allowed_modalities": ["wearable", "clinical"],
+    "allowed_purposes": ["machine_science", "safety_review"],
+    "retention_policy": "bounded-30d"
+  },
+  "memory_state_ref": "memory://human/0001",
+  "cognition_state_ref": "cognition://human/0001",
+  "observation_refs": [
+    "observation://wearable/0001",
+    "observation://clinical/0001"
+  ],
+  "belief_state_refs": ["belief://michael/0001"],
+  "candidate_law_refs": ["candidate-law://michael/0001"],
+  "policy_status": "active"
+}
