@@ -1,0 +1,26 @@
+{
+  "candidate_id": "candidate-law://michael/0001",
+  "truth_status": "candidate_law",
+  "target_ref": "quantity://human/0001/biomarker",
+  "engine": {
+    "family": "pysr",
+    "version": "0.0.1"
+  },
+  "expression": {
+    "canonical": "x0 + 0.5 * x1",
+    "latex": "x_0 + 0.5 x_1"
+  },
+  "fit": {
+    "rmse": 0.12,
+    "r2": 0.91
+  },
+  "constraints": {
+    "dimensional_consistency": "pass",
+    "complexity_budget": "within_budget"
+  },
+  "counterexamples": ["counterexample://michael/0001"],
+  "derived_soft_rules": ["soft-rule://michael/0001"],
+  "methodology_snapshot_ref": "methodology://michael/0001",
+  "evidence_packet_ref": "evidence://michael/0001",
+  "promotion_status": "candidate"
+}

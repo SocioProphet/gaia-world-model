@@ -1,0 +1,23 @@
+{
+  "belief_state_id": "belief://michael/0001",
+  "world_ref": "world://gaia/local/0001",
+  "ontology_context_ref": "ontology://ontogenesis/michael-belief",
+  "truth_status": "believed_truth",
+  "engine": {
+    "family": "psl",
+    "version": "0.0.1"
+  },
+  "inputs": {
+    "grounded_assertions": ["assertion://human/0001"],
+    "observation_records": ["observation://wearable/0001", "observation://clinical/0001"],
+    "rule_templates": ["rule-template://michael/0001"]
+  },
+  "outputs": {
+    "posterior_atoms": ["atom://michael/0001"],
+    "weighted_rules": ["rule://michael/0001"],
+    "hypotheses": ["hypothesis://michael/0001"]
+  },
+  "methodology_snapshot_ref": "methodology://michael/0001",
+  "evidence_packet_ref": "evidence://michael/0001",
+  "promotion_status": "candidate"
+}
