@@ -1,0 +1,46 @@
+# GAIA ontology import hook for Orion Field Intelligence Framework (OFIF)
+
+id: gaia-import-ofif-v0
+status: draft
+source_system: OFIF
+source_repo: SocioProphet/orion-field-intelligence
+purpose: >
+  Import OFIF field-intelligence ontology modules as governed extensions for
+  sensor fusion, field assets, communications state, operations context,
+  environmental observations, and adversarial indicators.
+
+imports:
+  - module: adversary
+    source_path: ontology/adversary.ttl
+    role: threat-and-confidence-context
+  - module: assets
+    source_path: ontology/assets.ttl
+    role: field-asset-context
+  - module: comms
+    source_path: ontology/comms.ttl
+    role: communications-availability-context
+  - module: operations
+    source_path: ontology/operations.ttl
+    role: field-operations-context
+  - module: environment
+    source_path: ontology/environment.ttl
+    role: environmental-observation-context
+
+canonicalization_policy:
+  gaia_owns_world_entity_identity: true
+  ofif_owns_field_event_vocabulary: true
+  preserve_ofif_event_terms: true
+  bind_to_gaia_entities_when_available: true
+  require_provenance_for_imported_terms: true
+
+validation:
+  required_checks:
+    - ttl_parse
+    - import_closure
+    - namespace_collision_check
+    - provenance_reference_check
+    - defensive_use_guardrail_check
+
+notes:
+  - OFIF ontology modules are imported as field-intelligence extensions, not as a replacement for GAIA canonical ontology.
+  - GAIA enrichments must link back to OFIF event IDs, model IDs, and source ontology terms.
