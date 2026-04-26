@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/navigation/route_plan.v1.schema.json",
+  "title": "RoutePlan v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["route_plan_version", "route_plan_id", "created_at", "mode", "origin", "destination", "legs", "provenance", "policy"],
+  "properties": {
+    "route_plan_version": {"type": "string", "const": "v1"},
+    "route_plan_id": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "mode": {"type": "string", "enum": ["road", "rail", "transit", "pedestrian", "bicycle", "multimodal"]},
+    "origin": {"$ref": "#/$defs/location"},
+    "destination": {"$ref": "#/$defs/location"},
+    "departure_time": {"type": "string", "format": "date-time"},
+    "arrival_time": {"type": "string", "format": "date-time"},
+    "legs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["leg_id", "mode", "from", "to", "geometry_ref"],
+        "properties": {
+          "leg_id": {"type": "string"},
+          "mode": {"type": "string", "enum": ["road", "rail", "transit", "pedestrian", "bicycle", "transfer", "other"]},
+          "from": {"$ref": "#/$defs/location"},
+          "to": {"$ref": "#/$defs/location"},
+          "geometry_ref": {"type": "string"},
+          "distance_m": {"type": "number", "minimum": 0},
+          "duration_s": {"type": "number", "minimum": 0},
+          "service_refs": {"type": "array", "items": {"type": "string"}},
+          "asset_refs": {"type": "array", "items": {"type": "string"}},
+          "risk_tags": {"type": "array", "items": {"type": "string"}},
+          "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0}
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accessibility_required": {"type": "boolean"},
+        "avoid_closed_assets": {"type": "boolean"},
+        "max_transfer_count": {"type": "integer", "minimum": 0},
+        "allowed_modes": {"type": "array", "items": {"type": "string"}},
+        "disallowed_modes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_refs", "runtime_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "model_refs": {"type": "array", "items": {"type": "string"}},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["safety_status"],
+      "properties": {
+        "safety_status": {"type": "string", "enum": ["advisory", "validated", "restricted", "not-for-navigation"]},
+        "notes": {"type": "string"},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  },
+  "$defs": {
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {"type": "string"},
+        "lat": {"type": "number"},
+        "lon": {"type": "number"},
+        "h3_cell": {"type": "string"},
+        "asset_ref": {"type": "string"},
+        "station_ref": {"type": "string"},
+        "geometry_ref": {"type": "string"}
+      }
+    }
+  }
+}
