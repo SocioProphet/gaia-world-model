@@ -1,0 +1,112 @@
+{
+  "gaia_artifact_version": "v1",
+  "artifact_type": "gaia.world_state_feature.from_ofif_observation",
+  "artifact_id": "gaia-feature-ofif-event-0001-soil-field-demo",
+  "source_system": "OFIF",
+  "source_event_ids": ["ofif-event-0001-soil-field-demo"],
+  "created_at": "2026-04-26T18:00:10Z",
+  "world_state_feature": {
+    "feature_id": "gaia-observation-feature-0001",
+    "feature_type": "EvidenceObservation",
+    "ontology_bindings": [
+      "gaia:EvidenceObservation",
+      "gaia:EnvironmentalContextObservation",
+      "gaia:CommunicationsAvailabilityObservation",
+      "gaia:AssetCustodyObservation",
+      "gaia:DetectedEntityObservation"
+    ],
+    "spatial": {
+      "primary_index": {
+        "scheme": "h3",
+        "value": "8928308280fffff"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.006, 40.7128]
+      },
+      "zone_id": "demo-zone-north-field",
+      "property_id": "demo-property-001"
+    },
+    "temporal": {
+      "observed_at": "2026-04-26T18:00:00Z",
+      "ingested_at": "2026-04-26T18:00:05Z",
+      "valid_time_basis": "field_observation"
+    },
+    "observed_environment": {
+      "temperature_c": 18.4,
+      "wind_mps": 2.8,
+      "wind_dir_deg": 245,
+      "visibility": "clear",
+      "illumination": "daylight",
+      "season_phase": "spring"
+    },
+    "detections": [
+      {
+        "entity_class": "equipment",
+        "confidence": 0.82,
+        "count": 1,
+        "attributes": {
+          "equipment_type": "soil_probe",
+          "visible_condition": "nominal"
+        }
+      }
+    ],
+    "link_state": {
+      "network_type": "mesh",
+      "rssi_dbm": -67,
+      "latency_ms": 42,
+      "packet_loss": 0.01,
+      "is_partitioned": false
+    },
+    "custody_state": {
+      "tamper_flag": false,
+      "last_maintenance_at": "2026-04-20T14:30:00Z",
+      "calibration_version": "soil-probe-cal-2026-04-a"
+    }
+  },
+  "evidence": {
+    "producer": {
+      "producer_type": "sensor",
+      "producer_id": "field-node-alpha-001",
+      "software_version": "ofif-demo-0.1.0",
+      "hardware_model": "prototype-field-gateway",
+      "tenant_id": "socioprophet-demo"
+    },
+    "provenance": {
+      "derivation": "raw",
+      "pipeline_step": "edge_capture",
+      "model_version_id": "edge-detector-demo-0.1.0"
+    },
+    "integrity": {
+      "content_hash": "sha256:demo-placeholder-replace-with-canonical-payload-hash",
+      "signature": "demo-signature-placeholder",
+      "attestation": "demo-attestation-placeholder",
+      "replay_nonce": "nonce-demo-0001",
+      "sequence_number": 1
+    },
+    "classification": {
+      "data_class": "internal",
+      "retention_class": "standard",
+      "privacy_class": "none",
+      "handling_tags": ["demo", "soil-intelligence", "field-observation"]
+    },
+    "adversarial": {
+      "threat_tags": ["calibration-drift-watch"],
+      "confidence_impact": -0.05,
+      "detector_ids": ["link-health-demo", "custody-watch-demo"],
+      "notes": "Demo observation includes mild calibration drift watch signal."
+    }
+  },
+  "derived_confidence": {
+    "raw_detection_confidence_max": 0.82,
+    "adversarial_confidence_impact": -0.05,
+    "bridge_confidence": 0.77,
+    "rule": "max_detection_confidence + adversarial_confidence_impact; clamped to [0,1]"
+  },
+  "invariants": [
+    "Raw OFIF event was not mutated.",
+    "Source event ID was preserved.",
+    "Observed and ingested times remain distinct.",
+    "Adversarial metadata remains attached to derived artifact."
+  ]
+}
