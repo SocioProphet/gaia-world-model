@@ -1,0 +1,98 @@
+{
+  "observation_version": "v1",
+  "observation_id": "gaia-nav-lidar-rail-demo-0001",
+  "observed_at": "2026-04-26T15:30:00Z",
+  "ingested_at": "2026-04-26T15:45:00Z",
+  "platform": {
+    "platform_type": "trainborne",
+    "platform_id": "demo-rail-scan-platform-001",
+    "operator_ref": "demo-operator",
+    "trajectory_ref": "trajectory://demo/rail-line-a/run-0001"
+  },
+  "sensor": {
+    "sensor_type": "lidar",
+    "sensor_id": "demo-lidar-rail-001",
+    "hardware_model": "demo-corridor-lidar",
+    "calibration_version": "cal-2026-04-demo"
+  },
+  "spatial": {
+    "corridor_ref": "rail-corridor-demo-a",
+    "geometry_ref": "geometry://demo/rail-corridor-a/segment-001",
+    "h3_cells": ["8928308280fffff", "89283082807ffff"],
+    "bbox": [-74.012, 40.705, -73.998, 40.718],
+    "crs": "EPSG:4326",
+    "linear_reference": {
+      "route_id": "demo-rail-line-a",
+      "from_measure": 12.4,
+      "to_measure": 13.1,
+      "unit": "km"
+    }
+  },
+  "point_cloud": {
+    "asset_uri": "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz",
+    "format": "copc",
+    "point_count": 18500000,
+    "density_points_per_m2": 42.5,
+    "classification_status": "classified",
+    "vertical_accuracy_m": 0.05,
+    "horizontal_accuracy_m": 0.08
+  },
+  "assets_observed": [
+    {
+      "asset_type": "RailSegment",
+      "asset_ref": "rail-segment-demo-a-001",
+      "condition_class": "nominal",
+      "confidence": 0.88,
+      "measurements": {
+        "gauge_m": 1.435,
+        "curvature_radius_m": 420
+      },
+      "risk_tags": []
+    },
+    {
+      "asset_type": "CorridorVegetationFeature",
+      "asset_ref": "vegetation-encroachment-demo-001",
+      "condition_class": "watch",
+      "confidence": 0.74,
+      "measurements": {
+        "min_clearance_m": 1.2,
+        "distance_to_track_center_m": 2.1
+      },
+      "risk_tags": ["vegetation-encroachment-watch"]
+    },
+    {
+      "asset_type": "ClearanceEnvelope",
+      "asset_ref": "clearance-envelope-demo-001",
+      "condition_class": "nominal",
+      "confidence": 0.81,
+      "measurements": {
+        "min_vertical_clearance_m": 5.4,
+        "min_horizontal_clearance_m": 3.2
+      },
+      "risk_tags": []
+    }
+  ],
+  "derived_features": [
+    {
+      "feature_type": "classified-point-cloud-tile",
+      "feature_ref": "tiles://demo/rail-corridor-a/run-0001/3dtileset.json",
+      "confidence": 0.82,
+      "notes": "Fixture for LiDAR-derived corridor tiles."
+    }
+  ],
+  "provenance": {
+    "source_refs": ["fixture://navigation/rail-corridor-lidar/raw-run-0001"],
+    "runtime_refs": ["gaia-navigation-lidar-feature-runtime@v0.1.0"],
+    "model_refs": ["corridor-feature-detector-demo-0.1.0"],
+    "processing_step": "classified_corridor_lidar_fixture"
+  },
+  "integrity": {
+    "content_hash": "sha256:4444444444444444444444444444444444444444444444444444444444444444",
+    "signature": "fixture-signature",
+    "attestation": "fixture-attestation"
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "navigation", "rail", "lidar", "infrastructure-intelligence"]
+  }
+}
