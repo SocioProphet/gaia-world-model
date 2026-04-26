@@ -1,0 +1,77 @@
+{
+  "context_version": "v1",
+  "context_id": "gaia-soil-eo-context-demo-0001",
+  "context_type": "soil_eo_reanalysis_context",
+  "spatial": {
+    "h3_cell": "8928308280fffff",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-74.006, 40.7128]
+    },
+    "source_resolution_note": "Fixture mixes broad EO/reanalysis context with local field observation; values are demonstrative placeholders."
+  },
+  "temporal": {
+    "valid_from": "2026-04-26T17:00:00Z",
+    "valid_to": "2026-04-26T19:00:00Z",
+    "forecast_horizon": "analysis",
+    "scenario_id": "baseline-demo"
+  },
+  "sources": [
+    {
+      "source_id": "fixture-land-surface-temperature-demo",
+      "source_family": "satellite_lst",
+      "measurement": "land_surface_temperature_c",
+      "value": 21.2,
+      "confidence": 0.72,
+      "provenance_ref": "fixture://satellite/lst/demo-0001",
+      "notes": "Placeholder for MODIS/VIIRS/Landsat/Sentinel-derived land surface temperature context."
+    },
+    {
+      "source_id": "fixture-soil-moisture-demo",
+      "source_family": "satellite_soil_moisture",
+      "measurement": "surface_soil_moisture_volumetric_fraction",
+      "value": 0.31,
+      "confidence": 0.68,
+      "provenance_ref": "fixture://satellite/soil-moisture/demo-0001",
+      "notes": "Placeholder for SMAP or fused soil-moisture context."
+    },
+    {
+      "source_id": "fixture-reanalysis-air-temperature-demo",
+      "source_family": "weather_reanalysis",
+      "measurement": "air_temperature_2m_c",
+      "value": 18.9,
+      "confidence": 0.74,
+      "provenance_ref": "fixture://reanalysis/air-temperature/demo-0001",
+      "notes": "Placeholder for ERA5/ERA5-Land weather context."
+    },
+    {
+      "source_id": "fixture-vegetation-index-demo",
+      "source_family": "vegetation_index",
+      "measurement": "ndvi",
+      "value": 0.63,
+      "confidence": 0.70,
+      "provenance_ref": "fixture://satellite/ndvi/demo-0001",
+      "notes": "Placeholder for Sentinel/Landsat vegetation index context."
+    },
+    {
+      "source_id": "fixture-terrain-demo",
+      "source_family": "terrain",
+      "measurement": "slope_deg",
+      "value": 4.2,
+      "confidence": 0.82,
+      "provenance_ref": "fixture://terrain/dem/demo-0001",
+      "notes": "Placeholder for DEM-derived slope/aspect context."
+    }
+  ],
+  "model_context": {
+    "model_version_id": "gaia-soil-intelligence-baseline-demo-0.1.0",
+    "model_class": "weighted_baseline_fixture",
+    "expected_outputs": [
+      "soil_temperature_c",
+      "confidence",
+      "uncertainty_note",
+      "evidence_refs"
+    ]
+  },
+  "handling_tags": ["demo", "soil-intelligence", "eo-context", "reanalysis-context"]
+}
