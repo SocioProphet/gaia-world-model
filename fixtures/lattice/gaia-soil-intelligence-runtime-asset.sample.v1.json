@@ -1,0 +1,71 @@
+{
+  "apiVersion": "lattice.socioprophet.dev/v1",
+  "kind": "RuntimeAsset",
+  "metadata": {
+    "name": "gaia-soil-intelligence-baseline-runtime",
+    "version": "v0.1.0",
+    "createdAt": "2026-04-26T19:00:00Z",
+    "labels": {
+      "system": "gaia",
+      "integration": "ofif",
+      "surface": "soil-intelligence",
+      "status": "fixture"
+    }
+  },
+  "spec": {
+    "runtimeClass": "agent",
+    "languages": ["python", "shell"],
+    "channels": [
+      {"name": "nixpkgs", "type": "nixpkgs", "uri": "github:NixOS/nixpkgs", "trusted": true},
+      {"name": "prophet", "type": "prophet", "uri": "https://socioprophet.org/channels/prophet", "trusted": true}
+    ],
+    "build": {
+      "system": "nix",
+      "entrypoint": "scripts/soil_intelligence_fusion.py",
+      "lockfile": "flake.lock",
+      "sourceRef": "SocioProphet/gaia-world-model",
+      "builderId": "lattice-forge-fixture-builder"
+    },
+    "artifacts": [
+      {"name": "soil-fusion-script", "role": "archive", "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000", "uri": "repo://scripts/soil_intelligence_fusion.py", "mediaType": "text/x-python"},
+      {"name": "ofif-bridge-script", "role": "archive", "digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111", "uri": "repo://scripts/ofif_to_gaia_bridge.py", "mediaType": "text/x-python"}
+    ],
+    "provenance": {
+      "attestations": ["slsa", "in-toto"],
+      "sourceRefs": ["SocioProphet/gaia-world-model", "SocioProphet/orion-field-intelligence"],
+      "builderId": "lattice-forge-fixture-builder"
+    },
+    "sbom": {
+      "formats": ["spdx"],
+      "digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+      "uri": "fixture://sbom/gaia-soil-intelligence-baseline-runtime.spdx.json"
+    },
+    "signature": {
+      "type": "sigstore",
+      "bundleRef": "fixture://signatures/gaia-soil-intelligence-baseline-runtime.sigstore.json",
+      "digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+    },
+    "scan": {
+      "vulnerability": "not-run",
+      "license": "not-run",
+      "policy": "warn"
+    },
+    "policy": {
+      "network": "restricted",
+      "secrets": "none",
+      "accelerators": ["cpu"],
+      "defaultIsolation": "container"
+    },
+    "compatibility": {
+      "surfaces": ["agentplane", "prophet-platform", "sourceos-agent"]
+    },
+    "telemetry": {
+      "traceRequired": true,
+      "metricSet": ["build-duration", "scan-duration", "artifact-size", "promotion-result"]
+    },
+    "promotion": {
+      "channel": "dev",
+      "rollbackRef": "none"
+    }
+  }
+}
