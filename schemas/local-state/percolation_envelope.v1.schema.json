@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/local-state/percolation_envelope.v1.schema.json",
+  "title": "Lampstand PercolationEnvelope v1",
+  "type": "object",
+  "required": ["envelope_version", "envelope_id", "created_at", "source_record_ids", "target_system", "target_artifact_type", "policy_decision", "redaction_state", "provenance", "integrity"],
+  "properties": {
+    "envelope_version": {"type": "string", "const": "v1"},
+    "envelope_id": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "source_record_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "target_system": {"type": "string", "enum": ["GAIA", "OFIF", "SHERLOCK", "LATTICE_FORGE", "PROPHET_PLATFORM"]},
+    "target_artifact_type": {"type": "string"},
+    "policy_decision": {"type": "object", "required": ["decision", "policy_ref"], "properties": {"decision": {"type": "string", "enum": ["allow", "deny", "allow-redacted", "quarantine"]}, "policy_ref": {"type": "string"}, "reason": {"type": "string"}}},
+    "redaction_state": {"type": "object", "required": ["status"], "properties": {"status": {"type": "string", "enum": ["none", "path-redacted", "content-redacted", "metadata-only", "blocked"]}, "redaction_refs": {"type": "array", "items": {"type": "string"}}}},
+    "provenance": {"type": "object", "properties": {"lampstand_node_id": {"type": "string"}, "source_root_ids": {"type": "array", "items": {"type": "string"}}, "pipeline_step": {"type": "string"}, "operator_ref": {"type": "string"}}},
+    "integrity": {"type": "object", "properties": {"envelope_hash": {"type": "string"}, "source_hashes": {"type": "array", "items": {"type": "string"}}, "signature": {"type": "string"}}},
+    "handling_tags": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}
