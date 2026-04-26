@@ -1,0 +1,83 @@
+{
+  "decision_card_version": "v1",
+  "decision_card_id": "gaia-decision-card-soil-demo-0001",
+  "title": "Soil Intelligence Demo Decision Card",
+  "scope": {
+    "h3_cells": ["8928308280fffff"],
+    "zone_id": "demo-zone-north-field",
+    "property_id": "demo-property-001",
+    "observed_interval": {
+      "start": "2026-04-26T18:00:00Z",
+      "end": "2026-04-26T18:00:05Z"
+    },
+    "scenario_id": "baseline-demo"
+  },
+  "question": "What is the current soil-field context and confidence posture for this cell?",
+  "summary": "A field soil probe observation was received with nominal custody and mesh link health. A mild calibration-drift watch signal reduces bridge confidence from 0.82 to 0.77. The v0 demo recommends observation continuity and calibration review before treating this event as model-training ground truth.",
+  "evidence_ids": [
+    "ofif-event-0001-soil-field-demo",
+    "gaia-feature-ofif-event-0001-soil-field-demo"
+  ],
+  "model_version_ids": [
+    "edge-detector-demo-0.1.0",
+    "gaia-soil-intelligence-baseline-demo-0.1.0"
+  ],
+  "confidence": {
+    "raw_detection_confidence_max": 0.82,
+    "adversarial_confidence_impact": -0.05,
+    "decision_confidence": 0.77,
+    "confidence_class": "moderate",
+    "notes": "Confidence is reduced by calibration-drift watch metadata."
+  },
+  "uncertainty": {
+    "soil_temperature_model_uncertainty_c": null,
+    "status": "not_computed_in_v0_fixture",
+    "notes": "This fixture proves evidence linkage before calibrated soil-temperature modeling is added."
+  },
+  "observed_context": {
+    "air_or_local_temperature_c": 18.4,
+    "wind_mps": 2.8,
+    "wind_dir_deg": 245,
+    "visibility": "clear",
+    "illumination": "daylight",
+    "season_phase": "spring",
+    "link_state": {
+      "network_type": "mesh",
+      "rssi_dbm": -67,
+      "latency_ms": 42,
+      "packet_loss": 0.01,
+      "is_partitioned": false
+    },
+    "custody_state": {
+      "tamper_flag": false,
+      "calibration_version": "soil-probe-cal-2026-04-a"
+    }
+  },
+  "recommended_actions": [
+    {
+      "action_type": "observe",
+      "priority": "high",
+      "description": "Continue collecting local field observations for this H3 cell and adjacent cells."
+    },
+    {
+      "action_type": "audit",
+      "priority": "medium",
+      "description": "Review calibration-drift watch before using this event as training ground truth."
+    },
+    {
+      "action_type": "plan",
+      "priority": "medium",
+      "description": "Fuse this event with satellite/reanalysis fixtures in the soil-intelligence baseline model."
+    }
+  ],
+  "policy_constraints": [
+    "No autonomous actuation in v0 soil-intelligence demo.",
+    "Preserve raw OFIF event provenance.",
+    "Do not treat model output as agronomic advice until validation exists."
+  ],
+  "provenance": {
+    "source_systems": ["OFIF", "GAIA"],
+    "mapping_contract": "contracts/mappings/ofif-to-gaia.v1.json",
+    "integration_contract": "docs/integrations/OFIF_INTEGRATION.md"
+  }
+}
