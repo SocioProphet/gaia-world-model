@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/navigation/transport_infrastructure_asset.v1.schema.json",
+  "title": "TransportInfrastructureAsset v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "asset_version",
+    "asset_id",
+    "asset_type",
+    "authority_ref",
+    "spatial",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "asset_version": {"type": "string", "const": "v1"},
+    "asset_id": {"type": "string"},
+    "asset_type": {
+      "type": "string",
+      "enum": [
+        "RoadSegment",
+        "LaneSegment",
+        "RailSegment",
+        "TrackAsset",
+        "BridgeAsset",
+        "TunnelAsset",
+        "StationAsset",
+        "PlatformAsset",
+        "CrossingAsset",
+        "SignalAsset",
+        "SignAsset",
+        "CorridorVegetationFeature",
+        "ClearanceEnvelope",
+        "SurfaceConditionFeature",
+        "AccessibilityFeature",
+        "DisruptionEvent",
+        "RoutePlan",
+        "NavigationInstruction",
+        "InfrastructureDecisionCard"
+      ]
+    },
+    "authority_ref": {"type": "string"},
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "spatial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["geometry_ref"],
+      "properties": {
+        "geometry_ref": {"type": "string"},
+        "geometry_type": {"type": "string", "enum": ["Point", "LineString", "Polygon", "MultiLineString", "MultiPolygon", "PointCloud", "Corridor", "Other"]},
+        "h3_cells": {"type": "array", "items": {"type": "string"}},
+        "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+        "crs": {"type": "string"},
+        "linear_reference": {"type": "object", "properties": {"route_id": {"type": "string"}, "from_measure": {"type": "number"}, "to_measure": {"type": "number"}, "unit": {"type": "string"}}}
+      }
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {"type": "string", "enum": ["road", "rail", "transit", "pedestrian", "bicycle", "air", "port", "multimodal", "other"]},
+        "network_id": {"type": "string"},
+        "route_refs": {"type": "array", "items": {"type": "string"}},
+        "osm_refs": {"type": "array", "items": {"type": "string"}},
+        "gtfs_refs": {"type": "array", "items": {"type": "string"}},
+        "agency_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "condition_class": {"type": "string", "enum": ["unknown", "nominal", "watch", "degraded", "restricted", "closed", "unsafe"]},
+        "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "observed_at": {"type": "string", "format": "date-time"},
+        "valid_until": {"type": "string", "format": "date-time"},
+        "risk_tags": {"type": "array", "items": {"type": "string"}},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "model_refs": {"type": "array", "items": {"type": "string"}},
+        "derived_from": {"type": "array", "items": {"type": "string"}},
+        "content_hash": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "retention_class": {"type": "string"},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
