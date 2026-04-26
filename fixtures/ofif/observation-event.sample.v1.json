@@ -1,0 +1,88 @@
+{
+  "envelope_version": "v1",
+  "event_type": "ofif.observation.v1",
+  "event_id": "ofif-event-0001-soil-field-demo",
+  "observed_at": "2026-04-26T18:00:00Z",
+  "ingested_at": "2026-04-26T18:00:05Z",
+  "producer": {
+    "producer_type": "sensor",
+    "producer_id": "field-node-alpha-001",
+    "software_version": "ofif-demo-0.1.0",
+    "hardware_model": "prototype-field-gateway",
+    "tenant_id": "socioprophet-demo"
+  },
+  "provenance": {
+    "source_event_ids": [],
+    "derivation": "raw",
+    "pipeline_step": "edge_capture",
+    "model_version_id": "edge-detector-demo-0.1.0"
+  },
+  "integrity": {
+    "content_hash": "sha256:demo-placeholder-replace-with-canonical-payload-hash",
+    "signature": "demo-signature-placeholder",
+    "attestation": "demo-attestation-placeholder",
+    "replay_nonce": "nonce-demo-0001",
+    "sequence_number": 1
+  },
+  "classification": {
+    "data_class": "internal",
+    "retention_class": "standard",
+    "privacy_class": "none",
+    "handling_tags": ["demo", "soil-intelligence", "field-observation"]
+  },
+  "adversarial": {
+    "threat_tags": ["calibration-drift-watch"],
+    "confidence_impact": -0.05,
+    "detector_ids": ["link-health-demo", "custody-watch-demo"],
+    "notes": "Demo observation includes mild calibration drift watch signal."
+  },
+  "payload": {
+    "sensor_id": "soil-probe-alpha-001",
+    "location": {
+      "h3_cell": "8928308280fffff",
+      "zone_id": "demo-zone-north-field",
+      "property_id": "demo-property-001",
+      "lat": 40.7128,
+      "lon": -74.006
+    },
+    "environment": {
+      "temperature_c": 18.4,
+      "wind_mps": 2.8,
+      "wind_dir_deg": 245,
+      "visibility": "clear",
+      "illumination": "daylight",
+      "season_phase": "spring"
+    },
+    "media": {
+      "thumbnail_uri": "s3://demo/ofif/soil-field/thumb-0001.jpg",
+      "media_uri": "s3://demo/ofif/soil-field/image-0001.jpg",
+      "media_type": "image",
+      "duration_s": 0,
+      "frame_count": 1
+    },
+    "detections": [
+      {
+        "entity_class": "equipment",
+        "confidence": 0.82,
+        "count": 1,
+        "bbox": [0.12, 0.21, 0.36, 0.48],
+        "attributes": {
+          "equipment_type": "soil_probe",
+          "visible_condition": "nominal"
+        }
+      }
+    ],
+    "link_state": {
+      "network_type": "mesh",
+      "rssi_dbm": -67,
+      "latency_ms": 42,
+      "packet_loss": 0.01,
+      "is_partitioned": false
+    },
+    "custody_state": {
+      "tamper_flag": false,
+      "last_maintenance_at": "2026-04-20T14:30:00Z",
+      "calibration_version": "soil-probe-cal-2026-04-a"
+    }
+  }
+}
