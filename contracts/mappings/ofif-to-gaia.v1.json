@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/contracts/mappings/ofif-to-gaia.v1.json",
+  "title": "OFIF to GAIA Mapping Contract v1",
+  "type": "object",
+  "required": [
+    "mapping_version",
+    "source_system",
+    "target_system",
+    "event_envelope_ref",
+    "payload_schema_ref",
+    "mappings"
+  ],
+  "properties": {
+    "mapping_version": {
+      "type": "string",
+      "const": "v1"
+    },
+    "source_system": {
+      "type": "string",
+      "const": "OFIF"
+    },
+    "target_system": {
+      "type": "string",
+      "const": "GAIA"
+    },
+    "event_envelope_ref": {
+      "type": "string",
+      "default": "https://socioprophet.org/ofif/contracts/event-envelope.v1.json"
+    },
+    "payload_schema_ref": {
+      "type": "string"
+    },
+    "mappings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_path", "target_type", "target_path", "mapping_rule"],
+        "properties": {
+          "source_path": {
+            "type": "string",
+            "description": "JSON Pointer or dotted source path in the OFIF envelope/payload."
+          },
+          "target_type": {
+            "type": "string",
+            "enum": [
+              "EvidenceObservation",
+              "EvidenceLineageNode",
+              "EvidenceIntegrityRecord",
+              "DataHandlingPolicyBinding",
+              "ThreatIndicator",
+              "ConfidenceAdjustment",
+              "SpatialIndexCell",
+              "GeometryPoint",
+              "EnvironmentalContextObservation",
+              "MediaEvidenceAsset",
+              "DetectedEntityObservation",
+              "CommunicationsAvailabilityObservation",
+              "AssetCustodyObservation",
+              "WorldStateFeature",
+              "ActionCandidate"
+            ]
+          },
+          "target_path": {
+            "type": "string"
+          },
+          "mapping_rule": {
+            "type": "string",
+            "enum": [
+              "copy",
+              "preserve_raw",
+              "derive",
+              "spatial_join",
+              "temporal_join",
+              "ontology_bind",
+              "confidence_adjust",
+              "policy_bind",
+              "hash_bind"
+            ]
+          },
+          "required": {
+            "type": "boolean",
+            "default": false
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [
+        "Raw OFIF events are never mutated by GAIA enrichments.",
+        "Derived GAIA features must retain source event IDs.",
+        "Observed time and ingestion time remain distinct.",
+        "Confidence adjustments must preserve the original confidence value.",
+        "Adversarial metadata must remain attached to derived decision cards."
+      ]
+    }
+  }
+}
