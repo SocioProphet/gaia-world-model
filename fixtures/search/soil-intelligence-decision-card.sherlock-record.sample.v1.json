@@ -1,0 +1,50 @@
+{
+  "record_version": "v1",
+  "result_id": "search-gaia-decision-card-soil-demo-0001",
+  "source_system": "GAIA",
+  "authority_ref": "SocioProphet/gaia-world-model",
+  "entity_type": "DECISION_CARD",
+  "title": "Soil Intelligence Demo Decision Card",
+  "snippet": "Field soil probe observation with nominal custody, mesh link health, and calibration-drift watch. Confidence adjusted from 0.82 to 0.77.",
+  "canonical_format": "gaia/decision-card+json",
+  "source_format": "json",
+  "path_or_uri": "fixtures/gaia/decision-cards/soil-intelligence-decision-card.sample.v1.json",
+  "spatial_refs": [
+    {"scheme": "h3", "value": "8928308280fffff", "role": "scope"}
+  ],
+  "temporal_refs": [
+    {"role": "observed_interval_start", "value": "2026-04-26T18:00:00Z"},
+    {"role": "observed_interval_end", "value": "2026-04-26T18:00:05Z"}
+  ],
+  "evidence_refs": [
+    "ofif-event-0001-soil-field-demo",
+    "gaia-feature-ofif-event-0001-soil-field-demo"
+  ],
+  "model_refs": [
+    "edge-detector-demo-0.1.0",
+    "gaia-soil-intelligence-baseline-demo-0.1.0"
+  ],
+  "runtime_refs": [
+    "gaia-soil-intelligence-baseline-runtime@v0.1.0"
+  ],
+  "handling_tags": ["demo", "soil-intelligence", "field-observation"],
+  "permission_ref": "demo/internal",
+  "provenance_refs": [
+    "docs/integrations/OFIF_INTEGRATION.md",
+    "contracts/mappings/ofif-to-gaia.v1.json"
+  ],
+  "score": {
+    "lexical": 0.8,
+    "semantic": 0.82,
+    "geospatial": 0.9,
+    "temporal": 0.8,
+    "evidence": 0.85,
+    "final": 0.84
+  },
+  "platform_compat": {
+    "sherlock_source": "PLATFORM",
+    "sherlock_entity_type": "DOCUMENT",
+    "lossy_adapter": true,
+    "notes": "Native Sherlock schema should add GAIA source and DECISION_CARD entity type."
+  }
+}
