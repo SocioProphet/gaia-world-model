@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/search/gaia_sherlock_record.v1.schema.json",
+  "title": "GAIA Sherlock Search Record v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "result_id",
+    "source_system",
+    "authority_ref",
+    "entity_type",
+    "title",
+    "score",
+    "provenance_refs"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "result_id": {"type": "string"},
+    "source_system": {"type": "string", "enum": ["GAIA", "OFIF", "LAMPSTAND", "LATTICE_FORGE", "MIXED"]},
+    "authority_ref": {"type": "string"},
+    "entity_type": {"type": "string", "enum": ["WORLD_STATE_FEATURE", "EVIDENCE_ARTIFACT", "FIELD_EVENT", "OBSERVATION_EVENT", "DECISION_CARD", "MODEL_RUN", "MAP_LAYER", "RUNTIME_ASSET", "LOCAL_STATE_RECORD"]},
+    "title": {"type": "string"},
+    "snippet": {"type": "string"},
+    "canonical_format": {"type": "string"},
+    "source_format": {"type": "string"},
+    "path_or_uri": {"type": "string"},
+    "spatial_refs": {"type": "array", "items": {"type": "object", "required": ["scheme", "value"], "properties": {"scheme": {"type": "string", "enum": ["h3", "s2", "wgs84", "osm", "stac", "bbox", "geometry-ref", "other"]}, "value": {"type": "string"}, "role": {"type": "string"}}}},
+    "temporal_refs": {"type": "array", "items": {"type": "object", "properties": {"role": {"type": "string"}, "value": {"type": "string"}, "valid_from": {"type": "string", "format": "date-time"}, "valid_to": {"type": "string", "format": "date-time"}}}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "model_refs": {"type": "array", "items": {"type": "string"}},
+    "runtime_refs": {"type": "array", "items": {"type": "string"}},
+    "handling_tags": {"type": "array", "items": {"type": "string"}},
+    "permission_ref": {"type": "string"},
+    "provenance_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "score": {"type": "object", "required": ["final"], "properties": {"lexical": {"type": "number"}, "semantic": {"type": "number"}, "geospatial": {"type": "number"}, "temporal": {"type": "number"}, "evidence": {"type": "number"}, "final": {"type": "number"}}, "additionalProperties": false},
+    "platform_compat": {"type": "object", "properties": {"sherlock_source": {"type": "string", "enum": ["LAMPSTAND", "PLATFORM", "MEMORY", "MIXED"]}, "sherlock_entity_type": {"type": "string"}, "lossy_adapter": {"type": "boolean"}, "notes": {"type": "string"}}}
+  },
+  "additionalProperties": false
+}
