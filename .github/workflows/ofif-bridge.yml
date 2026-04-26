@@ -1,0 +1,65 @@
+name: OFIF Bridge Proof
+
+on:
+  push:
+    paths:
+      - 'scripts/ofif_to_gaia_bridge.py'
+      - 'scripts/check_ofif_bridge_invariants.py'
+      - 'scripts/soil_intelligence_fusion.py'
+      - 'fixtures/ofif/**'
+      - 'fixtures/gaia/**'
+      - 'contracts/mappings/**'
+      - 'docs/integrations/**'
+      - '.github/workflows/ofif-bridge.yml'
+  pull_request:
+    paths:
+      - 'scripts/ofif_to_gaia_bridge.py'
+      - 'scripts/check_ofif_bridge_invariants.py'
+      - 'scripts/soil_intelligence_fusion.py'
+      - 'fixtures/ofif/**'
+      - 'fixtures/gaia/**'
+      - 'contracts/mappings/**'
+      - 'docs/integrations/**'
+      - '.github/workflows/ofif-bridge.yml'
+
+jobs:
+  bridge-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Convert OFIF observation into GAIA artifact
+        run: |
+          python3 scripts/ofif_to_gaia_bridge.py \
+            fixtures/ofif/observation-event.sample.v1.json \
+            /tmp/gaia-ofif-output.json
+
+      - name: Check OFIF bridge invariants
+        run: |
+          python3 scripts/check_ofif_bridge_invariants.py \
+            fixtures/ofif/observation-event.sample.v1.json \
+            /tmp/gaia-ofif-output.json
+
+      - name: Build soil intelligence fusion artifact
+        run: |
+          python3 scripts/soil_intelligence_fusion.py \
+            /tmp/gaia-ofif-output.json \
+            fixtures/gaia/context/soil-eo-context.sample.v1.json \
+            /tmp/gaia-soil-fusion-output.json
+
+      - name: Print fusion artifact summary
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-soil-fusion-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          print(doc['artifact_type'])
+          print(doc['soil_intelligence']['estimate']['soil_temperature_c'])
+          print(doc['soil_intelligence']['confidence']['fusion_confidence'])
+          PY
