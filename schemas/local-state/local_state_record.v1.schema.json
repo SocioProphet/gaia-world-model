@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/local-state/local_state_record.v1.schema.json",
+  "title": "Lampstand LocalStateRecord v1",
+  "type": "object",
+  "required": ["record_version", "record_id", "sampled_at", "lampstand_node_id", "object_kind", "content_hash", "metadata_hash", "classification", "source_root_id"],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_id": {"type": "string"},
+    "sampled_at": {"type": "string", "format": "date-time"},
+    "lampstand_node_id": {"type": "string"},
+    "local_path_ref": {"type": "string"},
+    "redacted_path_ref": {"type": "string"},
+    "object_kind": {"type": "string", "enum": ["file", "directory", "notebook", "model-output", "geo-artifact", "sensor-dump", "report", "lockfile", "runtime-artifact", "other"]},
+    "content_hash": {"type": "string"},
+    "metadata_hash": {"type": "string"},
+    "size_bytes": {"type": "integer", "minimum": 0},
+    "mtime": {"type": "string", "format": "date-time"},
+    "classification": {"type": "object", "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "retention_class": {"type": "string"}, "privacy_class": {"type": "string"}}},
+    "handling_tags": {"type": "array", "items": {"type": "string"}},
+    "source_root_id": {"type": "string"},
+    "workspace_refs": {"type": "array", "items": {"type": "string"}},
+    "project_refs": {"type": "array", "items": {"type": "string"}},
+    "spatial_refs": {"type": "array", "items": {"type": "object", "properties": {"scheme": {"type": "string"}, "value": {"type": "string"}}}},
+    "temporal_refs": {"type": "array", "items": {"type": "object", "properties": {"role": {"type": "string"}, "value": {"type": "string"}}}},
+    "snippet": {"type": "string"},
+    "percolation_state": {"type": "string", "enum": ["local-only", "eligible", "approved", "percolated", "blocked"]}
+  },
+  "additionalProperties": false
+}
