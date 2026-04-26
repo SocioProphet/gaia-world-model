@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/navigation/lidar_corridor_observation.v1.schema.json",
+  "title": "LiDARCorridorObservation v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["observation_version", "observation_id", "observed_at", "platform", "sensor", "spatial", "assets_observed", "provenance", "integrity"],
+  "properties": {
+    "observation_version": {"type": "string", "const": "v1"},
+    "observation_id": {"type": "string"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "ingested_at": {"type": "string", "format": "date-time"},
+    "platform": {"type": "object", "additionalProperties": false, "required": ["platform_type", "platform_id"], "properties": {"platform_type": {"type": "string", "enum": ["trainborne", "vehicle", "drone", "aerial", "terrestrial", "handheld", "other"]}, "platform_id": {"type": "string"}, "operator_ref": {"type": "string"}, "trajectory_ref": {"type": "string"}}},
+    "sensor": {"type": "object", "additionalProperties": false, "required": ["sensor_type", "sensor_id"], "properties": {"sensor_type": {"type": "string", "enum": ["lidar", "camera", "multimodal", "radar", "other"]}, "sensor_id": {"type": "string"}, "hardware_model": {"type": "string"}, "calibration_version": {"type": "string"}}},
+    "spatial": {"type": "object", "additionalProperties": false, "required": ["corridor_ref", "crs"], "properties": {"corridor_ref": {"type": "string"}, "geometry_ref": {"type": "string"}, "h3_cells": {"type": "array", "items": {"type": "string"}}, "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4}, "crs": {"type": "string"}, "linear_reference": {"type": "object", "properties": {"route_id": {"type": "string"}, "from_measure": {"type": "number"}, "to_measure": {"type": "number"}, "unit": {"type": "string"}}}}},
+    "point_cloud": {"type": "object", "additionalProperties": false, "properties": {"asset_uri": {"type": "string"}, "format": {"type": "string", "enum": ["las", "laz", "copc", "ept", "3d-tiles", "potree", "other"]}, "point_count": {"type": "integer", "minimum": 0}, "density_points_per_m2": {"type": "number", "minimum": 0}, "classification_status": {"type": "string", "enum": ["raw", "classified", "derived", "unknown"]}, "vertical_accuracy_m": {"type": "number", "minimum": 0}, "horizontal_accuracy_m": {"type": "number", "minimum": 0}}},
+    "assets_observed": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["asset_type", "confidence"], "properties": {"asset_type": {"type": "string"}, "asset_ref": {"type": "string"}, "condition_class": {"type": "string"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "measurements": {"type": "object"}, "risk_tags": {"type": "array", "items": {"type": "string"}}}}},
+    "derived_features": {"type": "array", "items": {"type": "object", "properties": {"feature_type": {"type": "string"}, "feature_ref": {"type": "string"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "notes": {"type": "string"}}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_refs"], "properties": {"source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "runtime_refs": {"type": "array", "items": {"type": "string"}}, "model_refs": {"type": "array", "items": {"type": "string"}}, "processing_step": {"type": "string"}}},
+    "integrity": {"type": "object", "additionalProperties": false, "properties": {"content_hash": {"type": "string"}, "signature": {"type": "string"}, "attestation": {"type": "string"}}},
+    "classification": {"type": "object", "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "handling_tags": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
