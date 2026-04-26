@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/contracts/mappings/gaia-to-ofif-context.v1.json",
+  "title": "GAIA to OFIF Context Contract v1",
+  "type": "object",
+  "required": [
+    "context_version",
+    "source_system",
+    "target_system",
+    "context_scope",
+    "context_items"
+  ],
+  "properties": {
+    "context_version": {
+      "type": "string",
+      "const": "v1"
+    },
+    "source_system": {
+      "type": "string",
+      "const": "GAIA"
+    },
+    "target_system": {
+      "type": "string",
+      "const": "OFIF"
+    },
+    "context_scope": {
+      "type": "object",
+      "required": ["spatial", "temporal"],
+      "properties": {
+        "spatial": {
+          "type": "object",
+          "properties": {
+            "h3_cells": {"type": "array", "items": {"type": "string"}},
+            "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+            "geometry_ref": {"type": "string"},
+            "world_entity_ids": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "temporal": {
+          "type": "object",
+          "properties": {
+            "valid_from": {"type": "string", "format": "date-time"},
+            "valid_to": {"type": "string", "format": "date-time"},
+            "forecast_horizon": {"type": "string"},
+            "scenario_id": {"type": "string"}
+          }
+        }
+      }
+    },
+    "context_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["context_type", "context_id", "confidence", "provenance_ref"],
+        "properties": {
+          "context_type": {
+            "type": "string",
+            "enum": [
+              "weather_context",
+              "soil_context",
+              "terrain_context",
+              "landcover_context",
+              "infrastructure_context",
+              "jurisdiction_context",
+              "asset_context",
+              "communications_context",
+              "threat_context",
+              "model_forecast_context",
+              "policy_context"
+            ]
+          },
+          "context_id": {"type": "string"},
+          "value": {"type": "object"},
+          "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+          "uncertainty": {"type": "object"},
+          "model_version_id": {"type": "string"},
+          "provenance_ref": {"type": "string"},
+          "handling_tags": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [
+        "GAIA context sent to OFIF must include provenance references.",
+        "Forecast and observation contexts must remain distinguishable.",
+        "Policy and handling tags must be preserved by OFIF consumers.",
+        "Uncertainty must be explicit when context derives from models or interpolated rasters."
+      ]
+    }
+  }
+}
