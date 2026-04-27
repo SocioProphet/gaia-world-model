@@ -50,6 +50,11 @@ CHECKS: List[Tuple[str, str, Iterable[str]]] = [
         ["manifest_version", "layer_id", "layer_type", "title", "sources", "tiles", "attribution", "provenance", "classification"],
     ),
     (
+        "schemas/geospatial/osm_route_graph_manifest.v1.schema.json",
+        "fixtures/geospatial/osm-route-graph.sample.v1.json",
+        ["manifest_version", "graph_id", "source", "safety_status", "nodes", "edges", "attribution", "provenance", "classification"],
+    ),
+    (
         "schemas/navigation/lidar_corridor_observation.v1.schema.json",
         "fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json",
         ["observation_version", "observation_id", "observed_at", "platform", "sensor", "spatial", "assets_observed", "provenance", "integrity"],
@@ -81,6 +86,13 @@ CHECKS: List[Tuple[str, str, Iterable[str]]] = [
     ),
 ]
 
+OUTPUT_CHECKS: List[Tuple[str, Iterable[str]]] = [
+    (
+        "fixtures/navigation/lidar-derived-infrastructure-assets.sample.v1.json",
+        ["artifact_version", "artifact_type", "source_observation_id", "runtime_ref", "safety_status", "assets"],
+    ),
+]
+
 
 def fail(message: str) -> None:
     raise SystemExit(f"ERROR: {message}")
@@ -105,6 +117,24 @@ def check_required(path: str, doc: Dict[str, Any], required: Iterable[str]) -> N
         fail(f"{path} missing required fields: {', '.join(missing)}")
 
 
+def check_lidar_output(path: str, doc: Dict[str, Any]) -> None:
+    if doc.get("artifact_type") != "gaia.navigation.lidar_feature_extract.output":
+        fail(f"{path} has unexpected artifact_type")
+    if doc.get("safety_status") != "advisory":
+        fail(f"{path} must remain advisory")
+    assets = doc.get("assets")
+    if not isinstance(assets, list) or not assets:
+        fail(f"{path} assets must be non-empty")
+    for asset in assets:
+        if not isinstance(asset, dict):
+            fail(f"{path} asset entries must be objects")
+        check_required(path, asset, ["asset_version", "asset_id", "asset_type", "spatial", "condition", "provenance", "classification"])
+        if not asset.get("provenance", {}).get("source_refs"):
+            fail(f"{path} asset {asset.get('asset_id')} missing provenance.source_refs")
+        if not asset.get("condition", {}).get("evidence_refs"):
+            fail(f"{path} asset {asset.get('asset_id')} missing condition.evidence_refs")
+
+
 def main() -> int:
     checked = 0
     for schema_path, fixture_path, required in CHECKS:
@@ -117,7 +147,15 @@ def main() -> int:
                     fail(f"{schema_path} does not declare expected required field {field}")
         check_required(fixture_path, fixture, required)
         checked += 1
-    print(f"validated {checked} contract fixture pairs")
+
+    for fixture_path, required in OUTPUT_CHECKS:
+        fixture = load_json(ROOT / fixture_path)
+        check_required(fixture_path, fixture, required)
+        if fixture_path.endswith("lidar-derived-infrastructure-assets.sample.v1.json"):
+            check_lidar_output(fixture_path, fixture)
+        checked += 1
+
+    print(f"validated {checked} contract fixture pairs and output fixtures")
     return 0
 
 
