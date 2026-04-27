@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/mesh/mesh_telemetry_envelope.v1.schema.json",
+  "title": "MeshTelemetryEnvelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["envelope_version", "telemetry_id", "node_id", "observed_at", "metric_family", "measurements", "producer", "integrity", "provenance", "classification"],
+  "properties": {
+    "envelope_version": {"type": "string", "const": "v1"},
+    "telemetry_id": {"type": "string"},
+    "node_id": {"type": "string"},
+    "slice_id": {"type": "string"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "ingested_at": {"type": "string", "format": "date-time"},
+    "metric_family": {"type": "string", "enum": ["health", "compute", "network", "storage", "runtime", "sensor", "policy", "security", "other"]},
+    "measurements": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["name", "value"], "properties": {"name": {"type": "string"}, "value": {}, "unit": {"type": "string"}, "status": {"type": "string"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}}}},
+    "producer": {"type": "object", "required": ["producer_id"], "properties": {"producer_id": {"type": "string"}, "producer_type": {"type": "string"}, "software_version": {"type": "string"}}},
+    "integrity": {"type": "object", "properties": {"content_hash": {"type": "string"}, "signature": {"type": "string"}, "attestation": {"type": "string"}, "sequence_number": {"type": "integer", "minimum": 0}}},
+    "provenance": {"type": "object", "required": ["source_refs"], "properties": {"source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "runtime_refs": {"type": "array", "items": {"type": "string"}}, "ofif_event_ids": {"type": "array", "items": {"type": "string"}}}},
+    "classification": {"type": "object", "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "handling_tags": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
