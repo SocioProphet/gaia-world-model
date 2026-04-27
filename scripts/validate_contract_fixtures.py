@@ -30,6 +30,11 @@ CHECKS: List[Tuple[str, str, Iterable[str]]] = [
         ["record_version", "node_id", "node_type", "authority_ref", "spatial_refs", "provenance", "classification"],
     ),
     (
+        "schemas/control-tower/risk_exposure_record.v1.schema.json",
+        "fixtures/control-tower/risk-exposure.rail-vegetation.sample.v1.json",
+        ["record_version", "risk_id", "risk_type", "created_at", "scope", "score", "evidence_refs", "provenance", "classification"],
+    ),
+    (
         "schemas/control-tower/control_tower_decision_card.v1.schema.json",
         "fixtures/control-tower/navigation-asset-health-card.sample.v1.json",
         ["card_version", "card_id", "created_at", "situation_type", "summary", "scope", "evidence_refs", "recommendations", "policy", "provenance"],
@@ -53,6 +58,11 @@ CHECKS: List[Tuple[str, str, Iterable[str]]] = [
         "schemas/mesh/slice_allocation_record.v1.schema.json",
         "fixtures/mesh/slice-allocation.soil-intelligence.sample.v1.json",
         ["record_version", "slice_id", "owner_ref", "node_refs", "isolation_profile", "runtime_refs", "policy_bundle_ref", "resource_limits", "provenance", "classification"],
+    ),
+    (
+        "schemas/mesh/mesh_telemetry_envelope.v1.schema.json",
+        "fixtures/mesh/mesh-telemetry.local-host-health.sample.v1.json",
+        ["envelope_version", "telemetry_id", "node_id", "observed_at", "metric_family", "measurements", "producer", "integrity", "provenance", "classification"],
     ),
     (
         "schemas/mesh/mesh_experiment_manifest.v1.schema.json",
