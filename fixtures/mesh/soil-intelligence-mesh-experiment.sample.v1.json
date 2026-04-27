@@ -1,0 +1,54 @@
+{
+  "manifest_version": "v1",
+  "experiment_id": "mesh-experiment-soil-intelligence-demo-0001",
+  "purpose": "Run the GAIA + OFIF soil-intelligence proof chain on a local SourceOS-capable mesh node and emit evidence artifacts for Sherlock discovery.",
+  "description": "Fixture proving local-host mesh execution semantics for OFIF observation to GAIA soil fusion to decision-card evidence.",
+  "node_selector": {
+    "node_refs": ["mesh-node-local-m2-demo-001"],
+    "capability_requirements": ["local-build", "python", "nix"],
+    "spatial_scope_refs": ["h3:8928308280fffff"]
+  },
+  "slice_requirements": [
+    {
+      "isolation_profile": "container",
+      "runtime_refs": ["gaia-soil-intelligence-baseline-runtime@v0.1.0"],
+      "resource_limits_ref": "slice-soil-intelligence-demo-0001"
+    }
+  ],
+  "runtime_refs": ["gaia-soil-intelligence-baseline-runtime@v0.1.0"],
+  "data_bindings": [
+    {"binding_type": "ofif", "ref": "ofif-event-0001-soil-field-demo", "role": "field-observation"},
+    {"binding_type": "gaia", "ref": "gaia-soil-eo-context-demo-0001", "role": "eo-context"},
+    {"binding_type": "sherlock", "ref": "search-gaia-decision-card-soil-demo-0001", "role": "discovery-output"}
+  ],
+  "expected_evidence_outputs": [
+    "gaia-feature-ofif-event-0001-soil-field-demo",
+    "gaia-soil-fusion-demo-0001",
+    "gaia-decision-card-soil-demo-0001",
+    "search-gaia-decision-card-soil-demo-0001"
+  ],
+  "rollback_strategy": {
+    "strategy": "stop_slices",
+    "rollback_refs": ["slice-soil-intelligence-demo-0001"],
+    "notes": "Demo rollback stops local execution slice; no persistent field actuation is allowed."
+  },
+  "policy": {
+    "approval_status": "approved",
+    "policy_refs": ["policy://gaia/soil-intelligence/demo-standard-v1"],
+    "acceptable_use_ref": "acceptable-use://socioprophet/demo-non-actuating",
+    "handling_tags": ["demo", "mesh", "soil-intelligence", "non-actuating"]
+  },
+  "provenance": {
+    "source_refs": [
+      "fixtures/ofif/observation-event.sample.v1.json",
+      "fixtures/gaia/context/soil-eo-context.sample.v1.json",
+      "fixtures/gaia/decision-cards/soil-intelligence-decision-card.sample.v1.json"
+    ],
+    "created_at": "2026-04-27T00:37:00Z",
+    "content_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "mesh", "soil-intelligence"]
+  }
+}
