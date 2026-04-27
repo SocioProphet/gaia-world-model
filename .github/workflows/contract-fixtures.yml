@@ -9,6 +9,7 @@ on:
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
+      - 'control_tower/anomaly_score.py'
       - '.github/workflows/contract-fixtures.yml'
   pull_request:
     paths:
@@ -18,6 +19,7 @@ on:
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
+      - 'control_tower/anomaly_score.py'
       - '.github/workflows/contract-fixtures.yml'
 
 jobs:
@@ -53,3 +55,22 @@ jobs:
             /tmp/gaia-ofif-output.json \
             fixtures/gaia/context/soil-eo-context.sample.v1.json \
             /tmp/gaia-soil-fusion-output.json
+
+      - name: Score control tower anomaly fixture
+        run: |
+          python3 control_tower/anomaly_score.py \
+            fixtures/control-tower/navigation-asset-health-card.sample.v1.json \
+            /tmp/control-tower-anomaly-output.json
+
+      - name: Check control tower anomaly output
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/control-tower-anomaly-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['artifact_type'] == 'gaia.control_tower.anomaly_score.output'
+          assert 'risk_exposure' in doc
+          assert 'work_order_candidate' in doc
+          assert doc['policy']['action_status'] == 'approval_required'
+          print('control tower anomaly output passed')
+          PY
