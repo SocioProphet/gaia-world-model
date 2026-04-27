@@ -326,29 +326,30 @@ Convert OSM-derived topology into route graph artifacts usable by GAIA route pla
 
 Entrypoint:
 
-Undecided. Candidate future entrypoint:
-
 `geospatial/osm_route_graph.py`
 
 Required inputs:
 
-- OSMFeatureBinding records;
-- route-mode configuration;
+- OSMFeatureBinding record;
+- route-mode configuration carried by binding routing field;
 - access/restriction tag policy;
-- optional GTFS/NeTEx transfer bindings;
 - safety/advisory policy.
 
 Current input examples:
 
 - `fixtures/geospatial/osm-road-feature-binding.sample.v1.json`
-- `fixtures/navigation/multimodal-route-plan.sample.v1.json`
+- `/tmp/osm-route-graph.json` generated route graph proof output.
 
 Emitted outputs:
 
-- route graph manifest;
+- OSMRouteGraphManifest;
 - route topology refs;
 - advisory route-plan inputs;
 - provenance/attribution refs.
+
+Schema references:
+
+- `schemas/geospatial/osm_route_graph_manifest.v1.schema.json`
 
 Policy constraints:
 
@@ -364,14 +365,19 @@ Secret posture: none
 
 Validation command:
 
-Undecided.
+```bash
+python3 geospatial/osm_route_graph.py \
+  fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
+  /tmp/osm-route-graph.json
+```
 
 Promotion criteria:
 
 - executable entrypoint exists;
 - deterministic route graph fixture exists;
 - OSM attribution preserved;
-- route output safety status is explicit.
+- route output safety status is explicit;
+- contract fixture CI passes.
 
 Rollback semantics:
 
@@ -379,7 +385,7 @@ Demote generated route graph and restore prior graph artifact; source OSM bindin
 
 Status:
 
-Boundary is not yet ready for Lattice Forge mirroring.
+Boundary is executable for fixture input but not automatically admitted to Lattice Forge. A Lattice RuntimeAsset requires explicit admission decision after packaging and validation command review.
 
 ## Runtime 6 — GAIA OpenStreetMap tile export runtime
 
