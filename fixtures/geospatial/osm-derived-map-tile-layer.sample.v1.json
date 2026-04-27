@@ -1,0 +1,46 @@
+{
+  "manifest_version": "v1",
+  "layer_id": "gaia-osm-demo-road-layer-v1",
+  "layer_type": "vector",
+  "title": "GAIA OSM Demo Road Layer",
+  "description": "Demo MapLibre-compatible vector layer manifest for OSM-derived GAIA road features.",
+  "sources": [
+    {
+      "source_id": "osm-demo-extract-2026-04-26",
+      "source_type": "OpenStreetMap extract",
+      "source_refs": ["osm-extract://demo/region/2026-04-26", "osm://way/424242"]
+    }
+  ],
+  "tiles": {
+    "url_template": "https://tiles.demo.socioprophet.org/gaia/osm-demo/{z}/{x}/{y}.mvt",
+    "min_zoom": 0,
+    "max_zoom": 14,
+    "format": "mvt"
+  },
+  "style": {
+    "maplibre_layer_id": "gaia-osm-demo-roads",
+    "paint_ref": "style://gaia/osm-demo/road-paint-v1",
+    "layout_ref": "style://gaia/osm-demo/road-layout-v1",
+    "style_ref": "maplibre://gaia/osm-demo-style-v1"
+  },
+  "spatial": {
+    "bbox": [-74.012, 40.705, -73.998, 40.718],
+    "h3_cells": ["8928308280fffff", "89283082807ffff"],
+    "crs": "EPSG:4326"
+  },
+  "attribution": {
+    "attribution_text": "© OpenStreetMap contributors; GAIA derived layer fixture",
+    "license_refs": ["ODbL-1.0"],
+    "source_urls": ["https://www.openstreetmap.org"]
+  },
+  "provenance": {
+    "source_refs": ["fixtures/geospatial/osm-road-feature-binding.sample.v1.json"],
+    "runtime_refs": [],
+    "created_at": "2026-04-27T04:11:00Z",
+    "content_hash": "sha256:osmtilelayerdemo000000000000000000000000000000000000000000000"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": ["demo", "osm", "maplibre", "vector-tile", "advisory"]
+  }
+}
