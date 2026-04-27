@@ -60,6 +60,11 @@ CHECKS: List[Tuple[str, str, Iterable[str]]] = [
         ["observation_version", "observation_id", "observed_at", "platform", "sensor", "spatial", "assets_observed", "provenance", "integrity"],
     ),
     (
+        "schemas/navigation/navigation_safety_case.v1.schema.json",
+        "fixtures/navigation/navigation-safety-case.lidar-advisory.sample.v1.json",
+        ["case_version", "case_id", "created_at", "scope", "claim", "safety_status", "evidence_refs", "validation", "approval", "limits", "provenance", "classification"],
+    ),
+    (
         "schemas/navigation/route_plan.v1.schema.json",
         "fixtures/navigation/multimodal-route-plan.sample.v1.json",
         ["route_plan_version", "route_plan_id", "created_at", "mode", "origin", "destination", "legs", "provenance", "policy"],
@@ -135,6 +140,17 @@ def check_lidar_output(path: str, doc: Dict[str, Any]) -> None:
             fail(f"{path} asset {asset.get('asset_id')} missing condition.evidence_refs")
 
 
+def check_safety_case(path: str, doc: Dict[str, Any]) -> None:
+    if doc.get("safety_status") == "validated" and doc.get("validation", {}).get("validation_status") != "validated":
+        fail(f"{path} cannot be validated unless validation.validation_status is validated")
+    if doc.get("safety_status") != "advisory":
+        approval = doc.get("approval", {})
+        if approval.get("approval_state") != "approved":
+            fail(f"{path} non-advisory safety status requires approval_state=approved")
+    if doc.get("safety_status") == "advisory" and "safety-critical navigation" not in doc.get("limits", {}).get("prohibited_uses", []):
+        fail(f"{path} advisory safety case must prohibit safety-critical navigation")
+
+
 def main() -> int:
     checked = 0
     for schema_path, fixture_path, required in CHECKS:
@@ -146,6 +162,8 @@ def main() -> int:
                 if field not in declared_required:
                     fail(f"{schema_path} does not declare expected required field {field}")
         check_required(fixture_path, fixture, required)
+        if fixture_path.endswith("navigation-safety-case.lidar-advisory.sample.v1.json"):
+            check_safety_case(fixture_path, fixture)
         checked += 1
 
     for fixture_path, required in OUTPUT_CHECKS:
