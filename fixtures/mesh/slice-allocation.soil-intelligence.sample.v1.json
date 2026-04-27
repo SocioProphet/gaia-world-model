@@ -1,0 +1,42 @@
+{
+  "record_version": "v1",
+  "slice_id": "slice-soil-intelligence-demo-0001",
+  "owner_ref": "user://demo/operator",
+  "project_ref": "project://gaia-soil-intelligence-demo",
+  "org_ref": "org://socioprophet",
+  "node_refs": ["mesh-node-local-m2-demo-001"],
+  "isolation_profile": "container",
+  "runtime_refs": ["gaia-soil-intelligence-baseline-runtime@v0.1.0"],
+  "policy_bundle_ref": "policy://gaia/soil-intelligence/demo-standard-v1",
+  "resource_limits": {
+    "cpu": "2",
+    "memory": "4Gi",
+    "storage": "10Gi",
+    "network": "restricted",
+    "gpu": "none"
+  },
+  "network_policy": {
+    "egress": "restricted",
+    "ingress": "none",
+    "allowed_refs": ["artifact-store://local-demo", "sherlock://local-demo"]
+  },
+  "lifecycle": {
+    "state": "active",
+    "valid_from": "2026-04-27T00:35:00Z",
+    "valid_to": "2026-04-28T00:35:00Z",
+    "renewal_policy": "manual"
+  },
+  "evidence_refs": [
+    "ofif-event-0001-soil-field-demo",
+    "gaia-soil-fusion-demo-0001"
+  ],
+  "provenance": {
+    "source_refs": ["fixture://mesh/soil-intelligence-slice"],
+    "created_at": "2026-04-27T00:36:00Z",
+    "content_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "mesh", "soil-intelligence", "slice"]
+  }
+}
