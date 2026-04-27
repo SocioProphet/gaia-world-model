@@ -174,18 +174,14 @@ Score asset, inventory, route, and mesh observations for control-tower decision 
 
 Entrypoint:
 
-Undecided. Candidate future entrypoint:
-
 `control_tower/anomaly_score.py`
 
 Required inputs:
 
-- AssetHealthObservation;
-- InventoryEvent / InventoryNodeRecord;
-- RoutePlan / infrastructure evidence;
-- mesh telemetry when relevant;
-- policy bundle;
-- model/runtime refs.
+- ControlTowerDecisionCard fixture or generated decision-card input;
+- asset health evidence refs;
+- route or infrastructure evidence refs;
+- policy bundle refs.
 
 Current input examples:
 
@@ -196,11 +192,19 @@ Current input examples:
 
 Emitted outputs:
 
+- `gaia.control_tower.anomaly_score.output` bundle;
 - RiskExposureRecord;
-- ControlTowerDecisionCard;
 - WorkOrderCandidate;
-- Sherlock result record;
-- evidence/provenance refs.
+- evidence/provenance refs;
+- approval-required policy state.
+
+Validation command:
+
+```bash
+python3 control_tower/anomaly_score.py \
+  fixtures/control-tower/navigation-asset-health-card.sample.v1.json \
+  /tmp/control-tower-anomaly-output.json
+```
 
 Policy constraints:
 
@@ -219,9 +223,9 @@ Promotion criteria:
 
 - executable entrypoint exists;
 - risk score emitted from deterministic input fixture;
-- generated decision card and work-order candidate pass schema validation;
-- Sherlock result emitted and validated;
-- policy constraints are preserved.
+- generated risk and work-order candidate structures are present;
+- policy constraints are preserved;
+- contract fixture CI passes.
 
 Rollback semantics:
 
@@ -229,7 +233,228 @@ Demote generated decision cards/work-order candidates; preserve evidence trail a
 
 Status:
 
-Boundary is not yet ready for Lattice Forge mirroring. The executable scoring entrypoint and validation harness must be implemented first.
+Boundary is now executable but not automatically admitted to Lattice Forge. It requires an explicit admission decision before a Lattice RuntimeAsset is added.
+
+## Runtime 4 — GAIA OpenStreetMap ingestion runtime
+
+Runtime name: `gaia-osm-ingestion-runtime`
+
+Domain: OpenStreetMap / GAIA geospatial substrate
+
+Purpose:
+
+Ingest OpenStreetMap extracts or query results and emit GAIA OSMFeatureBinding records that preserve OSM identity, tags, attribution, and provenance.
+
+Entrypoint:
+
+Undecided. Candidate future entrypoint:
+
+`geospatial/osm_ingest.py`
+
+Required inputs:
+
+- OSM extract or query result;
+- extract metadata;
+- attribution/license metadata;
+- optional H3 indexing configuration;
+- target GAIA entity-type mapping config.
+
+Current input examples:
+
+- `fixtures/geospatial/osm-road-feature-binding.sample.v1.json` as target fixture.
+
+Emitted outputs:
+
+- OSMFeatureBinding records;
+- GAIA spatial/entity refs;
+- H3 cell refs;
+- attribution metadata;
+- provenance refs.
+
+Schema references:
+
+- `schemas/geospatial/osm_feature_binding.v1.schema.json`
+
+Policy constraints:
+
+- preserve OSM node/way/relation identity;
+- preserve OSM tags as source metadata;
+- carry OSM attribution and license refs;
+- derived GAIA features must cite original OSM refs;
+- OSM-derived route outputs are advisory unless separately validated.
+
+Runtime isolation default: container
+
+Network posture: restricted for local extracts; explicitly declared if pulling live OSM/Overpass data.
+
+Secret posture: none
+
+Validation command:
+
+Undecided. Initial validation is currently fixture-level through:
+
+```bash
+python3 scripts/validate_contract_fixtures.py
+```
+
+Promotion criteria:
+
+- executable entrypoint exists;
+- at least one OSM input extract/query fixture maps to a valid OSMFeatureBinding;
+- attribution metadata is present;
+- OSM refs are preserved;
+- contract fixture CI passes.
+
+Rollback semantics:
+
+Demote generated OSM bindings and restore prior GAIA spatial binding set. Original OSM source records are never mutated.
+
+Status:
+
+Boundary is not yet ready for Lattice Forge mirroring. Entrypoint and input fixture still need implementation.
+
+## Runtime 5 — GAIA OpenStreetMap route graph runtime
+
+Runtime name: `gaia-osm-route-graph-runtime`
+
+Domain: OSM routing / navigation substrate
+
+Purpose:
+
+Convert OSM-derived topology into route graph artifacts usable by GAIA route plans and navigation/infrastructure intelligence.
+
+Entrypoint:
+
+Undecided. Candidate future entrypoint:
+
+`geospatial/osm_route_graph.py`
+
+Required inputs:
+
+- OSMFeatureBinding records;
+- route-mode configuration;
+- access/restriction tag policy;
+- optional GTFS/NeTEx transfer bindings;
+- safety/advisory policy.
+
+Current input examples:
+
+- `fixtures/geospatial/osm-road-feature-binding.sample.v1.json`
+- `fixtures/navigation/multimodal-route-plan.sample.v1.json`
+
+Emitted outputs:
+
+- route graph manifest;
+- route topology refs;
+- advisory route-plan inputs;
+- provenance/attribution refs.
+
+Policy constraints:
+
+- OSM-only route graph output is advisory by default;
+- HD or safety-critical routing requires LiDAR/field validation and safety-case records;
+- OSM attribution must remain available in route outputs.
+
+Runtime isolation default: container
+
+Network posture: restricted
+
+Secret posture: none
+
+Validation command:
+
+Undecided.
+
+Promotion criteria:
+
+- executable entrypoint exists;
+- deterministic route graph fixture exists;
+- OSM attribution preserved;
+- route output safety status is explicit.
+
+Rollback semantics:
+
+Demote generated route graph and restore prior graph artifact; source OSM bindings remain immutable.
+
+Status:
+
+Boundary is not yet ready for Lattice Forge mirroring.
+
+## Runtime 6 — GAIA OpenStreetMap tile export runtime
+
+Runtime name: `gaia-osm-tile-export-runtime`
+
+Domain: OSM-derived map/tile surfaces
+
+Purpose:
+
+Export OSM-derived GAIA spatial features into MapLibre-compatible map/tile layer manifests and tile artifacts.
+
+Entrypoint:
+
+Undecided. Candidate future entrypoint:
+
+`geospatial/osm_tile_export.py`
+
+Required inputs:
+
+- OSMFeatureBinding records;
+- GAIA spatial features;
+- style/layer configuration;
+- attribution metadata;
+- tile output configuration.
+
+Current input examples:
+
+- `fixtures/geospatial/osm-road-feature-binding.sample.v1.json`
+- `fixtures/geospatial/osm-derived-map-tile-layer.sample.v1.json`
+
+Emitted outputs:
+
+- MapTileLayerManifest records;
+- MapLibre style/layer refs;
+- tile artifact refs;
+- attribution/source refs;
+- Sherlock discoverable map-layer refs.
+
+Schema references:
+
+- `schemas/geospatial/map_tile_layer_manifest.v1.schema.json`
+
+Policy constraints:
+
+- attribution must be present in tile layer manifests;
+- generated layers must cite OSM source refs;
+- no safety-critical navigation claim from map layer display alone.
+
+Runtime isolation default: container
+
+Network posture: restricted
+
+Secret posture: none
+
+Validation command:
+
+Current fixture-level validation:
+
+```bash
+python3 scripts/validate_contract_fixtures.py
+```
+
+Promotion criteria:
+
+- executable entrypoint exists;
+- deterministic tile layer manifest fixture exists;
+- attribution text and license refs are present;
+- Sherlock map-layer record validates.
+
+Rollback semantics:
+
+Demote generated tile layer and restore prior map layer manifest; source OSM bindings remain immutable.
+
+Status:
+
+Boundary is not yet ready for Lattice Forge mirroring.
 
 ## Lattice Forge admission rule
 
