@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/mesh/mesh_experiment_manifest.v1.schema.json",
+  "title": "MeshExperimentManifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_version", "experiment_id", "purpose", "node_selector", "runtime_refs", "expected_evidence_outputs", "rollback_strategy", "policy", "provenance", "classification"],
+  "properties": {
+    "manifest_version": {"type": "string", "const": "v1"},
+    "experiment_id": {"type": "string"},
+    "purpose": {"type": "string"},
+    "description": {"type": "string"},
+    "node_selector": {"type": "object", "properties": {"node_refs": {"type": "array", "items": {"type": "string"}}, "capability_requirements": {"type": "array", "items": {"type": "string"}}, "spatial_scope_refs": {"type": "array", "items": {"type": "string"}}}},
+    "slice_requirements": {"type": "array", "items": {"type": "object", "required": ["isolation_profile", "runtime_refs"], "properties": {"isolation_profile": {"type": "string"}, "runtime_refs": {"type": "array", "items": {"type": "string"}}, "resource_limits_ref": {"type": "string"}}}},
+    "runtime_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "data_bindings": {"type": "array", "items": {"type": "object", "required": ["binding_type", "ref"], "properties": {"binding_type": {"type": "string", "enum": ["gaia", "ofif", "lampstand", "sherlock", "lattice", "external"]}, "ref": {"type": "string"}, "role": {"type": "string"}}}},
+    "expected_evidence_outputs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "rollback_strategy": {"type": "object", "required": ["strategy"], "properties": {"strategy": {"type": "string", "enum": ["none", "stop_slices", "restore_previous_release", "quarantine_nodes", "custom"]}, "rollback_refs": {"type": "array", "items": {"type": "string"}}, "notes": {"type": "string"}}},
+    "policy": {"type": "object", "required": ["approval_status"], "properties": {"approval_status": {"type": "string", "enum": ["draft", "approval_required", "approved", "rejected", "blocked"]}, "policy_refs": {"type": "array", "items": {"type": "string"}}, "acceptable_use_ref": {"type": "string"}, "handling_tags": {"type": "array", "items": {"type": "string"}}}},
+    "provenance": {"type": "object", "required": ["source_refs"], "properties": {"source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "created_at": {"type": "string", "format": "date-time"}, "content_hash": {"type": "string"}}},
+    "classification": {"type": "object", "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "handling_tags": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
