@@ -1,0 +1,83 @@
+{
+  "case_version": "v1",
+  "case_id": "navigation-safety-case-lidar-advisory-demo-0001",
+  "created_at": "2026-04-27T23:24:00Z",
+  "scope": {
+    "scope_type": "corridor",
+    "asset_refs": [
+      "rail-segment-demo-a-001",
+      "vegetation-encroachment-demo-001",
+      "clearance-envelope-demo-001"
+    ],
+    "route_refs": ["demo-rail-line-a"],
+    "spatial_refs": [
+      {"scheme": "h3", "value": "8928308280fffff", "role": "coverage"},
+      {"scheme": "h3", "value": "89283082807ffff", "role": "coverage"},
+      {"scheme": "geometry-ref", "value": "geometry://demo/rail-corridor-a/segment-001", "role": "corridor-segment"}
+    ],
+    "temporal_scope": {
+      "valid_from": "2026-04-26T15:30:00Z",
+      "valid_to": "2026-04-27T15:30:00Z"
+    }
+  },
+  "claim": {
+    "claim_id": "claim-lidar-corridor-condition-advisory-demo-0001",
+    "claim_text": "LiDAR-derived rail corridor condition evidence is available for advisory review, but it is not validated for safety-critical navigation or operational restriction decisions.",
+    "claim_type": "advisory_condition",
+    "confidence": 0.76
+  },
+  "safety_status": "advisory",
+  "evidence_refs": [
+    "gaia-nav-lidar-rail-demo-0001",
+    "gaia.navigation.lidar_feature_extract.output",
+    "rail-segment-demo-a-001",
+    "vegetation-encroachment-demo-001",
+    "clearance-envelope-demo-001"
+  ],
+  "validation": {
+    "validation_status": "not_validated",
+    "method_refs": ["method://gaia/navigation/lidar-fixture-structural-review-v1"],
+    "test_refs": ["ci://gaia/contract-fixtures/lidar-feature-extraction"],
+    "operator_review_refs": [],
+    "safety_case_refs": []
+  },
+  "approval": {
+    "approval_state": "required",
+    "approver_refs": [],
+    "notes": "Operator or authority approval is required before changing operational route status."
+  },
+  "limits": {
+    "allowed_uses": [
+      "display advisory evidence",
+      "open map review",
+      "create inspection candidate",
+      "support human review"
+    ],
+    "prohibited_uses": [
+      "safety-critical navigation",
+      "automatic route closure",
+      "automatic speed restriction",
+      "unapproved work dispatch"
+    ],
+    "caveats": [
+      "Fixture data only",
+      "No live point-cloud verification",
+      "No operator approval recorded",
+      "No external authority approval recorded"
+    ]
+  },
+  "provenance": {
+    "source_refs": [
+      "fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json",
+      "fixtures/navigation/lidar-derived-infrastructure-assets.sample.v1.json"
+    ],
+    "runtime_refs": ["gaia-navigation-lidar-feature-runtime@v0.1.0"],
+    "model_refs": ["corridor-feature-detector-demo-0.1.0"],
+    "content_hash": "sha256:navigationsafetycaselidaradvisorydemo0000000000000000000000",
+    "created_by": "fixture://gaia/navigation/safety-case-demo"
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "navigation", "lidar", "safety-case", "advisory"]
+  }
+}
