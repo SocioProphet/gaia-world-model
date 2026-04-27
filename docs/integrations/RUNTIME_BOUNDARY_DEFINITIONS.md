@@ -247,29 +247,30 @@ Ingest OpenStreetMap extracts or query results and emit GAIA OSMFeatureBinding r
 
 Entrypoint:
 
-Undecided. Candidate future entrypoint:
-
 `geospatial/osm_ingest.py`
 
 Required inputs:
 
-- OSM extract or query result;
+- OSM-like JSON fixture or future OSM extract/query result;
 - extract metadata;
 - attribution/license metadata;
-- optional H3 indexing configuration;
-- target GAIA entity-type mapping config.
+- H3 cell refs or future H3 indexing output;
+- target GAIA entity-type mapping derived from tags.
 
 Current input examples:
 
+- `fixtures/geospatial/osm-way-input.sample.v1.json`
 - `fixtures/geospatial/osm-road-feature-binding.sample.v1.json` as target fixture.
 
 Emitted outputs:
 
+- `gaia.osm_ingestion.output` artifact;
 - OSMFeatureBinding records;
 - GAIA spatial/entity refs;
 - H3 cell refs;
 - attribution metadata;
-- provenance refs.
+- provenance refs;
+- advisory routing policy marker.
 
 Schema references:
 
@@ -285,22 +286,22 @@ Policy constraints:
 
 Runtime isolation default: container
 
-Network posture: restricted for local extracts; explicitly declared if pulling live OSM/Overpass data.
+Network posture: restricted for local fixtures/extracts; explicitly declared if pulling live OSM/Overpass data.
 
 Secret posture: none
 
 Validation command:
 
-Undecided. Initial validation is currently fixture-level through:
-
 ```bash
-python3 scripts/validate_contract_fixtures.py
+python3 geospatial/osm_ingest.py \
+  fixtures/geospatial/osm-way-input.sample.v1.json \
+  /tmp/osm-feature-bindings.json
 ```
 
 Promotion criteria:
 
 - executable entrypoint exists;
-- at least one OSM input extract/query fixture maps to a valid OSMFeatureBinding;
+- at least one OSM input fixture maps to a valid OSMFeatureBinding-like output;
 - attribution metadata is present;
 - OSM refs are preserved;
 - contract fixture CI passes.
@@ -311,7 +312,7 @@ Demote generated OSM bindings and restore prior GAIA spatial binding set. Origin
 
 Status:
 
-Boundary is not yet ready for Lattice Forge mirroring. Entrypoint and input fixture still need implementation.
+Boundary is executable for fixture input but not automatically admitted to Lattice Forge. A Lattice RuntimeAsset requires explicit admission decision after reviewing packaging, input format support, and validation command stability.
 
 ## Runtime 5 — GAIA OpenStreetMap route graph runtime
 
