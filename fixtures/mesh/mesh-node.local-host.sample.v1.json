@@ -1,0 +1,45 @@
+{
+  "record_version": "v1",
+  "node_id": "mesh-node-local-m2-demo-001",
+  "node_type": "local_host",
+  "identity": {
+    "public_key_ref": "did:key:zDemoLocalM2NodePublicKey",
+    "device_claim_ref": "device-claim://sourceos/m2-demo-001",
+    "attestation_ref": "attestation://sourceos/software/demo-001"
+  },
+  "lifecycle": {
+    "state": "active",
+    "sourceos_release_set_ref": "sourceos-release-set-demo-0001",
+    "boot_release_set_ref": "boot-release-set-demo-0001",
+    "policy_bundle_ref": "policy://sourceos/demo-standard-v1",
+    "last_seen_at": "2026-04-27T00:35:00Z"
+  },
+  "location": {
+    "spatial_refs": [
+      {"scheme": "site", "value": "demo-local-site", "role": "home-base"}
+    ],
+    "region_ref": "region://demo/local",
+    "site_ref": "site://demo/local-m2"
+  },
+  "capabilities": {
+    "compute": ["cpu", "local-build", "local-validation"],
+    "network": ["local-first", "mesh-ready"],
+    "sensors": [],
+    "runtimes": ["python", "shell", "nix"],
+    "isolation_profiles": ["container", "vm"]
+  },
+  "health": {
+    "health_state": "nominal",
+    "last_health_ref": "mesh-telemetry-local-m2-demo-001",
+    "risk_tags": []
+  },
+  "provenance": {
+    "source_refs": ["fixture://mesh/local-m2-node"],
+    "content_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "created_at": "2026-04-27T00:35:00Z"
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "mesh", "sourceos", "local-first"]
+  }
+}
