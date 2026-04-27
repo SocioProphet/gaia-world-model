@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/control-tower/inventory_event.v1.schema.json",
+  "title": "InventoryEvent v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_version",
+    "event_id",
+    "event_type",
+    "observed_at",
+    "item",
+    "quantity",
+    "node_ref",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "event_version": {"type": "string", "const": "v1"},
+    "event_id": {"type": "string"},
+    "event_type": {"type": "string", "enum": ["supply", "demand", "reservation", "allocation", "shipment", "receipt", "adjustment", "shortage", "surplus", "in_transit", "available_to_promise"]},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "ingested_at": {"type": "string", "format": "date-time"},
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_ref"],
+      "properties": {
+        "item_ref": {"type": "string"},
+        "sku": {"type": "string"},
+        "gtin": {"type": "string"},
+        "material_class": {"type": "string"},
+        "asset_class": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"type": "string"}
+      }
+    },
+    "node_ref": {"type": "string"},
+    "counterparty_refs": {"type": "array", "items": {"type": "string"}},
+    "order_refs": {"type": "array", "items": {"type": "string"}},
+    "shipment_refs": {"type": "array", "items": {"type": "string"}},
+    "reservation_refs": {"type": "array", "items": {"type": "string"}},
+    "allocation_refs": {"type": "array", "items": {"type": "string"}},
+    "spatial_refs": {"type": "array", "items": {"type": "object", "required": ["scheme", "value"], "properties": {"scheme": {"type": "string"}, "value": {"type": "string"}, "role": {"type": "string"}}}},
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "availability_state": {"type": "string", "enum": ["unknown", "available", "reserved", "allocated", "in_transit", "blocked", "short", "excess"]},
+        "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "risk_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "source_system": {"type": "string"},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "model_refs": {"type": "array", "items": {"type": "string"}},
+        "ofif_event_ids": {"type": "array", "items": {"type": "string"}},
+        "content_hash": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "retention_class": {"type": "string"},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
