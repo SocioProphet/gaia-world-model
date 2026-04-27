@@ -35,24 +35,15 @@ Runtime name: `gaia-soil-intelligence-baseline-runtime`
 
 Domain: GAIA + OFIF soil intelligence
 
-Purpose:
+Purpose: convert a GAIA artifact derived from an OFIF field observation plus EO/reanalysis context into a soil-intelligence fusion artifact.
 
-Convert a GAIA artifact derived from an OFIF field observation plus EO/reanalysis context into a soil-intelligence fusion artifact.
-
-Entrypoint:
-
-`scripts/soil_intelligence_fusion.py`
+Entrypoint: `scripts/soil_intelligence_fusion.py`
 
 Required inputs:
 
 - GAIA OFIF-derived world-state artifact;
 - GAIA EO/reanalysis context fixture or data product;
 - model/context metadata.
-
-Required input examples:
-
-- `/tmp/gaia-ofif-output.json`
-- `fixtures/gaia/context/soil-eo-context.sample.v1.json`
 
 Emitted outputs:
 
@@ -94,9 +85,9 @@ Promotion criteria:
 - fixture validation CI passes;
 - runtime boundary reviewed.
 
-Rollback semantics:
+Rollback semantics: stop the local execution slice; no persistent external actuation exists in v0.
 
-Stop the local execution slice; no persistent external actuation exists in v0.
+Status: executable proof exists, but not automatically admitted to Lattice Forge.
 
 ## Runtime 2 — GAIA navigation LiDAR feature runtime
 
@@ -104,15 +95,9 @@ Runtime name: `gaia-navigation-lidar-feature-runtime`
 
 Domain: navigation and transportation infrastructure intelligence
 
-Purpose:
+Purpose: convert LiDAR / point-cloud corridor observations into infrastructure evidence features such as vegetation encroachment, clearance envelopes, rail/road segment condition, and map-ready derived features.
 
-Convert LiDAR / point-cloud corridor observations into infrastructure evidence features such as vegetation encroachment, clearance envelopes, rail/road segment condition, and map-ready derived features.
-
-Entrypoint:
-
-Undecided. Candidate future entrypoint:
-
-`navigation/lidar_feature_extract.py`
+Entrypoint: `navigation/lidar_feature_extract.py`
 
 Required inputs:
 
@@ -122,24 +107,41 @@ Required inputs:
 - model/config refs;
 - policy constraints.
 
-Required input examples:
+Current input examples:
 
 - `fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json`
+- `fixtures/navigation/lidar-derived-infrastructure-assets.sample.v1.json` as checked-in output fixture.
 
 Emitted outputs:
 
-- transport infrastructure asset records;
-- LiDAR-derived feature records;
-- clearance/vegetation risk evidence;
-- map/tile/point-cloud derived feature refs;
-- provenance and confidence records.
+- `gaia.navigation.lidar_feature_extract.output` artifact;
+- TransportInfrastructureAsset-compatible records;
+- LiDAR-derived rail-segment, vegetation, and clearance features;
+- point-cloud source refs;
+- H3 and linear-reference refs;
+- provenance and confidence records;
+- advisory safety status.
+
+Schema references:
+
+- `schemas/navigation/lidar_corridor_observation.v1.schema.json`
+- `schemas/navigation/transport_infrastructure_asset.v1.schema.json`
+
+Validation command:
+
+```bash
+python3 navigation/lidar_feature_extract.py \
+  fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json \
+  /tmp/lidar-derived-infrastructure-assets.json
+```
 
 Policy constraints:
 
 - no safety-critical navigation claim without validation;
 - preserve point-cloud source provenance;
 - preserve acquisition platform/sensor calibration metadata;
-- expose uncertainty and accuracy.
+- expose uncertainty and confidence;
+- LiDAR-derived fixture outputs are advisory until a route validation record and safety case exist.
 
 Runtime isolation default: container for fixture processing; VM/microVM when processing untrusted uploads or sensitive infrastructure data.
 
@@ -150,17 +152,15 @@ Secret posture: none by default
 Promotion criteria:
 
 - executable entrypoint exists;
-- fixture processing emits schema-valid infrastructure features;
-- confidence and uncertainty fields are present;
-- safety caveats are emitted for route-facing outputs.
+- fixture processing emits asset records with source refs;
+- confidence and risk tags are preserved;
+- advisory safety status is explicit;
+- contract fixture CI passes;
+- malformed point-cloud/input fixture corpus exists before production packaging.
 
-Rollback semantics:
+Rollback semantics: derived features are versioned; rollback demotes the derived feature layer and restores prior corridor condition state. Original point-cloud observations remain immutable.
 
-Derived features are versioned; rollback means demote derived feature layer and restore prior corridor condition state.
-
-Status:
-
-Boundary is not yet ready for Lattice Forge mirroring. Entrypoint and emitted feature schemas need implementation.
+Status: executable proof exists for fixture input, but not automatically admitted to Lattice Forge. Lattice admission requires packaging, SBOM, signing, malformed-input tests, rollback tests, and safety-case boundary review.
 
 ## Runtime 3 — GAIA control tower anomaly runtime
 
@@ -168,13 +168,9 @@ Runtime name: `gaia-control-tower-anomaly-runtime`
 
 Domain: open industrial IoT / supply-chain control tower
 
-Purpose:
+Purpose: score asset, inventory, route, and mesh observations for control-tower decision support. Emit risk exposure records, decision-card inputs, and work-order candidates.
 
-Score asset, inventory, route, and mesh observations for control-tower decision support. Emit risk exposure records, decision-card inputs, and work-order candidates.
-
-Entrypoint:
-
-`control_tower/anomaly_score.py`
+Entrypoint: `control_tower/anomaly_score.py`
 
 Required inputs:
 
@@ -227,13 +223,9 @@ Promotion criteria:
 - policy constraints are preserved;
 - contract fixture CI passes.
 
-Rollback semantics:
+Rollback semantics: demote generated decision cards/work-order candidates; preserve evidence trail and mark prior recommendations superseded.
 
-Demote generated decision cards/work-order candidates; preserve evidence trail and mark prior recommendations superseded.
-
-Status:
-
-Boundary is now executable but not automatically admitted to Lattice Forge. It requires an explicit admission decision before a Lattice RuntimeAsset is added.
+Status: executable proof exists, but not automatically admitted to Lattice Forge.
 
 ## Runtime 4 — GAIA OpenStreetMap ingestion runtime
 
@@ -241,13 +233,9 @@ Runtime name: `gaia-osm-ingestion-runtime`
 
 Domain: OpenStreetMap / GAIA geospatial substrate
 
-Purpose:
+Purpose: ingest OpenStreetMap extracts or query results and emit GAIA OSMFeatureBinding records that preserve OSM identity, tags, attribution, and provenance.
 
-Ingest OpenStreetMap extracts or query results and emit GAIA OSMFeatureBinding records that preserve OSM identity, tags, attribution, and provenance.
-
-Entrypoint:
-
-`geospatial/osm_ingest.py`
+Entrypoint: `geospatial/osm_ingest.py`
 
 Required inputs:
 
@@ -276,6 +264,14 @@ Schema references:
 
 - `schemas/geospatial/osm_feature_binding.v1.schema.json`
 
+Validation command:
+
+```bash
+python3 geospatial/osm_ingest.py \
+  fixtures/geospatial/osm-way-input.sample.v1.json \
+  /tmp/osm-feature-bindings.json
+```
+
 Policy constraints:
 
 - preserve OSM node/way/relation identity;
@@ -290,14 +286,6 @@ Network posture: restricted for local fixtures/extracts; explicitly declared if 
 
 Secret posture: none
 
-Validation command:
-
-```bash
-python3 geospatial/osm_ingest.py \
-  fixtures/geospatial/osm-way-input.sample.v1.json \
-  /tmp/osm-feature-bindings.json
-```
-
 Promotion criteria:
 
 - executable entrypoint exists;
@@ -306,13 +294,9 @@ Promotion criteria:
 - OSM refs are preserved;
 - contract fixture CI passes.
 
-Rollback semantics:
+Rollback semantics: demote generated OSM bindings and restore prior GAIA spatial binding set. Original OSM source records are never mutated.
 
-Demote generated OSM bindings and restore prior GAIA spatial binding set. Original OSM source records are never mutated.
-
-Status:
-
-Boundary is executable for fixture input but not automatically admitted to Lattice Forge. A Lattice RuntimeAsset requires explicit admission decision after reviewing packaging, input format support, and validation command stability.
+Status: executable proof exists, but not automatically admitted to Lattice Forge.
 
 ## Runtime 5 — GAIA OpenStreetMap route graph runtime
 
@@ -320,13 +304,9 @@ Runtime name: `gaia-osm-route-graph-runtime`
 
 Domain: OSM routing / navigation substrate
 
-Purpose:
+Purpose: convert OSM-derived topology into route graph artifacts usable by GAIA route plans and navigation/infrastructure intelligence.
 
-Convert OSM-derived topology into route graph artifacts usable by GAIA route plans and navigation/infrastructure intelligence.
-
-Entrypoint:
-
-`geospatial/osm_route_graph.py`
+Entrypoint: `geospatial/osm_route_graph.py`
 
 Required inputs:
 
@@ -338,7 +318,7 @@ Required inputs:
 Current input examples:
 
 - `fixtures/geospatial/osm-road-feature-binding.sample.v1.json`
-- `/tmp/osm-route-graph.json` generated route graph proof output.
+- `fixtures/geospatial/osm-route-graph.sample.v1.json` as checked-in output fixture.
 
 Emitted outputs:
 
@@ -350,6 +330,14 @@ Emitted outputs:
 Schema references:
 
 - `schemas/geospatial/osm_route_graph_manifest.v1.schema.json`
+
+Validation command:
+
+```bash
+python3 geospatial/osm_route_graph.py \
+  fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
+  /tmp/osm-route-graph.json
+```
 
 Policy constraints:
 
@@ -363,14 +351,6 @@ Network posture: restricted
 
 Secret posture: none
 
-Validation command:
-
-```bash
-python3 geospatial/osm_route_graph.py \
-  fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
-  /tmp/osm-route-graph.json
-```
-
 Promotion criteria:
 
 - executable entrypoint exists;
@@ -379,13 +359,9 @@ Promotion criteria:
 - route output safety status is explicit;
 - contract fixture CI passes.
 
-Rollback semantics:
+Rollback semantics: demote generated route graph and restore prior graph artifact; source OSM bindings remain immutable.
 
-Demote generated route graph and restore prior graph artifact; source OSM bindings remain immutable.
-
-Status:
-
-Boundary is executable for fixture input but not automatically admitted to Lattice Forge. A Lattice RuntimeAsset requires explicit admission decision after packaging and validation command review.
+Status: executable proof exists, but not automatically admitted to Lattice Forge.
 
 ## Runtime 6 — GAIA OpenStreetMap tile export runtime
 
@@ -393,13 +369,9 @@ Runtime name: `gaia-osm-tile-export-runtime`
 
 Domain: OSM-derived map/tile surfaces
 
-Purpose:
+Purpose: export OSM-derived GAIA spatial features into MapLibre-compatible map/tile layer manifests and tile artifacts.
 
-Export OSM-derived GAIA spatial features into MapLibre-compatible map/tile layer manifests and tile artifacts.
-
-Entrypoint:
-
-`geospatial/osm_tile_export.py`
+Entrypoint: `geospatial/osm_tile_export.py`
 
 Required inputs:
 
@@ -426,6 +398,14 @@ Schema references:
 
 - `schemas/geospatial/map_tile_layer_manifest.v1.schema.json`
 
+Validation command:
+
+```bash
+python3 geospatial/osm_tile_export.py \
+  fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
+  /tmp/osm-derived-map-tile-layer.json
+```
+
 Policy constraints:
 
 - attribution must be present in tile layer manifests;
@@ -438,14 +418,6 @@ Network posture: restricted
 
 Secret posture: none
 
-Validation command:
-
-```bash
-python3 geospatial/osm_tile_export.py \
-  fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
-  /tmp/osm-derived-map-tile-layer.json
-```
-
 Promotion criteria:
 
 - executable entrypoint exists;
@@ -454,13 +426,9 @@ Promotion criteria:
 - Sherlock map-layer record validates;
 - contract fixture CI passes.
 
-Rollback semantics:
+Rollback semantics: demote generated tile layer and restore prior map layer manifest; source OSM bindings remain immutable.
 
-Demote generated tile layer and restore prior map layer manifest; source OSM bindings remain immutable.
-
-Status:
-
-Boundary is executable for fixture input but not automatically admitted to Lattice Forge. A Lattice RuntimeAsset requires explicit admission decision after packaging and validation command review.
+Status: executable proof exists, but not automatically admitted to Lattice Forge.
 
 ## Lattice Forge admission rule
 
@@ -471,6 +439,7 @@ A runtime may be mirrored into Lattice Forge only when:
 3. a validation command exists;
 4. at least one fixture passes validation;
 5. policy constraints and rollback semantics are explicit;
-6. provenance and evidence outputs are named.
+6. provenance and evidence outputs are named;
+7. packaging, SBOM, signing, malformed-input tests, and rollback tests are reviewed.
 
 Until then, runtime references remain planning references only.
