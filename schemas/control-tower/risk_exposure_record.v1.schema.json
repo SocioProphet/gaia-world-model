@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/control-tower/risk_exposure_record.v1.schema.json",
+  "title": "RiskExposureRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_version", "risk_id", "risk_type", "created_at", "scope", "score", "evidence_refs", "provenance", "classification"],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "risk_id": {"type": "string"},
+    "risk_type": {"type": "string", "enum": ["asset_failure", "route_disruption", "inventory_shortage", "safety", "cyber_physical", "climate_hazard", "business_impact", "compliance", "privacy", "other"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "scope": {
+      "type": "object",
+      "properties": {
+        "asset_refs": {"type": "array", "items": {"type": "string"}},
+        "route_refs": {"type": "array", "items": {"type": "string"}},
+        "inventory_node_refs": {"type": "array", "items": {"type": "string"}},
+        "spatial_refs": {"type": "array", "items": {"type": "object", "required": ["scheme", "value"], "properties": {"scheme": {"type": "string"}, "value": {"type": "string"}, "role": {"type": "string"}}}},
+        "temporal_scope": {"type": "object", "properties": {"start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}, "scenario_id": {"type": "string"}}}
+      }
+    },
+    "score": {
+      "type": "object",
+      "required": ["likelihood", "impact", "overall"],
+      "properties": {
+        "likelihood": {"type": "number", "minimum": 0, "maximum": 1},
+        "impact": {"type": "number", "minimum": 0, "maximum": 1},
+        "overall": {"type": "number", "minimum": 0, "maximum": 1},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "risk_class": {"type": "string", "enum": ["low", "medium", "high", "critical", "unknown"]}
+      }
+    },
+    "business_impact": {
+      "type": "object",
+      "properties": {
+        "downtime_cost_estimate": {"type": "number"},
+        "currency": {"type": "string"},
+        "service_level_impact": {"type": "string"},
+        "customer_impact": {"type": "string"},
+        "insurance_exposure_ref": {"type": "string"}
+      }
+    },
+    "mitigations": {"type": "array", "items": {"type": "object", "required": ["mitigation_id", "description"], "properties": {"mitigation_id": {"type": "string"}, "description": {"type": "string"}, "work_order_candidate_ref": {"type": "string"}, "policy_ref": {"type": "string"}}}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "model_refs": {"type": "array", "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "generated_by": {"type": "string"},
+        "content_hash": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "retention_class": {"type": "string"},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
