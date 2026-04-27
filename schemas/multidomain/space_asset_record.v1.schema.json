@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/space_asset_record.v1.schema.json",
+  "title": "GAIA Space Asset Record v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "asset",
+    "orbit",
+    "operator",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "SpaceAssetRecord"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "asset": {
+      "type": "object",
+      "required": ["asset_id", "name", "asset_class", "mission_classes"],
+      "properties": {
+        "asset_id": {"type": "string"},
+        "name": {"type": "string"},
+        "asset_class": {"type": "string"},
+        "mission_classes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "orbit": {
+      "type": "object",
+      "required": ["orbit_regime", "ephemeris_ref"],
+      "properties": {
+        "orbit_regime": {"type": "string"},
+        "ephemeris_ref": {"type": "string"},
+        "coverage_refs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "operator": {"type": "object"},
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
