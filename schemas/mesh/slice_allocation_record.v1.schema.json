@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/mesh/slice_allocation_record.v1.schema.json",
+  "title": "SliceAllocationRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_version", "slice_id", "owner_ref", "node_refs", "isolation_profile", "runtime_refs", "policy_bundle_ref", "resource_limits", "provenance", "classification"],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "slice_id": {"type": "string"},
+    "owner_ref": {"type": "string"},
+    "project_ref": {"type": "string"},
+    "org_ref": {"type": "string"},
+    "node_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "isolation_profile": {"type": "string", "enum": ["container", "vm", "layered", "microvm", "microvm_mesh", "process_shim", "other"]},
+    "runtime_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "policy_bundle_ref": {"type": "string"},
+    "resource_limits": {
+      "type": "object",
+      "properties": {
+        "cpu": {"type": "string"},
+        "memory": {"type": "string"},
+        "storage": {"type": "string"},
+        "network": {"type": "string"},
+        "gpu": {"type": "string"}
+      }
+    },
+    "network_policy": {
+      "type": "object",
+      "properties": {
+        "egress": {"type": "string", "enum": ["none", "restricted", "mesh", "internet", "custom"]},
+        "ingress": {"type": "string", "enum": ["none", "restricted", "mesh", "internet", "custom"]},
+        "allowed_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {"type": "string", "enum": ["draft", "active", "paused", "expired", "revoked", "completed"]},
+        "valid_from": {"type": "string", "format": "date-time"},
+        "valid_to": {"type": "string", "format": "date-time"},
+        "renewal_policy": {"type": "string"}
+      }
+    },
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "created_at": {"type": "string", "format": "date-time"},
+        "content_hash": {"type": "string"}
+      }
+    },
+    "classification": {"type": "object", "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "handling_tags": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
