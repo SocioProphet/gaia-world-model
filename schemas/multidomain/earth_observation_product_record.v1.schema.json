@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/earth_observation_product_record.v1.schema.json",
+  "title": "GAIA Earth Observation Product Record v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "product",
+    "spatial",
+    "temporal",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "EarthObservationProductRecord"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "product": {
+      "type": "object",
+      "required": ["product_id", "product_type", "asset_refs", "media_type"],
+      "properties": {
+        "product_id": {"type": "string"},
+        "product_type": {"type": "string"},
+        "asset_refs": {"type": "array", "items": {"type": "string"}},
+        "media_type": {"type": "string"},
+        "derived_indices": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "spatial": {"type": "object"},
+    "temporal": {"type": "object"},
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
