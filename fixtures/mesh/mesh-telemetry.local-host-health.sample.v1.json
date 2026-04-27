@@ -1,0 +1,56 @@
+{
+  "envelope_version": "v1",
+  "telemetry_id": "mesh-telemetry-local-m2-demo-001",
+  "node_id": "mesh-node-local-m2-demo-001",
+  "slice_id": "slice-soil-intelligence-demo-0001",
+  "observed_at": "2026-04-27T00:40:00Z",
+  "ingested_at": "2026-04-27T00:40:03Z",
+  "metric_family": "health",
+  "measurements": [
+    {
+      "name": "slice_state",
+      "value": "active",
+      "unit": "state",
+      "status": "nominal",
+      "confidence": 0.98
+    },
+    {
+      "name": "ofif_bridge_last_run_s",
+      "value": 2.4,
+      "unit": "seconds",
+      "status": "normal",
+      "confidence": 0.95
+    },
+    {
+      "name": "contract_fixture_validation_status",
+      "value": "passed",
+      "unit": "state",
+      "status": "nominal",
+      "confidence": 0.99
+    }
+  ],
+  "producer": {
+    "producer_id": "gaia-contract-fixture-ci",
+    "producer_type": "ci-validator",
+    "software_version": "fixture-validator-0.1.0"
+  },
+  "integrity": {
+    "content_hash": "sha256:1010101010101010101010101010101010101010101010101010101010101010",
+    "signature": "fixture-signature",
+    "attestation": "fixture-attestation",
+    "sequence_number": 1
+  },
+  "provenance": {
+    "source_refs": [
+      "fixtures/mesh/mesh-node.local-host.sample.v1.json",
+      "fixtures/mesh/slice-allocation.soil-intelligence.sample.v1.json",
+      "fixtures/mesh/soil-intelligence-mesh-experiment.sample.v1.json"
+    ],
+    "runtime_refs": ["gaia-soil-intelligence-baseline-runtime@v0.1.0"],
+    "ofif_event_ids": ["ofif-event-0001-soil-field-demo"]
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "mesh", "telemetry", "health"]
+  }
+}
