@@ -13,6 +13,7 @@ on:
       - 'geospatial/osm_ingest.py'
       - 'geospatial/osm_tile_export.py'
       - 'geospatial/osm_route_graph.py'
+      - 'navigation/lidar_feature_extract.py'
       - '.github/workflows/contract-fixtures.yml'
   pull_request:
     paths:
@@ -26,6 +27,7 @@ on:
       - 'geospatial/osm_ingest.py'
       - 'geospatial/osm_tile_export.py'
       - 'geospatial/osm_route_graph.py'
+      - 'navigation/lidar_feature_extract.py'
       - '.github/workflows/contract-fixtures.yml'
 
 jobs:
@@ -140,4 +142,24 @@ jobs:
           assert doc['edges']
           assert doc['attribution']['attribution_text']
           print('OpenStreetMap route graph output passed')
+          PY
+
+      - name: Extract LiDAR-derived infrastructure assets
+        run: |
+          python3 navigation/lidar_feature_extract.py \
+            fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json \
+            /tmp/lidar-derived-infrastructure-assets.json
+
+      - name: Check LiDAR feature extraction output
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/lidar-derived-infrastructure-assets.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['artifact_type'] == 'gaia.navigation.lidar_feature_extract.output'
+          assert doc['safety_status'] == 'advisory'
+          assert len(doc['assets']) >= 3
+          assert any(asset['asset_type'] == 'CorridorVegetationFeature' for asset in doc['assets'])
+          assert all(asset['provenance']['source_refs'] for asset in doc['assets'])
+          print('LiDAR feature extraction output passed')
           PY
