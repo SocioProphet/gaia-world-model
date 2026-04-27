@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/control-tower/asset_health_observation.v1.schema.json",
+  "title": "AssetHealthObservation v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_version",
+    "observation_id",
+    "asset_id",
+    "observed_at",
+    "health_state",
+    "confidence",
+    "measurements",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "observation_version": {"type": "string", "const": "v1"},
+    "observation_id": {"type": "string"},
+    "asset_id": {"type": "string"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "ingested_at": {"type": "string", "format": "date-time"},
+    "health_state": {"type": "string", "enum": ["unknown", "nominal", "watch", "degraded", "failed", "unsafe"]},
+    "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "measurements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "value"],
+        "properties": {
+          "name": {"type": "string"},
+          "value": {},
+          "unit": {"type": "string"},
+          "observed_property_ref": {"type": "string"},
+          "threshold_ref": {"type": "string"},
+          "status": {"type": "string", "enum": ["unknown", "normal", "watch", "warning", "critical"]}
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "risk_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "risk_tags": {"type": "array", "items": {"type": "string"}},
+        "failure_mode_refs": {"type": "array", "items": {"type": "string"}},
+        "business_impact_ref": {"type": "string"}
+      }
+    },
+    "field_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ofif_event_ids": {"type": "array", "items": {"type": "string"}},
+        "custody_state_ref": {"type": "string"},
+        "link_state_ref": {"type": "string"},
+        "adversarial_tags": {"type": "array", "items": {"type": "string"}},
+        "confidence_impact": {"type": "number", "minimum": -1.0, "maximum": 1.0}
+      }
+    },
+    "recommended_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "action_type": {"type": "string", "enum": ["observe", "inspect", "maintain", "repair", "replace", "restrict", "close", "defer", "none"]},
+        "priority": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+        "work_order_candidate_ref": {"type": "string"},
+        "notes": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "model_refs": {"type": "array", "items": {"type": "string"}},
+        "derived_from": {"type": "array", "items": {"type": "string"}},
+        "content_hash": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "retention_class": {"type": "string"},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
