@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/geospatial/osm_feature_binding.v1.schema.json",
+  "title": "OSMFeatureBinding v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "binding_version",
+    "binding_id",
+    "source",
+    "osm_ref",
+    "gaia_ref",
+    "spatial",
+    "attribution",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "binding_version": {"type": "string", "const": "v1"},
+    "binding_id": {"type": "string"},
+    "source": {"type": "string", "const": "OpenStreetMap"},
+    "osm_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["osm_type", "osm_id"],
+      "properties": {
+        "osm_type": {"type": "string", "enum": ["node", "way", "relation"]},
+        "osm_id": {"type": "string"},
+        "version": {"type": "string"},
+        "timestamp": {"type": "string", "format": "date-time"},
+        "changeset": {"type": "string"},
+        "tags": {"type": "object", "additionalProperties": {"type": "string"}}
+      }
+    },
+    "gaia_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entity_id", "entity_type"],
+      "properties": {
+        "entity_id": {"type": "string"},
+        "entity_type": {"type": "string"},
+        "authority": {"type": "string", "default": "GAIA"}
+      }
+    },
+    "spatial": {
+      "type": "object",
+      "required": ["geometry_ref"],
+      "properties": {
+        "geometry_ref": {"type": "string"},
+        "geometry_type": {"type": "string", "enum": ["Point", "LineString", "Polygon", "MultiLineString", "MultiPolygon", "Other"]},
+        "h3_cells": {"type": "array", "items": {"type": "string"}},
+        "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+        "crs": {"type": "string"}
+      }
+    },
+    "routing": {
+      "type": "object",
+      "properties": {
+        "routable": {"type": "boolean"},
+        "modes": {"type": "array", "items": {"type": "string"}},
+        "access_tags": {"type": "object", "additionalProperties": {"type": "string"}},
+        "safety_status": {"type": "string", "enum": ["advisory", "validated", "restricted", "not-for-navigation", "unknown"]}
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "required": ["source_name", "license_ref", "attribution_text"],
+      "properties": {
+        "source_name": {"type": "string"},
+        "license_ref": {"type": "string"},
+        "attribution_text": {"type": "string"},
+        "source_url": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "extract_ref": {"type": "string"},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "content_hash": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
