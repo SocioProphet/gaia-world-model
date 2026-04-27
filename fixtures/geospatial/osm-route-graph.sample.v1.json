@@ -1,0 +1,61 @@
+{
+  "manifest_version": "v1",
+  "graph_id": "gaia-osm-route-graph-way-424242-v1",
+  "source": "OpenStreetMap",
+  "title": "GAIA OSM Route Graph for way 424242",
+  "description": "Generated advisory route graph fixture from one OSMFeatureBinding.",
+  "safety_status": "advisory",
+  "modes": ["road", "pedestrian", "bicycle"],
+  "nodes": [
+    {
+      "node_id": "route-node-way-424242-start",
+      "geometry_ref": "geometry://demo/osm/way/424242#start",
+      "h3_cell": "8928308280fffff",
+      "role": "start"
+    },
+    {
+      "node_id": "route-node-way-424242-end",
+      "geometry_ref": "geometry://demo/osm/way/424242#end",
+      "h3_cell": "89283082807ffff",
+      "role": "end"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "route-edge-way-424242",
+      "from_node": "route-node-way-424242-start",
+      "to_node": "route-node-way-424242-end",
+      "feature_ref": "gaia-road-segment-demo-osm-way-424242",
+      "geometry_ref": "geometry://demo/osm/way/424242",
+      "modes": ["road", "pedestrian", "bicycle"],
+      "access_tags": {
+        "access": "yes"
+      },
+      "safety_status": "advisory"
+    }
+  ],
+  "spatial": {
+    "bbox": [-74.012, 40.705, -73.998, 40.718],
+    "h3_cells": ["8928308280fffff", "89283082807ffff"],
+    "crs": "EPSG:4326"
+  },
+  "attribution": {
+    "attribution_text": "© OpenStreetMap contributors",
+    "license_refs": ["ODbL-1.0"],
+    "source_urls": ["https://www.openstreetmap.org"]
+  },
+  "provenance": {
+    "source_refs": [
+      "osm-binding-demo-way-424242",
+      "osm://way/424242",
+      "gaia-road-segment-demo-osm-way-424242"
+    ],
+    "runtime_refs": ["gaia-osm-route-graph-runtime@v0.1.0"],
+    "created_at": "2026-04-27T05:20:00Z",
+    "content_hash": "sha256:osmroutegraphdemo000000000000000000000000000000000000000000000"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": ["demo", "osm", "route-graph", "advisory"]
+  }
+}
