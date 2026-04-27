@@ -1,0 +1,45 @@
+{
+  "record_version": "v1",
+  "record_type": "SpaceAssetRecord",
+  "record_id": "gaia:space-asset:sample-sat-001",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "asset": {
+    "asset_id": "space-asset:sample-sat-001",
+    "name": "Sample Earth Observation Satellite 001",
+    "asset_class": "satellite",
+    "mission_classes": ["earth_observation", "standards_fixture"]
+  },
+  "orbit": {
+    "orbit_regime": "LEO",
+    "ephemeris_ref": "ephemeris:sample:sat-001:placeholder",
+    "coverage_refs": ["coverage:sample:midatlantic"]
+  },
+  "operator": {
+    "operator_ref": "operator:synthetic-fixture",
+    "operator_type": "sample"
+  },
+  "source": {
+    "source_id": "sample-space-catalog",
+    "source_type": "synthetic_catalog",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["sample-space-catalog:asset:001"],
+    "runtime_boundary_id": "runtime:space-catalog-ingest:v0"
+  },
+  "governance": {
+    "privacy_tier": "public",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "allowed"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
