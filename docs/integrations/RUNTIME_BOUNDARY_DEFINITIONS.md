@@ -393,8 +393,6 @@ Export OSM-derived GAIA spatial features into MapLibre-compatible map/tile layer
 
 Entrypoint:
 
-Undecided. Candidate future entrypoint:
-
 `geospatial/osm_tile_export.py`
 
 Required inputs:
@@ -436,10 +434,10 @@ Secret posture: none
 
 Validation command:
 
-Current fixture-level validation:
-
 ```bash
-python3 scripts/validate_contract_fixtures.py
+python3 geospatial/osm_tile_export.py \
+  fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
+  /tmp/osm-derived-map-tile-layer.json
 ```
 
 Promotion criteria:
@@ -447,7 +445,8 @@ Promotion criteria:
 - executable entrypoint exists;
 - deterministic tile layer manifest fixture exists;
 - attribution text and license refs are present;
-- Sherlock map-layer record validates.
+- Sherlock map-layer record validates;
+- contract fixture CI passes.
 
 Rollback semantics:
 
@@ -455,7 +454,7 @@ Demote generated tile layer and restore prior map layer manifest; source OSM bin
 
 Status:
 
-Boundary is not yet ready for Lattice Forge mirroring.
+Boundary is executable for fixture input but not automatically admitted to Lattice Forge. A Lattice RuntimeAsset requires explicit admission decision after packaging and validation command review.
 
 ## Lattice Forge admission rule
 
