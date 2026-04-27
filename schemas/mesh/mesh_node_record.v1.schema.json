@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/mesh/mesh_node_record.v1.schema.json",
+  "title": "MeshNodeRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_version", "node_id", "node_type", "identity", "lifecycle", "capabilities", "provenance", "classification"],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "node_id": {"type": "string"},
+    "node_type": {"type": "string", "enum": ["local_host", "edge_node", "gateway", "cloud_twin", "cloud_mesh_node", "recovery_node", "lab_node", "other"]},
+    "identity": {
+      "type": "object",
+      "required": ["public_key_ref"],
+      "properties": {
+        "public_key_ref": {"type": "string"},
+        "device_claim_ref": {"type": "string"},
+        "spiffe_id": {"type": "string"},
+        "attestation_ref": {"type": "string"}
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": {"type": "string", "enum": ["planned", "enrolled", "active", "degraded", "maintenance", "quarantined", "retired", "unknown"]},
+        "sourceos_release_set_ref": {"type": "string"},
+        "boot_release_set_ref": {"type": "string"},
+        "policy_bundle_ref": {"type": "string"},
+        "last_seen_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "spatial_refs": {"type": "array", "items": {"type": "object", "required": ["scheme", "value"], "properties": {"scheme": {"type": "string"}, "value": {"type": "string"}, "role": {"type": "string"}}}},
+        "region_ref": {"type": "string"},
+        "site_ref": {"type": "string"}
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "compute": {"type": "array", "items": {"type": "string"}},
+        "network": {"type": "array", "items": {"type": "string"}},
+        "sensors": {"type": "array", "items": {"type": "string"}},
+        "runtimes": {"type": "array", "items": {"type": "string"}},
+        "isolation_profiles": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "health": {
+      "type": "object",
+      "properties": {
+        "health_state": {"type": "string", "enum": ["unknown", "nominal", "watch", "degraded", "offline", "quarantined"]},
+        "last_health_ref": {"type": "string"},
+        "risk_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "content_hash": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
