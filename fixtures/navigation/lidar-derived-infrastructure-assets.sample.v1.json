@@ -1,0 +1,164 @@
+{
+  "artifact_version": "v1",
+  "artifact_type": "gaia.navigation.lidar_feature_extract.output",
+  "created_at": "2026-04-27T20:40:00Z",
+  "source_observation_id": "gaia-nav-lidar-rail-demo-0001",
+  "runtime_ref": "gaia-navigation-lidar-feature-runtime@v0.1.0",
+  "safety_status": "advisory",
+  "safety_note": "LiDAR-derived fixture output is not safety-critical route validation.",
+  "assets": [
+    {
+      "asset_version": "v1",
+      "asset_id": "rail-segment-demo-a-001",
+      "asset_type": "RailSegment",
+      "authority_ref": "GAIA",
+      "name": "Rail Segment Demo A 001",
+      "description": "LiDAR-derived transport infrastructure asset fixture. Not safety-critical.",
+      "spatial": {
+        "geometry_ref": "geometry://demo/rail-corridor-a/segment-001",
+        "geometry_type": "Corridor",
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "bbox": [-74.012, 40.705, -73.998, 40.718],
+        "crs": "EPSG:4326",
+        "linear_reference": {
+          "route_id": "demo-rail-line-a",
+          "from_measure": 12.4,
+          "to_measure": 13.1,
+          "unit": "km"
+        }
+      },
+      "network": {
+        "mode": "rail",
+        "network_id": "rail-corridor-demo-a",
+        "route_refs": ["demo-rail-line-a"]
+      },
+      "condition": {
+        "condition_class": "nominal",
+        "confidence": 0.88,
+        "observed_at": "2026-04-26T15:30:00Z",
+        "risk_tags": [],
+        "evidence_refs": [
+          "gaia-nav-lidar-rail-demo-0001",
+          "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz"
+        ]
+      },
+      "provenance": {
+        "source_refs": [
+          "gaia-nav-lidar-rail-demo-0001",
+          "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz"
+        ],
+        "runtime_refs": ["gaia-navigation-lidar-feature-runtime@v0.1.0"],
+        "model_refs": ["corridor-feature-detector-demo-0.1.0"],
+        "derived_from": ["fixture://navigation/rail-corridor-lidar/raw-run-0001"],
+        "content_hash": "sha256:lidarderivedrailsegmentdemo000000000000000000000000000000000000",
+        "created_at": "2026-04-27T20:40:00Z"
+      },
+      "classification": {
+        "data_class": "internal",
+        "handling_tags": ["demo", "navigation", "rail", "lidar", "infrastructure-intelligence"]
+      }
+    },
+    {
+      "asset_version": "v1",
+      "asset_id": "vegetation-encroachment-demo-001",
+      "asset_type": "CorridorVegetationFeature",
+      "authority_ref": "GAIA",
+      "name": "Vegetation Encroachment Demo 001",
+      "description": "LiDAR-derived vegetation watch feature. Not safety-critical.",
+      "spatial": {
+        "geometry_ref": "geometry://demo/rail-corridor-a/segment-001",
+        "geometry_type": "Corridor",
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "bbox": [-74.012, 40.705, -73.998, 40.718],
+        "crs": "EPSG:4326",
+        "linear_reference": {
+          "route_id": "demo-rail-line-a",
+          "from_measure": 12.4,
+          "to_measure": 13.1,
+          "unit": "km"
+        }
+      },
+      "network": {
+        "mode": "rail",
+        "network_id": "rail-corridor-demo-a",
+        "route_refs": ["demo-rail-line-a"]
+      },
+      "condition": {
+        "condition_class": "watch",
+        "confidence": 0.74,
+        "observed_at": "2026-04-26T15:30:00Z",
+        "risk_tags": ["vegetation-encroachment-watch"],
+        "evidence_refs": [
+          "gaia-nav-lidar-rail-demo-0001",
+          "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz"
+        ]
+      },
+      "provenance": {
+        "source_refs": [
+          "gaia-nav-lidar-rail-demo-0001",
+          "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz"
+        ],
+        "runtime_refs": ["gaia-navigation-lidar-feature-runtime@v0.1.0"],
+        "model_refs": ["corridor-feature-detector-demo-0.1.0"],
+        "derived_from": ["fixture://navigation/rail-corridor-lidar/raw-run-0001"],
+        "content_hash": "sha256:lidarderivedvegetationdemo00000000000000000000000000000000000",
+        "created_at": "2026-04-27T20:40:00Z"
+      },
+      "classification": {
+        "data_class": "internal",
+        "handling_tags": ["demo", "navigation", "rail", "lidar", "infrastructure-intelligence"]
+      }
+    },
+    {
+      "asset_version": "v1",
+      "asset_id": "clearance-envelope-demo-001",
+      "asset_type": "ClearanceEnvelope",
+      "authority_ref": "GAIA",
+      "name": "Clearance Envelope Demo 001",
+      "description": "LiDAR-derived clearance envelope fixture. Not safety-critical.",
+      "spatial": {
+        "geometry_ref": "geometry://demo/rail-corridor-a/segment-001",
+        "geometry_type": "PointCloud",
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "bbox": [-74.012, 40.705, -73.998, 40.718],
+        "crs": "EPSG:4326",
+        "linear_reference": {
+          "route_id": "demo-rail-line-a",
+          "from_measure": 12.4,
+          "to_measure": 13.1,
+          "unit": "km"
+        }
+      },
+      "network": {
+        "mode": "rail",
+        "network_id": "rail-corridor-demo-a",
+        "route_refs": ["demo-rail-line-a"]
+      },
+      "condition": {
+        "condition_class": "nominal",
+        "confidence": 0.81,
+        "observed_at": "2026-04-26T15:30:00Z",
+        "risk_tags": [],
+        "evidence_refs": [
+          "gaia-nav-lidar-rail-demo-0001",
+          "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz"
+        ]
+      },
+      "provenance": {
+        "source_refs": [
+          "gaia-nav-lidar-rail-demo-0001",
+          "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz"
+        ],
+        "runtime_refs": ["gaia-navigation-lidar-feature-runtime@v0.1.0"],
+        "model_refs": ["corridor-feature-detector-demo-0.1.0"],
+        "derived_from": ["fixture://navigation/rail-corridor-lidar/raw-run-0001"],
+        "content_hash": "sha256:lidarderivedclearancedemo000000000000000000000000000000000000",
+        "created_at": "2026-04-27T20:40:00Z"
+      },
+      "classification": {
+        "data_class": "internal",
+        "handling_tags": ["demo", "navigation", "rail", "lidar", "infrastructure-intelligence"]
+      }
+    }
+  ]
+}
