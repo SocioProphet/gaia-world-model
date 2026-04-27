@@ -10,6 +10,7 @@ on:
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
       - 'control_tower/anomaly_score.py'
+      - 'geospatial/osm_ingest.py'
       - '.github/workflows/contract-fixtures.yml'
   pull_request:
     paths:
@@ -20,6 +21,7 @@ on:
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
       - 'control_tower/anomaly_score.py'
+      - 'geospatial/osm_ingest.py'
       - '.github/workflows/contract-fixtures.yml'
 
 jobs:
@@ -73,4 +75,24 @@ jobs:
           assert 'work_order_candidate' in doc
           assert doc['policy']['action_status'] == 'approval_required'
           print('control tower anomaly output passed')
+          PY
+
+      - name: Ingest OpenStreetMap fixture
+        run: |
+          python3 geospatial/osm_ingest.py \
+            fixtures/geospatial/osm-way-input.sample.v1.json \
+            /tmp/osm-feature-bindings.json
+
+      - name: Check OpenStreetMap ingestion output
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/osm-feature-bindings.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['artifact_type'] == 'gaia.osm_ingestion.output'
+          assert doc['source'] == 'OpenStreetMap'
+          assert doc['policy']['attribution_required'] is True
+          assert doc['bindings'][0]['osm_ref']['osm_type'] == 'way'
+          assert doc['bindings'][0]['attribution']['attribution_text']
+          print('OpenStreetMap ingestion output passed')
           PY
