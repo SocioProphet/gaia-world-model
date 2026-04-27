@@ -1,0 +1,43 @@
+{
+  "candidate_version": "v1",
+  "candidate_id": "work-order-candidate-rail-vegetation-demo-0001",
+  "created_at": "2026-04-27T00:38:00Z",
+  "asset_refs": ["vegetation-encroachment-demo-001", "rail-segment-demo-a-001"],
+  "issue_summary": "Vegetation encroachment watch detected near demo rail corridor segment.",
+  "issue_type": "inspection",
+  "priority": "medium",
+  "recommended_task": "Inspect vegetation clearance near rail-segment-demo-a-001 and confirm whether trimming or operational restriction is required.",
+  "required_skills": ["rail-corridor-inspection", "vegetation-clearance-review"],
+  "required_material_refs": [],
+  "maintenance_window_ref": "maintenance-window://demo/rail-corridor-a/open",
+  "evidence_refs": [
+    "gaia-nav-lidar-rail-demo-0001",
+    "ofif-asset-health-demo-0001",
+    "control-tower-card-navigation-asset-health-demo-0001"
+  ],
+  "risk_refs": ["risk-exposure-rail-vegetation-demo-0001"],
+  "decision_card_refs": ["control-tower-card-navigation-asset-health-demo-0001"],
+  "approval_state": {
+    "status": "approval_required"
+  },
+  "policy_constraints": [
+    "Advisory-only fixture",
+    "Human approval required before work dispatch",
+    "No safety-critical route restriction without operator validation"
+  ],
+  "provenance": {
+    "source_refs": [
+      "fixtures/control-tower/navigation-asset-health-card.sample.v1.json",
+      "fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json"
+    ],
+    "runtime_refs": [],
+    "model_refs": ["route-risk-scorer-demo-0.1.0"],
+    "generated_by": "fixture://gaia/control-tower/work-order-candidate-demo",
+    "content_hash": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "classification": {
+    "data_class": "internal",
+    "retention_class": "standard",
+    "handling_tags": ["demo", "control-tower", "work-order-candidate", "rail"]
+  }
+}
