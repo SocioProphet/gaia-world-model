@@ -1,0 +1,97 @@
+{
+  "card_version": "v1",
+  "card_id": "control-tower-card-navigation-asset-health-demo-0001",
+  "created_at": "2026-04-26T23:59:00Z",
+  "situation_type": "asset_health",
+  "title": "Rail corridor vegetation watch with route impact",
+  "summary": "A LiDAR corridor observation detected vegetation encroachment near a demo rail segment. The asset remains usable in advisory mode, but the route plan carries a vegetation-encroachment watch tag and should be reviewed before safety-critical use.",
+  "scope": {
+    "asset_refs": [
+      "rail-segment-demo-a-001",
+      "vegetation-encroachment-demo-001",
+      "clearance-envelope-demo-001"
+    ],
+    "route_refs": ["gaia-route-plan-demo-0001"],
+    "spatial_refs": [
+      {"scheme": "h3", "value": "8928308280fffff", "role": "corridor-start"},
+      {"scheme": "h3", "value": "89283082807ffff", "role": "corridor-end"}
+    ],
+    "temporal_scope": {
+      "start": "2026-04-26T15:30:00Z",
+      "end": "2026-04-26T16:42:00Z",
+      "scenario_id": "baseline-demo"
+    }
+  },
+  "evidence_refs": [
+    "gaia-nav-lidar-rail-demo-0001",
+    "gaia-route-plan-demo-0001",
+    "vegetation-encroachment-demo-001"
+  ],
+  "model_refs": [
+    "corridor-feature-detector-demo-0.1.0",
+    "route-risk-scorer-demo-0.1.0"
+  ],
+  "runtime_refs": [
+    "gaia-navigation-lidar-feature-runtime@v0.1.0",
+    "gaia-navigation-routing-runtime@v0.1.0"
+  ],
+  "confidence": {
+    "decision_confidence": 0.76,
+    "confidence_class": "moderate",
+    "uncertainty_note": "Fixture confidence combines LiDAR-derived feature confidence and route-risk evidence. Not validated for safety-critical dispatch.",
+    "confidence_drivers": [
+      "LiDAR corridor observation confidence 0.74 for vegetation feature",
+      "route plan confidence 0.78 on rail leg",
+      "clearance envelope nominal but vegetation watch present"
+    ]
+  },
+  "recommendations": [
+    {
+      "recommendation_id": "rec-inspect-vegetation-demo-001",
+      "action_type": "inspect",
+      "priority": "medium",
+      "description": "Schedule corridor inspection or review recent imagery for vegetation encroachment near rail-segment-demo-a-001.",
+      "target_refs": ["vegetation-encroachment-demo-001", "rail-segment-demo-a-001"],
+      "requires_human_approval": true,
+      "policy_constraints": [
+        "Advisory-only fixture",
+        "No safety-critical route claim without validation",
+        "Preserve LiDAR provenance and runtime refs"
+      ]
+    },
+    {
+      "recommendation_id": "rec-route-warning-demo-001",
+      "action_type": "notify",
+      "priority": "low",
+      "description": "Attach a vegetation-watch advisory to affected demo route plans until inspection clears the feature.",
+      "target_refs": ["gaia-route-plan-demo-0001"],
+      "requires_human_approval": false,
+      "policy_constraints": ["Display as advisory, not operational restriction"]
+    }
+  ],
+  "policy": {
+    "action_status": "advisory_only",
+    "policy_refs": ["policy://gaia/navigation/advisory-only-v1"],
+    "handling_tags": ["demo", "navigation", "rail", "control-tower", "lidar"],
+    "safety_notes": [
+      "Not for safety-critical navigation",
+      "Requires operator validation before route restriction or maintenance dispatch"
+    ]
+  },
+  "provenance": {
+    "source_refs": [
+      "fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json",
+      "fixtures/navigation/multimodal-route-plan.sample.v1.json"
+    ],
+    "runtime_refs": [
+      "gaia-navigation-lidar-feature-runtime@v0.1.0",
+      "gaia-navigation-routing-runtime@v0.1.0"
+    ],
+    "model_refs": [
+      "corridor-feature-detector-demo-0.1.0",
+      "route-risk-scorer-demo-0.1.0"
+    ],
+    "generated_by": "fixture://gaia/control-tower/navigation-asset-health-demo",
+    "content_hash": "sha256:5555555555555555555555555555555555555555555555555555555555555555"
+  }
+}
