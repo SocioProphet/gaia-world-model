@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/geospatial/map_tile_layer_manifest.v1.schema.json",
+  "title": "MapTileLayerManifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "layer_id",
+    "layer_type",
+    "title",
+    "sources",
+    "tiles",
+    "attribution",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "manifest_version": {"type": "string", "const": "v1"},
+    "layer_id": {"type": "string"},
+    "layer_type": {"type": "string", "enum": ["vector", "raster", "terrain", "3d-tiles", "mixed"]},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "sources": {"type": "array", "items": {"type": "object", "required": ["source_id", "source_type"], "properties": {"source_id": {"type": "string"}, "source_type": {"type": "string"}, "source_refs": {"type": "array", "items": {"type": "string"}}}}, "minItems": 1},
+    "tiles": {"type": "object", "required": ["url_template"], "properties": {"url_template": {"type": "string"}, "min_zoom": {"type": "integer", "minimum": 0}, "max_zoom": {"type": "integer", "minimum": 0}, "format": {"type": "string", "enum": ["mvt", "png", "jpg", "webp", "terrain-rgb", "3dtiles", "other"]}}},
+    "style": {"type": "object", "properties": {"maplibre_layer_id": {"type": "string"}, "paint_ref": {"type": "string"}, "layout_ref": {"type": "string"}, "style_ref": {"type": "string"}}},
+    "spatial": {"type": "object", "properties": {"bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4}, "h3_cells": {"type": "array", "items": {"type": "string"}}, "crs": {"type": "string"}}},
+    "attribution": {"type": "object", "required": ["attribution_text"], "properties": {"attribution_text": {"type": "string"}, "license_refs": {"type": "array", "items": {"type": "string"}}, "source_urls": {"type": "array", "items": {"type": "string"}}}},
+    "provenance": {"type": "object", "required": ["source_refs"], "properties": {"source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "runtime_refs": {"type": "array", "items": {"type": "string"}}, "created_at": {"type": "string", "format": "date-time"}, "content_hash": {"type": "string"}}},
+    "classification": {"type": "object", "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "handling_tags": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
