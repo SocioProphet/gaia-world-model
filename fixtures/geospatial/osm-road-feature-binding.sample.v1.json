@@ -1,0 +1,54 @@
+{
+  "binding_version": "v1",
+  "binding_id": "osm-binding-demo-way-424242",
+  "source": "OpenStreetMap",
+  "osm_ref": {
+    "osm_type": "way",
+    "osm_id": "424242",
+    "version": "1",
+    "timestamp": "2026-04-26T00:00:00Z",
+    "changeset": "demo",
+    "tags": {
+      "highway": "residential",
+      "name": "Demo Corridor Road",
+      "surface": "asphalt"
+    }
+  },
+  "gaia_ref": {
+    "entity_id": "gaia-road-segment-demo-osm-way-424242",
+    "entity_type": "RoadSegment",
+    "authority": "GAIA"
+  },
+  "spatial": {
+    "geometry_ref": "geometry://demo/osm/way/424242",
+    "geometry_type": "LineString",
+    "h3_cells": ["8928308280fffff", "89283082807ffff"],
+    "bbox": [-74.012, 40.705, -73.998, 40.718],
+    "crs": "EPSG:4326"
+  },
+  "routing": {
+    "routable": true,
+    "modes": ["road", "pedestrian", "bicycle"],
+    "access_tags": {
+      "access": "yes"
+    },
+    "safety_status": "advisory"
+  },
+  "attribution": {
+    "source_name": "OpenStreetMap",
+    "license_ref": "ODbL-1.0",
+    "attribution_text": "© OpenStreetMap contributors",
+    "source_url": "https://www.openstreetmap.org"
+  },
+  "provenance": {
+    "source_refs": ["osm://way/424242"],
+    "extract_ref": "osm-extract://demo/region/2026-04-26",
+    "runtime_refs": [],
+    "content_hash": "sha256:osmfeaturebindingdemo000000000000000000000000000000000000000000",
+    "created_at": "2026-04-27T04:10:00Z"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": ["demo", "osm", "geospatial", "routing", "advisory"]
+  }
+}
