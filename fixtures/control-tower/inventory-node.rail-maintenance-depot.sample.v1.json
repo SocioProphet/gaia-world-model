@@ -1,0 +1,36 @@
+{
+  "record_version": "v1",
+  "node_id": "inventory-node-rail-maintenance-depot-demo-001",
+  "node_type": "depot",
+  "authority_ref": "SocioProphet/gaia-world-model",
+  "name": "Demo Rail Maintenance Depot",
+  "description": "Fixture inventory node representing a maintenance depot that can support vegetation inspection and corridor maintenance tasks.",
+  "spatial_refs": [
+    {"scheme": "site", "value": "demo-rail-maintenance-depot", "role": "depot"},
+    {"scheme": "h3", "value": "8928308280fffff", "role": "service-area"}
+  ],
+  "operator_refs": ["operator://demo/rail-maintenance"],
+  "capacity": {
+    "capacity_class": "inspection-and-maintenance",
+    "max_units": 4,
+    "unit": "crew-day",
+    "constraints": ["demo-only", "human-approval-required"]
+  },
+  "inventory_scopes": ["vegetation-management", "rail-corridor-inspection", "clearance-review"],
+  "trust": {
+    "trust_state": "trusted",
+    "policy_refs": ["policy://gaia/control-tower/demo-standard-v1"],
+    "last_audit_ref": "audit://demo/inventory-node/rail-maintenance-depot-001"
+  },
+  "provenance": {
+    "source_refs": ["fixture://control-tower/inventory-node/rail-maintenance-depot"],
+    "runtime_refs": [],
+    "content_hash": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "created_at": "2026-04-27T00:39:00Z"
+  },
+  "classification": {
+    "data_class": "internal",
+    "retention_class": "standard",
+    "handling_tags": ["demo", "control-tower", "inventory-node", "rail"]
+  }
+}
