@@ -11,6 +11,7 @@ on:
       - 'scripts/soil_intelligence_fusion.py'
       - 'control_tower/anomaly_score.py'
       - 'geospatial/osm_ingest.py'
+      - 'geospatial/osm_tile_export.py'
       - '.github/workflows/contract-fixtures.yml'
   pull_request:
     paths:
@@ -22,6 +23,7 @@ on:
       - 'scripts/soil_intelligence_fusion.py'
       - 'control_tower/anomaly_score.py'
       - 'geospatial/osm_ingest.py'
+      - 'geospatial/osm_tile_export.py'
       - '.github/workflows/contract-fixtures.yml'
 
 jobs:
@@ -95,4 +97,24 @@ jobs:
           assert doc['bindings'][0]['osm_ref']['osm_type'] == 'way'
           assert doc['bindings'][0]['attribution']['attribution_text']
           print('OpenStreetMap ingestion output passed')
+          PY
+
+      - name: Export OpenStreetMap tile layer fixture
+        run: |
+          python3 geospatial/osm_tile_export.py \
+            fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
+            /tmp/osm-derived-map-tile-layer.json
+
+      - name: Check OpenStreetMap tile layer output
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/osm-derived-map-tile-layer.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['manifest_version'] == 'v1'
+          assert doc['layer_type'] == 'vector'
+          assert doc['tiles']['format'] == 'mvt'
+          assert doc['attribution']['attribution_text']
+          assert doc['provenance']['source_refs']
+          print('OpenStreetMap tile layer output passed')
           PY
