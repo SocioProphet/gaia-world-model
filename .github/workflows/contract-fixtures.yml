@@ -12,6 +12,7 @@ on:
       - 'control_tower/anomaly_score.py'
       - 'geospatial/osm_ingest.py'
       - 'geospatial/osm_tile_export.py'
+      - 'geospatial/osm_route_graph.py'
       - '.github/workflows/contract-fixtures.yml'
   pull_request:
     paths:
@@ -24,6 +25,7 @@ on:
       - 'control_tower/anomaly_score.py'
       - 'geospatial/osm_ingest.py'
       - 'geospatial/osm_tile_export.py'
+      - 'geospatial/osm_route_graph.py'
       - '.github/workflows/contract-fixtures.yml'
 
 jobs:
@@ -117,4 +119,25 @@ jobs:
           assert doc['attribution']['attribution_text']
           assert doc['provenance']['source_refs']
           print('OpenStreetMap tile layer output passed')
+          PY
+
+      - name: Build OpenStreetMap route graph fixture
+        run: |
+          python3 geospatial/osm_route_graph.py \
+            fixtures/geospatial/osm-road-feature-binding.sample.v1.json \
+            /tmp/osm-route-graph.json
+
+      - name: Check OpenStreetMap route graph output
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/osm-route-graph.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['manifest_version'] == 'v1'
+          assert doc['source'] == 'OpenStreetMap'
+          assert doc['safety_status'] == 'advisory'
+          assert doc['nodes']
+          assert doc['edges']
+          assert doc['attribution']['attribution_text']
+          print('OpenStreetMap route graph output passed')
           PY
