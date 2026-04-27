@@ -1,0 +1,63 @@
+{
+  "record_version": "v1",
+  "risk_id": "risk-exposure-rail-vegetation-demo-0001",
+  "risk_type": "route_disruption",
+  "created_at": "2026-04-27T00:50:00Z",
+  "scope": {
+    "asset_refs": [
+      "vegetation-encroachment-demo-001",
+      "rail-segment-demo-a-001"
+    ],
+    "route_refs": ["gaia-route-plan-demo-0001"],
+    "spatial_refs": [
+      {"scheme": "h3", "value": "8928308280fffff", "role": "risk-cell"}
+    ],
+    "temporal_scope": {
+      "start": "2026-04-26T15:30:00Z",
+      "end": "2026-04-27T15:30:00Z",
+      "scenario_id": "baseline-demo"
+    }
+  },
+  "score": {
+    "likelihood": 0.42,
+    "impact": 0.55,
+    "overall": 0.48,
+    "confidence": 0.76,
+    "risk_class": "medium"
+  },
+  "business_impact": {
+    "downtime_cost_estimate": 0,
+    "currency": "USD",
+    "service_level_impact": "advisory-only fixture; no operational SLA impact asserted",
+    "customer_impact": "none asserted in demo",
+    "insurance_exposure_ref": "none"
+  },
+  "mitigations": [
+    {
+      "mitigation_id": "mitigation-inspect-rail-vegetation-demo-0001",
+      "description": "Inspect vegetation clearance and update corridor condition before changing operational status.",
+      "work_order_candidate_ref": "work-order-candidate-rail-vegetation-demo-0001",
+      "policy_ref": "policy://gaia/navigation/advisory-only-v1"
+    }
+  ],
+  "evidence_refs": [
+    "gaia-nav-lidar-rail-demo-0001",
+    "ofif-asset-health-demo-0001",
+    "control-tower-card-navigation-asset-health-demo-0001"
+  ],
+  "model_refs": ["route-risk-scorer-demo-0.1.0"],
+  "provenance": {
+    "source_refs": [
+      "fixtures/control-tower/navigation-asset-health-card.sample.v1.json",
+      "fixtures/control-tower/work-order-candidate.rail-vegetation.sample.v1.json"
+    ],
+    "runtime_refs": [],
+    "generated_by": "fixture://gaia/control-tower/risk-exposure-demo",
+    "content_hash": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  },
+  "classification": {
+    "data_class": "internal",
+    "retention_class": "standard",
+    "handling_tags": ["demo", "control-tower", "risk", "navigation", "rail"]
+  }
+}
