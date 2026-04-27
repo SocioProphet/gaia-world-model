@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/control-tower/asset_twin_record.v1.schema.json",
+  "title": "AssetTwinRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_version", "asset_id", "asset_type", "authority_ref", "lifecycle", "provenance", "classification"],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "asset_id": {"type": "string"},
+    "asset_type": {"type": "string"},
+    "authority_ref": {"type": "string"},
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "hierarchy": {"type": "object", "additionalProperties": false, "properties": {"parent_asset_id": {"type": "string"}, "child_asset_ids": {"type": "array", "items": {"type": "string"}}, "system_refs": {"type": "array", "items": {"type": "string"}}}},
+    "spatial_refs": {"type": "array", "items": {"type": "object", "required": ["scheme", "value"], "properties": {"scheme": {"type": "string"}, "value": {"type": "string"}, "role": {"type": "string"}}}},
+    "owner_operator": {"type": "object", "additionalProperties": false, "properties": {"owner_ref": {"type": "string"}, "operator_ref": {"type": "string"}, "maintainer_refs": {"type": "array", "items": {"type": "string"}}}},
+    "sensor_bindings": {"type": "array", "items": {"type": "object", "required": ["sensor_ref"], "properties": {"sensor_ref": {"type": "string"}, "observed_properties": {"type": "array", "items": {"type": "string"}}, "ofif_producer_id": {"type": "string"}}}},
+    "lifecycle": {"type": "object", "required": ["state"], "properties": {"state": {"type": "string", "enum": ["planned", "active", "maintenance", "degraded", "retired", "unknown"]}, "commissioned_at": {"type": "string", "format": "date-time"}, "retired_at": {"type": "string", "format": "date-time"}, "criticality": {"type": "string", "enum": ["low", "medium", "high", "critical", "unknown"]}, "service_level_ref": {"type": "string"}}},
+    "health": {"type": "object", "properties": {"health_state": {"type": "string", "enum": ["unknown", "nominal", "watch", "degraded", "failed", "unsafe"]}, "risk_score": {"type": "number", "minimum": 0, "maximum": 1}, "last_observation_ref": {"type": "string"}, "work_refs": {"type": "array", "items": {"type": "string"}}}},
+    "supply_chain_refs": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"type": "object", "required": ["source_refs"], "properties": {"source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "runtime_refs": {"type": "array", "items": {"type": "string"}}, "model_refs": {"type": "array", "items": {"type": "string"}}, "created_at": {"type": "string", "format": "date-time"}, "content_hash": {"type": "string"}}},
+    "classification": {"type": "object", "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "retention_class": {"type": "string"}, "handling_tags": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
