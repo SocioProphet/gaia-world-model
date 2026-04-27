@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/control-tower/inventory_node_record.v1.schema.json",
+  "title": "InventoryNodeRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_version", "node_id", "node_type", "authority_ref", "spatial_refs", "provenance", "classification"],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "node_id": {"type": "string"},
+    "node_type": {"type": "string", "enum": ["warehouse", "depot", "store", "supplier", "vehicle", "field_cache", "station", "port", "airport", "yard", "factory", "facility", "other"]},
+    "authority_ref": {"type": "string"},
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "spatial_refs": {"type": "array", "items": {"type": "object", "required": ["scheme", "value"], "properties": {"scheme": {"type": "string"}, "value": {"type": "string"}, "role": {"type": "string"}}}, "minItems": 1},
+    "operator_refs": {"type": "array", "items": {"type": "string"}},
+    "capacity": {
+      "type": "object",
+      "properties": {
+        "capacity_class": {"type": "string"},
+        "max_units": {"type": "number"},
+        "unit": {"type": "string"},
+        "constraints": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "inventory_scopes": {"type": "array", "items": {"type": "string"}},
+    "trust": {
+      "type": "object",
+      "properties": {
+        "trust_state": {"type": "string", "enum": ["unknown", "trusted", "watch", "restricted", "blocked"]},
+        "policy_refs": {"type": "array", "items": {"type": "string"}},
+        "last_audit_ref": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "content_hash": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "retention_class": {"type": "string"},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
