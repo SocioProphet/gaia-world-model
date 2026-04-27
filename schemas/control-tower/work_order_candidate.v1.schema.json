@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/control-tower/work_order_candidate.v1.schema.json",
+  "title": "WorkOrderCandidate v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_version",
+    "candidate_id",
+    "created_at",
+    "asset_refs",
+    "issue_summary",
+    "priority",
+    "evidence_refs",
+    "approval_state",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "candidate_version": {"type": "string", "const": "v1"},
+    "candidate_id": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "asset_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "issue_summary": {"type": "string"},
+    "issue_type": {"type": "string", "enum": ["inspection", "maintenance", "repair", "replacement", "restriction", "safety_review", "inventory_replenishment", "other"]},
+    "priority": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+    "recommended_task": {"type": "string"},
+    "required_skills": {"type": "array", "items": {"type": "string"}},
+    "required_material_refs": {"type": "array", "items": {"type": "string"}},
+    "maintenance_window_ref": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "risk_refs": {"type": "array", "items": {"type": "string"}},
+    "decision_card_refs": {"type": "array", "items": {"type": "string"}},
+    "approval_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"type": "string", "enum": ["draft", "approval_required", "approved", "rejected", "cancelled", "converted_to_work_order"]},
+        "approver_ref": {"type": "string"},
+        "approved_at": {"type": "string", "format": "date-time"},
+        "rejection_reason": {"type": "string"},
+        "work_order_ref": {"type": "string"}
+      }
+    },
+    "policy_constraints": {"type": "array", "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "model_refs": {"type": "array", "items": {"type": "string"}},
+        "generated_by": {"type": "string"},
+        "content_hash": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "retention_class": {"type": "string"},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
