@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/navigation/navigation_safety_case.v1.schema.json",
+  "title": "NavigationSafetyCase v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_version",
+    "case_id",
+    "created_at",
+    "scope",
+    "claim",
+    "safety_status",
+    "evidence_refs",
+    "validation",
+    "approval",
+    "limits",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "case_version": {"type": "string", "const": "v1"},
+    "case_id": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_type", "spatial_refs"],
+      "properties": {
+        "scope_type": {"type": "string", "enum": ["route", "corridor", "asset", "map_layer", "route_graph", "other"]},
+        "asset_refs": {"type": "array", "items": {"type": "string"}},
+        "route_refs": {"type": "array", "items": {"type": "string"}},
+        "layer_refs": {"type": "array", "items": {"type": "string"}},
+        "spatial_refs": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["scheme", "value"], "properties": {"scheme": {"type": "string"}, "value": {"type": "string"}, "role": {"type": "string"}}}},
+        "temporal_scope": {"type": "object", "properties": {"valid_from": {"type": "string", "format": "date-time"}, "valid_to": {"type": "string", "format": "date-time"}}}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "claim_text", "claim_type"],
+      "properties": {
+        "claim_id": {"type": "string"},
+        "claim_text": {"type": "string"},
+        "claim_type": {"type": "string", "enum": ["advisory_condition", "validated_condition", "route_clearance", "restriction", "not_for_navigation", "other"]},
+        "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0}
+      }
+    },
+    "safety_status": {"type": "string", "enum": ["advisory", "validated", "restricted", "not-for-navigation", "unknown"]},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["validation_status", "method_refs"],
+      "properties": {
+        "validation_status": {"type": "string", "enum": ["not_validated", "validated", "failed", "superseded"]},
+        "method_refs": {"type": "array", "items": {"type": "string"}},
+        "test_refs": {"type": "array", "items": {"type": "string"}},
+        "operator_review_refs": {"type": "array", "items": {"type": "string"}},
+        "safety_case_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approval_state"],
+      "properties": {
+        "approval_state": {"type": "string", "enum": ["not_required", "required", "approved", "rejected", "blocked"]},
+        "approver_refs": {"type": "array", "items": {"type": "string"}},
+        "approved_at": {"type": "string", "format": "date-time"},
+        "notes": {"type": "string"}
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed_uses", "prohibited_uses"],
+      "properties": {
+        "allowed_uses": {"type": "array", "items": {"type": "string"}},
+        "prohibited_uses": {"type": "array", "items": {"type": "string"}},
+        "caveats": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "model_refs": {"type": "array", "items": {"type": "string"}},
+        "content_hash": {"type": "string"},
+        "created_by": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
