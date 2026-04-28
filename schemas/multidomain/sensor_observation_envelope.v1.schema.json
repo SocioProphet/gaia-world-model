@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/sensor_observation_envelope.v1.schema.json",
+  "title": "GAIA Sensor Observation Envelope v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "sensor",
+    "observation",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "SensorObservationEnvelope"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "sensor": {
+      "type": "object",
+      "required": ["sensor_ref", "sensor_type", "platform_ref"],
+      "properties": {
+        "sensor_ref": {"type": "string"},
+        "sensor_type": {"type": "string"},
+        "platform_ref": {"type": "string"},
+        "observed_property_refs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "observation": {
+      "type": "object",
+      "required": ["observed_at", "geometry_ref", "measurements"],
+      "properties": {
+        "observed_at": {"type": "string"},
+        "geometry_ref": {"type": "object"},
+        "measurements": {"type": "array", "items": {"type": "object"}},
+        "quality": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
