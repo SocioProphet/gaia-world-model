@@ -191,3 +191,63 @@ jobs:
             cat /tmp/adsb-negative.err >&2 || true
             echo "OK: rejected $bad"
           done
+
+  sensorthings-ingest:
+    name: Validate SensorThings ingest runtime proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run deterministic SensorThings ingest fixture
+        run: |
+          python3 multidomain/sensorthings_ingest.py \
+            fixtures/multidomain/sensorthings-observation-input.sample.v1.json \
+            /tmp/gaia-sensorthings-ingest-output.json
+
+      - name: Check SensorThings ingest output invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-sensorthings-ingest-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['record_version'] == 'v1'
+          assert doc['record_type'] == 'SensorObservationEnvelope'
+          assert doc['record_id'] == 'gaia:sensor-observation:soil-probe-001:2026-04-27T18:15:00Z'
+          assert 'SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md' in doc['standards_refs']
+          assert 'SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md' in doc['standards_refs']
+          assert doc['sensor']['sensor_ref'] == 'sensor:field:soil-probe-001'
+          assert doc['observation']['geometry_ref']['lat'] == 40.102
+          assert doc['observation']['geometry_ref']['lon'] == -75.214
+          assert len(doc['observation']['measurements']) >= 2
+          assert doc['provenance']['runtime_boundary_id'] == 'runtime:sensorthings-ingest:v0'
+          assert doc['classification']['sensitive_geo_policy_ref']
+          evidence = doc['runtime_evidence']
+          assert evidence['runtime_id'] == 'runtime:sensorthings-ingest:v0'
+          assert evidence['input_manifest']['input_sha256'].startswith('sha256:')
+          assert evidence['output_manifest']['output_sha256'].startswith('sha256:')
+          assert evidence['policy']['network_posture'] == 'none_for_fixture_proof'
+          assert evidence['replay']['mode'] == 'deterministic_fixture'
+          print('SensorThings ingest runtime output passed')
+          PY
+
+      - name: Reject malformed SensorThings fixtures
+        run: |
+          set -euo pipefail
+          for bad in \
+            fixtures/multidomain/negative/sensorthings-observation-wrong-source.sample.v1.json \
+            fixtures/multidomain/negative/sensorthings-observation-bad-lat.sample.v1.json; do
+            if python3 multidomain/sensorthings_ingest.py "$bad" /tmp/should-not-exist.json >/tmp/sensorthings-negative.out 2>/tmp/sensorthings-negative.err; then
+              cat /tmp/sensorthings-negative.out
+              cat /tmp/sensorthings-negative.err >&2
+              echo "ERR: expected $bad to fail" >&2
+              exit 2
+            fi
+            cat /tmp/sensorthings-negative.err >&2 || true
+            echo "OK: rejected $bad"
+          done
