@@ -1,0 +1,52 @@
+name: Multi-Domain Runtime Proofs
+
+on:
+  push:
+    paths:
+      - 'multidomain/**'
+      - 'fixtures/multidomain/**'
+      - '.github/workflows/multidomain-runtime.yml'
+  pull_request:
+    paths:
+      - 'multidomain/**'
+      - 'fixtures/multidomain/**'
+      - '.github/workflows/multidomain-runtime.yml'
+
+jobs:
+  stac-ingest:
+    name: Validate STAC ingest runtime proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run deterministic STAC ingest fixture
+        run: |
+          python3 multidomain/stac_ingest.py \
+            fixtures/multidomain/stac-item-input.sample.v1.json \
+            /tmp/gaia-stac-ingest-output.json
+
+      - name: Check STAC ingest output invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-stac-ingest-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['record_version'] == 'v1'
+          assert doc['record_type'] == 'EarthObservationProductRecord'
+          assert doc['record_id'] == 'gaia:eo-product:sample-stac-item-001'
+          assert 'SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md' in doc['standards_refs']
+          assert 'SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md' in doc['standards_refs']
+          assert doc['product']['product_type'] == 'STAC_ITEM'
+          assert len(doc['product']['asset_refs']) >= 2
+          assert doc['spatial']['geometry_encoding'] == 'geojson'
+          assert doc['temporal']['observed_start']
+          assert doc['provenance']['runtime_boundary_id'] == 'runtime:stac-ingest:v0'
+          assert doc['classification']['sensitive_geo_policy_ref']
+          print('STAC ingest runtime output passed')
+          PY
