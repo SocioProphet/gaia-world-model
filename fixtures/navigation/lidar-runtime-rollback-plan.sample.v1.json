@@ -1,0 +1,68 @@
+{
+  "plan_version": "v1",
+  "plan_id": "lidar-runtime-rollback-plan-demo-0001",
+  "created_at": "2026-04-27T23:36:00Z",
+  "runtime_ref": "gaia-navigation-lidar-feature-runtime@v0.1.0",
+  "trigger_conditions": [
+    "malformed LiDAR corridor observation input",
+    "missing point_cloud metadata",
+    "derived feature output fails contract validation",
+    "operator rejects advisory safety case",
+    "newer validated corridor state supersedes fixture output"
+  ],
+  "rollback_actions": [
+    {
+      "action_id": "rollback-demote-lidar-derived-layer-demo-0001",
+      "action_type": "demote-derived-layer",
+      "description": "Demote LiDAR-derived infrastructure asset output from active review layer.",
+      "target_refs": ["gaia.navigation.lidar_feature_extract.output"]
+    },
+    {
+      "action_id": "rollback-mark-safety-case-superseded-demo-0001",
+      "action_type": "mark-superseded",
+      "description": "Mark advisory safety case as superseded or withdrawn when input/output validation fails.",
+      "target_refs": ["navigation-safety-case-lidar-advisory-demo-0001"]
+    },
+    {
+      "action_id": "rollback-preserve-source-observation-demo-0001",
+      "action_type": "notify-reviewer",
+      "description": "Notify reviewer that source observation is preserved and derived outputs were demoted pending review.",
+      "target_refs": ["gaia-nav-lidar-rail-demo-0001"]
+    }
+  ],
+  "preserve_refs": [
+    "gaia-nav-lidar-rail-demo-0001",
+    "s3://demo/gaia/navigation/rail-corridor-a/run-0001.copc.laz",
+    "fixture://navigation/rail-corridor-lidar/raw-run-0001"
+  ],
+  "demote_refs": [
+    "fixtures/navigation/lidar-derived-infrastructure-assets.sample.v1.json",
+    "navigation-safety-case-lidar-advisory-demo-0001",
+    "search-gaia-lidar-derived-infrastructure-assets-demo-0001"
+  ],
+  "post_rollback_state": "superseded",
+  "evidence_refs": [
+    "fixtures/navigation/rail-corridor-lidar-observation.sample.v1.json",
+    "fixtures/navigation/lidar-derived-infrastructure-assets.sample.v1.json",
+    "fixtures/navigation/navigation-safety-case.lidar-advisory.sample.v1.json"
+  ],
+  "approval": {
+    "approval_required": true,
+    "approval_state": "required",
+    "approver_refs": [],
+    "notes": "Human review required before restoring or promoting any demoted derived feature layer."
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/integrations/RUNTIME_BOUNDARY_DEFINITIONS.md",
+      "fixtures/navigation/lidar-derived-infrastructure-assets.sample.v1.json"
+    ],
+    "runtime_refs": ["gaia-navigation-lidar-feature-runtime@v0.1.0"],
+    "content_hash": "sha256:lidarrollbackplandemo0000000000000000000000000000000000000000",
+    "created_by": "fixture://gaia/navigation/lidar-rollback-plan-demo"
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "navigation", "lidar", "rollback", "advisory"]
+  }
+}
