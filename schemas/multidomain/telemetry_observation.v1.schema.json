@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/telemetry_observation.v1.schema.json",
+  "title": "GAIA Telemetry Observation v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "asset_ref",
+    "telemetry",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "TelemetryObservation"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "asset_ref": {"type": "string"},
+    "telemetry": {
+      "type": "object",
+      "required": ["observed_at", "channel_family", "measurements", "health_state"],
+      "properties": {
+        "observed_at": {"type": "string"},
+        "channel_family": {"type": "string"},
+        "measurements": {"type": "array", "items": {"type": "object"}},
+        "health_state": {"type": "string"},
+        "link_session_ref": {"type": "string"},
+        "ground_station_ref": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
