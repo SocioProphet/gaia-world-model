@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/navigation/lidar_runtime_rollback_plan.v1.schema.json",
+  "title": "LidarRuntimeRollbackPlan v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plan_version",
+    "plan_id",
+    "created_at",
+    "runtime_ref",
+    "trigger_conditions",
+    "rollback_actions",
+    "preserve_refs",
+    "demote_refs",
+    "post_rollback_state",
+    "evidence_refs",
+    "approval",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "plan_version": {"type": "string", "const": "v1"},
+    "plan_id": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "runtime_ref": {"type": "string"},
+    "trigger_conditions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "rollback_actions": {"type": "array", "items": {"type": "object", "required": ["action_id", "action_type", "description"], "properties": {"action_id": {"type": "string"}, "action_type": {"type": "string", "enum": ["demote-derived-layer", "restore-prior-state", "mark-superseded", "quarantine-output", "notify-reviewer", "other"]}, "description": {"type": "string"}, "target_refs": {"type": "array", "items": {"type": "string"}}}}, "minItems": 1},
+    "preserve_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "demote_refs": {"type": "array", "items": {"type": "string"}},
+    "post_rollback_state": {"type": "string", "enum": ["advisory", "superseded", "quarantined", "restored", "unknown"]},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "approval": {"type": "object", "additionalProperties": false, "required": ["approval_required"], "properties": {"approval_required": {"type": "boolean"}, "approval_state": {"type": "string", "enum": ["not_required", "required", "approved", "rejected", "blocked"]}, "approver_refs": {"type": "array", "items": {"type": "string"}}, "notes": {"type": "string"}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_refs"], "properties": {"source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "runtime_refs": {"type": "array", "items": {"type": "string"}}, "content_hash": {"type": "string"}, "created_by": {"type": "string"}}},
+    "classification": {"type": "object", "additionalProperties": false, "properties": {"data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]}, "handling_tags": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
