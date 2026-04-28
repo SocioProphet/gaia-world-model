@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/sensitive_geo_policy_record.v1.schema.json",
+  "title": "GAIA Sensitive Geospatial Policy Record v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "policy",
+    "scope",
+    "controls",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "SensitiveGeoPolicyRecord"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "policy": {
+      "type": "object",
+      "required": ["policy_id", "policy_type", "sensitivity_tier", "default_action"],
+      "properties": {
+        "policy_id": {"type": "string"},
+        "policy_type": {"type": "string"},
+        "sensitivity_tier": {"type": "string"},
+        "default_action": {"type": "string"},
+        "authorized_use_refs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "required": ["domain_lanes", "geometry_policy"],
+      "properties": {
+        "domain_lanes": {"type": "array", "items": {"type": "string"}},
+        "geometry_policy": {"type": "string"},
+        "jurisdiction_refs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "controls": {
+      "type": "object",
+      "required": ["masking", "delay", "access_control", "audit"],
+      "properties": {
+        "masking": {"type": "string"},
+        "delay": {"type": "string"},
+        "access_control": {"type": "string"},
+        "audit": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
