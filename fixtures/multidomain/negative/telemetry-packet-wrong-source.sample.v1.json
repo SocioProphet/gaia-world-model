@@ -1,0 +1,24 @@
+{
+  "input_version": "v1",
+  "source": "NOT_SpaceTelemetry",
+  "stream_ref": "telemetry:stream:sample-sat-001",
+  "asset_ref": "space-asset:sample-sat-001",
+  "packet": {
+    "packet_id": "telemetry-packet:wrong-source",
+    "observed_at": "2026-04-27T18:05:00Z",
+    "channel_family": "spacecraft_health",
+    "health_state": "nominal",
+    "measurements": [
+      {"name": "battery_voltage_v", "value": 28.1, "unit": "V", "quality": "nominal"}
+    ]
+  },
+  "attribution": {
+    "source_name": "Synthetic telemetry negative fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic negative telemetry fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
