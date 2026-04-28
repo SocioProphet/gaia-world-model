@@ -1,0 +1,43 @@
+{
+  "record_version": "v1",
+  "record_type": "TelemetryObservation",
+  "record_id": "gaia:telemetry:sample-sat-001:2026-04-27T18:05:00Z",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "asset_ref": "space-asset:sample-sat-001",
+  "telemetry": {
+    "observed_at": "2026-04-27T18:05:00Z",
+    "channel_family": "spacecraft_health",
+    "health_state": "nominal",
+    "link_session_ref": "link-session:sample-ground-contact-001",
+    "ground_station_ref": "ground-station:sample-midatlantic-001",
+    "measurements": [
+      {"name": "battery_voltage_v", "value": 28.1, "unit": "V", "quality": "nominal"},
+      {"name": "bus_temperature_c", "value": 22.4, "unit": "degC", "quality": "nominal"},
+      {"name": "downlink_snr_db", "value": 17.8, "unit": "dB", "quality": "nominal"}
+    ]
+  },
+  "source": {
+    "source_id": "sample-telemetry-stream",
+    "source_type": "synthetic_space_telemetry",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["sample-telemetry-stream:packet:001"],
+    "runtime_boundary_id": "runtime:space-telemetry-ingest:v0"
+  },
+  "governance": {
+    "privacy_tier": "public",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "allowed"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
