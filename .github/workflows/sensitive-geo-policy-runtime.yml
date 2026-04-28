@@ -1,0 +1,78 @@
+name: Sensitive Geospatial Policy Runtime Proof
+
+on:
+  push:
+    paths:
+      - 'multidomain/sensitive_geo_policy_eval.py'
+      - 'fixtures/multidomain/sensitive-geo-policy.sample.v1.json'
+      - 'fixtures/multidomain/multi-domain-fusion-event.sample.v1.json'
+      - 'fixtures/multidomain/negative/sensitive-policy-eval-*.json'
+      - '.github/workflows/sensitive-geo-policy-runtime.yml'
+  pull_request:
+    paths:
+      - 'multidomain/sensitive_geo_policy_eval.py'
+      - 'fixtures/multidomain/sensitive-geo-policy.sample.v1.json'
+      - 'fixtures/multidomain/multi-domain-fusion-event.sample.v1.json'
+      - 'fixtures/multidomain/negative/sensitive-policy-eval-*.json'
+      - '.github/workflows/sensitive-geo-policy-runtime.yml'
+
+jobs:
+  sensitive-geo-policy-eval:
+    name: Validate sensitive geospatial policy evaluation runtime proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run deterministic sensitive geospatial policy evaluation fixture
+        run: |
+          python3 multidomain/sensitive_geo_policy_eval.py \
+            fixtures/multidomain/sensitive-geo-policy.sample.v1.json \
+            fixtures/multidomain/multi-domain-fusion-event.sample.v1.json \
+            /tmp/gaia-sensitive-geo-policy-eval-output.json
+
+      - name: Check sensitive geospatial policy evaluation output invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-sensitive-geo-policy-eval-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['artifact_version'] == 'v1'
+          assert doc['artifact_type'] == 'gaia.sensitive_geo_policy_eval.output'
+          assert doc['runtime_id'] == 'runtime:sensitive-geo-policy-eval:v0'
+          assert doc['policy_ref'] == 'policy:sensitive-geo:standard-delay-mask-v1'
+          assert doc['subject_record_type'] == 'MultiDomainFusionEvent'
+          assert doc['approval_required'] is True
+          assert doc['accountability']['ledger_required'] is True
+          assert doc['accountability']['authority_required'] is True
+          assert doc['accountability']['human_approval_required'] is True
+          assert doc['provenance']['runtime_boundary_id'] == 'runtime:sensitive-geo-policy-eval:v0'
+          evidence = doc['runtime_evidence']
+          assert evidence['runtime_id'] == 'runtime:sensitive-geo-policy-eval:v0'
+          assert evidence['runtime_class'] == 'analytics'
+          assert evidence['input_manifest']['input_sha256'].startswith('sha256:')
+          assert evidence['output_manifest']['output_sha256'].startswith('sha256:')
+          assert evidence['policy']['approval_required'] is True
+          assert evidence['replay']['mode'] == 'deterministic_fixture'
+          print('Sensitive geospatial policy evaluation runtime output passed')
+          PY
+
+      - name: Reject invalid sensitive geospatial policy evaluation fixture
+        run: |
+          set -euo pipefail
+          if python3 multidomain/sensitive_geo_policy_eval.py \
+            fixtures/multidomain/sensitive-geo-policy.sample.v1.json \
+            fixtures/multidomain/negative/sensitive-policy-eval-subject-is-policy.sample.v1.json \
+            /tmp/should-not-exist.json >/tmp/sensitive-policy-negative.out 2>/tmp/sensitive-policy-negative.err; then
+            cat /tmp/sensitive-policy-negative.out
+            cat /tmp/sensitive-policy-negative.err >&2
+            echo "ERR: expected subject-is-policy fixture to fail" >&2
+            exit 2
+          fi
+          cat /tmp/sensitive-policy-negative.err >&2 || true
+          echo "OK: rejected subject-is-policy negative fixture"
