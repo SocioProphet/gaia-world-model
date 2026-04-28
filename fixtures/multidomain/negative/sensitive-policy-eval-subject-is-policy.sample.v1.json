@@ -1,0 +1,46 @@
+{
+  "record_version": "v1",
+  "record_type": "SensitiveGeoPolicyRecord",
+  "record_id": "gaia:sensitive-geo-policy:bad-subject",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "policy": {
+    "policy_id": "policy:sensitive-geo:bad-subject",
+    "policy_type": "mask_and_delay",
+    "sensitivity_tier": "sensitive_geo",
+    "default_action": "mask_exact_location_and_delay_publication"
+  },
+  "scope": {
+    "domain_lanes": ["air-domain-awareness"],
+    "geometry_policy": "reduce_precision_for_public_outputs"
+  },
+  "controls": {
+    "masking": "mask",
+    "delay": "delay",
+    "access_control": "role_scoped",
+    "audit": "required"
+  },
+  "source": {
+    "source_id": "negative-fixture",
+    "source_type": "synthetic_policy",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["negative-fixture"],
+    "runtime_boundary_id": "runtime:sensitive-geo-policy-eval:v0"
+  },
+  "governance": {
+    "privacy_tier": "sensitive",
+    "safety_tier": "sensitive_geo",
+    "retention_tier": "policy",
+    "redistribution": "restricted"
+  },
+  "classification": {
+    "security_marking": "public_sample_policy",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:bad-subject"
+  }
+}
