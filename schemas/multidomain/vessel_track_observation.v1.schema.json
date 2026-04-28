@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/vessel_track_observation.v1.schema.json",
+  "title": "GAIA Vessel Track Observation v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "vessel",
+    "track",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "VesselTrackObservation"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "vessel": {
+      "type": "object",
+      "required": ["vessel_ref", "identity_refs"],
+      "properties": {
+        "vessel_ref": {"type": "string"},
+        "identity_refs": {"type": "array", "items": {"type": "string"}},
+        "vessel_type": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "track": {
+      "type": "object",
+      "required": ["observed_at", "position", "motion"],
+      "properties": {
+        "observed_at": {"type": "string"},
+        "position": {"type": "object"},
+        "motion": {"type": "object"},
+        "navigation_status": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
