@@ -1,0 +1,32 @@
+{
+  "input_version": "v1",
+  "source": "NOT_SensorThings",
+  "feed_ref": "sensorthings:feed:sample-field-station",
+  "sensor": {
+    "sensor_ref": "sensor:field:soil-probe-001",
+    "sensor_type": "soil_probe",
+    "platform_ref": "platform:field-station:sample-001"
+  },
+  "observation": {
+    "observation_id": "sensorthings:observation:wrong-source",
+    "observed_at": "2026-04-27T18:15:00Z",
+    "geometry_ref": {
+      "crs": "EPSG:4326",
+      "lat": 40.102,
+      "lon": -75.214,
+      "encoding": "wgs84"
+    },
+    "measurements": [
+      {"name": "soil_temperature_c", "value": 13.7, "unit": "degC", "quality": "nominal"}
+    ]
+  },
+  "attribution": {
+    "source_name": "Synthetic SensorThings negative fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic negative SensorThings fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
