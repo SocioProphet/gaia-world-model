@@ -131,3 +131,63 @@ jobs:
             cat /tmp/ais-negative.err >&2 || true
             echo "OK: rejected $bad"
           done
+
+  adsb-ingest:
+    name: Validate ADS-B ingest runtime proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run deterministic ADS-B ingest fixture
+        run: |
+          python3 multidomain/adsb_ingest.py \
+            fixtures/multidomain/adsb-message-input.sample.v1.json \
+            /tmp/gaia-adsb-ingest-output.json
+
+      - name: Check ADS-B ingest output invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-adsb-ingest-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['record_version'] == 'v1'
+          assert doc['record_type'] == 'AirTrackObservation'
+          assert doc['record_id'] == 'gaia:air-track:sample:ABC123:2026-04-27T18:10:00Z'
+          assert 'SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md' in doc['standards_refs']
+          assert 'SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md' in doc['standards_refs']
+          assert doc['aircraft']['identity_refs'][0] == 'icao24:ABC123'
+          assert doc['track']['position']['lat'] == 39.8729
+          assert doc['track']['position']['lon'] == -75.2437
+          assert doc['track']['position']['altitude_ft'] == 12000
+          assert doc['provenance']['runtime_boundary_id'] == 'runtime:adsb-ingest:v0'
+          assert doc['classification']['sensitive_geo_policy_ref']
+          evidence = doc['runtime_evidence']
+          assert evidence['runtime_id'] == 'runtime:adsb-ingest:v0'
+          assert evidence['input_manifest']['input_sha256'].startswith('sha256:')
+          assert evidence['output_manifest']['output_sha256'].startswith('sha256:')
+          assert evidence['policy']['network_posture'] == 'none_for_fixture_proof'
+          assert evidence['replay']['mode'] == 'deterministic_fixture'
+          print('ADS-B ingest runtime output passed')
+          PY
+
+      - name: Reject malformed ADS-B fixtures
+        run: |
+          set -euo pipefail
+          for bad in \
+            fixtures/multidomain/negative/adsb-message-wrong-source.sample.v1.json \
+            fixtures/multidomain/negative/adsb-message-bad-altitude.sample.v1.json; do
+            if python3 multidomain/adsb_ingest.py "$bad" /tmp/should-not-exist.json >/tmp/adsb-negative.out 2>/tmp/adsb-negative.err; then
+              cat /tmp/adsb-negative.out
+              cat /tmp/adsb-negative.err >&2
+              echo "ERR: expected $bad to fail" >&2
+              exit 2
+            fi
+            cat /tmp/adsb-negative.err >&2 || true
+            echo "OK: rejected $bad"
+          done
