@@ -1,0 +1,48 @@
+{
+  "record_version": "v1",
+  "record_type": "EarthObservationProductRecord",
+  "record_id": "gaia:eo-product:sample-stac-item-001",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "product": {
+    "product_id": "eo-product:sample-stac-item-001",
+    "product_type": "STAC_ITEM",
+    "asset_refs": ["cog:sample:visual", "cog:sample:nir"],
+    "media_type": "application/geo+json",
+    "derived_indices": ["NDVI"]
+  },
+  "spatial": {
+    "crs": "EPSG:4326",
+    "geometry_encoding": "geojson",
+    "bbox": [-75.0, 39.5, -73.5, 41.0],
+    "h3_refs": ["h3:sample:892a1072b59ffff"]
+  },
+  "temporal": {
+    "observed_start": "2026-04-27T17:55:00Z",
+    "observed_end": "2026-04-27T18:00:00Z",
+    "published_at": "2026-04-27T18:20:00Z"
+  },
+  "source": {
+    "source_id": "sample-stac-catalog",
+    "source_type": "STAC",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["stac:item:sample-stac-item-001"],
+    "runtime_boundary_id": "runtime:stac-ingest:v0"
+  },
+  "governance": {
+    "privacy_tier": "public",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "allowed"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
