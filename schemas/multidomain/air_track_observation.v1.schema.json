@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/air_track_observation.v1.schema.json",
+  "title": "GAIA Air Track Observation v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "aircraft",
+    "track",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "AirTrackObservation"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "aircraft": {
+      "type": "object",
+      "required": ["aircraft_ref", "identity_refs"],
+      "properties": {
+        "aircraft_ref": {"type": "string"},
+        "identity_refs": {"type": "array", "items": {"type": "string"}},
+        "aircraft_type": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "track": {
+      "type": "object",
+      "required": ["observed_at", "position", "motion"],
+      "properties": {
+        "observed_at": {"type": "string"},
+        "position": {"type": "object"},
+        "motion": {"type": "object"},
+        "flight_status": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
