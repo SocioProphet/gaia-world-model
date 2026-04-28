@@ -1,0 +1,39 @@
+{
+  "input_version": "v1",
+  "source": "SensorThings",
+  "feed_ref": "sensorthings:feed:sample-field-station",
+  "thing": {
+    "thing_id": "thing:field-station:sample-001",
+    "name": "Sample Field Station 001"
+  },
+  "sensor": {
+    "sensor_ref": "sensor:field:soil-probe-001",
+    "sensor_type": "soil_probe",
+    "platform_ref": "platform:field-station:sample-001",
+    "observed_property_refs": ["soil_temperature_c", "soil_moisture_fraction"]
+  },
+  "observation": {
+    "observation_id": "sensorthings:observation:soil-probe-001:2026-04-27T18:15:00Z",
+    "observed_at": "2026-04-27T18:15:00Z",
+    "geometry_ref": {
+      "crs": "EPSG:4326",
+      "lat": 40.102,
+      "lon": -75.214,
+      "encoding": "wgs84"
+    },
+    "measurements": [
+      {"name": "soil_temperature_c", "value": 13.7, "unit": "degC", "quality": "nominal"},
+      {"name": "soil_moisture_fraction", "value": 0.31, "unit": "fraction", "quality": "nominal"}
+    ],
+    "quality": "nominal"
+  },
+  "attribution": {
+    "source_name": "Synthetic SensorThings fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic SensorThings fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
