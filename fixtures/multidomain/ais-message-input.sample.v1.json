@@ -1,0 +1,27 @@
+{
+  "input_version": "v1",
+  "source": "AIS",
+  "feed_ref": "ais:feed:sample-open-maritime",
+  "message": {
+    "message_id": "ais-message:sample:000000000:2026-04-27T18:00:00Z",
+    "mmsi": "000000000",
+    "imo": "0000000",
+    "vessel_name": "SAMPLE VESSEL",
+    "vessel_type": "cargo_sample",
+    "observed_at": "2026-04-27T18:00:00Z",
+    "lat": 40.7128,
+    "lon": -74.006,
+    "course_over_ground": 91.2,
+    "speed_over_ground_knots": 12.4,
+    "navigation_status": "under_way_using_engine"
+  },
+  "attribution": {
+    "source_name": "Synthetic AIS fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic AIS fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
