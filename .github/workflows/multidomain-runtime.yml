@@ -72,3 +72,62 @@ jobs:
             cat /tmp/stac-negative.err >&2 || true
             echo "OK: rejected $bad"
           done
+
+  ais-ingest:
+    name: Validate AIS ingest runtime proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run deterministic AIS ingest fixture
+        run: |
+          python3 multidomain/ais_ingest.py \
+            fixtures/multidomain/ais-message-input.sample.v1.json \
+            /tmp/gaia-ais-ingest-output.json
+
+      - name: Check AIS ingest output invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-ais-ingest-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['record_version'] == 'v1'
+          assert doc['record_type'] == 'VesselTrackObservation'
+          assert doc['record_id'] == 'gaia:vessel-track:sample:000000000:2026-04-27T18:00:00Z'
+          assert 'SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md' in doc['standards_refs']
+          assert 'SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md' in doc['standards_refs']
+          assert doc['vessel']['identity_refs'][0] == 'mmsi:000000000'
+          assert doc['track']['position']['lat'] == 40.7128
+          assert doc['track']['position']['lon'] == -74.006
+          assert doc['provenance']['runtime_boundary_id'] == 'runtime:ais-ingest:v0'
+          assert doc['classification']['sensitive_geo_policy_ref']
+          evidence = doc['runtime_evidence']
+          assert evidence['runtime_id'] == 'runtime:ais-ingest:v0'
+          assert evidence['input_manifest']['input_sha256'].startswith('sha256:')
+          assert evidence['output_manifest']['output_sha256'].startswith('sha256:')
+          assert evidence['policy']['network_posture'] == 'none_for_fixture_proof'
+          assert evidence['replay']['mode'] == 'deterministic_fixture'
+          print('AIS ingest runtime output passed')
+          PY
+
+      - name: Reject malformed AIS fixtures
+        run: |
+          set -euo pipefail
+          for bad in \
+            fixtures/multidomain/negative/ais-message-wrong-source.sample.v1.json \
+            fixtures/multidomain/negative/ais-message-bad-lat.sample.v1.json; do
+            if python3 multidomain/ais_ingest.py "$bad" /tmp/should-not-exist.json >/tmp/ais-negative.out 2>/tmp/ais-negative.err; then
+              cat /tmp/ais-negative.out
+              cat /tmp/ais-negative.err >&2
+              echo "ERR: expected $bad to fail" >&2
+              exit 2
+            fi
+            cat /tmp/ais-negative.err >&2 || true
+            echo "OK: rejected $bad"
+          done
