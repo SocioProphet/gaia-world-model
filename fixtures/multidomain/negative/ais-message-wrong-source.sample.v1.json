@@ -1,0 +1,24 @@
+{
+  "input_version": "v1",
+  "source": "NOT_AIS",
+  "feed_ref": "ais:feed:sample-open-maritime",
+  "message": {
+    "message_id": "ais-message:sample:wrong-source",
+    "mmsi": "000000000",
+    "observed_at": "2026-04-27T18:00:00Z",
+    "lat": 40.7128,
+    "lon": -74.006,
+    "course_over_ground": 91.2,
+    "speed_over_ground_knots": 12.4,
+    "navigation_status": "under_way_using_engine"
+  },
+  "attribution": {
+    "source_name": "Synthetic AIS negative fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic negative AIS fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
