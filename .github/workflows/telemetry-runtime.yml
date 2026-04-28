@@ -1,0 +1,76 @@
+name: Telemetry Runtime Proof
+
+on:
+  push:
+    paths:
+      - 'multidomain/telemetry_ingest.py'
+      - 'fixtures/multidomain/telemetry-packet-input.sample.v1.json'
+      - 'fixtures/multidomain/negative/telemetry-packet-*.json'
+      - '.github/workflows/telemetry-runtime.yml'
+  pull_request:
+    paths:
+      - 'multidomain/telemetry_ingest.py'
+      - 'fixtures/multidomain/telemetry-packet-input.sample.v1.json'
+      - 'fixtures/multidomain/negative/telemetry-packet-*.json'
+      - '.github/workflows/telemetry-runtime.yml'
+
+jobs:
+  telemetry-ingest:
+    name: Validate telemetry ingest runtime proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run deterministic telemetry ingest fixture
+        run: |
+          python3 multidomain/telemetry_ingest.py \
+            fixtures/multidomain/telemetry-packet-input.sample.v1.json \
+            /tmp/gaia-telemetry-ingest-output.json
+
+      - name: Check telemetry ingest output invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-telemetry-ingest-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['record_version'] == 'v1'
+          assert doc['record_type'] == 'TelemetryObservation'
+          assert doc['record_id'] == 'gaia:telemetry:sample-sat-001:2026-04-27T18:05:00Z'
+          assert 'SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md' in doc['standards_refs']
+          assert 'SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md' in doc['standards_refs']
+          assert doc['asset_ref'] == 'space-asset:sample-sat-001'
+          assert doc['telemetry']['channel_family'] == 'spacecraft_health'
+          assert doc['telemetry']['health_state'] == 'nominal'
+          assert len(doc['telemetry']['measurements']) >= 3
+          assert doc['provenance']['runtime_boundary_id'] == 'runtime:telemetry-ingest:v0'
+          assert doc['classification']['sensitive_geo_policy_ref']
+          evidence = doc['runtime_evidence']
+          assert evidence['runtime_id'] == 'runtime:telemetry-ingest:v0'
+          assert evidence['input_manifest']['input_sha256'].startswith('sha256:')
+          assert evidence['output_manifest']['output_sha256'].startswith('sha256:')
+          assert evidence['policy']['network_posture'] == 'none_for_fixture_proof'
+          assert evidence['replay']['mode'] == 'deterministic_fixture'
+          print('Telemetry ingest runtime output passed')
+          PY
+
+      - name: Reject malformed telemetry fixtures
+        run: |
+          set -euo pipefail
+          for bad in \
+            fixtures/multidomain/negative/telemetry-packet-wrong-source.sample.v1.json \
+            fixtures/multidomain/negative/telemetry-packet-empty-measurements.sample.v1.json; do
+            if python3 multidomain/telemetry_ingest.py "$bad" /tmp/should-not-exist.json >/tmp/telemetry-negative.out 2>/tmp/telemetry-negative.err; then
+              cat /tmp/telemetry-negative.out
+              cat /tmp/telemetry-negative.err >&2
+              echo "ERR: expected $bad to fail" >&2
+              exit 2
+            fi
+            cat /tmp/telemetry-negative.err >&2 || true
+            echo "OK: rejected $bad"
+          done
