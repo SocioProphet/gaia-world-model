@@ -34,6 +34,24 @@ CHECKS: List[Tuple[str, str, Iterable[str], str]] = [
         ["record_version", "record_type", "record_id", "standards_refs", "vessel", "track", "source", "provenance", "governance", "classification"],
         "VesselTrackObservation",
     ),
+    (
+        "schemas/multidomain/telemetry_observation.v1.schema.json",
+        "fixtures/multidomain/telemetry-observation.sample.v1.json",
+        ["record_version", "record_type", "record_id", "standards_refs", "asset_ref", "telemetry", "source", "provenance", "governance", "classification"],
+        "TelemetryObservation",
+    ),
+    (
+        "schemas/multidomain/air_track_observation.v1.schema.json",
+        "fixtures/multidomain/air-track-observation.sample.v1.json",
+        ["record_version", "record_type", "record_id", "standards_refs", "aircraft", "track", "source", "provenance", "governance", "classification"],
+        "AirTrackObservation",
+    ),
+    (
+        "schemas/multidomain/sensitive_geo_policy_record.v1.schema.json",
+        "fixtures/multidomain/sensitive-geo-policy.sample.v1.json",
+        ["record_version", "record_type", "record_id", "standards_refs", "policy", "scope", "controls", "source", "provenance", "governance", "classification"],
+        "SensitiveGeoPolicyRecord",
+    ),
 ]
 
 REQUIRED_STANDARDS = [
@@ -88,6 +106,13 @@ def check_governance(path: str, doc: Dict[str, Any]) -> None:
         fail(f"{path} classification missing sensitive_geo_policy_ref")
 
 
+def check_nested_required(path: str, doc: Dict[str, Any], field: str, required: Iterable[str]) -> None:
+    value = doc.get(field)
+    if not isinstance(value, dict):
+        fail(f"{path} {field} must be object")
+    check_required(f"{path}:{field}", value, required)
+
+
 def main() -> int:
     checked = 0
     for schema_path, fixture_path, required, record_type in CHECKS:
@@ -105,6 +130,20 @@ def main() -> int:
         check_governance(fixture_path, fixture)
         if not fixture.get("provenance", {}).get("derived_from"):
             fail(f"{fixture_path} missing provenance.derived_from")
+        if record_type == "TelemetryObservation":
+            check_nested_required(fixture_path, fixture, "telemetry", ["observed_at", "channel_family", "measurements", "health_state"])
+            measurements = fixture["telemetry"].get("measurements")
+            if not isinstance(measurements, list) or not measurements:
+                fail(f"{fixture_path}: telemetry.measurements must be non-empty")
+        if record_type == "AirTrackObservation":
+            check_nested_required(fixture_path, fixture, "aircraft", ["aircraft_ref", "identity_refs"])
+            check_nested_required(fixture_path, fixture, "track", ["observed_at", "position", "motion"])
+        if record_type == "SensitiveGeoPolicyRecord":
+            check_nested_required(fixture_path, fixture, "policy", ["policy_id", "policy_type", "sensitivity_tier", "default_action"])
+            check_nested_required(fixture_path, fixture, "scope", ["domain_lanes", "geometry_policy"])
+            check_nested_required(fixture_path, fixture, "controls", ["masking", "delay", "access_control", "audit"])
+            if "SocioProphet/socioprophet-agent-standards/docs/standards/020-multidomain-geospatial-agent-runtime.md" not in fixture.get("standards_refs", []):
+                fail(f"{fixture_path} missing agent runtime standards ref")
         checked += 1
     print(f"validated {checked} GAIA multi-domain geospatial fixture(s)")
     return 0
