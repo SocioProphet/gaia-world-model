@@ -52,6 +52,18 @@ CHECKS: List[Tuple[str, str, Iterable[str], str]] = [
         ["record_version", "record_type", "record_id", "standards_refs", "policy", "scope", "controls", "source", "provenance", "governance", "classification"],
         "SensitiveGeoPolicyRecord",
     ),
+    (
+        "schemas/multidomain/sensor_observation_envelope.v1.schema.json",
+        "fixtures/multidomain/sensor-observation-envelope.sample.v1.json",
+        ["record_version", "record_type", "record_id", "standards_refs", "sensor", "observation", "source", "provenance", "governance", "classification"],
+        "SensorObservationEnvelope",
+    ),
+    (
+        "schemas/multidomain/multi_domain_fusion_event.v1.schema.json",
+        "fixtures/multidomain/multi-domain-fusion-event.sample.v1.json",
+        ["record_version", "record_type", "record_id", "standards_refs", "fusion", "inputs", "outputs", "source", "provenance", "governance", "classification"],
+        "MultiDomainFusionEvent",
+    ),
 ]
 
 REQUIRED_STANDARDS = [
@@ -142,6 +154,20 @@ def main() -> int:
             check_nested_required(fixture_path, fixture, "policy", ["policy_id", "policy_type", "sensitivity_tier", "default_action"])
             check_nested_required(fixture_path, fixture, "scope", ["domain_lanes", "geometry_policy"])
             check_nested_required(fixture_path, fixture, "controls", ["masking", "delay", "access_control", "audit"])
+            if "SocioProphet/socioprophet-agent-standards/docs/standards/020-multidomain-geospatial-agent-runtime.md" not in fixture.get("standards_refs", []):
+                fail(f"{fixture_path} missing agent runtime standards ref")
+        if record_type == "SensorObservationEnvelope":
+            check_nested_required(fixture_path, fixture, "sensor", ["sensor_ref", "sensor_type", "platform_ref"])
+            check_nested_required(fixture_path, fixture, "observation", ["observed_at", "geometry_ref", "measurements"])
+            measurements = fixture["observation"].get("measurements")
+            if not isinstance(measurements, list) or not measurements:
+                fail(f"{fixture_path}: observation.measurements must be non-empty")
+        if record_type == "MultiDomainFusionEvent":
+            check_nested_required(fixture_path, fixture, "fusion", ["fusion_id", "fusion_type", "created_at", "confidence"])
+            if not isinstance(fixture.get("inputs"), list) or len(fixture["inputs"]) < 2:
+                fail(f"{fixture_path}: inputs must include at least two source records")
+            if not isinstance(fixture.get("outputs"), list) or not fixture["outputs"]:
+                fail(f"{fixture_path}: outputs must be non-empty")
             if "SocioProphet/socioprophet-agent-standards/docs/standards/020-multidomain-geospatial-agent-runtime.md" not in fixture.get("standards_refs", []):
                 fail(f"{fixture_path} missing agent runtime standards ref")
         checked += 1
