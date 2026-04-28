@@ -1,0 +1,51 @@
+{
+  "record_version": "v1",
+  "record_type": "AirTrackObservation",
+  "record_id": "gaia:air-track:sample:ABC123:2026-04-27T18:10:00Z",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "aircraft": {
+    "aircraft_ref": "aircraft:sample:abc123",
+    "identity_refs": ["icao24:ABC123", "callsign:SAMPLE01"],
+    "aircraft_type": "fixed_wing_sample"
+  },
+  "track": {
+    "observed_at": "2026-04-27T18:10:00Z",
+    "position": {
+      "crs": "EPSG:4326",
+      "lat": 39.8729,
+      "lon": -75.2437,
+      "altitude_ft": 12000,
+      "geometry_encoding": "wgs84"
+    },
+    "motion": {
+      "track_degrees": 64.0,
+      "ground_speed_knots": 310,
+      "vertical_rate_fpm": 0
+    },
+    "flight_status": "enroute_sample"
+  },
+  "source": {
+    "source_id": "sample-adsb-feed",
+    "source_type": "ADS-B",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["sample-adsb-feed:event:0001"],
+    "runtime_boundary_id": "runtime:adsb-ingest:v0"
+  },
+  "governance": {
+    "privacy_tier": "public",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "allowed"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
