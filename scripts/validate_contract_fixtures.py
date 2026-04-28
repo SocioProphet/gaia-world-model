@@ -60,6 +60,11 @@ CHECKS: List[Tuple[str, str, Iterable[str]]] = [
         ["observation_version", "observation_id", "observed_at", "platform", "sensor", "spatial", "assets_observed", "provenance", "integrity"],
     ),
     (
+        "schemas/navigation/lidar_runtime_rollback_plan.v1.schema.json",
+        "fixtures/navigation/lidar-runtime-rollback-plan.sample.v1.json",
+        ["plan_version", "plan_id", "created_at", "runtime_ref", "trigger_conditions", "rollback_actions", "preserve_refs", "demote_refs", "post_rollback_state", "evidence_refs", "approval", "provenance", "classification"],
+    ),
+    (
         "schemas/navigation/navigation_safety_case.v1.schema.json",
         "fixtures/navigation/navigation-safety-case.lidar-advisory.sample.v1.json",
         ["case_version", "case_id", "created_at", "scope", "claim", "safety_status", "evidence_refs", "validation", "approval", "limits", "provenance", "classification"],
@@ -140,6 +145,19 @@ def check_lidar_output(path: str, doc: Dict[str, Any]) -> None:
             fail(f"{path} asset {asset.get('asset_id')} missing condition.evidence_refs")
 
 
+def check_lidar_rollback(path: str, doc: Dict[str, Any]) -> None:
+    if not doc.get("trigger_conditions"):
+        fail(f"{path} must include trigger_conditions")
+    if not doc.get("rollback_actions"):
+        fail(f"{path} must include rollback_actions")
+    if doc.get("post_rollback_state") not in {"advisory", "superseded", "quarantined", "restored", "unknown"}:
+        fail(f"{path} has invalid post_rollback_state")
+    if doc.get("approval", {}).get("approval_required") is not True:
+        fail(f"{path} rollback plan must require approval")
+    if not doc.get("preserve_refs"):
+        fail(f"{path} rollback plan must preserve source refs")
+
+
 def check_safety_case(path: str, doc: Dict[str, Any]) -> None:
     if doc.get("safety_status") == "validated" and doc.get("validation", {}).get("validation_status") != "validated":
         fail(f"{path} cannot be validated unless validation.validation_status is validated")
@@ -162,6 +180,8 @@ def main() -> int:
                 if field not in declared_required:
                     fail(f"{schema_path} does not declare expected required field {field}")
         check_required(fixture_path, fixture, required)
+        if fixture_path.endswith("lidar-runtime-rollback-plan.sample.v1.json"):
+            check_lidar_rollback(fixture_path, fixture)
         if fixture_path.endswith("navigation-safety-case.lidar-advisory.sample.v1.json"):
             check_safety_case(fixture_path, fixture)
         checked += 1
