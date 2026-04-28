@@ -1,0 +1,54 @@
+{
+  "record_version": "v1",
+  "record_type": "MultiDomainFusionEvent",
+  "record_id": "gaia:fusion:soil-eo-sensor-vessel-air:sample-001",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md",
+    "SocioProphet/socioprophet-agent-standards/docs/standards/020-multidomain-geospatial-agent-runtime.md"
+  ],
+  "fusion": {
+    "fusion_id": "fusion:sample:soil-eo-sensor-vessel-air-001",
+    "fusion_type": "environmental_context_with_transport_awareness",
+    "created_at": "2026-04-27T18:30:00Z",
+    "confidence": 0.76,
+    "decision_card_ref": "decision-card:sample:soil-transport-context"
+  },
+  "inputs": [
+    {"role": "earth_observation", "record_ref": "gaia:eo-product:sample-stac-item-001"},
+    {"role": "field_sensor", "record_ref": "gaia:sensor-observation:soil-probe-001:2026-04-27T18:15:00Z"},
+    {"role": "maritime_context", "record_ref": "gaia:vessel-track:sample:000000000:2026-04-27T18:00:00Z"},
+    {"role": "air_context", "record_ref": "gaia:air-track:sample:ABC123:2026-04-27T18:10:00Z"},
+    {"role": "sensitive_geo_policy", "record_ref": "gaia:sensitive-geo-policy:standard-delay-mask-v1"}
+  ],
+  "outputs": [
+    {"artifact_type": "context_score", "value": "soil_context_transport_awareness_sample"},
+    {"artifact_type": "advisory_status", "value": "advisory_only"}
+  ],
+  "source": {
+    "source_id": "sample-fusion-runtime",
+    "source_type": "synthetic_fusion",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": [
+      "gaia:eo-product:sample-stac-item-001",
+      "gaia:sensor-observation:soil-probe-001:2026-04-27T18:15:00Z",
+      "gaia:vessel-track:sample:000000000:2026-04-27T18:00:00Z",
+      "gaia:air-track:sample:ABC123:2026-04-27T18:10:00Z"
+    ],
+    "runtime_boundary_id": "runtime:multidomain-fusion:v0"
+  },
+  "governance": {
+    "privacy_tier": "public",
+    "safety_tier": "sensitive_geo",
+    "retention_tier": "sample",
+    "redistribution": "restricted"
+  },
+  "classification": {
+    "security_marking": "public_sample_advisory",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:standard-delay-mask-v1"
+  }
+}
