@@ -1,0 +1,48 @@
+{
+  "input_version": "v1",
+  "source": "STAC",
+  "catalog_ref": "stac:catalog:sample-eo",
+  "collection_ref": "stac:collection:sample-sentinel-like",
+  "item": {
+    "id": "sample-stac-item-001",
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "bbox": [-75.0, 39.5, -73.5, 41.0],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[[-75.0, 39.5], [-73.5, 39.5], [-73.5, 41.0], [-75.0, 41.0], [-75.0, 39.5]]]
+    },
+    "properties": {
+      "datetime": "2026-04-27T18:00:00Z",
+      "start_datetime": "2026-04-27T17:55:00Z",
+      "end_datetime": "2026-04-27T18:00:00Z",
+      "platform": "sample-sat-001",
+      "instruments": ["sample-optical-payload-001"],
+      "eo:cloud_cover": 12.5
+    },
+    "assets": {
+      "visual": {
+        "href": "https://example.invalid/sample/visual.tif",
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "roles": ["visual", "data"]
+      },
+      "nir": {
+        "href": "https://example.invalid/sample/nir.tif",
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "roles": ["data"]
+      }
+    },
+    "links": []
+  },
+  "derived_indices": ["NDVI"],
+  "h3_refs": ["h3:sample:892a1072b59ffff"],
+  "attribution": {
+    "source_name": "Synthetic STAC fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic STAC fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
