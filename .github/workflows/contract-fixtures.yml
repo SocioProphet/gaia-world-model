@@ -6,6 +6,7 @@ on:
       - 'schemas/**'
       - 'fixtures/**'
       - 'scripts/validate_contract_fixtures.py'
+      - 'scripts/validate_multidomain_fixtures.py'
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
@@ -20,6 +21,7 @@ on:
       - 'schemas/**'
       - 'fixtures/**'
       - 'scripts/validate_contract_fixtures.py'
+      - 'scripts/validate_multidomain_fixtures.py'
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
@@ -44,6 +46,9 @@ jobs:
 
       - name: Validate contract fixture pairs
         run: python3 scripts/validate_contract_fixtures.py
+
+      - name: Validate multi-domain geospatial fixtures
+        run: python3 scripts/validate_multidomain_fixtures.py
 
       - name: Convert OFIF observation into GAIA artifact
         run: |
