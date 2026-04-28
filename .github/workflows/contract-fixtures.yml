@@ -168,3 +168,17 @@ jobs:
           assert all(asset['provenance']['source_refs'] for asset in doc['assets'])
           print('LiDAR feature extraction output passed')
           PY
+
+      - name: Check LiDAR malformed input fails closed
+        run: |
+          set +e
+          python3 navigation/lidar_feature_extract.py \
+            fixtures/navigation/rail-corridor-lidar-observation.malformed-missing-point-cloud.sample.v1.json \
+            /tmp/lidar-malformed-output.json
+          status=$?
+          set -e
+          if [ "$status" -eq 0 ]; then
+            echo "expected malformed LiDAR input to fail"
+            exit 1
+          fi
+          echo "malformed LiDAR input failed closed as expected"
