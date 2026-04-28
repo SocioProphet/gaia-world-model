@@ -2,7 +2,8 @@
 """Deterministic v0 STAC ingestion proof for GAIA.
 
 Reads a small STAC-like item fixture and emits a standards-bound
-EarthObservationProductRecord. This is a fixture proof, not a network client.
+EarthObservationProductRecord with a runtime evidence bundle. This is a fixture
+proof, not a network client.
 
 Usage:
   python3 multidomain/stac_ingest.py \
@@ -12,6 +13,7 @@ Usage:
 
 from __future__ import annotations
 
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -23,10 +25,19 @@ REQUIRED_STANDARDS = [
     "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
     "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md",
 ]
+AGENT_STANDARD_REF = "SocioProphet/socioprophet-agent-standards/docs/standards/020-multidomain-geospatial-agent-runtime.md"
 
 
 def fail(message: str) -> None:
     raise SystemExit(f"ERROR: {message}")
+
+
+def canonical_bytes(value: Dict[str, Any]) -> bytes:
+    return json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+
+
+def sha256_ref(value: Dict[str, Any]) -> str:
+    return "sha256:" + hashlib.sha256(canonical_bytes(value)).hexdigest()
 
 
 def load_json(path: Path) -> Dict[str, Any]:
@@ -62,6 +73,38 @@ def asset_refs(assets: Dict[str, Any]) -> List[str]:
     return refs
 
 
+def build_runtime_evidence(input_doc: Dict[str, Any], output_record: Dict[str, Any]) -> Dict[str, Any]:
+    input_hash = sha256_ref(input_doc)
+    output_hash = sha256_ref(output_record)
+    return {
+        "evidence_version": "v1",
+        "evidence_id": f"evidence:runtime:stac-ingest:{output_record['record_id']}",
+        "runtime_id": "runtime:stac-ingest:v0",
+        "runtime_class": "ingest",
+        "standards_refs": [*REQUIRED_STANDARDS, AGENT_STANDARD_REF],
+        "input_manifest": {
+            "input_ref": f"stac:item:{input_doc['item']['id']}",
+            "input_sha256": input_hash,
+            "input_schema_hint": "stac-like-item-fixture.v1"
+        },
+        "output_manifest": {
+            "output_ref": output_record["record_id"],
+            "output_sha256": output_hash,
+            "output_schema_ref": "schemas/multidomain/earth_observation_product_record.v1.schema.json"
+        },
+        "policy": {
+            "approval_required": False,
+            "sensitive_geo_handling": "preserve_policy_ref",
+            "network_posture": "none_for_fixture_proof",
+            "secret_posture": "none_for_fixture_proof"
+        },
+        "replay": {
+            "mode": "deterministic_fixture",
+            "command": "python3 multidomain/stac_ingest.py fixtures/multidomain/stac-item-input.sample.v1.json /tmp/gaia-stac-ingest-output.json"
+        }
+    }
+
+
 def ingest(input_doc: Dict[str, Any]) -> Dict[str, Any]:
     require_fields(input_doc, REQUIRED_TOP, "STAC input")
     if input_doc.get("source") != "STAC":
@@ -95,7 +138,7 @@ def ingest(input_doc: Dict[str, Any]) -> Dict[str, Any]:
     if not isinstance(h3_refs, list):
         fail("h3_refs must be an array when present")
 
-    return {
+    output_record = {
         "record_version": "v1",
         "record_type": "EarthObservationProductRecord",
         "record_id": f"gaia:eo-product:{item_id}",
@@ -141,6 +184,8 @@ def ingest(input_doc: Dict[str, Any]) -> Dict[str, Any]:
         },
         "classification": classification,
     }
+    output_record["runtime_evidence"] = build_runtime_evidence(input_doc, output_record)
+    return output_record
 
 
 def main(argv: List[str]) -> int:
