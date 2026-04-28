@@ -1,0 +1,49 @@
+{
+  "record_version": "v1",
+  "record_type": "SensitiveGeoPolicyRecord",
+  "record_id": "gaia:sensitive-geo-policy:standard-delay-mask-v1",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md",
+    "SocioProphet/socioprophet-agent-standards/docs/standards/020-multidomain-geospatial-agent-runtime.md"
+  ],
+  "policy": {
+    "policy_id": "policy:sensitive-geo:standard-delay-mask-v1",
+    "policy_type": "mask_and_delay",
+    "sensitivity_tier": "sensitive_geo",
+    "default_action": "mask_exact_location_and_delay_publication",
+    "authorized_use_refs": ["public_safety", "humanitarian_response", "customer_owned_authorized_ops"]
+  },
+  "scope": {
+    "domain_lanes": ["space-telemetry", "maritime-domain-awareness", "air-domain-awareness", "defense-public-safety"],
+    "geometry_policy": "reduce_precision_for_public_outputs",
+    "jurisdiction_refs": ["jurisdiction:sample"]
+  },
+  "controls": {
+    "masking": "reduce_or_bucket_exact_coordinates_when_sensitive",
+    "delay": "apply_delay_window_when_required_by_source_or_policy",
+    "access_control": "role_and_project_scoped_access_required_for_unmasked_views",
+    "audit": "record_unmasking_access_and_export_attempts"
+  },
+  "source": {
+    "source_id": "socioprophet-policy-fixture",
+    "source_type": "synthetic_policy",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["standard:080", "standard:096", "standard:020"],
+    "runtime_boundary_id": "runtime:sensitive-geo-policy-eval:v0"
+  },
+  "governance": {
+    "privacy_tier": "sensitive",
+    "safety_tier": "sensitive_geo",
+    "retention_tier": "policy",
+    "redistribution": "restricted"
+  },
+  "classification": {
+    "security_marking": "public_sample_policy",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:standard-delay-mask-v1"
+  }
+}
