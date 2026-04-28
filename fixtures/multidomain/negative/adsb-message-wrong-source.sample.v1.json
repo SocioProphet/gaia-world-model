@@ -1,0 +1,26 @@
+{
+  "input_version": "v1",
+  "source": "NOT_ADSB",
+  "feed_ref": "adsb:feed:sample-open-air",
+  "message": {
+    "message_id": "adsb-message:sample:wrong-source",
+    "icao24": "ABC123",
+    "observed_at": "2026-04-27T18:10:00Z",
+    "lat": 39.8729,
+    "lon": -75.2437,
+    "altitude_ft": 12000,
+    "track_degrees": 64.0,
+    "ground_speed_knots": 310,
+    "vertical_rate_fpm": 0,
+    "flight_status": "enroute_sample"
+  },
+  "attribution": {
+    "source_name": "Synthetic ADS-B negative fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic negative ADS-B fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
