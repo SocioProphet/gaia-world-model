@@ -1,0 +1,27 @@
+{
+  "input_version": "v1",
+  "source": "STAC",
+  "catalog_ref": "stac:catalog:sample-eo",
+  "collection_ref": "stac:collection:sample-sentinel-like",
+  "item": {
+    "id": "sample-stac-item-missing-assets",
+    "type": "Feature",
+    "bbox": [-75.0, 39.5, -73.5, 41.0],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[[-75.0, 39.5], [-73.5, 39.5], [-73.5, 41.0], [-75.0, 41.0], [-75.0, 39.5]]]
+    },
+    "properties": {
+      "datetime": "2026-04-27T18:00:00Z"
+    }
+  },
+  "attribution": {
+    "source_name": "Synthetic STAC negative fixture",
+    "license_ref": "sample-only",
+    "attribution_text": "Synthetic negative STAC fixture for GAIA runtime validation"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
