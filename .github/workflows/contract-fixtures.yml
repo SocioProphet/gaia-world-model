@@ -15,6 +15,7 @@ on:
       - 'geospatial/osm_tile_export.py'
       - 'geospatial/osm_route_graph.py'
       - 'navigation/lidar_feature_extract.py'
+      - 'navigation/lidar_rollback_receipt.py'
       - '.github/workflows/contract-fixtures.yml'
   pull_request:
     paths:
@@ -30,6 +31,7 @@ on:
       - 'geospatial/osm_tile_export.py'
       - 'geospatial/osm_route_graph.py'
       - 'navigation/lidar_feature_extract.py'
+      - 'navigation/lidar_rollback_receipt.py'
       - '.github/workflows/contract-fixtures.yml'
 
 jobs:
@@ -182,3 +184,25 @@ jobs:
             exit 1
           fi
           echo "malformed LiDAR input failed closed as expected"
+
+      - name: Build LiDAR rollback receipt
+        run: |
+          python3 navigation/lidar_rollback_receipt.py \
+            fixtures/navigation/lidar-runtime-rollback-plan.sample.v1.json \
+            /tmp/lidar-rollback-receipt.json
+
+      - name: Check LiDAR rollback receipt
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/lidar-rollback-receipt.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          assert doc['receipt_type'] == 'gaia.navigation.lidar_rollback_receipt'
+          assert doc['mutation_policy']['source_observations_mutated'] is False
+          assert doc['mutation_policy']['point_cloud_artifacts_mutated'] is False
+          assert doc['mutation_policy']['derived_outputs_mutated'] is False
+          assert doc['preserve_refs']
+          assert doc['demote_refs']
+          assert doc['approval']['approval_required'] is True
+          print('LiDAR rollback receipt passed')
+          PY
