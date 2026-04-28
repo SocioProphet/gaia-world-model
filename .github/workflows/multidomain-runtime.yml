@@ -48,5 +48,27 @@ jobs:
           assert doc['temporal']['observed_start']
           assert doc['provenance']['runtime_boundary_id'] == 'runtime:stac-ingest:v0'
           assert doc['classification']['sensitive_geo_policy_ref']
+          evidence = doc['runtime_evidence']
+          assert evidence['runtime_id'] == 'runtime:stac-ingest:v0'
+          assert evidence['input_manifest']['input_sha256'].startswith('sha256:')
+          assert evidence['output_manifest']['output_sha256'].startswith('sha256:')
+          assert evidence['policy']['network_posture'] == 'none_for_fixture_proof'
+          assert evidence['replay']['mode'] == 'deterministic_fixture'
           print('STAC ingest runtime output passed')
           PY
+
+      - name: Reject malformed STAC fixtures
+        run: |
+          set -euo pipefail
+          for bad in \
+            fixtures/multidomain/negative/stac-item-missing-assets.sample.v1.json \
+            fixtures/multidomain/negative/stac-item-wrong-source.sample.v1.json; do
+            if python3 multidomain/stac_ingest.py "$bad" /tmp/should-not-exist.json >/tmp/stac-negative.out 2>/tmp/stac-negative.err; then
+              cat /tmp/stac-negative.out
+              cat /tmp/stac-negative.err >&2
+              echo "ERR: expected $bad to fail" >&2
+              exit 2
+            fi
+            cat /tmp/stac-negative.err >&2 || true
+            echo "OK: rejected $bad"
+          done
