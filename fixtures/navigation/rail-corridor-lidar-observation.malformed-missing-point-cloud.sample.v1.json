@@ -1,0 +1,34 @@
+{
+  "observation_version": "v1",
+  "observation_id": "gaia-nav-lidar-rail-demo-malformed-0001",
+  "observed_at": "2026-04-26T15:30:00Z",
+  "platform": {
+    "platform_type": "trainborne",
+    "platform_id": "demo-rail-scan-platform-001"
+  },
+  "sensor": {
+    "sensor_type": "lidar",
+    "sensor_id": "demo-lidar-rail-001"
+  },
+  "spatial": {
+    "corridor_ref": "rail-corridor-demo-a",
+    "geometry_ref": "geometry://demo/rail-corridor-a/segment-001",
+    "h3_cells": ["8928308280fffff"],
+    "crs": "EPSG:4326"
+  },
+  "assets_observed": [
+    {
+      "asset_type": "RailSegment",
+      "asset_ref": "rail-segment-demo-a-001",
+      "condition_class": "nominal",
+      "confidence": 0.88
+    }
+  ],
+  "provenance": {
+    "source_refs": ["fixture://navigation/rail-corridor-lidar/malformed-missing-point-cloud"]
+  },
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "navigation", "lidar", "malformed-input"]
+  }
+}
