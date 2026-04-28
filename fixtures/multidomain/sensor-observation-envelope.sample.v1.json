@@ -1,0 +1,50 @@
+{
+  "record_version": "v1",
+  "record_type": "SensorObservationEnvelope",
+  "record_id": "gaia:sensor-observation:soil-probe-001:2026-04-27T18:15:00Z",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "sensor": {
+    "sensor_ref": "sensor:field:soil-probe-001",
+    "sensor_type": "soil_probe",
+    "platform_ref": "platform:field-station:sample-001",
+    "observed_property_refs": ["soil_temperature_c", "soil_moisture_fraction"]
+  },
+  "observation": {
+    "observed_at": "2026-04-27T18:15:00Z",
+    "geometry_ref": {
+      "crs": "EPSG:4326",
+      "lat": 40.102,
+      "lon": -75.214,
+      "encoding": "wgs84"
+    },
+    "measurements": [
+      {"name": "soil_temperature_c", "value": 13.7, "unit": "degC", "quality": "nominal"},
+      {"name": "soil_moisture_fraction", "value": 0.31, "unit": "fraction", "quality": "nominal"}
+    ],
+    "quality": "nominal"
+  },
+  "source": {
+    "source_id": "sample-sensorthings-feed",
+    "source_type": "SensorThings",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["sample-sensorthings-feed:observation:0001"],
+    "runtime_boundary_id": "runtime:sensorthings-ingest:v0"
+  },
+  "governance": {
+    "privacy_tier": "public",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "allowed"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
