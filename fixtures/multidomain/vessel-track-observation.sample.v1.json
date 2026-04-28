@@ -1,0 +1,49 @@
+{
+  "record_version": "v1",
+  "record_type": "VesselTrackObservation",
+  "record_id": "gaia:vessel-track:sample:000000000:2026-04-27T18:00:00Z",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "vessel": {
+    "vessel_ref": "vessel:sample:imo-0000000",
+    "identity_refs": ["mmsi:000000000", "imo:0000000"],
+    "vessel_type": "cargo_sample"
+  },
+  "track": {
+    "observed_at": "2026-04-27T18:00:00Z",
+    "position": {
+      "crs": "EPSG:4326",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "geometry_encoding": "geojson"
+    },
+    "motion": {
+      "course_over_ground": 91.2,
+      "speed_over_ground_knots": 12.4
+    },
+    "navigation_status": "under_way_using_engine"
+  },
+  "source": {
+    "source_id": "sample-ais-feed",
+    "source_type": "AIS",
+    "license_ref": "sample-only",
+    "access_tier": "open"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["sample-ais-feed:event:0001"],
+    "runtime_boundary_id": "runtime:ais-ingest:v0"
+  },
+  "governance": {
+    "privacy_tier": "public",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "allowed"
+  },
+  "classification": {
+    "security_marking": "public_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:none-for-synthetic-fixture"
+  }
+}
