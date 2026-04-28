@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/multidomain/multi_domain_fusion_event.v1.schema.json",
+  "title": "GAIA Multi-Domain Fusion Event v1",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "fusion",
+    "inputs",
+    "outputs",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "MultiDomainFusionEvent"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "fusion": {
+      "type": "object",
+      "required": ["fusion_id", "fusion_type", "created_at", "confidence"],
+      "properties": {
+        "fusion_id": {"type": "string"},
+        "fusion_type": {"type": "string"},
+        "created_at": {"type": "string"},
+        "confidence": {"type": "number"},
+        "decision_card_ref": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "inputs": {"type": "array", "items": {"type": "object"}},
+    "outputs": {"type": "array", "items": {"type": "object"}},
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}
