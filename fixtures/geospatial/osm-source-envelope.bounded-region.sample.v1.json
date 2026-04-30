@@ -1,0 +1,45 @@
+{
+  "envelope_version": "v1",
+  "envelope_id": "osm-source-envelope-lower-manhattan-2026-04-26",
+  "source": "OpenStreetMap",
+  "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+  "extracted_at": "2026-04-26T00:00:00Z",
+  "region": {
+    "region_name": "Lower Manhattan Bounded Extract",
+    "bbox": [-74.012, 40.705, -73.998, 40.718],
+    "crs": "EPSG:4326"
+  },
+  "element_summary": {
+    "node_count": 1,
+    "way_count": 1,
+    "relation_count": 1,
+    "feature_refs": [
+      "osm://node/111111",
+      "osm://way/424242",
+      "osm://relation/999"
+    ]
+  },
+  "h3_coverage": [
+    "8928308280fffff",
+    "89283082807ffff",
+    "8928308281fffff"
+  ],
+  "attribution": {
+    "source_name": "OpenStreetMap",
+    "license_ref": "ODbL-1.0",
+    "attribution_text": "© OpenStreetMap contributors",
+    "source_url": "https://www.openstreetmap.org"
+  },
+  "provenance": {
+    "source_refs": [
+      "osm-extract://bounded/lower-manhattan/2026-04-26"
+    ],
+    "content_hash": "sha256:osmsourceenvelopeboundedmanhattan00000000000000000000000000000",
+    "created_at": "2026-04-27T06:00:00Z",
+    "runtime_refs": []
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": ["demo", "osm", "bounded-extract", "geospatial", "advisory"]
+  }
+}

@@ -40,6 +40,11 @@ CHECKS: List[Tuple[str, str, Iterable[str]]] = [
         ["card_version", "card_id", "created_at", "situation_type", "summary", "scope", "evidence_refs", "recommendations", "policy", "provenance"],
     ),
     (
+        "schemas/geospatial/osm_source_envelope.v1.schema.json",
+        "fixtures/geospatial/osm-source-envelope.bounded-region.sample.v1.json",
+        ["envelope_version", "envelope_id", "source", "extract_ref", "extracted_at", "region", "element_summary", "h3_coverage", "attribution", "provenance", "classification"],
+    ),
+    (
         "schemas/geospatial/osm_feature_binding.v1.schema.json",
         "fixtures/geospatial/osm-road-feature-binding.sample.v1.json",
         ["binding_version", "binding_id", "source", "osm_ref", "gaia_ref", "spatial", "attribution", "provenance", "classification"],
