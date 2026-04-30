@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/geospatial/osm_source_envelope.v1.schema.json",
+  "title": "OSMSourceEnvelope v1",
+  "description": "Bounded OSM regional extract envelope. Models the provenance, attribution, and spatial bounds of a fixture-backed OSM ingestion slice. Not whole-planet ingestion; not production runtime.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "envelope_version",
+    "envelope_id",
+    "source",
+    "extract_ref",
+    "extracted_at",
+    "region",
+    "element_summary",
+    "h3_coverage",
+    "attribution",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "envelope_version": {"type": "string", "const": "v1"},
+    "envelope_id": {"type": "string"},
+    "source": {"type": "string", "const": "OpenStreetMap"},
+    "extract_ref": {"type": "string"},
+    "extracted_at": {"type": "string", "format": "date-time"},
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["region_name", "bbox", "crs"],
+      "properties": {
+        "region_name": {"type": "string"},
+        "bbox": {
+          "type": "array",
+          "items": {"type": "number"},
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "[min_lon, min_lat, max_lon, max_lat] in the declared CRS"
+        },
+        "crs": {"type": "string"}
+      }
+    },
+    "element_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node_count", "way_count", "relation_count"],
+      "properties": {
+        "node_count": {"type": "integer", "minimum": 0},
+        "way_count": {"type": "integer", "minimum": 0},
+        "relation_count": {"type": "integer", "minimum": 0},
+        "feature_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "URIs or binding IDs for the individual OSM elements in this extract"
+        }
+      }
+    },
+    "h3_coverage": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1,
+      "description": "H3 cell identifiers covering the extract bounding box at resolution 9"
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "license_ref", "attribution_text"],
+      "properties": {
+        "source_name": {"type": "string"},
+        "license_ref": {"type": "string", "const": "ODbL-1.0"},
+        "attribution_text": {"type": "string"},
+        "source_url": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_refs", "created_at"],
+      "properties": {
+        "source_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1
+        },
+        "content_hash": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data_class": {
+          "type": "string",
+          "enum": ["public", "internal", "restricted", "sensitive"]
+        },
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
