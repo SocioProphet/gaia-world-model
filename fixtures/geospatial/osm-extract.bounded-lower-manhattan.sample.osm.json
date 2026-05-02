@@ -1,0 +1,85 @@
+{
+  "input_version": "v1",
+  "source": "OpenStreetMap",
+  "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+  "extracted_at": "2026-04-26T00:00:00Z",
+  "region": {
+    "region_name": "Lower Manhattan Bounded Extract",
+    "bbox": [-74.012, 40.705, -73.998, 40.718],
+    "crs": "EPSG:4326"
+  },
+  "features": [
+    {
+      "osm_type": "node",
+      "osm_id": "111111",
+      "version": "3",
+      "timestamp": "2026-04-26T00:00:00Z",
+      "changeset": "bounded-demo",
+      "tags": {
+        "amenity": "crossing",
+        "name": "Demo Intersection Node"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.006, 40.7075]
+      },
+      "h3_cells": ["8928308280fffff"],
+      "bbox": [-74.006, 40.7075, -74.006, 40.7075]
+    },
+    {
+      "osm_type": "way",
+      "osm_id": "424242",
+      "version": "1",
+      "timestamp": "2026-04-26T00:00:00Z",
+      "changeset": "bounded-demo",
+      "tags": {
+        "highway": "residential",
+        "name": "Demo Corridor Road",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-74.012, 40.705],
+          [-74.006, 40.7128],
+          [-73.998, 40.718]
+        ]
+      },
+      "h3_cells": ["8928308280fffff", "89283082807ffff"],
+      "bbox": [-74.012, 40.705, -73.998, 40.718]
+    },
+    {
+      "osm_type": "relation",
+      "osm_id": "999",
+      "version": "2",
+      "timestamp": "2026-04-26T00:00:00Z",
+      "changeset": "bounded-demo",
+      "tags": {
+        "type": "route",
+        "route": "road",
+        "name": "Demo Relation Route"
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-74.012, 40.705],
+            [-73.998, 40.718]
+          ]
+        ]
+      },
+      "h3_cells": ["8928308281fffff"],
+      "bbox": [-74.012, 40.705, -73.998, 40.718]
+    }
+  ],
+  "attribution": {
+    "source_name": "OpenStreetMap",
+    "license_ref": "ODbL-1.0",
+    "attribution_text": "\u00a9 OpenStreetMap contributors",
+    "source_url": "https://www.openstreetmap.org"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": ["demo", "osm", "bounded-extract", "geospatial", "advisory"]
+  }
+}

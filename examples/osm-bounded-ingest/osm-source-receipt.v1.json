@@ -1,0 +1,47 @@
+{
+  "receipt_version": "v1",
+  "receipt_id": "osm-source-receipt-lower-manhattan-bounded-extract-2026-04-26",
+  "artifact_type": "gaia.osm_bounded_ingest.source_receipt",
+  "fixture_path": "fixtures/geospatial/osm-extract.bounded-lower-manhattan.sample.osm.json",
+  "fixture_digest": "sha256:e5baba1a98e0e59887bf19fe840b0544904f23d05e5fb9989a9f53f86d1b360b",
+  "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+  "extracted_at": "2026-04-26T00:00:00Z",
+  "generated_at": "2026-04-27T06:10:00Z",
+  "region": {
+    "region_name": "Lower Manhattan Bounded Extract",
+    "bbox": [
+      -74.012,
+      40.705,
+      -73.998,
+      40.718
+    ],
+    "crs": "EPSG:4326"
+  },
+  "element_summary": {
+    "node_count": 1,
+    "way_count": 1,
+    "relation_count": 1,
+    "total_count": 3
+  },
+  "output_refs": [
+    "osm-feature-bindings.v1.json",
+    "osm-layer-manifest-candidate.v1.json"
+  ],
+  "route_graph_status": "non-goal: route graph generation is deferred to a future task",
+  "attribution": {
+    "source_name": "OpenStreetMap",
+    "license_ref": "ODbL-1.0",
+    "attribution_text": "© OpenStreetMap contributors",
+    "source_url": "https://www.openstreetmap.org"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": [
+      "demo",
+      "osm",
+      "bounded-extract",
+      "geospatial",
+      "advisory"
+    ]
+  }
+}

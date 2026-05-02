@@ -1,0 +1,229 @@
+{
+  "bindings_version": "v1",
+  "artifact_type": "gaia.osm_bounded_source_adapter.bindings",
+  "envelope_ref": "osm-source-envelope-lower-manhattan-bounded-extract-2026-04-26",
+  "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+  "created_at": "2026-04-27T06:10:00Z",
+  "bindings": [
+    {
+      "binding_version": "v1",
+      "binding_id": "osm-binding-ingest-node-111111",
+      "source": "OpenStreetMap",
+      "osm_ref": {
+        "osm_type": "node",
+        "osm_id": "111111",
+        "version": "3",
+        "timestamp": "2026-04-26T00:00:00Z",
+        "changeset": "bounded-demo",
+        "tags": {
+          "amenity": "crossing",
+          "name": "Demo Intersection Node"
+        }
+      },
+      "gaia_ref": {
+        "entity_id": "gaia-spatialfeature-osm-node-111111",
+        "entity_type": "SpatialFeature",
+        "authority": "GAIA"
+      },
+      "spatial": {
+        "geometry_ref": "geometry://bounded/osm/node/111111",
+        "geometry_type": "Point",
+        "h3_cells": [
+          "8928308280fffff"
+        ],
+        "bbox": [
+          -74.006,
+          40.7075,
+          -74.006,
+          40.7075
+        ],
+        "crs": "EPSG:4326"
+      },
+      "attribution": {
+        "source_name": "OpenStreetMap",
+        "license_ref": "ODbL-1.0",
+        "attribution_text": "© OpenStreetMap contributors",
+        "source_url": "https://www.openstreetmap.org"
+      },
+      "provenance": {
+        "source_refs": [
+          "osm://node/111111"
+        ],
+        "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+        "runtime_refs": [
+          "gaia-bounded-osm-ingest-runner@v1"
+        ],
+        "content_hash": "sha256:2a4af4791a0b86a6f37ed3697be4d699bbd1bd91f8cb47962abf2b73c6ccdd03",
+        "created_at": "2026-04-27T06:10:00Z",
+        "fixture_digest": "sha256:e5baba1a98e0e59887bf19fe840b0544904f23d05e5fb9989a9f53f86d1b360b"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": [
+          "demo",
+          "osm",
+          "bounded-extract",
+          "geospatial",
+          "advisory"
+        ]
+      }
+    },
+    {
+      "binding_version": "v1",
+      "binding_id": "osm-binding-ingest-way-424242",
+      "source": "OpenStreetMap",
+      "osm_ref": {
+        "osm_type": "way",
+        "osm_id": "424242",
+        "version": "1",
+        "timestamp": "2026-04-26T00:00:00Z",
+        "changeset": "bounded-demo",
+        "tags": {
+          "highway": "residential",
+          "name": "Demo Corridor Road",
+          "surface": "asphalt"
+        }
+      },
+      "gaia_ref": {
+        "entity_id": "gaia-roadsegment-osm-way-424242",
+        "entity_type": "RoadSegment",
+        "authority": "GAIA"
+      },
+      "spatial": {
+        "geometry_ref": "geometry://bounded/osm/way/424242",
+        "geometry_type": "LineString",
+        "h3_cells": [
+          "8928308280fffff",
+          "89283082807ffff"
+        ],
+        "bbox": [
+          -74.012,
+          40.705,
+          -73.998,
+          40.718
+        ],
+        "crs": "EPSG:4326"
+      },
+      "attribution": {
+        "source_name": "OpenStreetMap",
+        "license_ref": "ODbL-1.0",
+        "attribution_text": "© OpenStreetMap contributors",
+        "source_url": "https://www.openstreetmap.org"
+      },
+      "provenance": {
+        "source_refs": [
+          "osm://way/424242"
+        ],
+        "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+        "runtime_refs": [
+          "gaia-bounded-osm-ingest-runner@v1"
+        ],
+        "content_hash": "sha256:f5f99122e6f9340e7b6e496e408b474ae8c89a49e2a8ce4d33249616d90d2796",
+        "created_at": "2026-04-27T06:10:00Z",
+        "fixture_digest": "sha256:e5baba1a98e0e59887bf19fe840b0544904f23d05e5fb9989a9f53f86d1b360b"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": [
+          "demo",
+          "osm",
+          "bounded-extract",
+          "geospatial",
+          "advisory"
+        ]
+      }
+    },
+    {
+      "binding_version": "v1",
+      "binding_id": "osm-binding-ingest-relation-999",
+      "source": "OpenStreetMap",
+      "osm_ref": {
+        "osm_type": "relation",
+        "osm_id": "999",
+        "version": "2",
+        "timestamp": "2026-04-26T00:00:00Z",
+        "changeset": "bounded-demo",
+        "tags": {
+          "type": "route",
+          "route": "road",
+          "name": "Demo Relation Route"
+        }
+      },
+      "gaia_ref": {
+        "entity_id": "gaia-spatialfeature-osm-relation-999",
+        "entity_type": "SpatialFeature",
+        "authority": "GAIA"
+      },
+      "spatial": {
+        "geometry_ref": "geometry://bounded/osm/relation/999",
+        "geometry_type": "MultiLineString",
+        "h3_cells": [
+          "8928308281fffff"
+        ],
+        "bbox": [
+          -74.012,
+          40.705,
+          -73.998,
+          40.718
+        ],
+        "crs": "EPSG:4326"
+      },
+      "attribution": {
+        "source_name": "OpenStreetMap",
+        "license_ref": "ODbL-1.0",
+        "attribution_text": "© OpenStreetMap contributors",
+        "source_url": "https://www.openstreetmap.org"
+      },
+      "provenance": {
+        "source_refs": [
+          "osm://relation/999"
+        ],
+        "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+        "runtime_refs": [
+          "gaia-bounded-osm-ingest-runner@v1"
+        ],
+        "content_hash": "sha256:95fb6f97ffa1a300b5fde014677ec642682e2ba9882c263157c307a3dbebfb6b",
+        "created_at": "2026-04-27T06:10:00Z",
+        "fixture_digest": "sha256:e5baba1a98e0e59887bf19fe840b0544904f23d05e5fb9989a9f53f86d1b360b"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": [
+          "demo",
+          "osm",
+          "bounded-extract",
+          "geospatial",
+          "advisory"
+        ]
+      }
+    }
+  ],
+  "attribution": {
+    "source_name": "OpenStreetMap",
+    "license_ref": "ODbL-1.0",
+    "attribution_text": "© OpenStreetMap contributors",
+    "source_url": "https://www.openstreetmap.org"
+  },
+  "provenance": {
+    "source_refs": [
+      "osm-source-envelope-lower-manhattan-bounded-extract-2026-04-26",
+      "osm-extract://bounded/lower-manhattan/2026-04-26"
+    ],
+    "fixture_digest": "sha256:e5baba1a98e0e59887bf19fe840b0544904f23d05e5fb9989a9f53f86d1b360b",
+    "runtime_refs": [
+      "gaia-bounded-osm-ingest-runner@v1"
+    ],
+    "created_at": "2026-04-27T06:10:00Z",
+    "content_hash": "sha256:b2a22a43ab815f4ba655bd153cd702ccd462cac15e351fc734c25ba79b7bb310"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": [
+      "demo",
+      "osm",
+      "bounded-extract",
+      "geospatial",
+      "advisory"
+    ]
+  }
+}
