@@ -90,6 +90,11 @@ def entity_type_from_tags(tags: Dict[str, Any]) -> str:
     return "SpatialFeature"
 
 
+def osm_source_ref(osm_type: str, osm_id: str) -> str:
+    """Build a canonical OSM source URI."""
+    return f"osm://{osm_type}/{osm_id}"
+
+
 def build_geo_anchor(feature: Dict[str, Any], created_at: str) -> Dict[str, Any]:
     """Build a GeoAnchor from an OSM feature."""
     geometry = feature.get("geometry", {})
@@ -120,7 +125,7 @@ def build_geo_anchor(feature: Dict[str, Any], created_at: str) -> Dict[str, Any]
         anchor["bbox"] = feature["bbox"]
     if isinstance(feature.get("h3_cells"), list):
         anchor["h3_cells"] = feature["h3_cells"]
-    anchor["source_ref"] = f"osm://{feature['osm_type']}/{feature['osm_id']}"
+    anchor["source_ref"] = osm_source_ref(feature["osm_type"], feature["osm_id"])
     return anchor
 
 
@@ -141,7 +146,7 @@ def build_source_evidence(
         "evidence_version": "v1",
         "evidence_id": evidence_id,
         "source_type": "osm",
-        "source_ref": f"osm://{osm_type}/{osm_id}",
+        "source_ref": osm_source_ref(osm_type, osm_id),
         "geo_anchor_ref": anchor_id,
         "attribution": {
             "source_name": attribution["source_name"],
@@ -188,10 +193,13 @@ def build_explanation_trace(
     claim_id: str,
     evidence_id: str,
     anchor_id: str,
+    osm_type: str,
+    osm_id: str,
     created_at: str,
 ) -> Dict[str, Any]:
     """Build an ExplanationTrace for a single-source OSM passthrough claim."""
-    trace_id = f"trace:{evidence_id}"
+    trace_id = f"trace:osm:{osm_type}:{osm_id}:{created_at}"
+    normalized_ref = f"normalized:osm:{osm_type}:{osm_id}"
     return {
         "trace_version": "v1",
         "trace_id": trace_id,
@@ -216,13 +224,13 @@ def build_explanation_trace(
                 "step_id": "step-normalize-osm-tags",
                 "step_type": "normalize",
                 "input_refs": [evidence_id],
-                "output_ref": f"normalized:{evidence_id}",
+                "output_ref": normalized_ref,
                 "step_notes": "Map OSM tags to GAIA entity type and routing metadata.",
             },
             {
                 "step_id": "step-anchor-geometry",
                 "step_type": "annotate",
-                "input_refs": [f"normalized:{evidence_id}"],
+                "input_refs": [normalized_ref],
                 "output_ref": anchor_id,
                 "step_notes": "Bind geometry, bbox, H3 cells, and temporal anchor.",
             },
@@ -327,7 +335,7 @@ def build_world_claim(
         },
         "provenance": {
             "chain": [RUNTIME_REF],
-            "derived_from": [f"osm://{osm_type}/{osm_id}"],
+            "derived_from": [osm_source_ref(osm_type, osm_id)],
             "runtime_ref": RUNTIME_REF,
             "created_at": created_at,
         },
@@ -356,10 +364,8 @@ def process_feature(
     evidence = build_source_evidence(input_doc, feature, anchor_id, created_at)
     evidence_id = evidence["evidence_id"]
 
-    osm_type_str = str(feature["osm_type"])
-    osm_id_str = str(feature["osm_id"])
-    claim_id = f"gaia:world-claim:osm:{osm_type_str}:{osm_id_str}:{created_at}"
-    trace = build_explanation_trace(claim_id, evidence_id, anchor_id, created_at)
+    claim_id = f"gaia:world-claim:osm:{osm_type}:{str(feature['osm_id'])}:{created_at}"
+    trace = build_explanation_trace(claim_id, evidence_id, anchor_id, osm_type, str(feature["osm_id"]), created_at)
     trace_id = trace["trace_id"]
 
     claim = build_world_claim(input_doc, feature, geo_anchor, evidence_id, trace_id, created_at)

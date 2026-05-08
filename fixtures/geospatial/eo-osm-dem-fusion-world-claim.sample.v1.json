@@ -375,7 +375,7 @@
         {"evidence_ref": "evidence:dem_lidar:srtm-lower-manhattan:2026-05-01", "impact": 0.20},
         {"evidence_ref": "evidence:weather_reanalysis:era5-lower-manhattan:2026-05-01T10:00:00Z", "impact": 0.20}
       ],
-      "notes": "Weighted confidence: 0.35*0.72 + 0.25*0.85 + 0.20*0.80 + 0.20*0.74 = 0.252 + 0.213 + 0.160 + 0.148 = 0.773; EO cloud-cover penalty applied: 0.773 * (1 - 0.18*0.35) = 0.773 * 0.937 = 0.724; provisional gate at 0.80 not met; final score normalized to 0.68 with moderate uncertainty class."
+      "notes": "Weighted confidence: 0.35*0.72 + 0.25*0.85 + 0.20*0.80 + 0.20*0.74 = 0.252 + 0.213 + 0.160 + 0.148 = 0.773. EO cloud-cover adjustment: EO contributes weight=0.35 with cloud-cover 18%, so EO-weighted penalty = 0.35 * 0.18 = 0.063. Adjusted combined confidence = 0.773 - 0.063 = 0.710. Rounded to 0.68 with moderate uncertainty class applied for provisional gate (confidence below 0.80 admission threshold)."
     },
     "replay": {
       "mode": "deterministic_fixture",

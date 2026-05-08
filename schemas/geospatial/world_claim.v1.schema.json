@@ -141,7 +141,7 @@
     "map_display": {
       "type": "object",
       "additionalProperties": false,
-      "description": "How this claim should be displayed on /map. Admitted claims may be shown as truth layers; others must carry visible qualification.",
+      "description": "How this claim should be displayed on /map. Admitted claims may be shown as truth layers; others must carry visible qualification. The 'default' values below are metadata hints for consuming applications; schema validators do not enforce defaults.",
       "properties": {
         "show_source_attribution": {"type": "boolean", "default": true},
         "show_uncertainty": {"type": "boolean", "default": true},
