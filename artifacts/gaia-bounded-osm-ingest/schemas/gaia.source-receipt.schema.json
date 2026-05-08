@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/gaia.source-receipt.schema.json",
+  "title": "GAIA OSM Bounded Ingest Source Receipt v1",
+  "description": "Source receipt emitted after bounded OSM ingest. Links the output artifacts back to the input fixture via digest, preserving OSM attribution and ODbL evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_version",
+    "receipt_id",
+    "artifact_type",
+    "fixture_path",
+    "fixture_digest",
+    "extract_ref",
+    "extracted_at",
+    "generated_at",
+    "element_summary",
+    "output_refs",
+    "attribution",
+    "classification"
+  ],
+  "properties": {
+    "receipt_version": {"type": "string", "const": "v1"},
+    "receipt_id": {"type": "string", "minLength": 1},
+    "artifact_type": {"type": "string", "const": "gaia.osm_bounded_ingest.source_receipt"},
+    "fixture_path": {"type": "string"},
+    "fixture_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "extract_ref": {"type": "string"},
+    "extracted_at": {"type": "string"},
+    "generated_at": {"type": "string"},
+    "region": {
+      "type": "object",
+      "properties": {
+        "region_name": {"type": "string"},
+        "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+        "crs": {"type": "string"}
+      }
+    },
+    "element_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node_count", "way_count", "relation_count", "total_count"],
+      "properties": {
+        "node_count": {"type": "integer", "minimum": 0},
+        "way_count": {"type": "integer", "minimum": 0},
+        "relation_count": {"type": "integer", "minimum": 0},
+        "total_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "output_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "route_graph_status": {"type": "string"},
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "license_ref", "attribution_text"],
+      "properties": {
+        "source_name": {"type": "string"},
+        "license_ref": {"type": "string", "const": "ODbL-1.0"},
+        "attribution_text": {"type": "string"},
+        "source_url": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

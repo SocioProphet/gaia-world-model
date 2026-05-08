@@ -1,0 +1,20 @@
+{
+  "region_bbox_version": "v1",
+  "artifact_type": "gaia.osm.region_bbox",
+  "region_name": "Lower Manhattan Bounded Extract",
+  "bbox": [-74.012, 40.705, -73.998, 40.718],
+  "crs": "EPSG:4326",
+  "description": "Demo bounded region for GAIA OSM ingest fixture. Covers a small portion of Lower Manhattan for local/fixture-mode testing only.",
+  "extract_ref": "osm-extract://bounded/lower-manhattan/2026-04-26",
+  "fixture_mode": true,
+  "attribution": {
+    "source_name": "OpenStreetMap",
+    "license_ref": "ODbL-1.0",
+    "attribution_text": "\u00a9 OpenStreetMap contributors",
+    "source_url": "https://www.openstreetmap.org"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": ["demo", "osm", "bounded-extract", "geospatial", "advisory"]
+  }
+}

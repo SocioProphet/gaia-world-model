@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/gaia.region-bbox.schema.json",
+  "title": "GAIA Region BBox v1",
+  "description": "Bounded geographic region input for GAIA OSM ingest. Provides a named bbox, CRS, and attribution for a bounded fixture-mode ingest operation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "region_bbox_version",
+    "artifact_type",
+    "region_name",
+    "bbox",
+    "crs",
+    "extract_ref",
+    "attribution",
+    "classification"
+  ],
+  "properties": {
+    "region_bbox_version": {"type": "string", "const": "v1"},
+    "artifact_type": {"type": "string", "const": "gaia.osm.region_bbox"},
+    "region_name": {"type": "string", "minLength": 1},
+    "bbox": {
+      "type": "array",
+      "description": "[min_lon, min_lat, max_lon, max_lat] in the declared CRS",
+      "items": {"type": "number"},
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "crs": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "extract_ref": {"type": "string"},
+    "fixture_mode": {"type": "boolean"},
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "license_ref", "attribution_text"],
+      "properties": {
+        "source_name": {"type": "string"},
+        "license_ref": {"type": "string", "const": "ODbL-1.0"},
+        "attribution_text": {"type": "string"},
+        "source_url": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data_class": {
+          "type": "string",
+          "enum": ["public", "internal", "restricted", "sensitive"]
+        },
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
