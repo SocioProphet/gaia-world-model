@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import sys
 import time
+from collections.abc import Callable
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -49,7 +50,7 @@ FIXTURE_BBOX = "fixtures/gaia/osm/regions/demo-bbox.json"
 FIXTURE_SOURCE = "fixtures/osm/demo-region.osm.json"
 
 
-def step(name: str, fn, *args, **kwargs) -> None:
+def step(name: str, fn: "Callable[..., int]", *args: object, **kwargs: object) -> None:
     print(f"\n── [{name}] ──────────────────────────────────────────", file=sys.stderr)
     rc = fn(*args, **kwargs)
     if rc != 0:
