@@ -430,6 +430,102 @@ Rollback semantics: demote generated tile layer and restore prior map layer mani
 
 Status: executable proof exists, but not automatically admitted to Lattice Forge.
 
+## Runtime 7 — GAIA governed world-claim ingest runtime
+
+Runtime name: `gaia-world-claim-ingest-runtime`
+
+Domain: GAIA geospatial / governed world-model observations
+
+Purpose: convert OSM feature extracts into governed GAIA WorldClaim bundles following the contracted ingest pipeline: `Observe -> Anchor -> Normalize -> Propose`. Emitted claims carry `policy_status=proposed` and must pass Holmes/Policy review before admission to world state or display on `/map`.
+
+Entrypoint: `geospatial/world_claim_ingest.py`
+
+Required inputs:
+
+- OSM-like JSON fixture or OSM extract/query result;
+- attribution and license metadata;
+- H3 cell refs and geometry;
+- classification metadata.
+
+Current input examples:
+
+- `fixtures/geospatial/osm-feature-world-claim-input.sample.v1.json`
+
+Emitted outputs:
+
+- `gaia.world_claim_ingest.output` bundle;
+- `WorldClaim` records (status=proposed);
+- `SourceEvidence` records (one per feature);
+- `FusionExplanation` traces (one per claim);
+- `runtime_evidence` record with input/output hashes.
+
+Schema references:
+
+- `schemas/geospatial/world_claim.v1.schema.json`
+- `schemas/geospatial/source_evidence.v1.schema.json`
+- `schemas/geospatial/geo_anchor.v1.schema.json`
+- `schemas/geospatial/fusion_explanation.v1.schema.json`
+- `schemas/geospatial/vector_candidate.v1.schema.json`
+
+Contract reference: `docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md`
+
+Validation command:
+
+```bash
+python3 geospatial/world_claim_ingest.py \
+  fixtures/geospatial/osm-feature-world-claim-input.sample.v1.json \
+  /tmp/gaia-world-claim-output.json
+```
+
+Deterministic output inspection:
+
+```bash
+python3 -c "
+import json
+with open('/tmp/gaia-world-claim-output.json') as f:
+    d = json.load(f)
+c = d['claims'][0]
+assert c['policy_status']['status'] == 'proposed'
+assert c['uncertainty']['confidence_score'] == 0.85
+assert c['map_display']['display_layer'] == 'proposed_candidate'
+assert d['evidence_records'][0]['source_type'] == 'osm'
+assert d['explanation_traces'][0]['fusion_rule']['rule_class'] == 'single_source_passthrough'
+print('All deterministic validation checks passed.')
+"
+```
+
+Policy constraints:
+
+- no autonomous actuation from proposed world claims;
+- OSM-derived world claims are advisory until Holmes/Policy admits them;
+- preserve OSM node/way/relation identity and ODbL-1.0 attribution;
+- GeoAnchor required — claims without geometry are not emitted;
+- SourceEvidence must carry attribution, temporal validity, and confidence score;
+- ExplanationTrace must record the fusion rule applied;
+- map_display.display_layer for proposed claims must be `proposed_candidate` with advisory label;
+- VectorCandidates are `candidate_only` and must not influence claim status.
+
+Runtime isolation default: container
+
+Network posture: restricted for fixture mode; explicitly declared if pulling live OSM/Overpass data.
+
+Secret posture: none
+
+Promotion criteria:
+
+- executable entrypoint exists;
+- at least one OSM input fixture produces a valid WorldClaim output with all required fields;
+- attribution and ODbL-1.0 license ref preserved in SourceEvidence;
+- GeoAnchor binds each claim to a geometry with H3 cells and bbox;
+- ExplanationTrace records single_source_passthrough rule;
+- policy_status is `proposed` on all emitted claims;
+- deterministic validation command passes;
+- malformed-input corpus covers: missing required fields, invalid osm_type, wrong source, missing attribution.
+
+Rollback semantics: demote generated world claims to `rejected` in policy record; preserve evidence trail and mark prior claims superseded. Original OSM source records are never mutated. GeoAnchor and SourceEvidence records remain immutable.
+
+Status: executable proof exists, but not automatically admitted to Lattice Forge.
+
 ## Lattice Forge admission rule
 
 A runtime may be mirrored into Lattice Forge only when:

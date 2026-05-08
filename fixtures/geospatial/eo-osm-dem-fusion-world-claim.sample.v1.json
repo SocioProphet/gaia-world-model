@@ -1,0 +1,400 @@
+{
+  "artifact_version": "v1",
+  "artifact_type": "gaia.world_claim.fusion",
+  "artifact_id": "gaia:world-claim:fusion:eo-osm-dem-weather:lower-manhattan:2026-05-01",
+  "created_at": "2026-05-01T11:00:00Z",
+  "description": "Worked example: EO (STAC) + OSM + DEM/LiDAR + weather/reanalysis fusion producing a risk/feature claim with uncertainty and full evidence chain. Policy status is 'provisional' because OSM and EO sources have been individually validated but the DEM/weather fusion confidence is moderate.",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "claim": {
+    "claim_version": "v1",
+    "claim_id": "gaia:world-claim:fusion:eo-osm-dem-weather:lower-manhattan:2026-05-01",
+    "claim_type": "risk",
+    "geo_anchor": {
+      "anchor_id": "anchor:fusion:lower-manhattan:2026-05-01",
+      "anchor_type": "bbox",
+      "bbox": [-74.02, 40.70, -73.97, 40.72],
+      "h3_cells": ["8928308280fffff", "89283082807ffff", "892830828b7ffff"],
+      "crs": "EPSG:4326",
+      "temporal": {
+        "observed_at": "2026-05-01T10:30:00Z",
+        "valid_from": "2026-05-01T09:00:00Z",
+        "valid_to": "2026-05-01T12:00:00Z",
+        "time_basis": "sensor_capture"
+      }
+    },
+    "source_evidence_refs": [
+      "evidence:eo_stac:sentinel-like-scene-001:2026-05-01",
+      "evidence:osm:way:424242:2026-05-01T10:00:00Z",
+      "evidence:dem_lidar:srtm-lower-manhattan:2026-05-01",
+      "evidence:weather_reanalysis:era5-lower-manhattan:2026-05-01T10:00:00Z"
+    ],
+    "proposed_value": {
+      "risk_class": "moderate",
+      "risk_domain": "road_surface_condition",
+      "risk_score": 0.42,
+      "feature_classification": "RoadSegment",
+      "contributing_factors": [
+        {"factor": "precipitation_recent_24h_mm", "value": 18.3, "impact": "elevated_surface_moisture"},
+        {"factor": "ndvi_adjacent_vegetation", "value": 0.53, "impact": "leaf_litter_potential"},
+        {"factor": "slope_deg", "value": 2.1, "impact": "low_slope_minor_drainage_impact"},
+        {"factor": "dem_elevation_m", "value": 6.2, "impact": "near_sea_level_flood_risk_low"}
+      ],
+      "notes": "Moderate risk due to recent precipitation and urban vegetation context. EO cloud cover was 18% over scene; DEM confidence is high."
+    },
+    "temporal_validity": {
+      "valid_from": "2026-05-01T09:00:00Z",
+      "valid_to": "2026-05-01T15:00:00Z",
+      "staleness_class": "recent",
+      "expiry_note": "Weather reanalysis validity window expires 2026-05-01T15:00:00Z. Re-ingest weather context after expiry."
+    },
+    "uncertainty": {
+      "confidence_score": 0.68,
+      "uncertainty_class": "moderate",
+      "uncertainty_notes": "EO cloud cover (18%) reduces optical confidence. DEM source is SRTM (30m resolution); LiDAR would improve elevation precision. Weather reanalysis (ERA5-like) contributes moderate-confidence precipitation context. OSM road feature is high-confidence single source.",
+      "adversarial_impact": 0.0
+    },
+    "policy_status": {
+      "status": "provisional",
+      "policy_decision_ref": "policy-decision:risk:road-surface:lower-manhattan:2026-05-01",
+      "review_reason": "Fusion confidence is moderate (0.68). EO partial cloud cover and DEM resolution limit admitted confidence. Provisional status permits display with explicit uncertainty and advisory constraints.",
+      "effective_at": "2026-05-01T11:00:00Z",
+      "expires_at": "2026-05-01T15:00:00Z",
+      "constraints": [
+        "display-with-uncertainty-visible",
+        "display-policy-status-visible",
+        "routing-advisory-only",
+        "no-autonomous-actuation",
+        "re-evaluate-after-weather-window-expiry"
+      ]
+    },
+    "explanation_trace_ref": "trace:fusion:eo-osm-dem-weather:lower-manhattan:2026-05-01",
+    "map_display": {
+      "show_source_attribution": true,
+      "show_uncertainty": true,
+      "show_evidence_chain": true,
+      "show_policy_status": true,
+      "display_layer": "provisional_overlay",
+      "advisory_label": "Provisional risk assessment — EO + OSM + DEM + weather fusion, confidence 0.68, expires 2026-05-01T15:00Z"
+    },
+    "attribution": {
+      "primary_source_name": "Fusion: Sentinel-like EO + OpenStreetMap + SRTM DEM + ERA5-like reanalysis",
+      "license_refs": ["sample-only", "ODbL-1.0", "public-domain-srtm", "copernicus-era5-sample"],
+      "attribution_texts": [
+        "EO scene: synthetic fixture for GAIA runtime validation",
+        "© OpenStreetMap contributors (ODbL-1.0)",
+        "DEM: SRTM-derived — public domain",
+        "Weather: ERA5-like reanalysis — synthetic fixture"
+      ],
+      "attribution_notes": "All source attributions must be preserved in downstream display and derivatives. EO and weather fixtures are synthetic placeholders."
+    },
+    "provenance": {
+      "chain": ["runtime:world-claim-fusion:v0"],
+      "derived_from": [
+        "evidence:eo_stac:sentinel-like-scene-001:2026-05-01",
+        "evidence:osm:way:424242:2026-05-01T10:00:00Z",
+        "evidence:dem_lidar:srtm-lower-manhattan:2026-05-01",
+        "evidence:weather_reanalysis:era5-lower-manhattan:2026-05-01T10:00:00Z"
+      ],
+      "runtime_ref": "runtime:world-claim-fusion:v0",
+      "created_at": "2026-05-01T11:00:00Z",
+      "content_hash": "sha256:fixture-placeholder-replace-with-canonical-hash"
+    },
+    "classification": {
+      "data_class": "public",
+      "handling_tags": ["demo", "fusion", "world-claim", "risk", "provisional", "advisory"]
+    }
+  },
+  "source_evidence": [
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:eo_stac:sentinel-like-scene-001:2026-05-01",
+      "source_type": "eo_stac",
+      "source_ref": "stac:item:sentinel-like-scene-001",
+      "geo_anchor_ref": "anchor:fusion:lower-manhattan:2026-05-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "Synthetic Sentinel-like EO fixture",
+        "license_ref": "sample-only",
+        "attribution_text": "Synthetic EO fixture for GAIA runtime validation"
+      },
+      "temporal": {
+        "observed_at": "2026-05-01T10:30:00Z",
+        "valid_from": "2026-05-01T10:25:00Z",
+        "valid_to": "2026-05-01T10:35:00Z",
+        "staleness_class": "recent"
+      },
+      "confidence": {
+        "score": 0.72,
+        "confidence_class": "moderate",
+        "notes": "Cloud cover 18% reduces optical confidence. NDVI and surface reflectance indices derived from non-cloudy pixels."
+      },
+      "spatial_summary": {
+        "geometry_type": "Polygon",
+        "h3_cells": ["8928308280fffff", "89283082807ffff", "892830828b7ffff"],
+        "bbox": [-75.0, 39.5, -73.5, 41.0],
+        "crs": "EPSG:4326"
+      },
+      "source_metadata": {
+        "platform": "synthetic-sat-001",
+        "instruments": ["synthetic-optical-payload"],
+        "cloud_cover_pct": 18.0,
+        "derived_indices": ["NDVI"],
+        "ndvi_value": 0.53,
+        "stac_item_ref": "stac:item:sentinel-like-scene-001"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "eo", "stac", "source-evidence"]
+      }
+    },
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:osm:way:424242:2026-05-01T10:00:00Z",
+      "source_type": "osm",
+      "source_ref": "osm://way/424242",
+      "geo_anchor_ref": "anchor:fusion:lower-manhattan:2026-05-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "OpenStreetMap",
+        "license_ref": "ODbL-1.0",
+        "attribution_text": "© OpenStreetMap contributors",
+        "source_url": "https://www.openstreetmap.org"
+      },
+      "temporal": {
+        "observed_at": "2026-04-15T12:30:00Z",
+        "valid_from": "2026-04-15T12:30:00Z",
+        "staleness_class": "historical"
+      },
+      "confidence": {
+        "score": 0.85,
+        "confidence_class": "high",
+        "notes": "OSM community-maintained road data. Advisory routing status."
+      },
+      "spatial_summary": {
+        "geometry_type": "LineString",
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "bbox": [-74.012, 40.705, -73.998, 40.718],
+        "crs": "EPSG:4326"
+      },
+      "source_metadata": {
+        "osm_type": "way",
+        "osm_id": "424242",
+        "tags": {
+          "highway": "residential",
+          "name": "Demo Corridor Road",
+          "surface": "asphalt"
+        }
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "osm", "source-evidence"]
+      }
+    },
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:dem_lidar:srtm-lower-manhattan:2026-05-01",
+      "source_type": "dem_lidar",
+      "source_ref": "dem://srtm/lower-manhattan/2026-05-01",
+      "geo_anchor_ref": "anchor:fusion:lower-manhattan:2026-05-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "SRTM-derived DEM (synthetic fixture)",
+        "license_ref": "public-domain-srtm",
+        "attribution_text": "SRTM DEM — public domain, synthetic fixture values"
+      },
+      "temporal": {
+        "observed_at": "2000-02-11T00:00:00Z",
+        "valid_from": "2000-02-11T00:00:00Z",
+        "staleness_class": "archive"
+      },
+      "confidence": {
+        "score": 0.80,
+        "confidence_class": "high",
+        "notes": "SRTM 30m resolution DEM. High absolute confidence for coarse elevation; LiDAR would improve road-surface precision."
+      },
+      "spatial_summary": {
+        "geometry_type": "Polygon",
+        "h3_cells": ["8928308280fffff", "89283082807ffff", "892830828b7ffff"],
+        "bbox": [-74.02, 40.70, -73.97, 40.72],
+        "crs": "EPSG:4326"
+      },
+      "source_metadata": {
+        "dem_source": "SRTM",
+        "resolution_m": 30,
+        "elevation_m": 6.2,
+        "slope_deg": 2.1,
+        "notes": "Synthetic fixture values for GAIA validation only"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "dem", "srtm", "source-evidence"]
+      }
+    },
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:weather_reanalysis:era5-lower-manhattan:2026-05-01T10:00:00Z",
+      "source_type": "weather_reanalysis",
+      "source_ref": "reanalysis://era5-like/lower-manhattan/2026-05-01T10:00:00Z",
+      "geo_anchor_ref": "anchor:fusion:lower-manhattan:2026-05-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "ERA5-like weather reanalysis (synthetic fixture)",
+        "license_ref": "copernicus-era5-sample",
+        "attribution_text": "ERA5-like synthetic fixture for GAIA runtime validation"
+      },
+      "temporal": {
+        "observed_at": "2026-05-01T10:00:00Z",
+        "valid_from": "2026-05-01T09:00:00Z",
+        "valid_to": "2026-05-01T15:00:00Z",
+        "staleness_class": "recent"
+      },
+      "confidence": {
+        "score": 0.74,
+        "confidence_class": "moderate",
+        "notes": "Weather reanalysis grid at ~31km resolution. Precipitation estimate carries known downscaling uncertainty for urban micro-scale."
+      },
+      "spatial_summary": {
+        "geometry_type": "Polygon",
+        "h3_cells": ["8928308280fffff", "89283082807ffff", "892830828b7ffff"],
+        "bbox": [-74.5, 40.5, -73.5, 41.0],
+        "crs": "EPSG:4326"
+      },
+      "source_metadata": {
+        "reanalysis_model": "ERA5-like (synthetic)",
+        "resolution_km": 31,
+        "precipitation_24h_mm": 18.3,
+        "air_temperature_2m_c": 16.8,
+        "wind_speed_mps": 4.2,
+        "notes": "Synthetic fixture values for GAIA validation only"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "weather", "reanalysis", "era5", "source-evidence"]
+      }
+    }
+  ],
+  "explanation_trace": {
+    "trace_version": "v1",
+    "trace_id": "trace:fusion:eo-osm-dem-weather:lower-manhattan:2026-05-01",
+    "claim_ref": "gaia:world-claim:fusion:eo-osm-dem-weather:lower-manhattan:2026-05-01",
+    "fusion_rule": {
+      "rule_id": "weighted-mean-road-surface-risk-v1",
+      "rule_class": "weighted_mean",
+      "rule_version": "v1",
+      "rule_ref": "docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md#weighted-mean-fusion"
+    },
+    "inputs": [
+      {
+        "evidence_ref": "evidence:eo_stac:sentinel-like-scene-001:2026-05-01",
+        "role": "primary",
+        "weight": 0.35,
+        "confidence_at_fusion": 0.72,
+        "notes": "EO provides vegetation index and surface reflectance. Partial cloud cover reduces weight."
+      },
+      {
+        "evidence_ref": "evidence:osm:way:424242:2026-05-01T10:00:00Z",
+        "role": "corroborating",
+        "weight": 0.25,
+        "confidence_at_fusion": 0.85,
+        "notes": "OSM confirms road surface type and classification. High confidence but advisory-only routing status."
+      },
+      {
+        "evidence_ref": "evidence:dem_lidar:srtm-lower-manhattan:2026-05-01",
+        "role": "context",
+        "weight": 0.20,
+        "confidence_at_fusion": 0.80,
+        "notes": "DEM provides elevation and slope context for drainage and flood risk. 30m resolution limits precision."
+      },
+      {
+        "evidence_ref": "evidence:weather_reanalysis:era5-lower-manhattan:2026-05-01T10:00:00Z",
+        "role": "context",
+        "weight": 0.20,
+        "confidence_at_fusion": 0.74,
+        "notes": "Weather reanalysis provides precipitation context. Grid resolution limits micro-scale precision."
+      }
+    ],
+    "steps": [
+      {
+        "step_id": "step-normalize-eo-ndvi",
+        "step_type": "normalize",
+        "input_refs": ["evidence:eo_stac:sentinel-like-scene-001:2026-05-01"],
+        "output_ref": "normalized:eo:ndvi:0.53",
+        "step_notes": "Extract NDVI=0.53 from EO scene. Apply cloud-cover confidence penalty: 0.72 * (1 - 0.18) = 0.59 effective confidence."
+      },
+      {
+        "step_id": "step-normalize-osm-road-type",
+        "step_type": "normalize",
+        "input_refs": ["evidence:osm:way:424242:2026-05-01T10:00:00Z"],
+        "output_ref": "normalized:osm:road:asphalt:residential",
+        "step_notes": "Extract highway=residential, surface=asphalt. Map to RoadSegment with asphalt surface class."
+      },
+      {
+        "step_id": "step-normalize-dem-slope",
+        "step_type": "normalize",
+        "input_refs": ["evidence:dem_lidar:srtm-lower-manhattan:2026-05-01"],
+        "output_ref": "normalized:dem:slope:2.1deg:elevation:6.2m",
+        "step_notes": "Extract slope=2.1°, elevation=6.2m. Low slope indicates minor drainage impact. Near sea level flags low flood risk for this scenario."
+      },
+      {
+        "step_id": "step-normalize-weather-precip",
+        "step_type": "normalize",
+        "input_refs": ["evidence:weather_reanalysis:era5-lower-manhattan:2026-05-01T10:00:00Z"],
+        "output_ref": "normalized:weather:precip-24h:18.3mm",
+        "step_notes": "Extract precipitation_24h=18.3mm. Moderate rainfall class: 10-25mm/24h. Confidence 0.74 (grid scale limitation)."
+      },
+      {
+        "step_id": "step-compute-risk-score",
+        "step_type": "aggregate",
+        "input_refs": [
+          "normalized:eo:ndvi:0.53",
+          "normalized:osm:road:asphalt:residential",
+          "normalized:dem:slope:2.1deg:elevation:6.2m",
+          "normalized:weather:precip-24h:18.3mm"
+        ],
+        "output_ref": "risk-score:0.42",
+        "step_notes": "Weighted mean risk: precipitation (18.3mm) contributes moderate risk. NDVI suggests moderate leaf-litter potential. Low slope mitigates. Risk score = 0.42 (moderate class)."
+      },
+      {
+        "step_id": "step-gate-confidence",
+        "step_type": "gate",
+        "input_refs": ["risk-score:0.42"],
+        "output_ref": "gated-claim:provisional",
+        "step_notes": "Combined confidence 0.68 < 0.80 threshold for admitted. Policy_status set to provisional with display and expiry constraints."
+      }
+    ],
+    "uncertainty": {
+      "method": "propagated_confidence",
+      "combined_score": 0.68,
+      "uncertainty_class": "moderate",
+      "per_input_impact": [
+        {"evidence_ref": "evidence:eo_stac:sentinel-like-scene-001:2026-05-01", "impact": 0.35},
+        {"evidence_ref": "evidence:osm:way:424242:2026-05-01T10:00:00Z", "impact": 0.25},
+        {"evidence_ref": "evidence:dem_lidar:srtm-lower-manhattan:2026-05-01", "impact": 0.20},
+        {"evidence_ref": "evidence:weather_reanalysis:era5-lower-manhattan:2026-05-01T10:00:00Z", "impact": 0.20}
+      ],
+      "notes": "Weighted confidence: 0.35*0.72 + 0.25*0.85 + 0.20*0.80 + 0.20*0.74 = 0.252 + 0.213 + 0.160 + 0.148 = 0.773; EO cloud-cover penalty applied: 0.773 * (1 - 0.18*0.35) = 0.773 * 0.937 = 0.724; provisional gate at 0.80 not met; final score normalized to 0.68 with moderate uncertainty class."
+    },
+    "replay": {
+      "mode": "deterministic_fixture",
+      "command": "cat fixtures/geospatial/eo-osm-dem-fusion-world-claim.sample.v1.json | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d[\"claim\"][\"uncertainty\"][\"confidence_score\"])'"
+    },
+    "provenance": {
+      "runtime_ref": "runtime:world-claim-fusion:v0",
+      "created_at": "2026-05-01T11:00:00Z",
+      "content_hash": "sha256:fixture-placeholder-replace-with-canonical-hash"
+    }
+  },
+  "invariants": [
+    "All four source evidences carry attribution, license ref, temporal validity, and confidence.",
+    "GeoAnchor binds the fused claim to a verifiable bbox with H3 cell coverage.",
+    "ExplanationTrace records weighted-mean rule, per-input roles/weights, and step-by-step derivation.",
+    "Combined confidence 0.68 < 0.80 admission threshold — policy_status is 'provisional', not 'admitted'.",
+    "map_display.display_layer is 'provisional_overlay' — uncertainty and expiry label required on /map.",
+    "Weather validity window expires 2026-05-01T15:00Z — claim must be re-evaluated after expiry.",
+    "No autonomous actuation permitted from provisional world claim.",
+    "VectorCandidate (if retrieved) is status=candidate_only and must not influence this claim's policy status."
+  ]
+}

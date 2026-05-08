@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/geospatial/world_claim.v1.schema.json",
+  "title": "WorldClaim v1",
+  "description": "A GAIA governed world-state claim. A claim is not admissible without anchors, source evidence, temporal validity, uncertainty, and policy status. Formal invariant: Observation/Evidence -> ProposedWorldClaim -> ExplanationTrace + Uncertainty -> PolicyDecision -> Admitted/Provisional/Review WorldClaim.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_version",
+    "claim_id",
+    "claim_type",
+    "geo_anchor",
+    "source_evidence_refs",
+    "proposed_value",
+    "temporal_validity",
+    "uncertainty",
+    "policy_status",
+    "attribution",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "claim_version": {"type": "string", "const": "v1"},
+    "claim_id": {"type": "string", "description": "Stable world-claim identifier."},
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "feature_classification",
+        "risk",
+        "coverage",
+        "source_attribution",
+        "fusion_result",
+        "observation_passthrough"
+      ],
+      "description": "Class of world-state assertion."
+    },
+    "geo_anchor": {
+      "type": "object",
+      "description": "Inline or referenced GeoAnchor binding this claim to a verifiable spatial-temporal location.",
+      "additionalProperties": false,
+      "required": ["anchor_id", "anchor_type", "crs", "temporal"],
+      "properties": {
+        "anchor_id": {"type": "string"},
+        "anchor_type": {
+          "type": "string",
+          "enum": ["point", "linestring", "polygon", "bbox", "h3_cell", "tile_region", "document_span", "time_window"]
+        },
+        "geometry": {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"type": "string"},
+            "coordinates": {}
+          }
+        },
+        "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+        "h3_cells": {"type": "array", "items": {"type": "string"}},
+        "crs": {"type": "string"},
+        "temporal": {
+          "type": "object",
+          "required": ["observed_at"],
+          "properties": {
+            "observed_at": {"type": "string", "format": "date-time"},
+            "valid_from": {"type": "string", "format": "date-time"},
+            "valid_to": {"type": "string", "format": "date-time"},
+            "time_basis": {"type": "string"}
+          }
+        }
+      }
+    },
+    "source_evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"},
+      "description": "References to SourceEvidence records supporting this claim. At least one is required."
+    },
+    "proposed_value": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "The asserted world-state value (feature type, risk class, coverage fraction, etc.)."
+    },
+    "temporal_validity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valid_from"],
+      "properties": {
+        "valid_from": {"type": "string", "format": "date-time"},
+        "valid_to": {"type": "string", "format": "date-time"},
+        "staleness_class": {
+          "type": "string",
+          "enum": ["realtime", "recent", "historical", "archive", "unknown"]
+        },
+        "expiry_note": {"type": "string"}
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["confidence_score", "uncertainty_class"],
+      "properties": {
+        "confidence_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Combined confidence score for this claim."
+        },
+        "uncertainty_class": {
+          "type": "string",
+          "enum": ["low", "moderate", "high", "very_high", "unknown"]
+        },
+        "uncertainty_notes": {"type": "string"},
+        "adversarial_impact": {"type": "number"}
+      }
+    },
+    "policy_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "description": "Governance status of this world claim. Admitted claims may appear on /map; provisional/review claims require explicit qualification.",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["proposed", "provisional", "admitted", "review", "rejected"],
+          "description": "proposed: evidence assembled, not yet reviewed. provisional: partially admitted with constraints. admitted: fully governed. review: flagged for human review. rejected: not admissible."
+        },
+        "policy_decision_ref": {"type": "string"},
+        "review_reason": {"type": "string"},
+        "effective_at": {"type": "string", "format": "date-time"},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "constraints": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Active constraints on this claim (e.g. display-advisory-only, requires-human-review)."
+        }
+      }
+    },
+    "explanation_trace_ref": {
+      "type": "string",
+      "description": "Reference to a FusionExplanation trace record for this claim."
+    },
+    "map_display": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How this claim should be displayed on /map. Admitted claims may be shown as truth layers; others must carry visible qualification.",
+      "properties": {
+        "show_source_attribution": {"type": "boolean", "default": true},
+        "show_uncertainty": {"type": "boolean", "default": true},
+        "show_evidence_chain": {"type": "boolean", "default": true},
+        "show_policy_status": {"type": "boolean", "default": true},
+        "display_layer": {
+          "type": "string",
+          "enum": ["admitted_world_state", "provisional_overlay", "proposed_candidate", "review_flagged"]
+        },
+        "advisory_label": {"type": "string"}
+      }
+    },
+    "vector_candidate_ref": {
+      "type": "string",
+      "description": "Optional reference to a VectorCandidate for similar-observation retrieval. VectorCandidate.status is always candidate_only and must not influence policy decisions."
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_source_name", "license_refs"],
+      "properties": {
+        "primary_source_name": {"type": "string"},
+        "license_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "attribution_texts": {"type": "array", "items": {"type": "string"}},
+        "attribution_notes": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chain", "runtime_ref", "created_at"],
+      "properties": {
+        "chain": {"type": "array", "items": {"type": "string"}},
+        "derived_from": {"type": "array", "items": {"type": "string"}},
+        "runtime_ref": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "content_hash": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {
+          "type": "string",
+          "enum": ["public", "internal", "restricted", "sensitive"]
+        },
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "standards_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "References to SocioProphet standards documents governing this claim."
+    }
+  }
+}

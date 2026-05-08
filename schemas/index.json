@@ -8,6 +8,11 @@
     "policy_decision": "schemas/policy/policy-decision.schema.json",
     "evidence_bundle": "schemas/evidence/evidence-bundle.schema.json",
     "world_state_snapshot": "schemas/telemetry/world-state-snapshot.schema.json",
-    "registry_resource": "schemas/registry_resource.schema.json"
+    "registry_resource": "schemas/registry_resource.schema.json",
+    "geo_anchor": "schemas/geospatial/geo_anchor.v1.schema.json",
+    "source_evidence": "schemas/geospatial/source_evidence.v1.schema.json",
+    "world_claim": "schemas/geospatial/world_claim.v1.schema.json",
+    "fusion_explanation": "schemas/geospatial/fusion_explanation.v1.schema.json",
+    "vector_candidate": "schemas/geospatial/vector_candidate.v1.schema.json"
   }
 }

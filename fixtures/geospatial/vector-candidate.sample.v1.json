@@ -1,0 +1,37 @@
+{
+  "candidate_version": "v1",
+  "candidate_id": "vector-candidate:osm:road-surface-risk:lower-manhattan:sim-001",
+  "status": "candidate_only",
+  "source_claim_ref": "gaia:world-claim:fusion:eo-osm-dem-weather:lower-manhattan:2026-04-15",
+  "similarity": {
+    "score": 0.87,
+    "metric": "cosine",
+    "embedding_model_ref": "gaia-observation-embedder-v0",
+    "index_ref": "gaia:vector-index:world-claims:geospatial:v0"
+  },
+  "retrieval_params": {
+    "query_ref": "gaia:world-claim:fusion:eo-osm-dem-weather:lower-manhattan:2026-05-01",
+    "top_k": 5,
+    "filter_tags": ["road-surface-risk", "osm", "eo"],
+    "spatial_filter": {
+      "h3_cells": ["8928308280fffff", "89283082807ffff"],
+      "bbox": [-74.02, 40.70, -73.97, 40.72]
+    },
+    "temporal_filter": {
+      "since": "2026-04-01T00:00:00Z",
+      "until": "2026-05-01T11:00:00Z"
+    }
+  },
+  "candidate_summary": {
+    "claim_type": "risk",
+    "observed_at": "2026-04-15T10:00:00Z",
+    "h3_cell": "8928308280fffff",
+    "confidence_score": 0.71,
+    "source_types": ["eo_stac", "osm", "dem_lidar", "weather_reanalysis"]
+  },
+  "usage_note": "This VectorCandidate is for similar-observation retrieval only. It must not be used as evidence for world-claim admission, policy decisions, or map display without a full governed claim pipeline.",
+  "classification": {
+    "data_class": "internal",
+    "handling_tags": ["demo", "vector-retrieval", "candidate-only", "no-policy-influence"]
+  }
+}

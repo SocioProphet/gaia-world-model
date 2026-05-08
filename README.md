@@ -16,6 +16,25 @@ We treat world modeling like engineering: every dataset, ontology, and action is
 - A hidden-data model: we bias toward open, attributable sources
 - A turnkey Earth simulator today (we’re building the scaffolding and verification first)
 
+
+## Governed world-claim contract
+
+GAIA owns the `Observe -> Anchor -> Normalize -> Propose` phases of the canonical world-state loop for geospatial and spatial-temporal observations. A map label or spatial feature is not treated as truth until it has anchors, evidence, temporal validity, uncertainty, and policy status.
+
+Key contracts:
+
+| Contract | Schema | Purpose |
+| --- | --- | --- |
+| `GeoAnchor` | `schemas/geospatial/geo_anchor.v1.schema.json` | Spatial-temporal binding for observations |
+| `SourceEvidence` | `schemas/geospatial/source_evidence.v1.schema.json` | OSM, EO/STAC, DEM/LiDAR, weather, field reports |
+| `WorldClaim` | `schemas/geospatial/world_claim.v1.schema.json` | Governed world-state assertion with policy status |
+| `FusionExplanation` | `schemas/geospatial/fusion_explanation.v1.schema.json` | Fusion rule, evidence chain, uncertainty trace |
+| `VectorCandidate` | `schemas/geospatial/vector_candidate.v1.schema.json` | Similar-observation retrieval (candidate_only) |
+
+Reference: `docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md`
+
+For cross-system discovery: Sherlock (`docs/integrations/SHERLOCK_SEARCH_INTEGRATION.md`), Holmes (SocioProphet/holmes#7), Sociosphere (SocioProphet/sociosphere#310), Guardrail Fabric, and Agentplane consume GAIA world-claims only after Holmes/Policy governance review.
+
 ## Repo layout
 
 - `gaia/cv/` — ‚Curation Vault (CV)’*: ingested sources + manifests + file-hash checklist  
@@ -26,6 +45,10 @@ We treat world modeling like engineering: every dataset, ontology, and action is
 - `gaia/ontology/` — canonical entrypoints + imports index (authoritative integration map)
 - `gaia/reports/` – generated reports (e.g., Issue-001 entrypoint candidates)
 - `docs/` – architecture, policies, releases, integration notes
+- `docs/contracts/` – governed contract reference documents (world-claim, registry, TritRPC)
+- `schemas/geospatial/` – JSON Schema definitions for world-claim contracts
+- `geospatial/` – ingest scripts (OSM, world-claim, route graph, tile export)
+- `fixtures/geospatial/` – worked example fixtures for contracts and runtimes
 - `scripts/` – validation/adapters scaffolding (evolves into repeatable pipelines)
 
 ## Quickstart

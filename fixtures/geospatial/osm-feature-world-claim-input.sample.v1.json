@@ -1,0 +1,48 @@
+{
+  "input_version": "v1",
+  "source": "OpenStreetMap",
+  "extract_ref": "osm-extract://demo/lower-manhattan/2026-05-01",
+  "ingest_mode": "world_claim",
+  "features": [
+    {
+      "osm_type": "way",
+      "osm_id": "424242",
+      "version": "3",
+      "timestamp": "2026-04-15T12:30:00Z",
+      "changeset": "demo-changeset-001",
+      "tags": {
+        "highway": "residential",
+        "name": "Demo Corridor Road",
+        "surface": "asphalt",
+        "lanes": "2",
+        "maxspeed": "30"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-74.012, 40.705],
+          [-74.006, 40.7128],
+          [-73.998, 40.718]
+        ]
+      },
+      "h3_cells": ["8928308280fffff", "89283082807ffff"],
+      "bbox": [-74.012, 40.705, -73.998, 40.718],
+      "routing": {
+        "routable": true,
+        "modes": ["road", "pedestrian", "bicycle"],
+        "access_tags": {"access": "yes"},
+        "safety_status": "advisory"
+      }
+    }
+  ],
+  "attribution": {
+    "source_name": "OpenStreetMap",
+    "license_ref": "ODbL-1.0",
+    "attribution_text": "© OpenStreetMap contributors",
+    "source_url": "https://www.openstreetmap.org"
+  },
+  "classification": {
+    "data_class": "public",
+    "handling_tags": ["demo", "osm", "geospatial", "world-claim-ingest"]
+  }
+}
