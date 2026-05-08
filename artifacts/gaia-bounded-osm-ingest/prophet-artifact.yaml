@@ -1,0 +1,201 @@
+apiVersion: socioprophet.org/v1alpha1
+kind: ProphetArtifact
+metadata:
+  name: gaia.bounded-osm-ingest
+  version: 0.1.0
+  ownerRepo: SocioProphet/gaia-world-model
+  maintainers:
+    - SocioProphet/gaia-world-model
+  slashTopics:
+    - /gaia/osm
+    - /gaia/ingest
+    - /world-model/provenance
+spec:
+  artifactKind: workflow
+  summary: >-
+    Fixture-first bounded OpenStreetMap ingest workflow for turning an explicit
+    region source into validated GAIA features, provenance receipts, registry
+    payloads, search payloads, metrics, and optional tile/API outputs.
+  actions:
+    - name: detect-host-and-runtime
+      verb: detect
+      adapter: sourceos.host-detect.v1
+      outputs:
+        - host-facts
+      requiresNetwork: false
+      privileged: false
+    - name: fetch-bounded-region-source
+      verb: fetch
+      adapter: gaia.osm.fetch-bounded-region.v1
+      inputs:
+        - region-bbox
+      outputs:
+        - osm-source
+        - source-receipts
+      requiresNetwork: true
+      privileged: false
+    - name: prepare-normalized-osm-features
+      verb: prepare
+      adapter: gaia.osm.normalize.v1
+      inputs:
+        - osm-source
+      outputs:
+        - normalized-features
+      requiresNetwork: false
+      privileged: false
+    - name: validate-gaia-feature-contract
+      verb: validate
+      adapter: gaia.features.validate.v1
+      inputs:
+        - normalized-features
+      outputs:
+        - validation-report
+      requiresNetwork: false
+      privileged: false
+    - name: run-bounded-ingest
+      verb: run
+      adapter: gaia.ingest.bounded.v1
+      inputs:
+        - normalized-features
+      outputs:
+        - gaia-feature-store
+        - gaia-tile-manifest
+      requiresNetwork: false
+      privileged: false
+    - name: benchmark-ingest
+      verb: benchmark
+      adapter: delivery-excellence.metrics.collect.v1
+      inputs:
+        - gaia-feature-store
+      outputs:
+        - benchmark-report
+      requiresNetwork: false
+      privileged: false
+    - name: publish-registry-and-search-payloads
+      verb: publish
+      adapter: prophet-platform.registry-export.v1
+      inputs:
+        - gaia-feature-store
+        - validation-report
+        - benchmark-report
+      outputs:
+        - sociosphere-registration
+        - sherlock-index-payload
+        - delivery-excellence-scoreboard-payload
+      requiresNetwork: false
+      privileged: false
+    - name: attest-run
+      verb: attest
+      adapter: prophet-platform.attest-run.v1
+      inputs:
+        - source-receipts
+        - validation-report
+        - benchmark-report
+      outputs:
+        - run-record
+        - checksums
+        - lineage
+      requiresNetwork: false
+      privileged: false
+  inputs:
+    - name: region-bbox
+      kind: uri
+      uri: fixture://gaia/osm/regions/demo-bbox.json
+      schema: schemas/gaia.region-bbox.schema.json
+      contentType: application/json
+    - name: osm-source
+      kind: file
+      path: fixtures/osm/demo-region.osm.json
+      contentType: application/json
+  outputs:
+    - name: normalized-features
+      kind: file
+      path: build/gaia/osm/normalized-features.ndjson
+      schema: schemas/gaia.osm-feature.schema.json
+      contentType: application/x-ndjson
+    - name: gaia-feature-store
+      kind: directory
+      path: build/gaia/features/
+    - name: gaia-tile-manifest
+      kind: file
+      path: build/gaia/tiles/tile-manifest.json
+      contentType: application/json
+    - name: source-receipts
+      kind: receipt
+      path: build/evidence/source-receipts.json
+      contentType: application/json
+    - name: validation-report
+      kind: receipt
+      path: build/evidence/validation-report.json
+      contentType: application/json
+    - name: benchmark-report
+      kind: metric
+      path: build/evidence/benchmark-report.json
+      contentType: application/json
+    - name: run-record
+      kind: receipt
+      path: build/evidence/run-record.json
+      contentType: application/json
+  runtime:
+    substrate: container
+    profile: lattice-forge/gaia-osm-ingest:0.1.0
+    dependencies:
+      - python>=3.11
+      - pyproj
+      - shapely
+      - osmium
+      - jsonschema
+    hardware:
+      - cpu
+    environment:
+      GAIA_ARTIFACT_MODE: fixture
+      GAIA_NETWORK_POSTURE: allowlisted
+  provenance:
+    sourceUri: https://www.openstreetmap.org/
+    license: ODbL-1.0
+    attribution: OpenStreetMap contributors; GAIA wrapper artifacts are governed by repository license and attribution policy.
+    receipts:
+      - build/evidence/source-receipts.json
+    freshness: bounded fixture first; live-region mode requires explicit source timestamp and attribution receipt.
+    lineage:
+      - build/evidence/lineage.json
+  policy:
+    safetyClass: bounded
+    promotionGate: gaia-bounded-osm-fixture-validation
+    networkPosture: allowlisted
+    requiresHumanReview: false
+  evidence:
+    logs:
+      - build/logs/gaia-bounded-osm-ingest.log
+    checksums:
+      - build/evidence/checksums.json
+    sboms:
+      - build/evidence/sbom.spdx.json
+    signatures:
+      - build/evidence/signatures.json
+    lineage:
+      - build/evidence/lineage.json
+  metrics:
+    - name: feature_count
+      unit: count
+      direction: informational
+      publishToScoreboard: true
+    - name: invalid_feature_count
+      unit: count
+      threshold: 0
+      direction: minimize
+      publishToScoreboard: true
+    - name: ingest_latency_ms
+      unit: milliseconds
+      direction: minimize
+      publishToScoreboard: true
+    - name: reproducibility_score
+      unit: ratio
+      threshold: 1.0
+      direction: maximize
+      publishToScoreboard: true
+  registrations:
+    sociosphere: true
+    sherlock: true
+    holmes: true
+    deliveryExcellence: true
