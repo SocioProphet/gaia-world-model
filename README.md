@@ -28,6 +28,34 @@ We treat world modeling like engineering: every dataset, ontology, and action is
 - `docs/` – architecture, policies, releases, integration notes
 - `scripts/` – validation/adapters scaffolding (evolves into repeatable pipelines)
 
+## Orion / OSIRIS source-record lane
+
+This repository owns the Gaia side of the Orion/OSIRIS excavation migration: source records, source ledgers, transparent adapter boundaries, provenance discipline, and evidence-grade classification.
+
+`mdheller/osiris` is a quarantine/excavation carcass only. It is not a runtime dependency and is not a trusted source-ingestion implementation. Gaia must not copy OSIRIS route handlers or `stealthFetch`.
+
+Current artifacts:
+
+- `docs/integrations/ORION_OSIRIS_SOURCE_ADAPTERS.md`
+- `docs/integrations/ORION_OSIRIS_SOURCE_LEDGER.md`
+- `schemas/orion-osiris/gaia_source_record.v0_1.schema.json`
+- `fixtures/orion-osiris/source-records/**`
+- `scripts/validate_orion_osiris_source_records.py`
+- `.github/workflows/orion-osiris-source-records.yml`
+
+Validation:
+
+```bash
+python3 scripts/validate_orion_osiris_source_records.py
+```
+
+Boundary:
+
+- Gaia owns source/provenance records.
+- Orion owns observation events, fusion links, decision cards, receipts, and map markers.
+- SCOPE-D owns scanner, sweep, recon, and active target behavior.
+- Prophet Platform is a later runtime/workbench consumer after the Gaia/Orion seam stabilizes.
+
 ## Quickstart
 
 This repo uses **Git LFS**. Without LFS, you’ll only get pointer files for large artifacts.
