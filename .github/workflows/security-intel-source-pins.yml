@@ -1,0 +1,37 @@
+name: security-intel-source-pins
+
+on:
+  pull_request:
+    paths:
+      - "docs/SECURITY_INTEL_SOURCE_PINNING.md"
+      - "gaia/cv/security_intel_source_pins.schema.json"
+      - "gaia/cv/security_intel_source_pins.example.json"
+      - "scripts/validate_security_intel_source_pins.py"
+      - ".github/workflows/security-intel-source-pins.yml"
+      - "docs/README.md"
+      - "README.md"
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/SECURITY_INTEL_SOURCE_PINNING.md"
+      - "gaia/cv/security_intel_source_pins.schema.json"
+      - "gaia/cv/security_intel_source_pins.example.json"
+      - "scripts/validate_security_intel_source_pins.py"
+      - ".github/workflows/security-intel-source-pins.yml"
+      - "docs/README.md"
+      - "README.md"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-security-intel-source-pins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate security-intel source pins
+        run: python3 scripts/validate_security_intel_source_pins.py
