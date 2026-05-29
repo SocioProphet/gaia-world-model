@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "source_record_id": "gaia-src-facility-risk-field-report",
+  "source_name": "Synthetic Operator Field Report",
+  "source_family": "field_report",
+  "route_family": "fixture/orion-osiris/facility-risk",
+  "source_url": "fixture://orion-osiris/facility-risk/field-report",
+  "observed_at": "2026-05-29T12:06:00Z",
+  "ingested_at": "2026-05-29T12:07:00Z",
+  "license_status": "approved_for_fixture",
+  "attribution_required": false,
+  "commercial_use_status": "allowed",
+  "evidence_grade": "operator_report.unverified",
+  "risk_class": "low",
+  "provenance": {
+    "retrieval_mode": "fixture",
+    "hash_algorithm": "none",
+    "canonicalization_status": "not_applicable",
+    "retrieval_notes": "Synthetic operator field report for Orion OSIRIS migration MVP."
+  },
+  "confidence_contribution": 0.55,
+  "notes": "Represents the human observation leg of the facility-risk scenario."
+}
