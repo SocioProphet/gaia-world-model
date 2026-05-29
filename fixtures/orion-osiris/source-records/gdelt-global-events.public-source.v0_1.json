@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "source_record_id": "gaia-src-osiris-gdelt-global-events-feed",
+  "source_name": "GDELT Global Events Signal",
+  "source_family": "weather",
+  "route_family": "candidate/public-world-events/gdelt-global-events",
+  "source_url": "https://www.gdeltproject.org/",
+  "observed_at": "2026-05-29T00:00:00Z",
+  "ingested_at": "2026-05-29T00:00:00Z",
+  "license_status": "public_api_terms_required",
+  "attribution_required": true,
+  "commercial_use_status": "review_required",
+  "evidence_grade": "public_source.unverified",
+  "risk_class": "medium",
+  "provenance": {
+    "retrieval_mode": "public_feed",
+    "hash_algorithm": "none",
+    "canonicalization_status": "not_canonicalized",
+    "retrieval_notes": "Candidate source record only. Live fetch is not enabled in this fixture; terms, attribution, event extraction caveats, geoparsing confidence, and replay discipline must be finalized before production use."
+  },
+  "confidence_contribution": 0.55,
+  "notes": "Public global-event signal candidate recovered from OSIRIS excavation. Treat as unverified signal, not fact. Reimplement transparently in Gaia; do not copy OSIRIS route handler."
+}
