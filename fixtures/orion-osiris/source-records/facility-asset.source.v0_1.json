@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "source_record_id": "gaia-src-facility-risk-facility-asset",
+  "source_name": "Synthetic Facility Asset Registry",
+  "source_family": "facility_asset",
+  "route_family": "fixture/orion-osiris/facility-risk",
+  "source_url": "fixture://orion-osiris/facility-risk/facility-asset",
+  "observed_at": "2026-05-29T11:55:00Z",
+  "ingested_at": "2026-05-29T12:01:00Z",
+  "license_status": "approved_for_fixture",
+  "attribution_required": false,
+  "commercial_use_status": "allowed",
+  "evidence_grade": "fixture.synthetic",
+  "risk_class": "low",
+  "provenance": {
+    "retrieval_mode": "fixture",
+    "hash_algorithm": "none",
+    "canonicalization_status": "not_applicable",
+    "retrieval_notes": "Synthetic facility asset record for Orion OSIRIS migration MVP."
+  },
+  "confidence_contribution": 0.9,
+  "notes": "Represents the asset leg of the facility-risk scenario."
+}
