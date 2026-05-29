@@ -26,6 +26,19 @@ REQUIRED_FIELDS = [
     "provenance",
 ]
 
+REQUIRED_SOURCE_IDS = {
+    "gaia-src-facility-risk-fire-weather-alert",
+    "gaia-src-facility-risk-facility-asset",
+    "gaia-src-facility-risk-cve-exposure",
+    "gaia-src-facility-risk-field-report",
+    "gaia-src-osiris-usgs-earthquake-feed",
+    "gaia-src-osiris-nasa-eonet-feed",
+    "gaia-src-osiris-nasa-firms-feed",
+    "gaia-src-osiris-noaa-nws-alerts-feed",
+    "gaia-src-osiris-gdacs-disaster-alerts-feed",
+    "gaia-src-osiris-gdelt-global-events-feed",
+}
+
 ALLOWED_EVIDENCE_GRADES = {
     "fixture.synthetic",
     "public_source.unverified",
@@ -83,6 +96,16 @@ def check_source_record(path: Path, doc: Dict[str, Any]) -> None:
     if doc["source_family"] == "cyber" and "Scanner/sweep execution remains SCOPE-D-owned" not in doc.get("notes", ""):
         fail(f"{path} cyber source record must state SCOPE-D scanner/sweep boundary")
 
+    if doc["source_record_id"].startswith("gaia-src-osiris-"):
+        if doc.get("provenance", {}).get("retrieval_mode") != "public_feed":
+            fail(f"{path} recovered OSIRIS public source candidate must use retrieval_mode=public_feed")
+        if doc.get("license_status") != "public_api_terms_required":
+            fail(f"{path} recovered OSIRIS public source candidate must require public API terms review")
+        if doc.get("attribution_required") is not True:
+            fail(f"{path} recovered OSIRIS public source candidate must require attribution review")
+        if "do not copy OSIRIS route handler" not in doc.get("notes", ""):
+            fail(f"{path} recovered OSIRIS public source candidate must prohibit copying OSIRIS route handler")
+
 
 def main() -> int:
     if not FIXTURE_DIR.exists():
@@ -100,6 +123,10 @@ def main() -> int:
         if source_id in ids:
             fail(f"duplicate source_record_id {source_id}")
         ids.add(source_id)
+
+    missing_required = sorted(REQUIRED_SOURCE_IDS - ids)
+    if missing_required:
+        fail(f"missing required Orion/OSIRIS source records: {', '.join(missing_required)}")
 
     print(f"validated {len(fixtures)} Orion/OSIRIS Gaia source-record fixtures")
     return 0
