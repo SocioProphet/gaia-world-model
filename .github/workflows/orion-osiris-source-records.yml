@@ -1,0 +1,32 @@
+name: Orion OSIRIS Source Records
+
+on:
+  push:
+    paths:
+      - 'schemas/orion-osiris/**'
+      - 'fixtures/orion-osiris/**'
+      - 'scripts/validate_orion_osiris_source_records.py'
+      - 'docs/integrations/ORION_OSIRIS_SOURCE_ADAPTERS.md'
+      - '.github/workflows/orion-osiris-source-records.yml'
+  pull_request:
+    paths:
+      - 'schemas/orion-osiris/**'
+      - 'fixtures/orion-osiris/**'
+      - 'scripts/validate_orion_osiris_source_records.py'
+      - 'docs/integrations/ORION_OSIRIS_SOURCE_ADAPTERS.md'
+      - '.github/workflows/orion-osiris-source-records.yml'
+
+jobs:
+  validate-orion-osiris-source-records:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate Orion OSIRIS source-record fixtures
+        run: python3 scripts/validate_orion_osiris_source_records.py
