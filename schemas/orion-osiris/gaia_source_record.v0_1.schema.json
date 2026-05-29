@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.dev/gaia/schemas/orion-osiris/gaia_source_record.v0_1.schema.json",
+  "title": "GaiaSourceRecord v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_record_id",
+    "source_name",
+    "source_family",
+    "observed_at",
+    "ingested_at",
+    "evidence_grade",
+    "risk_class",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "source_record_id": {
+      "type": "string",
+      "pattern": "^gaia-src-[a-z0-9][a-z0-9._-]*$"
+    },
+    "source_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_family": {
+      "type": "string",
+      "enum": [
+        "seismic",
+        "fire",
+        "weather",
+        "facility_asset",
+        "field_report",
+        "cyber",
+        "synthetic_fixture",
+        "unknown"
+      ]
+    },
+    "route_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ingested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "license_status": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "review_required",
+        "public_api_terms_required",
+        "attribution_required",
+        "approved_for_fixture",
+        "approved_for_live_demo",
+        "approved_for_production",
+        "not_approved"
+      ],
+      "default": "unknown"
+    },
+    "attribution_required": {
+      "type": "boolean",
+      "default": false
+    },
+    "commercial_use_status": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "review_required",
+        "allowed",
+        "restricted",
+        "not_allowed"
+      ],
+      "default": "unknown"
+    },
+    "evidence_grade": {
+      "type": "string",
+      "enum": [
+        "fixture.synthetic",
+        "public_source.unverified",
+        "public_source.versioned",
+        "public_source.attributed",
+        "operator_report.unverified",
+        "fused.inferred",
+        "policy_gated.action"
+      ]
+    },
+    "risk_class": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "unknown"]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["retrieval_mode", "canonicalization_status"],
+      "properties": {
+        "retrieval_mode": {
+          "type": "string",
+          "enum": ["fixture", "public_feed", "manual_entry", "internal_feed", "action_result", "unknown"]
+        },
+        "content_hash": {
+          "type": "string"
+        },
+        "hash_algorithm": {
+          "type": "string",
+          "enum": ["sha256", "sha512", "none", "unknown"],
+          "default": "unknown"
+        },
+        "canonicalization_status": {
+          "type": "string",
+          "enum": ["not_canonicalized", "canonicalized", "not_applicable", "unknown"]
+        },
+        "retrieval_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "confidence_contribution": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
