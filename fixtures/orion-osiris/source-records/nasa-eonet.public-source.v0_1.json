@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "source_record_id": "gaia-src-osiris-nasa-eonet-feed",
+  "source_name": "NASA EONET Natural Events Feed",
+  "source_family": "weather",
+  "route_family": "candidate/public-world-events/nasa-eonet",
+  "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events",
+  "observed_at": "2026-05-29T00:00:00Z",
+  "ingested_at": "2026-05-29T00:00:00Z",
+  "license_status": "public_api_terms_required",
+  "attribution_required": true,
+  "commercial_use_status": "review_required",
+  "evidence_grade": "public_source.unverified",
+  "risk_class": "low",
+  "provenance": {
+    "retrieval_mode": "public_feed",
+    "hash_algorithm": "none",
+    "canonicalization_status": "not_canonicalized",
+    "retrieval_notes": "Candidate source record only. Live fetch is not enabled in this fixture; terms, attribution, event-family mapping, and replay discipline must be finalized before production use."
+  },
+  "confidence_contribution": 0.75,
+  "notes": "Passive public natural-event adapter candidate recovered from OSIRIS excavation. Reimplement transparently in Gaia; do not copy OSIRIS route handler."
+}
