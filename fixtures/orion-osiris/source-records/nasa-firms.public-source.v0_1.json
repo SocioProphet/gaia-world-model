@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "source_record_id": "gaia-src-osiris-nasa-firms-feed",
+  "source_name": "NASA FIRMS Fire and Hotspot Feed",
+  "source_family": "fire",
+  "route_family": "candidate/public-world-events/nasa-firms",
+  "source_url": "https://firms.modaps.eosdis.nasa.gov/",
+  "observed_at": "2026-05-29T00:00:00Z",
+  "ingested_at": "2026-05-29T00:00:00Z",
+  "license_status": "public_api_terms_required",
+  "attribution_required": true,
+  "commercial_use_status": "review_required",
+  "evidence_grade": "public_source.unverified",
+  "risk_class": "medium",
+  "provenance": {
+    "retrieval_mode": "public_feed",
+    "hash_algorithm": "none",
+    "canonicalization_status": "not_canonicalized",
+    "retrieval_notes": "Candidate source record only. Live fetch is not enabled in this fixture; FIRMS key posture, terms, attribution, sampling disclosure, and replay discipline must be finalized before production use."
+  },
+  "confidence_contribution": 0.7,
+  "notes": "Passive public fire/hotspot adapter candidate recovered from OSIRIS excavation. Reimplement transparently in Gaia; do not copy OSIRIS route handler."
+}
