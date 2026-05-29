@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "source_record_id": "gaia-src-osiris-gdacs-disaster-alerts-feed",
+  "source_name": "GDACS Disaster Alerts Feed",
+  "source_family": "weather",
+  "route_family": "candidate/public-world-events/gdacs-disaster-alerts",
+  "source_url": "https://www.gdacs.org/",
+  "observed_at": "2026-05-29T00:00:00Z",
+  "ingested_at": "2026-05-29T00:00:00Z",
+  "license_status": "public_api_terms_required",
+  "attribution_required": true,
+  "commercial_use_status": "review_required",
+  "evidence_grade": "public_source.unverified",
+  "risk_class": "medium",
+  "provenance": {
+    "retrieval_mode": "public_feed",
+    "hash_algorithm": "none",
+    "canonicalization_status": "not_canonicalized",
+    "retrieval_notes": "Candidate source record only. Live fetch is not enabled in this fixture; endpoint selection, terms, attribution, alert taxonomy, and replay discipline must be finalized before production use."
+  },
+  "confidence_contribution": 0.65,
+  "notes": "Passive public disaster-alert adapter candidate recovered from OSIRIS excavation. Reimplement transparently in Gaia; do not copy OSIRIS route handler."
+}
