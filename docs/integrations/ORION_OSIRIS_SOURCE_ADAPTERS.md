@@ -3,6 +3,7 @@
 Status: initial Gaia-owned implementation plan
 Related issue: `SocioProphet/gaia-world-model#29`
 Source quarantine repo: `mdheller/osiris`
+Validation: `python3 scripts/validate_orion_osiris_source_records.py`
 
 ## 1. Purpose
 
