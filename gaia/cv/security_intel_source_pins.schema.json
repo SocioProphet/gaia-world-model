@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/schemas/gaia/security-intel-source-pins.schema.json",
+  "title": "GAIA Security Intel Source Pins",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "kind", "pins"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "kind": { "const": "SecurityIntelSourcePins" },
+    "pins": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sourceId",
+          "sourceClass",
+          "title",
+          "publisher",
+          "sourceUrl",
+          "retrievedAt",
+          "hashStatus",
+          "licensePosture",
+          "allowedUses",
+          "forbiddenUses",
+          "nonClaims",
+          "relatedRefs",
+          "provenanceNotes"
+        ],
+        "properties": {
+          "sourceId": { "type": "string", "pattern": "^security-intel-source:[a-z0-9][a-z0-9._:-]*$" },
+          "sourceClass": { "enum": ["mitre_attack", "mitre_atlas", "vendor_report", "public_incident_report", "advisory", "regulatory_reference", "taxonomy_reference", "other_public_source"] },
+          "title": { "type": "string", "minLength": 1 },
+          "publisher": { "type": "string", "minLength": 1 },
+          "sourceUrl": { "type": "string", "minLength": 1 },
+          "retrievedAt": { "type": "string", "format": "date-time" },
+          "hashStatus": { "enum": ["not_copied_url_only", "hash_pending", "hash_recorded", "not_applicable"] },
+          "artifactHash": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["algorithm", "value"],
+            "properties": {
+              "algorithm": { "enum": ["sha256", "sha512"] },
+              "value": { "type": "string", "minLength": 32 }
+            }
+          },
+          "licensePosture": { "enum": ["public_web_reference", "open_license", "terms_require_review", "unknown_requires_review"] },
+          "allowedUses": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "forbiddenUses": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "nonClaims": { "type": "array", "minItems": 4, "items": { "type": "string" } },
+          "relatedRefs": { "type": "array", "items": { "type": "string" } },
+          "provenanceNotes": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
