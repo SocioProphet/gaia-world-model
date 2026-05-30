@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "0.1.0",
+  "kind": "SecurityIntelSourcePins",
+  "pins": [
+    {
+      "sourceId": "security-intel-source:mitre-attack-home-2026-05-29",
+      "sourceClass": "mitre_attack",
+      "title": "MITRE ATT&CK knowledge base landing page",
+      "publisher": "MITRE",
+      "sourceUrl": "https://attack.mitre.org/",
+      "retrievedAt": "2026-05-29T13:45:00Z",
+      "hashStatus": "not_copied_url_only",
+      "artifactHash": null,
+      "licensePosture": "public_web_reference",
+      "allowedUses": [
+        "external taxonomy reference",
+        "scenario technique annotation support",
+        "Ontogenesis alignment provenance support"
+      ],
+      "forbiddenUses": [
+        "local compromise proof",
+        "attribution",
+        "runtime authority",
+        "engagement authorization",
+        "claim promotion",
+        "memory writeback approval"
+      ],
+      "nonClaims": [
+        "does_not_prove_local_compromise",
+        "does_not_authorize_engagement",
+        "does_not_execute_attack_procedure",
+        "does_not_claim_attribution",
+        "does_not_promote_memory_writeback"
+      ],
+      "relatedRefs": [
+        "SocioProphet/SCOPE-D#60",
+        "SocioProphet/ontogenesis#113",
+        "adversarial-scenario:workspace-transduction-001"
+      ],
+      "provenanceNotes": "URL-only pin for public ATT&CK reference material used as taxonomy support. No ATT&CK corpus is vendored by this record."
+    },
+    {
+      "sourceId": "security-intel-source:mitre-atlas-home-2026-05-29",
+      "sourceClass": "mitre_atlas",
+      "title": "MITRE ATLAS knowledge base landing page",
+      "publisher": "MITRE",
+      "sourceUrl": "https://atlas.mitre.org/",
+      "retrievedAt": "2026-05-29T13:45:00Z",
+      "hashStatus": "not_copied_url_only",
+      "artifactHash": null,
+      "licensePosture": "public_web_reference",
+      "allowedUses": [
+        "external AI security taxonomy reference",
+        "agentic scenario annotation support",
+        "Ontogenesis alignment provenance support"
+      ],
+      "forbiddenUses": [
+        "local compromise proof",
+        "attribution",
+        "runtime authority",
+        "engagement authorization",
+        "claim promotion",
+        "memory writeback approval"
+      ],
+      "nonClaims": [
+        "does_not_prove_local_compromise",
+        "does_not_authorize_engagement",
+        "does_not_execute_attack_procedure",
+        "does_not_claim_attribution",
+        "does_not_promote_memory_writeback"
+      ],
+      "relatedRefs": [
+        "SocioProphet/ontogenesis#113",
+        "adversarial-scenario:workspace-transduction-001"
+      ],
+      "provenanceNotes": "URL-only pin for public ATLAS reference material used as taxonomy support. No ATLAS corpus is vendored by this record."
+    }
+  ]
+}
