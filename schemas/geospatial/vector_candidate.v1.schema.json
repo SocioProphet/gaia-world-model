@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/geospatial/vector_candidate.v1.schema.json",
+  "title": "VectorCandidate v1",
+  "description": "A vector-symbolic candidate record for similar-observation retrieval. VectorCandidate.status is always 'candidate_only'. Vector candidates MUST NOT be used as evidence for world-claim admission, policy decisions, or map display without a full governed claim pipeline. They are retrieval memory aids only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_version",
+    "candidate_id",
+    "status",
+    "source_claim_ref",
+    "similarity",
+    "retrieval_params",
+    "classification"
+  ],
+  "properties": {
+    "candidate_version": {"type": "string", "const": "v1"},
+    "candidate_id": {"type": "string", "description": "Stable candidate identifier."},
+    "status": {
+      "type": "string",
+      "const": "candidate_only",
+      "description": "Invariant: always 'candidate_only'. Vector candidates are retrieval memory only, not governed world-state."
+    },
+    "source_claim_ref": {
+      "type": "string",
+      "description": "Reference to the world-claim or observation this candidate was retrieved from."
+    },
+    "similarity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "metric"],
+      "properties": {
+        "score": {"type": "number", "minimum": 0, "maximum": 1},
+        "metric": {
+          "type": "string",
+          "enum": ["cosine", "dot_product", "l2", "jaccard", "bm25", "combined"]
+        },
+        "embedding_model_ref": {"type": "string"},
+        "index_ref": {"type": "string"}
+      }
+    },
+    "retrieval_params": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query_ref", "top_k"],
+      "properties": {
+        "query_ref": {"type": "string", "description": "Reference to the query observation or claim that triggered this retrieval."},
+        "top_k": {"type": "integer", "minimum": 1},
+        "filter_tags": {"type": "array", "items": {"type": "string"}},
+        "spatial_filter": {
+          "type": "object",
+          "properties": {
+            "h3_cells": {"type": "array", "items": {"type": "string"}},
+            "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4}
+          }
+        },
+        "temporal_filter": {
+          "type": "object",
+          "properties": {
+            "since": {"type": "string", "format": "date-time"},
+            "until": {"type": "string", "format": "date-time"}
+          }
+        }
+      }
+    },
+    "candidate_summary": {
+      "type": "object",
+      "description": "Brief summary of the matched observation for display/routing. Must not be treated as governed evidence.",
+      "properties": {
+        "claim_type": {"type": "string"},
+        "observed_at": {"type": "string", "format": "date-time"},
+        "h3_cell": {"type": "string"},
+        "confidence_score": {"type": "number"},
+        "source_types": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "usage_note": {
+      "type": "string",
+      "description": "Mandatory usage constraint reminder.",
+      "default": "This VectorCandidate is for similar-observation retrieval only. It must not be used as evidence for world-claim admission, policy decisions, or map display without a full governed claim pipeline."
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {
+          "type": "string",
+          "enum": ["public", "internal", "restricted", "sensitive"]
+        },
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

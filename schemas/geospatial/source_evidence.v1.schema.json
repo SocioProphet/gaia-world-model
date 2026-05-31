@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/geospatial/source_evidence.v1.schema.json",
+  "title": "SourceEvidence v1",
+  "description": "Evidence from a single source that supports a GAIA world-claim. Source types include OSM, EO/STAC, DEM/LiDAR, weather/reanalysis, field reports, and generated manifests. Evidence must carry attribution, license, temporal validity, and quality/confidence. A world-claim without source evidence must not be admitted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_version",
+    "evidence_id",
+    "source_type",
+    "source_ref",
+    "attribution",
+    "temporal",
+    "confidence",
+    "classification"
+  ],
+  "properties": {
+    "evidence_version": {"type": "string", "const": "v1"},
+    "evidence_id": {"type": "string", "description": "Stable evidence identifier, namespaced by source."},
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "osm",
+        "eo_stac",
+        "dem_lidar",
+        "weather_reanalysis",
+        "field_report",
+        "generated_manifest",
+        "sensor_observation",
+        "synthetic_fixture"
+      ],
+      "description": "Canonical source type for this evidence record."
+    },
+    "source_ref": {
+      "type": "string",
+      "description": "Source artifact identifier (e.g. osm://way/424242, stac:item:sentinel-001)."
+    },
+    "geo_anchor_ref": {
+      "type": "string",
+      "description": "Reference to the GeoAnchor that spatially binds this evidence."
+    },
+    "content_hash": {
+      "type": "string",
+      "description": "SHA-256 hash of the source artifact at ingest time."
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "license_ref", "attribution_text"],
+      "properties": {
+        "source_name": {"type": "string"},
+        "license_ref": {"type": "string"},
+        "attribution_text": {"type": "string"},
+        "source_url": {"type": "string"}
+      }
+    },
+    "temporal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observed_at"],
+      "properties": {
+        "observed_at": {"type": "string", "format": "date-time"},
+        "valid_from": {"type": "string", "format": "date-time"},
+        "valid_to": {"type": "string", "format": "date-time"},
+        "staleness_class": {
+          "type": "string",
+          "enum": ["realtime", "recent", "historical", "archive", "unknown"]
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score"],
+      "properties": {
+        "score": {"type": "number", "minimum": 0, "maximum": 1},
+        "confidence_class": {
+          "type": "string",
+          "enum": ["high", "moderate", "low", "very_low", "unknown"]
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "spatial_summary": {
+      "type": "object",
+      "description": "Optional spatial metadata for this evidence record.",
+      "properties": {
+        "geometry_type": {"type": "string"},
+        "h3_cells": {"type": "array", "items": {"type": "string"}},
+        "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+        "crs": {"type": "string"}
+      }
+    },
+    "source_metadata": {
+      "type": "object",
+      "description": "Source-type-specific metadata (tags for OSM, bands for EO, instrument for LiDAR, etc.).",
+      "additionalProperties": true
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "data_class": {
+          "type": "string",
+          "enum": ["public", "internal", "restricted", "sensitive"]
+        },
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "chain": {"type": "array", "items": {"type": "string"}},
+        "runtime_ref": {"type": "string"},
+        "ingest_ref": {"type": "string"}
+      }
+    }
+  }
+}

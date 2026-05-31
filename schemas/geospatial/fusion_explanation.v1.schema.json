@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/geospatial/fusion_explanation.v1.schema.json",
+  "title": "FusionExplanation v1",
+  "description": "Explanation trace for a GAIA world-claim. Records the fusion rule applied, input evidence with roles and weights, derivation steps, uncertainty derivation, and replay instructions. An ExplanationTrace is required for any world-claim that combines more than one source.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_version",
+    "trace_id",
+    "claim_ref",
+    "fusion_rule",
+    "inputs",
+    "uncertainty"
+  ],
+  "properties": {
+    "trace_version": {"type": "string", "const": "v1"},
+    "trace_id": {"type": "string", "description": "Stable trace identifier, namespaced by claim."},
+    "claim_ref": {"type": "string", "description": "Reference to the WorldClaim this trace explains."},
+    "fusion_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_id", "rule_class"],
+      "properties": {
+        "rule_id": {"type": "string", "description": "Stable rule identifier (e.g. weighted-mean-v1)."},
+        "rule_class": {
+          "type": "string",
+          "enum": [
+            "single_source_passthrough",
+            "weighted_mean",
+            "bayesian_update",
+            "ensemble_vote",
+            "threshold_gate",
+            "rule_chain",
+            "human_review",
+            "model_inference"
+          ]
+        },
+        "rule_version": {"type": "string"},
+        "rule_ref": {"type": "string", "description": "URI or document reference for the rule specification."}
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Evidence inputs to this fusion, with roles and weights.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_ref", "role"],
+        "properties": {
+          "evidence_ref": {"type": "string"},
+          "role": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "corroborating",
+              "context",
+              "constraint",
+              "prior",
+              "update",
+              "override"
+            ]
+          },
+          "weight": {"type": "number", "minimum": 0, "maximum": 1},
+          "confidence_at_fusion": {"type": "number", "minimum": 0, "maximum": 1},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "description": "Ordered derivation steps, each named and producing an intermediate value.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["step_id", "step_type", "output_ref"],
+        "properties": {
+          "step_id": {"type": "string"},
+          "step_type": {
+            "type": "string",
+            "enum": [
+              "normalize",
+              "weight",
+              "aggregate",
+              "gate",
+              "infer",
+              "validate",
+              "annotate"
+            ]
+          },
+          "input_refs": {"type": "array", "items": {"type": "string"}},
+          "output_ref": {"type": "string"},
+          "step_notes": {"type": "string"}
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "combined_score"],
+      "description": "Uncertainty derivation for the fused claim.",
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "propagated_confidence",
+            "ensemble_variance",
+            "expert_elicitation",
+            "model_calibration",
+            "fixed_placeholder"
+          ]
+        },
+        "combined_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Combined confidence score after fusion (1 = fully confident)."
+        },
+        "uncertainty_class": {
+          "type": "string",
+          "enum": ["low", "moderate", "high", "very_high", "unknown"]
+        },
+        "per_input_impact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "evidence_ref": {"type": "string"},
+              "impact": {"type": "number"}
+            }
+          }
+        },
+        "notes": {"type": "string"}
+      }
+    },
+    "replay": {
+      "type": "object",
+      "description": "Instructions to deterministically reproduce this fusion trace.",
+      "properties": {
+        "mode": {"type": "string", "enum": ["deterministic_fixture", "reproducible_pipeline", "model_snapshot"]},
+        "command": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "runtime_ref": {"type": "string"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "content_hash": {"type": "string"}
+      }
+    }
+  }
+}

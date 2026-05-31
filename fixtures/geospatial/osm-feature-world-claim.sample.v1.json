@@ -1,0 +1,235 @@
+{
+  "artifact_version": "v1",
+  "artifact_type": "gaia.world_claim_ingest.output",
+  "created_at": "2026-05-01T10:00:00Z",
+  "source": "OpenStreetMap",
+  "extract_ref": "osm-extract://demo/lower-manhattan/2026-05-01",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "claims": [
+    {
+      "claim_version": "v1",
+      "claim_id": "gaia:world-claim:osm:way:424242:2026-05-01T10:00:00Z",
+      "claim_type": "feature_classification",
+      "geo_anchor": {
+        "anchor_id": "anchor:osm:way:424242",
+        "anchor_type": "linestring",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-74.012, 40.705],
+            [-74.006, 40.7128],
+            [-73.998, 40.718]
+          ]
+        },
+        "bbox": [-74.012, 40.705, -73.998, 40.718],
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "crs": "EPSG:4326",
+        "temporal": {
+          "observed_at": "2026-04-15T12:30:00Z",
+          "valid_from": "2026-04-15T12:30:00Z",
+          "time_basis": "document_timestamp"
+        }
+      },
+      "source_evidence_refs": [
+        "evidence:osm:way:424242:2026-05-01T10:00:00Z"
+      ],
+      "proposed_value": {
+        "entity_type": "RoadSegment",
+        "osm_tags": {
+          "highway": "residential",
+          "name": "Demo Corridor Road",
+          "surface": "asphalt",
+          "lanes": "2",
+          "maxspeed": "30"
+        },
+        "routing": {
+          "routable": true,
+          "modes": ["road", "pedestrian", "bicycle"],
+          "access_tags": {"access": "yes"},
+          "safety_status": "advisory"
+        }
+      },
+      "temporal_validity": {
+        "valid_from": "2026-04-15T12:30:00Z",
+        "staleness_class": "historical",
+        "expiry_note": "OSM extract timestamp; re-ingest required when OSM changeset is updated."
+      },
+      "uncertainty": {
+        "confidence_score": 0.85,
+        "uncertainty_class": "low",
+        "uncertainty_notes": "Single authoritative OSM source. Advisory routing status applies. No field validation or LiDAR corroboration exists for this fixture.",
+        "adversarial_impact": 0.0
+      },
+      "policy_status": {
+        "status": "proposed",
+        "review_reason": "OSM-sourced feature not yet reviewed by Holmes/Policy. Admitted status requires attribution check, CRS validation, temporal check, and uncertainty review.",
+        "constraints": [
+          "display-advisory-only",
+          "routing-advisory-only",
+          "requires-policy-review-before-admission"
+        ]
+      },
+      "explanation_trace_ref": "trace:osm:way:424242:2026-05-01T10:00:00Z",
+      "map_display": {
+        "show_source_attribution": true,
+        "show_uncertainty": true,
+        "show_evidence_chain": true,
+        "show_policy_status": true,
+        "display_layer": "proposed_candidate",
+        "advisory_label": "OSM-derived candidate — not yet admitted to world state"
+      },
+      "attribution": {
+        "primary_source_name": "OpenStreetMap",
+        "license_refs": ["ODbL-1.0"],
+        "attribution_texts": ["© OpenStreetMap contributors"],
+        "attribution_notes": "OSM attribution must be preserved in all downstream displays and derivatives."
+      },
+      "provenance": {
+        "chain": ["runtime:world-claim-ingest:v0"],
+        "derived_from": ["osm://way/424242"],
+        "runtime_ref": "runtime:world-claim-ingest:v0",
+        "created_at": "2026-05-01T10:00:00Z",
+        "content_hash": "sha256:generated-at-runtime-placeholder"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "osm", "world-claim", "proposed", "advisory"]
+      }
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:osm:way:424242:2026-05-01T10:00:00Z",
+      "source_type": "osm",
+      "source_ref": "osm://way/424242",
+      "geo_anchor_ref": "anchor:osm:way:424242",
+      "content_hash": "sha256:generated-at-runtime-placeholder",
+      "attribution": {
+        "source_name": "OpenStreetMap",
+        "license_ref": "ODbL-1.0",
+        "attribution_text": "© OpenStreetMap contributors",
+        "source_url": "https://www.openstreetmap.org"
+      },
+      "temporal": {
+        "observed_at": "2026-04-15T12:30:00Z",
+        "valid_from": "2026-04-15T12:30:00Z",
+        "staleness_class": "historical"
+      },
+      "confidence": {
+        "score": 0.85,
+        "confidence_class": "high",
+        "notes": "OSM community-maintained data. Advisory routing status."
+      },
+      "spatial_summary": {
+        "geometry_type": "LineString",
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "bbox": [-74.012, 40.705, -73.998, 40.718],
+        "crs": "EPSG:4326"
+      },
+      "source_metadata": {
+        "osm_type": "way",
+        "osm_id": "424242",
+        "osm_version": "3",
+        "osm_changeset": "demo-changeset-001",
+        "tags": {
+          "highway": "residential",
+          "name": "Demo Corridor Road",
+          "surface": "asphalt",
+          "lanes": "2",
+          "maxspeed": "30"
+        }
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "osm", "source-evidence"]
+      },
+      "provenance": {
+        "chain": ["runtime:world-claim-ingest:v0"],
+        "runtime_ref": "runtime:world-claim-ingest:v0",
+        "ingest_ref": "osm-extract://demo/lower-manhattan/2026-05-01"
+      }
+    }
+  ],
+  "explanation_traces": [
+    {
+      "trace_version": "v1",
+      "trace_id": "trace:osm:way:424242:2026-05-01T10:00:00Z",
+      "claim_ref": "gaia:world-claim:osm:way:424242:2026-05-01T10:00:00Z",
+      "fusion_rule": {
+        "rule_id": "single-source-passthrough-v1",
+        "rule_class": "single_source_passthrough",
+        "rule_version": "v1",
+        "rule_ref": "docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md#single-source-passthrough"
+      },
+      "inputs": [
+        {
+          "evidence_ref": "evidence:osm:way:424242:2026-05-01T10:00:00Z",
+          "role": "primary",
+          "weight": 1.0,
+          "confidence_at_fusion": 0.85,
+          "notes": "Single OSM source, no corroboration. Advisory status applies."
+        }
+      ],
+      "steps": [
+        {
+          "step_id": "step-normalize-osm-tags",
+          "step_type": "normalize",
+          "input_refs": ["evidence:osm:way:424242:2026-05-01T10:00:00Z"],
+          "output_ref": "normalized:osm:way:424242",
+          "step_notes": "Map OSM tags to GAIA entity type (RoadSegment) and routing metadata."
+        },
+        {
+          "step_id": "step-anchor-geometry",
+          "step_type": "annotate",
+          "input_refs": ["normalized:osm:way:424242"],
+          "output_ref": "anchor:osm:way:424242",
+          "step_notes": "Bind linestring geometry, bbox, H3 cells, and temporal anchor."
+        },
+        {
+          "step_id": "step-propose-claim",
+          "step_type": "annotate",
+          "input_refs": ["anchor:osm:way:424242"],
+          "output_ref": "gaia:world-claim:osm:way:424242:2026-05-01T10:00:00Z",
+          "step_notes": "Assemble proposed world claim with policy_status=proposed pending Holmes/Policy review."
+        }
+      ],
+      "uncertainty": {
+        "method": "propagated_confidence",
+        "combined_score": 0.85,
+        "uncertainty_class": "low",
+        "per_input_impact": [
+          {"evidence_ref": "evidence:osm:way:424242:2026-05-01T10:00:00Z", "impact": 0.85}
+        ],
+        "notes": "Single-source passthrough propagates source confidence directly. Advisory routing constraint maintained."
+      },
+      "replay": {
+        "mode": "deterministic_fixture",
+        "command": "python3 geospatial/world_claim_ingest.py fixtures/geospatial/osm-feature-world-claim-input.sample.v1.json /tmp/gaia-world-claim-output.json"
+      },
+      "provenance": {
+        "runtime_ref": "runtime:world-claim-ingest:v0",
+        "created_at": "2026-05-01T10:00:00Z",
+        "content_hash": "sha256:generated-at-runtime-placeholder"
+      }
+    }
+  ],
+  "policy": {
+    "claim_status_summary": "proposed — pending Holmes/Policy review before admission",
+    "attribution_required": true,
+    "advisory_by_default": true,
+    "notes": "OSM-sourced world claims are advisory until attribution check, CRS validation, temporal check, and uncertainty review pass Holmes/Policy review gate."
+  },
+  "invariants": [
+    "Raw OSM source was not mutated.",
+    "OSM attribution and license ref were preserved.",
+    "GeoAnchor binds the claim to a verifiable geometry.",
+    "SourceEvidence carries source_ref, temporal validity, and confidence.",
+    "ExplanationTrace records the single-source passthrough rule.",
+    "policy_status is 'proposed' — not admitted to world state without Holmes/Policy review.",
+    "map_display.display_layer is 'proposed_candidate' — advisory label required on /map."
+  ]
+}
