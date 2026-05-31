@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/gaia.benchmark-report.schema.json",
+  "title": "GAIA OSM Bounded Ingest Benchmark Report v1",
+  "description": "Benchmark report emitted by the benchmark verb. Records deterministic metrics for the bounded OSM ingest run, suitable for Delivery Excellence scoreboard.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_version",
+    "report_id",
+    "artifact_type",
+    "generated_at",
+    "fixture_digest",
+    "metrics"
+  ],
+  "properties": {
+    "report_version": {"type": "string", "const": "v1"},
+    "report_id": {"type": "string", "minLength": 1},
+    "artifact_type": {"type": "string", "const": "gaia.osm_bounded_ingest.benchmark_report"},
+    "generated_at": {"type": "string"},
+    "fixture_digest": {"type": "string"},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["feature_count", "invalid_feature_count", "ingest_latency_ms", "reproducibility_score"],
+      "properties": {
+        "feature_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of features successfully ingested"
+        },
+        "invalid_feature_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of features that failed validation; target is 0"
+        },
+        "ingest_latency_ms": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Wall-clock milliseconds for the bounded ingest run"
+        },
+        "reproducibility_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Ratio of deterministic output agreement across runs; target is 1.0"
+        },
+        "node_count": {"type": "integer", "minimum": 0},
+        "way_count": {"type": "integer", "minimum": 0},
+        "relation_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "scoreboard_eligible": {"type": "boolean"},
+    "delivery_excellence_ref": {"type": "string"}
+  }
+}

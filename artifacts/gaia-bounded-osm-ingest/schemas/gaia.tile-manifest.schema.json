@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/gaia.tile-manifest.schema.json",
+  "title": "GAIA OSM Bounded Ingest Tile Manifest v1",
+  "description": "Tile manifest candidate emitted after bounded OSM ingest. Describes the spatial coverage and placeholder tile endpoint. Not production tile-serving.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "layer_id",
+    "layer_type",
+    "title",
+    "sources",
+    "tiles",
+    "spatial",
+    "attribution",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "manifest_version": {"type": "string", "const": "v1"},
+    "layer_id": {"type": "string", "minLength": 1},
+    "layer_type": {"type": "string", "enum": ["vector", "raster", "hybrid"]},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "source_type"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "source_type": {"type": "string"},
+          "source_refs": {"type": "array", "items": {"type": "string"}}
+        }
+      },
+      "minItems": 1
+    },
+    "tiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url_template", "min_zoom", "max_zoom", "format"],
+      "properties": {
+        "url_template": {"type": "string"},
+        "min_zoom": {"type": "integer", "minimum": 0},
+        "max_zoom": {"type": "integer", "minimum": 0, "maximum": 22},
+        "format": {"type": "string", "enum": ["mvt", "pbf", "png", "jpg", "webp"]}
+      }
+    },
+    "spatial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bbox", "h3_cells", "crs"],
+      "properties": {
+        "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+        "h3_cells": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "crs": {"type": "string"}
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attribution_text", "license_refs"],
+      "properties": {
+        "attribution_text": {"type": "string"},
+        "license_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "source_urls": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_refs", "fixture_digest"],
+      "properties": {
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "fixture_digest": {"type": "string"},
+        "runtime_refs": {"type": "array", "items": {"type": "string"}},
+        "content_hash": {"type": "string"},
+        "created_at": {"type": "string"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data_class": {"type": "string", "enum": ["public", "internal", "restricted", "sensitive"]},
+        "handling_tags": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

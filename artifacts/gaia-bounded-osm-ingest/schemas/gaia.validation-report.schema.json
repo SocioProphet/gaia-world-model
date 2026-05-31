@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.org/gaia/schemas/gaia.validation-report.schema.json",
+  "title": "GAIA OSM Bounded Ingest Validation Report v1",
+  "description": "Validation report emitted by the validate verb. Records per-check outcomes for the bounded OSM ingest pipeline.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_version",
+    "report_id",
+    "artifact_type",
+    "generated_at",
+    "fixture_digest",
+    "status",
+    "checks",
+    "summary"
+  ],
+  "properties": {
+    "report_version": {"type": "string", "const": "v1"},
+    "report_id": {"type": "string", "minLength": 1},
+    "artifact_type": {"type": "string", "const": "gaia.osm_bounded_ingest.validation_report"},
+    "generated_at": {"type": "string"},
+    "fixture_digest": {"type": "string"},
+    "status": {"type": "string", "enum": ["passed", "failed", "partial"]},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_name", "status"],
+        "properties": {
+          "check_name": {"type": "string"},
+          "status": {"type": "string", "enum": ["passed", "failed", "skipped"]},
+          "message": {"type": "string"},
+          "detail": {}
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "passed", "failed"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "passed": {"type": "integer", "minimum": 0},
+        "failed": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0}
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "properties": {
+        "license_ref": {"type": "string"},
+        "attribution_text": {"type": "string"}
+      }
+    }
+  }
+}
