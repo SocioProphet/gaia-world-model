@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.io/schemas/gaia/operations/operational-topology-blast-radius/v0.1.0",
+  "title": "OperationalTopologyBlastRadius",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "topology_ref",
+    "blast_radius_ref",
+    "workspace_ref",
+    "environment_ref",
+    "observed_window",
+    "source_evidence",
+    "nodes",
+    "edges",
+    "blast_radius",
+    "policy_status",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "0.1.0" },
+    "topology_ref": { "type": "string", "pattern": "^topology://" },
+    "blast_radius_ref": { "type": "string", "pattern": "^blast-radius://" },
+    "workspace_ref": { "type": "string", "pattern": "^workspace://" },
+    "environment_ref": { "type": "string", "pattern": "^environment://" },
+    "observed_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "type": "string", "format": "date-time" },
+        "end": { "type": "string", "format": "date-time" }
+      }
+    },
+    "source_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_ref", "source_system", "source_ref", "observed_at", "collection_method", "non_claims"],
+        "properties": {
+          "evidence_ref": { "type": "string", "pattern": "^evidence://" },
+          "source_system": { "type": "string" },
+          "source_ref": { "type": "string" },
+          "observed_at": { "type": "string", "format": "date-time" },
+          "collection_method": { "type": "string" },
+          "non_claims": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["node_ref", "node_type", "label", "environment_ref", "evidence_refs"],
+        "properties": {
+          "node_ref": { "type": "string", "pattern": "^(service|deployment|database|queue|frontend|external-dependency|runtime-environment)://" },
+          "node_type": { "type": "string", "enum": ["service", "deployment", "database", "queue", "frontend", "external_dependency", "runtime_environment"] },
+          "label": { "type": "string", "minLength": 1 },
+          "environment_ref": { "type": "string", "pattern": "^environment://" },
+          "evidence_refs": { "type": "array", "items": { "type": "string", "pattern": "^evidence://" } }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["edge_ref", "source_node_ref", "target_node_ref", "relation_type", "evidence_refs", "confidence"],
+        "properties": {
+          "edge_ref": { "type": "string", "pattern": "^edge://" },
+          "source_node_ref": { "type": "string" },
+          "target_node_ref": { "type": "string" },
+          "relation_type": { "type": "string", "enum": ["depends_on", "calls", "publishes_to", "reads_from", "writes_to", "served_by", "deployed_to"] },
+          "evidence_refs": { "type": "array", "items": { "type": "string", "pattern": "^evidence://" } },
+          "confidence": { "type": "string", "enum": ["low", "medium", "high"] }
+        }
+      }
+    },
+    "blast_radius": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["radius_status", "affected_node_refs", "candidate_consumer_refs", "impact_hypotheses", "confidence", "non_claims"],
+      "properties": {
+        "radius_status": { "type": "string", "enum": ["candidate_only", "supported_by_topology", "confirmed_by_observation"] },
+        "affected_node_refs": { "type": "array", "items": { "type": "string" } },
+        "candidate_consumer_refs": { "type": "array", "items": { "type": "string" } },
+        "impact_hypotheses": { "type": "array", "items": { "type": "string" } },
+        "confidence": { "type": "string", "enum": ["low", "medium", "high"] },
+        "non_claims": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "policy_status": { "type": "string", "enum": ["candidate_only", "fixture_validated", "runtime_observed", "deprecated"] },
+    "non_claims": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  }
+}
