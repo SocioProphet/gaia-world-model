@@ -1,0 +1,35 @@
+name: Operational Topology Fixtures
+
+on:
+  push:
+    paths:
+      - 'schemas/operations/**'
+      - 'fixtures/operations/**'
+      - 'scripts/validate_operational_topology_blast_radius.py'
+      - 'docs/contracts/OPERATIONAL_TOPOLOGY_BLAST_RADIUS_CONTRACT.md'
+      - '.github/workflows/operational-topology.yml'
+  pull_request:
+    paths:
+      - 'schemas/operations/**'
+      - 'fixtures/operations/**'
+      - 'scripts/validate_operational_topology_blast_radius.py'
+      - 'docs/contracts/OPERATIONAL_TOPOLOGY_BLAST_RADIUS_CONTRACT.md'
+      - '.github/workflows/operational-topology.yml'
+
+jobs:
+  validate-operational-topology:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install validation dependencies
+        run: python3 -m pip install jsonschema==4.23.0
+
+      - name: Validate operational topology fixtures
+        run: python3 scripts/validate_operational_topology_blast_radius.py
