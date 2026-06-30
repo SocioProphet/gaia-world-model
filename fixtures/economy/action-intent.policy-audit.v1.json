@@ -1,0 +1,24 @@
+{
+  "id": "act:economy-policy-audit-0001",
+  "actor": "agent:economy-policy-auditor",
+  "verb": "audit",
+  "target": "economic-prophet:policy_simulation_profile:policy-sim-source-intake-001",
+  "constraints": {
+    "mode": "bounded",
+    "requires_review": true,
+    "framework_ref": "SocioProphet/economic-prophet@main",
+    "decision_procedure": "evidence-admissibility-decision-tree",
+    "decision_steps": [
+      "relevance",
+      "hearsay",
+      "opinion",
+      "tendency-coincidence",
+      "credibility",
+      "identification",
+      "privilege",
+      "discretionary-exclusion"
+    ],
+    "reward_functional_ref": "ep-plus-release-quality",
+    "release_authority": "advisory_only"
+  }
+}

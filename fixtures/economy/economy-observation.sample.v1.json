@@ -1,0 +1,69 @@
+{
+  "record_version": "v1",
+  "record_type": "EconomyObservation",
+  "record_id": "gaia:economy:observation:instrument-loan-001:2026-04-24",
+  "standards_refs": [
+    "SocioProphet/gaia-world-model/docs/SMART_ECONOMY_DOMAIN.md",
+    "SocioProphet/economic-prophet/schemas/ep_output.schema.json",
+    "SocioProphet/economic-prophet/schemas/uvmc_measurement_context.schema.json",
+    "SocioProphet/economic-prophet/docs/unified_value_measurement_calculus.md"
+  ],
+  "economic_prophet": {
+    "framework_ref": "SocioProphet/economic-prophet@main",
+    "ep_output": {
+      "object_id": "instrument-loan-001",
+      "as_of": "2026-04-24T00:00:00Z",
+      "horizon": "1Y",
+      "economic_profit": 123.45,
+      "components": {
+        "revenue": 1000.0,
+        "expected_loss": 100.0,
+        "expense": 50.0,
+        "funding_costs": 200.0,
+        "funding_credits": 10.0,
+        "taxes": 40.0,
+        "capital_charge": 496.55
+      }
+    },
+    "measurement_context": {
+      "measurement_context_id": "uvmc:ctx:instrument-loan-001:2026-04-24:base",
+      "object_id": "instrument-loan-001",
+      "object_type": "instrument",
+      "as_of": "2026-04-24T00:00:00Z",
+      "period_id": "2026-Q2",
+      "horizon": "1Y",
+      "scenario_id": "baseline",
+      "model_version": "ep-core-0.1",
+      "parameter_set": "default",
+      "formula_version": "uvmc-0.1",
+      "cadence": "daily",
+      "source_system": "synthetic-core-banking",
+      "lineage": {
+        "parent_chain": ["account-credit-001", "rel-synthetic-001", "commercial-banking", "entity-bank-holdco"],
+        "type_chain": ["instrument", "account", "relationship", "line_of_business", "legal_entity"]
+      }
+    },
+    "policy_simulation_profile_ref": "economic-prophet:policy_simulation_profile:not-applicable-baseline"
+  },
+  "source": {
+    "source_id": "economic-prophet-synthetic-run",
+    "source_type": "EconomicProphetEP",
+    "license_ref": "internal-design-record",
+    "access_tier": "internal"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["SocioProphet/economic-prophet:examples/lineage_ep_output.json"],
+    "runtime_boundary_id": "runtime:economic-prophet:ep:v0"
+  },
+  "governance": {
+    "privacy_tier": "internal",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "restricted"
+  },
+  "classification": {
+    "security_marking": "internal_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:not-applicable-non-geospatial"
+  }
+}
