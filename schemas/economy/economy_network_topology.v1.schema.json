@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/economy/economy_network_topology.v1.schema.json",
+  "title": "GAIA Economy Network Topology v1",
+  "description": "The founding world-model's network-of-networks, schematized as a graph bound to Economic Prophet. Nodes carry an Economic Prophet object_type and object_ref; the political network binds to a policy_simulation_profile; the geographic network binds to GAIA geo. Networks are the integration surface; Economic Profit (EP) flows over the edges.",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "networks",
+    "nodes",
+    "edges",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "EconomyNetworkTopology"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "networks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["network_id", "network_kind", "description"],
+        "properties": {
+          "network_id": {"type": "string", "minLength": 1},
+          "network_kind": {
+            "type": "string",
+            "enum": ["resource", "distribution", "labor", "capital", "political", "information", "time", "geographic"]
+          },
+          "description": {"type": "string"},
+          "friction_model": {
+            "type": "string",
+            "description": "How law/policy frictions apply to flows in this network (e.g. ref to a policy_simulation_profile)."
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["node_id", "network_id", "economic_object_type"],
+        "properties": {
+          "node_id": {"type": "string", "minLength": 1},
+          "network_id": {"type": "string", "minLength": 1},
+          "economic_object_type": {
+            "type": "string",
+            "description": "Matches the Economic Prophet UVMC object_type enum.",
+            "enum": [
+              "legal_entity", "line_of_business", "portfolio", "relationship",
+              "account", "instrument", "transaction_event", "collateral_set",
+              "funding_source", "hedge_set", "sphere", "edge", "triparty_face", "other"
+            ]
+          },
+          "object_ref": {"type": "string", "description": "Economic Prophet object_id this node binds to."},
+          "uvmc_dimension_ref": {"type": "string"},
+          "geo_ref": {"type": "string", "description": "GAIA geospatial reference for geographic-network nodes."}
+        },
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["edge_id", "from_node", "to_node", "flow_type", "network_id"],
+        "properties": {
+          "edge_id": {"type": "string", "minLength": 1},
+          "from_node": {"type": "string", "minLength": 1},
+          "to_node": {"type": "string", "minLength": 1},
+          "flow_type": {
+            "type": "string",
+            "description": "What flows over the edge (e.g. value, labor, capital, goods, authority)."
+          },
+          "network_id": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": true
+      }
+    },
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}

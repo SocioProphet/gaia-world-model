@@ -1,0 +1,60 @@
+{
+  "record_version": "v1",
+  "record_type": "EconomyNetworkTopology",
+  "record_id": "gaia:economy:network-topology:synthetic-bank-holdco:v1",
+  "standards_refs": [
+    "SocioProphet/gaia-world-model/docs/SMART_ECONOMY_DOMAIN.md",
+    "SocioProphet/economic-prophet/schemas/canonical_object.schema.json",
+    "SocioProphet/economic-prophet/schemas/policy_simulation_profile.schema.json"
+  ],
+  "networks": [
+    {"network_id": "net-capital", "network_kind": "capital", "description": "Committed/liquid capital flows across the object graph."},
+    {"network_id": "net-labor", "network_kind": "labor", "description": "Labor/life network supplying the value function L."},
+    {"network_id": "net-resource", "network_kind": "resource", "description": "Land/resource network (Nature), demand/supply with legal/illegal frictions."},
+    {"network_id": "net-distribution", "network_kind": "distribution", "description": "Distribution network with boundary-condition frictions."},
+    {"network_id": "net-political", "network_kind": "political", "description": "Law/policy network; law modeled as friction on flows.", "friction_model": "economic-prophet:policy_simulation_profile:policy-sim-source-intake-001"},
+    {"network_id": "net-information", "network_kind": "information", "description": "Information/communication network."},
+    {"network_id": "net-time", "network_kind": "time", "description": "Time network: process/investment/travel/life horizons."},
+    {"network_id": "net-geographic", "network_kind": "geographic", "description": "Geo-tag network binding economic nodes to GAIA Earth geometry."}
+  ],
+  "nodes": [
+    {"node_id": "n-entity", "network_id": "net-capital", "economic_object_type": "legal_entity", "object_ref": "entity-bank-holdco"},
+    {"node_id": "n-lob", "network_id": "net-capital", "economic_object_type": "line_of_business", "object_ref": "commercial-banking"},
+    {"node_id": "n-rel", "network_id": "net-capital", "economic_object_type": "relationship", "object_ref": "rel-synthetic-001"},
+    {"node_id": "n-account", "network_id": "net-capital", "economic_object_type": "account", "object_ref": "account-credit-001"},
+    {"node_id": "n-instrument", "network_id": "net-capital", "economic_object_type": "instrument", "object_ref": "instrument-loan-001"},
+    {"node_id": "n-labor-pool", "network_id": "net-labor", "economic_object_type": "other", "object_ref": "labor-pool-synthetic-001"},
+    {"node_id": "n-policy-face", "network_id": "net-political", "economic_object_type": "triparty_face", "object_ref": "participant-planner-clearing-face"},
+    {"node_id": "n-geo-site", "network_id": "net-geographic", "economic_object_type": "other", "geo_ref": "gaia:geo:site:synthetic-001"}
+  ],
+  "edges": [
+    {"edge_id": "e-entity-lob", "from_node": "n-entity", "to_node": "n-lob", "flow_type": "capital", "network_id": "net-capital"},
+    {"edge_id": "e-lob-rel", "from_node": "n-lob", "to_node": "n-rel", "flow_type": "capital", "network_id": "net-capital"},
+    {"edge_id": "e-rel-account", "from_node": "n-rel", "to_node": "n-account", "flow_type": "capital", "network_id": "net-capital"},
+    {"edge_id": "e-account-instrument", "from_node": "n-account", "to_node": "n-instrument", "flow_type": "value", "network_id": "net-capital"},
+    {"edge_id": "e-labor-instrument", "from_node": "n-labor-pool", "to_node": "n-instrument", "flow_type": "labor", "network_id": "net-labor"},
+    {"edge_id": "e-policy-instrument", "from_node": "n-policy-face", "to_node": "n-instrument", "flow_type": "authority", "network_id": "net-political"},
+    {"edge_id": "e-geo-entity", "from_node": "n-geo-site", "to_node": "n-entity", "flow_type": "location", "network_id": "net-geographic"}
+  ],
+  "source": {
+    "source_id": "economic-prophet-object-graph",
+    "source_type": "EconomicProphetObjectGraph",
+    "license_ref": "internal-design-record",
+    "access_tier": "internal"
+  },
+  "provenance": {
+    "chain": ["fixture:generated"],
+    "derived_from": ["SocioProphet/economic-prophet:examples/object_graph.json", "drive-download-20260510T173010Z-3-001:IMG_2747,IMG_2754"],
+    "runtime_boundary_id": "runtime:economy-network-topology:v0"
+  },
+  "governance": {
+    "privacy_tier": "internal",
+    "safety_tier": "standard",
+    "retention_tier": "sample",
+    "redistribution": "restricted"
+  },
+  "classification": {
+    "security_marking": "internal_sample",
+    "sensitive_geo_policy_ref": "policy:sensitive-geo:not-applicable-non-geospatial"
+  }
+}

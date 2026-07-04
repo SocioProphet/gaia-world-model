@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/economy/economy_observation.v1.schema.json",
+  "title": "GAIA Economy Observation v1",
+  "description": "GAIA smart-economy domain record. It does NOT redefine value; it binds GAIA's world model to the Economic Prophet framework (SocioProphet/economic-prophet). Economic Profit (EP) is the canonical additive value measure (UVMC rule 1); the embedded ep_output conforms to economic-prophet's ep_output schema and the measurement_context conforms to its UVMC measurement context schema.",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_type",
+    "record_id",
+    "standards_refs",
+    "economic_prophet",
+    "source",
+    "provenance",
+    "governance",
+    "classification"
+  ],
+  "properties": {
+    "record_version": {"type": "string", "const": "v1"},
+    "record_type": {"type": "string", "const": "EconomyObservation"},
+    "record_id": {"type": "string"},
+    "standards_refs": {"type": "array", "items": {"type": "string"}},
+    "economic_prophet": {
+      "type": "object",
+      "description": "Outputs consumed from the Economic Prophet framework. EP is the value backbone; UVMC supplies the measurement context; policy_simulation supplies the law/policy layer.",
+      "required": ["framework_ref", "ep_output", "measurement_context"],
+      "properties": {
+        "framework_ref": {
+          "type": "string",
+          "description": "Pinned reference to the producing framework, e.g. SocioProphet/economic-prophet@<sha>."
+        },
+        "ep_output": {
+          "type": "object",
+          "description": "Conforms to economic-prophet ep_output.schema.json. EP additive identity: economic_profit = revenue - expected_loss - expense - funding_costs + funding_credits - taxes - capital_charge.",
+          "required": ["object_id", "as_of", "horizon", "economic_profit", "components"],
+          "properties": {
+            "object_id": {"type": "string"},
+            "as_of": {"type": "string"},
+            "horizon": {"type": "string"},
+            "economic_profit": {"type": "number"},
+            "components": {
+              "type": "object",
+              "required": ["revenue", "expected_loss", "expense", "funding_costs", "funding_credits", "taxes", "capital_charge"],
+              "properties": {
+                "revenue": {"type": "number"},
+                "expected_loss": {"type": "number"},
+                "expense": {"type": "number"},
+                "funding_costs": {"type": "number"},
+                "funding_credits": {"type": "number"},
+                "taxes": {"type": "number"},
+                "capital_charge": {"type": "number"}
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "measurement_context": {
+          "type": "object",
+          "description": "Conforms to economic-prophet uvmc_measurement_context.schema.json (subset of required fields enforced here).",
+          "required": ["measurement_context_id", "object_id", "object_type", "as_of", "period_id", "horizon", "scenario_id", "model_version", "parameter_set", "formula_version", "cadence", "source_system", "lineage"],
+          "properties": {
+            "measurement_context_id": {"type": "string", "minLength": 1},
+            "object_id": {"type": "string", "minLength": 1},
+            "object_type": {"type": "string"},
+            "as_of": {"type": "string"},
+            "period_id": {"type": "string", "minLength": 1},
+            "horizon": {"type": "string", "minLength": 1},
+            "scenario_id": {"type": "string", "minLength": 1},
+            "model_version": {"type": "string", "minLength": 1},
+            "parameter_set": {"type": "string", "minLength": 1},
+            "formula_version": {"type": "string", "minLength": 1},
+            "cadence": {"type": "string"},
+            "source_system": {"type": "string", "minLength": 1},
+            "lineage": {
+              "type": "object",
+              "required": ["parent_chain", "type_chain"],
+              "properties": {
+                "parent_chain": {"type": "array", "items": {"type": "string"}},
+                "type_chain": {"type": "array", "items": {"type": "string"}},
+                "input_hash": {"type": "string"},
+                "output_hash": {"type": "string"}
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "policy_simulation_profile_ref": {
+          "type": "string",
+          "description": "Optional ref to an economic-prophet policy_simulation_profile (the law/policy layer; law modeled as friction on flows)."
+        }
+      },
+      "additionalProperties": true
+    },
+    "source": {"type": "object"},
+    "provenance": {"type": "object"},
+    "governance": {"type": "object"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}

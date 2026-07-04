@@ -1,0 +1,5 @@
+{
+  "verification": "p0-gaia-contract-fixtures",
+  "purpose": "Trigger PR-scoped Contract Fixtures workflow for chat-visible P0 verification.",
+  "non_product_artifact": true
+}
