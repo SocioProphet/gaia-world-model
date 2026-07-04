@@ -1,0 +1,11 @@
+{
+  "id": "pol:economy-policy-audit-0001",
+  "decision": "review",
+  "reason": "triparty face 'participant-planner-clearing-face' is in state ReviewRequired with residual 0.4 above the release threshold; reward functional release_authority is advisory_only, so the audit cannot self-release and routes to review.",
+  "evidence_refs": [
+    "economic-prophet:policy_simulation_profile:policy-sim-source-intake-001",
+    "economic-prophet:audit_receipt:policy-sim-source-intake-run-001",
+    "economic-prophet:triparty_face:participant-planner-clearing-face",
+    "act:economy-policy-audit-0001"
+  ]
+}
