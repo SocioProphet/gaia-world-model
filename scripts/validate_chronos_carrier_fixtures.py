@@ -50,6 +50,7 @@ POSITIVE_FIXTURES = [
 ]
 NEGATIVE_FIXTURES = [
     "fixtures/geospatial/negative/world-claim-fuzzy-score-admitted-without-non-authority-declaration.invalid.v1.json",
+    "fixtures/geospatial/negative/world-claim-fusion-rule-malformed-non-object.invalid.v1.json",
 ]
 
 # chronos_method_output_type values that are soft/candidate signals per the CHRONOS
@@ -120,6 +121,11 @@ def extract_claim_trace_pairs(path: str, doc: Dict[str, Any]) -> List[Tuple[str,
 
 def check_chronos_carrier(label: str, claim: Dict[str, Any], trace: Dict[str, Any]) -> None:
     fusion_rule = trace.get("fusion_rule", {})
+    if not isinstance(fusion_rule, dict):
+        raise CheckError(
+            f"{label}: explanation_trace.fusion_rule must be an object, "
+            f"got {type(fusion_rule).__name__}: {fusion_rule!r}"
+        )
     method_family = fusion_rule.get("chronos_method_family", "classical_deterministic")
     output_type = fusion_rule.get("chronos_method_output_type", "hard_value")
 
@@ -128,6 +134,11 @@ def check_chronos_carrier(label: str, claim: Dict[str, Any], trace: Dict[str, An
     requires_declaration = is_neuro_symbolic or is_soft_output
 
     declaration = trace.get("chronos_non_authority_declaration")
+    if declaration is not None and not isinstance(declaration, dict):
+        raise CheckError(
+            f"{label}: chronos_non_authority_declaration must be an object, "
+            f"got {type(declaration).__name__}: {declaration!r}"
+        )
 
     if requires_declaration:
         if not declaration:
@@ -143,7 +154,13 @@ def check_chronos_carrier(label: str, claim: Dict[str, Any], trace: Dict[str, An
             )
         if not declaration.get("declaration"):
             raise CheckError(f"{label}: chronos_non_authority_declaration.declaration must be a non-empty string")
-        status = claim.get("policy_status", {}).get("status")
+        policy_status = claim.get("policy_status", {})
+        if not isinstance(policy_status, dict):
+            raise CheckError(
+                f"{label}: claim.policy_status must be an object, "
+                f"got {type(policy_status).__name__}: {policy_status!r}"
+            )
+        status = policy_status.get("status")
         if status == "admitted":
             raise CheckError(
                 f"{label}: a candidate-only carrier (chronos_non_authority_declaration.is_candidate_only=true) "
