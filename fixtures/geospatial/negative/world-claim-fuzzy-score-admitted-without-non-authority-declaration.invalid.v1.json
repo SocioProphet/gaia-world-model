@@ -1,0 +1,189 @@
+{
+  "artifact_version": "v1",
+  "artifact_type": "gaia.world_claim.fusion",
+  "artifact_id": "gaia:world-claim:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01:INVALID",
+  "created_at": "2026-08-01T09:00:00Z",
+  "description": "NEGATIVE FIXTURE (must be rejected). Same LTN-style fuzzy_satisfaction_score fusion as ltn-fuzzy-vegetation-dryness-risk-world-claim.sample.v1.json, but here the claim is incorrectly promoted to policy_status=admitted with NO chronos_non_authority_declaration on the explanation trace. This is exactly the CHRONOS negative rule this repo must keep rejecting: 'a fuzzy satisfaction score is promoted as truth' (sociosphere/docs/integration/neurosymbolic-chronos-alignment.md, 'Required negative rules' #1). scripts/validate_chronos_carrier_fixtures.py must reject this fixture.",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "claim": {
+    "claim_version": "v1",
+    "claim_id": "gaia:world-claim:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01:INVALID",
+    "claim_type": "risk",
+    "geo_anchor": {
+      "anchor_id": "anchor:fusion:sonoma-corridor:2026-08-01",
+      "anchor_type": "bbox",
+      "bbox": [-122.75, 38.40, -122.65, 38.48],
+      "h3_cells": ["8928308280fffff", "89283082807ffff"],
+      "crs": "EPSG:4326",
+      "temporal": {
+        "observed_at": "2026-08-01T08:30:00Z",
+        "valid_from": "2026-08-01T08:00:00Z",
+        "valid_to": "2026-08-01T14:00:00Z",
+        "time_basis": "sensor_capture"
+      }
+    },
+    "source_evidence_refs": [
+      "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+      "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z"
+    ],
+    "proposed_value": {
+      "predicate": "HighFireRisk(sonoma-corridor)",
+      "fuzzy_satisfaction_score": 0.74,
+      "risk_domain": "wildland_fire_ignition_potential",
+      "notes": "INVALID: treated as an admitted world-state fact rather than a candidate signal."
+    },
+    "temporal_validity": {
+      "valid_from": "2026-08-01T08:00:00Z",
+      "valid_to": "2026-08-01T14:00:00Z",
+      "staleness_class": "recent"
+    },
+    "uncertainty": {
+      "confidence_score": 0.55,
+      "uncertainty_class": "high",
+      "uncertainty_notes": "INVALID: high uncertainty class combined with admitted status is itself suspect, and the fuzzy_satisfaction_score is being displayed as if it were confidence/ground truth.",
+      "adversarial_impact": 0.0
+    },
+    "policy_status": {
+      "status": "admitted",
+      "policy_decision_ref": "policy-decision:INVALID:auto-admitted-without-review",
+      "review_reason": "INVALID: claim was admitted directly from the fuzzy fusion output without Holmes/Policy review and without corroborating hard evidence.",
+      "constraints": []
+    },
+    "explanation_trace_ref": "trace:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01:INVALID",
+    "map_display": {
+      "show_source_attribution": true,
+      "show_uncertainty": true,
+      "show_evidence_chain": true,
+      "show_policy_status": true,
+      "display_layer": "admitted_world_state",
+      "advisory_label": "INVALID: shown as admitted world state"
+    },
+    "attribution": {
+      "primary_source_name": "Fusion: Synthetic EO vegetation-dryness scene + synthetic weather precipitation-deficit reanalysis",
+      "license_refs": ["sample-only", "copernicus-era5-sample"],
+      "attribution_texts": [
+        "EO scene: synthetic fixture for GAIA runtime validation",
+        "Weather: ERA5-like synthetic fixture for GAIA runtime validation"
+      ]
+    },
+    "provenance": {
+      "chain": ["runtime:world-claim-ltn-fusion:v0"],
+      "derived_from": [
+        "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+        "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z"
+      ],
+      "runtime_ref": "runtime:world-claim-ltn-fusion:v0",
+      "created_at": "2026-08-01T09:00:00Z",
+      "content_hash": "sha256:fixture-placeholder-invalid"
+    },
+    "classification": {
+      "data_class": "public",
+      "handling_tags": ["demo", "fusion", "world-claim", "risk", "invalid", "negative-fixture"]
+    },
+    "chronos_grounding_status": "ungrounded",
+    "chronos_owning_authority_plane": "SocioProphet/holmes"
+  },
+  "source_evidence": [
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+      "source_type": "eo_stac",
+      "source_ref": "stac:item:vegetation-dryness-scene-002",
+      "geo_anchor_ref": "anchor:fusion:sonoma-corridor:2026-08-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "Synthetic vegetation-dryness EO fixture",
+        "license_ref": "sample-only",
+        "attribution_text": "Synthetic EO fixture for GAIA runtime validation"
+      },
+      "temporal": {
+        "observed_at": "2026-08-01T08:30:00Z",
+        "valid_from": "2026-08-01T08:25:00Z",
+        "staleness_class": "recent"
+      },
+      "confidence": {
+        "score": 0.70,
+        "confidence_class": "moderate"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "eo", "stac", "source-evidence"]
+      }
+    },
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z",
+      "source_type": "weather_reanalysis",
+      "source_ref": "reanalysis://era5-like/sonoma-corridor/2026-08-01T08:00:00Z",
+      "geo_anchor_ref": "anchor:fusion:sonoma-corridor:2026-08-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "ERA5-like weather reanalysis (synthetic fixture)",
+        "license_ref": "copernicus-era5-sample",
+        "attribution_text": "ERA5-like synthetic fixture for GAIA runtime validation"
+      },
+      "temporal": {
+        "observed_at": "2026-08-01T08:00:00Z",
+        "valid_from": "2026-08-01T06:00:00Z",
+        "staleness_class": "recent"
+      },
+      "confidence": {
+        "score": 0.68,
+        "confidence_class": "moderate"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "weather", "reanalysis", "era5", "source-evidence"]
+      }
+    }
+  ],
+  "explanation_trace": {
+    "trace_version": "v1",
+    "trace_id": "trace:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01:INVALID",
+    "claim_ref": "gaia:world-claim:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01:INVALID",
+    "fusion_rule": {
+      "rule_id": "ltn-fuzzy-high-fire-risk-v1",
+      "rule_class": "model_inference",
+      "rule_version": "v1",
+      "rule_ref": "sociosphere/docs/integration/neurosymbolic-chronos-alignment.md#method-families-and-chronos-roles",
+      "chronos_method_family": "ltn_differentiable_fuzzy_logic",
+      "chronos_method_output_type": "fuzzy_satisfaction_score"
+    },
+    "inputs": [
+      {
+        "evidence_ref": "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+        "role": "primary",
+        "weight": 0.55,
+        "confidence_at_fusion": 0.70
+      },
+      {
+        "evidence_ref": "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z",
+        "role": "corroborating",
+        "weight": 0.45,
+        "confidence_at_fusion": 0.68
+      }
+    ],
+    "uncertainty": {
+      "method": "model_calibration",
+      "combined_score": 0.55,
+      "uncertainty_class": "high"
+    },
+    "replay": {
+      "mode": "model_snapshot",
+      "command": "cat fixtures/geospatial/negative/world-claim-fuzzy-score-admitted-without-non-authority-declaration.invalid.v1.json | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d[\"claim\"][\"proposed_value\"][\"fuzzy_satisfaction_score\"])'"
+    },
+    "provenance": {
+      "runtime_ref": "runtime:world-claim-ltn-fusion:v0",
+      "created_at": "2026-08-01T09:00:00Z",
+      "content_hash": "sha256:fixture-placeholder-invalid"
+    }
+  },
+  "invariants_violated": [
+    "fusion_rule.chronos_method_output_type=fuzzy_satisfaction_score requires a chronos_non_authority_declaration on the explanation trace — MISSING here.",
+    "A soft/candidate chronos_method_output_type must not carry claim.policy_status.status=admitted — this fixture sets it to 'admitted' anyway.",
+    "This is the CHRONOS negative rule 'a fuzzy satisfaction score is promoted as truth' (neurosymbolic-chronos-alignment.md, Required negative rules #1)."
+  ]
+}

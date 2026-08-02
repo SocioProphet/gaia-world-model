@@ -1,0 +1,277 @@
+{
+  "artifact_version": "v1",
+  "artifact_type": "gaia.world_claim.fusion",
+  "artifact_id": "gaia:world-claim:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01",
+  "created_at": "2026-08-01T09:00:00Z",
+  "description": "Worked example: an LTN-style differentiable fuzzy-logic fusion over EO vegetation-dryness and weather precipitation-deficit evidence produces a fuzzy satisfaction score for the predicate HighFireRisk(corridor). This is the CHRONOS neuro-symbolic case referenced in sociosphere/docs/integration/neurosymbolic-chronos-alignment.md and SocioProphet/gaia-world-model#38: the fuzzy score is a candidate signal only, never truth, evidence, or a policy admission by itself.",
+  "standards_refs": [
+    "SocioProphet/socioprophet-standards-storage/docs/standards/096-multidomain-geospatial-storage-contracts.md",
+    "SocioProphet/socioprophet-standards-knowledge/docs/standards/080-multidomain-geospatial-knowledge-context.md"
+  ],
+  "claim": {
+    "claim_version": "v1",
+    "claim_id": "gaia:world-claim:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01",
+    "claim_type": "risk",
+    "geo_anchor": {
+      "anchor_id": "anchor:fusion:sonoma-corridor:2026-08-01",
+      "anchor_type": "bbox",
+      "bbox": [-122.75, 38.40, -122.65, 38.48],
+      "h3_cells": ["8928308280fffff", "89283082807ffff"],
+      "crs": "EPSG:4326",
+      "temporal": {
+        "observed_at": "2026-08-01T08:30:00Z",
+        "valid_from": "2026-08-01T08:00:00Z",
+        "valid_to": "2026-08-01T14:00:00Z",
+        "time_basis": "sensor_capture"
+      }
+    },
+    "source_evidence_refs": [
+      "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+      "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z"
+    ],
+    "proposed_value": {
+      "predicate": "HighFireRisk(sonoma-corridor)",
+      "fuzzy_satisfaction_score": 0.74,
+      "risk_domain": "wildland_fire_ignition_potential",
+      "notes": "LTN-style differentiable fuzzy-logic satisfaction score for the HighFireRisk predicate, combining vegetation dryness index and precipitation deficit. This is a soft constraint-satisfaction signal, not a hard risk determination."
+    },
+    "temporal_validity": {
+      "valid_from": "2026-08-01T08:00:00Z",
+      "valid_to": "2026-08-01T14:00:00Z",
+      "staleness_class": "recent",
+      "expiry_note": "Re-run fuzzy satisfaction scoring after next EO/weather refresh cycle."
+    },
+    "uncertainty": {
+      "confidence_score": 0.55,
+      "uncertainty_class": "high",
+      "uncertainty_notes": "Confidence reflects input evidence quality only. The 0.74 fuzzy_satisfaction_score in proposed_value is a separate, non-probabilistic soft-constraint value per chronos_method_output_type=fuzzy_satisfaction_score and MUST NOT be read as a confidence or probability of fire occurrence.",
+      "adversarial_impact": 0.0
+    },
+    "policy_status": {
+      "status": "review",
+      "review_reason": "Fuzzy satisfaction score from an LTN-style neuro-symbolic method is a candidate signal only (chronos_non_authority_declaration.is_candidate_only=true). Per CHRONOS negative rule 'a fuzzy satisfaction score is promoted as truth', this claim must not be admitted or treated as evidence until Holmes/Policy reviews it against hard sensor/field evidence.",
+      "constraints": [
+        "display-advisory-only",
+        "must-not-be-treated-as-evidence",
+        "no-autonomous-actuation",
+        "requires-policy-review-before-admission",
+        "requires-corroborating-hard-evidence-before-any-admission"
+      ]
+    },
+    "explanation_trace_ref": "trace:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01",
+    "map_display": {
+      "show_source_attribution": true,
+      "show_uncertainty": true,
+      "show_evidence_chain": true,
+      "show_policy_status": true,
+      "display_layer": "review_flagged",
+      "advisory_label": "Candidate fuzzy fire-risk signal (LTN-style) — under review, not admitted, not evidence"
+    },
+    "attribution": {
+      "primary_source_name": "Fusion: Synthetic EO vegetation-dryness scene + synthetic weather precipitation-deficit reanalysis",
+      "license_refs": ["sample-only", "copernicus-era5-sample"],
+      "attribution_texts": [
+        "EO scene: synthetic fixture for GAIA runtime validation",
+        "Weather: ERA5-like synthetic fixture for GAIA runtime validation"
+      ],
+      "attribution_notes": "Synthetic fixture values only; not derived from live sensor feeds."
+    },
+    "provenance": {
+      "chain": ["runtime:world-claim-ltn-fusion:v0"],
+      "derived_from": [
+        "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+        "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z"
+      ],
+      "runtime_ref": "runtime:world-claim-ltn-fusion:v0",
+      "created_at": "2026-08-01T09:00:00Z",
+      "content_hash": "sha256:fixture-placeholder-replace-with-canonical-hash"
+    },
+    "classification": {
+      "data_class": "public",
+      "handling_tags": ["demo", "fusion", "world-claim", "risk", "review", "advisory", "neuro-symbolic", "ltn"]
+    },
+    "chronos_grounding_status": "ungrounded",
+    "chronos_owning_authority_plane": "SocioProphet/holmes"
+  },
+  "source_evidence": [
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+      "source_type": "eo_stac",
+      "source_ref": "stac:item:vegetation-dryness-scene-002",
+      "geo_anchor_ref": "anchor:fusion:sonoma-corridor:2026-08-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "Synthetic vegetation-dryness EO fixture",
+        "license_ref": "sample-only",
+        "attribution_text": "Synthetic EO fixture for GAIA runtime validation"
+      },
+      "temporal": {
+        "observed_at": "2026-08-01T08:30:00Z",
+        "valid_from": "2026-08-01T08:25:00Z",
+        "valid_to": "2026-08-01T08:35:00Z",
+        "staleness_class": "recent"
+      },
+      "confidence": {
+        "score": 0.70,
+        "confidence_class": "moderate",
+        "notes": "Synthetic NDMI (moisture index) derivation."
+      },
+      "spatial_summary": {
+        "geometry_type": "Polygon",
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "bbox": [-122.75, 38.40, -122.65, 38.48],
+        "crs": "EPSG:4326"
+      },
+      "source_metadata": {
+        "platform": "synthetic-sat-002",
+        "instruments": ["synthetic-optical-payload"],
+        "derived_indices": ["NDMI"],
+        "ndmi_value": -0.31,
+        "stac_item_ref": "stac:item:vegetation-dryness-scene-002"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "eo", "stac", "source-evidence"]
+      }
+    },
+    {
+      "evidence_version": "v1",
+      "evidence_id": "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z",
+      "source_type": "weather_reanalysis",
+      "source_ref": "reanalysis://era5-like/sonoma-corridor/2026-08-01T08:00:00Z",
+      "geo_anchor_ref": "anchor:fusion:sonoma-corridor:2026-08-01",
+      "content_hash": "sha256:fixture-placeholder",
+      "attribution": {
+        "source_name": "ERA5-like weather reanalysis (synthetic fixture)",
+        "license_ref": "copernicus-era5-sample",
+        "attribution_text": "ERA5-like synthetic fixture for GAIA runtime validation"
+      },
+      "temporal": {
+        "observed_at": "2026-08-01T08:00:00Z",
+        "valid_from": "2026-08-01T06:00:00Z",
+        "valid_to": "2026-08-01T14:00:00Z",
+        "staleness_class": "recent"
+      },
+      "confidence": {
+        "score": 0.68,
+        "confidence_class": "moderate",
+        "notes": "30-day precipitation deficit relative to seasonal norm; grid-scale reanalysis limits micro-scale precision."
+      },
+      "spatial_summary": {
+        "geometry_type": "Polygon",
+        "h3_cells": ["8928308280fffff", "89283082807ffff"],
+        "bbox": [-123.0, 38.2, -122.4, 38.6],
+        "crs": "EPSG:4326"
+      },
+      "source_metadata": {
+        "reanalysis_model": "ERA5-like (synthetic)",
+        "resolution_km": 31,
+        "precip_deficit_30d_pct": 62.0,
+        "notes": "Synthetic fixture values for GAIA validation only"
+      },
+      "classification": {
+        "data_class": "public",
+        "handling_tags": ["demo", "weather", "reanalysis", "era5", "source-evidence"]
+      }
+    }
+  ],
+  "explanation_trace": {
+    "trace_version": "v1",
+    "trace_id": "trace:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01",
+    "claim_ref": "gaia:world-claim:fusion:ltn-vegetation-dryness:sonoma-corridor:2026-08-01",
+    "fusion_rule": {
+      "rule_id": "ltn-fuzzy-high-fire-risk-v1",
+      "rule_class": "model_inference",
+      "rule_version": "v1",
+      "rule_ref": "sociosphere/docs/integration/neurosymbolic-chronos-alignment.md#method-families-and-chronos-roles",
+      "chronos_method_family": "ltn_differentiable_fuzzy_logic",
+      "chronos_method_output_type": "fuzzy_satisfaction_score"
+    },
+    "inputs": [
+      {
+        "evidence_ref": "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01",
+        "role": "primary",
+        "weight": 0.55,
+        "confidence_at_fusion": 0.70,
+        "notes": "Vegetation moisture index (NDMI) feeds the differentiable fuzzy predicate Dry(vegetation)."
+      },
+      {
+        "evidence_ref": "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z",
+        "role": "corroborating",
+        "weight": 0.45,
+        "confidence_at_fusion": 0.68,
+        "notes": "Precipitation deficit feeds the differentiable fuzzy predicate Drought(region)."
+      }
+    ],
+    "steps": [
+      {
+        "step_id": "step-normalize-ndmi",
+        "step_type": "normalize",
+        "input_refs": ["evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01"],
+        "output_ref": "normalized:eo:ndmi:-0.31",
+        "step_notes": "Extract NDMI=-0.31 (dry vegetation signal)."
+      },
+      {
+        "step_id": "step-normalize-precip-deficit",
+        "step_type": "normalize",
+        "input_refs": ["evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z"],
+        "output_ref": "normalized:weather:precip-deficit:62pct",
+        "step_notes": "Extract 30-day precipitation deficit=62% of seasonal norm."
+      },
+      {
+        "step_id": "step-infer-fuzzy-predicate",
+        "step_type": "infer",
+        "input_refs": ["normalized:eo:ndmi:-0.31", "normalized:weather:precip-deficit:62pct"],
+        "output_ref": "fuzzy-score:HighFireRisk:0.74",
+        "step_notes": "LTN-style differentiable fuzzy-logic layer computes satisfaction score 0.74 for predicate HighFireRisk(corridor) = Dry(vegetation) AND Drought(region), using a t-norm combination of the two grounded fuzzy predicates. This is a soft constraint-satisfaction value, not a probability or ground-truth risk score."
+      },
+      {
+        "step_id": "step-gate-non-authority",
+        "step_type": "gate",
+        "input_refs": ["fuzzy-score:HighFireRisk:0.74"],
+        "output_ref": "gated-claim:review",
+        "step_notes": "Per CHRONOS negative rule ('a fuzzy satisfaction score is promoted as truth'), policy_status is forced to 'review' and chronos_non_authority_declaration.is_candidate_only=true is attached. Admission requires Holmes/Policy review plus corroborating hard evidence."
+      }
+    ],
+    "uncertainty": {
+      "method": "model_calibration",
+      "combined_score": 0.55,
+      "uncertainty_class": "high",
+      "per_input_impact": [
+        {"evidence_ref": "evidence:eo_stac:vegetation-dryness-scene-002:2026-08-01", "impact": 0.55},
+        {"evidence_ref": "evidence:weather_reanalysis:precip-deficit-sonoma:2026-08-01T08:00:00Z", "impact": 0.45}
+      ],
+      "notes": "combined_score is the fusion's ordinary evidence-quality confidence (uncertainty.method=model_calibration), and is intentionally distinct from proposed_value.fuzzy_satisfaction_score=0.74 (the LTN predicate-satisfaction value). Conflating the two is exactly what chronos_non_authority_declaration exists to prevent."
+    },
+    "replay": {
+      "mode": "model_snapshot",
+      "command": "cat fixtures/geospatial/ltn-fuzzy-vegetation-dryness-risk-world-claim.sample.v1.json | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d[\"claim\"][\"proposed_value\"][\"fuzzy_satisfaction_score\"])'"
+    },
+    "provenance": {
+      "runtime_ref": "runtime:world-claim-ltn-fusion:v0",
+      "created_at": "2026-08-01T09:00:00Z",
+      "content_hash": "sha256:fixture-placeholder-replace-with-canonical-hash"
+    },
+    "chronos_non_authority_declaration": {
+      "is_candidate_only": true,
+      "declaration": "LTN-style differentiable fuzzy-logic satisfaction score for HighFireRisk(sonoma-corridor); advisory candidate signal only. Not evidence, not a policy admission, not canonical schema/ontology authority, and not a probability or ground-truth risk determination, until the owning authority plane (SocioProphet/holmes) reviews it against corroborating hard evidence.",
+      "forbidden_uses": [
+        "treating this fuzzy_satisfaction_score as evidence for WorldClaim admission",
+        "treating this fuzzy_satisfaction_score as a probability of fire occurrence",
+        "triggering autonomous actuation (e.g. alerts, routing changes) from this claim while policy_status is not admitted",
+        "promoting this claim to policy_status=admitted without Holmes/Policy review and corroborating hard sensor/field evidence"
+      ]
+    }
+  },
+  "invariants": [
+    "Both source evidences carry attribution, license ref, temporal validity, and confidence.",
+    "GeoAnchor binds the fused claim to a verifiable bbox with H3 cell coverage.",
+    "ExplanationTrace records the ltn_differentiable_fuzzy_logic method family and fuzzy_satisfaction_score output type.",
+    "policy_status.status is 'review', not 'admitted' — a fuzzy satisfaction score is never auto-admitted (CHRONOS negative rule 1).",
+    "chronos_non_authority_declaration.is_candidate_only is true, satisfying the requirement that any non-hard_value chronos_method_output_type carry an explicit non-authority declaration.",
+    "map_display.display_layer is 'review_flagged' — advisory label required on /map.",
+    "No autonomous actuation permitted from this claim.",
+    "uncertainty.confidence_score (evidence quality) is kept distinct from proposed_value.fuzzy_satisfaction_score (LTN predicate value) — the two must never be conflated."
+  ]
+}

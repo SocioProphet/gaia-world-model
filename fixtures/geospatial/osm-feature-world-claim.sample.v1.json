@@ -97,7 +97,9 @@
       "classification": {
         "data_class": "public",
         "handling_tags": ["demo", "osm", "world-claim", "proposed", "advisory"]
-      }
+      },
+      "chronos_grounding_status": "grounded",
+      "chronos_owning_authority_plane": "SocioProphet/holmes"
     }
   ],
   "evidence_records": [
@@ -163,7 +165,9 @@
         "rule_id": "single-source-passthrough-v1",
         "rule_class": "single_source_passthrough",
         "rule_version": "v1",
-        "rule_ref": "docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md#single-source-passthrough"
+        "rule_ref": "docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md#single-source-passthrough",
+        "chronos_method_family": "not_applicable",
+        "chronos_method_output_type": "hard_value"
       },
       "inputs": [
         {
@@ -230,6 +234,7 @@
     "SourceEvidence carries source_ref, temporal validity, and confidence.",
     "ExplanationTrace records the single-source passthrough rule.",
     "policy_status is 'proposed' — not admitted to world state without Holmes/Policy review.",
-    "map_display.display_layer is 'proposed_candidate' — advisory label required on /map."
+    "map_display.display_layer is 'proposed_candidate' — advisory label required on /map.",
+    "CHRONOS carrier (SocioProphet/gaia-world-model#38): chronos_method_family=not_applicable and chronos_method_output_type=hard_value for single-source passthrough — no chronos_non_authority_declaration required."
   ]
 }
