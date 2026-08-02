@@ -15,6 +15,15 @@ The output includes:
 A world-claim at status='proposed' must pass Holmes/Policy review before it
 may be admitted to GAIA world state or shown as truth on /map.
 
+The emitted claims/traces also carry the additive CHRONOS carrier fields
+(SocioProphet/gaia-world-model#38): fusion_rule.chronos_method_family/
+chronos_method_output_type and claim.chronos_grounding_status/
+chronos_owning_authority_plane. Single-source OSM passthrough uses no
+neuro-symbolic method, so these fields are populated at their non-authority
+defaults (chronos_method_family=not_applicable,
+chronos_method_output_type=hard_value) and no
+chronos_non_authority_declaration is required.
+
 Usage:
   python3 geospatial/world_claim_ingest.py \\
     fixtures/geospatial/osm-feature-world-claim-input.sample.v1.json \\
@@ -209,6 +218,12 @@ def build_explanation_trace(
             "rule_class": "single_source_passthrough",
             "rule_version": "v1",
             "rule_ref": "docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md#single-source-passthrough",
+            # CHRONOS carrier fields (SocioProphet/gaia-world-model#38): single-source
+            # passthrough uses no neuro-symbolic method, so no non-authority
+            # declaration is required here. See docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md
+            # for the CHRONOS carrier field mapping.
+            "chronos_method_family": "not_applicable",
+            "chronos_method_output_type": "hard_value",
         },
         "inputs": [
             {
@@ -341,6 +356,11 @@ def build_world_claim(
         },
         "classification": input_doc["classification"],
         "standards_refs": STANDARDS_REFS,
+        # CHRONOS carrier fields (SocioProphet/gaia-world-model#38). OSM geometry is
+        # taken directly from the source extract (grounded); Holmes/Policy is the
+        # owning authority plane for this claim's Verify->Govern decision.
+        "chronos_grounding_status": "grounded",
+        "chronos_owning_authority_plane": "SocioProphet/holmes",
     }
 
 

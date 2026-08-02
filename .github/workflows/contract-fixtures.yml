@@ -8,6 +8,7 @@ on:
       - 'scripts/validate_contract_fixtures.py'
       - 'scripts/validate_multidomain_fixtures.py'
       - 'scripts/validate_bounded_osm_source_adapter.py'
+      - 'scripts/validate_chronos_carrier_fixtures.py'
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
@@ -15,6 +16,7 @@ on:
       - 'geospatial/osm_ingest.py'
       - 'geospatial/osm_tile_export.py'
       - 'geospatial/osm_route_graph.py'
+      - 'geospatial/world_claim_ingest.py'
       - 'navigation/lidar_feature_extract.py'
       - 'navigation/lidar_rollback_receipt.py'
       - '.github/workflows/contract-fixtures.yml'
@@ -25,6 +27,7 @@ on:
       - 'scripts/validate_contract_fixtures.py'
       - 'scripts/validate_multidomain_fixtures.py'
       - 'scripts/validate_bounded_osm_source_adapter.py'
+      - 'scripts/validate_chronos_carrier_fixtures.py'
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
@@ -32,6 +35,7 @@ on:
       - 'geospatial/osm_ingest.py'
       - 'geospatial/osm_tile_export.py'
       - 'geospatial/osm_route_graph.py'
+      - 'geospatial/world_claim_ingest.py'
       - 'navigation/lidar_feature_extract.py'
       - 'navigation/lidar_rollback_receipt.py'
       - '.github/workflows/contract-fixtures.yml'
@@ -56,6 +60,37 @@ jobs:
 
       - name: Validate bounded OSM source adapter fixtures
         run: python3 scripts/validate_bounded_osm_source_adapter.py
+
+      - name: Ingest OpenStreetMap fixture into a governed WorldClaim bundle
+        run: |
+          python3 geospatial/world_claim_ingest.py \
+            fixtures/geospatial/osm-feature-world-claim-input.sample.v1.json \
+            /tmp/gaia-world-claim-ingest-output.json
+
+      - name: Check governed WorldClaim ingest output (incl. CHRONOS carrier fields)
+        run: |
+          python3 - <<'PY'
+          import json
+          with open('/tmp/gaia-world-claim-ingest-output.json', 'r', encoding='utf-8') as handle:
+              doc = json.load(handle)
+          claim = doc['claims'][0]
+          trace = doc['explanation_traces'][0]
+          assert claim['policy_status']['status'] == 'proposed'
+          assert claim['uncertainty']['confidence_score'] == 0.85
+          assert claim['map_display']['display_layer'] == 'proposed_candidate'
+          assert doc['evidence_records'][0]['source_type'] == 'osm'
+          assert trace['fusion_rule']['rule_class'] == 'single_source_passthrough'
+          # CHRONOS carrier fields (SocioProphet/gaia-world-model#38): additive,
+          # non-breaking extension for WorldClaim/FusionExplanation.
+          assert claim['chronos_grounding_status'] == 'grounded'
+          assert claim['chronos_owning_authority_plane'] == 'SocioProphet/holmes'
+          assert trace['fusion_rule']['chronos_method_family'] == 'not_applicable'
+          assert trace['fusion_rule']['chronos_method_output_type'] == 'hard_value'
+          print('governed WorldClaim ingest output (incl. CHRONOS carrier fields) passed')
+          PY
+
+      - name: Validate CHRONOS carrier extension fixtures (WorldClaim/FusionExplanation)
+        run: python3 scripts/validate_chronos_carrier_fixtures.py
 
       - name: Convert OFIF observation into GAIA artifact
         run: |

@@ -316,6 +316,31 @@ Agentplane may act on `admitted` world-claims subject to policy constraints. It 
 
 Schema root issue: SocioProphet/ontogenesis#77
 
+## CHRONOS carrier compatibility (SocioProphet/gaia-world-model#38)
+
+Sociosphere's `docs/integration/neurosymbolic-chronos-alignment.md` defines a "CHRONOS carrier" boundary: any object crossing a governance boundary that references neuro-symbolic reasoning must carry source evidence reference, method family, method output type, grounding status, validation status, explanation trace reference, owning authority plane, non-authority declaration, replay reference, and governance decision/pending. GAIA's `WorldClaim`/`FusionExplanation` contract already matched this shape closely. This is an **additive** extension — every field below is optional, `additionalProperties` stays `false` only at the level each field was added to, and no existing field, required list, or runtime behavior changed. Fixtures written before this change remain valid.
+
+| CHRONOS carrier concept | GAIA field | Status |
+| --- | --- | --- |
+| Source evidence reference | `WorldClaim.source_evidence_refs` | Already covered — no new field |
+| Method family | `FusionExplanation.fusion_rule.chronos_method_family` | **New.** Distinct from `rule_class`, which classifies GAIA's own fusion mechanics (weighted_mean, bayesian_update, ...), not neuro-symbolic technique |
+| Method output type | `FusionExplanation.fusion_rule.chronos_method_output_type` | **New.** `hard_value` by default; non-hard values (`fuzzy_satisfaction_score`, `truth_bound`, `symbolic_derivation`, `learned_rule_candidate`, `ontology_delta_candidate`, `policy_proposal`, `event_schema_candidate`) require a non-authority declaration |
+| Grounding status | `WorldClaim.chronos_grounding_status` | **New.** Distinct from `uncertainty.confidence_score`/`uncertainty_class`, which remain GAIA's existing confidence measure |
+| Validation status | `WorldClaim.policy_status` | Already covered — GAIA's contract has Holmes perform verify+govern as one step (see "Repo boundaries" above), so `policy_status.status` already carries both the CHRONOS "validation status" and "governance decision" roles. No new field |
+| Explanation trace reference | `WorldClaim.explanation_trace_ref` | Already covered — no new field |
+| Owning authority plane | `WorldClaim.chronos_owning_authority_plane` | **New.** Names which repo/plane holds final admission authority for this specific claim (e.g. `SocioProphet/holmes`) |
+| Non-authority declaration | `FusionExplanation.chronos_non_authority_declaration` | **New.** Required whenever `chronos_method_family`/`chronos_method_output_type` name a neuro-symbolic or soft-output method. Directly implements the CHRONOS negative rule "a fuzzy satisfaction score is promoted as truth": `is_candidate_only=true` plus `policy_status.status != admitted` must both hold |
+| Replay reference | `FusionExplanation.replay` | Already covered — no new field |
+| Governance decision or pending | `WorldClaim.policy_status.status` | Already covered — no new field |
+
+Worked examples:
+
+- `fixtures/geospatial/eo-osm-dem-fusion-world-claim.sample.v1.json` — classical weighted-mean fusion; `chronos_method_family=classical_deterministic`, `chronos_method_output_type=hard_value`, no non-authority declaration needed.
+- `fixtures/geospatial/ltn-fuzzy-vegetation-dryness-risk-world-claim.sample.v1.json` — an LTN-style differentiable fuzzy-logic fusion producing a `fuzzy_satisfaction_score`; carries a full `chronos_non_authority_declaration` and is correctly held at `policy_status.status=review`, never `admitted`.
+- `fixtures/geospatial/negative/world-claim-fuzzy-score-admitted-without-non-authority-declaration.invalid.v1.json` — the same fuzzy-score fusion incorrectly promoted to `admitted` with no non-authority declaration; must be, and is, rejected.
+
+Validator: `scripts/validate_chronos_carrier_fixtures.py` (wired into `.github/workflows/contract-fixtures.yml`) checks both schemas declare the new fields as optional, validates the positive fixtures, and confirms the negative fixture is rejected.
+
 ## Non-goals (v0)
 
 - Live ingestion pipelines (fixtures and deterministic proofs only in this PR).

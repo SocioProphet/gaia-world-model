@@ -105,7 +105,9 @@
     "classification": {
       "data_class": "public",
       "handling_tags": ["demo", "fusion", "world-claim", "risk", "provisional", "advisory"]
-    }
+    },
+    "chronos_grounding_status": "partially_grounded",
+    "chronos_owning_authority_plane": "SocioProphet/holmes"
   },
   "source_evidence": [
     {
@@ -284,7 +286,9 @@
       "rule_id": "weighted-mean-road-surface-risk-v1",
       "rule_class": "weighted_mean",
       "rule_version": "v1",
-      "rule_ref": "docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md#weighted-mean-fusion"
+      "rule_ref": "docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md#weighted-mean-fusion",
+      "chronos_method_family": "classical_deterministic",
+      "chronos_method_output_type": "hard_value"
     },
     "inputs": [
       {
@@ -395,6 +399,7 @@
     "map_display.display_layer is 'provisional_overlay' — uncertainty and expiry label required on /map.",
     "Weather validity window expires 2026-05-01T15:00Z — claim must be re-evaluated after expiry.",
     "No autonomous actuation permitted from provisional world claim.",
-    "VectorCandidate (if retrieved) is status=candidate_only and must not influence this claim's policy status."
+    "VectorCandidate (if retrieved) is status=candidate_only and must not influence this claim's policy status.",
+    "CHRONOS carrier (SocioProphet/gaia-world-model#38): chronos_method_family=classical_deterministic and chronos_method_output_type=hard_value, so no chronos_non_authority_declaration is required — this is an ordinary weighted-mean fusion, not a neuro-symbolic method."
   ]
 }

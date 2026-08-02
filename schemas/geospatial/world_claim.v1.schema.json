@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://socioprophet.org/gaia/schemas/geospatial/world_claim.v1.schema.json",
   "title": "WorldClaim v1",
-  "description": "A GAIA governed world-state claim. A claim is not admissible without anchors, source evidence, temporal validity, uncertainty, and policy status. Formal invariant: Observation/Evidence -> ProposedWorldClaim -> ExplanationTrace + Uncertainty -> PolicyDecision -> Admitted/Provisional/Review WorldClaim.",
+  "description": "A GAIA governed world-state claim. A claim is not admissible without anchors, source evidence, temporal validity, uncertainty, and policy status. Formal invariant: Observation/Evidence -> ProposedWorldClaim -> ExplanationTrace + Uncertainty -> PolicyDecision -> Admitted/Provisional/Review WorldClaim. Additive CHRONOS-carrier-compatible v1: chronos_grounding_status and chronos_owning_authority_plane extend this contract to satisfy sociosphere's neurosymbolic-chronos-alignment.md carrier boundary (SocioProphet/gaia-world-model#38) without changing any existing field or behavior.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -195,6 +195,18 @@
       "type": "array",
       "items": {"type": "string"},
       "description": "References to SocioProphet standards documents governing this claim."
+    },
+    "chronos_grounding_status": {
+      "type": "string",
+      "enum": ["grounded", "partially_grounded", "ungrounded", "unknown", "not_applicable"],
+      "default": "not_applicable",
+      "description": "CHRONOS carrier grounding status (sociosphere/docs/integration/neurosymbolic-chronos-alignment.md 'neuro-symbolic carrier boundary'; SocioProphet/gaia-world-model#38). Whether proposed_value is grounded in verifiable source evidence with anti-leakage/transduction checks (per the alignment doc's SATNet/dILP guidance), partially grounded, ungrounded, unknown, or not_applicable (e.g. simple deterministic passthrough where grounding is not the relevant frame). Additive: does not replace or duplicate uncertainty.confidence_score/uncertainty_class, which remain GAIA's existing confidence measure.",
+      "examples": ["not_applicable", "grounded", "partially_grounded", "ungrounded"]
+    },
+    "chronos_owning_authority_plane": {
+      "type": "string",
+      "description": "CHRONOS carrier owning authority plane (SocioProphet/gaia-world-model#38): names the repo/plane holding final admission authority for THIS claim's policy_status, e.g. 'SocioProphet/holmes'. Per docs/contracts/GOVERNED_WORLD_CLAIM_CONTRACT.md, GAIA owns Observe->Anchor->Normalize->Propose; this field records who owns the Verify->Govern decision this claim is awaiting or has received, per sociosphere's CHRONOS authority-boundary table. Additive: does not move canonical-schema authority for WorldClaim/SourceEvidence away from GAIA.",
+      "examples": ["SocioProphet/holmes"]
     }
   }
 }
