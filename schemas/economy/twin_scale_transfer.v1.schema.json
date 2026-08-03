@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/economy/twin_scale_transfer.v1.schema.json",
+  "title": "GAIA Twin-Scale Value Transfer v1",
+  "description": "A value flow across an adjacent boundary of the world-model twin hierarchy galactic/space twin <-> world economic twin (the economic spine) <-> human digital twin (Binding 2). Value flows are the exchange dynamics of the scale stack. Invariant IC-1: value is CONSERVED across a twin-scale aggregation. A cross-scale flow that creates value out of nothing (parent value exceeds the sum of children net of receipted sources/sinks) is REJECTED (tooth T2-CONSERVE).",
+  "type": "object",
+  "required": [
+    "transfer_version",
+    "transfer_type",
+    "transfer_id",
+    "scale_stack",
+    "parent",
+    "children",
+    "conservation",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "transfer_version": {"type": "string", "const": "v1"},
+    "transfer_type": {"type": "string", "const": "TwinScaleValueTransfer"},
+    "transfer_id": {"type": "string"},
+    "scale_stack": {
+      "type": "array",
+      "description": "The declared world-model twin hierarchy, in outer-to-inner order. MUST be exactly [galactic_space_twin, world_economic_twin, human_digital_twin].",
+      "items": {"type": "string", "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin"]},
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "parent": {
+      "type": "object",
+      "description": "The coarser (outer) scale of this transfer.",
+      "required": ["scale", "value"],
+      "properties": {
+        "scale": {"type": "string", "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin"]},
+        "ref": {"type": "string"},
+        "value": {"type": "number"}
+      }
+    },
+    "children": {
+      "type": "array",
+      "description": "The finer (inner) scale constituents whose values aggregate into the parent.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["scale", "value"],
+        "properties": {
+          "scale": {"type": "string", "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin"]},
+          "ref": {"type": "string"},
+          "value": {"type": "number"}
+        }
+      }
+    },
+    "declared_sources": {
+      "type": "array",
+      "description": "Receipted injections into the aggregate (a source outside the child set). Unreceipted creation is not permitted.",
+      "items": {
+        "type": "object",
+        "required": ["ref", "amount"],
+        "properties": {"ref": {"type": "string"}, "amount": {"type": "number"}}
+      }
+    },
+    "declared_sinks": {
+      "type": "array",
+      "description": "Receipted removals from the aggregate (a sink outside the child set).",
+      "items": {
+        "type": "object",
+        "required": ["ref", "amount"],
+        "properties": {"ref": {"type": "string"}, "amount": {"type": "number"}}
+      }
+    },
+    "conservation": {
+      "type": "object",
+      "description": "The IC-1 conservation rule. parent.value == sum(children.value) + sum(declared_sinks.amount) - sum(declared_sources.amount), within tolerance.",
+      "required": ["rule", "tolerance"],
+      "properties": {
+        "rule": {"type": "string", "const": "parent_value == sum(children) + sum(sinks) - sum(sources)"},
+        "tolerance": {"type": "number", "minimum": 0}
+      }
+    },
+    "provenance": {"type": "object"},
+    "classification": {"type": "object"}
+  }
+}

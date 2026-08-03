@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/economy/value_flow_binding.v1.schema.json",
+  "title": "GAIA Value-Flow Subsystem Binding v1",
+  "description": "A binding manifest that any Economic-Prophet / welfare-annealing value-flow run MUST present to be admissible as the value-flow subsystem of the GAIA world model. It does NOT redefine value; it binds the economic spine UPWARD into the world model by REFERENCE. The carrying-capacity discount and the Jacob's-ladder natural-capital / renewable base MUST be READS of the GAIA biosphere/resource state (WorldModelSubstrate W), not free parameters; the QoL objective's dimensions MUST aggregate from human-digital-twin state (population = sum of twins). Consume-not-fork: economic-prophet kernels are referenced by pinned ref, never vendored.",
+  "type": "object",
+  "required": [
+    "binding_version",
+    "binding_type",
+    "binding_id",
+    "world_model_ref",
+    "economic_spine_ref",
+    "carrying_capacity",
+    "ecosystem_assets",
+    "qol_index",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "binding_version": {"type": "string", "const": "v1"},
+    "binding_type": {"type": "string", "const": "ValueFlowSubsystemBinding"},
+    "binding_id": {"type": "string"},
+    "world_model_ref": {
+      "type": "string",
+      "description": "Pinned reference to the world-model substrate W being read, e.g. SocioProphet/gaia-world-model@<sha>. Biosphere/resource reads resolve against this ref.",
+      "pattern": "^SocioProphet/gaia-world-model@.+$"
+    },
+    "economic_spine_ref": {
+      "type": "string",
+      "description": "Pinned soft-ref to the producing economic spine, e.g. SocioProphet/economic-prophet@<sha>. Never vendored.",
+      "pattern": "^SocioProphet/economic-prophet@.+$"
+    },
+    "welfare_annealing_ref": {
+      "type": "string",
+      "description": "Optional forward soft-ref to the in-flight welfare-annealing dynamics, e.g. SocioProphet/economic-prophet@feat/welfare-annealing. Consumed by branch-ref; its files are never edited by this contract.",
+      "pattern": "^SocioProphet/economic-prophet@.+$"
+    },
+    "carrying_capacity": {
+      "type": "object",
+      "description": "The welfare-annealing carrying-capacity discount. Its source MUST be a world-model read (Binding 1). A hardcoded constant is the free-parameter smell and is REJECTED (tooth T1-CONST).",
+      "required": ["source", "value_index"],
+      "properties": {
+        "source": {
+          "type": "object",
+          "required": ["kind"],
+          "properties": {
+            "kind": {"type": "string", "enum": ["world_model_read", "constant"]},
+            "read_ref": {
+              "type": "string",
+              "description": "Resolvable world-model read, e.g. gaia://biosphere/carrying_capacity/global@<as_of>. Required when kind == world_model_read."
+            }
+          }
+        },
+        "value_index": {"type": "number"}
+      }
+    },
+    "ecosystem_assets": {
+      "type": "array",
+      "description": "Jacob's-ladder ecosystem / natural-capital assets. Each binds to the GAIA biosphere state (Binding 4). Renewable regeneration rate MUST be a world-model read. A non-renewable draw taking the stock below the world-model's declared reserve floor is FLAGGED (planetary-boundary breach, the paper-inductance false-growth analog; tooth T1-RESERVE).",
+      "items": {
+        "type": "object",
+        "required": ["rung", "biosphere_ref", "regeneration", "stock"],
+        "properties": {
+          "rung": {"type": "string", "enum": ["natural_capital", "extractive_nonrenewable", "renewable_harvest"]},
+          "biosphere_ref": {
+            "type": "string",
+            "description": "World-model biosphere state reference, e.g. gaia://biosphere/forest/amazon."
+          },
+          "regeneration": {
+            "type": "object",
+            "required": ["source"],
+            "properties": {
+              "source": {
+                "type": "object",
+                "required": ["kind"],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": ["world_model_read", "constant", "none"],
+                    "description": "For rung == renewable_harvest the regeneration rate MUST be world_model_read (constant/none is REJECTED, tooth T4-REGEN). For depleting rungs 'none' is admissible."
+                  },
+                  "read_ref": {"type": "string"}
+                }
+              },
+              "rate": {"type": "number"}
+            }
+          },
+          "stock": {
+            "type": "object",
+            "required": ["current", "reserve"],
+            "properties": {
+              "current": {"type": "number"},
+              "non_renewable_draw": {"type": "number"},
+              "reserve": {
+                "type": "object",
+                "required": ["source", "floor"],
+                "properties": {
+                  "source": {
+                    "type": "object",
+                    "required": ["kind"],
+                    "properties": {
+                      "kind": {"type": "string", "enum": ["world_model_read", "constant"]},
+                      "read_ref": {"type": "string"}
+                    }
+                  },
+                  "floor": {"type": "number", "description": "The world-model's declared reserve floor for this stock."}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "qol_index": {
+      "type": "object",
+      "description": "The welfare objective's quality-of-life index. Its life-length / health / education dimensions MUST aggregate from human-digital-twin state (population = sum of twins) (Binding 3). A population QoL index not derivable from constituent human-twin dimensions is REJECTED (tooth T3-QOL).",
+      "required": ["value", "dimensions"],
+      "properties": {
+        "value": {"type": "number"},
+        "population_ref": {"type": "string", "description": "Population aggregate reference, e.g. twin://human/population/global."},
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "derivation"],
+            "properties": {
+              "name": {"type": "string", "enum": ["life_length", "health", "education"]},
+              "derivation": {
+                "type": "object",
+                "required": ["kind"],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": ["twin_aggregate", "exogenous"],
+                    "description": "MUST be twin_aggregate. exogenous is the free-parameter smell and is REJECTED."
+                  },
+                  "from_twin_dimension": {
+                    "type": "string",
+                    "description": "Human-digital-twin state dimension this aggregates from, e.g. twin://human/dimension/health. Required when kind == twin_aggregate."
+                  },
+                  "population_ref": {"type": "string"}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "provenance": {"type": "object"},
+    "classification": {"type": "object"}
+  }
+}
