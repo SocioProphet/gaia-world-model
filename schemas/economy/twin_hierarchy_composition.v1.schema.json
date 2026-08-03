@@ -33,6 +33,11 @@
         "required": ["scale", "parent", "child"],
         "properties": {
           "scale": {"type": "string", "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin"]},
+          "concept_ref": {
+            "type": "string",
+            "pattern": "^systema:concept:[a-z0-9-]+$",
+            "description": "Governed Systema Concept Entry ID for this twin-scale (ontogenesis#141, Platform/Systema/), e.g. systema:concept:world-economic-twin."
+          },
           "parent": {"type": ["string", "null"], "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin", null]},
           "child": {"type": ["string", "null"], "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin", null]},
           "surface_ref": {"type": "string", "description": "Optional pointer to the twin's surface/engine, e.g. client-vue SpaceTwin.vue, SocioProphet/economic-prophet, SocioProphet/prophet-health."}

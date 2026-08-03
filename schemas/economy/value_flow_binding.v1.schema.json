@@ -40,6 +40,7 @@
       "description": "The welfare-annealing carrying-capacity discount. Its source MUST be a world-model read (Binding 1). A hardcoded constant is the free-parameter smell and is REJECTED (tooth T1-CONST).",
       "required": ["source", "value_index"],
       "properties": {
+        "concept_ref": {"$ref": "#/$defs/concept_ref"},
         "source": {
           "type": "object",
           "required": ["kind"],
@@ -62,6 +63,7 @@
         "required": ["rung", "biosphere_ref", "regeneration", "stock"],
         "properties": {
           "rung": {"type": "string", "enum": ["natural_capital", "extractive_nonrenewable", "renewable_harvest"]},
+          "concept_ref": {"$ref": "#/$defs/concept_ref"},
           "biosphere_ref": {
             "type": "string",
             "description": "World-model biosphere state reference, e.g. gaia://biosphere/forest/amazon."
@@ -116,6 +118,7 @@
       "description": "The welfare objective's quality-of-life index. Its life-length / health / education dimensions MUST aggregate from human-digital-twin state (population = sum of twins) (Binding 3). A population QoL index not derivable from constituent human-twin dimensions is REJECTED (tooth T3-QOL).",
       "required": ["value", "dimensions"],
       "properties": {
+        "concept_ref": {"$ref": "#/$defs/concept_ref"},
         "value": {"type": "number"},
         "population_ref": {"type": "string", "description": "Population aggregate reference, e.g. twin://human/population/global."},
         "dimensions": {
@@ -125,6 +128,7 @@
             "required": ["name", "derivation"],
             "properties": {
               "name": {"type": "string", "enum": ["life_length", "health", "education"]},
+              "concept_ref": {"$ref": "#/$defs/concept_ref"},
               "derivation": {
                 "type": "object",
                 "required": ["kind"],
@@ -148,5 +152,12 @@
     },
     "provenance": {"type": "object"},
     "classification": {"type": "object"}
+  },
+  "$defs": {
+    "concept_ref": {
+      "type": "string",
+      "pattern": "^systema:concept:[a-z0-9-]+$",
+      "description": "Governed Systema Concept Entry ID for the bare enum this sits beside, from the ontogenesis concept registry (ontogenesis#141, Platform/Systema/). One of the 11 governed IDs, e.g. systema:concept:carrying-capacity, systema:concept:renewable-harvest, systema:concept:world-economic-twin. A binding that uses a governed bare enum without its concept_ref is FLAGGED (prefer-governed-ID); a concept_ref that is not a governed ID (or is the wrong concept for the enum) is REJECTED (tooth T7-CONCEPT)."
+    }
   }
 }

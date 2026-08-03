@@ -79,6 +79,8 @@ Home rationale — **gaia-world-model, not economic-prophet**:
 | `T4-REGEN` | 4 | a renewable-harvest regeneration rate is a constant, not a world-model read | REJECT |
 | `T5-RESOLVE` | 1 / 4 | a `world_model_read` `read_ref` does not resolve to a declared biosphere-state entry | REJECT (a read pointing at nothing) |
 | `T6-COMPOSE` | 2 | a transfer's `scale_stack` / parent→child scales are inconsistent with the declared twin-hierarchy composition | REJECT |
+| `T7-CONCEPT` | vocabulary | a governed bare enum lacks its Systema Concept Entry `concept_ref` | FLAG (prefer-governed-ID) |
+| `T7-CONCEPT` | vocabulary | a `concept_ref` is not one of the 11 governed IDs, or is the wrong concept for its enum | REJECT |
 
 `T5-RESOLVE` is what makes `T1-CONST` / `T1-RESERVE` / `T4-REGEN` load-bearing: a source
 may not merely *claim* to be a world-model read — its ref must resolve to declared
@@ -86,9 +88,13 @@ substrate-*W* biosphere state at that `@<as_of>`. The checker also fails CI if a
 declared tooth is **never** exercised in the firing direction (no dead teeth), and
 asserts the admitted fixtures fire **no** tooth.
 
-A follow-up tooth `T7-CONCEPT` is documented (not yet enforced): once the ontogenesis
-concept-governance PR provides stable Systema Concept Entry IDs, reject vocabulary terms
-that do not resolve to a governed concept ID (bare-string → concept-ID).
+`T7-CONCEPT` is **ENFORCED** (no longer a documented-only follow-up). It binds the
+contract vocabulary to the governed concepts registered in **ontogenesis#141** (registry
+`Platform/Systema/`, `systema:concept:*`): a `concept_ref` sits beside each governed bare
+enum in `value_flow_binding.v1` / `twin_scale_transfer.v1` (and the composition record).
+The 11 governed IDs cover `carrying_capacity`, `natural_capital`,
+`extractive_nonrenewable`, `renewable_harvest`, `qol_index` + its `life_length` /
+`health` / `education` dimensions, and the three twin-scale terms.
 
 ## Consequences
 
@@ -126,11 +132,13 @@ that do not resolve to a governed concept ID (bare-string → concept-ID).
 
 ## Cross-references
 
-- **Ontogenesis (sibling agent).** The concept lifecycle / Systema Concept Entry
-  governs the *vocabulary* used here (`carrying_capacity`, `natural_capital`,
-  `renewable_harvest`, `qol_index`, twin-scale terms). This ADR *references* those
-  governed concepts and does not duplicate them; the terms should resolve against the
-  ontogenesis concept-governance PR once landed.
+- **Ontogenesis (sibling agent) — merged, ENFORCED.** The concept lifecycle / Systema
+  Concept Entry governs the *vocabulary* used here (`carrying_capacity`,
+  `natural_capital`, `extractive_nonrenewable`, `renewable_harvest`, `qol_index` + its
+  dimensions, and the three twin-scale terms). The governed IDs are registered in
+  **ontogenesis#141** (`Platform/Systema/`, `systema:concept:*`). This ADR *references*
+  those governed concepts by `concept_ref` and does not duplicate them; tooth
+  `T7-CONCEPT` enforces the binding (bare-string → concept-ID).
 - **economic-prophet**: `asset_ladder` (ALC-1) rung ontology; `risk_measures`
   (expected-shortfall) tail measure; welfare-annealing (WEA-1) dynamics +
   `welfare_annealing/gaia_binding.py` emitter, merged to main at

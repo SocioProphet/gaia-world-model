@@ -6,25 +6,64 @@
   "economic_spine_ref": "SocioProphet/economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
   "welfare_annealing_ref": "SocioProphet/economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
   "carrying_capacity": {
-    "source": {"kind": "constant"},
+    "concept_ref": "systema:concept:carrying-capacity",
+    "source": {
+      "kind": "constant"
+    },
     "value_index": 1.0
   },
   "ecosystem_assets": [
     {
       "rung": "renewable_harvest",
+      "concept_ref": "systema:concept:renewable-harvest",
       "biosphere_ref": "gaia://biosphere/fishery/north-atlantic",
-      "regeneration": {"source": {"kind": "world_model_read", "read_ref": "gaia://biosphere/fishery/north-atlantic/regeneration@2026-08-03"}, "rate": 0.05},
-      "stock": {"current": 500, "non_renewable_draw": 0, "reserve": {"source": {"kind": "world_model_read", "read_ref": "gaia://biosphere/fishery/north-atlantic/floor@2026-08-03"}, "floor": 100}}
+      "regeneration": {
+        "source": {
+          "kind": "world_model_read",
+          "read_ref": "gaia://biosphere/fishery/north-atlantic/regeneration@2026-08-03"
+        },
+        "rate": 0.05
+      },
+      "stock": {
+        "current": 500,
+        "non_renewable_draw": 0,
+        "reserve": {
+          "source": {
+            "kind": "world_model_read",
+            "read_ref": "gaia://biosphere/fishery/north-atlantic/floor@2026-08-03"
+          },
+          "floor": 100
+        }
+      }
     }
   ],
   "qol_index": {
+    "concept_ref": "systema:concept:qol-index",
     "value": 0.72,
     "population_ref": "twin://human/population/global",
     "dimensions": [
-      {"name": "health", "derivation": {"kind": "twin_aggregate", "from_twin_dimension": "twin://human/dimension/health", "population_ref": "twin://human/population/global"}}
+      {
+        "name": "health",
+        "concept_ref": "systema:concept:qol-dim-health",
+        "derivation": {
+          "kind": "twin_aggregate",
+          "from_twin_dimension": "twin://human/dimension/health",
+          "population_ref": "twin://human/population/global"
+        }
+      }
     ]
   },
-  "provenance": {"produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583", "as_of": "2026-08-03"},
-  "classification": {"sensitivity": "internal", "synthetic": true},
-  "_expected": {"verdict": "reject", "tooth": "T1-CONST", "why": "carrying-capacity is a hardcoded constant, not a world-model read (free-parameter smell)"}
+  "provenance": {
+    "produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
+    "as_of": "2026-08-03"
+  },
+  "classification": {
+    "sensitivity": "internal",
+    "synthetic": true
+  },
+  "_expected": {
+    "verdict": "reject",
+    "tooth": "T1-CONST",
+    "why": "carrying-capacity is a hardcoded constant, not a world-model read (free-parameter smell)"
+  }
 }

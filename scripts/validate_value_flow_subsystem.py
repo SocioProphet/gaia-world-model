@@ -47,8 +47,13 @@ Teeth:
               adjacent parent->child edge in the twin-hierarchy composition record
               (gaia/twins/composition.v1.json), is REJECTED.
 
+  T7-CONCEPT  (concept governance, ontogenesis#141): a governed bare enum used WITHOUT its
+              governed Systema Concept Entry `concept_ref` (where one of the 11 exists) is
+              FLAGGED -- prefer-governed-ID. A `concept_ref` that is not one of the 11
+              governed IDs, or is the wrong governed concept for its enum, is REJECTED.
+
 Consume-by-reference: the carrying-capacity discount and welfare objective from
-economic-prophet@feat/welfare-annealing; the Jacob's-ladder rung ontology
+economic-prophet welfare-annealing (WEA-1); the Jacob's-ladder rung ontology
 (natural_capital / extractive_nonrenewable / renewable_harvest) from
 economic-prophet asset_ladder (ALC-1); the human-twin state dimensions from
 gaia/twins/human/twin-schema.json. Nothing is vendored.
@@ -72,8 +77,27 @@ COMPOSITION_RECORD = ROOT / "gaia" / "twins" / "composition.v1.json"
 # teeth) and MUST NOT fire on the admitted fixtures.
 DECLARED_TEETH = {
     "T1-CONST", "T1-RESERVE", "T2-CONSERVE", "T3-QOL", "T4-REGEN",
-    "T5-RESOLVE", "T6-COMPOSE",
+    "T5-RESOLVE", "T6-COMPOSE", "T7-CONCEPT",
 }
+
+# Governed Systema Concept Entry IDs (ontogenesis#141, registry Platform/Systema/): the
+# bare enum a binding/transfer may use -> its governed concept ID. A governed enum used
+# without its concept_ref is FLAGGED; a concept_ref outside these 11 (or wrong for the
+# enum) is REJECTED (tooth T7-CONCEPT).
+GOVERNED_CONCEPTS = {
+    "carrying_capacity": "systema:concept:carrying-capacity",
+    "natural_capital": "systema:concept:natural-capital",
+    "extractive_nonrenewable": "systema:concept:extractive-nonrenewable",
+    "renewable_harvest": "systema:concept:renewable-harvest",
+    "qol_index": "systema:concept:qol-index",
+    "life_length": "systema:concept:qol-dim-life-length",
+    "health": "systema:concept:qol-dim-health",
+    "education": "systema:concept:qol-dim-education",
+    "galactic_space_twin": "systema:concept:galactic-space-twin",
+    "world_economic_twin": "systema:concept:world-economic-twin",
+    "human_digital_twin": "systema:concept:human-digital-twin",
+}
+GOVERNED_IDS = set(GOVERNED_CONCEPTS.values())
 
 # Bootstrap structural requirements (dependency-light, mirrors the GAIA contract-fixture
 # validator). The full JSON Schema lives alongside each record in schemas/economy/.
@@ -153,6 +177,51 @@ def _binding_read_refs(rec: Dict[str, Any]) -> List[str]:
     return refs
 
 
+def _governed_terms_in_binding(rec: Dict[str, Any]):
+    """Yield (object, governed-enum-value) pairs a binding carries: the object that
+    should hold a concept_ref, and the bare enum it must match."""
+    cc = rec.get("carrying_capacity")
+    if isinstance(cc, dict):
+        yield cc, "carrying_capacity"
+    qi = rec.get("qol_index")
+    if isinstance(qi, dict):
+        yield qi, "qol_index"
+        for dim in qi.get("dimensions", []):
+            if dim.get("name"):
+                yield dim, dim["name"]
+    for asset in rec.get("ecosystem_assets", []):
+        if asset.get("rung"):
+            yield asset, asset["rung"]
+
+
+def _governed_terms_in_transfer(rec: Dict[str, Any]):
+    parent = rec.get("parent")
+    if isinstance(parent, dict) and parent.get("scale"):
+        yield parent, parent["scale"]
+    for child in rec.get("children", []):
+        if child.get("scale"):
+            yield child, child["scale"]
+
+
+def apply_t7_concept(v: Verdict, terms) -> None:
+    """T7-CONCEPT -- concept governance (ontogenesis#141). For each governed bare enum:
+    a missing concept_ref is FLAGGED (prefer-governed-ID); a concept_ref that is not a
+    governed ID, or is the wrong governed concept for the enum, is REJECTED."""
+    for obj, enum_val in terms:
+        expected = GOVERNED_CONCEPTS.get(enum_val)
+        if expected is None:
+            continue
+        cref = obj.get("concept_ref")
+        if cref is None:
+            if "T7-CONCEPT" not in v.flagged_by and "T7-CONCEPT" not in v.rejected_by:
+                v.flagged_by.append("T7-CONCEPT")
+        elif cref not in GOVERNED_IDS or cref != expected:
+            if "T7-CONCEPT" in v.flagged_by:
+                v.flagged_by.remove("T7-CONCEPT")
+            if "T7-CONCEPT" not in v.rejected_by:
+                v.rejected_by.append("T7-CONCEPT")
+
+
 def judge_binding(rec: Dict[str, Any], biosphere_refs: set[str]) -> Verdict:
     v = Verdict()
 
@@ -160,6 +229,9 @@ def judge_binding(rec: Dict[str, Any], biosphere_refs: set[str]) -> Verdict:
     cc_kind = rec.get("carrying_capacity", {}).get("source", {}).get("kind")
     if cc_kind != "world_model_read":
         v.rejected_by.append("T1-CONST")
+
+    # T7-CONCEPT -- governed vocabulary must reference its Systema Concept Entry ID.
+    apply_t7_concept(v, _governed_terms_in_binding(rec))
 
     # T5-RESOLVE -- every claimed world_model_read must resolve to a declared biosphere
     # state entry. A source may not merely *claim* to read from W; the ref must exist.
@@ -220,6 +292,9 @@ def judge_transfer(rec: Dict[str, Any], composition: Dict[str, Any]) -> Verdict:
     residual = parent - (children + sinks - sources)
     if abs(residual) > tol:
         v.rejected_by.append("T2-CONSERVE")
+
+    # T7-CONCEPT -- governed twin-scale vocabulary must reference its concept ID.
+    apply_t7_concept(v, _governed_terms_in_transfer(rec))
 
     return v
 

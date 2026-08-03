@@ -108,12 +108,25 @@ Jacob's-ladder ecosystem / natural-capital assets bind to the GAIA biosphere sta
 - **`T5-RESOLVE`** (above) also applies: a renewable regeneration `read_ref` must
   resolve to a declared `BiosphereState` regeneration entry.
 
+### Concept governance — vocabulary binds to governed concepts (ontogenesis#141)
+
+Every governed bare enum (`carrying_capacity`, the three rungs, `qol_index` + its
+`life_length` / `health` / `education` dimensions, and the three twin-scale terms) carries
+a `concept_ref` — the Systema Concept Entry ID registered in **ontogenesis#141** (registry
+`Platform/Systema/`, `systema:concept:*`). The 11 governed IDs are the authority; this
+contract references them, it does not define vocabulary.
+
+- **`T7-CONCEPT` → FLAG.** A governed bare enum used **without** its `concept_ref` (where
+  one of the 11 exists) is flagged — prefer-governed-ID (the transition nudge).
+- **`T7-CONCEPT` → REJECT.** A `concept_ref` that is **not** one of the 11 governed IDs,
+  or is the **wrong** governed concept for its enum, is rejected.
+
 ## Verdict semantics
 
 | Decision | Meaning |
 | --- | --- |
-| `admit` | Binding/transfer reads from *W* and conserves value; no tooth fired. |
-| `admit_with_flag` | Admissible, but a planetary-boundary breach is receipted (`T1-RESERVE`). |
+| `admit` | Binding/transfer reads from *W*, conserves value, and its governed vocabulary carries correct `concept_ref`s; no tooth fired. |
+| `admit_with_flag` | Admissible, but a receipt is raised: a planetary-boundary breach (`T1-RESERVE`) or a missing-but-governable `concept_ref` (`T7-CONCEPT`). |
 | `reject` | A tooth fired; the run is not admissible as a value-flow subsystem run. |
 
 ## Consumed soft-refs (by reference, never vendored)
@@ -130,21 +143,31 @@ Jacob's-ladder ecosystem / natural-capital assets bind to the GAIA biosphere sta
 - `schemas/economy/economy_observation.v1.schema.json` — the pre-existing GAIA↔EP
   observation soft-ref this contract composes with.
 
-## Cross-references — ontogenesis concept governance (sibling agent)
+## Cross-references — ontogenesis concept governance (sibling agent), ENFORCED
 
 The vocabulary this contract uses is governed by the ontogenesis / **Systema Concept
-Entry** concept lifecycle, owned by the sibling integration agent, which is registering:
-`carrying_capacity`, `natural_capital`, `extractive_nonrenewable`, `renewable_harvest`,
-`qol_index` (its `life_length` / `health` / `education` dimensions), and the three
-twin-scale terms `galactic_space_twin` / `world_economic_twin` / `human_digital_twin`.
-This contract **references** those governed concepts; it does not duplicate them.
+Entry** concept lifecycle, owned by the sibling integration agent. The governed IDs are
+**merged in ontogenesis#141** (registry `Platform/Systema/`, resolve against
+`systema:concept:*`). This contract **references** those governed concepts by
+`concept_ref`; it does not duplicate them. The 11 governed IDs:
 
-- Today these are carried as bare enum strings in the schemas above.
-- **Follow-up tooth `T7-CONCEPT` (documented, not yet enforced).** Once the ontogenesis
-  concept-governance PR lands and provides stable concept IDs, add a tooth that REJECTS a
-  binding/transfer whose vocabulary terms do not resolve to a governed Systema Concept
-  Entry ID — swapping bare-string → concept-ID. Held open pending the relayed concept IDs
-  (see the filed follow-up for @mdheller).
+| Bare enum | Governed Systema Concept Entry ID |
+| --- | --- |
+| `carrying_capacity` | `systema:concept:carrying-capacity` |
+| `natural_capital` | `systema:concept:natural-capital` |
+| `extractive_nonrenewable` | `systema:concept:extractive-nonrenewable` |
+| `renewable_harvest` | `systema:concept:renewable-harvest` |
+| `qol_index` | `systema:concept:qol-index` |
+| `qol_index.life_length` | `systema:concept:qol-dim-life-length` |
+| `qol_index.health` | `systema:concept:qol-dim-health` |
+| `qol_index.education` | `systema:concept:qol-dim-education` |
+| `galactic_space_twin` | `systema:concept:galactic-space-twin` |
+| `world_economic_twin` | `systema:concept:world-economic-twin` |
+| `human_digital_twin` | `systema:concept:human-digital-twin` |
+
+Enforced by tooth `T7-CONCEPT` (above): the `concept_ref` sits beside each governed bare
+enum in `value_flow_binding.v1` / `twin_scale_transfer.v1` and the composition record;
+missing-but-governable is flagged, ungoverned/wrong is rejected.
 
 ## Enforcement
 
