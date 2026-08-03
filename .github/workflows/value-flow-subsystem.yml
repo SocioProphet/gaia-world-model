@@ -5,7 +5,11 @@ on:
     paths:
       - 'schemas/economy/value_flow_binding.v1.schema.json'
       - 'schemas/economy/twin_scale_transfer.v1.schema.json'
+      - 'schemas/economy/twin_hierarchy_composition.v1.schema.json'
+      - 'schemas/biosphere/**'
       - 'examples/economy/value_flow/**'
+      - 'examples/biosphere/**'
+      - 'gaia/twins/composition.v1.json'
       - 'scripts/validate_value_flow_subsystem.py'
       - 'docs/contracts/VALUE_FLOW_SUBSYSTEM_CONTRACT.md'
       - 'docs/decisions/ADR-0003-economic-spine-value-flow-subsystem.md'
@@ -14,7 +18,11 @@ on:
     paths:
       - 'schemas/economy/value_flow_binding.v1.schema.json'
       - 'schemas/economy/twin_scale_transfer.v1.schema.json'
+      - 'schemas/economy/twin_hierarchy_composition.v1.schema.json'
+      - 'schemas/biosphere/**'
       - 'examples/economy/value_flow/**'
+      - 'examples/biosphere/**'
+      - 'gaia/twins/composition.v1.json'
       - 'scripts/validate_value_flow_subsystem.py'
       - 'docs/contracts/VALUE_FLOW_SUBSYSTEM_CONTRACT.md'
       - 'docs/decisions/ADR-0003-economic-spine-value-flow-subsystem.md'

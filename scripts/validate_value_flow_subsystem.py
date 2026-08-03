@@ -36,6 +36,17 @@ Teeth:
   T4-REGEN    (Binding 4, ecosystem <-> biosphere): a renewable_harvest rung whose
               regeneration rate is a constant instead of a world-model read is REJECTED.
 
+  T5-RESOLVE  (Bindings 1/4, resolution): a world_model_read whose read_ref does NOT
+              resolve to a declared biosphere-state entry (examples/biosphere/**) is
+              REJECTED -- a read pointing at nothing. This is what makes T1-CONST,
+              T1-RESERVE and T4-REGEN load-bearing: a source may not merely *claim* to be
+              a world-model read, it must resolve to declared substrate-W state.
+
+  T6-COMPOSE  (Binding 2, composition): a TwinScaleValueTransfer whose scale_stack is not
+              the declared ordered stack, or whose parent->child scales are not an
+              adjacent parent->child edge in the twin-hierarchy composition record
+              (gaia/twins/composition.v1.json), is REJECTED.
+
 Consume-by-reference: the carrying-capacity discount and welfare objective from
 economic-prophet@feat/welfare-annealing; the Jacob's-ladder rung ontology
 (natural_capital / extractive_nonrenewable / renewable_harvest) from
@@ -54,10 +65,15 @@ from typing import Any, Dict, List, Tuple
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "examples" / "economy" / "value_flow"
+BIOSPHERE_STATES = ROOT / "examples" / "biosphere"
+COMPOSITION_RECORD = ROOT / "gaia" / "twins" / "composition.v1.json"
 
 # Every tooth the contract declares. Each MUST fire on at least one fixture (no dead
 # teeth) and MUST NOT fire on the admitted fixtures.
-DECLARED_TEETH = {"T1-CONST", "T1-RESERVE", "T2-CONSERVE", "T3-QOL", "T4-REGEN"}
+DECLARED_TEETH = {
+    "T1-CONST", "T1-RESERVE", "T2-CONSERVE", "T3-QOL", "T4-REGEN",
+    "T5-RESOLVE", "T6-COMPOSE",
+}
 
 # Bootstrap structural requirements (dependency-light, mirrors the GAIA contract-fixture
 # validator). The full JSON Schema lives alongside each record in schemas/economy/.
@@ -97,13 +113,60 @@ def _missing(record: Dict[str, Any], required: List[str]) -> List[str]:
     return [k for k in required if k not in record]
 
 
-def judge_binding(rec: Dict[str, Any]) -> Verdict:
+def load_biosphere_refs() -> set[str]:
+    """Every read_ref declared by the biosphere/resource state (the resolution target)."""
+    refs: set[str] = set()
+    if not BIOSPHERE_STATES.is_dir():
+        return refs
+    for path in sorted(BIOSPHERE_STATES.glob("*.json")):
+        state = json.loads(path.read_text(encoding="utf-8"))
+        cc = state.get("carrying_capacity", {}).get("read_ref")
+        if cc:
+            refs.add(cc)
+        for entry in state.get("reserves", []) + state.get("regeneration_rates", []):
+            if entry.get("read_ref"):
+                refs.add(entry["read_ref"])
+    return refs
+
+
+def load_composition() -> Dict[str, Any]:
+    """The declared twin-hierarchy composition record, or {} if absent."""
+    if not COMPOSITION_RECORD.exists():
+        return {}
+    return json.loads(COMPOSITION_RECORD.read_text(encoding="utf-8"))
+
+
+def _binding_read_refs(rec: Dict[str, Any]) -> List[str]:
+    """Every read_ref a binding claims as a world_model_read (carrying-capacity,
+    renewable regeneration, and reserve floors)."""
+    refs: List[str] = []
+    cc = rec.get("carrying_capacity", {}).get("source", {})
+    if cc.get("kind") == "world_model_read":
+        refs.append(cc.get("read_ref"))
+    for asset in rec.get("ecosystem_assets", []):
+        regen = asset.get("regeneration", {}).get("source", {})
+        if regen.get("kind") == "world_model_read":
+            refs.append(regen.get("read_ref"))
+        reserve = asset.get("stock", {}).get("reserve", {}).get("source", {})
+        if reserve.get("kind") == "world_model_read":
+            refs.append(reserve.get("read_ref"))
+    return refs
+
+
+def judge_binding(rec: Dict[str, Any], biosphere_refs: set[str]) -> Verdict:
     v = Verdict()
 
     # T1-CONST -- carrying capacity must be a world-model read, not a free constant.
     cc_kind = rec.get("carrying_capacity", {}).get("source", {}).get("kind")
     if cc_kind != "world_model_read":
         v.rejected_by.append("T1-CONST")
+
+    # T5-RESOLVE -- every claimed world_model_read must resolve to a declared biosphere
+    # state entry. A source may not merely *claim* to read from W; the ref must exist.
+    for ref in _binding_read_refs(rec):
+        if not ref or ref not in biosphere_refs:
+            if "T5-RESOLVE" not in v.rejected_by:
+                v.rejected_by.append("T5-RESOLVE")
 
     # T3-QOL -- every QoL dimension must aggregate from a human-twin dimension.
     for dim in rec.get("qol_index", {}).get("dimensions", []):
@@ -132,13 +195,20 @@ def judge_binding(rec: Dict[str, Any]) -> Verdict:
     return v
 
 
-def judge_transfer(rec: Dict[str, Any]) -> Verdict:
+def judge_transfer(rec: Dict[str, Any], composition: Dict[str, Any]) -> Verdict:
     v = Verdict()
 
-    # Structural: the declared scale stack must be the canonical hierarchy.
-    if rec.get("scale_stack") != CANONICAL_SCALE_STACK:
-        v.rejected_by.append("T2-CONSERVE")
-        return v
+    # T6-COMPOSE -- the transfer must be consistent with the declared twin-hierarchy
+    # composition: its scale_stack must be the declared ordered stack, and its
+    # parent->child scales must be a declared adjacent parent->child edge.
+    ordered = composition.get("ordered_stack", CANONICAL_SCALE_STACK)
+    edges = {(s.get("scale"), s.get("child")) for s in composition.get("scales", [])}
+    parent_scale = rec.get("parent", {}).get("scale")
+    child_scales = {c.get("scale") for c in rec.get("children", [])}
+    stack_ok = rec.get("scale_stack") == ordered
+    edges_ok = all((parent_scale, cs) in edges for cs in child_scales) if edges else True
+    if not stack_ok or not edges_ok:
+        v.rejected_by.append("T6-COMPOSE")
 
     parent = rec.get("parent", {}).get("value", 0) or 0
     children = sum((c.get("value", 0) or 0) for c in rec.get("children", []))
@@ -154,14 +224,14 @@ def judge_transfer(rec: Dict[str, Any]) -> Verdict:
     return v
 
 
-def judge(rec: Dict[str, Any]) -> Tuple[str, Verdict, List[str]]:
+def judge(rec: Dict[str, Any], biosphere_refs: set[str], composition: Dict[str, Any]) -> Tuple[str, Verdict, List[str]]:
     """Return (kind, verdict, structural_errors)."""
     if rec.get("binding_type") == "ValueFlowSubsystemBinding":
         errs = _missing(rec, REQUIRED_BINDING)
-        return "binding", judge_binding(rec), errs
+        return "binding", judge_binding(rec, biosphere_refs), errs
     if rec.get("transfer_type") == "TwinScaleValueTransfer":
         errs = _missing(rec, REQUIRED_TRANSFER)
-        return "transfer", judge_transfer(rec), errs
+        return "transfer", judge_transfer(rec, composition), errs
     return "unknown", Verdict(), ["unrecognized record: no binding_type/transfer_type"]
 
 
@@ -173,6 +243,15 @@ def main() -> int:
     fixtures = sorted(FIXTURES.glob("*.json"))
     if not fixtures:
         print(f"FAIL: no fixtures under {FIXTURES}", file=sys.stderr)
+        return 1
+
+    biosphere_refs = load_biosphere_refs()
+    composition = load_composition()
+    if not biosphere_refs:
+        print(f"FAIL: no biosphere state declared under {BIOSPHERE_STATES}", file=sys.stderr)
+        return 1
+    if not composition.get("ordered_stack"):
+        print(f"FAIL: twin-hierarchy composition record missing: {COMPOSITION_RECORD}", file=sys.stderr)
         return 1
 
     failures: List[str] = []
@@ -192,7 +271,7 @@ def main() -> int:
             failures.append(f"{rel}: fixture carries no `_expected` verdict block")
             continue
 
-        kind, verdict, struct_errs = judge(rec)
+        kind, verdict, struct_errs = judge(rec, biosphere_refs, composition)
         if kind == "unknown":
             failures.append(f"{rel}: {struct_errs}")
             continue

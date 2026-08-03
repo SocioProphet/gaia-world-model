@@ -75,9 +75,18 @@ Home rationale — **gaia-world-model, not economic-prophet**:
 | `T2-CONSERVE` | 2 | a cross-scale flow creates value out of nothing (`parent ≠ Σchildren + Σsinks − Σsources`) | REJECT |
 | `T3-QOL` | 3 | a population QoL dimension is not derivable from human-twin dimensions | REJECT (exogenous-QoL smell) |
 | `T4-REGEN` | 4 | a renewable-harvest regeneration rate is a constant, not a world-model read | REJECT |
+| `T5-RESOLVE` | 1 / 4 | a `world_model_read` `read_ref` does not resolve to a declared biosphere-state entry | REJECT (a read pointing at nothing) |
+| `T6-COMPOSE` | 2 | a transfer's `scale_stack` / parent→child scales are inconsistent with the declared twin-hierarchy composition | REJECT |
 
-The checker also fails CI if any declared tooth is **never** exercised in the firing
-direction (no dead teeth), and asserts the admitted fixtures fire **no** tooth.
+`T5-RESOLVE` is what makes `T1-CONST` / `T1-RESERVE` / `T4-REGEN` load-bearing: a source
+may not merely *claim* to be a world-model read — its ref must resolve to declared
+substrate-*W* biosphere state at that `@<as_of>`. The checker also fails CI if any
+declared tooth is **never** exercised in the firing direction (no dead teeth), and
+asserts the admitted fixtures fire **no** tooth.
+
+A follow-up tooth `T7-CONCEPT` is documented (not yet enforced): once the ontogenesis
+concept-governance PR provides stable Systema Concept Entry IDs, reject vocabulary terms
+that do not resolve to a governed concept ID (bare-string → concept-ID).
 
 ## Consequences
 
@@ -103,8 +112,12 @@ direction (no dead teeth), and asserts the admitted fixtures fire **no** tooth.
 - `docs/contracts/VALUE_FLOW_SUBSYSTEM_CONTRACT.md`
 - `schemas/economy/value_flow_binding.v1.schema.json`
 - `schemas/economy/twin_scale_transfer.v1.schema.json`
+- `schemas/biosphere/biosphere_state.v1.schema.json` (the substrate-*W* resolution target)
+- `schemas/economy/twin_hierarchy_composition.v1.schema.json`
 - `examples/economy/value_flow/**` (valid + invalid + flag fixtures, one per tooth,
   both directions)
+- `examples/biosphere/**` (declared biosphere/resource state the reads resolve to)
+- `gaia/twins/composition.v1.json` (the first-class twin-hierarchy composition record)
 - `scripts/validate_value_flow_subsystem.py` (deterministic, stdlib only)
 - `.github/workflows/value-flow-subsystem.yml`
 

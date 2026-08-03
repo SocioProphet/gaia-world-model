@@ -1,0 +1,16 @@
+{
+  "transfer_version": "v1",
+  "transfer_type": "TwinScaleValueTransfer",
+  "transfer_id": "tvt-composition-inconsistent-2026-08-03",
+  "scale_stack": ["galactic_space_twin", "world_economic_twin", "human_digital_twin"],
+  "parent": {"scale": "galactic_space_twin", "ref": "twin://space/galaxy", "value": 1000},
+  "children": [
+    {"scale": "human_digital_twin", "ref": "twin://human/cohort/a", "value": 1000}
+  ],
+  "declared_sources": [],
+  "declared_sinks": [],
+  "conservation": {"rule": "parent_value == sum(children) + sum(sinks) - sum(sources)", "tolerance": 1e-06},
+  "provenance": {"produced_by": "economic-prophet@feat/welfare-annealing", "as_of": "2026-08-03"},
+  "classification": {"sensitivity": "internal", "synthetic": true},
+  "_expected": {"verdict": "reject", "tooth": "T6-COMPOSE", "why": "parent scale galactic_space_twin -> child scale human_digital_twin skips world_economic_twin; not an adjacent parent->child edge in the declared twin-hierarchy composition"}
+}

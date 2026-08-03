@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/economy/twin_hierarchy_composition.v1.schema.json",
+  "title": "GAIA Twin-Hierarchy Composition v1",
+  "description": "A first-class declaration of the world-model digital-twin hierarchy: the galactic/space twin, the world economic twin (the economic spine), and the human digital twin, with explicit parent/child scale relationships. It is the authority a TwinScaleValueTransfer's scale_stack and parent/child scales must be consistent with. A transfer inconsistent with this composition is REJECTED (tooth T6-COMPOSE).",
+  "type": "object",
+  "required": [
+    "composition_version",
+    "composition_type",
+    "composition_id",
+    "ordered_stack",
+    "scales",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "composition_version": {"type": "string", "const": "v1"},
+    "composition_type": {"type": "string", "const": "TwinHierarchyComposition"},
+    "composition_id": {"type": "string"},
+    "ordered_stack": {
+      "type": "array",
+      "description": "Outer-to-inner scale order. Canonically [galactic_space_twin, world_economic_twin, human_digital_twin].",
+      "items": {"type": "string", "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin"]},
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "scales": {
+      "type": "array",
+      "description": "Per-scale composition record with explicit parent/child edges. A null parent is the outermost scale; a null child is the innermost.",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["scale", "parent", "child"],
+        "properties": {
+          "scale": {"type": "string", "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin"]},
+          "parent": {"type": ["string", "null"], "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin", null]},
+          "child": {"type": ["string", "null"], "enum": ["galactic_space_twin", "world_economic_twin", "human_digital_twin", null]},
+          "surface_ref": {"type": "string", "description": "Optional pointer to the twin's surface/engine, e.g. client-vue SpaceTwin.vue, SocioProphet/economic-prophet, SocioProphet/prophet-health."}
+        }
+      }
+    },
+    "provenance": {"type": "object"},
+    "classification": {"type": "object"}
+  }
+}
