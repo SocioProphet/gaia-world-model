@@ -118,8 +118,11 @@ Jacob's-ladder ecosystem / natural-capital assets bind to the GAIA biosphere sta
 
 ## Consumed soft-refs (by reference, never vendored)
 
-- `SocioProphet/economic-prophet@feat/welfare-annealing` — carrying-capacity discount,
-  QoL welfare objective (forward soft-ref; the branch's files are never edited here).
+- `SocioProphet/economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583` — the
+  welfare-annealing dynamics (WEA-1), merged to main: carrying-capacity discount, QoL
+  welfare objective, and `welfare_annealing/gaia_binding.py`, which emits the
+  `value_flow_binding.v1` / `twin_scale_transfer.v1` records this contract governs
+  (pinned soft-ref; its files are never edited here).
 - `SocioProphet/economic-prophet` `asset_ladder` (ALC-1) — the rung ontology
   (`natural_capital` / `extractive_nonrenewable` / `renewable_harvest`).
 - `SocioProphet/economic-prophet` `risk_measures` — expected-shortfall tail measure.

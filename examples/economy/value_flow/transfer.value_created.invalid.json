@@ -11,7 +11,7 @@
   "declared_sources": [],
   "declared_sinks": [],
   "conservation": {"rule": "parent_value == sum(children) + sum(sinks) - sum(sources)", "tolerance": 1e-06},
-  "provenance": {"produced_by": "economic-prophet@feat/welfare-annealing", "as_of": "2026-08-03"},
+  "provenance": {"produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583", "as_of": "2026-08-03"},
   "classification": {"sensitivity": "internal", "synthetic": true},
   "_expected": {"verdict": "reject", "tooth": "T2-CONSERVE", "why": "children sum to 1200 but the parent aggregate is 1000 with no receipted source: 200 of value created out of nothing"}
 }

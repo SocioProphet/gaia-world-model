@@ -15,10 +15,12 @@ The estate has two mature planes that were never bound to each other:
   provenance home for those layers.
 - **The economic spine (Economic Prophet).** `SocioProphet/economic-prophet` is the
   value engine. Its omnirisk/EP kernels are merged on `main`
-  (`risk_measures`, `ftp`, `term_calculus`, `asset_ladder`, `flow_regime`); the
-  **welfare-annealing** dynamics — carrying-capacity discount, the Jacob's-ladder
-  natural-capital / renewable base, and the QoL welfare objective — are in flight on
-  `economic-prophet@feat/welfare-annealing`.
+  (`risk_measures`, `ftp`, `term_calculus`, `asset_ladder`, `flow_regime`), and the
+  **welfare-annealing** dynamics (WEA-1) — carrying-capacity discount, the Jacob's-ladder
+  natural-capital / renewable base, and the QoL welfare objective — are now **merged to
+  `main`** at `economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583` (module
+  `src/open_ep_framework/welfare_annealing/`), including `gaia_binding.py`, which emits
+  the `value_flow_binding.v1` and `twin_scale_transfer.v1` records this contract governs.
 
 `schemas/economy/economy_observation.v1.schema.json` already binds GAIA to Economic
 Prophet by soft-ref for a *single observation* (`framework_ref:
@@ -95,7 +97,8 @@ that do not resolve to a governed concept ID (bare-string → concept-ID).
 - GAIA remains the semantic/provenance home; EP remains the value engine. Neither is
   forked into the other.
 - The welfare-annealing files are **not edited** by this ADR; they are consumed by
-  branch-ref as a forward soft-ref.
+  pinned soft-ref (`@a51a23f52dfe7b0e984a42a19a762dabe714a583`, merged to
+  economic-prophet main), never vendored.
 
 ## Non-goals
 
@@ -129,6 +132,8 @@ that do not resolve to a governed concept ID (bare-string → concept-ID).
   governed concepts and does not duplicate them; the terms should resolve against the
   ontogenesis concept-governance PR once landed.
 - **economic-prophet**: `asset_ladder` (ALC-1) rung ontology; `risk_measures`
-  (expected-shortfall) tail measure; `feat/welfare-annealing` dynamics.
+  (expected-shortfall) tail measure; welfare-annealing (WEA-1) dynamics +
+  `welfare_annealing/gaia_binding.py` emitter, merged to main at
+  `@a51a23f52dfe7b0e984a42a19a762dabe714a583`.
 - **prophet-workspace** ADR-0003 (RCS/4D) — the WorldModelSubstrate *W* naming.
 - ADR-0002 — GAIA as the home for world-model layer contracts.

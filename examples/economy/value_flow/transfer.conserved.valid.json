@@ -11,7 +11,7 @@
   "declared_sources": [],
   "declared_sinks": [{"ref": "sink://depreciation/2026-08-03", "amount": 100}],
   "conservation": {"rule": "parent_value == sum(children) + sum(sinks) - sum(sources)", "tolerance": 1e-06},
-  "provenance": {"produced_by": "economic-prophet@feat/welfare-annealing", "as_of": "2026-08-03"},
+  "provenance": {"produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583", "as_of": "2026-08-03"},
   "classification": {"sensitivity": "internal", "synthetic": true},
   "_expected": {"verdict": "admit", "why": "1000 == 600 + 300 + 100(sink) - 0(source): value conserved (IC-1)"}
 }

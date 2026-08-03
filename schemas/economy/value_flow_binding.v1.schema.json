@@ -32,7 +32,7 @@
     },
     "welfare_annealing_ref": {
       "type": "string",
-      "description": "Optional forward soft-ref to the in-flight welfare-annealing dynamics, e.g. SocioProphet/economic-prophet@feat/welfare-annealing. Consumed by branch-ref; its files are never edited by this contract.",
+      "description": "Optional pinned soft-ref to the welfare-annealing dynamics (WEA-1), now merged to economic-prophet main, e.g. SocioProphet/economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583 (module src/open_ep_framework/welfare_annealing/, whose gaia_binding.py emits this value_flow_binding.v1 record). Consumed by reference; never vendored; its files are never edited by this contract.",
       "pattern": "^SocioProphet/economic-prophet@.+$"
     },
     "carrying_capacity": {

@@ -10,7 +10,7 @@
   "declared_sources": [],
   "declared_sinks": [],
   "conservation": {"rule": "parent_value == sum(children) + sum(sinks) - sum(sources)", "tolerance": 1e-06},
-  "provenance": {"produced_by": "economic-prophet@feat/welfare-annealing", "as_of": "2026-08-03"},
+  "provenance": {"produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583", "as_of": "2026-08-03"},
   "classification": {"sensitivity": "internal", "synthetic": true},
   "_expected": {"verdict": "reject", "tooth": "T6-COMPOSE", "why": "parent scale galactic_space_twin -> child scale human_digital_twin skips world_economic_twin; not an adjacent parent->child edge in the declared twin-hierarchy composition"}
 }

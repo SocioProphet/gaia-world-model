@@ -3,8 +3,8 @@
   "binding_type": "ValueFlowSubsystemBinding",
   "binding_id": "vfb-hardcoded-cc-2026-08-03",
   "world_model_ref": "SocioProphet/gaia-world-model@907f6b121134e6f49c1da69d51d91ec47f77648e",
-  "economic_spine_ref": "SocioProphet/economic-prophet@e29ce66",
-  "welfare_annealing_ref": "SocioProphet/economic-prophet@feat/welfare-annealing",
+  "economic_spine_ref": "SocioProphet/economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
+  "welfare_annealing_ref": "SocioProphet/economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
   "carrying_capacity": {
     "source": {"kind": "constant"},
     "value_index": 1.0
@@ -24,7 +24,7 @@
       {"name": "health", "derivation": {"kind": "twin_aggregate", "from_twin_dimension": "twin://human/dimension/health", "population_ref": "twin://human/population/global"}}
     ]
   },
-  "provenance": {"produced_by": "economic-prophet@feat/welfare-annealing", "as_of": "2026-08-03"},
+  "provenance": {"produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583", "as_of": "2026-08-03"},
   "classification": {"sensitivity": "internal", "synthetic": true},
   "_expected": {"verdict": "reject", "tooth": "T1-CONST", "why": "carrying-capacity is a hardcoded constant, not a world-model read (free-parameter smell)"}
 }
