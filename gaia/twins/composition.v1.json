@@ -1,0 +1,41 @@
+{
+  "composition_version": "v1",
+  "composition_type": "TwinHierarchyComposition",
+  "composition_id": "twin-hierarchy-galactic-world-human",
+  "ordered_stack": [
+    "galactic_space_twin",
+    "world_economic_twin",
+    "human_digital_twin"
+  ],
+  "scales": [
+    {
+      "scale": "galactic_space_twin",
+      "concept_ref": "systema:concept:galactic-space-twin",
+      "parent": null,
+      "child": "world_economic_twin",
+      "surface_ref": "client-vue SpaceTwin.vue (Self<->Body<->Universe 5D cube)"
+    },
+    {
+      "scale": "world_economic_twin",
+      "concept_ref": "systema:concept:world-economic-twin",
+      "parent": "galactic_space_twin",
+      "child": "human_digital_twin",
+      "surface_ref": "SocioProphet/economic-prophet (the value-flow subsystem / economic spine)"
+    },
+    {
+      "scale": "human_digital_twin",
+      "concept_ref": "systema:concept:human-digital-twin",
+      "parent": "world_economic_twin",
+      "child": null,
+      "surface_ref": "SocioProphet/prophet-health + gaia/twins/human"
+    }
+  ],
+  "provenance": {
+    "decision": "ADR-0003",
+    "as_of": "2026-08-03"
+  },
+  "classification": {
+    "sensitivity": "internal",
+    "synthetic": false
+  }
+}

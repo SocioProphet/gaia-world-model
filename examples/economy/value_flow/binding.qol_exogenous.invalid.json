@@ -1,0 +1,76 @@
+{
+  "binding_version": "v1",
+  "binding_type": "ValueFlowSubsystemBinding",
+  "binding_id": "vfb-exogenous-qol-2026-08-03",
+  "world_model_ref": "SocioProphet/gaia-world-model@907f6b121134e6f49c1da69d51d91ec47f77648e",
+  "economic_spine_ref": "SocioProphet/economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
+  "carrying_capacity": {
+    "concept_ref": "systema:concept:carrying-capacity",
+    "source": {
+      "kind": "world_model_read",
+      "read_ref": "gaia://biosphere/carrying_capacity/global@2026-08-03"
+    },
+    "value_index": 0.83
+  },
+  "ecosystem_assets": [
+    {
+      "rung": "renewable_harvest",
+      "concept_ref": "systema:concept:renewable-harvest",
+      "biosphere_ref": "gaia://biosphere/fishery/north-atlantic",
+      "regeneration": {
+        "source": {
+          "kind": "world_model_read",
+          "read_ref": "gaia://biosphere/fishery/north-atlantic/regeneration@2026-08-03"
+        },
+        "rate": 0.05
+      },
+      "stock": {
+        "current": 500,
+        "non_renewable_draw": 0,
+        "reserve": {
+          "source": {
+            "kind": "world_model_read",
+            "read_ref": "gaia://biosphere/fishery/north-atlantic/floor@2026-08-03"
+          },
+          "floor": 100
+        }
+      }
+    }
+  ],
+  "qol_index": {
+    "concept_ref": "systema:concept:qol-index",
+    "value": 0.95,
+    "population_ref": "twin://human/population/global",
+    "dimensions": [
+      {
+        "name": "life_length",
+        "concept_ref": "systema:concept:qol-dim-life-length",
+        "derivation": {
+          "kind": "twin_aggregate",
+          "from_twin_dimension": "twin://human/dimension/life_length",
+          "population_ref": "twin://human/population/global"
+        }
+      },
+      {
+        "name": "education",
+        "concept_ref": "systema:concept:qol-dim-education",
+        "derivation": {
+          "kind": "exogenous"
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
+    "as_of": "2026-08-03"
+  },
+  "classification": {
+    "sensitivity": "internal",
+    "synthetic": true
+  },
+  "_expected": {
+    "verdict": "reject",
+    "tooth": "T3-QOL",
+    "why": "the education QoL dimension is exogenous, not aggregated from human-digital-twin state"
+  }
+}

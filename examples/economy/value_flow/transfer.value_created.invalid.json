@@ -1,0 +1,49 @@
+{
+  "transfer_version": "v1",
+  "transfer_type": "TwinScaleValueTransfer",
+  "transfer_id": "tvt-value-from-nothing-2026-08-03",
+  "scale_stack": [
+    "galactic_space_twin",
+    "world_economic_twin",
+    "human_digital_twin"
+  ],
+  "parent": {
+    "scale": "world_economic_twin",
+    "concept_ref": "systema:concept:world-economic-twin",
+    "ref": "twin://economy/world",
+    "value": 1000
+  },
+  "children": [
+    {
+      "scale": "human_digital_twin",
+      "concept_ref": "systema:concept:human-digital-twin",
+      "ref": "twin://human/cohort/a",
+      "value": 600
+    },
+    {
+      "scale": "human_digital_twin",
+      "concept_ref": "systema:concept:human-digital-twin",
+      "ref": "twin://human/cohort/b",
+      "value": 600
+    }
+  ],
+  "declared_sources": [],
+  "declared_sinks": [],
+  "conservation": {
+    "rule": "parent_value == sum(children) + sum(sinks) - sum(sources)",
+    "tolerance": 1e-06
+  },
+  "provenance": {
+    "produced_by": "economic-prophet@a51a23f52dfe7b0e984a42a19a762dabe714a583",
+    "as_of": "2026-08-03"
+  },
+  "classification": {
+    "sensitivity": "internal",
+    "synthetic": true
+  },
+  "_expected": {
+    "verdict": "reject",
+    "tooth": "T2-CONSERVE",
+    "why": "children sum to 1200 but the parent aggregate is 1000 with no receipted source: 200 of value created out of nothing"
+  }
+}

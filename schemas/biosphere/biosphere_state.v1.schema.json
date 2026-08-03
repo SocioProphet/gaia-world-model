@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gaia.socioprophet.ai/schemas/biosphere/biosphere_state.v1.schema.json",
+  "title": "GAIA Biosphere / Resource State v1",
+  "description": "A declared snapshot of the world-model substrate W biosphere/resource state that the value-flow subsystem contract READS. It is the resolution target for a ValueFlowSubsystemBinding's world_model_read references: a carrying-capacity index, declared non-renewable reserves and their floors, renewable regeneration rates, and planetary-boundary declarations. Each entry declares the canonical read_ref it answers, temporally keyed by @<as_of>. A value-flow read_ref that does not resolve to a declared entry here is dangling and is REJECTED (tooth T5-RESOLVE).",
+  "type": "object",
+  "required": [
+    "state_version",
+    "state_type",
+    "state_id",
+    "as_of",
+    "world_model_ref",
+    "carrying_capacity",
+    "reserves",
+    "regeneration_rates",
+    "planetary_boundaries",
+    "provenance",
+    "classification"
+  ],
+  "properties": {
+    "state_version": {"type": "string", "const": "v1"},
+    "state_type": {"type": "string", "const": "BiosphereState"},
+    "state_id": {"type": "string"},
+    "as_of": {"type": "string", "description": "Temporal key for this snapshot, e.g. 2026-08-03. read_refs resolve at this @<as_of>."},
+    "world_model_ref": {"type": "string", "pattern": "^SocioProphet/gaia-world-model@.+$"},
+    "carrying_capacity": {
+      "type": "object",
+      "description": "The global (or scoped) carrying-capacity index the welfare-annealing discount reads.",
+      "required": ["read_ref", "value_index"],
+      "properties": {
+        "read_ref": {"type": "string", "description": "Canonical ref this entry answers, e.g. gaia://biosphere/carrying_capacity/global@2026-08-03."},
+        "value_index": {"type": "number"}
+      }
+    },
+    "reserves": {
+      "type": "array",
+      "description": "Declared non-renewable (and renewable stock) reserves and their world-model floors. The floor read_ref is the resolution target for a binding's stock.reserve.source.read_ref.",
+      "items": {
+        "type": "object",
+        "required": ["stock", "read_ref", "floor", "renewable"],
+        "properties": {
+          "stock": {"type": "string", "description": "Stock identity, e.g. reserve/hydrocarbon/basin-07 or fishery/north-atlantic."},
+          "read_ref": {"type": "string", "description": "Canonical floor ref, e.g. gaia://biosphere/reserve/hydrocarbon/basin-07/floor@2026-08-03."},
+          "floor": {"type": "number", "description": "The world-model declared reserve floor for this stock."},
+          "current": {"type": "number"},
+          "renewable": {"type": "boolean"}
+        }
+      }
+    },
+    "regeneration_rates": {
+      "type": "array",
+      "description": "Declared renewable regeneration rates. The read_ref is the resolution target for a binding's renewable_harvest regeneration.source.read_ref.",
+      "items": {
+        "type": "object",
+        "required": ["stock", "read_ref", "rate"],
+        "properties": {
+          "stock": {"type": "string"},
+          "read_ref": {"type": "string", "description": "Canonical regeneration ref, e.g. gaia://biosphere/fishery/north-atlantic/regeneration@2026-08-03."},
+          "rate": {"type": "number"}
+        }
+      }
+    },
+    "planetary_boundaries": {
+      "type": "array",
+      "description": "Declared planetary-boundary thresholds. A value-flow that breaches one is the planetary-boundary / paper-inductance false-growth analog (see tooth T1-RESERVE).",
+      "items": {
+        "type": "object",
+        "required": ["name", "stock", "threshold", "status"],
+        "properties": {
+          "name": {"type": "string"},
+          "stock": {"type": "string"},
+          "threshold": {"type": "number"},
+          "status": {"type": "string", "enum": ["within", "at_risk", "breached"]}
+        }
+      }
+    },
+    "provenance": {"type": "object"},
+    "classification": {"type": "object"}
+  }
+}
