@@ -9,6 +9,7 @@ on:
       - 'scripts/validate_multidomain_fixtures.py'
       - 'scripts/validate_bounded_osm_source_adapter.py'
       - 'scripts/validate_chronos_carrier_fixtures.py'
+      - 'scripts/validate_world_claim_ingest_schema_conformance.py'
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
@@ -28,6 +29,7 @@ on:
       - 'scripts/validate_multidomain_fixtures.py'
       - 'scripts/validate_bounded_osm_source_adapter.py'
       - 'scripts/validate_chronos_carrier_fixtures.py'
+      - 'scripts/validate_world_claim_ingest_schema_conformance.py'
       - 'scripts/ofif_to_gaia_bridge.py'
       - 'scripts/check_ofif_bridge_invariants.py'
       - 'scripts/soil_intelligence_fusion.py'
@@ -51,6 +53,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Install validation dependencies
+        run: python3 -m pip install jsonschema==4.23.0
 
       - name: Validate contract fixture pairs
         run: python3 scripts/validate_contract_fixtures.py
@@ -91,6 +96,9 @@ jobs:
 
       - name: Validate CHRONOS carrier extension fixtures (WorldClaim/FusionExplanation)
         run: python3 scripts/validate_chronos_carrier_fixtures.py
+
+      - name: Validate world_claim_ingest.py output against full v1 schemas
+        run: python3 scripts/validate_world_claim_ingest_schema_conformance.py
 
       - name: Convert OFIF observation into GAIA artifact
         run: |
