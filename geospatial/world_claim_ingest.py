@@ -134,7 +134,11 @@ def build_geo_anchor(feature: Dict[str, Any], created_at: str) -> Dict[str, Any]
         anchor["bbox"] = feature["bbox"]
     if isinstance(feature.get("h3_cells"), list):
         anchor["h3_cells"] = feature["h3_cells"]
-    anchor["source_ref"] = osm_source_ref(feature["osm_type"], feature["osm_id"])
+    # NOTE: no "source_ref" here. schemas/geospatial/world_claim.v1.schema.json
+    # embeds GeoAnchor inline under WorldClaim.geo_anchor with
+    # additionalProperties=false and no "source_ref" property (source
+    # attribution for the anchor's owning feature belongs on SourceEvidence,
+    # which does carry source_ref). Adding it here breaks schema conformance.
     return anchor
 
 
